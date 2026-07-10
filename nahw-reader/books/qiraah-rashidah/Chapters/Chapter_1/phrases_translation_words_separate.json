@@ -1,0 +1,980 @@
+[
+  {
+    "phrase": "كيف أقضي يومي",
+    "translation": "How I Spend My Day",
+    "arabic_words": [
+      "كيف",
+      "أقضي",
+      "يومي"
+    ],
+    "english_words": [
+      "How",
+      "I",
+      "Spend",
+      "My",
+      "Day"
+    ]
+  },
+  {
+    "phrase": "أنام مبكّرًا",
+    "translation": "I sleep early",
+    "arabic_words": [
+      "أنام",
+      "مبكّرًا"
+    ],
+    "english_words": [
+      "I",
+      "sleep",
+      "early"
+    ]
+  },
+  {
+    "phrase": "في الليل",
+    "translation": "at night",
+    "arabic_words": [
+      "في",
+      "الليل"
+    ],
+    "english_words": [
+      "at",
+      "night"
+    ]
+  },
+  {
+    "phrase": "وأقوم مبكّرًا",
+    "translation": "and I wake up early",
+    "arabic_words": [
+      "وأقوم",
+      "مبكّرًا"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "wake",
+      "up",
+      "early"
+    ]
+  },
+  {
+    "phrase": "في الصباح",
+    "translation": "in the morning",
+    "arabic_words": [
+      "في",
+      "الصباح"
+    ],
+    "english_words": [
+      "in",
+      "the",
+      "morning"
+    ]
+  },
+  {
+    "phrase": "أستيقظ على اسم الله وذكره",
+    "translation": "I wake remembering God's name",
+    "arabic_words": [
+      "أستيقظ",
+      "على",
+      "اسم",
+      "الله",
+      "وذكره"
+    ],
+    "english_words": [
+      "I",
+      "wake",
+      "remembering",
+      "God's",
+      "name"
+    ]
+  },
+  {
+    "phrase": "أستعدّ للصلاة",
+    "translation": "I get ready for prayer",
+    "arabic_words": [
+      "أستعدّ",
+      "للصلاة"
+    ],
+    "english_words": [
+      "I",
+      "get",
+      "ready",
+      "for",
+      "prayer"
+    ]
+  },
+  {
+    "phrase": "ثم أذهب مع والدي إلى المسجد",
+    "translation": "then I go with my father to the mosque",
+    "arabic_words": [
+      "ثم",
+      "أذهب",
+      "مع",
+      "والدي",
+      "إلى",
+      "المسجد"
+    ],
+    "english_words": [
+      "then",
+      "I",
+      "go",
+      "with",
+      "my",
+      "father",
+      "to",
+      "the",
+      "mosque"
+    ]
+  },
+  {
+    "phrase": "والمسجد قريب من بيتي",
+    "translation": "and the mosque is near my house",
+    "arabic_words": [
+      "والمسجد",
+      "قريب",
+      "من",
+      "بيتي"
+    ],
+    "english_words": [
+      "and",
+      "the",
+      "mosque",
+      "is",
+      "near",
+      "my",
+      "house"
+    ]
+  },
+  {
+    "phrase": "فأتوضأ",
+    "translation": "so I perform ablution",
+    "arabic_words": [
+      "فأتوضأ"
+    ],
+    "english_words": [
+      "so",
+      "I",
+      "perform",
+      "ablution"
+    ]
+  },
+  {
+    "phrase": "وأصلي مع الجماعة",
+    "translation": "and I pray with the congregation",
+    "arabic_words": [
+      "وأصلي",
+      "مع",
+      "الجماعة"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "pray",
+      "with",
+      "the",
+      "congregation"
+    ]
+  },
+  {
+    "phrase": "وأرجع إلى البيت",
+    "translation": "and I return home",
+    "arabic_words": [
+      "وأرجع",
+      "إلى",
+      "البيت"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "return",
+      "home"
+    ]
+  },
+  {
+    "phrase": "وأتلو شيئًا من القرآن الكريم",
+    "translation": "and I recite some of the Noble Quran",
+    "arabic_words": [
+      "وأتلو",
+      "شيئًا",
+      "من",
+      "القرآن",
+      "الكريم"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "recite",
+      "some",
+      "of",
+      "the",
+      "Noble",
+      "Quran"
+    ]
+  },
+  {
+    "phrase": "ثم أخرج إلى البستان",
+    "translation": "then I go out to the garden",
+    "arabic_words": [
+      "ثم",
+      "أخرج",
+      "إلى",
+      "البستان"
+    ],
+    "english_words": [
+      "then",
+      "I",
+      "go",
+      "out",
+      "to",
+      "the",
+      "garden"
+    ]
+  },
+  {
+    "phrase": "وأجري",
+    "translation": "and I run",
+    "arabic_words": [
+      "وأجري"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "run"
+    ]
+  },
+  {
+    "phrase": "ثم أرجع إلى البيت",
+    "translation": "then I return home",
+    "arabic_words": [
+      "ثم",
+      "أرجع",
+      "إلى",
+      "البيت"
+    ],
+    "english_words": [
+      "then",
+      "I",
+      "return",
+      "home"
+    ]
+  },
+  {
+    "phrase": "فأشرب اللبن",
+    "translation": "so I drink milk",
+    "arabic_words": [
+      "فأشرب",
+      "اللبن"
+    ],
+    "english_words": [
+      "so",
+      "I",
+      "drink",
+      "milk"
+    ]
+  },
+  {
+    "phrase": "وأستعد للذهاب إلى المدرسة",
+    "translation": "and I get ready to go to school",
+    "arabic_words": [
+      "وأستعد",
+      "للذهاب",
+      "إلى",
+      "المدرسة"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "get",
+      "ready",
+      "to",
+      "go",
+      "to",
+      "school"
+    ]
+  },
+  {
+    "phrase": "وأفطر",
+    "translation": "and I eat breakfast",
+    "arabic_words": [
+      "وأفطر"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "eat",
+      "breakfast"
+    ]
+  },
+  {
+    "phrase": "إذا كانت أيام الصيف",
+    "translation": "if it's summer",
+    "arabic_words": [
+      "إذا",
+      "كانت",
+      "أيام",
+      "الصيف"
+    ],
+    "english_words": [
+      "if",
+      "it's",
+      "summer"
+    ]
+  },
+  {
+    "phrase": "وأتغدى",
+    "translation": "and I eat lunch",
+    "arabic_words": [
+      "وأتغدى"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "eat",
+      "lunch"
+    ]
+  },
+  {
+    "phrase": "إذا كانت أيام الشتاء",
+    "translation": "if it's winter",
+    "arabic_words": [
+      "إذا",
+      "كانت",
+      "أيام",
+      "الشتاء"
+    ],
+    "english_words": [
+      "if",
+      "it's",
+      "winter"
+    ]
+  },
+  {
+    "phrase": "وأصل إلى المدرسة",
+    "translation": "and I arrive at school",
+    "arabic_words": [
+      "وأصل",
+      "إلى",
+      "المدرسة"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "arrive",
+      "at",
+      "school"
+    ]
+  },
+  {
+    "phrase": "في الميعاد",
+    "translation": "on time",
+    "arabic_words": [
+      "في",
+      "الميعاد"
+    ],
+    "english_words": [
+      "on",
+      "time"
+    ]
+  },
+  {
+    "phrase": "وأمكث في المدرسة ست ساعات",
+    "translation": "and I stay at school for six hours",
+    "arabic_words": [
+      "وأمكث",
+      "في",
+      "المدرسة",
+      "ست",
+      "ساعات"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "stay",
+      "at",
+      "school",
+      "for",
+      "six",
+      "hours"
+    ]
+  },
+  {
+    "phrase": "وأسمع الدروس",
+    "translation": "and I listen to the lessons",
+    "arabic_words": [
+      "وأسمع",
+      "الدروس"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "listen",
+      "to",
+      "the",
+      "lessons"
+    ]
+  },
+  {
+    "phrase": "بنشاط ورغبة",
+    "translation": "with energy and eagerness",
+    "arabic_words": [
+      "بنشاط",
+      "ورغبة"
+    ],
+    "english_words": [
+      "with",
+      "energy",
+      "and",
+      "eagerness"
+    ]
+  },
+  {
+    "phrase": "وأجلس بأدب وسكينة",
+    "translation": "and I sit politely and calmly",
+    "arabic_words": [
+      "وأجلس",
+      "بأدب",
+      "وسكينة"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "sit",
+      "politely",
+      "and",
+      "calmly"
+    ]
+  },
+  {
+    "phrase": "حتى إذا انتهى الوقت",
+    "translation": "until the time ended",
+    "arabic_words": [
+      "حتى",
+      "إذا",
+      "انتهى",
+      "الوقت"
+    ],
+    "english_words": [
+      "until",
+      "the",
+      "time",
+      "ended"
+    ]
+  },
+  {
+    "phrase": "وضرب الجرس",
+    "translation": "and the bell rang",
+    "arabic_words": [
+      "وضرب",
+      "الجرس"
+    ],
+    "english_words": [
+      "and",
+      "the",
+      "bell",
+      "rang"
+    ]
+  },
+  {
+    "phrase": "خرجت من المدرسة",
+    "translation": "I left school",
+    "arabic_words": [
+      "خرجت",
+      "من",
+      "المدرسة"
+    ],
+    "english_words": [
+      "I",
+      "left",
+      "school"
+    ]
+  },
+  {
+    "phrase": "ورجعت إلى البيت",
+    "translation": "and returned home",
+    "arabic_words": [
+      "ورجعت",
+      "إلى",
+      "البيت"
+    ],
+    "english_words": [
+      "and",
+      "returned",
+      "home"
+    ]
+  },
+  {
+    "phrase": "ولا أقرأ",
+    "translation": "and I do not study",
+    "arabic_words": [
+      "ولا",
+      "أقرأ"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "do",
+      "not",
+      "study"
+    ]
+  },
+  {
+    "phrase": "بعد صلاة العصر",
+    "translation": "after the afternoon prayer",
+    "arabic_words": [
+      "بعد",
+      "صلاة",
+      "العصر"
+    ],
+    "english_words": [
+      "after",
+      "the",
+      "afternoon",
+      "prayer"
+    ]
+  },
+  {
+    "phrase": "إلى المغرب",
+    "translation": "until sunset",
+    "arabic_words": [
+      "إلى",
+      "المغرب"
+    ],
+    "english_words": [
+      "until",
+      "sunset"
+    ]
+  },
+  {
+    "phrase": "وفي بعض الأيام",
+    "translation": "and on some days",
+    "arabic_words": [
+      "وفي",
+      "بعض",
+      "الأيام"
+    ],
+    "english_words": [
+      "and",
+      "on",
+      "some",
+      "days"
+    ]
+  },
+  {
+    "phrase": "أمكث في البيت",
+    "translation": "I stay at home",
+    "arabic_words": [
+      "أمكث",
+      "في",
+      "البيت"
+    ],
+    "english_words": [
+      "I",
+      "stay",
+      "at",
+      "home"
+    ]
+  },
+  {
+    "phrase": "أذهب إلى السوق",
+    "translation": "I go to the market",
+    "arabic_words": [
+      "أذهب",
+      "إلى",
+      "السوق"
+    ],
+    "english_words": [
+      "I",
+      "go",
+      "to",
+      "the",
+      "market"
+    ]
+  },
+  {
+    "phrase": "وأشتري حوائج البيت",
+    "translation": "and I buy household needs",
+    "arabic_words": [
+      "وأشتري",
+      "حوائج",
+      "البيت"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "buy",
+      "household",
+      "needs"
+    ]
+  },
+  {
+    "phrase": "أخرج مع أبي أو أخي",
+    "translation": "I go out with my father or brother",
+    "arabic_words": [
+      "أخرج",
+      "مع",
+      "أبي",
+      "أو",
+      "أخي"
+    ],
+    "english_words": [
+      "I",
+      "go",
+      "out",
+      "with",
+      "my",
+      "father",
+      "or",
+      "brother"
+    ]
+  },
+  {
+    "phrase": "إلى بعض الأقارب",
+    "translation": "to visit some relatives",
+    "arabic_words": [
+      "إلى",
+      "بعض",
+      "الأقارب"
+    ],
+    "english_words": [
+      "to",
+      "visit",
+      "some",
+      "relatives"
+    ]
+  },
+  {
+    "phrase": "أو ألعب مع إخوتي وأصدقائي",
+    "translation": "or I play with my siblings and friends",
+    "arabic_words": [
+      "أو",
+      "ألعب",
+      "مع",
+      "إخوتي",
+      "وأصدقائي"
+    ],
+    "english_words": [
+      "or",
+      "I",
+      "play",
+      "with",
+      "my",
+      "siblings",
+      "and",
+      "friends"
+    ]
+  },
+  {
+    "phrase": "وأتعشى مع والدي وإخوتي",
+    "translation": "and I have dinner with my father and siblings",
+    "arabic_words": [
+      "وأتعشى",
+      "مع",
+      "والدي",
+      "وإخوتي"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "have",
+      "dinner",
+      "with",
+      "my",
+      "father",
+      "and",
+      "siblings"
+    ]
+  },
+  {
+    "phrase": "وأحفظ دروسي",
+    "translation": "and I memorize my lessons",
+    "arabic_words": [
+      "وأحفظ",
+      "دروسي"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "memorize",
+      "my",
+      "lessons"
+    ]
+  },
+  {
+    "phrase": "وأطالع للدّرس",
+    "translation": "and I study for the lesson",
+    "arabic_words": [
+      "وأطالع",
+      "للدّرس"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "study",
+      "for",
+      "the",
+      "lesson"
+    ]
+  },
+  {
+    "phrase": "وأكتب ما يأمر به المعلم",
+    "translation": "and I write what the teacher asks",
+    "arabic_words": [
+      "وأكتب",
+      "ما",
+      "يأمر",
+      "به",
+      "المعلم"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "write",
+      "what",
+      "the",
+      "teacher",
+      "asks"
+    ]
+  },
+  {
+    "phrase": "وأصلي العشاء",
+    "translation": "and I pray the evening prayer",
+    "arabic_words": [
+      "وأصلي",
+      "العشاء"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "pray",
+      "the",
+      "evening",
+      "prayer"
+    ]
+  },
+  {
+    "phrase": "قليلًا",
+    "translation": "a little",
+    "arabic_words": [
+      "قليلًا"
+    ],
+    "english_words": [
+      "a",
+      "little"
+    ]
+  },
+  {
+    "phrase": "ثم أنام على اسم الله وذكره",
+    "translation": "then I sleep remembering God",
+    "arabic_words": [
+      "ثم",
+      "أنام",
+      "على",
+      "اسم",
+      "الله",
+      "وذكره"
+    ],
+    "english_words": [
+      "then",
+      "I",
+      "sleep",
+      "remembering",
+      "God"
+    ]
+  },
+  {
+    "phrase": "تلك عادتي كل يوم",
+    "translation": "That is my daily habit",
+    "arabic_words": [
+      "تلك",
+      "عادتي",
+      "كل",
+      "يوم"
+    ],
+    "english_words": [
+      "That",
+      "is",
+      "my",
+      "daily",
+      "habit"
+    ]
+  },
+  {
+    "phrase": "لا أخالفها",
+    "translation": "I never break it",
+    "arabic_words": [
+      "لا",
+      "أخالفها"
+    ],
+    "english_words": [
+      "I",
+      "never",
+      "break",
+      "it"
+    ]
+  },
+  {
+    "phrase": "وأقوم مبكرًا",
+    "translation": "and I wake up early",
+    "arabic_words": [
+      "وأقوم",
+      "مبكرًا"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "wake",
+      "up",
+      "early"
+    ]
+  },
+  {
+    "phrase": "يوم العطلة",
+    "translation": "on holidays",
+    "arabic_words": [
+      "يوم",
+      "العطلة"
+    ],
+    "english_words": [
+      "on",
+      "holidays"
+    ]
+  },
+  {
+    "phrase": "أيضًا",
+    "translation": "also",
+    "arabic_words": [
+      "أيضًا"
+    ],
+    "english_words": [
+      "also"
+    ]
+  },
+  {
+    "phrase": "وأتلو القرآن",
+    "translation": "and I recite the Quran",
+    "arabic_words": [
+      "وأتلو",
+      "القرآن"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "recite",
+      "the",
+      "Quran"
+    ]
+  },
+  {
+    "phrase": "وأقضي اليوم",
+    "translation": "and I spend the day",
+    "arabic_words": [
+      "وأقضي",
+      "اليوم"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "spend",
+      "the",
+      "day"
+    ]
+  },
+  {
+    "phrase": "في مطالعة كتاب",
+    "translation": "reading a book",
+    "arabic_words": [
+      "في",
+      "مطالعة",
+      "كتاب"
+    ],
+    "english_words": [
+      "reading",
+      "a",
+      "book"
+    ]
+  },
+  {
+    "phrase": "ومحادثة مع أبي وأمي وإخوتي",
+    "translation": "and talking with my father, mother, and siblings",
+    "arabic_words": [
+      "ومحادثة",
+      "مع",
+      "أبي",
+      "وأمي",
+      "وإخوتي"
+    ],
+    "english_words": [
+      "and",
+      "talking",
+      "with",
+      "my",
+      "father,",
+      "mother,",
+      "and",
+      "siblings"
+    ]
+  },
+  {
+    "phrase": "وفي زيارة قريب",
+    "translation": "and visiting a relative",
+    "arabic_words": [
+      "وفي",
+      "زيارة",
+      "قريب"
+    ],
+    "english_words": [
+      "and",
+      "visiting",
+      "a",
+      "relative"
+    ]
+  },
+  {
+    "phrase": "أو عيادة مريض",
+    "translation": "or a sick person",
+    "arabic_words": [
+      "أو",
+      "عيادة",
+      "مريض"
+    ],
+    "english_words": [
+      "or",
+      "a",
+      "sick",
+      "person"
+    ]
+  },
+  {
+    "phrase": "وأمكث أحيانًا في البيت",
+    "translation": "and I sometimes stay at home",
+    "arabic_words": [
+      "وأمكث",
+      "أحيانًا",
+      "في",
+      "البيت"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "sometimes",
+      "stay",
+      "at",
+      "home"
+    ]
+  },
+  {
+    "phrase": "وأخرج أحيانًا إلى الخارج",
+    "translation": "and I sometimes go out",
+    "arabic_words": [
+      "وأخرج",
+      "أحيانًا",
+      "إلى",
+      "الخارج"
+    ],
+    "english_words": [
+      "and",
+      "I",
+      "sometimes",
+      "go",
+      "out"
+    ]
+  }
+]

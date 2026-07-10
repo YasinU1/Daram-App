@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>al-Qirāʾah ar-Rāshidah — Daram</title>
+<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="quiz">
+<div class="topbar">
+  <a class="back" href="book.html">← Stories</a>
+  <span class="spacer"></span>
+  <span class="crumb">al-Qirāʾah ar-Rāshidah</span>
+</div>
+
+<div class="app">
+  <div class="lesson-topbar">
+    <div class="lesson-progress-bar"><div id="lessonProgressFill" class="progress-fill"></div></div>
+  </div>
+
+  <p id="loadError" class="load-error" hidden></p>
+
+  <div id="quizStep" class="step" hidden>
+    <div class="quiz-progress"><span id="quizProgressText"></span></div>
+
+    <div id="quizCard" class="quiz-card">
+      <div class="quiz-direction" id="quizDirection"></div>
+      <div class="quiz-prompt" id="quizPrompt" dir="auto"></div>
+
+      <!-- Tile-builder UI (used when word-by-word data is available for the phrase) -->
+      <div id="tileBuilder" class="tile-builder" hidden>
+        <div id="answerBuild" class="answer-build">
+          <span id="answerPlaceholder" class="answer-placeholder">Tap words below to build your answer</span>
+        </div>
+        <div id="wordBank" class="word-bank"></div>
+      </div>
+
+      <!-- Free-text fallback (used only if a phrase has no word-by-word data) -->
+      <input
+        type="text"
+        id="quizInput"
+        class="quiz-input"
+        placeholder="Type your translation…"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        hidden
+      />
+
+      <div class="quiz-actions">
+        <button id="checkBtn" class="btn primary" type="button">Check</button>
+      </div>
+
+      <div id="quizAnswer" class="quiz-answer" hidden>
+        <p id="feedbackText" class="feedback-text"></p>
+        <p class="answer-line"><span class="answer-label">Correct answer:</span> <strong id="correctAnswerText" dir="auto"></strong></p>
+        <p class="answer-line"><span class="answer-label">Your answer:</span> <span id="userAnswerText" dir="auto"></span></p>
+        <div class="quiz-actions">
+          <button id="nextQuestionBtn" class="btn primary" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

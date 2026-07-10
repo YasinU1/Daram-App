@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>al-Qirāʾah ar-Rāshidah — Daram</title>
+<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="read">
+<div class="topbar">
+  <a class="back" href="book.html">← Stories</a>
+  <span class="spacer"></span>
+  <span class="crumb">al-Qirāʾah ar-Rāshidah</span>
+</div>
+
+<div class="app">
+  <div class="lesson-topbar">
+    <div class="lesson-progress-bar"><div id="lessonProgressFill" class="progress-fill"></div></div>
+  </div>
+
+  <p id="loadError" class="load-error" hidden></p>
+
+  <div id="readStep" class="step" hidden>
+    <h2 id="storyTitle" class="story-title" dir="rtl" lang="ar"></h2>
+    <p class="hint">Hover, tap, or focus a phrase to see its translation.</p>
+    <div id="storyContainer" class="story" dir="rtl" lang="ar"></div>
+    <div class="step-actions">
+      <button id="continueBtn" class="btn primary" type="button">Continue</button>
+    </div>
+  </div>
+</div>
+
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>

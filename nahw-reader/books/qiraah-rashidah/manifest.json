@@ -1,0 +1,12 @@
+[
+  {
+    "id": "chapter_1",
+    "title": "كيف أقضي يومي",
+    "path": "Chapters/Chapter_1"
+  },
+  {
+    "id": "chapter_2",
+    "title": "لما بلغت السابعة من عمري",
+    "path": "Chapters/Chapter_2"
+  }
+]
