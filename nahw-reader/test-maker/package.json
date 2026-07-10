@@ -1,0 +1,13 @@
+{
+  "name": "daram-test-maker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Daram — past-paper / mock-test maker for the Nahw reader. Generates exam papers from book content and AI-grades answers.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

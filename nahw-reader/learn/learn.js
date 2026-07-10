@@ -1,0 +1,869 @@
+/* ═══════════════════════════════════════════════════════════════
+   Daram Learn — adaptive lesson engine, "Grammar & Grace" layout
+   (copied from the Stitch project «Nahw al-Kubra Adaptive Learning»).
+
+   Shell: fixed sidebar course navigation + content canvas.
+   Each section is ONE path: learning phase (all teach cards) first,
+   then quiz phase (all questions), Stitch select-then-check MCQs.
+
+   Step types (lessons/*.js):
+     { t:'teach',  kicker?, title?, ar?, arEn?, body?, points?[], examples?[{ar,en,note?}] }
+     { t:'mcq',    q, ar?, arEn?, choices[], correct:<idx>, why }
+     { t:'written', prompt, ar?, model, marks? }
+     { t:'bank',   id }        → resolved from QUESTION_BANK (self-graded flashcard)
+
+   Adaptivity: wrong answers requeue within the session (up to 3 rounds);
+   per-question stats persist in localStorage and feed the Smart Review
+   deck with spaced intervals.
+   ═══════════════════════════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  const COURSES = window.DARAM_COURSES || [];
+  const BANK = (typeof QUESTION_BANK !== 'undefined') ? QUESTION_BANK : [];
+  const bankById = Object.fromEntries(BANK.map(q => [q.id, q]));
+
+  const STORE_KEY = 'daram-learn-v1';
+  const DAY = 24 * 60 * 60 * 1000;
+  const INTERVALS = [1 * DAY, 3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY];
+  const REVIEW_LIMIT = 15;
+
+  const root = document.getElementById('learn-root');
+
+  /* ── sound ───────────────────────────────────────────────────── */
+  let audioCtx = null;
+  function playCorrect() {
+    try {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const t0 = audioCtx.currentTime;
+      // two-note rising chime: E5 → A5
+      [[659.25, 0], [880, 0.09]].forEach(([freq, dt]) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0, t0 + dt);
+        gain.gain.linearRampToValueAtTime(0.18, t0 + dt + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dt + 0.35);
+        osc.connect(gain).connect(audioCtx.destination);
+        osc.start(t0 + dt);
+        osc.stop(t0 + dt + 0.4);
+      });
+    } catch (e) { /* audio unavailable — stay silent */ }
+  }
+
+  /* ── persistence ─────────────────────────────────────────────── */
+  function load() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { sections: {}, q: {} }; }
+    catch (e) { return { sections: {}, q: {} }; }
+  }
+  const store = load();
+  function save() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+
+  function recordAnswer(qKey, correct) {
+    const s = store.q[qKey] || { seen: 0, wrong: 0, streak: 0, due: 0 };
+    s.seen++;
+    if (correct) { s.streak++; s.due = Date.now() + INTERVALS[Math.min(s.streak - 1, INTERVALS.length - 1)]; }
+    else { s.wrong++; s.streak = 0; s.due = Date.now() + 10 * 60 * 1000; }
+    store.q[qKey] = s;
+    save();
+  }
+
+  /* ── question index (for smart review) ───────────────────────── */
+  const QINDEX = {}; // qKey → { step, course, section }
+  COURSES.forEach(course => course.sections.forEach(section => {
+    resolvedSteps(course, section).forEach(st => {
+      if (st.qKey) QINDEX[st.qKey] = { step: st, course, section };
+    });
+  }));
+
+  function resolvedSteps(course, section) {
+    const out = [];
+    section.steps.forEach((raw, i) => {
+      if (raw.t === 'bank') {
+        const b = bankById[raw.id];
+        if (!b) return; // bank question missing — skip quietly
+        out.push({ t: 'written', prompt: b.promptEn, ar: b.promptAr || null, model: b.markScheme,
+          marks: b.marks, exam: true, qKey: 'bank|' + b.id, label: 'Exam practice · ' + b.archetype });
+      } else if (raw.t === 'teach') {
+        out.push(Object.assign({}, raw));
+      } else {
+        out.push(Object.assign({}, raw, { qKey: course.id + '|' + section.id + '|' + i }));
+      }
+    });
+    return out;
+  }
+
+  // ONE learning path: content first, then the questions that test it.
+  function pathSteps(course, section) {
+    const steps = resolvedSteps(course, section);
+    return steps.filter(s => !s.qKey).concat(steps.filter(s => s.qKey));
+  }
+
+  function dueReview() {
+    const now = Date.now();
+    return Object.keys(store.q)
+      .filter(k => QINDEX[k] && store.q[k].due <= now)
+      .sort((a, b) => store.q[a].due - store.q[b].due);
+  }
+
+  /* ── text formatting: escape, **bold**, wrap Arabic runs ─────── */
+  const AR_RE = /[«؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿﴾﴿][؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿﴾﴿\s،؛؟.:()«»0-9٠-٩…!?-]*/g;
+  const WEAK_TAIL = /[\s.:()!?…0-9-]+$/;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function fmt(s) {
+    if (s == null) return '';
+    let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+    h = h.replace(AR_RE, m => {
+      const t = m.match(WEAK_TAIL);
+      const core = t ? m.slice(0, m.length - t[0].length) : m;
+      const tail = t ? t[0] : '';
+      if (!core) return m;
+      return '<bdi class="arb">' + core + '</bdi>' + tail;
+    });
+    return h;
+  }
+
+  function el(tag, cls, html) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (html != null) n.innerHTML = html;
+    return n;
+  }
+  function icon(name, extra) { return el('span', 'msym' + (extra ? ' ' + extra : ''), name); }
+  function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  }
+
+  /* ══ MATN PANEL — interactive book excerpt ═══════════════════──
+     Renders slices of the reader's block data (books/<slug>/*.js) with
+     the same word-hover glosses and line-translation toggle as the
+     reader. A section opts in with:
+       matn: { src:'DATA', from:2, to:6, check:'الْبَابُ' }
+     and each teach step picks its blocks with focus:[indices].       */
+  const MATN = { tr: false, open: false }; // toggle state persists within a session
+
+  function matnData(m) {
+    let arr = null;
+    try { arr = new Function('return (typeof ' + m.src + ' !== "undefined") ? ' + m.src + ' : null;')(); }
+    catch (e) { /* fall through */ }
+    if (!arr) { console.warn('matn source not loaded:', m.src); return null; }
+    if (m.check) {
+      const b = arr[m.from];
+      const firstAr = b && (b.ar || (b.w && (b.w.find(t => t.a) || {}).a) ||
+        (b.lines && (b.lines[0].find(t => t.a) || {}).a)) || '';
+      if (!String(firstAr).startsWith(m.check))
+        console.warn('matn check mismatch in ' + m.src + '[' + m.from + ']: expected "' + m.check + '", found "' + firstAr + '" — block indices may have shifted');
+    }
+    return arr;
+  }
+
+  function matnWord(tok) {
+    if (tok.g !== undefined) {
+      const s = el('span', 'glyph' + (tok.g === '﴿' || tok.g === '﴾' ? ' qbrace' : ''));
+      s.textContent = tok.g; return s;
+    }
+    const s = el('span', 'word' + (tok.q ? ' qz' : '') + (tok.c ? ' hl-' + tok.c : ''));
+    s.dataset.tr = tok.t || ''; s.dataset.en = tok.e || ''; s.dataset.note = tok.n || '';
+    s.textContent = tok.a; return s;
+  }
+  function matnLine(words) {
+    const block = el('div', 'line-block');
+    const p = el('p', 'line');
+    words.forEach(tok => { p.append(matnWord(tok)); p.append(document.createTextNode(' ')); });
+    block.append(p);
+    const tr = words.filter(t => t.g === undefined && t.e).map(t => t.e)
+      .join(' ').replace(/\s+([,.;:!?])/g, '$1').replace(/\(\s+/g, '(').trim();
+    if (tr) block.append(el('div', 'line-tr', esc(tr)));
+    return block;
+  }
+  function matnBlocks(host, blocks) {
+    blocks.forEach(b => {
+      if (!b) return;
+      if (b.t === 'h1' || b.t === 'h2') {
+        const h = el('div', b.t === 'h1' ? 'h1' + (b.c ? ' ' + b.c : '') : 'h2 ' + (b.c || 'plain'));
+        const ar = el('span', 'ar'); ar.textContent = b.ar; h.append(ar);
+        if (b.en) { const en = el('span', 'en'); en.textContent = b.en; h.append(en); }
+        host.append(h);
+      } else if (b.t === 'line') {
+        host.append(matnLine(b.w));
+      } else if (b.t === 'box') {
+        const box = el('div', 'box');
+        if (b.label) {
+          const lab = el('div', 'box-label'); lab.textContent = b.label;
+          if (b.labelEn) { const e2 = el('span', 'en'); e2.textContent = b.labelEn; lab.append(e2); }
+          box.append(lab);
+        }
+        b.lines.forEach(ln => box.append(matnLine(ln)));
+        host.append(box);
+      } /* page / note / table blocks are not shown in lesson excerpts */
+    });
+  }
+
+  /* word popover — same behaviour as reader.js, one shared element */
+  let popEl = null, popActive = null, popPinned = false;
+  function ensurePop() {
+    if (popEl) return popEl;
+    popEl = el('div', 'pop');
+    popEl.innerHTML = '<div class="p-ar"></div><div class="p-tr"></div><div class="p-en"></div><div class="p-note"></div>';
+    document.body.append(popEl);
+    popEl.addEventListener('click', e => e.stopPropagation());
+    document.addEventListener('click', () => { if (popPinned) { popPinned = false; hidePop(); } });
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') { popPinned = false; hidePop(); } });
+    return popEl;
+  }
+  function showPop(w) {
+    const pop = ensurePop();
+    if (popActive && popActive !== w) popActive.classList.remove('active');
+    popActive = w; w.classList.add('active');
+    pop.querySelector('.p-ar').textContent = w.textContent;
+    pop.querySelector('.p-tr').textContent = w.dataset.tr;
+    pop.querySelector('.p-en').textContent = w.dataset.en;
+    const noteEl = pop.querySelector('.p-note');
+    noteEl.textContent = w.dataset.note || ''; noteEl.style.display = w.dataset.note ? 'block' : 'none';
+    pop.classList.add('show');
+    const r = w.getBoundingClientRect(), pr = pop.getBoundingClientRect();
+    const sx = window.scrollX, sy = window.scrollY, vw = document.documentElement.clientWidth, mg = 10;
+    let left = r.left + sx + r.width / 2 - pr.width / 2;
+    left = Math.max(mg + sx, Math.min(left, sx + vw - pr.width - mg));
+    let top = r.top + sy - pr.height - 12;
+    if (top < sy + 4) top = r.bottom + sy + 12;
+    pop.style.left = left + 'px'; pop.style.top = top + 'px';
+    pop.style.setProperty('--arrow', ((r.left + sx + r.width / 2) - left) + 'px');
+  }
+  function hidePop() {
+    if (popEl) popEl.classList.remove('show');
+    if (popActive) { popActive.classList.remove('active'); popActive = null; }
+  }
+  function bindMatnEvents(body) {
+    const canHover = window.matchMedia('(hover: hover)').matches;
+    body.addEventListener('mouseover', e => { const w = e.target.closest('.word'); if (w && canHover && !popPinned) showPop(w); });
+    body.addEventListener('mouseout', e => { const w = e.target.closest('.word'); if (w && canHover && !popPinned) hidePop(); });
+    body.addEventListener('click', e => {
+      const w = e.target.closest('.word'); if (!w) return; e.stopPropagation();
+      if (popPinned && popActive === w) { popPinned = false; hidePop(); return; }
+      popPinned = true; showPop(w);
+    });
+  }
+
+  function matnBody(blocks) {
+    const body = el('div', 'mbody' + (MATN.tr ? ' show-tr' : ''));
+    matnBlocks(body, blocks);
+    bindMatnEvents(body);
+    return body;
+  }
+  function matnTrToggle(getBody) {
+    const tr = el('button', 'mtr label-caps' + (MATN.tr ? ' on' : ''));
+    tr.append(icon('translate'), el('span', null, 'Translation'));
+    tr.onclick = e => {
+      e.stopPropagation();
+      MATN.tr = !MATN.tr;
+      tr.classList.toggle('on', MATN.tr);
+      getBody().classList.toggle('show-tr', MATN.tr);
+    };
+    return tr;
+  }
+
+  /* teach phase: panel showing just the active card's blocks */
+  function matnPanel(section, step) {
+    const m = section && section.matn;
+    if (!m || !step.focus || !step.focus.length) return null;
+    const data = matnData(m);
+    if (!data) return null;
+    const panel = el('section', 'matn-panel');
+    const head = el('div', 'mhead');
+    head.append(el('span', 'label-caps mlabel', 'From the matn'));
+    const body = matnBody(step.focus.map(i => data[i]));
+    head.append(matnTrToggle(() => body));
+    panel.append(head, body);
+    return panel;
+  }
+
+  /* quiz phase: collapsed bar, expands to the section's full passage */
+  function matnPeek(wrap) {
+    if (!S || S.mode !== 'section' || !S.section || !S.section.matn) return;
+    const m = S.section.matn;
+    const data = matnData(m);
+    if (!data) return;
+    const holder = el('div', 'matn-peek' + (MATN.open ? ' open' : ''));
+    const bar = el('button', 'peek-bar');
+    const chev = icon(MATN.open ? 'expand_less' : 'expand_more', 'chev');
+    bar.append(icon('menu_book'), el('span', 'label-caps', 'View matn'), chev);
+    const body = matnBody(data.slice(m.from, m.to + 1));
+    bar.onclick = () => {
+      MATN.open = !MATN.open;
+      holder.classList.toggle('open', MATN.open);
+      chev.textContent = MATN.open ? 'expand_less' : 'expand_more';
+    };
+    holder.append(bar, body);
+    wrap.append(holder);
+  }
+
+  /* ══ SHELL: sidebar + top bar + canvas ══════════════════════── */
+  const UI = { open: {}, active: null, crumb: '' };
+  if (COURSES.length) UI.open[COURSES[0].id] = true;
+
+  let shellEl = null, canvasEl = null, crumbEl = null, navEl = null;
+
+  function buildShell() {
+    root.innerHTML = '';
+    shellEl = el('div', 'shell');
+
+    const toggle = el('button', 'nav-toggle');
+    toggle.append(icon('menu'));
+    toggle.onclick = () => shellEl.classList.toggle('nav-open');
+    shellEl.append(toggle);
+
+    navEl = el('nav', 'snav');
+    shellEl.append(navEl);
+
+    const col = el('div', 'canvas-col');
+    const bar = el('header', 'cbar');
+    crumbEl = el('div', 'crumbs label-caps');
+    bar.append(crumbEl);
+    const acts = el('div', 'acts');
+    const lib = el('a');
+    lib.href = '../index.html';
+    lib.title = 'Library';
+    lib.append(icon('collections_bookmark'));
+    acts.append(lib);
+    bar.append(acts);
+    col.append(bar);
+
+    canvasEl = el('main', 'canvas');
+    col.append(canvasEl);
+    shellEl.append(col);
+    root.append(shellEl);
+  }
+
+  function setCrumb(right) {
+    crumbEl.innerHTML = '';
+    crumbEl.append(el('span', 'c1', 'al-Kubrā fī an-Naḥw'));
+    if (right) {
+      crumbEl.append(icon('chevron_right'));
+      crumbEl.append(el('span', null, fmt(right)));
+    }
+  }
+
+  function firstUnfinished() {
+    for (const c of COURSES) for (const s of c.sections) {
+      if (!store.sections[c.id + '|' + s.id]) return { course: c, section: s };
+    }
+    return COURSES.length ? { course: COURSES[0], section: COURSES[0].sections[0] } : null;
+  }
+
+  function renderNav() {
+    navEl.innerHTML = '';
+    const brand = el('div', 'brand');
+    brand.append(el('h1', null, 'Nahw al Kubra'), el('p', null, 'Mastery of Arabic Grammar'));
+    navEl.append(brand);
+
+    const tree = el('div', 'tree');
+    COURSES.forEach((course, ci) => {
+      const wrap = el('div');
+      const started = course.sections.some(s => store.sections[course.id + '|' + s.id]);
+      const btn = el('button', 'chap-btn' + (started ? ' started' : ''));
+      btn.append(icon(started ? 'data_usage' : 'radio_button_unchecked', 'dot-ic' + (started ? ' fill' : '')));
+      btn.append(el('span', null, (ci + 1) + ' ' + fmt(course.titleEn || course.titleAr || '')));
+      btn.append(icon(UI.open[course.id] ? 'keyboard_arrow_down' : 'keyboard_arrow_right', 'chev'));
+      btn.onclick = () => { UI.open[course.id] = !UI.open[course.id]; renderNav(); };
+      wrap.append(btn);
+
+      if (UI.open[course.id]) {
+        const subs = el('div', 'subs');
+        course.sections.forEach((section, si) => {
+          const sKey = course.id + '|' + section.id;
+          const rec = store.sections[sKey];
+          const b = el('button', 'sub' + (rec ? ' done' : '') + (UI.active === sKey ? ' active' : ''));
+          b.append(icon(rec ? 'radio_button_checked' : 'radio_button_unchecked', 'radio' + (rec ? ' fill' : '')));
+          const st = el('span', 'st', (ci + 1) + '.' + (si + 1) + ' ' + fmt(section.title));
+          if (rec) st.append(el('span', 'pct', 'Best ' + rec.best + '%'));
+          b.append(st);
+          b.onclick = () => { shellEl.classList.remove('nav-open'); startSection(course, section); };
+          subs.append(b);
+        });
+        wrap.append(subs);
+      }
+      tree.append(wrap);
+    });
+    navEl.append(tree);
+
+    const foot = el('div', 'foot');
+    const resume = el('button', 'resume', 'Resume Learning');
+    resume.onclick = () => {
+      const nx = firstUnfinished();
+      if (nx) { shellEl.classList.remove('nav-open'); startSection(nx.course, nx.section); }
+    };
+    foot.append(resume);
+    const back = el('a');
+    back.href = '../index.html';
+    back.append(icon('arrow_back'), el('span', null, 'Back to Library'));
+    foot.append(back);
+    navEl.append(foot);
+  }
+
+  /* ══ HOME (canvas only — navigation lives in the sidebar) ═════ */
+  function renderHome() {
+    UI.active = null;
+    renderNav();
+    setCrumb('Dashboard');
+    canvasEl.innerHTML = '';
+    const inner = el('div', 'inner');
+
+    const hero = el('div', 'home-hero');
+    hero.append(
+      el('div', 'eyebrow label-caps', 'Adaptive learning'),
+      el('h2', null, 'al-Kubrā fī an-Naḥw'),
+      el('p', null, 'One path per lesson: read the content first, then answer the questions on it. Miss one and it comes back until it sticks — then again days later, right before you forget.')
+    );
+    inner.append(hero);
+
+    const due = dueReview();
+    if (due.length) {
+      const b = el('div', 'review-banner');
+      b.append(icon('cached'));
+      const t = el('div', 'txt');
+      t.append(el('div', 't', 'Smart review'),
+        el('div', 's', due.length + ' question' + (due.length === 1 ? '' : 's') + ' due — answered before, worth another pass'));
+      b.append(t);
+      const go = el('button', 'btn primary', 'Review now');
+      go.onclick = () => startReview(due);
+      b.append(go);
+      inner.append(b);
+    }
+
+    const cta = el('div', 'actionbar');
+    cta.style.borderTop = '0';
+    cta.style.justifyContent = 'center';
+    const start = el('button', 'btn primary');
+    const nx = firstUnfinished();
+    start.append(el('span', null, nx && store.sections[nx.course.id + '|' + nx.section.id] ? 'Start again' : 'Resume Learning'), icon('arrow_forward'));
+    start.onclick = () => { if (nx) startSection(nx.course, nx.section); };
+    cta.append(start);
+    inner.append(cta);
+
+    canvasEl.append(inner);
+    window.scrollTo(0, 0);
+  }
+
+  /* ══ SESSION RUNNER ═════════════════════════════════════════── */
+  let S = null; // session state
+
+  function startSection(course, section) {
+    MATN.open = false;
+    const queue = pathSteps(course, section);
+    S = {
+      mode: 'section', course, section,
+      queue, i: 0, round: 1, retry: [],
+      total: 0, firstTry: 0, missed: [],
+      title: section.title,
+      teachTotal: queue.filter(s => !s.qKey).length,
+    };
+    S.total = queue.length - S.teachTotal;
+    UI.active = course.id + '|' + section.id;
+    renderNav();
+    const ci = COURSES.indexOf(course), si = course.sections.indexOf(section);
+    S.num = (ci + 1) + '.' + (si + 1);
+    setCrumb('Lesson ' + S.num + ': ' + section.title);
+    renderStep();
+  }
+
+  function startReview(dueKeys) {
+    const steps = shuffle(dueKeys.slice(0, REVIEW_LIMIT)).map(k => Object.assign({}, QINDEX[k].step));
+    S = {
+      mode: 'review', course: null, section: null,
+      queue: steps, i: 0, round: 1, retry: [],
+      total: steps.length, firstTry: 0, missed: [],
+      title: 'Smart review', teachTotal: 0, num: '',
+    };
+    UI.active = null;
+    renderNav();
+    setCrumb('Smart review');
+    renderStep();
+  }
+
+  function next() {
+    S.i++;
+    if (S.i < S.queue.length) return renderStep();
+    if (S.retry.length && S.round < 3) {
+      S.round++;
+      S.queue = shuffle(S.retry);
+      S.retry = [];
+      S.i = 0;
+      S.teachTotal = 0;
+      return renderInterstitial();
+    }
+    renderSummary();
+  }
+
+  function onAnswered(step, correct) {
+    recordAnswer(step.qKey, correct);
+    if (S.round === 1) {
+      if (correct) S.firstTry++;
+      else S.missed.push(step);
+    }
+    if (!correct) S.retry.push(step);
+  }
+
+  function inner() {
+    canvasEl.innerHTML = '';
+    const n = el('div', 'inner');
+    canvasEl.append(n);
+    return n;
+  }
+
+  /* unified lesson progress: teach + quiz steps share one bar.
+     Teach steps count as done while viewed; quiz steps count once answered. */
+  function progressPct(extra) {
+    return Math.round(((S.i + (extra || 0)) / Math.max(S.queue.length, 1)) * 100) + '%';
+  }
+  function bumpProgress() {
+    const f = document.querySelector('.pbar .fill');
+    if (f) f.style.width = progressPct(1);
+    const n = document.querySelector('.qprog .n');
+    if (n) n.textContent = (S.i + 1) + '/' + S.queue.length;
+  }
+
+  /* learning-phase header: big centred progress */
+  function teachChrome(wrap) {
+    const prog = el('div', 'lprog');
+    const row = el('div', 'row');
+    row.append(el('span', 'lbl label-caps', 'Lesson progress'),
+      el('span', 'lbl label-caps', (S.i + 1) + ' of ' + S.queue.length));
+    prog.append(row);
+    const bar = el('div', 'pbar');
+    const fill = el('div', 'fill');
+    fill.style.width = progressPct(1);
+    bar.append(fill);
+    prog.append(bar);
+    wrap.append(prog);
+  }
+
+  /* quiz-phase header: close · lesson label · compact bar */
+  function quizChrome(wrap) {
+    const q = el('div', 'qprog');
+    const left = el('div', 'left');
+    const quit = el('button');
+    quit.title = 'Back to dashboard';
+    quit.append(icon('close'));
+    quit.onclick = renderHome;
+    left.append(quit);
+    left.append(el('span', 'label-caps', S.num ? 'Lesson ' + S.num + ': ' + fmt(S.title) : fmt(S.title)));
+    q.append(left);
+    const right = el('div', 'right');
+    if (S.round > 1) right.append(el('span', 'round-tag label-caps', 'Round ' + S.round));
+    const bar = el('div', 'pbar');
+    const fill = el('div', 'fill');
+    fill.style.width = progressPct(0);
+    bar.append(fill);
+    right.append(bar);
+    right.append(el('span', 'n label-caps', S.i + '/' + S.queue.length));
+    q.append(right);
+    wrap.append(q);
+  }
+
+  function renderStep() {
+    const wrap = inner();
+    const step = S.queue[S.i];
+    hidePop();
+    if (step.t === 'teach') renderTeach(wrap, step);
+    else { quizChrome(wrap); matnPeek(wrap); if (step.t === 'mcq') renderMcq(wrap, step); else renderWritten(wrap, step); }
+    window.scrollTo(0, 0);
+  }
+
+  function arBlock(step) {
+    const w = el('div', 'ar-wrap');
+    w.append(el('div', 'ar-line', step.ar));
+    if (step.arEn) w.append(el('div', 'ar-sub', '“' + esc(step.arEn) + '”'));
+    return w;
+  }
+
+  /* ── teach card (learning phase) ── */
+  function renderTeach(wrap, step) {
+    teachChrome(wrap);
+
+    const title = el('div', 'ltitle');
+    if (step.title) title.append(el('h2', null, fmt(step.title)));
+    const lede = step.body ? String(step.body).split('\n\n') : [];
+    if (lede.length) title.append(el('p', null, fmt(lede[0])));
+    wrap.append(title);
+
+    const mp = matnPanel(S.mode === 'section' ? S.section : null, step);
+    if (mp) wrap.append(mp);
+
+    const paper = el('div', 'paper');
+    const pad = el('div', 'pad');
+    pad.append(el('h3', 'cardhead', step.kicker ? fmt(step.kicker) : 'Key idea'));
+    if (step.ar) pad.append(arBlock(step));
+    lede.slice(1).forEach(p => pad.append(el('p', 'prose', fmt(p))));
+    if (step.points) {
+      const ul = el('ul', 'pts');
+      step.points.forEach(p => {
+        const li = el('li');
+        li.append(icon('check_circle', 'fill'));
+        li.append(el('span', null, fmt(p)));
+        ul.append(li);
+      });
+      pad.append(ul);
+    }
+    if (step.examples) {
+      const g = el('div', 'ex-grid');
+      step.examples.forEach(x => {
+        const c = el('div', 'ex-cell');
+        c.append(el('span', 'xar', x.ar));
+        const f = el('div', 'xfoot');
+        if (x.note) f.append(el('span', 'xnote label-caps', fmt(x.note)));
+        f.append(el('span', 'xen', fmt(x.en || '')));
+        c.append(f);
+        g.append(c);
+      });
+      pad.append(g);
+    }
+    if (step.after) pad.append(el('p', 'prose synth', fmt(step.after)));
+    paper.append(pad);
+    wrap.append(paper);
+
+    const bar = el('div', 'actionbar');
+    if (S.i > 0 && S.queue[S.i - 1].t === 'teach') {
+      const prev = el('button', 'btn nav-prev');
+      prev.append(icon('arrow_back'), el('span', null, 'Previous'));
+      prev.onclick = () => { S.i -= 2; next(); };
+      bar.append(prev);
+    } else bar.append(el('span', 'spacer'));
+    const nextIsQuiz = !S.queue[S.i + 1] || !!S.queue[S.i + 1].qKey;
+    const btn = el('button', 'btn primary');
+    btn.append(el('span', null, nextIsQuiz ? 'Continue to Quiz' : 'Continue'), icon('arrow_forward'));
+    btn.onclick = next;
+    bar.append(btn);
+    wrap.append(bar);
+    bindKeys({ Enter: () => btn.click() });
+  }
+
+  /* ── mcq card (quiz phase, select → check) ── */
+  function renderMcq(wrap, step) {
+    const paper = el('div', 'paper');
+    const pad = el('div', 'pad');
+    const head = el('div', 'qhead');
+    head.append(el('h2', null, fmt(step.q)));
+    pad.append(head);
+    if (step.ar) pad.append(arBlock(step));
+
+    const short = step.choices.every(c => String(c).length <= 48);
+    const order = shuffle(step.choices.map((_, i) => i));
+    const box = el('div', 'qopts' + (short && step.choices.length >= 2 ? ' grid2' : ''));
+
+    let selected = null, checked = false;
+    const check = el('button', 'btn primary');
+    check.append(el('span', null, 'Check Answer'), icon('arrow_forward'));
+    check.disabled = true;
+
+    const btns = order.map(origIdx => {
+      const b = el('button', 'qopt');
+      const badge = el('span', 'badge');
+      badge.append(icon('check', 'fill'));
+      b.append(badge);
+      b.append(el('span', 'txt', fmt(step.choices[origIdx])));
+      b.onclick = () => {
+        if (checked) return;
+        selected = origIdx;
+        btns.forEach(bb => bb.classList.remove('sel'));
+        b.classList.add('sel');
+        check.disabled = false;
+      };
+      box.append(b);
+      return b;
+    });
+    pad.append(box);
+
+    const fbHost = el('div');
+    pad.append(fbHost);
+    paper.append(pad);
+    wrap.append(paper);
+
+    const bar = el('div', 'actionbar');
+    bar.append(el('span', 'spacer'));
+    bar.append(check);
+    wrap.append(bar);
+
+    check.onclick = () => {
+      if (checked || selected == null) return;
+      checked = true;
+      const correct = selected === step.correct;
+      btns.forEach((bb, p) => {
+        bb.disabled = true;
+        bb.classList.remove('sel');
+        if (order[p] === step.correct) {
+          bb.classList.add('correct');
+        } else if (order[p] === selected) {
+          bb.classList.add('wrong');
+          bb.querySelector('.badge .msym').textContent = 'close';
+        } else bb.classList.add('dim');
+      });
+      bumpProgress();
+      if (correct) playCorrect();
+      else paper.classList.add('shake');
+      const fb = el('div', 'fb ' + (correct ? 'good' : 'bad'));
+      const fh = el('div', 'fh');
+      fh.append(icon(correct ? 'check_circle' : 'cancel', 'fill'));
+      fh.append(el('span', null, correct ? 'Correct' : 'Not quite — it comes back this session'));
+      fb.append(fh);
+      if (step.why) fb.append(el('div', 'fw', fmt(step.why)));
+      fbHost.append(fb);
+      check.remove();
+      const cont = el('button', 'btn primary');
+      cont.append(el('span', null, 'Continue'), icon('arrow_forward'));
+      cont.onclick = () => { onAnswered(step, correct); next(); };
+      bar.append(cont);
+      bindKeys({ Enter: () => cont.click() });
+      cont.focus({ preventScroll: true });
+    };
+
+    const keys = { Enter: () => { if (!check.disabled) check.click(); } };
+    btns.forEach((b, i) => { keys[String(i + 1)] = () => b.click(); });
+    bindKeys(keys);
+  }
+
+  /* ── written / flashcard card (quiz phase) ── */
+  function renderWritten(wrap, step) {
+    const paper = el('div', 'paper');
+    const pad = el('div', 'pad');
+    const kick = el('div', 'label-caps');
+    kick.style.color = 'var(--secondary)';
+    kick.style.display = 'flex';
+    kick.style.marginBottom = '12px';
+    kick.append(el('span', null, fmt(step.label || 'Written answer')));
+    if (step.marks) kick.append(el('span', 'marks-chip', step.marks + ' marks'));
+    pad.append(kick);
+    const head = el('div', 'qhead');
+    head.append(el('h2', null, fmt(step.prompt)));
+    pad.append(head);
+    if (step.ar) pad.append(arBlock(step));
+
+    const ta = el('textarea', 'wans');
+    ta.placeholder = 'Write your answer — then reveal the model answer and grade yourself.';
+    pad.append(ta);
+    paper.append(pad);
+    wrap.append(paper);
+
+    const bar = el('div', 'actionbar');
+    bar.append(el('span', 'spacer'));
+    const reveal = el('button', 'btn primary');
+    reveal.append(el('span', null, 'Reveal model answer'), icon('visibility'));
+    bar.append(reveal);
+    wrap.append(bar);
+
+    reveal.onclick = () => {
+      bumpProgress();
+      reveal.remove();
+      const m = el('div', 'model');
+      m.append(el('div', 'mh label-caps', 'Model answer' + (step.marks ? ' · mark scheme' : '')));
+      m.append(el('div', 'mb', fmt(step.model)));
+      pad.append(m);
+
+      const sg = el('div', 'selfgrade');
+      sg.append(el('span', 'lbl', 'How did you do? Be honest — misses come back.'));
+      const good = el('button', 'btn good', 'Got it');
+      const mid = el('button', 'btn mid', 'Partly');
+      const bad = el('button', 'btn bad', 'Missed it');
+      good.onclick = () => { playCorrect(); onAnswered(step, true); next(); };
+      mid.onclick = () => { onAnswered(step, false); next(); };
+      bad.onclick = () => { onAnswered(step, false); next(); };
+      sg.append(good, mid, bad);
+      pad.append(sg);
+      bindKeys({ '1': () => good.click(), '2': () => mid.click(), '3': () => bad.click() });
+    };
+
+    bindKeys({});
+    ta.focus({ preventScroll: true });
+  }
+
+  /* ── interstitial between rounds ── */
+  function renderInterstitial() {
+    const wrap = inner();
+    quizChrome(wrap);
+    const paper = el('div', 'paper center-card');
+    const pad = el('div', 'pad');
+    pad.append(icon('cached', 'bigico'));
+    pad.append(el('h2', null, 'Round ' + S.round + ' — fix the misses'));
+    pad.append(el('p', 'sub', S.queue.length + ' question' + (S.queue.length === 1 ? '' : 's') +
+      ' you got wrong. They repeat until you get them right.'));
+    const bar = el('div', 'actionbar');
+    const btn = el('button', 'btn primary');
+    btn.append(el('span', null, "Let's go"), icon('arrow_forward'));
+    btn.onclick = renderStep;
+    bar.append(btn);
+    pad.append(bar);
+    paper.append(pad);
+    wrap.append(paper);
+    bindKeys({ Enter: () => btn.click() });
+    window.scrollTo(0, 0);
+  }
+
+  /* ── summary ── */
+  function renderSummary() {
+    bindKeys({});
+    const pct = S.total ? Math.round((S.firstTry / S.total) * 100) : 100;
+
+    if (S.mode === 'section') {
+      const sKey = S.course.id + '|' + S.section.id;
+      const prev = store.sections[sKey];
+      store.sections[sKey] = { done: true, best: Math.max(prev ? prev.best : 0, pct), last: pct, ts: Date.now() };
+      save();
+      renderNav();
+    }
+
+    const wrap = inner();
+    const paper = el('div', 'paper center-card');
+    const pad = el('div', 'pad');
+    pad.append(icon(pct >= 80 ? 'workspace_premium' : pct >= 50 ? 'fitness_center' : 'menu_book', 'bigico fill'));
+    pad.append(el('h2', null, S.mode === 'review' ? 'Review complete' : 'Section complete'));
+    pad.append(el('div', 'scorering ' + (pct >= 80 ? 'good' : pct >= 50 ? 'mid' : 'low'), pct + '%'));
+    pad.append(el('div', 'score-sub', S.firstTry + ' of ' + S.total + ' right first try'));
+    if (S.missed.length) {
+      const ml = el('div', 'miss-list');
+      ml.append(el('div', 'mh label-caps', 'Worth revisiting'));
+      S.missed.slice(0, 6).forEach(st => {
+        const label = st.q || st.prompt || '';
+        ml.append(el('div', 'mi', fmt(label.length > 90 ? label.slice(0, 90) + '…' : label)));
+      });
+      pad.append(ml);
+    }
+
+    const bar = el('div', 'actionbar');
+    const home = el('button', 'btn quiet', 'Dashboard');
+    home.onclick = renderHome;
+    bar.append(home);
+    if (S.mode === 'section') {
+      const redo = el('button', 'btn quiet', 'Redo section');
+      const c = S.course, s = S.section;
+      redo.onclick = () => startSection(c, s);
+      bar.append(redo);
+      const idx = c.sections.indexOf(s);
+      if (idx >= 0 && idx + 1 < c.sections.length) {
+        const nx = el('button', 'btn primary');
+        nx.append(el('span', null, 'Next: ' + fmt(c.sections[idx + 1].title)), icon('arrow_forward'));
+        nx.onclick = () => startSection(c, c.sections[idx + 1]);
+        bar.append(nx);
+      }
+    }
+    pad.append(bar);
+    paper.append(pad);
+    wrap.append(paper);
+    window.scrollTo(0, 0);
+  }
+
+  /* ── keyboard ── */
+  let keyMap = {};
+  function bindKeys(map) { keyMap = map; }
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+    const fn = keyMap[e.key];
+    if (fn) { e.preventDefault(); fn(); }
+  });
+
+  buildShell();
+  renderHome();
+})();

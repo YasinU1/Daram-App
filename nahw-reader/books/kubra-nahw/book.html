@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>al-Kubrā fī an-Naḥw — Daram</title>
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  .layout { display:grid; grid-template-columns:340px 1fr; align-items:start; gap:0;
+    max-width:1240px; margin:0 auto; }
+
+  /* ── table of contents (sidebar) ── */
+  .toc { position:sticky; top:53px; align-self:start; height:calc(100vh - 53px); overflow-y:auto;
+    border-right:1px solid var(--border-soft); background:var(--surface); padding:26px 22px 60px; order:1; }
+  .toc .book-head { margin-bottom:22px; padding-bottom:20px; border-bottom:1px solid var(--border-soft); text-align:center; }
+  .toc .book-head .ar-title { font-family:var(--heading-ar); font-size:2.1rem; color:var(--red); line-height:1.4; }
+  .toc .book-head .en-title { font-family:var(--serif); font-style:italic; font-size:.9rem; color:var(--ink-muted); margin-top:4px; }
+  .toc .book-head .author { font-family:var(--serif); font-size:.82rem; color:var(--ink-soft); margin-top:8px; direction:rtl; }
+
+  .toc .grp { margin-bottom:6px; }
+  .toc .grp-h { display:flex; align-items:baseline; gap:8px; direction:rtl; padding:12px 6px 6px; }
+  .toc .grp-h .ar { font-family:var(--heading-ar); font-size:1.18rem; color:var(--ink); }
+  .toc .grp-h .en { font-family:var(--serif); font-style:italic; font-size:.72rem; color:var(--ink-soft); direction:ltr; margin-right:auto; }
+
+  .toc .item { display:flex; align-items:center; gap:8px; direction:rtl; width:100%;
+    padding:9px 12px; border:none; background:none; text-align:right; cursor:pointer; border-radius:var(--r-md);
+    font:inherit; transition:background var(--fast) var(--ease); }
+  .toc .item:hover { background:var(--bg-deep); }
+  .toc .item .ar { font-family:var(--body-ar); font-size:1.18rem; color:var(--ar-ink); line-height:1.5; flex:1; }
+  .toc .item .pg { font-family:var(--serif); font-style:italic; font-size:.74rem; color:var(--ink-soft); direction:ltr; }
+  .toc .item.ready .ar { color:var(--ink); }
+  .toc .item:not(.ready) { cursor:default; opacity:.62; }
+  .toc .item:not(.ready):hover { background:none; }
+  .toc .item.active { background:var(--gold-soft); box-shadow:inset 3px 0 0 var(--gold); }
+  .toc .item .dot { width:6px; height:6px; border-radius:50%; background:var(--green); flex:none; }
+  .toc .item:not(.ready) .dot { background:var(--border-strong); }
+
+  /* ── topbar toggle switch ── */
+  .switch { display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; }
+  .switch input { position:absolute; opacity:0; width:0; height:0; }
+  .switch .track { width:38px; height:22px; border-radius:999px; background:var(--bg-deep);
+    border:1px solid var(--border); position:relative; transition:background var(--fast) var(--ease), border-color var(--fast) var(--ease); }
+  .switch .thumb { position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%;
+    background:var(--raised); box-shadow:var(--sh-sm); transition:left var(--fast) var(--ease); }
+  .switch input:checked + .track { background:var(--gold); border-color:var(--gold); }
+  .switch input:checked + .track .thumb { left:18px; }
+  .switch .switch-lbl { font-family:var(--sans); font-size:.82rem; color:var(--ink-muted); white-space:nowrap; }
+
+  /* ── line-by-line translation ── */
+  .line { margin:0; }
+  .line-block { margin:0 0 1.6rem; }
+  .box .line-block { margin:0 0 .55rem; }
+  .box .line-block:last-child { margin-bottom:0; }
+  .line-tr { display:none; font-family:var(--serif); font-size:.92rem; line-height:1.55;
+    color:var(--ink-muted); direction:ltr; text-align:left; margin-top:7px; padding-left:12px;
+    border-left:2px solid var(--gold-line); }
+  body.show-tr .line-tr { display:block; }
+
+  /* ── reading area ── */
+  .read { order:2; padding:30px 24px 120px; min-width:0; }
+  .chapter-bar { max-width:840px; margin:0 auto 18px; display:flex; align-items:baseline; gap:12px;
+    direction:ltr; font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:.85rem; flex-wrap:wrap; }
+  .chapter-bar .pip { width:4px; height:4px; border-radius:50%; background:var(--ink-soft); align-self:center; }
+
+  .hint { max-width:840px; margin:18px auto 0; text-align:center; direction:ltr;
+    font-family:var(--sans); font-size:.78rem; color:var(--ink-soft); }
+
+  /* mobile: TOC collapses to top */
+  .toc-toggle { display:none; }
+  @media (max-width:900px) {
+    .layout { grid-template-columns:1fr; }
+    .toc { position:static; height:auto; border-right:none; border-bottom:1px solid var(--border-soft); order:1; }
+    .read { order:2; }
+    .toc.collapsed .grp, .toc.collapsed .book-head { display:none; }
+    .toc-toggle { display:inline-flex; }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="index.html">← Library</a>
+    <span class="spacer"></span>
+    <span class="crumb">al-Kubrā fī an-Naḥw</span>
+    <label class="switch" title="Show an English translation beneath every line">
+      <input type="checkbox" id="tr-toggle" />
+      <span class="track"><span class="thumb"></span></span>
+      <span class="switch-lbl">Line translation</span>
+    </label>
+  </div>
+
+  <div class="layout">
+    <!-- reading pane -->
+    <main class="read">
+      <div class="chapter-bar" id="crumb"></div>
+      <div id="page" class="page"></div>
+      <p class="hint">Hover or tap any word for its translation · Esc or tap away to dismiss</p>
+    </main>
+
+    <!-- table of contents -->
+    <aside class="toc" id="toc">
+      <div class="book-head">
+        <div class="ar-title">الكُبْرى في النَّحْو</div>
+        <div class="en-title">al-Kubrā fī an-Naḥw</div>
+        <div class="author">هاشم بن إسماعيل محمد البريدوسي</div>
+      </div>
+      <button class="item toc-toggle" onclick="document.getElementById('toc').classList.toggle('collapsed')">
+        <span class="ar">المحتويات — Contents</span>
+      </button>
+      <div id="toc-list"></div>
+    </aside>
+  </div>
+
+  <div class="pop" id="pop" role="tooltip">
+    <div class="p-ar"></div><div class="p-tr"></div><div class="p-en"></div><div class="p-note"></div>
+  </div>
+
+<script src="muqaddimah.js"></script>
+<script src="muqaddimah-bab2.js"></script>
+<script src="muqaddimah-bab3.js"></script>
+<script src="maqsad1-muq.js"></script>
+<script src="maqsad1-bab1.js"></script>
+<script src="maqsad1-bab2.js"></script>
+<script>
+/* ── table of contents — mirrors the printed book ── */
+const TOC = [
+  { ar:'المُقَدِّمَة', en:'Introduction', items:[
+    { id:'muq-bab-1', ar:'الباب الأول في الكلمة', en:'The Word (al-kalimah)', page:6, ready:true },
+    { id:'muq-bab-2', ar:'الباب الثاني في الجملة وشبه الجملة والكلام', en:'Sentence, quasi-sentence & speech', page:10 },
+    { id:'muq-bab-3', ar:'الباب الثالث في العامل والمعمول والإعراب', en:'Governor, governed & iʿrāb', page:17 },
+  ]},
+  { ar:'المَقْصِدُ الأوَّل: في العامل وغير العامل', en:'Aim 1 — The governing & non-governing', items:[
+    { id:'m1-muq',  ar:'المقدمة', en:'Introduction', page:22 },
+    { id:'m1-bab-1',ar:'الباب الأول في الفعل', en:'The Verb', page:22 },
+    { id:'m1-bab-2',ar:'الباب الثاني في الحرف', en:'The Particle', page:41 },
+    { id:'m1-bab-3',ar:'الباب الثالث في الاسم', en:'The Noun', page:104 },
+    { id:'m1-bab-4',ar:'الباب الرابع في العامل المعنوي', en:'The abstract governor', page:120 },
+    { id:'m1-kh',   ar:'الخاتمة', en:'Conclusion', page:121 },
+  ]},
+  { ar:'المَقْصِدُ الثاني: في المعمول وغير المعمول', en:'Aim 2 — The governed & non-governed', items:[
+    { id:'m2-muq',  ar:'المقدمة', en:'Introduction', page:132 },
+    { id:'m2-bab-1',ar:'الباب الأول في الاسم', en:'The Noun', page:132 },
+    { id:'m2-bab-2',ar:'الباب الثاني في الفعل', en:'The Verb', page:163 },
+    { id:'m2-bab-3',ar:'الباب الثالث في الجملة', en:'The Sentence', page:164 },
+    { id:'m2-bab-4',ar:'الباب الرابع في شبه الجملة', en:'The quasi-sentence', page:172 },
+  ]},
+  { ar:'المَقْصِدُ الثالث: في الإعراب', en:'Aim 3 — Iʿrāb (inflection)', items:[
+    { id:'m3-muq',  ar:'المقدمة', en:'Introduction', page:176 },
+    { id:'m3-bab-1',ar:'الباب الأول في إعراب الاسم', en:'Iʿrāb of the noun', page:177 },
+    { id:'m3-bab-2',ar:'الباب الثاني في إعراب الفعل وبنائه', en:'Iʿrāb & bināʾ of the verb', page:192 },
+    { id:'m3-bab-3',ar:'الباب الثالث في إعراب الجملة وشبه الجملة', en:'Iʿrāb of the sentence', page:197 },
+  ]},
+  { ar:'الخَاتِمَة', en:'Conclusion', items:[
+    { id:'kh-bab-1',ar:'الباب الأول في أحكام الاسم', en:'Rulings of the noun', page:200 },
+    { id:'kh-bab-2',ar:'الباب الثاني في أحكام الفعل', en:'Rulings of the verb', page:220 },
+    { id:'kh-kh',   ar:'الخاتمة', en:'Conclusion', page:228 },
+  ]},
+];
+
+/* chapter content — Introduction complete; Aim 1 in progress */
+const CONTENT = {
+  'muq-bab-1': { blocks: DATA,         group:'المُقَدِّمَة', groupEn:'Introduction' },
+  'muq-bab-2': { blocks: DATA_BAB2,    group:'المُقَدِّمَة', groupEn:'Introduction' },
+  'muq-bab-3': { blocks: DATA_BAB3,    group:'المُقَدِّمَة', groupEn:'Introduction' },
+  'm1-muq':    { blocks: DATA_M1_MUQ,  group:'المَقْصِدُ الأوَّل', groupEn:'Aim One' },
+  'm1-bab-1':  { blocks: DATA_M1_BAB1, group:'المَقْصِدُ الأوَّل', groupEn:'Aim One' },
+  'm1-bab-2':  { blocks: DATA_M1_BAB2, group:'المَقْصِدُ الأوَّل', groupEn:'Aim One' },
+};
+
+/* ── reader renderer ── */
+const page = document.getElementById('page');
+const pop  = document.getElementById('pop');
+
+function makeWord(tok) {
+  if (tok.g !== undefined) {
+    const s = document.createElement('span');
+    const brace = tok.g === '﴿' || tok.g === '﴾';
+    s.className = 'glyph' + (brace ? ' qbrace' : ''); s.textContent = tok.g; return s;
+  }
+  const s = document.createElement('span');
+  s.className = 'word' + (tok.q ? ' qz' : '');
+  s.dataset.tr = tok.t || ''; s.dataset.en = tok.e || ''; s.dataset.note = tok.n || '';
+  s.textContent = tok.a; return s;
+}
+function lineTranslation(words) {
+  return words.filter(t => t.g === undefined && t.e).map(t => t.e)
+    .join(' ').replace(/\s+([,.;:!?])/g, '$1').replace(/\(\s+/g, '(').trim();
+}
+function makeLine(words, cls) {
+  const block = document.createElement('div'); block.className = 'line-block';
+  const p = document.createElement('p'); p.className = 'line' + (cls ? ' ' + cls : '');
+  words.forEach(tok => { p.appendChild(makeWord(tok)); p.appendChild(document.createTextNode(' ')); });
+  block.appendChild(p);
+  const tr = lineTranslation(words);
+  if (tr) { const d = document.createElement('div'); d.className = 'line-tr'; d.textContent = tr; block.appendChild(d); }
+  return block;
+}
+function renderBlocks(blocks) {
+  page.className = 'page'; page.innerHTML = '';
+  blocks.forEach(b => {
+    if (b.t === 'page') {
+      const d = document.createElement('div'); d.className = 'pdiv';
+      d.innerHTML = '<span class="rule"></span><span class="num">صفحة ' + b.n + '</span><span class="rule"></span>';
+      page.appendChild(d);
+    } else if (b.t === 'h1' || b.t === 'h2') {
+      const h = document.createElement('div');
+      h.className = b.t === 'h1' ? 'h1' : 'h2 ' + (b.c || 'plain');
+      h.innerHTML = '<span class="ar"></span>' + (b.en ? '<span class="en"></span>' : '');
+      h.querySelector('.ar').textContent = b.ar; if (b.en) h.querySelector('.en').textContent = b.en;
+      page.appendChild(h);
+    } else if (b.t === 'line') {
+      page.appendChild(makeLine(b.w));
+    } else if (b.t === 'box') {
+      const box = document.createElement('div'); box.className = 'box';
+      if (b.label) {
+        const lab = document.createElement('div'); lab.className = 'box-label'; lab.textContent = b.label;
+        if (b.labelEn) { const e = document.createElement('span'); e.className = 'en'; e.textContent = b.labelEn; lab.appendChild(e); }
+        box.appendChild(lab);
+      }
+      b.lines.forEach(ln => box.appendChild(makeLine(ln)));
+      page.appendChild(box);
+    } else if (b.t === 'table') {
+      const wrap = document.createElement('div'); wrap.className = 'tbl-wrap';
+      const t = document.createElement('table'); t.className = 'bk';
+      t.innerHTML =
+        '<tr><th colspan="2">' + b.head[0] + '</th><th rowspan="2">' + b.head[1] + '</th></tr>' +
+        '<tr><th class="sub">' + b.sub[0] + '</th><th class="sub">' + b.sub[1] + '</th></tr>' +
+        b.rows.map(r => '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td></tr>').join('');
+      wrap.appendChild(t);
+      if (b.caption) { const c = document.createElement('div'); c.className = 'tbl-cap'; c.textContent = b.caption; wrap.appendChild(c); }
+      page.appendChild(wrap);
+    } else if (b.t === 'grid') {
+      const wrap = document.createElement('div'); wrap.className = 'tbl-wrap';
+      const t = document.createElement('table'); t.className = 'grid';
+      t.innerHTML =
+        '<tr><th class="corner"></th>' + b.cols.map(c => '<th>' + c + '</th>').join('') + '</tr>' +
+        b.rows.map(r => '<tr><th class="rowlab">' + r.h + '</th>' +
+          r.c.map(c => '<td' + (c === '✗' ? ' class="x"' : '') + '>' + c + '</td>').join('') + '</tr>').join('');
+      wrap.appendChild(t);
+      if (b.caption) { const c = document.createElement('div'); c.className = 'tbl-cap'; c.textContent = b.caption; wrap.appendChild(c); }
+      page.appendChild(wrap);
+    } else if (b.t === 'note') {
+      let host = page.lastElementChild;
+      if (!host || !host.classList.contains('notes')) {
+        host = document.createElement('div'); host.className = 'notes';
+        host.innerHTML = '<div class="ftitle">Footnotes · فوائد</div>'; page.appendChild(host);
+      }
+      const n = document.createElement('div'); n.className = 'note';
+      const num = document.createElement('div'); num.className = 'n'; num.textContent = b.n || '•';
+      const body = document.createElement('div'); body.className = 'body';
+      const ar = document.createElement('div'); ar.className = 'nar'; ar.textContent = b.ar;
+      const en = document.createElement('div'); en.className = 'nen'; en.textContent = b.en;
+      body.appendChild(ar); body.appendChild(en); n.appendChild(num); n.appendChild(body); host.appendChild(n);
+    }
+  });
+}
+function renderPlaceholder(item) {
+  page.className = ''; page.innerHTML = '';
+  const d = document.createElement('div'); d.className = 'placeholder';
+  d.innerHTML = '<div class="ar"></div><div class="en"></div><div class="tag">Not yet transcribed · page ' + item.page + ' in the book</div>';
+  d.querySelector('.ar').textContent = item.ar; d.querySelector('.en').textContent = item.en;
+  page.appendChild(d);
+}
+
+/* ── build TOC + selection ── */
+const tocList = document.getElementById('toc-list');
+const crumb = document.getElementById('crumb');
+let activeBtn = null;
+
+function selectChapter(item, btn) {
+  if (activeBtn) activeBtn.classList.remove('active');
+  if (btn) { btn.classList.add('active'); activeBtn = btn; }
+  const content = CONTENT[item.id];
+  if (content) renderBlocks(content.blocks); else renderPlaceholder(item);
+  crumb.innerHTML = '';
+  const g = document.createElement('span'); g.textContent = item._group;
+  const pip = document.createElement('span'); pip.className = 'pip';
+  const c = document.createElement('span'); c.textContent = item.en;
+  const pip2 = document.createElement('span'); pip2.className = 'pip';
+  const pg = document.createElement('span'); pg.textContent = 'page ' + item.page;
+  crumb.append(g, pip, c, pip2, pg);
+  window.scrollTo({ top:0, behavior:'smooth' });
+  document.getElementById('toc').classList.add('collapsed');
+}
+
+TOC.forEach(group => {
+  const g = document.createElement('div'); g.className = 'grp';
+  const gh = document.createElement('div'); gh.className = 'grp-h';
+  gh.innerHTML = '<span class="ar"></span><span class="en"></span>';
+  gh.querySelector('.ar').textContent = group.ar; gh.querySelector('.en').textContent = group.en;
+  g.appendChild(gh);
+  group.items.forEach(item => {
+    item._group = group.ar;
+    const isReady = !!CONTENT[item.id];
+    const b = document.createElement('button');
+    b.className = 'item' + (isReady ? ' ready' : '');
+    b.innerHTML = '<span class="dot"></span><span class="ar"></span><span class="pg"></span>';
+    b.querySelector('.ar').textContent = item.ar;
+    b.querySelector('.pg').textContent = item.page;
+    b.addEventListener('click', () => selectChapter(item, isReady ? b : null));
+    g.appendChild(b);
+    item._btn = b;
+  });
+  tocList.appendChild(g);
+});
+
+/* open the first ready chapter by default */
+const first = TOC.flatMap(g => g.items).find(it => CONTENT[it.id]);
+if (first) selectChapter(first, first._btn);
+
+/* ── translation popover ── */
+let activeEl = null, pinned = false;
+const canHover = window.matchMedia('(hover: hover)').matches;
+function showPop(el) {
+  if (activeEl && activeEl !== el) activeEl.classList.remove('active');
+  activeEl = el; el.classList.add('active');
+  pop.querySelector('.p-ar').textContent = el.textContent;
+  pop.querySelector('.p-tr').textContent = el.dataset.tr;
+  pop.querySelector('.p-en').textContent = el.dataset.en;
+  const noteEl = pop.querySelector('.p-note');
+  noteEl.textContent = el.dataset.note || ''; noteEl.style.display = el.dataset.note ? 'block' : 'none';
+  pop.classList.add('show');
+  const r = el.getBoundingClientRect(), pr = pop.getBoundingClientRect();
+  const sx = window.scrollX, sy = window.scrollY, vw = document.documentElement.clientWidth, m = 10;
+  let left = r.left + sx + r.width / 2 - pr.width / 2;
+  left = Math.max(m + sx, Math.min(left, sx + vw - pr.width - m));
+  let top = r.top + sy - pr.height - 12;
+  if (top < sy + 4) top = r.bottom + sy + 12;
+  pop.style.left = left + 'px'; pop.style.top = top + 'px';
+  pop.style.setProperty('--arrow', ((r.left + sx + r.width / 2) - left) + 'px');
+}
+function hidePop() { pop.classList.remove('show'); if (activeEl) { activeEl.classList.remove('active'); activeEl = null; } }
+page.addEventListener('mouseover', e => { const w = e.target.closest('.word'); if (w && canHover && !pinned) showPop(w); });
+page.addEventListener('mouseout',  e => { const w = e.target.closest('.word'); if (w && canHover && !pinned) hidePop(); });
+page.addEventListener('click', e => {
+  const w = e.target.closest('.word'); if (!w) return; e.stopPropagation();
+  if (pinned && activeEl === w) { pinned = false; hidePop(); return; }
+  pinned = true; showPop(w);
+});
+document.addEventListener('click', () => { if (pinned) { pinned = false; hidePop(); } });
+pop.addEventListener('click', e => e.stopPropagation());
+window.addEventListener('keydown', e => { if (e.key === 'Escape') { pinned = false; hidePop(); } });
+
+/* ── line-by-line translation toggle ── */
+document.getElementById('tr-toggle').addEventListener('change', e => {
+  document.body.classList.toggle('show-tr', e.target.checked);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shadhā al-ʿArf — Daram</title>
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  .layout { display:grid; grid-template-columns:340px 1fr; align-items:start; gap:0;
+    max-width:1240px; margin:0 auto; }
+
+  /* ── table of contents (sidebar) ── */
+  .toc { position:sticky; top:53px; align-self:start; height:calc(100vh - 53px); overflow-y:auto;
+    border-right:1px solid var(--border-soft); background:var(--surface); padding:26px 22px 60px; order:1; }
+  .toc .book-head { margin-bottom:22px; padding-bottom:20px; border-bottom:1px solid var(--border-soft); text-align:center; }
+  .toc .book-head .ar-title { font-family:var(--heading-ar); font-size:2.1rem; color:var(--red); line-height:1.4; }
+  .toc .book-head .en-title { font-family:var(--serif); font-style:italic; font-size:.9rem; color:var(--ink-muted); margin-top:4px; }
+  .toc .book-head .author { font-family:var(--serif); font-size:.82rem; color:var(--ink-soft); margin-top:8px; direction:rtl; }
+
+  .toc .grp { margin-bottom:6px; }
+  .toc .grp-h { display:flex; align-items:baseline; gap:8px; direction:rtl; padding:12px 6px 6px; }
+  .toc .grp-h .ar { font-family:var(--heading-ar); font-size:1.18rem; color:var(--ink); }
+  .toc .grp-h .en { font-family:var(--serif); font-style:italic; font-size:.72rem; color:var(--ink-soft); direction:ltr; margin-right:auto; }
+
+  .toc .item { display:flex; align-items:center; gap:8px; direction:rtl; width:100%;
+    padding:9px 12px; border:none; background:none; text-align:right; cursor:pointer; border-radius:var(--r-md);
+    font:inherit; transition:background var(--fast) var(--ease); }
+  .toc .item:hover { background:var(--bg-deep); }
+  .toc .item .ar { font-family:var(--body-ar); font-size:1.18rem; color:var(--ar-ink); line-height:1.5; flex:1; }
+  .toc .item .pg { font-family:var(--serif); font-style:italic; font-size:.74rem; color:var(--ink-soft); direction:ltr; }
+  .toc .item.ready .ar { color:var(--ink); }
+  .toc .item:not(.ready) { cursor:default; opacity:.62; }
+  .toc .item:not(.ready):hover { background:none; }
+  .toc .item.active { background:var(--gold-soft); box-shadow:inset 3px 0 0 var(--gold); }
+  .toc .item .dot { width:6px; height:6px; border-radius:50%; background:var(--green); flex:none; }
+  .toc .item:not(.ready) .dot { background:var(--border-strong); }
+
+  /* ── topbar toggle switch ── */
+  .switch { display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; }
+  .switch input { position:absolute; opacity:0; width:0; height:0; }
+  .switch .track { width:38px; height:22px; border-radius:999px; background:var(--bg-deep);
+    border:1px solid var(--border); position:relative; transition:background var(--fast) var(--ease), border-color var(--fast) var(--ease); }
+  .switch .thumb { position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%;
+    background:var(--raised); box-shadow:var(--sh-sm); transition:left var(--fast) var(--ease); }
+  .switch input:checked + .track { background:var(--gold); border-color:var(--gold); }
+  .switch input:checked + .track .thumb { left:18px; }
+  .switch .switch-lbl { font-family:var(--sans); font-size:.82rem; color:var(--ink-muted); white-space:nowrap; }
+
+  /* ── line-by-line translation ── */
+  .line { margin:0; }
+  .line-block { margin:0 0 1.6rem; }
+  .box .line-block { margin:0 0 .55rem; }
+  .box .line-block:last-child { margin-bottom:0; }
+  .line-tr { display:none; font-family:var(--serif); font-size:.92rem; line-height:1.55;
+    color:var(--ink-muted); direction:ltr; text-align:left; margin-top:7px; padding-left:12px;
+    border-left:2px solid var(--gold-line); }
+  body.show-tr .line-tr { display:block; }
+
+  /* ── reading area ── */
+  .read { order:2; padding:30px 24px 120px; min-width:0; }
+  .chapter-bar { max-width:840px; margin:0 auto 18px; display:flex; align-items:baseline; gap:12px;
+    direction:ltr; font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:.85rem; flex-wrap:wrap; }
+  .chapter-bar .pip { width:4px; height:4px; border-radius:50%; background:var(--ink-soft); align-self:center; }
+
+  .hint { max-width:840px; margin:18px auto 0; text-align:center; direction:ltr;
+    font-family:var(--sans); font-size:.78rem; color:var(--ink-soft); }
+
+  /* mobile: TOC collapses to top */
+  .toc-toggle { display:none; }
+  @media (max-width:900px) {
+    .layout { grid-template-columns:1fr; }
+    .toc { position:static; height:auto; border-right:none; border-bottom:1px solid var(--border-soft); order:1; }
+    .read { order:2; }
+    .toc.collapsed .grp, .toc.collapsed .book-head { display:none; }
+    .toc-toggle { display:inline-flex; }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="../../index.html">← Library</a>
+    <span class="spacer"></span>
+    <span class="crumb">Shadhā al-ʿArf</span>
+    <label class="switch" title="Show an English translation beneath every line">
+      <input type="checkbox" id="tr-toggle" />
+      <span class="track"><span class="thumb"></span></span>
+      <span class="switch-lbl">Line translation</span>
+    </label>
+  </div>
+
+  <div class="layout">
+    <!-- reading pane -->
+    <main class="read">
+      <div class="chapter-bar" id="crumb"></div>
+      <div id="page" class="page"></div>
+      <p class="hint">Hover or tap any word for its translation · Esc or tap away to dismiss</p>
+    </main>
+
+    <!-- table of contents -->
+    <aside class="toc" id="toc">
+      <div class="book-head">
+        <div class="ar-title">شَذَا العَرْف في فَنِّ الصَّرْف</div>
+        <div class="en-title">Shadhā al-ʿArf fī Fann aṣ-Ṣarf</div>
+        <div class="author">أحمد بن محمد الحملاوي</div>
+      </div>
+      <button class="item toc-toggle" onclick="document.getElementById('toc').classList.toggle('collapsed')">
+        <span class="ar">المحتويات — Contents</span>
+      </button>
+      <div id="toc-list"></div>
+    </aside>
+  </div>
+
+  <div class="pop" id="pop" role="tooltip">
+    <div class="p-ar"></div><div class="p-tr"></div><div class="p-en"></div><div class="p-note"></div>
+  </div>
+
+<script src="../../reader.js"></script>
+<script src="wk01-muqaddimah.js"></script>
+<script src="wk02-mizan.js"></script>
+<script src="wk03-fil1.js"></script>
+<script src="wk04-fil2.js"></script>
+<script src="wk05-fil3.js"></script>
+<script src="wk06a-fil3-tanbihat.js"></script>
+<script src="wk06b-fil3-rubai.js"></script>
+<script src="wk07-fil3-mazid.js"></script>
+<script src="wk08-fil3-maani-zawaid.js"></script>
+<script src="wk09-fil3-maani-faaala.js"></script>
+<script src="wk10-fil3-maani-infaaala.js"></script>
+<script src="wk11-fil3-maani-tafaaala.js"></script>
+<script src="wk13-fil4-jumud.js"></script>
+<script src="wk14-fil5-taadi.js"></script>
+<script src="wk15-fil6-majhul.js"></script>
+<script src="wk16-fil7-tawkid.js"></script>
+<script src="wk17-ism1-tajarrud.js"></script>
+<script src="wk18-ism2-jumud.js"></script>
+<script src="wk19-ism2-masdar-thulathi.js"></script>
+<script src="wk20-ism2-masdar-ghayr-thulathi.js"></script>
+<script src="wk21-ism2-ism-fail.js"></script>
+<script src="wk22-ism2-ism-maful.js"></script>
+<script src="wk23-ism2-ism-tafdil.js"></script>
+<script>
+/* ── table of contents — mirrors the worksheet set (Wk 1–23) ── */
+const TOC = [
+  { ar:'الْمُقَدِّمَة', en:'Introduction', items:[
+    { id:'wk01', ar:'المقدمة — تعريف علم الصرف وتقسيم الكلمة', en:'Definition of ṣarf & division of the word', label:'Wk 1', src:'Worksheet 1' },
+  ]},
+  { ar:'الْمِيزَانُ الصَّرْفِيُّ', en:'The Morphological Scale', items:[
+    { id:'wk02', ar:'الميزان الصرفي', en:'The morphological scale (al-mīzān)', label:'Wk 2', src:'Worksheet 2' },
+  ]},
+  { ar:'أَقْسَامُ الْفِعْلِ', en:'Divisions of the Verb', items:[
+    { id:'wk03', ar:'التقسيم الأول للفعل', en:'First division of the verb', label:'Wk 3', src:'Worksheet 3' },
+    { id:'wk04', ar:'التقسيم الثاني للفعل', en:'Second division of the verb', label:'Wk 4', src:'Worksheet 4' },
+    { id:'wk05', ar:'التقسيم الثالث للفعل', en:'Third division of the verb', label:'Wk 5', src:'Worksheet 5' },
+    { id:'wk06a', ar:'التقسيم الثالث للفعل — تنبيهات', en:'Third division — remarks', label:'Wk 6a', src:'Worksheet 6a' },
+    { id:'wk06b', ar:'التقسيم الثالث للفعل', en:'Third division (cont.)', label:'Wk 6b', src:'Worksheet 6b' },
+    { id:'wk07', ar:'التقسيم الثالث للفعل', en:'Third division (cont.)', label:'Wk 7', src:'Worksheet 7' },
+    { id:'wk08', ar:'التقسيم الثالث للفعل', en:'Third division (cont.)', label:'Wk 8', src:'Worksheet 8' },
+    { id:'wk09', ar:'التقسيم الثالث للفعل', en:'Third division (cont.)', label:'Wk 9', src:'Worksheet 9' },
+    { id:'wk10', ar:'التقسيم الثالث للفعل', en:'Third division (cont.)', label:'Wk 10', src:'Worksheet 10' },
+    { id:'wk11', ar:'التقسيم الثالث للفعل', en:'Third division (cont.)', label:'Wk 11', src:'Worksheet 11' },
+    { id:'wk13', ar:'التقسيم الرابع للفعل', en:'Fourth division of the verb', label:'Wk 13', src:'Worksheet 13' },
+    { id:'wk14', ar:'التقسيم الخامس للفعل', en:'Fifth division of the verb', label:'Wk 14', src:'Worksheet 14' },
+    { id:'wk15', ar:'التقسيم السادس للفعل', en:'Sixth division of the verb', label:'Wk 15', src:'Worksheet 15' },
+    { id:'wk16', ar:'التقسيم السابع للفعل', en:'Seventh division of the verb', label:'Wk 16', src:'Worksheet 16' },
+  ]},
+  { ar:'أَقْسَامُ الِاسْمِ', en:'Divisions of the Noun', items:[
+    { id:'wk17', ar:'التقسيم الأول للاسم', en:'First division of the noun', label:'Wk 17', src:'Worksheet 17' },
+    { id:'wk18', ar:'التقسيم الثاني للاسم', en:'Second division of the noun', label:'Wk 18', src:'Worksheet 18' },
+    { id:'wk19', ar:'التقسيم الثاني للاسم — المصدر الثلاثي', en:'The trilateral verbal noun', label:'Wk 19', src:'Worksheet 19' },
+    { id:'wk20', ar:'التقسيم الثاني للاسم — المصدر غير الثلاثي', en:'The non-trilateral verbal noun', label:'Wk 20', src:'Worksheet 20' },
+    { id:'wk21', ar:'التقسيم الثاني للاسم — اسم الفاعل', en:'The active participle', label:'Wk 21', src:'Worksheet 21' },
+    { id:'wk22', ar:'التقسيم الثاني للاسم — اسم المفعول', en:'The passive participle', label:'Wk 22', src:'Worksheet 22' },
+    { id:'wk23', ar:'التقسيم الثاني للاسم — اسم التفضيل', en:'The noun of preference', label:'Wk 23–24', src:'Worksheet 23–24' },
+  ]},
+];
+
+/* chapter content — Worksheets 1 & 2 transcribed; rest pending */
+const CONTENT = {
+  'wk01': { blocks: DATA_WK01 },
+  'wk02': { blocks: DATA_WK02 },
+  'wk03': { blocks: DATA_WK03 },
+  'wk04': { blocks: DATA_WK04 },
+  'wk05': { blocks: DATA_WK05 },
+  'wk06a': { blocks: DATA_WK06A },
+  'wk06b': { blocks: DATA_WK06B },
+  'wk07': { blocks: DATA_WK07 },
+  'wk08': { blocks: DATA_WK08 },
+  'wk09': { blocks: DATA_WK09 },
+  'wk10': { blocks: DATA_WK10 },
+  'wk11': { blocks: DATA_WK11 },
+  'wk13': { blocks: DATA_WK13 },
+  'wk14': { blocks: DATA_WK14 },
+  'wk15': { blocks: DATA_WK15 },
+  'wk16': { blocks: DATA_WK16 },
+  'wk17': { blocks: DATA_WK17 },
+  'wk18': { blocks: DATA_WK18 },
+  'wk19': { blocks: DATA_WK19 },
+  'wk20': { blocks: DATA_WK20 },
+  'wk21': { blocks: DATA_WK21 },
+  'wk22': { blocks: DATA_WK22 },
+  'wk23': { blocks: DATA_WK23 },
+};
+
+Reader.init(TOC, CONTENT);
+</script>
+</body>
+</html>

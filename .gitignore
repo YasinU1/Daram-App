@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Local tooling / session state
+.claude/
+.planning/
+.playwright/
+.playwright-cli/
+
+# Secrets
+.env
+
+# Large binaries: book scans, worksheets, exports
+*.pdf
+*.zip
+*.apkg
+
+# Screenshots
+Screenshot*.png
+app-design/screenshots/

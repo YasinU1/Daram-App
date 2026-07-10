@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daram — Practice Papers</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .wrap { max-width:880px; margin:0 auto; padding:40px 24px 100px; }
+  .eyebrow { font-family:var(--sans); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  h1.page-title { font-family:var(--serif); font-weight:600; font-size:2rem; color:var(--ink); margin:0 0 6px; }
+  .lede { font-family:var(--serif); color:var(--ink-muted); margin:0 0 28px; line-height:1.5; }
+
+  .panel { background:var(--surface); border:1px solid var(--border-soft); border-radius:var(--r-lg); box-shadow:var(--sh-sm); padding:22px 24px; margin-bottom:24px; }
+  .panel h2 { font-family:var(--sans); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 16px; }
+
+  .grp-label { font-family:var(--heading-ar); font-size:1.05rem; color:var(--ink); direction:rtl; margin:14px 0 8px; }
+  .chap { display:flex; align-items:flex-start; gap:10px; padding:8px 10px; border-radius:var(--r-md); cursor:pointer; }
+  .chap:hover { background:var(--bg-deep); }
+  .chap input { margin-top:4px; accent-color:var(--gold); }
+  .chap .ar { font-family:var(--body-ar); font-size:1.15rem; color:var(--ar-ink); direction:rtl; }
+  .chap .en { font-family:var(--serif); font-style:italic; font-size:.82rem; color:var(--ink-muted); }
+
+  .controls { display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; margin-top:8px; }
+  .field { display:flex; flex-direction:column; gap:5px; }
+  .field label { font-family:var(--sans); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .field input, .field select { font-family:var(--serif); font-size:.95rem; color:var(--ink); background:var(--raised); border:1px solid var(--border); border-radius:var(--r-md); padding:8px 10px; }
+  .field input[type=number] { width:90px; }
+
+  .btn { font-family:var(--sans); font-size:.86rem; font-weight:600; border:none; border-radius:var(--r-md); padding:11px 20px; cursor:pointer; transition:background var(--fast) var(--ease); }
+  .btn-primary { background:var(--gold); color:#FBF6E8; }
+  .btn-primary:hover { background:var(--gold-hover); }
+  .btn-primary:disabled { opacity:.5; cursor:default; }
+  .btn-ghost { background:transparent; color:var(--gold); border:1px solid var(--gold-line); }
+  .btn-ghost:hover { background:var(--gold-soft); }
+
+  /* ── exam paper ── */
+  .paper { background:var(--raised); border:1px solid var(--border); border-radius:var(--r-lg); box-shadow:var(--sh-md); padding:34px 36px; }
+  .paper-head { border-bottom:2px solid var(--gold-line); padding-bottom:16px; margin-bottom:8px; text-align:center; }
+  .paper-head .inst { font-family:var(--serif); font-weight:600; color:var(--red); font-size:1.05rem; }
+  .paper-head .kind { font-family:var(--sans); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); margin-top:3px; }
+  .meta { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--border); border-radius:var(--r-md); overflow:hidden; margin:18px 0 6px; }
+  .meta div { padding:9px 12px; border-bottom:1px solid var(--border-soft); font-family:var(--serif); font-size:.86rem; color:var(--ink); }
+  .meta div:nth-child(odd) { border-right:1px solid var(--border-soft); }
+  .meta b { font-family:var(--sans); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:2px; }
+  .answer-all { font-family:var(--serif); font-style:italic; color:var(--ink-muted); margin:14px 2px 24px; }
+
+  .q { padding:20px 0; border-top:1px solid var(--border-soft); }
+  .q-head { display:flex; justify-content:space-between; align-items:baseline; gap:16px; }
+  .q-n { font-family:var(--sans); font-weight:600; font-size:.92rem; color:var(--gold); }
+  .q-marks { font-family:var(--sans); font-weight:600; font-size:.78rem; color:var(--ink-soft); white-space:nowrap; }
+  .q-prompt { font-family:var(--serif); font-size:1rem; color:var(--ink); margin:6px 0 10px; line-height:1.5; }
+  .q-ar { font-family:var(--heading-ar); font-size:1.7rem; color:var(--ar-ink); direction:rtl; text-align:right; line-height:1.9; margin:8px 0 12px; }
+  .q textarea { width:100%; min-height:120px; box-sizing:border-box; font-family:var(--serif); font-size:1rem; line-height:1.7; color:var(--ink); background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md); padding:12px 14px; resize:vertical; }
+  .q textarea[dir=auto] { }
+  .q-tools { margin-top:8px; display:flex; gap:10px; align-items:center; }
+
+  .help, .mark { margin-top:12px; border-radius:var(--r-md); padding:12px 14px; font-family:var(--serif); font-size:.92rem; line-height:1.55; }
+  .help { background:var(--gold-soft); border:1px solid var(--gold-line); }
+  .help h4, .mark h4 { font-family:var(--sans); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; margin:0 0 6px; }
+  .help h4 { color:var(--gold-hover); }
+  .help ul, .mark ul { margin:4px 0 4px 18px; padding:0; }
+  .mark { background:var(--surface); border:1px solid var(--border); }
+  .mark.strong { border-left:4px solid var(--green); }
+  .mark.partial { border-left:4px solid var(--gold); }
+  .mark.weak, .mark.off { border-left:4px solid var(--red); }
+  .mark .score { font-family:var(--sans); font-weight:700; color:var(--ink); }
+  .mark .lbl { font-family:var(--sans); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .mark .good { color:var(--green); }
+  .mark .miss { color:var(--red); }
+
+  .total { position:sticky; bottom:0; background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); box-shadow:var(--sh-lg); padding:16px 22px; margin-top:20px; display:flex; justify-content:space-between; align-items:center; }
+  .total .num { font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--ink); }
+  .total .num small { font-size:.9rem; color:var(--ink-soft); font-weight:400; }
+
+  .status { font-family:var(--sans); font-size:.85rem; color:var(--ink-muted); }
+  .spinner { display:inline-block; width:14px; height:14px; border:2px solid var(--gold-line); border-top-color:var(--gold); border-radius:50%; animation:spin .8s linear infinite; vertical-align:-2px; margin-right:7px; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .hidden { display:none; }
+  .err { color:var(--red); font-family:var(--serif); }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="brand" href="index.html" style="text-decoration:none">Daram<span class="dot">.</span></a>
+    <span class="spacer"></span>
+    <span class="crumb">Practice Papers</span>
+  </div>
+
+  <div class="wrap">
+    <div class="eyebrow">Mock exams from the book</div>
+    <h1 class="page-title">Practice Papers</h1>
+    <p class="lede">Pick the chapters you've studied, generate a past-paper-style exam from al-Kubrā,
+      answer it, and have it marked — with hints whenever you're stuck.</p>
+
+    <!-- setup -->
+    <div class="panel" id="setup">
+      <h2>1 · Choose chapters</h2>
+      <div id="chapList"></div>
+
+      <h2 style="margin-top:24px">2 · Paper settings</h2>
+      <div class="controls">
+        <div class="field"><label>Questions</label><input type="number" id="numQuestions" value="7" min="3" max="12" /></div>
+        <div class="field"><label>Difficulty</label>
+          <select id="difficulty">
+            <option value="foundation">Foundation</option>
+            <option value="standard" selected>Standard</option>
+            <option value="challenging">Challenging</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="assembleBtn">Assemble paper</button>
+        <button class="btn btn-ghost" id="shuffleBtn">Shuffle</button>
+        <span class="status" id="genStatus"></span>
+      </div>
+      <p class="lede" style="margin:14px 0 0;font-size:.84rem">
+        Papers are assembled instantly from a pre-built question bank, modelled on the Year&nbsp;2 Term&nbsp;1 paper.
+        Prefer a brand-new one? <a href="#" id="freshLink" style="color:var(--gold)">Generate a fresh paper</a>
+        (slower — writes new questions on the spot).
+      </p>
+    </div>
+
+    <!-- paper renders here -->
+    <div id="paperHost"></div>
+  </div>
+
+  <!-- chapter data (same globals the reader uses) -->
+  <script src="books/kubra-nahw/muqaddimah.js"></script>
+  <script src="books/kubra-nahw/muqaddimah-bab2.js"></script>
+  <script src="books/kubra-nahw/muqaddimah-bab3.js"></script>
+  <script src="books/kubra-nahw/maqsad1-muq.js"></script>
+  <script src="books/kubra-nahw/maqsad1-bab1.js"></script>
+  <script src="books/kubra-nahw/maqsad1-bab2.js"></script>
+  <!-- pre-generated question bank (built offline by test-maker/build-bank.mjs) -->
+  <script src="questions-bank.js"></script>
+  <script>
+  // ── chapter registry (the readable, "ready" chapters) ──
+  const CHAPTERS = [
+    { id:'muq-bab-1', group:'المُقَدِّمَة', ar:'الباب الأول في الكلمة', en:'The Word (al-kalimah)', blocks:()=>DATA },
+    { id:'muq-bab-2', group:'المُقَدِّمَة', ar:'الباب الثاني في الجملة وشبه الجملة والكلام', en:'Sentence, quasi-sentence & speech', blocks:()=>DATA_BAB2 },
+    { id:'muq-bab-3', group:'المُقَدِّمَة', ar:'الباب الثالث في العامل والمعمول والإعراب', en:'Governor, governed & iʿrāb', blocks:()=>DATA_BAB3 },
+    { id:'m1-muq', group:'المَقْصِدُ الأوَّل', ar:'المقدمة', en:'Introduction (Aim One)', blocks:()=>DATA_M1_MUQ },
+    { id:'m1-bab-1', group:'المَقْصِدُ الأوَّل', ar:'الباب الأول في الفعل', en:'The Verb', blocks:()=>DATA_M1_BAB1 },
+    { id:'m1-bab-2', group:'المَقْصِدُ الأوَّل', ar:'الباب الثاني في الحرف', en:'The Particle', blocks:()=>DATA_M1_BAB2 },
+  ];
+
+  // ── turn structured blocks into compact text for the model ──
+  function tokLine(w){
+    const ar=(w||[]).filter(t=>t&&t.a).map(t=>t.a).join(' ');
+    const en=(w||[]).filter(t=>t&&t.e).map(t=>t.e).join(' ');
+    return {ar,en};
+  }
+  function deepText(v){
+    if(v==null) return '';
+    if(typeof v==='string') return v;
+    if(Array.isArray(v)) return v.map(deepText).filter(Boolean).join(' ');
+    if(typeof v==='object'){
+      const parts=[];
+      for(const k of ['a','e','ar','en','label','labelEn','text','caption']) if(typeof v[k]==='string') parts.push(v[k]);
+      for(const k of Object.keys(v)) if(Array.isArray(v[k])) parts.push(deepText(v[k]));
+      return parts.join(' ');
+    }
+    return '';
+  }
+  function blocksToText(blocks){
+    const out=[];
+    for(const b of (blocks||[])){
+      if(!b||typeof b!=='object') continue;
+      switch(b.t){
+        case 'page': break;
+        case 'h1': out.push(`\n# ${b.ar||''}${b.en?'  ('+b.en+')':''}`); break;
+        case 'h2': out.push(`\n## ${b.ar||''}${b.en?'  ('+b.en+')':''}`); break;
+        case 'line': { const {ar,en}=tokLine(b.w); if(ar) out.push(`${ar}${en?'  — '+en:''}`); break; }
+        case 'box': {
+          out.push(`[${b.label||''}${b.labelEn?' / '+b.labelEn:''}]`);
+          (b.lines||[]).forEach(ln=>{const {ar,en}=tokLine(ln); if(ar) out.push(`  ${ar}${en?'  — '+en:''}`);});
+          break;
+        }
+        case 'table': {
+          if(b.head) out.push(`[table: ${[].concat(b.head).join(' | ')}]`);
+          (b.rows||[]).forEach(r=>out.push('  '+[].concat(r).join(' | ')));
+          break;
+        }
+        default: { const s=deepText(b); if(s) out.push(s); }
+      }
+    }
+    return out.join('\n');
+  }
+
+  // ── build chapter checkboxes ──
+  const chapList=document.getElementById('chapList');
+  let lastGroup=null;
+  CHAPTERS.forEach(c=>{
+    if(c.group!==lastGroup){ const g=document.createElement('div'); g.className='grp-label'; g.textContent=c.group; chapList.appendChild(g); lastGroup=c.group; }
+    const lab=document.createElement('label'); lab.className='chap';
+    lab.innerHTML=`<input type="checkbox" value="${c.id}"><span><span class="ar">${c.ar}</span><br><span class="en">${c.en}</span></span>`;
+    chapList.appendChild(lab);
+  });
+
+  const $=(id)=>document.getElementById(id);
+  async function postJSON(url, body){
+    const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(!r.ok){ let m='Request failed'; try{ m=(await r.json()).error||m; }catch{} throw new Error(m); }
+    return r.json();
+  }
+
+  let paper=null; // {title, questions:[{n,type,marks,promptEn,promptAr,markScheme}]}
+
+  // ── question bank (pre-generated, loaded from questions-bank.js) ──
+  const BANK = (typeof QUESTION_BANK!=='undefined' && Array.isArray(QUESTION_BANK)) ? QUESTION_BANK : [];
+  // The Year 2 Term 1 template: archetype order + canonical marks.
+  const TEMPLATE = [
+    {archetype:'explain-line',          marks:5},
+    {archetype:'state-types',           marks:6},
+    {archetype:'compare',               marks:8},
+    {archetype:'explain-statement',     marks:15},
+    {archetype:'define-types-examples', marks:15},
+    {archetype:'enumerate',             marks:12},
+    {archetype:'classify-tarkib',       marks:9},
+  ];
+  const shuffle=(a)=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+  function selectedIds(){ return [...chapList.querySelectorAll('input:checked')].map(i=>i.value); }
+
+  // Assemble a paper INSTANTLY by sampling the bank to fit the template.
+  function assemblePaper(ids, want){
+    const pool=BANK.filter(q=>ids.includes(q.chapterId));
+    const byArch={}; for(const q of pool){ (byArch[q.archetype]||(byArch[q.archetype]=[])).push(q); }
+    Object.values(byArch).forEach(shuffle);
+    const used=new Set(); const picked=[];
+    // 1) follow the template order, one question per archetype slot
+    for(const slot of TEMPLATE){
+      const cand=(byArch[slot.archetype]||[]).find(q=>!used.has(q.id));
+      if(cand){ used.add(cand.id); picked.push(cand); if(picked.length>=want) break; }
+    }
+    // 2) if the chapters can't fill the template, top up with any unused questions
+    if(picked.length<want){
+      for(const q of shuffle(pool.slice())){ if(used.has(q.id)) continue; used.add(q.id); picked.push(q); if(picked.length>=want) break; }
+    }
+    return {
+      title:`Practice Paper — ${ids.length===1?(CHAPTERS.find(c=>c.id===ids[0])||{}).en||'selected chapter':ids.length+' chapters'}`,
+      questions:picked.map((q,i)=>({n:i+1, type:q.archetype, marks:q.marks, promptEn:q.promptEn, promptAr:q.promptAr, markScheme:q.markScheme})),
+    };
+  }
+
+  function doAssemble(){
+    const ids=selectedIds();
+    if(!ids.length){ $('genStatus').innerHTML='<span class="err">Pick at least one chapter.</span>'; return; }
+    const want=Math.max(1, +$('numQuestions').value||7);
+    const available=BANK.filter(q=>ids.includes(q.chapterId)).length;
+    if(!available){ $('genStatus').innerHTML='<span class="err">No bank questions for these chapters yet — try “Generate a fresh paper”, or run build-bank.mjs.</span>'; return; }
+    paper=assemblePaper(ids, want);
+    renderPaper(paper);
+    const sum=paper.questions.reduce((a,q)=>a+(+q.marks||0),0);
+    $('genStatus').innerHTML=`Assembled ${paper.questions.length} questions · ${sum} marks${paper.questions.length<want?' (bank had fewer to offer)':''}`;
+    $('paperHost').scrollIntoView({behavior:'smooth'});
+  }
+
+  $('assembleBtn').addEventListener('click', doAssemble);
+  $('shuffleBtn').addEventListener('click', doAssemble); // re-draw is just another sample
+
+  // ── generate a fresh paper live (slower fallback) ──
+  $('freshLink').addEventListener('click', async (ev)=>{
+    ev.preventDefault();
+    const ids=selectedIds();
+    if(!ids.length){ $('genStatus').innerHTML='<span class="err">Pick at least one chapter.</span>'; return; }
+    const chapters=ids.map(id=>{ const c=CHAPTERS.find(x=>x.id===id); return {id, ar:c.ar, en:c.en, text:blocksToText(c.blocks())}; });
+    const want=Math.max(1, +$('numQuestions').value||7);
+    const totalMarks=TEMPLATE.slice(0,want).reduce((a,s)=>a+s.marks,0) || 70;
+    const body={ chapters, totalMarks, numQuestions:want, difficulty:$('difficulty').value };
+
+    $('assembleBtn').disabled=true;
+    $('genStatus').innerHTML='<span class="spinner"></span>Writing a fresh paper…';
+    try{
+      paper=await postJSON('/api/generate-test', body);
+      renderPaper(paper);
+      $('genStatus').textContent='';
+      $('paperHost').scrollIntoView({behavior:'smooth'});
+    }catch(e){
+      $('genStatus').innerHTML=`<span class="err">${e.message}</span>`;
+    }finally{
+      $('assembleBtn').disabled=false;
+    }
+  });
+
+  // ── render the exam paper ──
+  function esc(s){ return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+  function renderPaper(p, totalMarks){
+    const host=$('paperHost');
+    const sum=(p.questions||[]).reduce((a,q)=>a+(+q.marks||0),0);
+    let html=`<div class="paper">
+      <div class="paper-head"><div class="inst">Dar al-Ulum Oxford</div><div class="kind">Practice Paper · Nahw (al-Kubrā)</div></div>
+      <div class="meta">
+        <div><b>Paper</b>${esc(p.title||'Practice paper')}</div>
+        <div><b>Time allowed</b>60 minutes</div>
+        <div><b>Subject</b>Nahw (al-Kubrā)</div>
+        <div><b>Total marks</b>${sum}</div>
+      </div>
+      <div class="answer-all">Answer all questions.</div>`;
+
+    (p.questions||[]).forEach((q,i)=>{
+      html+=`<div class="q" id="q-${i}">
+        <div class="q-head"><span class="q-n">Question ${q.n||i+1}</span><span class="q-marks">Marks: ${q.marks}</span></div>
+        <div class="q-prompt">${esc(q.promptEn)}</div>
+        ${q.promptAr?`<div class="q-ar">${esc(q.promptAr)}</div>`:''}
+        <textarea dir="auto" id="ans-${i}" placeholder="Write your answer…"></textarea>
+        <div class="q-tools"><button class="btn btn-ghost" data-help="${i}">Stuck? Get help</button></div>
+        <div id="help-${i}"></div>
+        <div id="mark-${i}"></div>
+      </div>`;
+    });
+
+    html+=`<div class="total" id="totalBar">
+        <button class="btn btn-primary" id="submitBtn">Submit &amp; mark paper</button>
+        <span class="num" id="totalScore"><span id="statusMsg" class="status"></span></span>
+      </div></div>`;
+    host.innerHTML=html;
+
+    host.querySelectorAll('[data-help]').forEach(btn=>btn.addEventListener('click',()=>getHelp(+btn.dataset.help)));
+    $('submitBtn').addEventListener('click', markPaper);
+  }
+
+  // ── help for one question ──
+  async function getHelp(i){
+    const q=paper.questions[i];
+    const slot=$('help-'+i);
+    slot.innerHTML='<div class="help"><span class="spinner"></span>Thinking of some hints…</div>';
+    try{
+      const h=await postJSON('/api/help', { question:q, answer:$('ans-'+i).value });
+      slot.innerHTML=`<div class="help">
+        <h4>Hints</h4>
+        <ul>${(h.hints||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+        ${h.explanation?`<p>${esc(h.explanation)}</p>`:''}
+        ${h.encouragement?`<p style="font-style:italic;color:var(--gold-hover)">${esc(h.encouragement)}</p>`:''}
+      </div>`;
+    }catch(e){ slot.innerHTML=`<div class="help err">${e.message}</div>`; }
+  }
+
+  // ── mark the whole paper ──
+  async function markPaper(){
+    const btn=$('submitBtn'); btn.disabled=true;
+    $('statusMsg').innerHTML='<span class="spinner"></span>Marking…';
+    let awarded=0, max=0;
+    for(let i=0;i<paper.questions.length;i++){
+      const q=paper.questions[i];
+      const slot=$('mark-'+i);
+      slot.innerHTML='<div class="mark"><span class="spinner"></span>Marking question '+(q.n||i+1)+'…</div>';
+      try{
+        const r=await postJSON('/api/grade', { question:q, answer:$('ans-'+i).value });
+        awarded+=r.awarded; max+=r.max;
+        slot.innerHTML=`<div class="mark ${esc(r.verdict)}">
+          <div><span class="score">${r.awarded} / ${r.max}</span> &nbsp;<span class="lbl">${esc(r.verdict)}</span></div>
+          <p>${esc(r.feedback)}</p>
+          ${r.good&&r.good.length?`<div class="good"><span class="lbl">Got right</span><ul>${r.good.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
+          ${r.missing&&r.missing.length?`<div class="miss"><span class="lbl">To improve</span><ul>${r.missing.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
+          ${(r.verdict==='weak'||r.verdict==='off')?`<button class="btn btn-ghost" style="margin-top:8px" data-help2="${i}">Get support on this →</button>`:''}
+        </div>`;
+        const sb=slot.querySelector('[data-help2]'); if(sb) sb.addEventListener('click',()=>getHelp(i));
+      }catch(e){ slot.innerHTML=`<div class="mark off err">${e.message}</div>`; }
+    }
+    const pct=max?Math.round(100*awarded/max):0;
+    $('totalScore').innerHTML=`${awarded} / ${max} &nbsp;<small>(${pct}%)</small>`;
+    btn.disabled=false;
+  }
+  </script>
+</body>
+</html>

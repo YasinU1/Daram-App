@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daram — Library</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .hero { max-width:1040px; margin:0 auto; padding:54px 26px 26px; }
+  .hero .eyebrow { font-family:var(--sans); font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:10px; }
+  .hero h1 { font-family:var(--serif); font-weight:600; font-size:2.3rem; color:var(--ink); margin:0 0 8px; }
+  .hero p { font-family:var(--serif); font-size:1.02rem; color:var(--ink-muted); max-width:560px; margin:0; line-height:1.5; }
+
+  .shelf { max-width:1040px; margin:0 auto; padding:14px 26px 90px; }
+  .shelf .label { font-family:var(--sans); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft); margin:26px 0 16px; display:flex; align-items:center; gap:12px; }
+  .shelf .label::after { content:''; flex:1; height:1px; background:var(--border-soft); }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:22px; }
+
+  .book { display:flex; flex-direction:column; border-radius:var(--r-lg); overflow:hidden;
+    background:var(--surface); border:1px solid var(--border-soft); box-shadow:var(--sh-sm);
+    transition:transform var(--base) var(--ease), box-shadow var(--base) var(--ease); cursor:pointer; }
+  .book:hover { transform:translateY(-4px); box-shadow:var(--sh-lg); }
+  .book .cover { aspect-ratio:3/4; position:relative; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; padding:24px 18px; text-align:center;
+    background:linear-gradient(150deg,#7A2A2A,#5E1F1F 60%,#4A1818);
+    border-bottom:3px solid var(--gold); }
+  .book .cover .spine { position:absolute; inset:0 auto 0 0; width:8px;
+    background:linear-gradient(to right, rgba(0,0,0,.35), transparent); }
+  .book .cover .small { font-family:var(--heading-ar); color:#E8C98B; font-size:1.15rem; margin-bottom:2px; }
+  .book .cover .title-ar { font-family:var(--heading-ar); color:#FBF6E8; font-size:2.5rem; line-height:1.3;
+    text-shadow:0 1px 6px rgba(0,0,0,.3); }
+  .book .cover .inst { position:absolute; bottom:14px; left:0; right:0; font-family:var(--serif);
+    font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(232,201,139,.85); }
+  .book .meta { padding:14px 16px 16px; flex:1; display:flex; flex-direction:column; gap:3px; }
+  .book .meta .t { font-family:var(--serif); font-weight:600; font-size:1.02rem; color:var(--ink); }
+  .book .meta .a { font-family:var(--serif); font-style:italic; font-size:.84rem; color:var(--ink-muted); }
+  .book .meta .row { margin-top:auto; padding-top:10px; display:flex; align-items:center; justify-content:space-between; }
+  .book .meta .badge { font-family:var(--sans); font-size:.7rem; color:var(--green);
+    background:rgba(63,110,75,.12); border:1px solid rgba(63,110,75,.3); border-radius:999px; padding:3px 10px; }
+  .book .meta .pages { font-family:var(--sans); font-size:.72rem; color:var(--ink-soft); }
+
+  /* coming-soon books */
+  .book.soon { cursor:default; }
+  .book.soon:hover { transform:none; box-shadow:var(--sh-sm); }
+  .book.soon .cover { background:linear-gradient(150deg,#6B6253,#544C40 60%,#433D33); border-bottom-color:var(--border-strong); filter:saturate(.6); }
+  .book.soon .cover .title-ar, .book.soon .cover .small { color:#E6DEC9; }
+  .book.soon .meta .badge { color:var(--ink-soft); background:var(--bg-deep); border-color:var(--border); }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">Daram<span class="dot">.</span></span>
+    <span class="spacer"></span>
+    <span class="crumb">Library</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Interactive classical texts</div>
+    <h1>Your Library</h1>
+    <p>Read the great works of Arabic grammar with word-by-word translation. Tap any word to see its meaning, and follow the text chapter by chapter.</p>
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+      <a href="test-maker.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.86rem;font-weight:600;color:#FBF6E8;background:var(--gold);padding:10px 18px;border-radius:var(--r-md);text-decoration:none">Practice Papers <span style="opacity:.7">→</span></a>
+      <a href="learn/learn.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.86rem;font-weight:600;color:var(--gold-hover);background:var(--gold-soft);border:1px solid var(--gold-line);padding:10px 18px;border-radius:var(--r-md);text-decoration:none">Learn — Adaptive Lessons <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+
+  <div class="shelf">
+    <div class="label">Available now</div>
+    <div class="grid">
+      <a class="book" href="books/kubra-nahw/book.html">
+        <div class="cover">
+          <span class="spine"></span>
+          <div class="small">الكُبْرى في</div>
+          <div class="title-ar">النَّحْو</div>
+          <div class="inst">Al-Qalam Institute</div>
+        </div>
+        <div class="meta">
+          <span class="t">al-Kubrā fī an-Naḥw</span>
+          <span class="a">Hāshim b. Ismāʿīl al-Buraydūsī</span>
+          <div class="row"><span class="badge">Readable</span><span class="pages">264 pp.</span></div>
+        </div>
+      </a>
+      <a class="book" href="books/shadha-arf/book.html">
+        <div class="cover">
+          <span class="spine"></span>
+          <div class="small">شَذَا</div>
+          <div class="title-ar">العَرْف</div>
+          <div class="inst">in the Science of Ṣarf</div>
+        </div>
+        <div class="meta">
+          <span class="t">Shadhā al-ʿArf</span>
+          <span class="a">Aḥmad al-Ḥamlāwī</span>
+          <div class="row"><span class="badge">Readable</span><span class="pages">Wk 1–10</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="label">Coming soon</div>
+    <div class="grid">
+      <div class="book soon">
+        <div class="cover"><span class="spine"></span><div class="title-ar">الآجُرُّومِيَّة</div><div class="inst">Ibn Ājurrūm</div></div>
+        <div class="meta"><span class="t">al-Ājurrūmiyyah</span><span class="a">Ibn Ājurrūm</span>
+          <div class="row"><span class="badge">Soon</span><span class="pages">—</span></div></div>
+      </div>
+      <div class="book soon">
+        <div class="cover"><span class="spine"></span><div class="small">قَطْرُ</div><div class="title-ar">النَّدَى</div><div class="inst">Ibn Hishām</div></div>
+        <div class="meta"><span class="t">Qaṭr an-Nadā</span><span class="a">Ibn Hishām al-Anṣārī</span>
+          <div class="row"><span class="badge">Soon</span><span class="pages">—</span></div></div>
+      </div>
+      <div class="book soon">
+        <div class="cover"><span class="spine"></span><div class="small">أَلْفِيَّةُ</div><div class="title-ar">ابنِ مَالِك</div><div class="inst">Ibn Mālik</div></div>
+        <div class="meta"><span class="t">Alfiyyat Ibn Mālik</span><span class="a">Ibn Mālik</span>
+          <div class="row"><span class="badge">Soon</span><span class="pages">—</span></div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
