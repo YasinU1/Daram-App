@@ -1,0 +1,667 @@
+[
+    {
+        "phrase":  "مأدبة",
+        "translation":  "A Banquet",
+        "arabic_words":  [
+                             "مأدبة"
+                         ],
+        "english_words":  [
+                              "A",
+                              "Banquet"
+                          ]
+    },
+    {
+        "phrase":  "رجع أخي من الحج",
+        "translation":  "My brother returned from the Hajj",
+        "arabic_words":  [
+                             "رجع",
+                             "أخي",
+                             "من",
+                             "الحج"
+                         ],
+        "english_words":  [
+                              "My",
+                              "brother",
+                              "returned",
+                              "from",
+                              "the",
+                              "Hajj"
+                          ]
+    },
+    {
+        "phrase":  "ففرح أهل البيت كثيرا وفرحت أمي جدا",
+        "translation":  "the household rejoiced greatly, and my mother was overjoyed",
+        "arabic_words":  [
+                             "ففرح",
+                             "أهل",
+                             "البيت",
+                             "كثيرا",
+                             "وفرحت",
+                             "أمي",
+                             "جدا"
+                         ],
+        "english_words":  [
+                              "the",
+                              "household",
+                              "rejoiced",
+                              "greatly,",
+                              "and",
+                              "my",
+                              "mother",
+                              "was",
+                              "overjoyed"
+                          ]
+    },
+    {
+        "phrase":  "وصنعت أمي طعاما",
+        "translation":  "my mother prepared food",
+        "arabic_words":  [
+                             "وصنعت",
+                             "أمي",
+                             "طعاما"
+                         ],
+        "english_words":  [
+                              "my",
+                              "mother",
+                              "prepared",
+                              "food"
+                          ]
+    },
+    {
+        "phrase":  "ودعت إليه الأقارب والأصدقاء وكثيرا من أهل القرية",
+        "translation":  "and invited to it the relatives, the friends and many of the village folk",
+        "arabic_words":  [
+                             "ودعت",
+                             "إليه",
+                             "الأقارب",
+                             "والأصدقاء",
+                             "وكثيرا",
+                             "من",
+                             "أهل",
+                             "القرية"
+                         ],
+        "english_words":  [
+                              "and",
+                              "invited",
+                              "to",
+                              "it",
+                              "the",
+                              "relatives,",
+                              "the",
+                              "friends",
+                              "and",
+                              "many",
+                              "of",
+                              "the",
+                              "village",
+                              "folk"
+                          ]
+    },
+    {
+        "phrase":  "وفرحنا جدا",
+        "translation":  "we were delighted",
+        "arabic_words":  [
+                             "وفرحنا",
+                             "جدا"
+                         ],
+        "english_words":  [
+                              "we",
+                              "were",
+                              "delighted"
+                          ]
+    },
+    {
+        "phrase":  "وفرشنا فراشا نظيفا أمام البيت",
+        "translation":  "we spread clean matting in front of the house",
+        "arabic_words":  [
+                             "وفرشنا",
+                             "فراشا",
+                             "نظيفا",
+                             "أمام",
+                             "البيت"
+                         ],
+        "english_words":  [
+                              "we",
+                              "spread",
+                              "clean",
+                              "matting",
+                              "in",
+                              "front",
+                              "of",
+                              "the",
+                              "house"
+                          ]
+    },
+    {
+        "phrase":  "وكانت أيام صيف",
+        "translation":  "it was summertime",
+        "arabic_words":  [
+                             "وكانت",
+                             "أيام",
+                             "صيف"
+                         ],
+        "english_words":  [
+                              "it",
+                              "was",
+                              "summertime"
+                          ]
+    },
+    {
+        "phrase":  "ووضعنا أباريق فيها ماء لغسل الأيدي",
+        "translation":  "we set out ewers with water for washing hands",
+        "arabic_words":  [
+                             "ووضعنا",
+                             "أباريق",
+                             "فيها",
+                             "ماء",
+                             "لغسل",
+                             "الأيدي"
+                         ],
+        "english_words":  [
+                              "we",
+                              "set",
+                              "out",
+                              "ewers",
+                              "with",
+                              "water",
+                              "for",
+                              "washing",
+                              "hands"
+                          ]
+    },
+    {
+        "phrase":  "ووضعنا صابونا ومنشفة",
+        "translation":  "we set out soap and a towel",
+        "arabic_words":  [
+                             "ووضعنا",
+                             "صابونا",
+                             "ومنشفة"
+                         ],
+        "english_words":  [
+                              "we",
+                              "set",
+                              "out",
+                              "soap",
+                              "and",
+                              "a",
+                              "towel"
+                          ]
+    },
+    {
+        "phrase":  "وبسطنا سفرة واسعة",
+        "translation":  "and spread a wide dining cloth",
+        "arabic_words":  [
+                             "وبسطنا",
+                             "سفرة",
+                             "واسعة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "spread",
+                              "a",
+                              "wide",
+                              "dining",
+                              "cloth"
+                          ]
+    },
+    {
+        "phrase":  "حضر الناس في المساء",
+        "translation":  "the people came in the evening",
+        "arabic_words":  [
+                             "حضر",
+                             "الناس",
+                             "في",
+                             "المساء"
+                         ],
+        "english_words":  [
+                              "the",
+                              "people",
+                              "came",
+                              "in",
+                              "the",
+                              "evening"
+                          ]
+    },
+    {
+        "phrase":  "فاستقبلهم أخي وقلنا: مرحبا",
+        "translation":  "my brother received them and we said: welcome!",
+        "arabic_words":  [
+                             "فاستقبلهم",
+                             "أخي",
+                             "وقلنا:",
+                             "مرحبا"
+                         ],
+        "english_words":  [
+                              "my",
+                              "brother",
+                              "received",
+                              "them",
+                              "and",
+                              "we",
+                              "said:",
+                              "welcome!"
+                          ]
+    },
+    {
+        "phrase":  "وجلسوا قليلا وحضر الطعام",
+        "translation":  "they sat a while and the food was brought",
+        "arabic_words":  [
+                             "وجلسوا",
+                             "قليلا",
+                             "وحضر",
+                             "الطعام"
+                         ],
+        "english_words":  [
+                              "they",
+                              "sat",
+                              "a",
+                              "while",
+                              "and",
+                              "the",
+                              "food",
+                              "was",
+                              "brought"
+                          ]
+    },
+    {
+        "phrase":  "فجلس الضيوف حول السفرة",
+        "translation":  "the guests sat around the dining cloth",
+        "arabic_words":  [
+                             "فجلس",
+                             "الضيوف",
+                             "حول",
+                             "السفرة"
+                         ],
+        "english_words":  [
+                              "the",
+                              "guests",
+                              "sat",
+                              "around",
+                              "the",
+                              "dining",
+                              "cloth"
+                          ]
+    },
+    {
+        "phrase":  "وقدمنا الرغيف الحار واللحم",
+        "translation":  "we served the hot bread and the meat",
+        "arabic_words":  [
+                             "وقدمنا",
+                             "الرغيف",
+                             "الحار",
+                             "واللحم"
+                         ],
+        "english_words":  [
+                              "we",
+                              "served",
+                              "the",
+                              "hot",
+                              "bread",
+                              "and",
+                              "the",
+                              "meat"
+                          ]
+    },
+    {
+        "phrase":  "والرز في صحون والرائب في أقداح",
+        "translation":  "the rice in dishes and the curds in cups",
+        "arabic_words":  [
+                             "والرز",
+                             "في",
+                             "صحون",
+                             "والرائب",
+                             "في",
+                             "أقداح"
+                         ],
+        "english_words":  [
+                              "the",
+                              "rice",
+                              "in",
+                              "dishes",
+                              "and",
+                              "the",
+                              "curds",
+                              "in",
+                              "cups"
+                          ]
+    },
+    {
+        "phrase":  "فسموا الله وأكلوا",
+        "translation":  "they said Allah's name and ate",
+        "arabic_words":  [
+                             "فسموا",
+                             "الله",
+                             "وأكلوا"
+                         ],
+        "english_words":  [
+                              "they",
+                              "said",
+                              "Allah's",
+                              "name",
+                              "and",
+                              "ate"
+                          ]
+    },
+    {
+        "phrase":  "وكنا قائمين نلاحظ الضيوف",
+        "translation":  "we stood attending to the guests",
+        "arabic_words":  [
+                             "وكنا",
+                             "قائمين",
+                             "نلاحظ",
+                             "الضيوف"
+                         ],
+        "english_words":  [
+                              "we",
+                              "stood",
+                              "attending",
+                              "to",
+                              "the",
+                              "guests"
+                          ]
+    },
+    {
+        "phrase":  "ونقدم لهم الخبز والطعام",
+        "translation":  "serving them the bread and the food",
+        "arabic_words":  [
+                             "ونقدم",
+                             "لهم",
+                             "الخبز",
+                             "والطعام"
+                         ],
+        "english_words":  [
+                              "serving",
+                              "them",
+                              "the",
+                              "bread",
+                              "and",
+                              "the",
+                              "food"
+                          ]
+    },
+    {
+        "phrase":  "ونسقيهم الماء المثلوج",
+        "translation":  "and giving them iced water to drink",
+        "arabic_words":  [
+                             "ونسقيهم",
+                             "الماء",
+                             "المثلوج"
+                         ],
+        "english_words":  [
+                              "and",
+                              "giving",
+                              "them",
+                              "iced",
+                              "water",
+                              "to",
+                              "drink"
+                          ]
+    },
+    {
+        "phrase":  "وأصاب الناس من كل نوع من الطعام",
+        "translation":  "the people partook of every kind of food",
+        "arabic_words":  [
+                             "وأصاب",
+                             "الناس",
+                             "من",
+                             "كل",
+                             "نوع",
+                             "من",
+                             "الطعام"
+                         ],
+        "english_words":  [
+                              "the",
+                              "people",
+                              "partook",
+                              "of",
+                              "every",
+                              "kind",
+                              "of",
+                              "food"
+                          ]
+    },
+    {
+        "phrase":  "وأكلوا برغبة وحمدوا الله",
+        "translation":  "they ate with appetite and praised Allah",
+        "arabic_words":  [
+                             "وأكلوا",
+                             "برغبة",
+                             "وحمدوا",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "they",
+                              "ate",
+                              "with",
+                              "appetite",
+                              "and",
+                              "praised",
+                              "Allah"
+                          ]
+    },
+    {
+        "phrase":  "وقاموا وغسلوا أيديهم ومسحوها بالمنشفة",
+        "translation":  "they rose, washed their hands and wiped them with the towel",
+        "arabic_words":  [
+                             "وقاموا",
+                             "وغسلوا",
+                             "أيديهم",
+                             "ومسحوها",
+                             "بالمنشفة"
+                         ],
+        "english_words":  [
+                              "they",
+                              "rose,",
+                              "washed",
+                              "their",
+                              "hands",
+                              "and",
+                              "wiped",
+                              "them",
+                              "with",
+                              "the",
+                              "towel"
+                          ]
+    },
+    {
+        "phrase":  "وجلسوا إلى أخي يتحدثون ويتكلمون",
+        "translation":  "they sat with my brother, conversing and talking",
+        "arabic_words":  [
+                             "وجلسوا",
+                             "إلى",
+                             "أخي",
+                             "يتحدثون",
+                             "ويتكلمون"
+                         ],
+        "english_words":  [
+                              "they",
+                              "sat",
+                              "with",
+                              "my",
+                              "brother,",
+                              "conversing",
+                              "and",
+                              "talking"
+                          ]
+    },
+    {
+        "phrase":  "ويسمعون منه أخبار الحجاز",
+        "translation":  "hearing from him news of the Hijaz",
+        "arabic_words":  [
+                             "ويسمعون",
+                             "منه",
+                             "أخبار",
+                             "الحجاز"
+                         ],
+        "english_words":  [
+                              "hearing",
+                              "from",
+                              "him",
+                              "news",
+                              "of",
+                              "the",
+                              "Hijaz"
+                          ]
+    },
+    {
+        "phrase":  "وحديث مكة المشرفة والمدينة المنورة",
+        "translation":  "and talk of Makkah the Ennobled and Madinah the Radiant",
+        "arabic_words":  [
+                             "وحديث",
+                             "مكة",
+                             "المشرفة",
+                             "والمدينة",
+                             "المنورة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "talk",
+                              "of",
+                              "Makkah",
+                              "the",
+                              "Ennobled",
+                              "and",
+                              "Madinah",
+                              "the",
+                              "Radiant"
+                          ]
+    },
+    {
+        "phrase":  "ومنى وعرفات بكل رغبة وسرور",
+        "translation":  "and Mina and Arafat, with every eagerness and delight",
+        "arabic_words":  [
+                             "ومنى",
+                             "وعرفات",
+                             "بكل",
+                             "رغبة",
+                             "وسرور"
+                         ],
+        "english_words":  [
+                              "and",
+                              "Mina",
+                              "and",
+                              "Arafat,",
+                              "with",
+                              "every",
+                              "eagerness",
+                              "and",
+                              "delight"
+                          ]
+    },
+    {
+        "phrase":  "واشتاقوا إلى الحج",
+        "translation":  "they longed for the Hajj",
+        "arabic_words":  [
+                             "واشتاقوا",
+                             "إلى",
+                             "الحج"
+                         ],
+        "english_words":  [
+                              "they",
+                              "longed",
+                              "for",
+                              "the",
+                              "Hajj"
+                          ]
+    },
+    {
+        "phrase":  "ودعوا الله أن يوفقهم لذلك",
+        "translation":  "and prayed to Allah to grant them success in that",
+        "arabic_words":  [
+                             "ودعوا",
+                             "الله",
+                             "أن",
+                             "يوفقهم",
+                             "لذلك"
+                         ],
+        "english_words":  [
+                              "and",
+                              "prayed",
+                              "to",
+                              "Allah",
+                              "to",
+                              "grant",
+                              "them",
+                              "success",
+                              "in",
+                              "that"
+                          ]
+    },
+    {
+        "phrase":  "ثم استأذنوا للخروج وقاموا وهم يقولون",
+        "translation":  "then they took leave to depart, and rose saying",
+        "arabic_words":  [
+                             "ثم",
+                             "استأذنوا",
+                             "للخروج",
+                             "وقاموا",
+                             "وهم",
+                             "يقولون"
+                         ],
+        "english_words":  [
+                              "then",
+                              "they",
+                              "took",
+                              "leave",
+                              "to",
+                              "depart,",
+                              "and",
+                              "rose",
+                              "saying"
+                          ]
+    },
+    {
+        "phrase":  "أفطر عندكم الصائمون",
+        "translation":  "may the fasting break their fast with you",
+        "arabic_words":  [
+                             "أفطر",
+                             "عندكم",
+                             "الصائمون"
+                         ],
+        "english_words":  [
+                              "may",
+                              "the",
+                              "fasting",
+                              "break",
+                              "their",
+                              "fast",
+                              "with",
+                              "you"
+                          ]
+    },
+    {
+        "phrase":  "وأكل طعامكم الأبرار",
+        "translation":  "may the righteous eat your food",
+        "arabic_words":  [
+                             "وأكل",
+                             "طعامكم",
+                             "الأبرار"
+                         ],
+        "english_words":  [
+                              "may",
+                              "the",
+                              "righteous",
+                              "eat",
+                              "your",
+                              "food"
+                          ]
+    },
+    {
+        "phrase":  "وصلت عليكم الملائكة",
+        "translation":  "and may the angels pray for you",
+        "arabic_words":  [
+                             "وصلت",
+                             "عليكم",
+                             "الملائكة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "may",
+                              "the",
+                              "angels",
+                              "pray",
+                              "for",
+                              "you"
+                          ]
+    }
+]

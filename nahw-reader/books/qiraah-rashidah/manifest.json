@@ -8,5 +8,105 @@
     "id": "chapter_2",
     "title": "لما بلغت السابعة من عمري",
     "path": "Chapters/Chapter_2"
+  },
+  {
+    "id": "chapter_3",
+    "title": "النملة",
+    "path": "Chapters/Chapter_3"
+  },
+  {
+    "id": "chapter_4",
+    "title": "في السوق",
+    "path": "Chapters/Chapter_4"
+  },
+  {
+    "id": "chapter_5",
+    "title": "الطائر",
+    "path": "Chapters/Chapter_5"
+  },
+  {
+    "id": "chapter_6",
+    "title": "نزهة وطبخ",
+    "path": "Chapters/Chapter_6"
+  },
+  {
+    "id": "chapter_7",
+    "title": "من يمنعك مني؟",
+    "path": "Chapters/Chapter_7"
+  },
+  {
+    "id": "chapter_8",
+    "title": "سفر القطار",
+    "path": "Chapters/Chapter_8"
+  },
+  {
+    "id": "chapter_9",
+    "title": "ماذا تحب أن تكون؟",
+    "path": "Chapters/Chapter_9"
+  },
+  {
+    "id": "chapter_10",
+    "title": "مسابقة",
+    "path": "Chapters/Chapter_10"
+  },
+  {
+    "id": "chapter_11",
+    "title": "الساعة",
+    "path": "Chapters/Chapter_11"
+  },
+  {
+    "id": "chapter_12",
+    "title": "الفطور",
+    "path": "Chapters/Chapter_12"
+  },
+  {
+    "id": "chapter_13",
+    "title": "الأمانة",
+    "path": "Chapters/Chapter_13"
+  },
+  {
+    "id": "chapter_14",
+    "title": "الصيد",
+    "path": "Chapters/Chapter_14"
+  },
+  {
+    "id": "chapter_15",
+    "title": "مأدبة",
+    "path": "Chapters/Chapter_15"
+  },
+  {
+    "id": "chapter_16",
+    "title": "بر الوالدين",
+    "path": "Chapters/Chapter_16"
+  },
+  {
+    "id": "chapter_17",
+    "title": "فضيلة الشغل",
+    "path": "Chapters/Chapter_17"
+  },
+  {
+    "id": "chapter_18",
+    "title": "ترنيمة الولد في الصباح",
+    "path": "Chapters/Chapter_18"
+  },
+  {
+    "id": "chapter_19",
+    "title": "أصدقائي",
+    "path": "Chapters/Chapter_19"
+  },
+  {
+    "id": "chapter_20",
+    "title": "قريتي",
+    "path": "Chapters/Chapter_20"
+  },
+  {
+    "id": "chapter_21",
+    "title": "ترنيمة الليل",
+    "path": "Chapters/Chapter_21"
+  },
+  {
+    "id": "chapter_22",
+    "title": "مسابقة بين شقيقين",
+    "path": "Chapters/Chapter_22"
   }
 ]

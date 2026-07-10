@@ -1,0 +1,965 @@
+[
+    {
+        "phrase":  "الساعة",
+        "translation":  "The Watch",
+        "arabic_words":  [
+                             "الساعة"
+                         ],
+        "english_words":  [
+                              "The",
+                              "Watch"
+                          ]
+    },
+    {
+        "phrase":  "حارث: كم الساعة يا أخي",
+        "translation":  "Harith: What time is it, my brother?",
+        "arabic_words":  [
+                             "حارث:",
+                             "كم",
+                             "الساعة",
+                             "يا",
+                             "أخي"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "What",
+                              "time",
+                              "is",
+                              "it,",
+                              "my",
+                              "brother?"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: الساعة عشر وربع",
+        "translation":  "Sa'id: It is quarter past ten",
+        "arabic_words":  [
+                             "سعيد:",
+                             "الساعة",
+                             "عشر",
+                             "وربع"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "It",
+                              "is",
+                              "quarter",
+                              "past",
+                              "ten"
+                          ]
+    },
+    {
+        "phrase":  "أليس عندك ساعة",
+        "translation":  "do you not have a watch?",
+        "arabic_words":  [
+                             "أليس",
+                             "عندك",
+                             "ساعة"
+                         ],
+        "english_words":  [
+                              "do",
+                              "you",
+                              "not",
+                              "have",
+                              "a",
+                              "watch?"
+                          ]
+    },
+    {
+        "phrase":  "حارث: بلى! ولكن ساعتي واقفة",
+        "translation":  "Harith: Indeed I do! But my watch has stopped",
+        "arabic_words":  [
+                             "حارث:",
+                             "بلى!",
+                             "ولكن",
+                             "ساعتي",
+                             "واقفة"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Indeed",
+                              "I",
+                              "do!",
+                              "But",
+                              "my",
+                              "watch",
+                              "has",
+                              "stopped"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: لعلك ما ملأتها",
+        "translation":  "Sa'id: Perhaps you did not wind it",
+        "arabic_words":  [
+                             "سعيد:",
+                             "لعلك",
+                             "ما",
+                             "ملأتها"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "Perhaps",
+                              "you",
+                              "did",
+                              "not",
+                              "wind",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "حارث: نعم! نسيت أن أملأها البارحة",
+        "translation":  "Harith: Yes! I forgot to wind it last night",
+        "arabic_words":  [
+                             "حارث:",
+                             "نعم!",
+                             "نسيت",
+                             "أن",
+                             "أملأها",
+                             "البارحة"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Yes!",
+                              "I",
+                              "forgot",
+                              "to",
+                              "wind",
+                              "it",
+                              "last",
+                              "night"
+                          ]
+    },
+    {
+        "phrase":  "أنا أملؤها في الساعة العاشرة في الليل",
+        "translation":  "I wind it at ten o'clock at night",
+        "arabic_words":  [
+                             "أنا",
+                             "أملؤها",
+                             "في",
+                             "الساعة",
+                             "العاشرة",
+                             "في",
+                             "الليل"
+                         ],
+        "english_words":  [
+                              "I",
+                              "wind",
+                              "it",
+                              "at",
+                              "ten",
+                              "o'clock",
+                              "at",
+                              "night"
+                          ]
+    },
+    {
+        "phrase":  "ولكني غلبني عيني البارحة",
+        "translation":  "but my eyes overcame me last night",
+        "arabic_words":  [
+                             "ولكني",
+                             "غلبني",
+                             "عيني",
+                             "البارحة"
+                         ],
+        "english_words":  [
+                              "but",
+                              "my",
+                              "eyes",
+                              "overcame",
+                              "me",
+                              "last",
+                              "night"
+                          ]
+    },
+    {
+        "phrase":  "فقد كنت تعبا جدا فما ملأتها",
+        "translation":  "for I was very tired, so I did not wind it",
+        "arabic_words":  [
+                             "فقد",
+                             "كنت",
+                             "تعبا",
+                             "جدا",
+                             "فما",
+                             "ملأتها"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "was",
+                              "very",
+                              "tired,",
+                              "so",
+                              "I",
+                              "did",
+                              "not",
+                              "wind",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: هل تريد ضبطها بساعتي",
+        "translation":  "Sa'id: Do you want to set it by my watch?",
+        "arabic_words":  [
+                             "سعيد:",
+                             "هل",
+                             "تريد",
+                             "ضبطها",
+                             "بساعتي"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "Do",
+                              "you",
+                              "want",
+                              "to",
+                              "set",
+                              "it",
+                              "by",
+                              "my",
+                              "watch?"
+                          ]
+    },
+    {
+        "phrase":  "حارث: نعم! أضبطها بساعتك",
+        "translation":  "Harith: Yes! I will set it by your watch",
+        "arabic_words":  [
+                             "حارث:",
+                             "نعم!",
+                             "أضبطها",
+                             "بساعتك"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Yes!",
+                              "I",
+                              "will",
+                              "set",
+                              "it",
+                              "by",
+                              "your",
+                              "watch"
+                          ]
+    },
+    {
+        "phrase":  "إذا كانت ساعتك مستقيمة",
+        "translation":  "if your watch is accurate",
+        "arabic_words":  [
+                             "إذا",
+                             "كانت",
+                             "ساعتك",
+                             "مستقيمة"
+                         ],
+        "english_words":  [
+                              "if",
+                              "your",
+                              "watch",
+                              "is",
+                              "accurate"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: ساعتي تتقدم دقيقتين في أربع وعشرين ساعة",
+        "translation":  "Sa'id: My watch gains two minutes in twenty-four hours",
+        "arabic_words":  [
+                             "سعيد:",
+                             "ساعتي",
+                             "تتقدم",
+                             "دقيقتين",
+                             "في",
+                             "أربع",
+                             "وعشرين",
+                             "ساعة"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "My",
+                              "watch",
+                              "gains",
+                              "two",
+                              "minutes",
+                              "in",
+                              "twenty-four",
+                              "hours"
+                          ]
+    },
+    {
+        "phrase":  "وقد ضبطتها البارحة فأخرتها دقيقتين",
+        "translation":  "and I adjusted it last night, putting it back two minutes",
+        "arabic_words":  [
+                             "وقد",
+                             "ضبطتها",
+                             "البارحة",
+                             "فأخرتها",
+                             "دقيقتين"
+                         ],
+        "english_words":  [
+                              "and",
+                              "I",
+                              "adjusted",
+                              "it",
+                              "last",
+                              "night,",
+                              "putting",
+                              "it",
+                              "back",
+                              "two",
+                              "minutes"
+                          ]
+    },
+    {
+        "phrase":  "حارث: كم الساعة الآن",
+        "translation":  "Harith: What time is it now?",
+        "arabic_words":  [
+                             "حارث:",
+                             "كم",
+                             "الساعة",
+                             "الآن"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "What",
+                              "time",
+                              "is",
+                              "it",
+                              "now?"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: الآن عشر وثلث",
+        "translation":  "Sa'id: It is now twenty past ten",
+        "arabic_words":  [
+                             "سعيد:",
+                             "الآن",
+                             "عشر",
+                             "وثلث"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "It",
+                              "is",
+                              "now",
+                              "twenty",
+                              "past",
+                              "ten"
+                          ]
+    },
+    {
+        "phrase":  "حارث: أشكرك، أرني ساعتك",
+        "translation":  "Harith: Thank you — show me your watch",
+        "arabic_words":  [
+                             "حارث:",
+                             "أشكرك،",
+                             "أرني",
+                             "ساعتك"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Thank",
+                              "you",
+                              "—",
+                              "show",
+                              "me",
+                              "your",
+                              "watch"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: تفضل",
+        "translation":  "Sa'id: Here you are",
+        "arabic_words":  [
+                             "سعيد:",
+                             "تفضل"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "Here",
+                              "you",
+                              "are"
+                          ]
+    },
+    {
+        "phrase":  "حارث: إن ساعتك ثمينة وجميلة",
+        "translation":  "Harith: Your watch is valuable and beautiful",
+        "arabic_words":  [
+                             "حارث:",
+                             "إن",
+                             "ساعتك",
+                             "ثمينة",
+                             "وجميلة"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Your",
+                              "watch",
+                              "is",
+                              "valuable",
+                              "and",
+                              "beautiful"
+                          ]
+    },
+    {
+        "phrase":  "ميناؤها جميل وعقاربها دقيقة وغطاؤها نظيف",
+        "translation":  "its face is beautiful, its hands are fine and its cover is clean",
+        "arabic_words":  [
+                             "ميناؤها",
+                             "جميل",
+                             "وعقاربها",
+                             "دقيقة",
+                             "وغطاؤها",
+                             "نظيف"
+                         ],
+        "english_words":  [
+                              "its",
+                              "face",
+                              "is",
+                              "beautiful,",
+                              "its",
+                              "hands",
+                              "are",
+                              "fine",
+                              "and",
+                              "its",
+                              "cover",
+                              "is",
+                              "clean"
+                          ]
+    },
+    {
+        "phrase":  "بكم اشتريتها يا سعيد",
+        "translation":  "for how much did you buy it, Sa'id?",
+        "arabic_words":  [
+                             "بكم",
+                             "اشتريتها",
+                             "يا",
+                             "سعيد"
+                         ],
+        "english_words":  [
+                              "for",
+                              "how",
+                              "much",
+                              "did",
+                              "you",
+                              "buy",
+                              "it,",
+                              "Sa'id?"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: أهداها إلي أخي الكبير",
+        "translation":  "Sa'id: My elder brother gave it to me as a gift",
+        "arabic_words":  [
+                             "سعيد:",
+                             "أهداها",
+                             "إلي",
+                             "أخي",
+                             "الكبير"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "My",
+                              "elder",
+                              "brother",
+                              "gave",
+                              "it",
+                              "to",
+                              "me",
+                              "as",
+                              "a",
+                              "gift"
+                          ]
+    },
+    {
+        "phrase":  "وأخبرني أنه اشتراها بثلاثين ربية",
+        "translation":  "and told me that he bought it for thirty rupees",
+        "arabic_words":  [
+                             "وأخبرني",
+                             "أنه",
+                             "اشتراها",
+                             "بثلاثين",
+                             "ربية"
+                         ],
+        "english_words":  [
+                              "and",
+                              "told",
+                              "me",
+                              "that",
+                              "he",
+                              "bought",
+                              "it",
+                              "for",
+                              "thirty",
+                              "rupees"
+                          ]
+    },
+    {
+        "phrase":  "وساعتك بكم",
+        "translation":  "and your watch — for how much?",
+        "arabic_words":  [
+                             "وساعتك",
+                             "بكم"
+                         ],
+        "english_words":  [
+                              "and",
+                              "your",
+                              "watch",
+                              "—",
+                              "for",
+                              "how",
+                              "much?"
+                          ]
+    },
+    {
+        "phrase":  "حارث: ساعتي أرخص منها، فإنها بعشرين ربية",
+        "translation":  "Harith: My watch is cheaper than it, for it was twenty rupees",
+        "arabic_words":  [
+                             "حارث:",
+                             "ساعتي",
+                             "أرخص",
+                             "منها،",
+                             "فإنها",
+                             "بعشرين",
+                             "ربية"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "My",
+                              "watch",
+                              "is",
+                              "cheaper",
+                              "than",
+                              "it,",
+                              "for",
+                              "it",
+                              "was",
+                              "twenty",
+                              "rupees"
+                          ]
+    },
+    {
+        "phrase":  "قد أهداها إلي عمي لما رجع من السفر",
+        "translation":  "my uncle gave it to me when he returned from a journey",
+        "arabic_words":  [
+                             "قد",
+                             "أهداها",
+                             "إلي",
+                             "عمي",
+                             "لما",
+                             "رجع",
+                             "من",
+                             "السفر"
+                         ],
+        "english_words":  [
+                              "my",
+                              "uncle",
+                              "gave",
+                              "it",
+                              "to",
+                              "me",
+                              "when",
+                              "he",
+                              "returned",
+                              "from",
+                              "a",
+                              "journey"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: إن الساعة لازمة في هذا الزمان",
+        "translation":  "Sa'id: The watch is essential in this age",
+        "arabic_words":  [
+                             "سعيد:",
+                             "إن",
+                             "الساعة",
+                             "لازمة",
+                             "في",
+                             "هذا",
+                             "الزمان"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "The",
+                              "watch",
+                              "is",
+                              "essential",
+                              "in",
+                              "this",
+                              "age"
+                          ]
+    },
+    {
+        "phrase":  "فبالساعة يعرف التلميذ ميعاد المدرسة",
+        "translation":  "by the watch the pupil knows the school's appointed time",
+        "arabic_words":  [
+                             "فبالساعة",
+                             "يعرف",
+                             "التلميذ",
+                             "ميعاد",
+                             "المدرسة"
+                         ],
+        "english_words":  [
+                              "by",
+                              "the",
+                              "watch",
+                              "the",
+                              "pupil",
+                              "knows",
+                              "the",
+                              "school's",
+                              "appointed",
+                              "time"
+                          ]
+    },
+    {
+        "phrase":  "وبالساعة يعرف المسلم أوقات الجماعة والصلوات",
+        "translation":  "and by the watch the Muslim knows the times of the congregation and the prayers",
+        "arabic_words":  [
+                             "وبالساعة",
+                             "يعرف",
+                             "المسلم",
+                             "أوقات",
+                             "الجماعة",
+                             "والصلوات"
+                         ],
+        "english_words":  [
+                              "and",
+                              "by",
+                              "the",
+                              "watch",
+                              "the",
+                              "Muslim",
+                              "knows",
+                              "the",
+                              "times",
+                              "of",
+                              "the",
+                              "congregation",
+                              "and",
+                              "the",
+                              "prayers"
+                          ]
+    },
+    {
+        "phrase":  "حارث: نعم! أنا كنت أتأخر عن ميعاد المدرسة في بعض الأيام",
+        "translation":  "Harith: Yes! I used to be late for school on some days",
+        "arabic_words":  [
+                             "حارث:",
+                             "نعم!",
+                             "أنا",
+                             "كنت",
+                             "أتأخر",
+                             "عن",
+                             "ميعاد",
+                             "المدرسة",
+                             "في",
+                             "بعض",
+                             "الأيام"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Yes!",
+                              "I",
+                              "used",
+                              "to",
+                              "be",
+                              "late",
+                              "for",
+                              "school",
+                              "on",
+                              "some",
+                              "days"
+                          ]
+    },
+    {
+        "phrase":  "وتفوتني الجماعة أحيانا",
+        "translation":  "and I would sometimes miss the congregation",
+        "arabic_words":  [
+                             "وتفوتني",
+                             "الجماعة",
+                             "أحيانا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "I",
+                              "would",
+                              "sometimes",
+                              "miss",
+                              "the",
+                              "congregation"
+                          ]
+    },
+    {
+        "phrase":  "ولكن منذ اشتريتها لم أتأخر عن المدرسة",
+        "translation":  "but since I bought it I have not been late for school",
+        "arabic_words":  [
+                             "ولكن",
+                             "منذ",
+                             "اشتريتها",
+                             "لم",
+                             "أتأخر",
+                             "عن",
+                             "المدرسة"
+                         ],
+        "english_words":  [
+                              "but",
+                              "since",
+                              "I",
+                              "bought",
+                              "it",
+                              "I",
+                              "have",
+                              "not",
+                              "been",
+                              "late",
+                              "for",
+                              "school"
+                          ]
+    },
+    {
+        "phrase":  "وما فاتتني جماعة",
+        "translation":  "and I have not missed a congregation",
+        "arabic_words":  [
+                             "وما",
+                             "فاتتني",
+                             "جماعة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "I",
+                              "have",
+                              "not",
+                              "missed",
+                              "a",
+                              "congregation"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: أستأذنك لأني مسافر اليوم",
+        "translation":  "Sa'id: I take my leave, for I am travelling today",
+        "arabic_words":  [
+                             "سعيد:",
+                             "أستأذنك",
+                             "لأني",
+                             "مسافر",
+                             "اليوم"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "I",
+                              "take",
+                              "my",
+                              "leave,",
+                              "for",
+                              "I",
+                              "am",
+                              "travelling",
+                              "today"
+                          ]
+    },
+    {
+        "phrase":  "وميعاد القطار الساعة اثنتا عشرة إلا عشرا",
+        "translation":  "and the train's time is ten to twelve",
+        "arabic_words":  [
+                             "وميعاد",
+                             "القطار",
+                             "الساعة",
+                             "اثنتا",
+                             "عشرة",
+                             "إلا",
+                             "عشرا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "train's",
+                              "time",
+                              "is",
+                              "ten",
+                              "to",
+                              "twelve"
+                          ]
+    },
+    {
+        "phrase":  "حارث: الوقت واسع",
+        "translation":  "Harith: There is plenty of time",
+        "arabic_words":  [
+                             "حارث:",
+                             "الوقت",
+                             "واسع"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "There",
+                              "is",
+                              "plenty",
+                              "of",
+                              "time"
+                          ]
+    },
+    {
+        "phrase":  "فليس الآن إلا عشر ونصف",
+        "translation":  "for it is now only half past ten",
+        "arabic_words":  [
+                             "فليس",
+                             "الآن",
+                             "إلا",
+                             "عشر",
+                             "ونصف"
+                         ],
+        "english_words":  [
+                              "for",
+                              "it",
+                              "is",
+                              "now",
+                              "only",
+                              "half",
+                              "past",
+                              "ten"
+                          ]
+    },
+    {
+        "phrase":  "والمحطة قريبة من بيتك",
+        "translation":  "and the station is near your house",
+        "arabic_words":  [
+                             "والمحطة",
+                             "قريبة",
+                             "من",
+                             "بيتك"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "station",
+                              "is",
+                              "near",
+                              "your",
+                              "house"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: نعم! الوقت واسع",
+        "translation":  "Sa'id: Yes! There is plenty of time",
+        "arabic_words":  [
+                             "سعيد:",
+                             "نعم!",
+                             "الوقت",
+                             "واسع"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "Yes!",
+                              "There",
+                              "is",
+                              "plenty",
+                              "of",
+                              "time"
+                          ]
+    },
+    {
+        "phrase":  "ولكن لي شغل في السوق",
+        "translation":  "but I have business in the market",
+        "arabic_words":  [
+                             "ولكن",
+                             "لي",
+                             "شغل",
+                             "في",
+                             "السوق"
+                         ],
+        "english_words":  [
+                              "but",
+                              "I",
+                              "have",
+                              "business",
+                              "in",
+                              "the",
+                              "market"
+                          ]
+    },
+    {
+        "phrase":  "ولم أربط الحوائج إلى الآن",
+        "translation":  "and I have not yet tied up my things",
+        "arabic_words":  [
+                             "ولم",
+                             "أربط",
+                             "الحوائج",
+                             "إلى",
+                             "الآن"
+                         ],
+        "english_words":  [
+                              "and",
+                              "I",
+                              "have",
+                              "not",
+                              "yet",
+                              "tied",
+                              "up",
+                              "my",
+                              "things"
+                          ]
+    },
+    {
+        "phrase":  "حارث: على بركة الله",
+        "translation":  "Harith: Go with Allah's blessing",
+        "arabic_words":  [
+                             "حارث:",
+                             "على",
+                             "بركة",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "Harith:",
+                              "Go",
+                              "with",
+                              "Allah's",
+                              "blessing"
+                          ]
+    },
+    {
+        "phrase":  "السلام عليكم ورحمة الله",
+        "translation":  "peace be upon you, and the mercy of Allah",
+        "arabic_words":  [
+                             "السلام",
+                             "عليكم",
+                             "ورحمة",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "peace",
+                              "be",
+                              "upon",
+                              "you,",
+                              "and",
+                              "the",
+                              "mercy",
+                              "of",
+                              "Allah"
+                          ]
+    },
+    {
+        "phrase":  "سعيد: وعليكم السلام ورحمة الله وبركاته",
+        "translation":  "Sa'id: And upon you be peace, and the mercy of Allah and His blessings",
+        "arabic_words":  [
+                             "سعيد:",
+                             "وعليكم",
+                             "السلام",
+                             "ورحمة",
+                             "الله",
+                             "وبركاته"
+                         ],
+        "english_words":  [
+                              "Sa'id:",
+                              "And",
+                              "upon",
+                              "you",
+                              "be",
+                              "peace,",
+                              "and",
+                              "the",
+                              "mercy",
+                              "of",
+                              "Allah",
+                              "and",
+                              "His",
+                              "blessings"
+                          ]
+    }
+]

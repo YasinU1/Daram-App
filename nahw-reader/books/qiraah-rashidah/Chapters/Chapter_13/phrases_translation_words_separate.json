@@ -1,0 +1,902 @@
+[
+    {
+        "phrase":  "الأمانة",
+        "translation":  "Trustworthiness",
+        "arabic_words":  [
+                             "الأمانة"
+                         ],
+        "english_words":  [
+                              "Trustworthiness"
+                          ]
+    },
+    {
+        "phrase":  "استأجر رجل قوما، فاشتغلوا وعملوا",
+        "translation":  "A man hired some people, and they laboured and worked",
+        "arabic_words":  [
+                             "استأجر",
+                             "رجل",
+                             "قوما،",
+                             "فاشتغلوا",
+                             "وعملوا"
+                         ],
+        "english_words":  [
+                              "A",
+                              "man",
+                              "hired",
+                              "some",
+                              "people,",
+                              "and",
+                              "they",
+                              "laboured",
+                              "and",
+                              "worked"
+                          ]
+    },
+    {
+        "phrase":  "ولما فرغوا من شغلهم جاؤوا إليه",
+        "translation":  "when they finished their work they came to him",
+        "arabic_words":  [
+                             "ولما",
+                             "فرغوا",
+                             "من",
+                             "شغلهم",
+                             "جاؤوا",
+                             "إليه"
+                         ],
+        "english_words":  [
+                              "when",
+                              "they",
+                              "finished",
+                              "their",
+                              "work",
+                              "they",
+                              "came",
+                              "to",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فأعطاهم أجرهم",
+        "translation":  "and he gave them their wages",
+        "arabic_words":  [
+                             "فأعطاهم",
+                             "أجرهم"
+                         ],
+        "english_words":  [
+                              "and",
+                              "he",
+                              "gave",
+                              "them",
+                              "their",
+                              "wages"
+                          ]
+    },
+    {
+        "phrase":  "وكان فيهم رجل اشتغل معهم",
+        "translation":  "among them was a man who had worked with them",
+        "arabic_words":  [
+                             "وكان",
+                             "فيهم",
+                             "رجل",
+                             "اشتغل",
+                             "معهم"
+                         ],
+        "english_words":  [
+                              "among",
+                              "them",
+                              "was",
+                              "a",
+                              "man",
+                              "who",
+                              "had",
+                              "worked",
+                              "with",
+                              "them"
+                          ]
+    },
+    {
+        "phrase":  "ولكنه لم يأخذ أجره وتركه وذهب",
+        "translation":  "but he did not take his wage; he left it and went away",
+        "arabic_words":  [
+                             "ولكنه",
+                             "لم",
+                             "يأخذ",
+                             "أجره",
+                             "وتركه",
+                             "وذهب"
+                         ],
+        "english_words":  [
+                              "but",
+                              "he",
+                              "did",
+                              "not",
+                              "take",
+                              "his",
+                              "wage;",
+                              "he",
+                              "left",
+                              "it",
+                              "and",
+                              "went",
+                              "away"
+                          ]
+    },
+    {
+        "phrase":  "وكان الرجل كريما أمينا",
+        "translation":  "the man was generous and trustworthy",
+        "arabic_words":  [
+                             "وكان",
+                             "الرجل",
+                             "كريما",
+                             "أمينا"
+                         ],
+        "english_words":  [
+                              "the",
+                              "man",
+                              "was",
+                              "generous",
+                              "and",
+                              "trustworthy"
+                          ]
+    },
+    {
+        "phrase":  "فلم يأكل أجرته، ولم ينتفع بها",
+        "translation":  "he did not consume his wage nor benefit from it",
+        "arabic_words":  [
+                             "فلم",
+                             "يأكل",
+                             "أجرته،",
+                             "ولم",
+                             "ينتفع",
+                             "بها"
+                         ],
+        "english_words":  [
+                              "he",
+                              "did",
+                              "not",
+                              "consume",
+                              "his",
+                              "wage",
+                              "nor",
+                              "benefit",
+                              "from",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "وخاف الله ووضعها في التجارة",
+        "translation":  "he feared Allah and put it into trade",
+        "arabic_words":  [
+                             "وخاف",
+                             "الله",
+                             "ووضعها",
+                             "في",
+                             "التجارة"
+                         ],
+        "english_words":  [
+                              "he",
+                              "feared",
+                              "Allah",
+                              "and",
+                              "put",
+                              "it",
+                              "into",
+                              "trade"
+                          ]
+    },
+    {
+        "phrase":  "وثمرها وأثمرت الأجرة كثيرا",
+        "translation":  "he made it grow, and the wage bore much fruit",
+        "arabic_words":  [
+                             "وثمرها",
+                             "وأثمرت",
+                             "الأجرة",
+                             "كثيرا"
+                         ],
+        "english_words":  [
+                              "he",
+                              "made",
+                              "it",
+                              "grow,",
+                              "and",
+                              "the",
+                              "wage",
+                              "bore",
+                              "much",
+                              "fruit"
+                          ]
+    },
+    {
+        "phrase":  "وكثرت منها الأموال",
+        "translation":  "and from it the wealth multiplied",
+        "arabic_words":  [
+                             "وكثرت",
+                             "منها",
+                             "الأموال"
+                         ],
+        "english_words":  [
+                              "and",
+                              "from",
+                              "it",
+                              "the",
+                              "wealth",
+                              "multiplied"
+                          ]
+    },
+    {
+        "phrase":  "وبعد حين جاءه الأجير",
+        "translation":  "after a time the hired man came to him",
+        "arabic_words":  [
+                             "وبعد",
+                             "حين",
+                             "جاءه",
+                             "الأجير"
+                         ],
+        "english_words":  [
+                              "after",
+                              "a",
+                              "time",
+                              "the",
+                              "hired",
+                              "man",
+                              "came",
+                              "to",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "وهو خائف أن لا يعرفه الرجل",
+        "translation":  "fearing that the man would not recognise him",
+        "arabic_words":  [
+                             "وهو",
+                             "خائف",
+                             "أن",
+                             "لا",
+                             "يعرفه",
+                             "الرجل"
+                         ],
+        "english_words":  [
+                              "fearing",
+                              "that",
+                              "the",
+                              "man",
+                              "would",
+                              "not",
+                              "recognise",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فقد طالت المدة، ومضى زمن كثير",
+        "translation":  "for the period had grown long and much time had passed",
+        "arabic_words":  [
+                             "فقد",
+                             "طالت",
+                             "المدة،",
+                             "ومضى",
+                             "زمن",
+                             "كثير"
+                         ],
+        "english_words":  [
+                              "for",
+                              "the",
+                              "period",
+                              "had",
+                              "grown",
+                              "long",
+                              "and",
+                              "much",
+                              "time",
+                              "had",
+                              "passed"
+                          ]
+    },
+    {
+        "phrase":  "وماذا يفعل المسكين",
+        "translation":  "and what could the poor fellow do",
+        "arabic_words":  [
+                             "وماذا",
+                             "يفعل",
+                             "المسكين"
+                         ],
+        "english_words":  [
+                              "and",
+                              "what",
+                              "could",
+                              "the",
+                              "poor",
+                              "fellow",
+                              "do"
+                          ]
+    },
+    {
+        "phrase":  "إن لم يعرفه الرجل أو نسي قصته",
+        "translation":  "if the man did not recognise him, or had forgotten his story?",
+        "arabic_words":  [
+                             "إن",
+                             "لم",
+                             "يعرفه",
+                             "الرجل",
+                             "أو",
+                             "نسي",
+                             "قصته"
+                         ],
+        "english_words":  [
+                              "if",
+                              "the",
+                              "man",
+                              "did",
+                              "not",
+                              "recognise",
+                              "him,",
+                              "or",
+                              "had",
+                              "forgotten",
+                              "his",
+                              "story?"
+                          ]
+    },
+    {
+        "phrase":  "جاء الأجير وهو لا يطمع إلا في أجرته القليلة",
+        "translation":  "the hired man came hoping only for his small wage",
+        "arabic_words":  [
+                             "جاء",
+                             "الأجير",
+                             "وهو",
+                             "لا",
+                             "يطمع",
+                             "إلا",
+                             "في",
+                             "أجرته",
+                             "القليلة"
+                         ],
+        "english_words":  [
+                              "the",
+                              "hired",
+                              "man",
+                              "came",
+                              "hoping",
+                              "only",
+                              "for",
+                              "his",
+                              "small",
+                              "wage"
+                          ]
+    },
+    {
+        "phrase":  "دراهم معدودة",
+        "translation":  "a few counted dirhams",
+        "arabic_words":  [
+                             "دراهم",
+                             "معدودة"
+                         ],
+        "english_words":  [
+                              "a",
+                              "few",
+                              "counted",
+                              "dirhams"
+                          ]
+    },
+    {
+        "phrase":  "وإذا جحدها الرجل ولم يدفعها رجع خائبا",
+        "translation":  "and if the man denied it and did not pay it, he would return empty-handed",
+        "arabic_words":  [
+                             "وإذا",
+                             "جحدها",
+                             "الرجل",
+                             "ولم",
+                             "يدفعها",
+                             "رجع",
+                             "خائبا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "if",
+                              "the",
+                              "man",
+                              "denied",
+                              "it",
+                              "and",
+                              "did",
+                              "not",
+                              "pay",
+                              "it,",
+                              "he",
+                              "would",
+                              "return",
+                              "empty-handed"
+                          ]
+    },
+    {
+        "phrase":  "ولكنه جاءه لأنه يحتاج إلى هذه الدراهم",
+        "translation":  "but he came to him because he needed these dirhams",
+        "arabic_words":  [
+                             "ولكنه",
+                             "جاءه",
+                             "لأنه",
+                             "يحتاج",
+                             "إلى",
+                             "هذه",
+                             "الدراهم"
+                         ],
+        "english_words":  [
+                              "but",
+                              "he",
+                              "came",
+                              "to",
+                              "him",
+                              "because",
+                              "he",
+                              "needed",
+                              "these",
+                              "dirhams"
+                          ]
+    },
+    {
+        "phrase":  "فقال: يا عبد الله!",
+        "translation":  "he said: O servant of Allah!",
+        "arabic_words":  [
+                             "فقال:",
+                             "يا",
+                             "عبد",
+                             "الله!"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "O",
+                              "servant",
+                              "of",
+                              "Allah!"
+                          ]
+    },
+    {
+        "phrase":  "أد إلي أجري",
+        "translation":  "Pay me my wage",
+        "arabic_words":  [
+                             "أد",
+                             "إلي",
+                             "أجري"
+                         ],
+        "english_words":  [
+                              "Pay",
+                              "me",
+                              "my",
+                              "wage"
+                          ]
+    },
+    {
+        "phrase":  "فما جحد الرجل وما أنكر، بل قال:",
+        "translation":  "the man neither denied nor disavowed; rather he said:",
+        "arabic_words":  [
+                             "فما",
+                             "جحد",
+                             "الرجل",
+                             "وما",
+                             "أنكر،",
+                             "بل",
+                             "قال:"
+                         ],
+        "english_words":  [
+                              "the",
+                              "man",
+                              "neither",
+                              "denied",
+                              "nor",
+                              "disavowed;",
+                              "rather",
+                              "he",
+                              "said:"
+                          ]
+    },
+    {
+        "phrase":  "كل ما ترى من الإبل والبقر والغنم والرقيق من أجرك",
+        "translation":  "all that you see of camels, cattle, sheep and slaves is from your wage",
+        "arabic_words":  [
+                             "كل",
+                             "ما",
+                             "ترى",
+                             "من",
+                             "الإبل",
+                             "والبقر",
+                             "والغنم",
+                             "والرقيق",
+                             "من",
+                             "أجرك"
+                         ],
+        "english_words":  [
+                              "all",
+                              "that",
+                              "you",
+                              "see",
+                              "of",
+                              "camels,",
+                              "cattle,",
+                              "sheep",
+                              "and",
+                              "slaves",
+                              "is",
+                              "from",
+                              "your",
+                              "wage"
+                          ]
+    },
+    {
+        "phrase":  "دهش الرجل وتحير",
+        "translation":  "the man was astonished and bewildered",
+        "arabic_words":  [
+                             "دهش",
+                             "الرجل",
+                             "وتحير"
+                         ],
+        "english_words":  [
+                              "the",
+                              "man",
+                              "was",
+                              "astonished",
+                              "and",
+                              "bewildered"
+                          ]
+    },
+    {
+        "phrase":  "وظن أنه يستهزئ به",
+        "translation":  "and thought that he was mocking him",
+        "arabic_words":  [
+                             "وظن",
+                             "أنه",
+                             "يستهزئ",
+                             "به"
+                         ],
+        "english_words":  [
+                              "and",
+                              "thought",
+                              "that",
+                              "he",
+                              "was",
+                              "mocking",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فقال: يا عبد الله لا تستهزئ بي",
+        "translation":  "so he said: O servant of Allah, do not mock me",
+        "arabic_words":  [
+                             "فقال:",
+                             "يا",
+                             "عبد",
+                             "الله",
+                             "لا",
+                             "تستهزئ",
+                             "بي"
+                         ],
+        "english_words":  [
+                              "so",
+                              "he",
+                              "said:",
+                              "O",
+                              "servant",
+                              "of",
+                              "Allah,",
+                              "do",
+                              "not",
+                              "mock",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "قال الرجل: لا أستهزئ بك",
+        "translation":  "the man said: I am not mocking you",
+        "arabic_words":  [
+                             "قال",
+                             "الرجل:",
+                             "لا",
+                             "أستهزئ",
+                             "بك"
+                         ],
+        "english_words":  [
+                              "the",
+                              "man",
+                              "said:",
+                              "I",
+                              "am",
+                              "not",
+                              "mocking",
+                              "you"
+                          ]
+    },
+    {
+        "phrase":  "فكل ما ترى من الإبل والبقر والغنم والرقيق لك",
+        "translation":  "all that you see of camels, cattle, sheep and slaves is yours",
+        "arabic_words":  [
+                             "فكل",
+                             "ما",
+                             "ترى",
+                             "من",
+                             "الإبل",
+                             "والبقر",
+                             "والغنم",
+                             "والرقيق",
+                             "لك"
+                         ],
+        "english_words":  [
+                              "all",
+                              "that",
+                              "you",
+                              "see",
+                              "of",
+                              "camels,",
+                              "cattle,",
+                              "sheep",
+                              "and",
+                              "slaves",
+                              "is",
+                              "yours"
+                          ]
+    },
+    {
+        "phrase":  "فإني قد وضعت أجرتك في التجارة، وثمرتها",
+        "translation":  "for I put your wage into trade and made it grow",
+        "arabic_words":  [
+                             "فإني",
+                             "قد",
+                             "وضعت",
+                             "أجرتك",
+                             "في",
+                             "التجارة،",
+                             "وثمرتها"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "put",
+                              "your",
+                              "wage",
+                              "into",
+                              "trade",
+                              "and",
+                              "made",
+                              "it",
+                              "grow"
+                          ]
+    },
+    {
+        "phrase":  "وأثمرت هذه الإبل والبقر والغنم والرقيق",
+        "translation":  "and it yielded these camels, cattle, sheep and slaves",
+        "arabic_words":  [
+                             "وأثمرت",
+                             "هذه",
+                             "الإبل",
+                             "والبقر",
+                             "والغنم",
+                             "والرقيق"
+                         ],
+        "english_words":  [
+                              "and",
+                              "it",
+                              "yielded",
+                              "these",
+                              "camels,",
+                              "cattle,",
+                              "sheep",
+                              "and",
+                              "slaves"
+                          ]
+    },
+    {
+        "phrase":  "فأخذ الأجير الإبل والبقر والغنم والرقيق",
+        "translation":  "so the hired man took the camels, cattle, sheep and slaves",
+        "arabic_words":  [
+                             "فأخذ",
+                             "الأجير",
+                             "الإبل",
+                             "والبقر",
+                             "والغنم",
+                             "والرقيق"
+                         ],
+        "english_words":  [
+                              "so",
+                              "the",
+                              "hired",
+                              "man",
+                              "took",
+                              "the",
+                              "camels,",
+                              "cattle,",
+                              "sheep",
+                              "and",
+                              "slaves"
+                          ]
+    },
+    {
+        "phrase":  "ولم يترك منها شيئا",
+        "translation":  "and left nothing of them behind",
+        "arabic_words":  [
+                             "ولم",
+                             "يترك",
+                             "منها",
+                             "شيئا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "left",
+                              "nothing",
+                              "of",
+                              "them",
+                              "behind"
+                          ]
+    },
+    {
+        "phrase":  "وقد رضي الله عنه على هذه الأمانة والوفاء والكرم",
+        "translation":  "Allah was pleased with him for this trustworthiness, faithfulness and generosity",
+        "arabic_words":  [
+                             "وقد",
+                             "رضي",
+                             "الله",
+                             "عنه",
+                             "على",
+                             "هذه",
+                             "الأمانة",
+                             "والوفاء",
+                             "والكرم"
+                         ],
+        "english_words":  [
+                              "Allah",
+                              "was",
+                              "pleased",
+                              "with",
+                              "him",
+                              "for",
+                              "this",
+                              "trustworthiness,",
+                              "faithfulness",
+                              "and",
+                              "generosity"
+                          ]
+    },
+    {
+        "phrase":  "وقد وقع هذا الرجل الأمين مرة في غار",
+        "translation":  "this trustworthy man once found himself in a cave",
+        "arabic_words":  [
+                             "وقد",
+                             "وقع",
+                             "هذا",
+                             "الرجل",
+                             "الأمين",
+                             "مرة",
+                             "في",
+                             "غار"
+                         ],
+        "english_words":  [
+                              "this",
+                              "trustworthy",
+                              "man",
+                              "once",
+                              "found",
+                              "himself",
+                              "in",
+                              "a",
+                              "cave"
+                          ]
+    },
+    {
+        "phrase":  "وانطبقت عليه صخرة",
+        "translation":  "and a rock closed in upon him",
+        "arabic_words":  [
+                             "وانطبقت",
+                             "عليه",
+                             "صخرة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "a",
+                              "rock",
+                              "closed",
+                              "in",
+                              "upon",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فلما يئس من الحياة",
+        "translation":  "when he despaired of life",
+        "arabic_words":  [
+                             "فلما",
+                             "يئس",
+                             "من",
+                             "الحياة"
+                         ],
+        "english_words":  [
+                              "when",
+                              "he",
+                              "despaired",
+                              "of",
+                              "life"
+                          ]
+    },
+    {
+        "phrase":  "دعا الله بهذا العمل الصالح، وقال:",
+        "translation":  "he called upon Allah by this righteous deed and said:",
+        "arabic_words":  [
+                             "دعا",
+                             "الله",
+                             "بهذا",
+                             "العمل",
+                             "الصالح،",
+                             "وقال:"
+                         ],
+        "english_words":  [
+                              "he",
+                              "called",
+                              "upon",
+                              "Allah",
+                              "by",
+                              "this",
+                              "righteous",
+                              "deed",
+                              "and",
+                              "said:"
+                          ]
+    },
+    {
+        "phrase":  "اللهم إن كنت فعلت ذلك ابتغاء وجهك",
+        "translation":  "O Allah, if I did that seeking Your Face",
+        "arabic_words":  [
+                             "اللهم",
+                             "إن",
+                             "كنت",
+                             "فعلت",
+                             "ذلك",
+                             "ابتغاء",
+                             "وجهك"
+                         ],
+        "english_words":  [
+                              "O",
+                              "Allah,",
+                              "if",
+                              "I",
+                              "did",
+                              "that",
+                              "seeking",
+                              "Your",
+                              "Face"
+                          ]
+    },
+    {
+        "phrase":  "فاكشف عنا هذه الصخرة",
+        "translation":  "then remove this rock from us",
+        "arabic_words":  [
+                             "فاكشف",
+                             "عنا",
+                             "هذه",
+                             "الصخرة"
+                         ],
+        "english_words":  [
+                              "then",
+                              "remove",
+                              "this",
+                              "rock",
+                              "from",
+                              "us"
+                          ]
+    },
+    {
+        "phrase":  "فأجاب الله دعوته وأعانه",
+        "translation":  "so Allah answered his supplication and helped him",
+        "arabic_words":  [
+                             "فأجاب",
+                             "الله",
+                             "دعوته",
+                             "وأعانه"
+                         ],
+        "english_words":  [
+                              "so",
+                              "Allah",
+                              "answered",
+                              "his",
+                              "supplication",
+                              "and",
+                              "helped",
+                              "him"
+                          ]
+    }
+]

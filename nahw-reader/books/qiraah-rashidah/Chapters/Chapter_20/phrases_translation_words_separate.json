@@ -1,0 +1,1023 @@
+[
+    {
+        "phrase":  "قريتي",
+        "translation":  "My Village",
+        "arabic_words":  [
+                             "قريتي"
+                         ],
+        "english_words":  [
+                              "My",
+                              "Village"
+                          ]
+    },
+    {
+        "phrase":  "قريتي جميلة في وسط حقول وبساتين",
+        "translation":  "My village is beautiful, amid fields and orchards",
+        "arabic_words":  [
+                             "قريتي",
+                             "جميلة",
+                             "في",
+                             "وسط",
+                             "حقول",
+                             "وبساتين"
+                         ],
+        "english_words":  [
+                              "My",
+                              "village",
+                              "is",
+                              "beautiful,",
+                              "amid",
+                              "fields",
+                              "and",
+                              "orchards"
+                          ]
+    },
+    {
+        "phrase":  "كأنها جزيرة في بحر أخضر",
+        "translation":  "as if it were an island in a green sea",
+        "arabic_words":  [
+                             "كأنها",
+                             "جزيرة",
+                             "في",
+                             "بحر",
+                             "أخضر"
+                         ],
+        "english_words":  [
+                              "as",
+                              "if",
+                              "it",
+                              "were",
+                              "an",
+                              "island",
+                              "in",
+                              "a",
+                              "green",
+                              "sea"
+                          ]
+    },
+    {
+        "phrase":  "لا ترى فيها إلا خضرة وماء",
+        "translation":  "you see nothing in it but greenery and water",
+        "arabic_words":  [
+                             "لا",
+                             "ترى",
+                             "فيها",
+                             "إلا",
+                             "خضرة",
+                             "وماء"
+                         ],
+        "english_words":  [
+                              "you",
+                              "see",
+                              "nothing",
+                              "in",
+                              "it",
+                              "but",
+                              "greenery",
+                              "and",
+                              "water"
+                          ]
+    },
+    {
+        "phrase":  "فالأرض خضراء والحقول خضراء",
+        "translation":  "the land is green and the fields are green",
+        "arabic_words":  [
+                             "فالأرض",
+                             "خضراء",
+                             "والحقول",
+                             "خضراء"
+                         ],
+        "english_words":  [
+                              "the",
+                              "land",
+                              "is",
+                              "green",
+                              "and",
+                              "the",
+                              "fields",
+                              "are",
+                              "green"
+                          ]
+    },
+    {
+        "phrase":  "والدنيا كلها خضراء في قريتي",
+        "translation":  "the whole world is green in my village",
+        "arabic_words":  [
+                             "والدنيا",
+                             "كلها",
+                             "خضراء",
+                             "في",
+                             "قريتي"
+                         ],
+        "english_words":  [
+                              "the",
+                              "whole",
+                              "world",
+                              "is",
+                              "green",
+                              "in",
+                              "my",
+                              "village"
+                          ]
+    },
+    {
+        "phrase":  "ويجري من تحت القرية نهر",
+        "translation":  "beneath the village runs a river",
+        "arabic_words":  [
+                             "ويجري",
+                             "من",
+                             "تحت",
+                             "القرية",
+                             "نهر"
+                         ],
+        "english_words":  [
+                              "beneath",
+                              "the",
+                              "village",
+                              "runs",
+                              "a",
+                              "river"
+                          ]
+    },
+    {
+        "phrase":  "ماؤه نقي شفاف، لأنه يجري على الرمل",
+        "translation":  "its water pure and clear, because it runs over sand",
+        "arabic_words":  [
+                             "ماؤه",
+                             "نقي",
+                             "شفاف،",
+                             "لأنه",
+                             "يجري",
+                             "على",
+                             "الرمل"
+                         ],
+        "english_words":  [
+                              "its",
+                              "water",
+                              "pure",
+                              "and",
+                              "clear,",
+                              "because",
+                              "it",
+                              "runs",
+                              "over",
+                              "sand"
+                          ]
+    },
+    {
+        "phrase":  "نغتسل في هذا النهر ونسبح ونلعب",
+        "translation":  "we bathe in this river, swim and play",
+        "arabic_words":  [
+                             "نغتسل",
+                             "في",
+                             "هذا",
+                             "النهر",
+                             "ونسبح",
+                             "ونلعب"
+                         ],
+        "english_words":  [
+                              "we",
+                              "bathe",
+                              "in",
+                              "this",
+                              "river,",
+                              "swim",
+                              "and",
+                              "play"
+                          ]
+    },
+    {
+        "phrase":  "ونشرب من مائه النقي",
+        "translation":  "and drink of its pure water",
+        "arabic_words":  [
+                             "ونشرب",
+                             "من",
+                             "مائه",
+                             "النقي"
+                         ],
+        "english_words":  [
+                              "and",
+                              "drink",
+                              "of",
+                              "its",
+                              "pure",
+                              "water"
+                          ]
+    },
+    {
+        "phrase":  "ونرى السمك يجري من هنا وهنا",
+        "translation":  "we see the fish darting here and there",
+        "arabic_words":  [
+                             "ونرى",
+                             "السمك",
+                             "يجري",
+                             "من",
+                             "هنا",
+                             "وهنا"
+                         ],
+        "english_words":  [
+                              "we",
+                              "see",
+                              "the",
+                              "fish",
+                              "darting",
+                              "here",
+                              "and",
+                              "there"
+                          ]
+    },
+    {
+        "phrase":  "ونرى الصدف في قعر النهر",
+        "translation":  "and see the shells at the bottom of the river",
+        "arabic_words":  [
+                             "ونرى",
+                             "الصدف",
+                             "في",
+                             "قعر",
+                             "النهر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "see",
+                              "the",
+                              "shells",
+                              "at",
+                              "the",
+                              "bottom",
+                              "of",
+                              "the",
+                              "river"
+                          ]
+    },
+    {
+        "phrase":  "لأن الماء نقي شفاف",
+        "translation":  "because the water is pure and clear",
+        "arabic_words":  [
+                             "لأن",
+                             "الماء",
+                             "نقي",
+                             "شفاف"
+                         ],
+        "english_words":  [
+                              "because",
+                              "the",
+                              "water",
+                              "is",
+                              "pure",
+                              "and",
+                              "clear"
+                          ]
+    },
+    {
+        "phrase":  "وقد تعلمنا السباحة ونحن صغار",
+        "translation":  "we learnt swimming while we were small",
+        "arabic_words":  [
+                             "وقد",
+                             "تعلمنا",
+                             "السباحة",
+                             "ونحن",
+                             "صغار"
+                         ],
+        "english_words":  [
+                              "we",
+                              "learnt",
+                              "swimming",
+                              "while",
+                              "we",
+                              "were",
+                              "small"
+                          ]
+    },
+    {
+        "phrase":  "فإذا كانت أيام المطر فاض النهر، وكان عرضه كبير",
+        "translation":  "when the rainy days came, the river flooded and its breadth was great",
+        "arabic_words":  [
+                             "فإذا",
+                             "كانت",
+                             "أيام",
+                             "المطر",
+                             "فاض",
+                             "النهر،",
+                             "وكان",
+                             "عرضه",
+                             "كبير"
+                         ],
+        "english_words":  [
+                              "when",
+                              "the",
+                              "rainy",
+                              "days",
+                              "came,",
+                              "the",
+                              "river",
+                              "flooded",
+                              "and",
+                              "its",
+                              "breadth",
+                              "was",
+                              "great"
+                          ]
+    },
+    {
+        "phrase":  "عبرنا هذا النهر وتسابقنا في السباحة",
+        "translation":  "we crossed this river and raced one another in swimming",
+        "arabic_words":  [
+                             "عبرنا",
+                             "هذا",
+                             "النهر",
+                             "وتسابقنا",
+                             "في",
+                             "السباحة"
+                         ],
+        "english_words":  [
+                              "we",
+                              "crossed",
+                              "this",
+                              "river",
+                              "and",
+                              "raced",
+                              "one",
+                              "another",
+                              "in",
+                              "swimming"
+                          ]
+    },
+    {
+        "phrase":  "وأرى كثيرا من أهل البلد لا يعرفون السباحة وهم كبار",
+        "translation":  "I see many townsfolk who cannot swim, though they are grown",
+        "arabic_words":  [
+                             "وأرى",
+                             "كثيرا",
+                             "من",
+                             "أهل",
+                             "البلد",
+                             "لا",
+                             "يعرفون",
+                             "السباحة",
+                             "وهم",
+                             "كبار"
+                         ],
+        "english_words":  [
+                              "I",
+                              "see",
+                              "many",
+                              "townsfolk",
+                              "who",
+                              "cannot",
+                              "swim,",
+                              "though",
+                              "they",
+                              "are",
+                              "grown"
+                          ]
+    },
+    {
+        "phrase":  "ويخافون الماء جدا، ولا يدخلون النهر",
+        "translation":  "they fear the water greatly and do not enter the river",
+        "arabic_words":  [
+                             "ويخافون",
+                             "الماء",
+                             "جدا،",
+                             "ولا",
+                             "يدخلون",
+                             "النهر"
+                         ],
+        "english_words":  [
+                              "they",
+                              "fear",
+                              "the",
+                              "water",
+                              "greatly",
+                              "and",
+                              "do",
+                              "not",
+                              "enter",
+                              "the",
+                              "river"
+                          ]
+    },
+    {
+        "phrase":  "جاء مرة صديق لي من البلد",
+        "translation":  "once a friend of mine came from town",
+        "arabic_words":  [
+                             "جاء",
+                             "مرة",
+                             "صديق",
+                             "لي",
+                             "من",
+                             "البلد"
+                         ],
+        "english_words":  [
+                              "once",
+                              "a",
+                              "friend",
+                              "of",
+                              "mine",
+                              "came",
+                              "from",
+                              "town"
+                          ]
+    },
+    {
+        "phrase":  "ودخلنا النهر وقلنا له",
+        "translation":  "we went into the river and said to him",
+        "arabic_words":  [
+                             "ودخلنا",
+                             "النهر",
+                             "وقلنا",
+                             "له"
+                         ],
+        "english_words":  [
+                              "we",
+                              "went",
+                              "into",
+                              "the",
+                              "river",
+                              "and",
+                              "said",
+                              "to",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "تعال يا أخي واغتسل واسبح",
+        "translation":  "come, brother — bathe and swim",
+        "arabic_words":  [
+                             "تعال",
+                             "يا",
+                             "أخي",
+                             "واغتسل",
+                             "واسبح"
+                         ],
+        "english_words":  [
+                              "come,",
+                              "brother",
+                              "—",
+                              "bathe",
+                              "and",
+                              "swim"
+                          ]
+    },
+    {
+        "phrase":  "فقال: إني أخاف الماء ولا أعرف السباحة",
+        "translation":  "he said: I fear the water and cannot swim",
+        "arabic_words":  [
+                             "فقال:",
+                             "إني",
+                             "أخاف",
+                             "الماء",
+                             "ولا",
+                             "أعرف",
+                             "السباحة"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "I",
+                              "fear",
+                              "the",
+                              "water",
+                              "and",
+                              "cannot",
+                              "swim"
+                          ]
+    },
+    {
+        "phrase":  "فشجعناه وقلنا: لا تخف ونحن معك",
+        "translation":  "we encouraged him and said: do not fear, we are with you",
+        "arabic_words":  [
+                             "فشجعناه",
+                             "وقلنا:",
+                             "لا",
+                             "تخف",
+                             "ونحن",
+                             "معك"
+                         ],
+        "english_words":  [
+                              "we",
+                              "encouraged",
+                              "him",
+                              "and",
+                              "said:",
+                              "do",
+                              "not",
+                              "fear,",
+                              "we",
+                              "are",
+                              "with",
+                              "you"
+                          ]
+    },
+    {
+        "phrase":  "فتشجع ودخل الماء وأراد أن يسبح",
+        "translation":  "so he took courage, entered the water and tried to swim",
+        "arabic_words":  [
+                             "فتشجع",
+                             "ودخل",
+                             "الماء",
+                             "وأراد",
+                             "أن",
+                             "يسبح"
+                         ],
+        "english_words":  [
+                              "so",
+                              "he",
+                              "took",
+                              "courage,",
+                              "entered",
+                              "the",
+                              "water",
+                              "and",
+                              "tried",
+                              "to",
+                              "swim"
+                          ]
+    },
+    {
+        "phrase":  "ولكن ذهب إلى القعر",
+        "translation":  "but he went down to the bottom",
+        "arabic_words":  [
+                             "ولكن",
+                             "ذهب",
+                             "إلى",
+                             "القعر"
+                         ],
+        "english_words":  [
+                              "but",
+                              "he",
+                              "went",
+                              "down",
+                              "to",
+                              "the",
+                              "bottom"
+                          ]
+    },
+    {
+        "phrase":  "فأخذنا بيده ورفعناه",
+        "translation":  "so we took his hand and lifted him up",
+        "arabic_words":  [
+                             "فأخذنا",
+                             "بيده",
+                             "ورفعناه"
+                         ],
+        "english_words":  [
+                              "so",
+                              "we",
+                              "took",
+                              "his",
+                              "hand",
+                              "and",
+                              "lifted",
+                              "him",
+                              "up"
+                          ]
+    },
+    {
+        "phrase":  "فخرج وقد شرب الماء",
+        "translation":  "he came out, having swallowed water",
+        "arabic_words":  [
+                             "فخرج",
+                             "وقد",
+                             "شرب",
+                             "الماء"
+                         ],
+        "english_words":  [
+                              "he",
+                              "came",
+                              "out,",
+                              "having",
+                              "swallowed",
+                              "water"
+                          ]
+    },
+    {
+        "phrase":  "وكان يغتسل معنا كل يوم",
+        "translation":  "he would bathe with us every day",
+        "arabic_words":  [
+                             "وكان",
+                             "يغتسل",
+                             "معنا",
+                             "كل",
+                             "يوم"
+                         ],
+        "english_words":  [
+                              "he",
+                              "would",
+                              "bathe",
+                              "with",
+                              "us",
+                              "every",
+                              "day"
+                          ]
+    },
+    {
+        "phrase":  "ويتعلم السباحة حتى تعلمها",
+        "translation":  "learning to swim until he mastered it",
+        "arabic_words":  [
+                             "ويتعلم",
+                             "السباحة",
+                             "حتى",
+                             "تعلمها"
+                         ],
+        "english_words":  [
+                              "learning",
+                              "to",
+                              "swim",
+                              "until",
+                              "he",
+                              "mastered",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "وعبر النهر فتشجع وعبر مرتين",
+        "translation":  "he crossed the river, grew bold, and crossed twice",
+        "arabic_words":  [
+                             "وعبر",
+                             "النهر",
+                             "فتشجع",
+                             "وعبر",
+                             "مرتين"
+                         ],
+        "english_words":  [
+                              "he",
+                              "crossed",
+                              "the",
+                              "river,",
+                              "grew",
+                              "bold,",
+                              "and",
+                              "crossed",
+                              "twice"
+                          ]
+    },
+    {
+        "phrase":  "وإذا نزلت أمطار كثيرة وفاض النهر",
+        "translation":  "when heavy rains fall and the river floods",
+        "arabic_words":  [
+                             "وإذا",
+                             "نزلت",
+                             "أمطار",
+                             "كثيرة",
+                             "وفاض",
+                             "النهر"
+                         ],
+        "english_words":  [
+                              "when",
+                              "heavy",
+                              "rains",
+                              "fall",
+                              "and",
+                              "the",
+                              "river",
+                              "floods"
+                          ]
+    },
+    {
+        "phrase":  "أصبحت قريتي شبه جزيرة",
+        "translation":  "my village becomes a peninsula",
+        "arabic_words":  [
+                             "أصبحت",
+                             "قريتي",
+                             "شبه",
+                             "جزيرة"
+                         ],
+        "english_words":  [
+                              "my",
+                              "village",
+                              "becomes",
+                              "a",
+                              "peninsula"
+                          ]
+    },
+    {
+        "phrase":  "يحيط بها الماء من ثلاث جهات",
+        "translation":  "surrounded by water on three sides",
+        "arabic_words":  [
+                             "يحيط",
+                             "بها",
+                             "الماء",
+                             "من",
+                             "ثلاث",
+                             "جهات"
+                         ],
+        "english_words":  [
+                              "surrounded",
+                              "by",
+                              "water",
+                              "on",
+                              "three",
+                              "sides"
+                          ]
+    },
+    {
+        "phrase":  "وتبقى جهة واحدة",
+        "translation":  "one side remains",
+        "arabic_words":  [
+                             "وتبقى",
+                             "جهة",
+                             "واحدة"
+                         ],
+        "english_words":  [
+                              "one",
+                              "side",
+                              "remains"
+                          ]
+    },
+    {
+        "phrase":  "نذهب منها إلى البلد ونشتري الحوائج من السوق",
+        "translation":  "by which we go to town and buy necessities from the market",
+        "arabic_words":  [
+                             "نذهب",
+                             "منها",
+                             "إلى",
+                             "البلد",
+                             "ونشتري",
+                             "الحوائج",
+                             "من",
+                             "السوق"
+                         ],
+        "english_words":  [
+                              "by",
+                              "which",
+                              "we",
+                              "go",
+                              "to",
+                              "town",
+                              "and",
+                              "buy",
+                              "necessities",
+                              "from",
+                              "the",
+                              "market"
+                          ]
+    },
+    {
+        "phrase":  "وفي سنة كان فيضان عظيم",
+        "translation":  "one year there was a great flood",
+        "arabic_words":  [
+                             "وفي",
+                             "سنة",
+                             "كان",
+                             "فيضان",
+                             "عظيم"
+                         ],
+        "english_words":  [
+                              "one",
+                              "year",
+                              "there",
+                              "was",
+                              "a",
+                              "great",
+                              "flood"
+                          ]
+    },
+    {
+        "phrase":  "فاض الماء ودخل البيوت",
+        "translation":  "the water overflowed and entered the houses",
+        "arabic_words":  [
+                             "فاض",
+                             "الماء",
+                             "ودخل",
+                             "البيوت"
+                         ],
+        "english_words":  [
+                              "the",
+                              "water",
+                              "overflowed",
+                              "and",
+                              "entered",
+                              "the",
+                              "houses"
+                          ]
+    },
+    {
+        "phrase":  "وخاف الناس الغرق",
+        "translation":  "the people feared drowning",
+        "arabic_words":  [
+                             "وخاف",
+                             "الناس",
+                             "الغرق"
+                         ],
+        "english_words":  [
+                              "the",
+                              "people",
+                              "feared",
+                              "drowning"
+                          ]
+    },
+    {
+        "phrase":  "وتركنا قريتنا وذهبنا إلى البلد",
+        "translation":  "we left our village and went to town",
+        "arabic_words":  [
+                             "وتركنا",
+                             "قريتنا",
+                             "وذهبنا",
+                             "إلى",
+                             "البلد"
+                         ],
+        "english_words":  [
+                              "we",
+                              "left",
+                              "our",
+                              "village",
+                              "and",
+                              "went",
+                              "to",
+                              "town"
+                          ]
+    },
+    {
+        "phrase":  "ولم نرجع إلا بعد شهر",
+        "translation":  "and did not return until after a month",
+        "arabic_words":  [
+                             "ولم",
+                             "نرجع",
+                             "إلا",
+                             "بعد",
+                             "شهر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "did",
+                              "not",
+                              "return",
+                              "until",
+                              "after",
+                              "a",
+                              "month"
+                          ]
+    },
+    {
+        "phrase":  "ويزور قريتي كثير من الناس والعلماء",
+        "translation":  "many people and scholars visit my village",
+        "arabic_words":  [
+                             "ويزور",
+                             "قريتي",
+                             "كثير",
+                             "من",
+                             "الناس",
+                             "والعلماء"
+                         ],
+        "english_words":  [
+                              "many",
+                              "people",
+                              "and",
+                              "scholars",
+                              "visit",
+                              "my",
+                              "village"
+                          ]
+    },
+    {
+        "phrase":  "لأنها قرية مشهورة",
+        "translation":  "because it is a famous village",
+        "arabic_words":  [
+                             "لأنها",
+                             "قرية",
+                             "مشهورة"
+                         ],
+        "english_words":  [
+                              "because",
+                              "it",
+                              "is",
+                              "a",
+                              "famous",
+                              "village"
+                          ]
+    },
+    {
+        "phrase":  "ولد فيها كثير من العلماء والصالحين",
+        "translation":  "in it were born many of the scholars and the righteous",
+        "arabic_words":  [
+                             "ولد",
+                             "فيها",
+                             "كثير",
+                             "من",
+                             "العلماء",
+                             "والصالحين"
+                         ],
+        "english_words":  [
+                              "in",
+                              "it",
+                              "were",
+                              "born",
+                              "many",
+                              "of",
+                              "the",
+                              "scholars",
+                              "and",
+                              "the",
+                              "righteous"
+                          ]
+    },
+    {
+        "phrase":  "وعلى شاطئ النهر مسجد قديم بناه جدنا الكبير",
+        "translation":  "on the bank of the river is an old mosque built by our great forefather",
+        "arabic_words":  [
+                             "وعلى",
+                             "شاطئ",
+                             "النهر",
+                             "مسجد",
+                             "قديم",
+                             "بناه",
+                             "جدنا",
+                             "الكبير"
+                         ],
+        "english_words":  [
+                              "on",
+                              "the",
+                              "bank",
+                              "of",
+                              "the",
+                              "river",
+                              "is",
+                              "an",
+                              "old",
+                              "mosque",
+                              "built",
+                              "by",
+                              "our",
+                              "great",
+                              "forefather"
+                          ]
+    },
+    {
+        "phrase":  "مضى عليه ثلاثمئة سنة",
+        "translation":  "three hundred years have passed over it",
+        "arabic_words":  [
+                             "مضى",
+                             "عليه",
+                             "ثلاثمئة",
+                             "سنة"
+                         ],
+        "english_words":  [
+                              "three",
+                              "hundred",
+                              "years",
+                              "have",
+                              "passed",
+                              "over",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "ويدخل فيه الماء في كل فيضان",
+        "translation":  "the water enters it in every flood",
+        "arabic_words":  [
+                             "ويدخل",
+                             "فيه",
+                             "الماء",
+                             "في",
+                             "كل",
+                             "فيضان"
+                         ],
+        "english_words":  [
+                              "the",
+                              "water",
+                              "enters",
+                              "it",
+                              "in",
+                              "every",
+                              "flood"
+                          ]
+    },
+    {
+        "phrase":  "ويمكث فيه الماء أياما طويلة",
+        "translation":  "and the water remains in it for long days",
+        "arabic_words":  [
+                             "ويمكث",
+                             "فيه",
+                             "الماء",
+                             "أياما",
+                             "طويلة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "water",
+                              "remains",
+                              "in",
+                              "it",
+                              "for",
+                              "long",
+                              "days"
+                          ]
+    },
+    {
+        "phrase":  "ولكنه لم يضعف",
+        "translation":  "but it has not weakened",
+        "arabic_words":  [
+                             "ولكنه",
+                             "لم",
+                             "يضعف"
+                         ],
+        "english_words":  [
+                              "but",
+                              "it",
+                              "has",
+                              "not",
+                              "weakened"
+                          ]
+    }
+]

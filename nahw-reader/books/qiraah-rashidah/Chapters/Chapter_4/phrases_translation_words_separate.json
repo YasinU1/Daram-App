@@ -1,0 +1,1283 @@
+[
+    {
+        "phrase":  "في السوق",
+        "translation":  "In the Market",
+        "arabic_words":  [
+                             "في",
+                             "السوق"
+                         ],
+        "english_words":  [
+                              "In",
+                              "the",
+                              "Market"
+                          ]
+    },
+    {
+        "phrase":  "عمر: هل زرت سوق هذا البلد يا صديقي",
+        "translation":  "Umar: Have you visited the market of this town, my friend?",
+        "arabic_words":  [
+                             "عمر:",
+                             "هل",
+                             "زرت",
+                             "سوق",
+                             "هذا",
+                             "البلد",
+                             "يا",
+                             "صديقي"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Have",
+                              "you",
+                              "visited",
+                              "the",
+                              "market",
+                              "of",
+                              "this",
+                              "town,",
+                              "my",
+                              "friend?"
+                          ]
+    },
+    {
+        "phrase":  "خالد: لا يا أخي",
+        "translation":  "Khalid: No, my brother",
+        "arabic_words":  [
+                             "خالد:",
+                             "لا",
+                             "يا",
+                             "أخي"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "No,",
+                              "my",
+                              "brother"
+                          ]
+    },
+    {
+        "phrase":  "فإني غريب جديد في هذا البلد",
+        "translation":  "for I am a new stranger in this town",
+        "arabic_words":  [
+                             "فإني",
+                             "غريب",
+                             "جديد",
+                             "في",
+                             "هذا",
+                             "البلد"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "am",
+                              "a",
+                              "new",
+                              "stranger",
+                              "in",
+                              "this",
+                              "town"
+                          ]
+    },
+    {
+        "phrase":  "لا أعرف الطريق",
+        "translation":  "I do not know the way",
+        "arabic_words":  [
+                             "لا",
+                             "أعرف",
+                             "الطريق"
+                         ],
+        "english_words":  [
+                              "I",
+                              "do",
+                              "not",
+                              "know",
+                              "the",
+                              "way"
+                          ]
+    },
+    {
+        "phrase":  "عمر: تعال معي",
+        "translation":  "Umar: Come with me",
+        "arabic_words":  [
+                             "عمر:",
+                             "تعال",
+                             "معي"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Come",
+                              "with",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "فإني ذاهب إلى السوق",
+        "translation":  "for I am going to the market",
+        "arabic_words":  [
+                             "فإني",
+                             "ذاهب",
+                             "إلى",
+                             "السوق"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "am",
+                              "going",
+                              "to",
+                              "the",
+                              "market"
+                          ]
+    },
+    {
+        "phrase":  "لأشتري بعض الحوائج",
+        "translation":  "to buy some necessities",
+        "arabic_words":  [
+                             "لأشتري",
+                             "بعض",
+                             "الحوائج"
+                         ],
+        "english_words":  [
+                              "to",
+                              "buy",
+                              "some",
+                              "necessities"
+                          ]
+    },
+    {
+        "phrase":  "ونرجع قبل المغرب إن شاء الله",
+        "translation":  "and we will return before Maghrib, God willing",
+        "arabic_words":  [
+                             "ونرجع",
+                             "قبل",
+                             "المغرب",
+                             "إن",
+                             "شاء",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "and",
+                              "we",
+                              "will",
+                              "return",
+                              "before",
+                              "Maghrib,",
+                              "God",
+                              "willing"
+                          ]
+    },
+    {
+        "phrase":  "فإن السوق غير بعيدة",
+        "translation":  "for the market is not far",
+        "arabic_words":  [
+                             "فإن",
+                             "السوق",
+                             "غير",
+                             "بعيدة"
+                         ],
+        "english_words":  [
+                              "for",
+                              "the",
+                              "market",
+                              "is",
+                              "not",
+                              "far"
+                          ]
+    },
+    {
+        "phrase":  "خالد: ما شاء الله",
+        "translation":  "Khalid: Ma sha Allah!",
+        "arabic_words":  [
+                             "خالد:",
+                             "ما",
+                             "شاء",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "Ma",
+                              "sha",
+                              "Allah!"
+                          ]
+    },
+    {
+        "phrase":  "هذه سوق كبيرة",
+        "translation":  "this is a big market",
+        "arabic_words":  [
+                             "هذه",
+                             "سوق",
+                             "كبيرة"
+                         ],
+        "english_words":  [
+                              "this",
+                              "is",
+                              "a",
+                              "big",
+                              "market"
+                          ]
+    },
+    {
+        "phrase":  "والدكاكين نظيفة جميلة",
+        "translation":  "and the shops are clean and beautiful",
+        "arabic_words":  [
+                             "والدكاكين",
+                             "نظيفة",
+                             "جميلة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "shops",
+                              "are",
+                              "clean",
+                              "and",
+                              "beautiful"
+                          ]
+    },
+    {
+        "phrase":  "وما هذا الدكان الجميل إلى اليمين يا عمر",
+        "translation":  "and what is this beautiful shop to the right, Umar?",
+        "arabic_words":  [
+                             "وما",
+                             "هذا",
+                             "الدكان",
+                             "الجميل",
+                             "إلى",
+                             "اليمين",
+                             "يا",
+                             "عمر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "what",
+                              "is",
+                              "this",
+                              "beautiful",
+                              "shop",
+                              "to",
+                              "the",
+                              "right,",
+                              "Umar?"
+                          ]
+    },
+    {
+        "phrase":  "عمر: هذا دكان فاكهاني",
+        "translation":  "Umar: This is a fruit-seller's shop",
+        "arabic_words":  [
+                             "عمر:",
+                             "هذا",
+                             "دكان",
+                             "فاكهاني"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "This",
+                              "is",
+                              "a",
+                              "fruit-seller's",
+                              "shop"
+                          ]
+    },
+    {
+        "phrase":  "ألا ترى إلى الفواكه",
+        "translation":  "do you not see the fruits",
+        "arabic_words":  [
+                             "ألا",
+                             "ترى",
+                             "إلى",
+                             "الفواكه"
+                         ],
+        "english_words":  [
+                              "do",
+                              "you",
+                              "not",
+                              "see",
+                              "the",
+                              "fruits"
+                          ]
+    },
+    {
+        "phrase":  "وترى الناس يساومون الفاكهاني فيها",
+        "translation":  "and see the people bargaining with the fruit-seller over them?",
+        "arabic_words":  [
+                             "وترى",
+                             "الناس",
+                             "يساومون",
+                             "الفاكهاني",
+                             "فيها"
+                         ],
+        "english_words":  [
+                              "and",
+                              "see",
+                              "the",
+                              "people",
+                              "bargaining",
+                              "with",
+                              "the",
+                              "fruit-seller",
+                              "over",
+                              "them?"
+                          ]
+    },
+    {
+        "phrase":  "خالد: أنا أريد أن أشتري شيئا من الفواكه",
+        "translation":  "Khalid: I want to buy some fruit",
+        "arabic_words":  [
+                             "خالد:",
+                             "أنا",
+                             "أريد",
+                             "أن",
+                             "أشتري",
+                             "شيئا",
+                             "من",
+                             "الفواكه"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "I",
+                              "want",
+                              "to",
+                              "buy",
+                              "some",
+                              "fruit"
+                          ]
+    },
+    {
+        "phrase":  "الموز والجوافة والبرتقال",
+        "translation":  "bananas, guavas and oranges",
+        "arabic_words":  [
+                             "الموز",
+                             "والجوافة",
+                             "والبرتقال"
+                         ],
+        "english_words":  [
+                              "bananas,",
+                              "guavas",
+                              "and",
+                              "oranges"
+                          ]
+    },
+    {
+        "phrase":  "فإني أريد أن أدعو بعض الإخوان إلى الفطور بكرة",
+        "translation":  "for I want to invite some brothers to breakfast tomorrow morning",
+        "arabic_words":  [
+                             "فإني",
+                             "أريد",
+                             "أن",
+                             "أدعو",
+                             "بعض",
+                             "الإخوان",
+                             "إلى",
+                             "الفطور",
+                             "بكرة"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "want",
+                              "to",
+                              "invite",
+                              "some",
+                              "brothers",
+                              "to",
+                              "breakfast",
+                              "tomorrow",
+                              "morning"
+                          ]
+    },
+    {
+        "phrase":  "عمر: الجوافة غالية جدا في هذه الأيام",
+        "translation":  "Umar: Guavas are very expensive these days",
+        "arabic_words":  [
+                             "عمر:",
+                             "الجوافة",
+                             "غالية",
+                             "جدا",
+                             "في",
+                             "هذه",
+                             "الأيام"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Guavas",
+                              "are",
+                              "very",
+                              "expensive",
+                              "these",
+                              "days"
+                          ]
+    },
+    {
+        "phrase":  "والبرتقال حامض",
+        "translation":  "and the oranges are sour",
+        "arabic_words":  [
+                             "والبرتقال",
+                             "حامض"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "oranges",
+                              "are",
+                              "sour"
+                          ]
+    },
+    {
+        "phrase":  "ولا بأس بالموز",
+        "translation":  "but the bananas are fine",
+        "arabic_words":  [
+                             "ولا",
+                             "بأس",
+                             "بالموز"
+                         ],
+        "english_words":  [
+                              "but",
+                              "the",
+                              "bananas",
+                              "are",
+                              "fine"
+                          ]
+    },
+    {
+        "phrase":  "خالد: تفضل يا أخي نساوم الفاكهاني",
+        "translation":  "Khalid: Come, my brother, let us bargain with the fruit-seller",
+        "arabic_words":  [
+                             "خالد:",
+                             "تفضل",
+                             "يا",
+                             "أخي",
+                             "نساوم",
+                             "الفاكهاني"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "Come,",
+                              "my",
+                              "brother,",
+                              "let",
+                              "us",
+                              "bargain",
+                              "with",
+                              "the",
+                              "fruit-seller"
+                          ]
+    },
+    {
+        "phrase":  "عمر: أحسن أن نشتري الفواكه من سوق الخضر بكرة",
+        "translation":  "Umar: It is better that we buy the fruit from the vegetable market tomorrow morning",
+        "arabic_words":  [
+                             "عمر:",
+                             "أحسن",
+                             "أن",
+                             "نشتري",
+                             "الفواكه",
+                             "من",
+                             "سوق",
+                             "الخضر",
+                             "بكرة"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "It",
+                              "is",
+                              "better",
+                              "that",
+                              "we",
+                              "buy",
+                              "the",
+                              "fruit",
+                              "from",
+                              "the",
+                              "vegetable",
+                              "market",
+                              "tomorrow",
+                              "morning"
+                          ]
+    },
+    {
+        "phrase":  "فإن الفواكه والثمار فيها كثيرة ورخيصة",
+        "translation":  "for the fruits and produce there are plentiful and cheap",
+        "arabic_words":  [
+                             "فإن",
+                             "الفواكه",
+                             "والثمار",
+                             "فيها",
+                             "كثيرة",
+                             "ورخيصة"
+                         ],
+        "english_words":  [
+                              "for",
+                              "the",
+                              "fruits",
+                              "and",
+                              "produce",
+                              "there",
+                              "are",
+                              "plentiful",
+                              "and",
+                              "cheap"
+                          ]
+    },
+    {
+        "phrase":  "خالد: هذا هو الرأي",
+        "translation":  "Khalid: That is the right idea",
+        "arabic_words":  [
+                             "خالد:",
+                             "هذا",
+                             "هو",
+                             "الرأي"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "That",
+                              "is",
+                              "the",
+                              "right",
+                              "idea"
+                          ]
+    },
+    {
+        "phrase":  "وما هذه الدكاكين يا عمر",
+        "translation":  "and what are these shops, Umar?",
+        "arabic_words":  [
+                             "وما",
+                             "هذه",
+                             "الدكاكين",
+                             "يا",
+                             "عمر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "what",
+                              "are",
+                              "these",
+                              "shops,",
+                              "Umar?"
+                          ]
+    },
+    {
+        "phrase":  "عمر: هذه دكاكين القماش",
+        "translation":  "Umar: These are cloth shops",
+        "arabic_words":  [
+                             "عمر:",
+                             "هذه",
+                             "دكاكين",
+                             "القماش"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "These",
+                              "are",
+                              "cloth",
+                              "shops"
+                          ]
+    },
+    {
+        "phrase":  "ألا ترى كيف بسطوا أنواعا من القماش",
+        "translation":  "do you not see how they have laid out kinds of cloth",
+        "arabic_words":  [
+                             "ألا",
+                             "ترى",
+                             "كيف",
+                             "بسطوا",
+                             "أنواعا",
+                             "من",
+                             "القماش"
+                         ],
+        "english_words":  [
+                              "do",
+                              "you",
+                              "not",
+                              "see",
+                              "how",
+                              "they",
+                              "have",
+                              "laid",
+                              "out",
+                              "kinds",
+                              "of",
+                              "cloth"
+                          ]
+    },
+    {
+        "phrase":  "وكيف يلمسها الناس",
+        "translation":  "and how the people feel it",
+        "arabic_words":  [
+                             "وكيف",
+                             "يلمسها",
+                             "الناس"
+                         ],
+        "english_words":  [
+                              "and",
+                              "how",
+                              "the",
+                              "people",
+                              "feel",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "ويساومون فيها التجار",
+        "translation":  "and bargain with the merchants over it",
+        "arabic_words":  [
+                             "ويساومون",
+                             "فيها",
+                             "التجار"
+                         ],
+        "english_words":  [
+                              "and",
+                              "bargain",
+                              "with",
+                              "the",
+                              "merchants",
+                              "over",
+                              "it"
+                          ]
+    },
+    {
+        "phrase":  "تعال! فإني أريد أن أشتري حذاء",
+        "translation":  "come! For I want to buy a pair of shoes",
+        "arabic_words":  [
+                             "تعال!",
+                             "فإني",
+                             "أريد",
+                             "أن",
+                             "أشتري",
+                             "حذاء"
+                         ],
+        "english_words":  [
+                              "come!",
+                              "For",
+                              "I",
+                              "want",
+                              "to",
+                              "buy",
+                              "a",
+                              "pair",
+                              "of",
+                              "shoes"
+                          ]
+    },
+    {
+        "phrase":  "خالد: تفضل فإني صاحبك",
+        "translation":  "Khalid: Go ahead, I am your companion",
+        "arabic_words":  [
+                             "خالد:",
+                             "تفضل",
+                             "فإني",
+                             "صاحبك"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "Go",
+                              "ahead,",
+                              "I",
+                              "am",
+                              "your",
+                              "companion"
+                          ]
+    },
+    {
+        "phrase":  "عمر: من فضلك أخرج لي حذاء مطابقا",
+        "translation":  "Umar: Please bring out for me a well-fitting shoe",
+        "arabic_words":  [
+                             "عمر:",
+                             "من",
+                             "فضلك",
+                             "أخرج",
+                             "لي",
+                             "حذاء",
+                             "مطابقا"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Please",
+                              "bring",
+                              "out",
+                              "for",
+                              "me",
+                              "a",
+                              "well-fitting",
+                              "shoe"
+                          ]
+    },
+    {
+        "phrase":  "صاحب الدكان: هذا حذاء جميل ومتين",
+        "translation":  "The shopkeeper: This is a beautiful and sturdy shoe",
+        "arabic_words":  [
+                             "صاحب",
+                             "الدكان:",
+                             "هذا",
+                             "حذاء",
+                             "جميل",
+                             "ومتين"
+                         ],
+        "english_words":  [
+                              "The",
+                              "shopkeeper:",
+                              "This",
+                              "is",
+                              "a",
+                              "beautiful",
+                              "and",
+                              "sturdy",
+                              "shoe"
+                          ]
+    },
+    {
+        "phrase":  "عمر: نعم! ولكنه واسع قليلا",
+        "translation":  "Umar: Yes! But it is a little loose",
+        "arabic_words":  [
+                             "عمر:",
+                             "نعم!",
+                             "ولكنه",
+                             "واسع",
+                             "قليلا"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Yes!",
+                              "But",
+                              "it",
+                              "is",
+                              "a",
+                              "little",
+                              "loose"
+                          ]
+    },
+    {
+        "phrase":  "صاحب الدكان: وهذا الآخر مطابق تماما",
+        "translation":  "The shopkeeper: And this other one fits perfectly",
+        "arabic_words":  [
+                             "صاحب",
+                             "الدكان:",
+                             "وهذا",
+                             "الآخر",
+                             "مطابق",
+                             "تماما"
+                         ],
+        "english_words":  [
+                              "The",
+                              "shopkeeper:",
+                              "And",
+                              "this",
+                              "other",
+                              "one",
+                              "fits",
+                              "perfectly"
+                          ]
+    },
+    {
+        "phrase":  "عمر: بكم هو",
+        "translation":  "Umar: How much is it?",
+        "arabic_words":  [
+                             "عمر:",
+                             "بكم",
+                             "هو"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "How",
+                              "much",
+                              "is",
+                              "it?"
+                          ]
+    },
+    {
+        "phrase":  "صاحب الدكان: بست ربيات",
+        "translation":  "The shopkeeper: Six rupees",
+        "arabic_words":  [
+                             "صاحب",
+                             "الدكان:",
+                             "بست",
+                             "ربيات"
+                         ],
+        "english_words":  [
+                              "The",
+                              "shopkeeper:",
+                              "Six",
+                              "rupees"
+                          ]
+    },
+    {
+        "phrase":  "عمر: ألا تنزل في الثمن",
+        "translation":  "Umar: Won't you come down in price?",
+        "arabic_words":  [
+                             "عمر:",
+                             "ألا",
+                             "تنزل",
+                             "في",
+                             "الثمن"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Won't",
+                              "you",
+                              "come",
+                              "down",
+                              "in",
+                              "price?"
+                          ]
+    },
+    {
+        "phrase":  "صاحب الدكان: لن تجد يا سيدي أرخص من هذا في السوق",
+        "translation":  "The shopkeeper: You will not find, sir, cheaper than this in the market",
+        "arabic_words":  [
+                             "صاحب",
+                             "الدكان:",
+                             "لن",
+                             "تجد",
+                             "يا",
+                             "سيدي",
+                             "أرخص",
+                             "من",
+                             "هذا",
+                             "في",
+                             "السوق"
+                         ],
+        "english_words":  [
+                              "The",
+                              "shopkeeper:",
+                              "You",
+                              "will",
+                              "not",
+                              "find,",
+                              "sir,",
+                              "cheaper",
+                              "than",
+                              "this",
+                              "in",
+                              "the",
+                              "market"
+                          ]
+    },
+    {
+        "phrase":  "عمر: أصدقك لأنك مسلم",
+        "translation":  "Umar: I believe you, because you are a Muslim",
+        "arabic_words":  [
+                             "عمر:",
+                             "أصدقك",
+                             "لأنك",
+                             "مسلم"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "I",
+                              "believe",
+                              "you,",
+                              "because",
+                              "you",
+                              "are",
+                              "a",
+                              "Muslim"
+                          ]
+    },
+    {
+        "phrase":  "والمسلم لا يكذب ولا يغش",
+        "translation":  "and a Muslim does not lie or cheat",
+        "arabic_words":  [
+                             "والمسلم",
+                             "لا",
+                             "يكذب",
+                             "ولا",
+                             "يغش"
+                         ],
+        "english_words":  [
+                              "and",
+                              "a",
+                              "Muslim",
+                              "does",
+                              "not",
+                              "lie",
+                              "or",
+                              "cheat"
+                          ]
+    },
+    {
+        "phrase":  "خالد: وما هذا المكان الذي يأكل فيه الناس",
+        "translation":  "Khalid: And what is this place in which people are eating?",
+        "arabic_words":  [
+                             "خالد:",
+                             "وما",
+                             "هذا",
+                             "المكان",
+                             "الذي",
+                             "يأكل",
+                             "فيه",
+                             "الناس"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "And",
+                              "what",
+                              "is",
+                              "this",
+                              "place",
+                              "in",
+                              "which",
+                              "people",
+                              "are",
+                              "eating?"
+                          ]
+    },
+    {
+        "phrase":  "عمر: هذا مطعم يأكل فيه الناس",
+        "translation":  "Umar: This is a restaurant in which people eat",
+        "arabic_words":  [
+                             "عمر:",
+                             "هذا",
+                             "مطعم",
+                             "يأكل",
+                             "فيه",
+                             "الناس"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "This",
+                              "is",
+                              "a",
+                              "restaurant",
+                              "in",
+                              "which",
+                              "people",
+                              "eat"
+                          ]
+    },
+    {
+        "phrase":  "والمطاعم في البلد كثيرة",
+        "translation":  "and restaurants in the town are many",
+        "arabic_words":  [
+                             "والمطاعم",
+                             "في",
+                             "البلد",
+                             "كثيرة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "restaurants",
+                              "in",
+                              "the",
+                              "town",
+                              "are",
+                              "many"
+                          ]
+    },
+    {
+        "phrase":  "خالد: مالي لم أر مطعما في القرية",
+        "translation":  "Khalid: How is it I have not seen a restaurant in the village?",
+        "arabic_words":  [
+                             "خالد:",
+                             "مالي",
+                             "لم",
+                             "أر",
+                             "مطعما",
+                             "في",
+                             "القرية"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "How",
+                              "is",
+                              "it",
+                              "I",
+                              "have",
+                              "not",
+                              "seen",
+                              "a",
+                              "restaurant",
+                              "in",
+                              "the",
+                              "village?"
+                          ]
+    },
+    {
+        "phrase":  "عمر: لأن البلد فيه غرباء ومسافرون",
+        "translation":  "Umar: Because in the town there are strangers and travellers",
+        "arabic_words":  [
+                             "عمر:",
+                             "لأن",
+                             "البلد",
+                             "فيه",
+                             "غرباء",
+                             "ومسافرون"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Because",
+                              "in",
+                              "the",
+                              "town",
+                              "there",
+                              "are",
+                              "strangers",
+                              "and",
+                              "travellers"
+                          ]
+    },
+    {
+        "phrase":  "ليس لهم بيوت يقيمون فيها ويأكلون فيها",
+        "translation":  "who have no houses to stay in and eat in",
+        "arabic_words":  [
+                             "ليس",
+                             "لهم",
+                             "بيوت",
+                             "يقيمون",
+                             "فيها",
+                             "ويأكلون",
+                             "فيها"
+                         ],
+        "english_words":  [
+                              "who",
+                              "have",
+                              "no",
+                              "houses",
+                              "to",
+                              "stay",
+                              "in",
+                              "and",
+                              "eat",
+                              "in"
+                          ]
+    },
+    {
+        "phrase":  "فيأكلون في المطاعم",
+        "translation":  "so they eat in the restaurants",
+        "arabic_words":  [
+                             "فيأكلون",
+                             "في",
+                             "المطاعم"
+                         ],
+        "english_words":  [
+                              "so",
+                              "they",
+                              "eat",
+                              "in",
+                              "the",
+                              "restaurants"
+                          ]
+    },
+    {
+        "phrase":  "أما القرية فالغريب فيها قليل",
+        "translation":  "as for the village, strangers there are few",
+        "arabic_words":  [
+                             "أما",
+                             "القرية",
+                             "فالغريب",
+                             "فيها",
+                             "قليل"
+                         ],
+        "english_words":  [
+                              "as",
+                              "for",
+                              "the",
+                              "village,",
+                              "strangers",
+                              "there",
+                              "are",
+                              "few"
+                          ]
+    },
+    {
+        "phrase":  "فلا حاجة في القرية إلى المطعم",
+        "translation":  "so there is no need in the village for a restaurant",
+        "arabic_words":  [
+                             "فلا",
+                             "حاجة",
+                             "في",
+                             "القرية",
+                             "إلى",
+                             "المطعم"
+                         ],
+        "english_words":  [
+                              "so",
+                              "there",
+                              "is",
+                              "no",
+                              "need",
+                              "in",
+                              "the",
+                              "village",
+                              "for",
+                              "a",
+                              "restaurant"
+                          ]
+    },
+    {
+        "phrase":  "خالد: وأين نجد الورق والحبر والقلم",
+        "translation":  "Khalid: And where do we find paper, ink and pens",
+        "arabic_words":  [
+                             "خالد:",
+                             "وأين",
+                             "نجد",
+                             "الورق",
+                             "والحبر",
+                             "والقلم"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "And",
+                              "where",
+                              "do",
+                              "we",
+                              "find",
+                              "paper,",
+                              "ink",
+                              "and",
+                              "pens"
+                          ]
+    },
+    {
+        "phrase":  "والمرسم والنشافة وأدوات الكتابة",
+        "translation":  "and pencils, blotting paper and writing implements?",
+        "arabic_words":  [
+                             "والمرسم",
+                             "والنشافة",
+                             "وأدوات",
+                             "الكتابة"
+                         ],
+        "english_words":  [
+                              "and",
+                              "pencils,",
+                              "blotting",
+                              "paper",
+                              "and",
+                              "writing",
+                              "implements?"
+                          ]
+    },
+    {
+        "phrase":  "عمر: هذا دكان وراق",
+        "translation":  "Umar: This is a stationer's shop",
+        "arabic_words":  [
+                             "عمر:",
+                             "هذا",
+                             "دكان",
+                             "وراق"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "This",
+                              "is",
+                              "a",
+                              "stationer's",
+                              "shop"
+                          ]
+    },
+    {
+        "phrase":  "تجد فيه جميع حوائج المدرسة",
+        "translation":  "in it you will find all school necessities",
+        "arabic_words":  [
+                             "تجد",
+                             "فيه",
+                             "جميع",
+                             "حوائج",
+                             "المدرسة"
+                         ],
+        "english_words":  [
+                              "in",
+                              "it",
+                              "you",
+                              "will",
+                              "find",
+                              "all",
+                              "school",
+                              "necessities"
+                          ]
+    },
+    {
+        "phrase":  "خالد: أشكرك يا صديقي الكريم",
+        "translation":  "Khalid: I thank you, my noble friend",
+        "arabic_words":  [
+                             "خالد:",
+                             "أشكرك",
+                             "يا",
+                             "صديقي",
+                             "الكريم"
+                         ],
+        "english_words":  [
+                              "Khalid:",
+                              "I",
+                              "thank",
+                              "you,",
+                              "my",
+                              "noble",
+                              "friend"
+                          ]
+    },
+    {
+        "phrase":  "فقد أفدتني كثيرا",
+        "translation":  "for you have benefited me greatly",
+        "arabic_words":  [
+                             "فقد",
+                             "أفدتني",
+                             "كثيرا"
+                         ],
+        "english_words":  [
+                              "for",
+                              "you",
+                              "have",
+                              "benefited",
+                              "me",
+                              "greatly"
+                          ]
+    },
+    {
+        "phrase":  "وأرى أن نرجع الآن إلى البيت",
+        "translation":  "and I think we should return home now",
+        "arabic_words":  [
+                             "وأرى",
+                             "أن",
+                             "نرجع",
+                             "الآن",
+                             "إلى",
+                             "البيت"
+                         ],
+        "english_words":  [
+                              "and",
+                              "I",
+                              "think",
+                              "we",
+                              "should",
+                              "return",
+                              "home",
+                              "now"
+                          ]
+    },
+    {
+        "phrase":  "ونصلي المغرب هنا",
+        "translation":  "and pray Maghrib here",
+        "arabic_words":  [
+                             "ونصلي",
+                             "المغرب",
+                             "هنا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "pray",
+                              "Maghrib",
+                              "here"
+                          ]
+    },
+    {
+        "phrase":  "عمر: نعم! وما بقي لي شغل",
+        "translation":  "Umar: Yes! And I have no work remaining",
+        "arabic_words":  [
+                             "عمر:",
+                             "نعم!",
+                             "وما",
+                             "بقي",
+                             "لي",
+                             "شغل"
+                         ],
+        "english_words":  [
+                              "Umar:",
+                              "Yes!",
+                              "And",
+                              "I",
+                              "have",
+                              "no",
+                              "work",
+                              "remaining"
+                          ]
+    }
+]

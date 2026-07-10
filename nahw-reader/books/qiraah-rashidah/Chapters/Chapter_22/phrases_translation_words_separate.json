@@ -1,0 +1,609 @@
+[
+    {
+        "phrase":  "مسابقة بين شقيقين",
+        "translation":  "A Contest Between Two Brothers",
+        "arabic_words":  [
+                             "مسابقة",
+                             "بين",
+                             "شقيقين"
+                         ],
+        "english_words":  [
+                              "A",
+                              "Contest",
+                              "Between",
+                              "Two",
+                              "Brothers"
+                          ]
+    },
+    {
+        "phrase":  "قال سيدنا عبد الرحمن بن عوف رضي الله عنه",
+        "translation":  "Our master Abdur-Rahman ibn Awf, may Allah be pleased with him, said",
+        "arabic_words":  [
+                             "قال",
+                             "سيدنا",
+                             "عبد",
+                             "الرحمن",
+                             "بن",
+                             "عوف",
+                             "رضي",
+                             "الله",
+                             "عنه"
+                         ],
+        "english_words":  [
+                              "Our",
+                              "master",
+                              "Abdur-Rahman",
+                              "ibn",
+                              "Awf,",
+                              "may",
+                              "Allah",
+                              "be",
+                              "pleased",
+                              "with",
+                              "him,",
+                              "said"
+                          ]
+    },
+    {
+        "phrase":  "كنت واقفا يوم بدر",
+        "translation":  "I was standing on the day of Badr",
+        "arabic_words":  [
+                             "كنت",
+                             "واقفا",
+                             "يوم",
+                             "بدر"
+                         ],
+        "english_words":  [
+                              "I",
+                              "was",
+                              "standing",
+                              "on",
+                              "the",
+                              "day",
+                              "of",
+                              "Badr"
+                          ]
+    },
+    {
+        "phrase":  "وغلامان من الأنصار",
+        "translation":  "with two youths of the Ansar",
+        "arabic_words":  [
+                             "وغلامان",
+                             "من",
+                             "الأنصار"
+                         ],
+        "english_words":  [
+                              "with",
+                              "two",
+                              "youths",
+                              "of",
+                              "the",
+                              "Ansar"
+                          ]
+    },
+    {
+        "phrase":  "معاذ بن عفراء ومعوذ بن عفراء",
+        "translation":  "Mu'adh ibn Afra and Mu'awwidh ibn Afra",
+        "arabic_words":  [
+                             "معاذ",
+                             "بن",
+                             "عفراء",
+                             "ومعوذ",
+                             "بن",
+                             "عفراء"
+                         ],
+        "english_words":  [
+                              "Mu'adh",
+                              "ibn",
+                              "Afra",
+                              "and",
+                              "Mu'awwidh",
+                              "ibn",
+                              "Afra"
+                          ]
+    },
+    {
+        "phrase":  "عن يميني وشمالي",
+        "translation":  "on my right and my left",
+        "arabic_words":  [
+                             "عن",
+                             "يميني",
+                             "وشمالي"
+                         ],
+        "english_words":  [
+                              "on",
+                              "my",
+                              "right",
+                              "and",
+                              "my",
+                              "left"
+                          ]
+    },
+    {
+        "phrase":  "والتفت إلي أحدهما، وقال لي سرا من صاحبه:",
+        "translation":  "one of them turned to me and spoke to me secretly from his companion:",
+        "arabic_words":  [
+                             "والتفت",
+                             "إلي",
+                             "أحدهما،",
+                             "وقال",
+                             "لي",
+                             "سرا",
+                             "من",
+                             "صاحبه:"
+                         ],
+        "english_words":  [
+                              "one",
+                              "of",
+                              "them",
+                              "turned",
+                              "to",
+                              "me",
+                              "and",
+                              "spoke",
+                              "to",
+                              "me",
+                              "secretly",
+                              "from",
+                              "his",
+                              "companion:"
+                          ]
+    },
+    {
+        "phrase":  "أي عم! هل تعرف أبا جهل",
+        "translation":  "O uncle! Do you know Abu Jahl?",
+        "arabic_words":  [
+                             "أي",
+                             "عم!",
+                             "هل",
+                             "تعرف",
+                             "أبا",
+                             "جهل"
+                         ],
+        "english_words":  [
+                              "O",
+                              "uncle!",
+                              "Do",
+                              "you",
+                              "know",
+                              "Abu",
+                              "Jahl?"
+                          ]
+    },
+    {
+        "phrase":  "فقلت: نعم! وماذا تريد منه يا بن أخي",
+        "translation":  "I said: yes! And what do you want with him, O son of my brother?",
+        "arabic_words":  [
+                             "فقلت:",
+                             "نعم!",
+                             "وماذا",
+                             "تريد",
+                             "منه",
+                             "يا",
+                             "بن",
+                             "أخي"
+                         ],
+        "english_words":  [
+                              "I",
+                              "said:",
+                              "yes!",
+                              "And",
+                              "what",
+                              "do",
+                              "you",
+                              "want",
+                              "with",
+                              "him,",
+                              "O",
+                              "son",
+                              "of",
+                              "my",
+                              "brother?"
+                          ]
+    },
+    {
+        "phrase":  "قال: أخبرت أنه يسب رسول الله صلى الله عليه وسلم",
+        "translation":  "he said: I have been told that he insults the Messenger of Allah (peace be upon him)",
+        "arabic_words":  [
+                             "قال:",
+                             "أخبرت",
+                             "أنه",
+                             "يسب",
+                             "رسول",
+                             "الله",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "I",
+                              "have",
+                              "been",
+                              "told",
+                              "that",
+                              "he",
+                              "insults",
+                              "the",
+                              "Messenger",
+                              "of",
+                              "Allah",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)"
+                          ]
+    },
+    {
+        "phrase":  "أرنيه يا عم",
+        "translation":  "show him to me, uncle!",
+        "arabic_words":  [
+                             "أرنيه",
+                             "يا",
+                             "عم"
+                         ],
+        "english_words":  [
+                              "show",
+                              "him",
+                              "to",
+                              "me,",
+                              "uncle!"
+                          ]
+    },
+    {
+        "phrase":  "فإني أعطيت الله عهدا",
+        "translation":  "for I have given Allah a pledge",
+        "arabic_words":  [
+                             "فإني",
+                             "أعطيت",
+                             "الله",
+                             "عهدا"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "have",
+                              "given",
+                              "Allah",
+                              "a",
+                              "pledge"
+                          ]
+    },
+    {
+        "phrase":  "إن رأيته أن أقتله أو أموت دونه",
+        "translation":  "that if I see him I will kill him or die in the attempt",
+        "arabic_words":  [
+                             "إن",
+                             "رأيته",
+                             "أن",
+                             "أقتله",
+                             "أو",
+                             "أموت",
+                             "دونه"
+                         ],
+        "english_words":  [
+                              "that",
+                              "if",
+                              "I",
+                              "see",
+                              "him",
+                              "I",
+                              "will",
+                              "kill",
+                              "him",
+                              "or",
+                              "die",
+                              "in",
+                              "the",
+                              "attempt"
+                          ]
+    },
+    {
+        "phrase":  "وقال لي الآخر سرا من صاحبه",
+        "translation":  "the other said to me secretly from his companion",
+        "arabic_words":  [
+                             "وقال",
+                             "لي",
+                             "الآخر",
+                             "سرا",
+                             "من",
+                             "صاحبه"
+                         ],
+        "english_words":  [
+                              "the",
+                              "other",
+                              "said",
+                              "to",
+                              "me",
+                              "secretly",
+                              "from",
+                              "his",
+                              "companion"
+                          ]
+    },
+    {
+        "phrase":  "فإني عاهدت الله إن عاينته",
+        "translation":  "for I have pledged to Allah that if I catch sight of him",
+        "arabic_words":  [
+                             "فإني",
+                             "عاهدت",
+                             "الله",
+                             "إن",
+                             "عاينته"
+                         ],
+        "english_words":  [
+                              "for",
+                              "I",
+                              "have",
+                              "pledged",
+                              "to",
+                              "Allah",
+                              "that",
+                              "if",
+                              "I",
+                              "catch",
+                              "sight",
+                              "of",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "أن أضربه بسيفي حتى أقتله",
+        "translation":  "I will strike him with my sword until I kill him",
+        "arabic_words":  [
+                             "أن",
+                             "أضربه",
+                             "بسيفي",
+                             "حتى",
+                             "أقتله"
+                         ],
+        "english_words":  [
+                              "I",
+                              "will",
+                              "strike",
+                              "him",
+                              "with",
+                              "my",
+                              "sword",
+                              "until",
+                              "I",
+                              "kill",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فبينا أنا كذلك إذ برز أبو جهل",
+        "translation":  "while I was thus, Abu Jahl appeared",
+        "arabic_words":  [
+                             "فبينا",
+                             "أنا",
+                             "كذلك",
+                             "إذ",
+                             "برز",
+                             "أبو",
+                             "جهل"
+                         ],
+        "english_words":  [
+                              "while",
+                              "I",
+                              "was",
+                              "thus,",
+                              "Abu",
+                              "Jahl",
+                              "appeared"
+                          ]
+    },
+    {
+        "phrase":  "فقلت: ألا تريان؟ هذا أبو جهل",
+        "translation":  "so I said: do you two not see? That is Abu Jahl",
+        "arabic_words":  [
+                             "فقلت:",
+                             "ألا",
+                             "تريان؟",
+                             "هذا",
+                             "أبو",
+                             "جهل"
+                         ],
+        "english_words":  [
+                              "so",
+                              "I",
+                              "said:",
+                              "do",
+                              "you",
+                              "two",
+                              "not",
+                              "see?",
+                              "That",
+                              "is",
+                              "Abu",
+                              "Jahl"
+                          ]
+    },
+    {
+        "phrase":  "هذا صاحبكم",
+        "translation":  "that is your man",
+        "arabic_words":  [
+                             "هذا",
+                             "صاحبكم"
+                         ],
+        "english_words":  [
+                              "that",
+                              "is",
+                              "your",
+                              "man"
+                          ]
+    },
+    {
+        "phrase":  "فشدا عليه مثل الصقرين حتى ضرباه",
+        "translation":  "they charged at him like two falcons and struck him down",
+        "arabic_words":  [
+                             "فشدا",
+                             "عليه",
+                             "مثل",
+                             "الصقرين",
+                             "حتى",
+                             "ضرباه"
+                         ],
+        "english_words":  [
+                              "they",
+                              "charged",
+                              "at",
+                              "him",
+                              "like",
+                              "two",
+                              "falcons",
+                              "and",
+                              "struck",
+                              "him",
+                              "down"
+                          ]
+    },
+    {
+        "phrase":  "ثم انصرفا إلى النبي صلى الله عليه وسلم فأخبراه",
+        "translation":  "then they went off to the Prophet (peace be upon him) and told him",
+        "arabic_words":  [
+                             "ثم",
+                             "انصرفا",
+                             "إلى",
+                             "النبي",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم",
+                             "فأخبراه"
+                         ],
+        "english_words":  [
+                              "then",
+                              "they",
+                              "went",
+                              "off",
+                              "to",
+                              "the",
+                              "Prophet",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)",
+                              "and",
+                              "told",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فقال: «أيكما قتله؟»",
+        "translation":  "he said: which of you killed him?",
+        "arabic_words":  [
+                             "فقال:",
+                             "«أيكما",
+                             "قتله؟»"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "which",
+                              "of",
+                              "you",
+                              "killed",
+                              "him?"
+                          ]
+    },
+    {
+        "phrase":  "قال كل منهما: أنا قتلته",
+        "translation":  "each of them said: I killed him",
+        "arabic_words":  [
+                             "قال",
+                             "كل",
+                             "منهما:",
+                             "أنا",
+                             "قتلته"
+                         ],
+        "english_words":  [
+                              "each",
+                              "of",
+                              "them",
+                              "said:",
+                              "I",
+                              "killed",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "قال: «هل مسحتما سيفيكما»؟",
+        "translation":  "he said: have you wiped your swords?",
+        "arabic_words":  [
+                             "قال:",
+                             "«هل",
+                             "مسحتما",
+                             "سيفيكما»؟"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "have",
+                              "you",
+                              "wiped",
+                              "your",
+                              "swords?"
+                          ]
+    },
+    {
+        "phrase":  "قالا: لا",
+        "translation":  "they said: no!",
+        "arabic_words":  [
+                             "قالا:",
+                             "لا"
+                         ],
+        "english_words":  [
+                              "they",
+                              "said:",
+                              "no!"
+                          ]
+    },
+    {
+        "phrase":  "فنظر النبي صلى الله عليه وسلم في السيفين",
+        "translation":  "the Prophet (peace be upon him) looked at the two swords",
+        "arabic_words":  [
+                             "فنظر",
+                             "النبي",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم",
+                             "في",
+                             "السيفين"
+                         ],
+        "english_words":  [
+                              "the",
+                              "Prophet",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)",
+                              "looked",
+                              "at",
+                              "the",
+                              "two",
+                              "swords"
+                          ]
+    },
+    {
+        "phrase":  "فقال: «كلاهما قتله»",
+        "translation":  "and said: both of you killed him",
+        "arabic_words":  [
+                             "فقال:",
+                             "«كلاهما",
+                             "قتله»"
+                         ],
+        "english_words":  [
+                              "and",
+                              "said:",
+                              "both",
+                              "of",
+                              "you",
+                              "killed",
+                              "him"
+                          ]
+    }
+]

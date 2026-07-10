@@ -1,0 +1,594 @@
+[
+    {
+        "phrase":  "فضيلة الشغل",
+        "translation":  "The Virtue of Work",
+        "arabic_words":  [
+                             "فضيلة",
+                             "الشغل"
+                         ],
+        "english_words":  [
+                              "The",
+                              "Virtue",
+                              "of",
+                              "Work"
+                          ]
+    },
+    {
+        "phrase":  "إن رجلا من الأنصار أتى النبي صلى الله عليه وسلم يسأله",
+        "translation":  "A man of the Ansar came to the Prophet (peace be upon him) begging from him",
+        "arabic_words":  [
+                             "إن",
+                             "رجلا",
+                             "من",
+                             "الأنصار",
+                             "أتى",
+                             "النبي",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم",
+                             "يسأله"
+                         ],
+        "english_words":  [
+                              "A",
+                              "man",
+                              "of",
+                              "the",
+                              "Ansar",
+                              "came",
+                              "to",
+                              "the",
+                              "Prophet",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)",
+                              "begging",
+                              "from",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فقال: أما في بيتك شيء",
+        "translation":  "so he said: is there nothing in your house?",
+        "arabic_words":  [
+                             "فقال:",
+                             "أما",
+                             "في",
+                             "بيتك",
+                             "شيء"
+                         ],
+        "english_words":  [
+                              "so",
+                              "he",
+                              "said:",
+                              "is",
+                              "there",
+                              "nothing",
+                              "in",
+                              "your",
+                              "house?"
+                          ]
+    },
+    {
+        "phrase":  "قال: بلى حلس نلبس بعضه، ونبسط بعضه",
+        "translation":  "he said: indeed — a coarse cloth, part of which we wear and part we spread out",
+        "arabic_words":  [
+                             "قال:",
+                             "بلى",
+                             "حلس",
+                             "نلبس",
+                             "بعضه،",
+                             "ونبسط",
+                             "بعضه"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "indeed",
+                              "—",
+                              "a",
+                              "coarse",
+                              "cloth,",
+                              "part",
+                              "of",
+                              "which",
+                              "we",
+                              "wear",
+                              "and",
+                              "part",
+                              "we",
+                              "spread",
+                              "out"
+                          ]
+    },
+    {
+        "phrase":  "وقعب نشرب فيه من الماء",
+        "translation":  "and a wooden bowl in which we drink water",
+        "arabic_words":  [
+                             "وقعب",
+                             "نشرب",
+                             "فيه",
+                             "من",
+                             "الماء"
+                         ],
+        "english_words":  [
+                              "and",
+                              "a",
+                              "wooden",
+                              "bowl",
+                              "in",
+                              "which",
+                              "we",
+                              "drink",
+                              "water"
+                          ]
+    },
+    {
+        "phrase":  "قال: ائتني بهما",
+        "translation":  "he said: bring them to me",
+        "arabic_words":  [
+                             "قال:",
+                             "ائتني",
+                             "بهما"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "bring",
+                              "them",
+                              "to",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "فأخذهما رسول الله صلى الله عليه وسلم بيده وقال",
+        "translation":  "the Messenger of Allah (peace be upon him) took them in his hand and said",
+        "arabic_words":  [
+                             "فأخذهما",
+                             "رسول",
+                             "الله",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم",
+                             "بيده",
+                             "وقال"
+                         ],
+        "english_words":  [
+                              "the",
+                              "Messenger",
+                              "of",
+                              "Allah",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)",
+                              "took",
+                              "them",
+                              "in",
+                              "his",
+                              "hand",
+                              "and",
+                              "said"
+                          ]
+    },
+    {
+        "phrase":  "من يشتري هذين",
+        "translation":  "who will buy these two?",
+        "arabic_words":  [
+                             "من",
+                             "يشتري",
+                             "هذين"
+                         ],
+        "english_words":  [
+                              "who",
+                              "will",
+                              "buy",
+                              "these",
+                              "two?"
+                          ]
+    },
+    {
+        "phrase":  "قال رجل: أنا آخذهما بدرهم",
+        "translation":  "a man said: I will take them for a dirham",
+        "arabic_words":  [
+                             "قال",
+                             "رجل:",
+                             "أنا",
+                             "آخذهما",
+                             "بدرهم"
+                         ],
+        "english_words":  [
+                              "a",
+                              "man",
+                              "said:",
+                              "I",
+                              "will",
+                              "take",
+                              "them",
+                              "for",
+                              "a",
+                              "dirham"
+                          ]
+    },
+    {
+        "phrase":  "قال: من يزيد على درهم؟ من يزيد على درهم",
+        "translation":  "he said: who will offer more than a dirham? Who will offer more than a dirham?",
+        "arabic_words":  [
+                             "قال:",
+                             "من",
+                             "يزيد",
+                             "على",
+                             "درهم؟",
+                             "من",
+                             "يزيد",
+                             "على",
+                             "درهم"
+                         ],
+        "english_words":  [
+                              "he",
+                              "said:",
+                              "who",
+                              "will",
+                              "offer",
+                              "more",
+                              "than",
+                              "a",
+                              "dirham?",
+                              "Who",
+                              "will",
+                              "offer",
+                              "more",
+                              "than",
+                              "a",
+                              "dirham?"
+                          ]
+    },
+    {
+        "phrase":  "قال رجل: أنا آخذهما بدرهمين",
+        "translation":  "a man said: I will take them for two dirhams",
+        "arabic_words":  [
+                             "قال",
+                             "رجل:",
+                             "أنا",
+                             "آخذهما",
+                             "بدرهمين"
+                         ],
+        "english_words":  [
+                              "a",
+                              "man",
+                              "said:",
+                              "I",
+                              "will",
+                              "take",
+                              "them",
+                              "for",
+                              "two",
+                              "dirhams"
+                          ]
+    },
+    {
+        "phrase":  "فأعطاهما إياه وأخذ الدرهمين",
+        "translation":  "so he gave them to him and took the two dirhams",
+        "arabic_words":  [
+                             "فأعطاهما",
+                             "إياه",
+                             "وأخذ",
+                             "الدرهمين"
+                         ],
+        "english_words":  [
+                              "so",
+                              "he",
+                              "gave",
+                              "them",
+                              "to",
+                              "him",
+                              "and",
+                              "took",
+                              "the",
+                              "two",
+                              "dirhams"
+                          ]
+    },
+    {
+        "phrase":  "فأعطاهما الأنصاري وقال",
+        "translation":  "he gave them to the Ansari and said",
+        "arabic_words":  [
+                             "فأعطاهما",
+                             "الأنصاري",
+                             "وقال"
+                         ],
+        "english_words":  [
+                              "he",
+                              "gave",
+                              "them",
+                              "to",
+                              "the",
+                              "Ansari",
+                              "and",
+                              "said"
+                          ]
+    },
+    {
+        "phrase":  "اشتر بأحدهما طعاما فانبذه إلى أهلك",
+        "translation":  "buy food with one of them and take it to your family",
+        "arabic_words":  [
+                             "اشتر",
+                             "بأحدهما",
+                             "طعاما",
+                             "فانبذه",
+                             "إلى",
+                             "أهلك"
+                         ],
+        "english_words":  [
+                              "buy",
+                              "food",
+                              "with",
+                              "one",
+                              "of",
+                              "them",
+                              "and",
+                              "take",
+                              "it",
+                              "to",
+                              "your",
+                              "family"
+                          ]
+    },
+    {
+        "phrase":  "واشتر بالآخر قدوما فائتني به",
+        "translation":  "and buy an axe-head with the other and bring it to me",
+        "arabic_words":  [
+                             "واشتر",
+                             "بالآخر",
+                             "قدوما",
+                             "فائتني",
+                             "به"
+                         ],
+        "english_words":  [
+                              "and",
+                              "buy",
+                              "an",
+                              "axe-head",
+                              "with",
+                              "the",
+                              "other",
+                              "and",
+                              "bring",
+                              "it",
+                              "to",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "فأتاه به",
+        "translation":  "so he brought it to him",
+        "arabic_words":  [
+                             "فأتاه",
+                             "به"
+                         ],
+        "english_words":  [
+                              "so",
+                              "he",
+                              "brought",
+                              "it",
+                              "to",
+                              "him"
+                          ]
+    },
+    {
+        "phrase":  "فشد فيه رسول الله صلى الله عليه وسلم عودا بيده",
+        "translation":  "and the Messenger of Allah (peace be upon him) fixed a handle in it with his own hand",
+        "arabic_words":  [
+                             "فشد",
+                             "فيه",
+                             "رسول",
+                             "الله",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم",
+                             "عودا",
+                             "بيده"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "Messenger",
+                              "of",
+                              "Allah",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)",
+                              "fixed",
+                              "a",
+                              "handle",
+                              "in",
+                              "it",
+                              "with",
+                              "his",
+                              "own",
+                              "hand"
+                          ]
+    },
+    {
+        "phrase":  "ثم قال له: اذهب فاحتطب وبع",
+        "translation":  "then he said to him: go, gather firewood and sell",
+        "arabic_words":  [
+                             "ثم",
+                             "قال",
+                             "له:",
+                             "اذهب",
+                             "فاحتطب",
+                             "وبع"
+                         ],
+        "english_words":  [
+                              "then",
+                              "he",
+                              "said",
+                              "to",
+                              "him:",
+                              "go,",
+                              "gather",
+                              "firewood",
+                              "and",
+                              "sell"
+                          ]
+    },
+    {
+        "phrase":  "ولا أرينك خمسة عشر يوما",
+        "translation":  "and let me not see you for fifteen days",
+        "arabic_words":  [
+                             "ولا",
+                             "أرينك",
+                             "خمسة",
+                             "عشر",
+                             "يوما"
+                         ],
+        "english_words":  [
+                              "and",
+                              "let",
+                              "me",
+                              "not",
+                              "see",
+                              "you",
+                              "for",
+                              "fifteen",
+                              "days"
+                          ]
+    },
+    {
+        "phrase":  "فذهب الرجل يحتطب ويبيع",
+        "translation":  "so the man went gathering firewood and selling",
+        "arabic_words":  [
+                             "فذهب",
+                             "الرجل",
+                             "يحتطب",
+                             "ويبيع"
+                         ],
+        "english_words":  [
+                              "so",
+                              "the",
+                              "man",
+                              "went",
+                              "gathering",
+                              "firewood",
+                              "and",
+                              "selling"
+                          ]
+    },
+    {
+        "phrase":  "فجاء وقد أصاب عشرة دراهم",
+        "translation":  "then he came, having earned ten dirhams",
+        "arabic_words":  [
+                             "فجاء",
+                             "وقد",
+                             "أصاب",
+                             "عشرة",
+                             "دراهم"
+                         ],
+        "english_words":  [
+                              "then",
+                              "he",
+                              "came,",
+                              "having",
+                              "earned",
+                              "ten",
+                              "dirhams"
+                          ]
+    },
+    {
+        "phrase":  "فاشترى ببعضها ثوبا وببعضها طعاما",
+        "translation":  "he bought with some of it a garment and with some of it food",
+        "arabic_words":  [
+                             "فاشترى",
+                             "ببعضها",
+                             "ثوبا",
+                             "وببعضها",
+                             "طعاما"
+                         ],
+        "english_words":  [
+                              "he",
+                              "bought",
+                              "with",
+                              "some",
+                              "of",
+                              "it",
+                              "a",
+                              "garment",
+                              "and",
+                              "with",
+                              "some",
+                              "of",
+                              "it",
+                              "food"
+                          ]
+    },
+    {
+        "phrase":  "فقال رسول الله صلى الله عليه وسلم",
+        "translation":  "the Messenger of Allah (peace be upon him) said",
+        "arabic_words":  [
+                             "فقال",
+                             "رسول",
+                             "الله",
+                             "صلى",
+                             "الله",
+                             "عليه",
+                             "وسلم"
+                         ],
+        "english_words":  [
+                              "the",
+                              "Messenger",
+                              "of",
+                              "Allah",
+                              "(peace",
+                              "be",
+                              "upon",
+                              "him)",
+                              "said"
+                          ]
+    },
+    {
+        "phrase":  "هذا خير لك من أن تجيء المسألة نكتة في وجهك يوم القيامة",
+        "translation":  "this is better for you than that begging should come as a mark upon your face on the Day of Resurrection",
+        "arabic_words":  [
+                             "هذا",
+                             "خير",
+                             "لك",
+                             "من",
+                             "أن",
+                             "تجيء",
+                             "المسألة",
+                             "نكتة",
+                             "في",
+                             "وجهك",
+                             "يوم",
+                             "القيامة"
+                         ],
+        "english_words":  [
+                              "this",
+                              "is",
+                              "better",
+                              "for",
+                              "you",
+                              "than",
+                              "that",
+                              "begging",
+                              "should",
+                              "come",
+                              "as",
+                              "a",
+                              "mark",
+                              "upon",
+                              "your",
+                              "face",
+                              "on",
+                              "the",
+                              "Day",
+                              "of",
+                              "Resurrection"
+                          ]
+    }
+]

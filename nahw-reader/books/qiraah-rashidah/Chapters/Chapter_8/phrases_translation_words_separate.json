@@ -1,0 +1,1503 @@
+[
+    {
+        "phrase":  "سفر القطار",
+        "translation":  "The Train Journey",
+        "arabic_words":  [
+                             "سفر",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "The",
+                              "Train",
+                              "Journey"
+                          ]
+    },
+    {
+        "phrase":  "لا أنسى سفري الأول",
+        "translation":  "I shall never forget my first journey",
+        "arabic_words":  [
+                             "لا",
+                             "أنسى",
+                             "سفري",
+                             "الأول"
+                         ],
+        "english_words":  [
+                              "I",
+                              "shall",
+                              "never",
+                              "forget",
+                              "my",
+                              "first",
+                              "journey"
+                          ]
+    },
+    {
+        "phrase":  "علمت أني مسافر بكرة مع أمي وإخوتي",
+        "translation":  "I learnt that I was travelling in the morning with my mother and siblings",
+        "arabic_words":  [
+                             "علمت",
+                             "أني",
+                             "مسافر",
+                             "بكرة",
+                             "مع",
+                             "أمي",
+                             "وإخوتي"
+                         ],
+        "english_words":  [
+                              "I",
+                              "learnt",
+                              "that",
+                              "I",
+                              "was",
+                              "travelling",
+                              "in",
+                              "the",
+                              "morning",
+                              "with",
+                              "my",
+                              "mother",
+                              "and",
+                              "siblings"
+                          ]
+    },
+    {
+        "phrase":  "فاستيقظت قبل السحر",
+        "translation":  "so I woke before dawn",
+        "arabic_words":  [
+                             "فاستيقظت",
+                             "قبل",
+                             "السحر"
+                         ],
+        "english_words":  [
+                              "so",
+                              "I",
+                              "woke",
+                              "before",
+                              "dawn"
+                          ]
+    },
+    {
+        "phrase":  "وبقيت أنتظر ساعة السفر",
+        "translation":  "and stayed up waiting for the hour of departure",
+        "arabic_words":  [
+                             "وبقيت",
+                             "أنتظر",
+                             "ساعة",
+                             "السفر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "stayed",
+                              "up",
+                              "waiting",
+                              "for",
+                              "the",
+                              "hour",
+                              "of",
+                              "departure"
+                          ]
+    },
+    {
+        "phrase":  "واستيقظ أهل البيت مبكرين",
+        "translation":  "the household woke early",
+        "arabic_words":  [
+                             "واستيقظ",
+                             "أهل",
+                             "البيت",
+                             "مبكرين"
+                         ],
+        "english_words":  [
+                              "the",
+                              "household",
+                              "woke",
+                              "early"
+                          ]
+    },
+    {
+        "phrase":  "وصلينا الصبح",
+        "translation":  "and we prayed Fajr",
+        "arabic_words":  [
+                             "وصلينا",
+                             "الصبح"
+                         ],
+        "english_words":  [
+                              "and",
+                              "we",
+                              "prayed",
+                              "Fajr"
+                          ]
+    },
+    {
+        "phrase":  "وجاء عمي",
+        "translation":  "and my uncle came",
+        "arabic_words":  [
+                             "وجاء",
+                             "عمي"
+                         ],
+        "english_words":  [
+                              "and",
+                              "my",
+                              "uncle",
+                              "came"
+                          ]
+    },
+    {
+        "phrase":  "وبدأت في البيت حركة وأصوات",
+        "translation":  "and in the house began bustle and voices",
+        "arabic_words":  [
+                             "وبدأت",
+                             "في",
+                             "البيت",
+                             "حركة",
+                             "وأصوات"
+                         ],
+        "english_words":  [
+                              "and",
+                              "in",
+                              "the",
+                              "house",
+                              "began",
+                              "bustle",
+                              "and",
+                              "voices"
+                          ]
+    },
+    {
+        "phrase":  "هذا يجري وذلك يلف الفراش",
+        "translation":  "this one running, that one rolling up the bedding",
+        "arabic_words":  [
+                             "هذا",
+                             "يجري",
+                             "وذلك",
+                             "يلف",
+                             "الفراش"
+                         ],
+        "english_words":  [
+                              "this",
+                              "one",
+                              "running,",
+                              "that",
+                              "one",
+                              "rolling",
+                              "up",
+                              "the",
+                              "bedding"
+                          ]
+    },
+    {
+        "phrase":  "وهذا ينادي وذلك يجيب",
+        "translation":  "this one calling, that one answering",
+        "arabic_words":  [
+                             "وهذا",
+                             "ينادي",
+                             "وذلك",
+                             "يجيب"
+                         ],
+        "english_words":  [
+                              "this",
+                              "one",
+                              "calling,",
+                              "that",
+                              "one",
+                              "answering"
+                          ]
+    },
+    {
+        "phrase":  "والعم يغضب ويستعجل",
+        "translation":  "the uncle getting cross and hurrying everyone",
+        "arabic_words":  [
+                             "والعم",
+                             "يغضب",
+                             "ويستعجل"
+                         ],
+        "english_words":  [
+                              "the",
+                              "uncle",
+                              "getting",
+                              "cross",
+                              "and",
+                              "hurrying",
+                              "everyone"
+                          ]
+    },
+    {
+        "phrase":  "والوالد قائم يأمر وينهى",
+        "translation":  "the father standing, commanding and forbidding",
+        "arabic_words":  [
+                             "والوالد",
+                             "قائم",
+                             "يأمر",
+                             "وينهى"
+                         ],
+        "english_words":  [
+                              "the",
+                              "father",
+                              "standing,",
+                              "commanding",
+                              "and",
+                              "forbidding"
+                          ]
+    },
+    {
+        "phrase":  "ويغضب ويرشد",
+        "translation":  "getting cross and directing",
+        "arabic_words":  [
+                             "ويغضب",
+                             "ويرشد"
+                         ],
+        "english_words":  [
+                              "getting",
+                              "cross",
+                              "and",
+                              "directing"
+                          ]
+    },
+    {
+        "phrase":  "والخادم يهيئ الزاد",
+        "translation":  "and the servant preparing the provisions",
+        "arabic_words":  [
+                             "والخادم",
+                             "يهيئ",
+                             "الزاد"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "servant",
+                              "preparing",
+                              "the",
+                              "provisions"
+                          ]
+    },
+    {
+        "phrase":  "حتى كان وقت الخروج من البيت",
+        "translation":  "until it was time to leave the house",
+        "arabic_words":  [
+                             "حتى",
+                             "كان",
+                             "وقت",
+                             "الخروج",
+                             "من",
+                             "البيت"
+                         ],
+        "english_words":  [
+                              "until",
+                              "it",
+                              "was",
+                              "time",
+                              "to",
+                              "leave",
+                              "the",
+                              "house"
+                          ]
+    },
+    {
+        "phrase":  "وقرب ميعاد القطار",
+        "translation":  "and the train's appointed time drew near",
+        "arabic_words":  [
+                             "وقرب",
+                             "ميعاد",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "train's",
+                              "appointed",
+                              "time",
+                              "drew",
+                              "near"
+                          ]
+    },
+    {
+        "phrase":  "جاءت مركبتان فركبناهما",
+        "translation":  "two carriages came and we rode in them",
+        "arabic_words":  [
+                             "جاءت",
+                             "مركبتان",
+                             "فركبناهما"
+                         ],
+        "english_words":  [
+                              "two",
+                              "carriages",
+                              "came",
+                              "and",
+                              "we",
+                              "rode",
+                              "in",
+                              "them"
+                          ]
+    },
+    {
+        "phrase":  "وسلمت على أبي فودعني ودعا لي",
+        "translation":  "I said salam to my father; he bade me farewell and prayed for me",
+        "arabic_words":  [
+                             "وسلمت",
+                             "على",
+                             "أبي",
+                             "فودعني",
+                             "ودعا",
+                             "لي"
+                         ],
+        "english_words":  [
+                              "I",
+                              "said",
+                              "salam",
+                              "to",
+                              "my",
+                              "father;",
+                              "he",
+                              "bade",
+                              "me",
+                              "farewell",
+                              "and",
+                              "prayed",
+                              "for",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "ووصلنا إلى المحطة",
+        "translation":  "we arrived at the station",
+        "arabic_words":  [
+                             "ووصلنا",
+                             "إلى",
+                             "المحطة"
+                         ],
+        "english_words":  [
+                              "we",
+                              "arrived",
+                              "at",
+                              "the",
+                              "station"
+                          ]
+    },
+    {
+        "phrase":  "فأخذ الحمالون الحوائج والمتاع",
+        "translation":  "and the porters took the belongings and luggage",
+        "arabic_words":  [
+                             "فأخذ",
+                             "الحمالون",
+                             "الحوائج",
+                             "والمتاع"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "porters",
+                              "took",
+                              "the",
+                              "belongings",
+                              "and",
+                              "luggage"
+                          ]
+    },
+    {
+        "phrase":  "وكانت أيام شتاء فكانت الفرش كبيرة",
+        "translation":  "it was wintertime, so the bedding was bulky",
+        "arabic_words":  [
+                             "وكانت",
+                             "أيام",
+                             "شتاء",
+                             "فكانت",
+                             "الفرش",
+                             "كبيرة"
+                         ],
+        "english_words":  [
+                              "it",
+                              "was",
+                              "wintertime,",
+                              "so",
+                              "the",
+                              "bedding",
+                              "was",
+                              "bulky"
+                          ]
+    },
+    {
+        "phrase":  "وذهب عمي فاشترى تذاكر القطار",
+        "translation":  "my uncle went and bought the train tickets",
+        "arabic_words":  [
+                             "وذهب",
+                             "عمي",
+                             "فاشترى",
+                             "تذاكر",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "my",
+                              "uncle",
+                              "went",
+                              "and",
+                              "bought",
+                              "the",
+                              "train",
+                              "tickets"
+                          ]
+    },
+    {
+        "phrase":  "وسألت عمي عن النول فقال",
+        "translation":  "I asked my uncle about the fare and he said",
+        "arabic_words":  [
+                             "وسألت",
+                             "عمي",
+                             "عن",
+                             "النول",
+                             "فقال"
+                         ],
+        "english_words":  [
+                              "I",
+                              "asked",
+                              "my",
+                              "uncle",
+                              "about",
+                              "the",
+                              "fare",
+                              "and",
+                              "he",
+                              "said"
+                          ]
+    },
+    {
+        "phrase":  "إن النول ثلاث ربيات",
+        "translation":  "the fare is three rupees",
+        "arabic_words":  [
+                             "إن",
+                             "النول",
+                             "ثلاث",
+                             "ربيات"
+                         ],
+        "english_words":  [
+                              "the",
+                              "fare",
+                              "is",
+                              "three",
+                              "rupees"
+                          ]
+    },
+    {
+        "phrase":  "وربية ونصف لك",
+        "translation":  "and a rupee and a half for you",
+        "arabic_words":  [
+                             "وربية",
+                             "ونصف",
+                             "لك"
+                         ],
+        "english_words":  [
+                              "and",
+                              "a",
+                              "rupee",
+                              "and",
+                              "a",
+                              "half",
+                              "for",
+                              "you"
+                          ]
+    },
+    {
+        "phrase":  "وقلت لعمي: أعطني تذكرتي",
+        "translation":  "I said to my uncle: give me my ticket",
+        "arabic_words":  [
+                             "وقلت",
+                             "لعمي:",
+                             "أعطني",
+                             "تذكرتي"
+                         ],
+        "english_words":  [
+                              "I",
+                              "said",
+                              "to",
+                              "my",
+                              "uncle:",
+                              "give",
+                              "me",
+                              "my",
+                              "ticket"
+                          ]
+    },
+    {
+        "phrase":  "فقال عمي: إنك تضيع تذكرتك",
+        "translation":  "my uncle said: you will lose your ticket",
+        "arabic_words":  [
+                             "فقال",
+                             "عمي:",
+                             "إنك",
+                             "تضيع",
+                             "تذكرتك"
+                         ],
+        "english_words":  [
+                              "my",
+                              "uncle",
+                              "said:",
+                              "you",
+                              "will",
+                              "lose",
+                              "your",
+                              "ticket"
+                          ]
+    },
+    {
+        "phrase":  "فقلت: لا! سأحافظ على تذكرتي إن شاء الله",
+        "translation":  "I said: No! I will look after my ticket, God willing",
+        "arabic_words":  [
+                             "فقلت:",
+                             "لا!",
+                             "سأحافظ",
+                             "على",
+                             "تذكرتي",
+                             "إن",
+                             "شاء",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "I",
+                              "said:",
+                              "No!",
+                              "I",
+                              "will",
+                              "look",
+                              "after",
+                              "my",
+                              "ticket,",
+                              "God",
+                              "willing"
+                          ]
+    },
+    {
+        "phrase":  "فأعطاني تذكرتي ووضعتها عندي",
+        "translation":  "so he gave me my ticket and I kept it with me",
+        "arabic_words":  [
+                             "فأعطاني",
+                             "تذكرتي",
+                             "ووضعتها",
+                             "عندي"
+                         ],
+        "english_words":  [
+                              "so",
+                              "he",
+                              "gave",
+                              "me",
+                              "my",
+                              "ticket",
+                              "and",
+                              "I",
+                              "kept",
+                              "it",
+                              "with",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "دخلنا المحطة",
+        "translation":  "we entered the station",
+        "arabic_words":  [
+                             "دخلنا",
+                             "المحطة"
+                         ],
+        "english_words":  [
+                              "we",
+                              "entered",
+                              "the",
+                              "station"
+                          ]
+    },
+    {
+        "phrase":  "فرأينا رجالا كثيرا ونساء وأطفالا",
+        "translation":  "and saw many men, women and children",
+        "arabic_words":  [
+                             "فرأينا",
+                             "رجالا",
+                             "كثيرا",
+                             "ونساء",
+                             "وأطفالا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "saw",
+                              "many",
+                              "men,",
+                              "women",
+                              "and",
+                              "children"
+                          ]
+    },
+    {
+        "phrase":  "ورأينا زحاما شديدا",
+        "translation":  "and we saw a severe crush",
+        "arabic_words":  [
+                             "ورأينا",
+                             "زحاما",
+                             "شديدا"
+                         ],
+        "english_words":  [
+                              "and",
+                              "we",
+                              "saw",
+                              "a",
+                              "severe",
+                              "crush"
+                          ]
+    },
+    {
+        "phrase":  "وسمعنا أصوات الناس والأطفال",
+        "translation":  "and heard the voices of the people and the children",
+        "arabic_words":  [
+                             "وسمعنا",
+                             "أصوات",
+                             "الناس",
+                             "والأطفال"
+                         ],
+        "english_words":  [
+                              "and",
+                              "heard",
+                              "the",
+                              "voices",
+                              "of",
+                              "the",
+                              "people",
+                              "and",
+                              "the",
+                              "children"
+                          ]
+    },
+    {
+        "phrase":  "وصيحة الحمالين وصفير القاطرة",
+        "translation":  "the shouting of the porters and the whistle of the engine",
+        "arabic_words":  [
+                             "وصيحة",
+                             "الحمالين",
+                             "وصفير",
+                             "القاطرة"
+                         ],
+        "english_words":  [
+                              "the",
+                              "shouting",
+                              "of",
+                              "the",
+                              "porters",
+                              "and",
+                              "the",
+                              "whistle",
+                              "of",
+                              "the",
+                              "engine"
+                          ]
+    },
+    {
+        "phrase":  "وكان قطارنا متأخرا",
+        "translation":  "our train was late",
+        "arabic_words":  [
+                             "وكان",
+                             "قطارنا",
+                             "متأخرا"
+                         ],
+        "english_words":  [
+                              "our",
+                              "train",
+                              "was",
+                              "late"
+                          ]
+    },
+    {
+        "phrase":  "فذهبنا إلى المنظرة وجلسنا قليلا",
+        "translation":  "so we went to the waiting room and sat a while",
+        "arabic_words":  [
+                             "فذهبنا",
+                             "إلى",
+                             "المنظرة",
+                             "وجلسنا",
+                             "قليلا"
+                         ],
+        "english_words":  [
+                              "so",
+                              "we",
+                              "went",
+                              "to",
+                              "the",
+                              "waiting",
+                              "room",
+                              "and",
+                              "sat",
+                              "a",
+                              "while"
+                          ]
+    },
+    {
+        "phrase":  "ثم جئت إلى الرصيف لأرى هل جاء القطار",
+        "translation":  "then I came to the platform to see whether the train had come",
+        "arabic_words":  [
+                             "ثم",
+                             "جئت",
+                             "إلى",
+                             "الرصيف",
+                             "لأرى",
+                             "هل",
+                             "جاء",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "then",
+                              "I",
+                              "came",
+                              "to",
+                              "the",
+                              "platform",
+                              "to",
+                              "see",
+                              "whether",
+                              "the",
+                              "train",
+                              "had",
+                              "come"
+                          ]
+    },
+    {
+        "phrase":  "ثم رجعت إلى المنظرة",
+        "translation":  "then returned to the waiting room",
+        "arabic_words":  [
+                             "ثم",
+                             "رجعت",
+                             "إلى",
+                             "المنظرة"
+                         ],
+        "english_words":  [
+                              "then",
+                              "returned",
+                              "to",
+                              "the",
+                              "waiting",
+                              "room"
+                          ]
+    },
+    {
+        "phrase":  "وبعد قليل جاء القطار",
+        "translation":  "after a little while the train came",
+        "arabic_words":  [
+                             "وبعد",
+                             "قليل",
+                             "جاء",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "after",
+                              "a",
+                              "little",
+                              "while",
+                              "the",
+                              "train",
+                              "came"
+                          ]
+    },
+    {
+        "phrase":  "فخرجنا من المنظرة",
+        "translation":  "so we left the waiting room",
+        "arabic_words":  [
+                             "فخرجنا",
+                             "من",
+                             "المنظرة"
+                         ],
+        "english_words":  [
+                              "so",
+                              "we",
+                              "left",
+                              "the",
+                              "waiting",
+                              "room"
+                          ]
+    },
+    {
+        "phrase":  "وقام الناس كلهم على الرصيف",
+        "translation":  "all the people stood on the platform",
+        "arabic_words":  [
+                             "وقام",
+                             "الناس",
+                             "كلهم",
+                             "على",
+                             "الرصيف"
+                         ],
+        "english_words":  [
+                              "all",
+                              "the",
+                              "people",
+                              "stood",
+                              "on",
+                              "the",
+                              "platform"
+                          ]
+    },
+    {
+        "phrase":  "ووقف القطار",
+        "translation":  "and the train stopped",
+        "arabic_words":  [
+                             "ووقف",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "train",
+                              "stopped"
+                          ]
+    },
+    {
+        "phrase":  "ونزل أناس وركب أناس وركبنا",
+        "translation":  "some people got off, some got on, and we boarded",
+        "arabic_words":  [
+                             "ونزل",
+                             "أناس",
+                             "وركب",
+                             "أناس",
+                             "وركبنا"
+                         ],
+        "english_words":  [
+                              "some",
+                              "people",
+                              "got",
+                              "off,",
+                              "some",
+                              "got",
+                              "on,",
+                              "and",
+                              "we",
+                              "boarded"
+                          ]
+    },
+    {
+        "phrase":  "وكنت أطل من القطار وأرى المناظر",
+        "translation":  "I kept looking out of the train and watching the scenes",
+        "arabic_words":  [
+                             "وكنت",
+                             "أطل",
+                             "من",
+                             "القطار",
+                             "وأرى",
+                             "المناظر"
+                         ],
+        "english_words":  [
+                              "I",
+                              "kept",
+                              "looking",
+                              "out",
+                              "of",
+                              "the",
+                              "train",
+                              "and",
+                              "watching",
+                              "the",
+                              "scenes"
+                          ]
+    },
+    {
+        "phrase":  "وكان الزحام شديدا في القطار",
+        "translation":  "and the crowding in the train was severe",
+        "arabic_words":  [
+                             "وكان",
+                             "الزحام",
+                             "شديدا",
+                             "في",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "crowding",
+                              "in",
+                              "the",
+                              "train",
+                              "was",
+                              "severe"
+                          ]
+    },
+    {
+        "phrase":  "وجاء الباعة",
+        "translation":  "the vendors came",
+        "arabic_words":  [
+                             "وجاء",
+                             "الباعة"
+                         ],
+        "english_words":  [
+                              "the",
+                              "vendors",
+                              "came"
+                          ]
+    },
+    {
+        "phrase":  "وجعل الناس يشترون ويأكلون",
+        "translation":  "and the people began buying and eating",
+        "arabic_words":  [
+                             "وجعل",
+                             "الناس",
+                             "يشترون",
+                             "ويأكلون"
+                         ],
+        "english_words":  [
+                              "and",
+                              "the",
+                              "people",
+                              "began",
+                              "buying",
+                              "and",
+                              "eating"
+                          ]
+    },
+    {
+        "phrase":  "واشترى بعض الناس من الباعة هدايا",
+        "translation":  "some people bought gifts from the vendors",
+        "arabic_words":  [
+                             "واشترى",
+                             "بعض",
+                             "الناس",
+                             "من",
+                             "الباعة",
+                             "هدايا"
+                         ],
+        "english_words":  [
+                              "some",
+                              "people",
+                              "bought",
+                              "gifts",
+                              "from",
+                              "the",
+                              "vendors"
+                          ]
+    },
+    {
+        "phrase":  "لأصدقائهم وأقاربهم",
+        "translation":  "for their friends and relatives",
+        "arabic_words":  [
+                             "لأصدقائهم",
+                             "وأقاربهم"
+                         ],
+        "english_words":  [
+                              "for",
+                              "their",
+                              "friends",
+                              "and",
+                              "relatives"
+                          ]
+    },
+    {
+        "phrase":  "وبعد قليل صفر أمين القطار",
+        "translation":  "after a little the train guard whistled",
+        "arabic_words":  [
+                             "وبعد",
+                             "قليل",
+                             "صفر",
+                             "أمين",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "after",
+                              "a",
+                              "little",
+                              "the",
+                              "train",
+                              "guard",
+                              "whistled"
+                          ]
+    },
+    {
+        "phrase":  "وهز العلم الأخضر",
+        "translation":  "and waved the green flag",
+        "arabic_words":  [
+                             "وهز",
+                             "العلم",
+                             "الأخضر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "waved",
+                              "the",
+                              "green",
+                              "flag"
+                          ]
+    },
+    {
+        "phrase":  "فأسرع الناس ودخلوا في القطار",
+        "translation":  "so the people hurried and got into the train",
+        "arabic_words":  [
+                             "فأسرع",
+                             "الناس",
+                             "ودخلوا",
+                             "في",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "so",
+                              "the",
+                              "people",
+                              "hurried",
+                              "and",
+                              "got",
+                              "into",
+                              "the",
+                              "train"
+                          ]
+    },
+    {
+        "phrase":  "وتحركت القاطرة وسار القطار",
+        "translation":  "the engine moved and the train set off",
+        "arabic_words":  [
+                             "وتحركت",
+                             "القاطرة",
+                             "وسار",
+                             "القطار"
+                         ],
+        "english_words":  [
+                              "the",
+                              "engine",
+                              "moved",
+                              "and",
+                              "the",
+                              "train",
+                              "set",
+                              "off"
+                          ]
+    },
+    {
+        "phrase":  "ودخل نقاب في عربتنا",
+        "translation":  "a ticket inspector entered our carriage",
+        "arabic_words":  [
+                             "ودخل",
+                             "نقاب",
+                             "في",
+                             "عربتنا"
+                         ],
+        "english_words":  [
+                              "a",
+                              "ticket",
+                              "inspector",
+                              "entered",
+                              "our",
+                              "carriage"
+                          ]
+    },
+    {
+        "phrase":  "فنقب تذاكرنا وردها إلينا",
+        "translation":  "punched our tickets and returned them to us",
+        "arabic_words":  [
+                             "فنقب",
+                             "تذاكرنا",
+                             "وردها",
+                             "إلينا"
+                         ],
+        "english_words":  [
+                              "punched",
+                              "our",
+                              "tickets",
+                              "and",
+                              "returned",
+                              "them",
+                              "to",
+                              "us"
+                          ]
+    },
+    {
+        "phrase":  "وفي الطريق تغدينا بالزاد",
+        "translation":  "on the way we lunched on the provisions",
+        "arabic_words":  [
+                             "وفي",
+                             "الطريق",
+                             "تغدينا",
+                             "بالزاد"
+                         ],
+        "english_words":  [
+                              "on",
+                              "the",
+                              "way",
+                              "we",
+                              "lunched",
+                              "on",
+                              "the",
+                              "provisions"
+                          ]
+    },
+    {
+        "phrase":  "وأكلنا وشربنا وحمدنا الله",
+        "translation":  "we ate and drank and praised Allah",
+        "arabic_words":  [
+                             "وأكلنا",
+                             "وشربنا",
+                             "وحمدنا",
+                             "الله"
+                         ],
+        "english_words":  [
+                              "we",
+                              "ate",
+                              "and",
+                              "drank",
+                              "and",
+                              "praised",
+                              "Allah"
+                          ]
+    },
+    {
+        "phrase":  "ولم يزل القطار يقف على المحطات ويسير",
+        "translation":  "the train kept stopping at the stations and moving on",
+        "arabic_words":  [
+                             "ولم",
+                             "يزل",
+                             "القطار",
+                             "يقف",
+                             "على",
+                             "المحطات",
+                             "ويسير"
+                         ],
+        "english_words":  [
+                              "the",
+                              "train",
+                              "kept",
+                              "stopping",
+                              "at",
+                              "the",
+                              "stations",
+                              "and",
+                              "moving",
+                              "on"
+                          ]
+    },
+    {
+        "phrase":  "حتى وصل وقت الظهر",
+        "translation":  "until the time of Zuhr arrived",
+        "arabic_words":  [
+                             "حتى",
+                             "وصل",
+                             "وقت",
+                             "الظهر"
+                         ],
+        "english_words":  [
+                              "until",
+                              "the",
+                              "time",
+                              "of",
+                              "Zuhr",
+                              "arrived"
+                          ]
+    },
+    {
+        "phrase":  "فتوضأنا بسرعة على محطة",
+        "translation":  "so we performed wudu quickly at a station",
+        "arabic_words":  [
+                             "فتوضأنا",
+                             "بسرعة",
+                             "على",
+                             "محطة"
+                         ],
+        "english_words":  [
+                              "so",
+                              "we",
+                              "performed",
+                              "wudu",
+                              "quickly",
+                              "at",
+                              "a",
+                              "station"
+                          ]
+    },
+    {
+        "phrase":  "وصلينا صلاة السفر",
+        "translation":  "and prayed the traveller's prayer",
+        "arabic_words":  [
+                             "وصلينا",
+                             "صلاة",
+                             "السفر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "prayed",
+                              "the",
+                              "traveller's",
+                              "prayer"
+                          ]
+    },
+    {
+        "phrase":  "صلينا الظهر ركعتين وسلمنا",
+        "translation":  "we prayed Zuhr as two rak'ahs and gave salam",
+        "arabic_words":  [
+                             "صلينا",
+                             "الظهر",
+                             "ركعتين",
+                             "وسلمنا"
+                         ],
+        "english_words":  [
+                              "we",
+                              "prayed",
+                              "Zuhr",
+                              "as",
+                              "two",
+                              "rak'ahs",
+                              "and",
+                              "gave",
+                              "salam"
+                          ]
+    },
+    {
+        "phrase":  "وصفر أمين القطار فركبنا سريعا",
+        "translation":  "the guard whistled and we boarded quickly",
+        "arabic_words":  [
+                             "وصفر",
+                             "أمين",
+                             "القطار",
+                             "فركبنا",
+                             "سريعا"
+                         ],
+        "english_words":  [
+                              "the",
+                              "guard",
+                              "whistled",
+                              "and",
+                              "we",
+                              "boarded",
+                              "quickly"
+                          ]
+    },
+    {
+        "phrase":  "وقال عمي: لو كان القطار للمسلمين",
+        "translation":  "my uncle said: if the train belonged to the Muslims",
+        "arabic_words":  [
+                             "وقال",
+                             "عمي:",
+                             "لو",
+                             "كان",
+                             "القطار",
+                             "للمسلمين"
+                         ],
+        "english_words":  [
+                              "my",
+                              "uncle",
+                              "said:",
+                              "if",
+                              "the",
+                              "train",
+                              "belonged",
+                              "to",
+                              "the",
+                              "Muslims"
+                          ]
+    },
+    {
+        "phrase":  "لكان فيه مكان للوضوء والصلاة",
+        "translation":  "there would be in it a place for wudu and prayer",
+        "arabic_words":  [
+                             "لكان",
+                             "فيه",
+                             "مكان",
+                             "للوضوء",
+                             "والصلاة"
+                         ],
+        "english_words":  [
+                              "there",
+                              "would",
+                              "be",
+                              "in",
+                              "it",
+                              "a",
+                              "place",
+                              "for",
+                              "wudu",
+                              "and",
+                              "prayer"
+                          ]
+    },
+    {
+        "phrase":  "نؤذن فيه ونصلي جماعة",
+        "translation":  "in which we would give the adhan and pray in congregation",
+        "arabic_words":  [
+                             "نؤذن",
+                             "فيه",
+                             "ونصلي",
+                             "جماعة"
+                         ],
+        "english_words":  [
+                              "in",
+                              "which",
+                              "we",
+                              "would",
+                              "give",
+                              "the",
+                              "adhan",
+                              "and",
+                              "pray",
+                              "in",
+                              "congregation"
+                          ]
+    },
+    {
+        "phrase":  "وفي العصر وصل القطار إلى محطتنا",
+        "translation":  "in the late afternoon the train reached our station",
+        "arabic_words":  [
+                             "وفي",
+                             "العصر",
+                             "وصل",
+                             "القطار",
+                             "إلى",
+                             "محطتنا"
+                         ],
+        "english_words":  [
+                              "in",
+                              "the",
+                              "late",
+                              "afternoon",
+                              "the",
+                              "train",
+                              "reached",
+                              "our",
+                              "station"
+                          ]
+    },
+    {
+        "phrase":  "وكنت أطل من النافذة",
+        "translation":  "I was looking out of the window",
+        "arabic_words":  [
+                             "وكنت",
+                             "أطل",
+                             "من",
+                             "النافذة"
+                         ],
+        "english_words":  [
+                              "I",
+                              "was",
+                              "looking",
+                              "out",
+                              "of",
+                              "the",
+                              "window"
+                          ]
+    },
+    {
+        "phrase":  "فرأيت هاشما وسعيدا على الرصيف",
+        "translation":  "and I saw Hashim and Sa'id on the platform",
+        "arabic_words":  [
+                             "فرأيت",
+                             "هاشما",
+                             "وسعيدا",
+                             "على",
+                             "الرصيف"
+                         ],
+        "english_words":  [
+                              "and",
+                              "I",
+                              "saw",
+                              "Hashim",
+                              "and",
+                              "Sa'id",
+                              "on",
+                              "the",
+                              "platform"
+                          ]
+    },
+    {
+        "phrase":  "وعرفتهما وسلمت عليهما وسلما علي",
+        "translation":  "I recognised them and greeted them, and they greeted me",
+        "arabic_words":  [
+                             "وعرفتهما",
+                             "وسلمت",
+                             "عليهما",
+                             "وسلما",
+                             "علي"
+                         ],
+        "english_words":  [
+                              "I",
+                              "recognised",
+                              "them",
+                              "and",
+                              "greeted",
+                              "them,",
+                              "and",
+                              "they",
+                              "greeted",
+                              "me"
+                          ]
+    },
+    {
+        "phrase":  "ووصلت إلى قريتي",
+        "translation":  "I reached my village",
+        "arabic_words":  [
+                             "ووصلت",
+                             "إلى",
+                             "قريتي"
+                         ],
+        "english_words":  [
+                              "I",
+                              "reached",
+                              "my",
+                              "village"
+                          ]
+    },
+    {
+        "phrase":  "وقابلت أصدقائي وإخواني",
+        "translation":  "and met my friends and brothers",
+        "arabic_words":  [
+                             "وقابلت",
+                             "أصدقائي",
+                             "وإخواني"
+                         ],
+        "english_words":  [
+                              "and",
+                              "met",
+                              "my",
+                              "friends",
+                              "and",
+                              "brothers"
+                          ]
+    },
+    {
+        "phrase":  "وجعلت أحدثهم حديث البلد",
+        "translation":  "and began telling them all about the town",
+        "arabic_words":  [
+                             "وجعلت",
+                             "أحدثهم",
+                             "حديث",
+                             "البلد"
+                         ],
+        "english_words":  [
+                              "and",
+                              "began",
+                              "telling",
+                              "them",
+                              "all",
+                              "about",
+                              "the",
+                              "town"
+                          ]
+    },
+    {
+        "phrase":  "وأخبرهم بعجائبه",
+        "translation":  "informing them of its wonders",
+        "arabic_words":  [
+                             "وأخبرهم",
+                             "بعجائبه"
+                         ],
+        "english_words":  [
+                              "informing",
+                              "them",
+                              "of",
+                              "its",
+                              "wonders"
+                          ]
+    },
+    {
+        "phrase":  "وأحكي لهم ما رأيت في السفر",
+        "translation":  "and relating to them what I saw on the journey",
+        "arabic_words":  [
+                             "وأحكي",
+                             "لهم",
+                             "ما",
+                             "رأيت",
+                             "في",
+                             "السفر"
+                         ],
+        "english_words":  [
+                              "and",
+                              "relating",
+                              "to",
+                              "them",
+                              "what",
+                              "I",
+                              "saw",
+                              "on",
+                              "the",
+                              "journey"
+                          ]
+    }
+]
