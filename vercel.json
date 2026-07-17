@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/nahw-reader/index.html" },
+    { "source": "/((?!nahw-reader/).*)", "destination": "/nahw-reader/$1" }
+  ]
+}
