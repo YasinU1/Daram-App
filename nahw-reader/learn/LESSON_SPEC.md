@@ -230,12 +230,68 @@ Sections in `lessons/m1-bab2.js`:
 
 ---
 
-**Progress (2026-07-08):** ALL 46 sections across 9 courses done — 26 retrofitted with
-matn/focus, 9 jarr sections authored with matn + all 11 m1-bab-2 bank questions, 11
-sections for notes 58–80 authored matn-less. Totals: 134 teach cards, 215 MCQs, 24
-written, 70/70 bank questions wired exactly once. Validated (node integration check:
-0 errors) + browser-verified (matn panel, translation toggle, popover, quiz peek, MCQ flow).
+# Book-only courses (no Obsidian notes; authored straight from the PDF) — pp. 82–170
 
-**Next 🔜:** when reader transcription passes p.60 (see BOOK_PROGRESS.md), add
-matn/focus to m1-bab-2b/2c/2d sections; and build bank questions for those chapters
-(test-maker/build-bank.mjs) then wire them in.
+Notes exist only through note 80 (≈ p.82). Everything past that is distilled **directly
+from the book PDF** (`../books/kubra-nahw/an-Nahw al-Kubra 2026 May (Website).pdf`,
+book page = PDF index + 1). NO matn panels (reader stops at p.59). Instead every teach
+card carries **`page:`** (the book page) so each key idea maps back to the book — rendered
+as a "Book p. N" pill by learn.js (`.pgref`, `.cardhead-row`). No bank steps.
+
+| Course id | File | Pages | Sections | Coverage | ✓ |
+|---|---|---|---|---|:--:|
+| `m1-bab-2e` | `m1-bab2e.js` | 82–86 | 3 | حتى العاطفة · أو/أم/لا · بل/لكن/إمّا | ✅ |
+| `m1-bab-2f` | `m1-bab2f.js` | 86–92 | 4 | أحرف الجواب · التوكيد · لو · لولا/لوما/أمّا | ✅ |
+| `m1-bab-2g` | `m1-bab2g.js` | 93–104 | 6 | التوبيخ/التحضيض/العرض · التنبيه · المصدر/النفي · الزيادة · الاستفهام/التمني/الاستقبال · التفسير/التنوين | ✅ |
+| `m1-bab-3a` | `m1-bab3a.js` | 104–112 | 5 | المصدر · اسم الفاعل · المفعول/الصفة المشبهة · التفضيل · اسم الفعل | ✅ |
+| `m1-bab-3b` | `m1-bab3b.js` | 112–120 | 5 | الإضافة المعنوية · اللفظية · الاسم التام · أسماء الشرط · العامل المعنوي | ✅ |
+| `m1-khatima` | `m1-khatima.js` | 121–130 | 7 | التنازع · حذف عامل المفعول المطلق · التحذير/الإغراء · الاختصاص/الاشتغال · النداء · اللهم/الاستغاثة · حذف عامل الحال | ✅ |
+| `m2-bab-1a` | `m2-bab1a.js` | 132–138 | 5 | مدخل م٢ · الفاعل · نائب الفاعل/المبتدأ · الخبر · بقية المرفوعات | ✅ |
+| `m2-bab-1b` | `m2-bab1b.js` | 138–156 | 6 | المفاعيل الثلاثة · له/معه · الحال · التمييز · المستثنى · بقية المنصوبات/المجرور | ✅ |
+| `m2-tawabi` | `m2-bab234.js` | 156–170 | 7 | النعت · البدل/البيان · المعطوف · التأكيد · معمول الفعل · معمول الجملة · غير المعمول من الجملة | ✅ |
+
+**Progress (2026-07-13):** Original 46 sections (9 note-based courses) unchanged. Added
+**9 book-only courses / 48 sections** covering the book straight through to **p. 170**
+(end of the reachable Aim-Two material for this pass). Book-only totals: **127 teach /
+166 MCQ / 48 written**, every teach card page-stamped (range 82–170). learn.html loads all
+19 lesson files. Validated: node vm full-load of all 18 courses — **0 errors, no dup ids**;
+step structure checked (choices=4, correct in range, why/prompt/model present).
+learn.js/​learn.css given `page:`→`.pgref` "Book p. N" pill.
+
+**Next 🔜:** (a) continue past p.170 — Aim Two bāب 4 (شبه الجملة) + Aim Three (الإعراب,
+pp.176+) + الخاتمة; (b) when reader transcription passes p.59, retro-fit matn panels onto
+these book-only courses; (c) build bank questions for the new chapters.
+
+---
+
+# Shadhā al-ʿArf (ṣarf) — `learn/sarf.html`
+
+Second book on the same engine. `learn.js` reads `window.DARAM_LEARN_CONFIG`
+(bookTitle / brand / brandSub / storeKey) set in the page before the lesson scripts;
+`sarf.html` uses storeKey `daram-learn-sarf-v1` so progress is separate from nahw.
+Matn sources are the reader week files (`books/shadha-arf/wkNN-*.js`, vars `DATA_WKNN`)
+— wk01 must load first (owns the SA_* glyph consts). The matn panel also renders
+`grid`/`table` blocks (ported from reader.js; `.mbody .tbl-wrap` scrolls). No question
+bank yet — sections use teach/mcq/written only.
+
+Validation: `scratchpad check-sarf.js` (node vm loads all week + sarf lesson files;
+checks matn src/check/range, focus indices, mcq bounds). Status 2026-07-12: **PASS**,
+browser-verified (matn panel, hover gloss, translation toggle, grid rendering, quiz
+peek, MCQ flow; nahw learn.html regression-checked).
+
+| Wk | Course id | File | Sections | ✓ |
+|---|---|---|---|:--:|
+| 1–2 | `sarf-muq-mizan` | `lessons/sarf-muq-mizan.js` | 6 | ✅ |
+| 3–4 | `sarf-fil-1-2` | `lessons/sarf-fil12.js` | 6 | ✅ |
+| 5–6a | `sarf-fil-3a` | `lessons/sarf-fil3.js` | 7 | ✅ |
+| 6b–7 | `sarf-fil-3b` | `lessons/sarf-fil3.js` | 6 | ✅ |
+| 8–11 | `sarf-maani` | `lessons/sarf-maani.js` | 8 | ✅ |
+| 13–16 | `sarf-fil-4-7` | `lessons/sarf-fil47.js` | 8 | ✅ |
+| 17–18 | `sarf-ism-1-2` | `lessons/sarf-ism1.js` | 5 | ✅ |
+| 19–20 | `sarf-masdar` | `lessons/sarf-masdar.js` | 6 | ✅ |
+| 21–23, 26 | `sarf-mushtaqqat` | `lessons/sarf-mushtaqqat.js` | 7 | ✅ |
+
+**Totals:** 9 courses · 59 sections · 132 teach · 260 MCQ · 17 written.
+**Next 🔜:** if further weeks are transcribed (e.g. wk24–25 between tafḍīl and āla),
+fold them into `sarf-mushtaqqat` or a new course; optionally build a ṣarf question
+bank via test-maker and add `bank` steps.

@@ -114,12 +114,14 @@
     const tocList = document.getElementById('toc-list');
     const crumb = document.getElementById('crumb');
     let activeBtn = null;
+    const cmt = setupComments();
 
     function selectChapter(item, btn) {
       if (activeBtn) activeBtn.classList.remove('active');
       if (btn) { btn.classList.add('active'); activeBtn = btn; }
       const content = CONTENT[item.id];
       if (content) renderBlocks(page, content.blocks); else renderPlaceholder(page, item);
+      cmt.chapter(item.id, !!content);
       crumb.innerHTML = '';
       const g = document.createElement('span'); g.textContent = item._group;
       const pip = document.createElement('span'); pip.className = 'pip';
@@ -193,6 +195,157 @@
     document.getElementById('tr-toggle').addEventListener('change', e => {
       document.body.classList.toggle('show-tr', e.target.checked);
     });
+
+    /* ── margin comments ──────────────────────────────────────────
+       Any top-level block (line, heading, box, table, notes…) can carry
+       personal comments shown in a Word-style column right of the page.
+       Stored in localStorage per book: daram-comments:<book-slug> =
+       { chapterId: [ {id, ci, text, ts} ] } where ci = index of the
+       block among #page's children for that chapter.
+       Add: hover a block → “+” button in the margin (or double-click
+       the block — the only way on narrow screens, where the column
+       stacks under the page instead). */
+    function setupComments() {
+      const read = page.parentElement;
+      const wrap = document.createElement('div'); wrap.className = 'page-wrap';
+      read.insertBefore(wrap, page); wrap.appendChild(page);
+      const rail = document.createElement('div'); rail.className = 'cmt-rail'; wrap.appendChild(rail);
+      const addBtn = document.createElement('button');
+      addBtn.className = 'cmt-add'; addBtn.type = 'button'; addBtn.textContent = '+';
+      addBtn.title = 'Add a comment here (or double-click the line)';
+      wrap.appendChild(addBtn);
+
+      const bookId = (location.pathname.match(/books\/([^\/]+)/) || [0, 'book'])[1];
+      const KEY = 'daram-comments:' + bookId;
+      let store = {};
+      try { store = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { /* corrupt → start fresh */ }
+      const save = () => localStorage.setItem(KEY, JSON.stringify(store));
+
+      let chapter = null, ready = false, hoverCi = -1, draftCi = -1, editId = null;
+      const list = () => store[chapter] || [];
+
+      function fmtWhen(ts) {
+        return new Date(ts).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+      }
+      function topBlock(node) {
+        let n = node;
+        while (n && n.parentElement !== page) n = n.parentElement;
+        return n;
+      }
+      function hideAdd() { addBtn.classList.remove('show'); hoverCi = -1; }
+
+      function editorCard(value, onSave, onCancel) {
+        const el = document.createElement('div'); el.className = 'cmt-card editing';
+        const ta = document.createElement('textarea');
+        ta.className = 'cmt-input'; ta.rows = 3; ta.placeholder = 'Write a note…';
+        ta.value = value; ta.dir = 'auto';
+        ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; layout(); });
+        const foot = document.createElement('div'); foot.className = 'cmt-foot';
+        const ok = document.createElement('button'); ok.type = 'button'; ok.className = 'cmt-btn primary'; ok.textContent = 'Save';
+        const no = document.createElement('button'); no.type = 'button'; no.className = 'cmt-btn'; no.textContent = 'Cancel';
+        ok.addEventListener('click', () => { const t = ta.value.trim(); if (t) onSave(t); });
+        no.addEventListener('click', onCancel);
+        ta.addEventListener('keydown', e => {
+          if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') ok.click();
+          if (e.key === 'Escape') { e.stopPropagation(); onCancel(); }
+        });
+        foot.append(ok, no); el.append(ta, foot); return el;
+      }
+
+      function displayCard(c) {
+        const el = document.createElement('div'); el.className = 'cmt-card';
+        const txt = document.createElement('div'); txt.className = 'cmt-text'; txt.textContent = c.text; txt.dir = 'auto';
+        const foot = document.createElement('div'); foot.className = 'cmt-foot';
+        const when = document.createElement('span'); when.className = 'cmt-when';
+        when.textContent = fmtWhen(c.ts); when.title = 'Jump to the line this comment is on';
+        when.addEventListener('click', () => {
+          const a = page.children[c.ci];
+          if (a) a.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+        const ed = document.createElement('button'); ed.type = 'button'; ed.className = 'cmt-btn'; ed.textContent = 'Edit';
+        const del = document.createElement('button'); del.type = 'button'; del.className = 'cmt-btn'; del.textContent = 'Delete';
+        ed.addEventListener('click', () => { editId = c.id; draftCi = -1; render(); });
+        del.addEventListener('click', () => {
+          if (!confirm('Delete this comment?')) return;
+          store[chapter] = list().filter(x => x.id !== c.id);
+          if (!store[chapter].length) delete store[chapter];
+          save(); render();
+        });
+        el.addEventListener('mouseenter', () => { const a = page.children[c.ci]; if (a) a.classList.add('cmt-hl'); });
+        el.addEventListener('mouseleave', () => { const a = page.children[c.ci]; if (a) a.classList.remove('cmt-hl'); });
+        foot.append(when, ed, del); el.append(txt, foot); return el;
+      }
+
+      function render() {
+        hideAdd();
+        rail.innerHTML = '';
+        [...page.children].forEach(el => el.classList.remove('has-cmt', 'cmt-hl'));
+        if (chapter && ready) {
+          const entries = list().map(c => ({
+            ci: c.ci,
+            el: c.id === editId
+              ? editorCard(c.text, t => { c.text = t; save(); editId = null; render(); },
+                           () => { editId = null; render(); })
+              : displayCard(c)
+          }));
+          if (draftCi >= 0) entries.push({
+            ci: draftCi,
+            el: editorCard('', t => {
+              (store[chapter] = list()).push({ id: Date.now(), ci: draftCi, text: t, ts: Date.now() });
+              save(); draftCi = -1; render();
+            }, () => { draftCi = -1; render(); })
+          });
+          entries.sort((a, b) => a.ci - b.ci);
+          entries.forEach(en => { en.el._ci = en.ci; rail.appendChild(en.el); });
+          list().forEach(c => { const a = page.children[c.ci]; if (a) a.classList.add('has-cmt'); });
+        }
+        layout();
+        const ta = rail.querySelector('textarea');
+        if (ta) { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); }
+      }
+
+      function layout() {
+        const cs = getComputedStyle(read);
+        const inner = read.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        const avail = inner - wrap.offsetWidth - 20;
+        const side = avail >= 150;                     /* room for the column? else stack below */
+        document.body.classList.toggle('cmt-side', side);
+        rail.style.width = side ? Math.min(300, avail) + 'px' : '';
+        let bottom = 0;
+        [...rail.children].forEach(el => {
+          if (!side) { el.style.top = ''; return; }
+          const a = page.children[el._ci];
+          let top = a ? a.offsetTop : 0;
+          if (top < bottom) top = bottom;              /* push down so cards never overlap */
+          el.style.top = top + 'px';
+          bottom = top + el.offsetHeight + 10;
+        });
+        wrap.style.minHeight = side && bottom ? Math.max(page.offsetHeight, bottom) + 'px' : '';
+      }
+
+      page.addEventListener('mouseover', e => {
+        if (!ready || !document.body.classList.contains('cmt-side')) return;
+        const b = topBlock(e.target); if (!b) return;
+        hoverCi = [...page.children].indexOf(b);
+        addBtn.style.top = b.offsetTop + 'px';
+        addBtn.classList.add('show');
+      });
+      wrap.addEventListener('mouseleave', hideAdd);
+      addBtn.addEventListener('click', () => {
+        if (hoverCi < 0) return;
+        draftCi = hoverCi; editId = null; render();
+      });
+      page.addEventListener('dblclick', e => {
+        if (!ready) return;
+        const b = topBlock(e.target); if (!b) return;
+        draftCi = [...page.children].indexOf(b); editId = null; render();
+      });
+
+      window.addEventListener('resize', layout);
+      if (window.ResizeObserver) new ResizeObserver(() => layout()).observe(page);
+
+      return { chapter(id, isReady) { chapter = id; ready = isReady; draftCi = -1; editId = null; render(); } };
+    }
   }
 
   window.Reader = { init };

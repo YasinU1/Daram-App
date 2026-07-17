@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../../styles.css" />
 <style>
   .layout { display:grid; grid-template-columns:340px 1fr; align-items:start; gap:0;
-    max-width:1240px; margin:0 auto; }
+    max-width:1560px; margin:0 auto; }
 
   /* ── table of contents (sidebar) ── */
   .toc { position:sticky; top:53px; align-self:start; height:calc(100vh - 53px); overflow-y:auto;
@@ -81,6 +81,7 @@
     <a class="back" href="../../index.html">← Library</a>
     <span class="spacer"></span>
     <span class="crumb">Shadhā al-ʿArf</span>
+    <a class="back" href="../../learn/sarf.html" style="margin-right:14px" title="Adaptive lessons on this book — key ideas, examples &amp; quizzes">Learn ✦</a>
     <label class="switch" title="Show an English translation beneath every line">
       <input type="checkbox" id="tr-toggle" />
       <span class="track"><span class="thumb"></span></span>
@@ -138,8 +139,9 @@
 <script src="wk21-ism2-ism-fail.js"></script>
 <script src="wk22-ism2-ism-maful.js"></script>
 <script src="wk23-ism2-ism-tafdil.js"></script>
+<script src="wk26-ism2-ism-ala.js"></script>
 <script>
-/* ── table of contents — mirrors the worksheet set (Wk 1–23) ── */
+/* ── table of contents — mirrors the worksheet set (Wk 1–26) ── */
 const TOC = [
   { ar:'الْمُقَدِّمَة', en:'Introduction', items:[
     { id:'wk01', ar:'المقدمة — تعريف علم الصرف وتقسيم الكلمة', en:'Definition of ṣarf & division of the word', label:'Wk 1', src:'Worksheet 1' },
@@ -171,6 +173,8 @@ const TOC = [
     { id:'wk21', ar:'التقسيم الثاني للاسم — اسم الفاعل', en:'The active participle', label:'Wk 21', src:'Worksheet 21' },
     { id:'wk22', ar:'التقسيم الثاني للاسم — اسم المفعول', en:'The passive participle', label:'Wk 22', src:'Worksheet 22' },
     { id:'wk23', ar:'التقسيم الثاني للاسم — اسم التفضيل', en:'The noun of preference', label:'Wk 23–24', src:'Worksheet 23–24' },
+    { id:'wk25', ar:'التقسيم الثاني للاسم — اسما الزمان والمكان', en:'The nouns of time & place', label:'Wk 25', src:'Worksheet 25 — coming soon' },
+    { id:'wk26', ar:'التقسيم الثاني للاسم — اسم الآلة', en:'The noun of instrument', label:'Wk 26', src:'Worksheet 26' },
   ]},
 ];
 
@@ -199,6 +203,7 @@ const CONTENT = {
   'wk21': { blocks: DATA_WK21 },
   'wk22': { blocks: DATA_WK22 },
   'wk23': { blocks: DATA_WK23 },
+  'wk26': { blocks: DATA_WK26 },
 };
 
 Reader.init(TOC, CONTENT);

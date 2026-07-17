@@ -4,7 +4,7 @@ Tracks how much of **Shadhā al-ʿArf fī Fann aṣ-Ṣarf** (شَذَا الع�
 Aḥmad al-Ḥamlāwī has been transcribed into the interactive reader
 (`book.html`). This is the **ṣarf** counterpart to `../kubra-nahw/BOOK_PROGRESS.md`.
 
-- **Source:** the class **Sarf Worksheets** (`worksheets/`, Wk 1–23), transcribed
+- **Source:** the class **Sarf Worksheets** (`worksheets/`, Wk 1–26), transcribed
   word-by-word and line-by-line — the same method used for al-Kubrā fī an-Naḥw.
 - **Format:** each word is a `{a, t, e, n?}` token (Arabic · transliteration ·
   English · optional grammar note); Qur'anic words carry `q:1` and sit between
@@ -39,19 +39,25 @@ Legend: ✅ done · 🟡 partial · 🔜 next · ⬜ pending
 | 21 | التقسيم الثاني للاسم — اسم الفاعل (وصيغ المبالغة) | `wk21` | `wk21-ism2-ism-fail.js` | ✅ |
 | 22 | التقسيم الثاني للاسم — اسم المفعول والصفة المشبهة | `wk22` | `wk22-ism2-ism-maful.js` | ✅ |
 | 23 | التقسيم الثاني للاسم — اسم التفضيل (Wk 23–24) | `wk23` | `wk23-ism2-ism-tafdil.js` | ✅ |
+| 25 | التقسيم الثاني للاسم — اسما الزمان والمكان (placeholder in TOC) | `wk25` | — | 🔜 |
+| 26 | التقسيم الثاني للاسم — اسم الآلة | `wk26` | `wk26-ism2-ism-ala.js` | ✅ |
 
-**Done so far — the whole book (Worksheets 1–24; there is no Wk 12).** The Introduction;
+**Done so far — Worksheets 1–24 and 26 (there is no Wk 12).** The Introduction;
 the morphological scale; the whole verb section (divisions 1–7); the **first division of
 the noun** (Wk 17); and the complete **second division of the noun** — jumūd vs ishtiqāq
 (Wk 18), the trilateral maṣdar (Wk 19), the non-trilateral maṣdar (Wk 20), the **active
 participle + ṣiyagh al-mubālagha** (Wk 21), the **passive participle + ṣifa mushabbaha**
-(Wk 22), and the **noun of preference** (Wk 23–24: the afʿal pattern, the eight conditions,
-and the three states by wording — rendered as a `grid` — and by meaning).
+(Wk 22), the **noun of preference** (Wk 23–24: the afʿal pattern, the eight conditions,
+and the three states by wording — rendered as a `grid` — and by meaning), and the
+**noun of instrument** (Wk 26: definition, the three classical samāʿī patterns, the
+teacher's modern patterns faʿʿāla/fuʿʿāl/fāʿūl, the anomalous muḍmūm words, the jāmid
+instruments, and the singular/dual/plural `grid`).
 Awzān/maṣdar/tafḍīl tables are `grid` blocks (cf. wk07); Worksheet-5's large 10-column
 taṣrīf grids are still not reproduced; all prose matn is transcribed.
-**Next 🔜:** None — the worksheet set is complete. Remaining polish if desired: proof the
-densest weeks (Wk 19/22/23) against the PDFs for example-word vocalisation, and decide
-whether to reproduce Worksheet-5's full taṣrīf grids.
+**Next 🔜: Wk 25 — اسما الزمان والمكان (nouns of time & place).** A placeholder TOC entry
+(`wk25`) is already wired in `book.html`; transcribe the worksheet when its PDF arrives.
+Remaining polish if desired: proof the densest weeks (Wk 19/22/23) against the PDFs for
+example-word vocalisation, and decide whether to reproduce Worksheet-5's full taṣrīf grids.
 
 The teacher's "قوله…" commentary paragraphs are rendered as labelled `box` blocks.
 Worksheet colours are mirrored: blue headings (`c:'blue'`) and red key terms /

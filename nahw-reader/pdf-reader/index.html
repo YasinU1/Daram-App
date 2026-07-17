@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daram — PDF Reader · an-Naḥw al-Kubrā</title>
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="pdf-reader.css" />
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">Daram<span class="dot">.</span></span>
+    <span class="spacer"></span>
+    <span class="crumb"><a href="../index.html" style="color:inherit;text-decoration:none">Library</a> · PDF Reader</span>
+  </div>
+
+  <div class="pdf-toolbar">
+    <div class="pt-left">
+      <button id="btnToc" class="pt-btn pt-toggle" title="Chapters">☰ Chapters</button>
+      <span class="pt-title">an-Naḥw al-Kubrā <span class="pt-sub">2026</span></span>
+    </div>
+    <div class="pt-center">
+      <button id="btnZoomOut" class="pt-btn" title="Zoom out">−</button>
+      <span id="zoomLabel" class="pt-zoom">100%</span>
+      <button id="btnZoomIn" class="pt-btn" title="Zoom in">+</button>
+      <span class="pt-sep"></span>
+      <span id="pageLabel" class="pt-page">– / –</span>
+    </div>
+    <div class="pt-right">
+      <button id="btnHlMode" class="pt-btn pt-toggle on" title="Toggle highlight mode">✎ Highlight</button>
+      <button id="btnKey" class="pt-btn" title="API key">⚙︎ Key</button>
+    </div>
+  </div>
+
+  <div id="keyPanel" class="key-panel" hidden>
+    <div class="kp-inner">
+      <label for="keyInput">Anthropic API key</label>
+      <input id="keyInput" type="password" placeholder="sk-ant-..." autocomplete="off" />
+      <div class="kp-row">
+        <button id="btnKeySave" class="pt-btn primary">Save</button>
+        <button id="btnKeyClose" class="pt-btn">Close</button>
+      </div>
+      <p class="kp-hint">Stored only in this browser's localStorage. Used to read &amp; translate the words you highlight.</p>
+    </div>
+  </div>
+
+  <nav id="tocPanel" class="toc-panel"></nav>
+
+  <div id="viewer" class="viewer">
+    <div id="loading" class="loading">Loading PDF…</div>
+  </div>
+
+  <div id="popup" class="hl-popup" hidden></div>
+
+  <div id="arKb" class="ar-kb" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="pdf-reader.js"></script>
+</body>
+</html>

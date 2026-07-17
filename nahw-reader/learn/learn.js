@@ -7,7 +7,7 @@
    then quiz phase (all questions), Stitch select-then-check MCQs.
 
    Step types (lessons/*.js):
-     { t:'teach',  kicker?, title?, ar?, arEn?, body?, points?[], examples?[{ar,en,note?}] }
+     { t:'teach',  kicker?, title?, page?, ar?, arEn?, body?, points?[], examples?[{ar,en,note?}] }
      { t:'mcq',    q, ar?, arEn?, choices[], correct:<idx>, why }
      { t:'written', prompt, ar?, model, marks? }
      { t:'bank',   id }        → resolved from QUESTION_BANK (self-graded flashcard)
@@ -24,7 +24,15 @@
   const BANK = (typeof QUESTION_BANK !== 'undefined') ? QUESTION_BANK : [];
   const bankById = Object.fromEntries(BANK.map(q => [q.id, q]));
 
-  const STORE_KEY = 'daram-learn-v1';
+  /* per-book config — a page may set window.DARAM_LEARN_CONFIG before this script */
+  const CFG = Object.assign({
+    bookTitle: 'al-Kubrā fī an-Naḥw',
+    brand: 'Nahw al Kubra',
+    brandSub: 'Mastery of Arabic Grammar',
+    storeKey: 'daram-learn-v1',
+  }, window.DARAM_LEARN_CONFIG || {});
+
+  const STORE_KEY = CFG.storeKey;
   const DAY = 24 * 60 * 60 * 1000;
   const INTERVALS = [1 * DAY, 3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY];
   const REVIEW_LIMIT = 15;
@@ -199,7 +207,27 @@
         }
         b.lines.forEach(ln => box.append(matnLine(ln)));
         host.append(box);
-      } /* page / note / table blocks are not shown in lesson excerpts */
+      } else if (b.t === 'table') {
+        const wrap = el('div', 'tbl-wrap');
+        const t = document.createElement('table'); t.className = 'bk';
+        t.innerHTML =
+          '<tr><th colspan="2">' + esc(b.head[0]) + '</th><th rowspan="2">' + esc(b.head[1]) + '</th></tr>' +
+          '<tr><th class="sub">' + esc(b.sub[0]) + '</th><th class="sub">' + esc(b.sub[1]) + '</th></tr>' +
+          b.rows.map(r => '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>').join('');
+        wrap.append(t);
+        if (b.caption) wrap.append(el('div', 'tbl-cap', esc(b.caption)));
+        host.append(wrap);
+      } else if (b.t === 'grid') {
+        const wrap = el('div', 'tbl-wrap');
+        const t = document.createElement('table'); t.className = 'grid';
+        t.innerHTML =
+          '<tr><th class="corner"></th>' + b.cols.map(c => '<th>' + esc(c) + '</th>').join('') + '</tr>' +
+          b.rows.map(r => '<tr><th class="rowlab">' + esc(r.h) + '</th>' +
+            r.c.map(c => '<td' + (c === '✗' ? ' class="x"' : '') + '>' + esc(c) + '</td>').join('') + '</tr>').join('');
+        wrap.append(t);
+        if (b.caption) wrap.append(el('div', 'tbl-cap', esc(b.caption)));
+        host.append(wrap);
+      } /* page / note blocks are not shown in lesson excerpts */
     });
   }
 
@@ -341,7 +369,7 @@
 
   function setCrumb(right) {
     crumbEl.innerHTML = '';
-    crumbEl.append(el('span', 'c1', 'al-Kubrā fī an-Naḥw'));
+    crumbEl.append(el('span', 'c1', CFG.bookTitle));
     if (right) {
       crumbEl.append(icon('chevron_right'));
       crumbEl.append(el('span', null, fmt(right)));
@@ -350,7 +378,8 @@
 
   function firstUnfinished() {
     for (const c of COURSES) for (const s of c.sections) {
-      if (!store.sections[c.id + '|' + s.id]) return { course: c, section: s };
+      const rec = store.sections[c.id + '|' + s.id];
+      if (!rec || !rec.done) return { course: c, section: s };
     }
     return COURSES.length ? { course: COURSES[0], section: COURSES[0].sections[0] } : null;
   }
@@ -358,15 +387,17 @@
   function renderNav() {
     navEl.innerHTML = '';
     const brand = el('div', 'brand');
-    brand.append(el('h1', null, 'Nahw al Kubra'), el('p', null, 'Mastery of Arabic Grammar'));
+    brand.append(el('h1', null, CFG.brand), el('p', null, CFG.brandSub));
     navEl.append(brand);
 
     const tree = el('div', 'tree');
     COURSES.forEach((course, ci) => {
       const wrap = el('div');
-      const started = course.sections.some(s => store.sections[course.id + '|' + s.id]);
-      const btn = el('button', 'chap-btn' + (started ? ' started' : ''));
-      btn.append(icon(started ? 'data_usage' : 'radio_button_unchecked', 'dot-ic' + (started ? ' fill' : '')));
+      const recs = course.sections.map(s => store.sections[course.id + '|' + s.id]);
+      const started = recs.some(r => r);
+      const allDone = recs.length > 0 && recs.every(r => r && r.done);
+      const btn = el('button', 'chap-btn' + (allDone ? ' done' : started ? ' started' : ''));
+      btn.append(icon(allDone ? 'circle' : started ? 'data_usage' : 'radio_button_unchecked', 'dot-ic' + (started ? ' fill' : '')));
       btn.append(el('span', null, (ci + 1) + ' ' + fmt(course.titleEn || course.titleAr || '')));
       btn.append(icon(UI.open[course.id] ? 'keyboard_arrow_down' : 'keyboard_arrow_right', 'chev'));
       btn.onclick = () => { UI.open[course.id] = !UI.open[course.id]; renderNav(); };
@@ -377,10 +408,13 @@
         course.sections.forEach((section, si) => {
           const sKey = course.id + '|' + section.id;
           const rec = store.sections[sKey];
-          const b = el('button', 'sub' + (rec ? ' done' : '') + (UI.active === sKey ? ' active' : ''));
-          b.append(icon(rec ? 'radio_button_checked' : 'radio_button_unchecked', 'radio' + (rec ? ' fill' : '')));
+          const done = !!(rec && rec.done);
+          const partial = !!(rec && !rec.done);
+          const b = el('button', 'sub' + (done ? ' done' : partial ? ' started' : '') + (UI.active === sKey ? ' active' : ''));
+          b.append(icon(done ? 'radio_button_checked' : partial ? 'data_usage' : 'radio_button_unchecked', 'radio' + (done || partial ? ' fill' : '')));
           const st = el('span', 'st', (ci + 1) + '.' + (si + 1) + ' ' + fmt(section.title));
-          if (rec) st.append(el('span', 'pct', 'Best ' + rec.best + '%'));
+          if (done) st.append(el('span', 'pct', 'Best ' + rec.best + '%'));
+          else if (partial) st.append(el('span', 'pct', 'In progress'));
           b.append(st);
           b.onclick = () => { shellEl.classList.remove('nav-open'); startSection(course, section); };
           subs.append(b);
@@ -416,7 +450,7 @@
     const hero = el('div', 'home-hero');
     hero.append(
       el('div', 'eyebrow label-caps', 'Adaptive learning'),
-      el('h2', null, 'al-Kubrā fī an-Naḥw'),
+      el('h2', null, CFG.bookTitle),
       el('p', null, 'One path per lesson: read the content first, then answer the questions on it. Miss one and it comes back until it sticks — then again days later, right before you forget.')
     );
     inner.append(hero);
@@ -440,7 +474,8 @@
     cta.style.justifyContent = 'center';
     const start = el('button', 'btn primary');
     const nx = firstUnfinished();
-    start.append(el('span', null, nx && store.sections[nx.course.id + '|' + nx.section.id] ? 'Start again' : 'Resume Learning'), icon('arrow_forward'));
+    const nxRec = nx && store.sections[nx.course.id + '|' + nx.section.id];
+    start.append(el('span', null, nxRec && nxRec.done ? 'Start again' : 'Resume Learning'), icon('arrow_forward'));
     start.onclick = () => { if (nx) startSection(nx.course, nx.section); };
     cta.append(start);
     inner.append(cta);
@@ -464,6 +499,10 @@
     };
     S.total = queue.length - S.teachTotal;
     UI.active = course.id + '|' + section.id;
+    if (!store.sections[UI.active]) {
+      store.sections[UI.active] = { done: false, started: true, ts: Date.now() };
+      save();
+    }
     renderNav();
     const ci = COURSES.indexOf(course), si = course.sections.indexOf(section);
     S.num = (ci + 1) + '.' + (si + 1);
@@ -596,7 +635,10 @@
 
     const paper = el('div', 'paper');
     const pad = el('div', 'pad');
-    pad.append(el('h3', 'cardhead', step.kicker ? fmt(step.kicker) : 'Key idea'));
+    const headRow = el('div', 'cardhead-row');
+    headRow.append(el('h3', 'cardhead', step.kicker ? fmt(step.kicker) : 'Key idea'));
+    if (step.page) headRow.append(el('span', 'pgref label-caps', 'Book p. ' + step.page));
+    pad.append(headRow);
     if (step.ar) pad.append(arBlock(step));
     lede.slice(1).forEach(p => pad.append(el('p', 'prose', fmt(p))));
     if (step.points) {
@@ -810,7 +852,7 @@
     if (S.mode === 'section') {
       const sKey = S.course.id + '|' + S.section.id;
       const prev = store.sections[sKey];
-      store.sections[sKey] = { done: true, best: Math.max(prev ? prev.best : 0, pct), last: pct, ts: Date.now() };
+      store.sections[sKey] = { done: true, best: Math.max(prev && prev.best ? prev.best : 0, pct), last: pct, ts: Date.now() };
       save();
       renderNav();
     }

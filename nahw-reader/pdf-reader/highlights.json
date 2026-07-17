@@ -1,0 +1,63 @@
+{
+  "highlights": [
+    {
+      "id": "hl_1783859034070_dqxll",
+      "pdf": "kubra-nahw-2026",
+      "page": 132,
+      "x": 0.7932692089944439,
+      "y": 0.6659022847691348,
+      "w": 0.07967320674619652,
+      "h": 0.03775669340212087,
+      "ar": "نَوْعَانِ:",
+      "en": "two types:"
+    },
+    {
+      "id": "hl_1783859077888_vb6uz",
+      "pdf": "kubra-nahw-2026",
+      "page": 132,
+      "x": 0.307026009027309,
+      "y": 0.6993915021256255,
+      "w": 0.2541806180077571,
+      "h": 0.05150594864878651,
+      "ar": "الاسْمُ المَعْمُولُ بِالأَصَالَةِ",
+      "en": "The noun governed by original status (i.e., inherently, not by dependency)"
+    },
+    {
+      "id": "hl_1783859567658_gy975",
+      "pdf": "kubra-nahw-2026",
+      "page": 133,
+      "x": 0.4940863563729007,
+      "y": 0.30776135930045984,
+      "w": 0.15901933017005102,
+      "h": 0.031073389491807248,
+      "ar": "وَكَفَى بِاللهِ وَكِيلاً",
+      "en": "And Allah is sufficient as a Disposer of affairs"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c_1783858858951_41sjt",
+      "pdf": "kubra-nahw-2026",
+      "page": 132,
+      "y": 0.21435806336656021,
+      "text": "Some are actioning some are note",
+      "ts": 1783858858951
+    },
+    {
+      "id": "c_1783858934077_bhrqf",
+      "pdf": "kubra-nahw-2026",
+      "page": 132,
+      "y": 0.552595591880185,
+      "text": "A clear ism on its own.",
+      "ts": 1783858934077
+    },
+    {
+      "id": "c_1783859015696_ohq3a",
+      "pdf": "kubra-nahw-2026",
+      "page": 132,
+      "y": 0.5964489251363616,
+      "text": "Interpreted is, its composed of multiple words but together they take a ism slot. \n\ni.e ism muawwal which can be interpreted as masdar.",
+      "ts": 1783859015696
+    }
+  ]
+}

@@ -79,7 +79,7 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
   transition: background 150ms ease; }
 .chap-btn:hover { background: var(--surface-container-high); }
 .chap-btn .dot-ic { color: var(--outline-variant); font-size: 20px; }
-.chap-btn.started .dot-ic { color: var(--secondary); }
+.chap-btn.started .dot-ic, .chap-btn.done .dot-ic { color: var(--secondary); }
 .chap-btn .chev { margin-left: auto; color: var(--on-surface-variant); font-size: 20px; }
 
 .subs { display: flex; flex-direction: column; gap: 4px; margin: 4px 0 8px 18px; padding-left: 16px;
@@ -89,7 +89,7 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
   font-size: 14px; line-height: 20px; color: var(--on-surface-variant); transition: background 150ms ease, color 150ms ease; }
 .sub:hover { background: var(--surface-container-high); color: var(--primary); }
 .sub .radio { flex: 0 0 auto; font-size: 18px; color: var(--outline-variant); margin-top: 1px; }
-.sub.done .radio { color: var(--secondary); }
+.sub.done .radio, .sub.started .radio { color: var(--secondary); }
 .sub .st { flex: 1; }
 .sub .st .pct { display: block; margin-top: 2px; font-size: 11px; font-weight: 700; color: var(--secondary); }
 .sub.active { background: var(--secondary-fixed); color: var(--on-secondary-fixed); font-weight: 700; }
@@ -174,6 +174,10 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
 
 .cardhead { font-family: var(--serif-head); font-size: 32px; line-height: 40px; font-weight: 600;
   color: var(--primary); margin: 0 0 16px; }
+.cardhead-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cardhead-row .cardhead { flex: 1 1 auto; }
+.pgref { flex: 0 0 auto; color: var(--secondary); background: var(--grammar-highlight, #E0F2F1);
+  border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
 .prose { font-size: 16px; line-height: 26px; color: var(--on-surface); margin: 0 0 16px; }
 .prose b, .prose strong { color: var(--primary-container); }
 .arb { font-family: var(--body-ar); font-size: 1.35em; line-height: 1; direction: rtl; unicode-bidi: isolate; color: var(--ink-deep); }
@@ -355,6 +359,8 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
 .mbody .h1::after { width: 90px; margin-top: 8px; }
 .mbody .h2 { margin: 8px 0 6px; }
 .mbody .h2 .ar { font-size: 1.3rem; }
+.mbody .tbl-wrap { margin: 12px 0; overflow-x: auto; }
+.mbody table.grid, .mbody table.bk { margin: 0 auto; }
 .mbody .line-tr { display: none; font-family: var(--grotesk); font-size: 14px; line-height: 22px;
   color: var(--on-surface-variant); direction: ltr; text-align: left; margin: -6px 0 14px; }
 .mbody .box .line-tr { margin: -2px 0 8px; }
