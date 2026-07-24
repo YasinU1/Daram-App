@@ -110,6 +110,7 @@
         </div>
         <button class="btn btn-primary" id="assembleBtn">Assemble paper</button>
         <button class="btn btn-ghost" id="shuffleBtn">Shuffle</button>
+        <button class="btn btn-ghost" id="pdfBtn">Generate PDF</button>
         <span class="status" id="genStatus"></span>
       </div>
       <p class="lede" style="margin:14px 0 0;font-size:.84rem">
@@ -257,6 +258,76 @@
 
   $('assembleBtn').addEventListener('click', doAssemble);
   $('shuffleBtn').addEventListener('click', doAssemble); // re-draw is just another sample
+
+  // ── export the paper as a printable PDF (questions + mark scheme at the end) ──
+  function openPdf(p){
+    const sum=(p.questions||[]).reduce((a,q)=>a+(+q.marks||0),0);
+    const today=new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+    const qHtml=(p.questions||[]).map((q,i)=>`
+      <div class="q">
+        <div class="q-head"><span class="q-n">Question ${q.n||i+1}</span><span class="q-marks">[${q.marks} marks]</span></div>
+        <div class="q-prompt">${esc(q.promptEn)}</div>
+        ${q.promptAr?`<div class="q-ar">${esc(q.promptAr)}</div>`:''}
+      </div>`).join('');
+    const msHtml=(p.questions||[]).map((q,i)=>`
+      <div class="ms">
+        <div class="q-head"><span class="q-n">Question ${q.n||i+1}</span><span class="q-marks">[${q.marks} marks]</span></div>
+        <div class="ms-body">${esc(q.markScheme||'(no mark scheme available)').replace(/\n/g,'<br>')}</div>
+      </div>`).join('');
+
+    const doc=`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+      <title>${esc(p.title||'Practice Paper')}</title>
+      <style>
+        @page { margin:20mm 18mm; }
+        * { box-sizing:border-box; }
+        body { font-family:Georgia,'Times New Roman',serif; color:#1a1a1a; line-height:1.5; margin:0; }
+        .head { text-align:center; border-bottom:2px solid #b8912f; padding-bottom:12px; margin-bottom:16px; }
+        .head .inst { font-weight:700; font-size:1.15rem; }
+        .head .kind { font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#666; margin-top:4px; }
+        .meta { display:grid; grid-template-columns:1fr 1fr; border:1px solid #ccc; margin:0 0 14px; font-size:.85rem; }
+        .meta div { padding:7px 11px; border-bottom:1px solid #eee; }
+        .meta div:nth-child(odd) { border-right:1px solid #eee; }
+        .meta b { display:block; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:#888; margin-bottom:2px; }
+        .note { font-style:italic; color:#555; margin:0 0 18px; }
+        .q, .ms { padding:12px 0; border-top:1px solid #eee; page-break-inside:avoid; }
+        .q-head { display:flex; justify-content:space-between; align-items:baseline; gap:14px; }
+        .q-n { font-weight:700; font-size:.92rem; color:#8a6d1f; }
+        .q-marks { font-weight:700; font-size:.8rem; color:#555; white-space:nowrap; }
+        .q-prompt { margin:4px 0 8px; }
+        .q-ar { direction:rtl; text-align:right; font-size:1.5rem; line-height:1.9; margin:6px 0; }
+        .ms-body { margin-top:4px; font-size:.9rem; color:#333; }
+        h2.sec { page-break-before:always; font-size:1.1rem; border-bottom:2px solid #b8912f; padding-bottom:8px; margin:0 0 4px; }
+        .sec-note { font-style:italic; color:#777; font-size:.82rem; margin:0 0 8px; }
+      </style></head><body>
+      <div class="head"><div class="inst">Dar al-Ulum Oxford</div><div class="kind">Practice Paper · Nahw (al-Kubrā)</div></div>
+      <div class="meta">
+        <div><b>Paper</b>${esc(p.title||'Practice paper')}</div>
+        <div><b>Date</b>${esc(today)}</div>
+        <div><b>Subject</b>Nahw (al-Kubrā)</div>
+        <div><b>Total marks</b>${sum}</div>
+        <div><b>Time allowed</b>60 minutes</div>
+        <div><b>Questions</b>${(p.questions||[]).length}</div>
+      </div>
+      <p class="note">Answer all questions.</p>
+      ${qHtml}
+      <h2 class="sec">Mark Scheme</h2>
+      <p class="sec-note">Examiner use only.</p>
+      ${msHtml}
+      </body></html>`;
+
+    const w=window.open('','_blank');
+    if(!w){ $('genStatus').innerHTML='<span class="err">Pop-up blocked — allow pop-ups to download the PDF.</span>'; return; }
+    w.document.write(doc);
+    w.document.close();
+    w.focus();
+    // give the new window a tick to lay out before invoking the print/save dialog
+    setTimeout(()=>w.print(), 300);
+  }
+
+  $('pdfBtn').addEventListener('click', ()=>{
+    if(!paper) doAssemble();       // assemble from the current selection if none yet
+    if(paper) openPdf(paper);
+  });
 
   // ── generate a fresh paper live (slower fallback) ──
   $('freshLink').addEventListener('click', async (ev)=>{
