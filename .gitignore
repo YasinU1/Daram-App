@@ -12,6 +12,7 @@ node_modules/
 
 # Secrets
 .env
+nahw-reader/pdf-reader/local-key.js
 
 # Large binaries: book scans, worksheets, exports
 *.pdf
@@ -21,3 +22,4 @@ node_modules/
 # Screenshots
 Screenshot*.png
 app-design/screenshots/
+.dmux/

@@ -15,20 +15,20 @@ window.DARAM_COURSES.push({
     /* ═══ 1. مدخل المقصد الثاني ═══ */
     {
       id: 'm2-intro',
-      title: 'مقدمة المقصد الثاني',
-      subtitle: 'ما يُعمَل فيه وما لا يُعمَل',
+      title: 'مُقَدِّمَةُ الْمَقْصَدِ الثَّانِي',
+      subtitle: 'مَا يُعْمَلُ فِيهِ وَمَا لَا يُعْمَلُ',
       steps: [
         { t: 'teach', title: 'Aim Two: the governed and the ungoverned', page: 132,
-          body: '**المقصد الثاني في المعمول وغير المعمول** — a muqaddima and four abwāb (الاسم، الفعل، الجملة، شبه الجملة). The muqaddima settles **five مسائل**:',
+          body: '**الْمَقْصَدُ الثَّانِي فِي الْمَعْمُولِ وَغَيْرِ الْمَعْمُولِ** — a muqaddima and four abwāb (الِاسْمُ، الْفِعْلُ، الْجُمْلَةُ، شِبْهُ الْجُمْلَةِ). The muqaddima settles **five مَسَائِلَ**:',
           points: [
-            '**Nouns**: some معمول, some not · **verbs**: some معمول, some not · **sentences**: some معمول, some not.',
-            '**شبه الجمل: all معمول** · **الحروف: none معمول**.',
+            '**Nouns**: some مَعْمُول, some not · **verbs**: some مَعْمُول, some not · **sentences**: some مَعْمُول, some not.',
+            '**شِبْهُ الْجُمَلِ: all مَعْمُول** · **الْحُرُوفُ: none مَعْمُول**.',
           ] },
 
         { t: 'teach', title: 'Bāb 1 — the noun, صريح ومؤول', page: 132,
           points: [
-            'The noun is two: **الصريح** — the noun on its own: «الصومُ» — and **المؤول** — a maṣdar-particle with its clause: «أنْ تصوموا».',
-            'The معمول noun is of two أنواع: **بالأصالة** — governed **directly, no intermediary** — and (later) by dependency. The direct kind has three أقسام: **المرفوع (٨) · المنصوب (١٢) · المجرور**.',
+            'The noun is two: **الصَّرِيحُ** — the noun on its own: «الصَّوْمُ» — and **الْمُؤَوَّلُ** — a maṣdar-particle with its clause: «أَنْ تَصُومُوا».',
+            'The مَعْمُول noun is of two أَنْوَاع: **بِالْأَصَالَةِ** — governed **directly, no intermediary** — and (later) by dependency. The direct kind has three أَقْسَام: **الْمَرْفُوعُ (٨) · الْمَنْصُوبُ (١٢) · الْمَجْرُورُ**.',
           ] },
 
         { t: 'mcq', q: 'Which category is ALWAYS معمول, and which NEVER?',
@@ -50,28 +50,28 @@ window.DARAM_COURSES.push({
     /* ═══ 2. الفاعل ═══ */
     {
       id: 'fail',
-      title: 'الأول: الفاعل',
-      subtitle: 'جرُّه لفظًا · رتبته مع المفعول',
+      title: 'الْأَوَّلُ: الْفَاعِلُ',
+      subtitle: 'جَرُّهُ لَفْظًا · رُتْبَتُهُ مَعَ الْمَفْعُولِ',
       steps: [
         { t: 'teach', title: 'The fāʿil and its lafẓī jarr', page: 132,
-          ar: 'الفَاعِلُ، وهو ما نُسِبَ إِلَيْهِ …',
+          ar: 'الْفَاعِلُ، وَهُوَ مَا نُسِبَ إِلَيْهِ …',
           arEn: 'The fāʿil: that to which is ascribed —',
           points: [
             '— the **active complete verb**: ﴿فَقَسَتْ قُلُوبُهُمْ﴾, or **what carries its meaning**: ﴿وَالْقَاسِيَةِ قُلُوبُهُمْ﴾ (p. 133).',
-            'It may be **jarred in form** while marfūʿ in status: by **iḍāfa to the maṣdar** ﴿كَذِكْرِكُمْ آبَاءَكُمْ﴾, by **زائدة مِن** ﴿مَا جَاءَنَا مِنْ بَشِيرٍ﴾, or **زائدة باء** ﴿وَكَفَى بِاللهِ وَكِيلًا﴾ (p. 133).',
+            'It may be **jarred in form** while marfūʿ in status: by **iḍāfa to the maṣdar** ﴿كَذِكْرِكُمْ آبَاءَكُمْ﴾, by **زَائِدَةِ مِنْ** ﴿مَا جَاءَنَا مِنْ بَشِيرٍ﴾, or **زَائِدَةِ بَاءٍ** ﴿وَكَفَى بِاللهِ وَكِيلًا﴾ (p. 133).',
           ] },
 
         { t: 'teach', title: 'Who comes first — fāʿil or mafʿūl?', page: 133,
           body: 'The default: fāʿil precedes ﴿وَوَرِثَ سُلَيْمَانُ دَاوُودَ﴾. **Fāʿil first is obligatory**:',
           points: [
-            'In «ضربتُ زيدًا» — a connected pronoun cannot be detached without need (no «ضربَ زيدًا أنا»).',
-            'When **iʿrāb is invisible and confusion looms**: «زارَ موسى عيسى»، «زارتْ هذه تلكَ» — unlike «أكلَ الكمثرى موسى» (meaning decides) or «نصرتْ موسى سلمى» (the tāʾ decides); the same runs in كان’s ism ﴿فَمَا زَالَتْ تِلْكَ دَعْوَاهُمْ﴾.',
+            'In «ضَرَبْتُ زَيْدًا» — a connected pronoun cannot be detached without need (no «ضَرَبَ زَيْدًا أَنَا»).',
+            'When **iʿrāb is invisible and confusion looms**: «زَارَ مُوسَى عِيسَى»، «زَارَتْ هَذِهِ تِلْكَ» — unlike «أَكَلَ الْكُمَّثْرَى مُوسَى» (meaning decides) or «نَصَرَتْ مُوسَى سَلْمَى» (the tāʾ decides); the same runs in كان’s ism ﴿فَمَا زَالَتْ تِلْكَ دَعْوَاهُمْ﴾.',
           ] },
 
         { t: 'teach', title: 'When the mafʿūl jumps ahead', page: 133,
           points: [
             '**Jawāzan**: ﴿وَلَقَدْ جَاءَ آلَ فِرْعَوْنَ النُّذُرُ﴾.',
-            '**Wujūban**: ﴿وَإِذِ ابْتَلَى إِبْرَاهِيمَ رَبُّهُ﴾ — else the pronoun in ربُّه would precede its referent; ﴿لَعَنَهُمُ اللهُ﴾ — the connected pronoun must stay connected (no «لعنَ اللهُ إياهم»); and ﴿فَأَيَّ آيَاتِ اللهِ تُنْكِرُونَ﴾ — الاستفهام owns the sentence-front (p. 134).',
+            '**Wujūban**: ﴿وَإِذِ ابْتَلَى إِبْرَاهِيمَ رَبُّهُ﴾ — else the pronoun in رَبُّهُ would precede its referent; ﴿لَعَنَهُمُ اللهُ﴾ — the connected pronoun must stay connected (no «لَعَنَ اللهُ إِيَّاهُمْ»); and ﴿فَأَيَّ آيَاتِ اللهِ تُنْكِرُونَ﴾ — الِاسْتِفْهَام owns the sentence-front (p. 134).',
           ] },
 
         { t: 'mcq', q: '﴿وَكَفَى بِاللهِ وَكِيلًا﴾ — what is the iʿrāb status of بالله?',
@@ -98,8 +98,8 @@ window.DARAM_COURSES.push({
     /* ═══ 3. نائب الفاعل والمبتدأ ═══ */
     {
       id: 'naib-mubtada',
-      title: 'نائب الفاعل · المبتدأ',
-      subtitle: 'مسوغات الابتداء بالنكرة · حذف المبتدأ',
+      title: 'نَائِبُ الْفَاعِلِ · الْمُبْتَدَأُ',
+      subtitle: 'مُسَوِّغَاتُ الِابْتِدَاءِ بِالنَّكِرَةِ · حَذْفُ الْمُبْتَدَأِ',
       steps: [
         { t: 'teach', title: 'نائب الفاعل', page: 134,
           points: [
@@ -110,22 +110,22 @@ window.DARAM_COURSES.push({
         { t: 'teach', title: 'المبتدأ — two kinds', page: 134,
           points: [
             '**First**: a noun stripped of lafẓī governors, **مسند إليه**: ﴿مُحَمَّدٌ رَسُولُ اللهِ﴾.',
-            '**Second**: an operating noun **raising an explicit noun after نفي or استفهام**: ﴿أَرَاغِبٌ أَنْتَ عَنْ آلِهَتِي﴾ — called **المكتفي بمرفوعه** (its marfūʿ replaces the khabar).',
-            'لام الابتداء may enter it: ﴿وَلَعَبْدٌ مُؤْمِنٌ خَيْرٌ مِنْ مُشْرِكٍ﴾.',
+            '**Second**: an operating noun **raising an explicit noun after نفي or استفهام**: ﴿أَرَاغِبٌ أَنْتَ عَنْ آلِهَتِي﴾ — called **الْمُكْتَفِي بِمَرْفُوعِهِ** (its marfūʿ replaces the khabar).',
+            'لَامُ الِابْتِدَاءِ may enter it: ﴿وَلَعَبْدٌ مُؤْمِنٌ خَيْرٌ مِنْ مُشْرِكٍ﴾.',
           ] },
 
         { t: 'teach', title: 'A nakira mubtadaʾ needs a مسوغ', page: 134,
-          body: 'The default mubtadaʾ is definite; an indefinite one must be **مفيدة** (p. 135):',
+          body: 'The default mubtadaʾ is definite; an indefinite one must be **مُفِيدَةً** (p. 135):',
           points: [
-            '**Specified** — by iḍāfa, uttered «خمسُ صلواتٍ كتبهنَّ الله» or implied ﴿كُلٌّ يَعْمَلُ عَلَى شَاكِلَتِهِ﴾ (= كل أحد); or by وصف, uttered ﴿وَلَعَبْدٌ مُؤْمِنٌ خَيْرٌ…﴾ or implied ﴿وَطَائِفَةٌ قَدْ أَهَمَّتْهُمْ أَنْفُسُهُمْ﴾ (= طائفة منهم).',
-            '**Generalised** — after نفي «ما أحدٌ خيرًا من أحدٍ إلا بالتقوى» or استفهام ﴿أَإِلَهٌ مَعَ اللهِ﴾.',
-            'Or with a **fronted شبه-جملة khabar** ﴿وَفَوْقَ كُلِّ ذِي عِلْمٍ عَلِيمٌ﴾ ﴿لِكُلِّ أَجَلٍ كِتَابٌ﴾ · after **إذا الفجائية** «…فإذا رجلٌ قاعدٌ» · or as **duʿāʾ** ﴿سَلَامٌ عَلَيْكُمْ﴾ ﴿وَيْلٌ لِكُلِّ هُمَزَةٍ لُمَزَةٍ﴾.',
+            '**Specified** — by iḍāfa, uttered «خَمْسُ صَلَوَاتٍ كَتَبَهُنَّ اللهُ» or implied ﴿كُلٌّ يَعْمَلُ عَلَى شَاكِلَتِهِ﴾ (= كُلُّ أَحَدٍ); or by وَصْفٍ, uttered ﴿وَلَعَبْدٌ مُؤْمِنٌ خَيْرٌ…﴾ or implied ﴿وَطَائِفَةٌ قَدْ أَهَمَّتْهُمْ أَنْفُسُهُمْ﴾ (= طَائِفَةٌ مِنْهُمْ).',
+            '**Generalised** — after نَفْيٍ «مَا أَحَدٌ خَيْرًا مِنْ أَحَدٍ إِلَّا بِالتَّقْوَى» or اسْتِفْهَامٍ ﴿أَإِلَهٌ مَعَ اللهِ﴾.',
+            'Or with a **fronted شِبْه-جُمْلَة khabar** ﴿وَفَوْقَ كُلِّ ذِي عِلْمٍ عَلِيمٌ﴾ ﴿لِكُلِّ أَجَلٍ كِتَابٌ﴾ · after **إِذَا الْفُجَائِيَّةِ** «…فَإِذَا رَجُلٌ قَاعِدٌ» · or as **duʿāʾ** ﴿سَلَامٌ عَلَيْكُمْ﴾ ﴿وَيْلٌ لِكُلِّ هُمَزَةٍ لُمَزَةٍ﴾.',
           ] },
 
         { t: 'teach', title: 'Deleting the mubtadaʾ', page: 135,
           points: [
-            '**Jawāzan** with a clue: «رسولُنا» answering «مَن محمدٌ ﷺ؟» — and often after **فاء الجواب** ﴿مَنْ عَمِلَ صَالِحًا فَلِنَفْسِهِ﴾ (= فعملُه) and **القول** ﴿وَقَالُوا أَسَاطِيرُ الْأَوَّلِينَ﴾ (= هي) (p. 136).',
-            '**Wujūban** in four places (p. 136): the **نعت cut off to rafʿ** «الحمدُ للهِ الحميدُ» (= هو الحميدُ) · when the **jawāb of an oath** points to it «في ذمَّتي لأفعلنَّ الصدقَ» (= في ذمتي عهدٌ) · a **maṣdar-khabar standing for its verb** ﴿فَصَبْرٌ جَمِيلٌ﴾ (= صبري) · the khabar **specified to madḥ/dhamm**: «نِعم الطالبُ المجتهدُ» (= هو المجتهدُ).',
+            '**Jawāzan** with a clue: «رَسُولُنَا» answering «مَنْ مُحَمَّدٌ ﷺ؟» — and often after **فَاءِ الْجَوَابِ** ﴿مَنْ عَمِلَ صَالِحًا فَلِنَفْسِهِ﴾ (= فَعَمَلُهُ) and **الْقَوْلِ** ﴿وَقَالُوا أَسَاطِيرُ الْأَوَّلِينَ﴾ (= هِيَ) (p. 136).',
+            '**Wujūban** in four places (p. 136): the **نَعْت cut off to rafʿ** «الْحَمْدُ للهِ الْحَمِيدُ» (= هُوَ الْحَمِيدُ) · when the **jawāb of an oath** points to it «فِي ذِمَّتِي لَأَفْعَلَنَّ الصِّدْقَ» (= فِي ذِمَّتِي عَهْدٌ) · a **maṣdar-khabar standing for its verb** ﴿فَصَبْرٌ جَمِيلٌ﴾ (= صَبْرِي) · the khabar **specified to madḥ/dhamm**: «نِعْمَ الطَّالِبُ الْمُجْتَهِدُ» (= هُوَ الْمُجْتَهِدُ).',
           ] },
 
         { t: 'mcq', q: '﴿وَجِيءَ يَوْمَئِذٍ بِجَهَنَّمَ﴾ — where is the deputy-fāʿil?',
@@ -157,21 +157,21 @@ window.DARAM_COURSES.push({
     /* ═══ 4. الخبر ═══ */
     {
       id: 'khabar',
-      title: 'الرابع: الخبر',
-      subtitle: 'تعدده وحذفه ومطابقته وفاؤه',
+      title: 'الرَّابِعُ: الْخَبَرُ',
+      subtitle: 'تَعَدُّدُهُ وَحَذْفُهُ وَمُطَابَقَتُهُ وَفَاؤُهُ',
       steps: [
         { t: 'teach', title: 'الخبر — basics', page: 136,
           points: [
-            'The **مخبَر به**: ﴿مُحَمَّدٌ رَسُولُ اللهِ﴾. It may **multiply**: ﴿وَهُوَ الْغَفُورُ الْوَدُودُ﴾, and though its default place is after the mubtadaʾ it may **precede**: ﴿لَنَا أَعْمَالُنَا﴾.',
-            '**Obligatory deletion** in three: when the **jawāb of an oath** points to it ﴿لَعَمْرُكَ إِنَّهُمْ لَفِي سَكْرَتِهِمْ يَعْمَهُونَ﴾ (= لعمرُك قَسَمي) · in **لولا** ﴿وَلَوْلَا رَهْطُكَ لَرَجَمْنَاكَ﴾ (= موجودٌ) · with a mubtadaʾ ʿaṭfed by a **wāw that spells معية** ﴿فَإِنَّكُمْ وَمَا تَعْبُدُونَ﴾.',
-            '**Permitted deletion** with a clue: answering استفهام ﴿لَيَقُولُنَّ اللهُ﴾, and after إذا الفجائية «خرجتُ فإذا الأسدُ» (= موجود) (p. 137).',
+            'The **مُخْبَر بِهِ**: ﴿مُحَمَّدٌ رَسُولُ اللهِ﴾. It may **multiply**: ﴿وَهُوَ الْغَفُورُ الْوَدُودُ﴾, and though its default place is after the mubtadaʾ it may **precede**: ﴿لَنَا أَعْمَالُنَا﴾.',
+            '**Obligatory deletion** in three: when the **jawāb of an oath** points to it ﴿لَعَمْرُكَ إِنَّهُمْ لَفِي سَكْرَتِهِمْ يَعْمَهُونَ﴾ (= لَعَمْرُكَ قَسَمِي) · in **لَوْلَا** ﴿وَلَوْلَا رَهْطُكَ لَرَجَمْنَاكَ﴾ (= مَوْجُودٌ) · with a mubtadaʾ ʿaṭfed by a **wāw that spells مَعِيَّة** ﴿فَإِنَّكُمْ وَمَا تَعْبُدُونَ﴾.',
+            '**Permitted deletion** with a clue: answering اسْتِفْهَام ﴿لَيَقُولُنَّ اللهُ﴾, and after إِذَا الْفُجَائِيَّةِ «خَرَجْتُ فَإِذَا الْأَسَدُ» (= مَوْجُودٌ) (p. 137).',
           ] },
 
         { t: 'teach', title: 'Agreement and the fāʾ-khabar', page: 137,
           points: [
             'The khabar **agrees** when it holds a hidden pronoun ﴿إِنَّهُمْ هُمُ الْمُفْسِدُونَ﴾ — unlike ﴿نَحْنُ فِتْنَةٌ﴾ — and when the mubtadaʾ is an **ism ishāra** ﴿فَذَانِكَ بُرْهَانَانِ مِنْ رَبِّكَ﴾.',
-            'A mubtadaʾ can carry **شرط-meaning**, letting **الفاء** onto its khabar — when it comes after **أما** ﴿فَأَمَّا ثَمُودُ فَأُهْلِكُوا بِالطَّاغِيَةِ﴾, or is a **موصول** ﴿الَّذِينَ خَسِرُوا أَنْفُسَهُمْ فَهُمْ لَا يُؤْمِنُونَ﴾ or **موصوف بموصول** بفعل أو ظرف ﴿إِنَّ الْمَوْتَ الَّذِي تَفِرُّونَ مِنْهُ فَإِنَّهُ مُلَاقِيكُمْ﴾,',
-            'or a **نكرة موصوفة** بفعل «ولدٌ حفظَ القرآنَ فله أجرٌ» أو ظرف «ولدٌ في الفصلِ فله أجرٌ», or **مضاف** to such a nakira «أمُّ يتيمٍ تأتيني فلها مالٌ», or **كل + nakira** «كلُّ يتيمٍ فله في قلبي رأفةٌ».',
+            'A mubtadaʾ can carry **شَرْط-meaning**, letting **الْفَاءَ** onto its khabar — when it comes after **أَمَّا** ﴿فَأَمَّا ثَمُودُ فَأُهْلِكُوا بِالطَّاغِيَةِ﴾, or is a **مَوْصُول** ﴿الَّذِينَ خَسِرُوا أَنْفُسَهُمْ فَهُمْ لَا يُؤْمِنُونَ﴾ or **مَوْصُوف بِمَوْصُولٍ** بِفِعْلٍ أَوْ ظَرْفٍ ﴿إِنَّ الْمَوْتَ الَّذِي تَفِرُّونَ مِنْهُ فَإِنَّهُ مُلَاقِيكُمْ﴾,',
+            'or a **نَكِرَة مَوْصُوفَة** بِفِعْلٍ «وَلَدٌ حَفِظَ الْقُرْآنَ فَلَهُ أَجْرٌ» أَوْ ظَرْفٍ «وَلَدٌ فِي الْفَصْلِ فَلَهُ أَجْرٌ», or **مُضَاف** to such a nakira «أُمُّ يَتِيمٍ تَأْتِينِي فَلَهَا مَالٌ», or **كُلّ + nakira** «كُلُّ يَتِيمٍ فَلَهُ فِي قَلْبِي رَأْفَةٌ».',
           ] },
 
         { t: 'mcq', q: '﴿لَعَمْرُكَ إِنَّهُمْ لَفِي سَكْرَتِهِمْ﴾ — where is لعمرك’s khabar?',
@@ -198,14 +198,14 @@ window.DARAM_COURSES.push({
     /* ═══ 5. بقية المرفوعات ═══ */
     {
       id: 'bawaqi-marfuat',
-      title: 'المرفوعات الخامس إلى الثامن',
-      subtitle: 'اسم كان · اسم ما ولا · خبر إنّ · خبر لا',
+      title: 'الْمَرْفُوعَاتُ الْخَامِسُ إِلَى الثَّامِنِ',
+      subtitle: 'اسْمُ كَانَ · اسْمُ مَا وَلَا · خَبَرُ إِنَّ · خَبَرُ لَا',
       steps: [
         { t: 'teach', title: 'Four inherited marfūʿāt', page: 138,
           points: [
-            '**الخامس** — ism of the **الأفعال الناقصة**: ﴿وَكَانَ اللهُ عَلِيمًا حَكِيمًا﴾ · **السادس** — ism of the **حروف المشبهة بليس**: ﴿مَا هَذَا بَشَرًا﴾، «ولا شيءٌ مشابهًا للهِ».',
-            '**السابع** — khabar of the **حروف المشبهة بالفعل**: «إنَّ اللهَ رحيمٌ». The **مزحلقة lām** may enter: the khabar ﴿وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ﴾, the **delayed ism** ﴿إِنَّ فِي ذَلِكَ لَعِبْرَةً﴾, and the **ḍamīr al-faṣl** ﴿إِنَّ هَذَا لَهُوَ الْقَصَصُ الْحَقُّ﴾.',
-            '**الثامن** — khabar of **لا لنفي الجنس**: «لا عملَ مراءٍ مقبولٌ»; its khabar is mostly a **شبه جملة** ﴿فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِي الْحَجِّ﴾, and is often **deleted** when general like «موجود»: ﴿قَالُوا لَا ضَيْرَ﴾.',
+            '**الْخَامِسُ** — ism of the **الْأَفْعَالِ النَّاقِصَةِ**: ﴿وَكَانَ اللهُ عَلِيمًا حَكِيمًا﴾ · **السَّادِسُ** — ism of the **الْحُرُوفِ الْمُشَبَّهَةِ بِلَيْسَ**: ﴿مَا هَذَا بَشَرًا﴾، «وَلَا شَيْءٌ مُشَابِهًا للهِ».',
+            '**السَّابِعُ** — khabar of the **الْحُرُوفِ الْمُشَبَّهَةِ بِالْفِعْلِ**: «إِنَّ اللهَ رَحِيمٌ». The **مُزَحْلَقَة lām** may enter: the khabar ﴿وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ﴾, the **delayed ism** ﴿إِنَّ فِي ذَلِكَ لَعِبْرَةً﴾, and the **ḍamīr al-faṣl** ﴿إِنَّ هَذَا لَهُوَ الْقَصَصُ الْحَقُّ﴾.',
+            '**الثَّامِنُ** — khabar of **لَا لِنَفْيِ الْجِنْسِ**: «لَا عَمَلَ مُرَاءٍ مَقْبُولٌ»; its khabar is mostly a **شِبْهُ جُمْلَةٍ** ﴿فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِي الْحَجِّ﴾, and is often **deleted** when general like «مَوْجُود»: ﴿قَالُوا لَا ضَيْرَ﴾.',
           ] },
 
         { t: 'mcq', q: '﴿إِنَّ فِي ذَلِكَ لَعِبْرَةً﴾ — the lām sits on عبرة, which is إنّ’s ISM. Is that legal?',

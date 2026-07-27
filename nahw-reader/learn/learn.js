@@ -30,6 +30,7 @@
     brand: 'Nahw al Kubra',
     brandSub: 'Mastery of Arabic Grammar',
     storeKey: 'daram-learn-v1',
+    gameUrl: null,            // set per book → sidebar link to the timed Bomb Game
   }, window.DARAM_LEARN_CONFIG || {});
 
   const STORE_KEY = CFG.storeKey;
@@ -353,6 +354,15 @@
     crumbEl = el('div', 'crumbs label-caps');
     bar.append(crumbEl);
     const acts = el('div', 'acts');
+    /* The Bomb Game lives here rather than in the sidebar footer: it is a
+       destination of its own, not a lesson, so it belongs beside Library. */
+    if (CFG.gameUrl) {
+      const game = el('a', 'act-btn');
+      game.href = CFG.gameUrl;
+      game.title = 'Bomb Game — timed MCQ arcade';
+      game.append(icon('timer'), el('span', null, 'Bomb Game'));
+      acts.append(game);
+    }
     const lib = el('a');
     lib.href = '../index.html';
     lib.title = 'Library';
@@ -385,6 +395,8 @@
   }
 
   function renderNav() {
+    const prevTree = navEl.querySelector('.tree');
+    const prevScroll = prevTree ? prevTree.scrollTop : 0;
     navEl.innerHTML = '';
     const brand = el('div', 'brand');
     brand.append(el('h1', null, CFG.brand), el('p', null, CFG.brandSub));
@@ -398,7 +410,7 @@
       const allDone = recs.length > 0 && recs.every(r => r && r.done);
       const btn = el('button', 'chap-btn' + (allDone ? ' done' : started ? ' started' : ''));
       btn.append(icon(allDone ? 'circle' : started ? 'data_usage' : 'radio_button_unchecked', 'dot-ic' + (started ? ' fill' : '')));
-      btn.append(el('span', null, (ci + 1) + ' ' + fmt(course.titleEn || course.titleAr || '')));
+      btn.append(el('span', null, (course.num != null ? course.num : (ci + 1)) + ' ' + fmt(course.titleEn || course.titleAr || '')));
       btn.append(icon(UI.open[course.id] ? 'keyboard_arrow_down' : 'keyboard_arrow_right', 'chev'));
       btn.onclick = () => { UI.open[course.id] = !UI.open[course.id]; renderNav(); };
       wrap.append(btn);
@@ -424,6 +436,7 @@
       tree.append(wrap);
     });
     navEl.append(tree);
+    tree.scrollTop = prevScroll;
 
     const foot = el('div', 'foot');
     const resume = el('button', 'resume', 'Resume Learning');
@@ -505,7 +518,7 @@
     }
     renderNav();
     const ci = COURSES.indexOf(course), si = course.sections.indexOf(section);
-    S.num = (ci + 1) + '.' + (si + 1);
+    S.num = (course.num != null ? course.num : (ci + 1)) + '.' + (si + 1);
     setCrumb('Lesson ' + S.num + ': ' + section.title);
     renderStep();
   }
@@ -550,6 +563,7 @@
   function inner() {
     canvasEl.innerHTML = '';
     const n = el('div', 'inner');
+    if (S && S.course && S.course.id) n.dataset.course = S.course.id;
     canvasEl.append(n);
     return n;
   }

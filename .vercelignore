@@ -1,0 +1,5 @@
+# Secrets — .gitignore does NOT stop `vercel deploy` from uploading these.
+# Without this file, local-key.js would be served publicly at
+# /nahw-reader/pdf-reader/local-key.js and leak the API key.
+nahw-reader/pdf-reader/local-key.js
+.env

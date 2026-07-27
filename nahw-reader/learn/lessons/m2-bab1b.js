@@ -15,29 +15,29 @@ window.DARAM_COURSES.push({
     /* ═══ 1. المفعول المطلق والمفعول به والمفعول فيه ═══ */
     {
       id: 'mafail',
-      title: 'المفعول المطلق · به · فيه',
-      subtitle: 'الأول إلى الثالث من المنصوبات الاثني عشر',
+      title: 'الْمَفْعُولُ الْمُطْلَقُ · بِهِ · فِيهِ',
+      subtitle: 'الْأَوَّلُ إِلَى الثَّالِثِ مِنَ الْمَنْصُوبَاتِ الِاثْنَيْ عَشَرَ',
       steps: [
-        { t: 'teach', title: 'المفعول المطلق — the unbound object', page: 138,
-          body: 'The manṣūbāt are **twelve**. First, المفعول المطلق — “unbound” because its name carries no jarr-particle, unlike مفعول **به/فيه/له/معه**.',
+        { t: 'teach', title: 'الْمَفْعُولُ الْمُطْلَقُ — the unbound object', page: 138,
+          body: 'The manṣūbāt are **twelve**. First, الْمَفْعُول الْمُطْلَق — “unbound” because its name carries no jarr-particle, unlike مَفْعُول **بِه/فِيه/لَه/مَعَه**.',
           points: [
             'It is the **maṣdar of the governor before it** ﴿وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا﴾, or of a **verb with its meaning**: ﴿وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا﴾.',
-            'Standing in for the maṣdar (p. 139): its **ism** «نتوضأ وُضوءَ رسولِ اللهِ» · its **ṣifa** ﴿وَاذْكُرْ رَبَّكَ كَثِيرًا﴾ · its **pronoun** ﴿فَإِنِّي أُعَذِّبُهُ عَذَابًا لَا أُعَذِّبُهُ أَحَدًا﴾ · the **ishāra** «اجتهد ذلك الاجتهادَ» · what shows its **count** «خمسَ مراتٍ» or **kind** «رجعَ القهقرى» · and كل/بعض/أي + maṣdar ﴿كُلَّ الْبَسْطِ﴾ ﴿أَيَّ مُنْقَلَبٍ يَنْقَلِبُونَ﴾.',
-            'Its governor: a **verb** ﴿رَتِّلِ﴾, a **maṣdar** ﴿فَإِنَّ جَهَنَّمَ جَزَاؤُكُمْ جَزَاءً مَوْفُورًا﴾, or a **مشتق** ﴿وَالصَّافَّاتِ صَفًّا﴾ (p. 139).',
+            'Standing in for the maṣdar (p. 139): its **ism** «نَتَوَضَّأُ وُضُوءَ رَسُولِ اللهِ» · its **ṣifa** ﴿وَاذْكُرْ رَبَّكَ كَثِيرًا﴾ · its **pronoun** ﴿فَإِنِّي أُعَذِّبُهُ عَذَابًا لَا أُعَذِّبُهُ أَحَدًا﴾ · the **ishāra** «اجْتَهَدَ ذَلِكَ الِاجْتِهَادَ» · what shows its **count** «خَمْسَ مَرَّاتٍ» or **kind** «رَجَعَ الْقَهْقَرَى» · and كُلّ/بَعْض/أَيّ + maṣdar ﴿كُلَّ الْبَسْطِ﴾ ﴿أَيَّ مُنْقَلَبٍ يَنْقَلِبُونَ﴾.',
+            'Its governor: a **verb** ﴿رَتِّلِ﴾, a **maṣdar** ﴿فَإِنَّ جَهَنَّمَ جَزَاؤُكُمْ جَزَاءً مَوْفُورًا﴾, or a **مُشْتَقّ** ﴿وَالصَّافَّاتِ صَفًّا﴾ (p. 139).',
           ] },
 
         { t: 'teach', title: 'Its three uses and its ban-list', page: 139,
           points: [
-            '**للتوكيد** ﴿تَرْتِيلًا﴾ · **للنوع** — how the act came about: by iḍāfa ﴿وَظَنَنْتُمْ ظَنَّ السَّوْءِ﴾, ṣifa ﴿فَتْحًا مُبِينًا﴾, ishāra «ذلك الاجتهاد», or ʿahd-lām «اجتهدَ الاجتهادَ» (p. 140) · **للعدد** «سجدتُ سجدتينِ» (p. 140).',
-            'The **توكيد**-type must stay **نكرة** — no ṣifa, no iḍāfa, no unit-tāʾ, no dual/plural; the **عدد**-maṣdar may dualise and pluralise (p. 140).',
-            'It **substitutes for its verb** (p. 140): as amr ﴿وَبِالْوَالِدَيْنِ إِحْسَانًا﴾ · nahy «صبرًا لا جزعًا» · duʿāʾ ﴿بُعْدًا لِلْقَوْمِ الظَّالِمِينَ﴾ · sentence-emphasis ﴿حَقًّا﴾ · ʿāqiba-detail ﴿فَإِمَّا مَنًّا بَعْدُ وَإِمَّا فِدَاءً﴾ — plus heard ones ﴿سُبْحَانَكَ﴾ ﴿مَعَاذَ اللهِ﴾ ﴿حِجْرًا مَحْجُورًا﴾، لبيك، غفرانك.',
+            '**لِلتَّوْكِيد** ﴿تَرْتِيلًا﴾ · **لِلنَّوْع** — how the act came about: by iḍāfa ﴿وَظَنَنْتُمْ ظَنَّ السَّوْءِ﴾, ṣifa ﴿فَتْحًا مُبِينًا﴾, ishāra «ذَلِكَ الِاجْتِهَاد», or ʿahd-lām «اجْتَهَدَ الِاجْتِهَادَ» (p. 140) · **لِلْعَدَد** «سَجَدْتُ سَجْدَتَيْنِ» (p. 140).',
+            'The **تَوْكِيد**-type must stay **نَكِرَة** — no ṣifa, no iḍāfa, no unit-tāʾ, no dual/plural; the **عَدَد**-maṣdar may dualise and pluralise (p. 140).',
+            'It **substitutes for its verb** (p. 140): as amr ﴿وَبِالْوَالِدَيْنِ إِحْسَانًا﴾ · nahy «صَبْرًا لَا جَزَعًا» · duʿāʾ ﴿بُعْدًا لِلْقَوْمِ الظَّالِمِينَ﴾ · sentence-emphasis ﴿حَقًّا﴾ · ʿāqiba-detail ﴿فَإِمَّا مَنًّا بَعْدُ وَإِمَّا فِدَاءً﴾ — plus heard ones ﴿سُبْحَانَكَ﴾ ﴿مَعَاذَ اللهِ﴾ ﴿حِجْرًا مَحْجُورًا﴾، لَبَّيْك، غُفْرَانَك.',
           ] },
 
-        { t: 'teach', title: 'المفعول به and المفعول فيه', page: 140,
+        { t: 'teach', title: 'الْمَفْعُولُ بِهِ and الْمَفْعُولُ فِيهِ', page: 140,
           points: [
-            '**المفعول به** — what the act falls upon ﴿اعْبُدُوا رَبَّكُمْ﴾. It precedes the verb **jawāzan** ﴿إِيَّاكَ نَعْبُدُ﴾, **wujūban** with front-claiming words: شرط ﴿أَيًّا مَا تَدْعُوا﴾, استفهام ﴿فَأَيَّ آيَاتِ اللهِ تُنْكِرُونَ﴾, كم الخبرية ﴿وَكَمْ أَرْسَلْنَا مِنْ نَبِيٍّ فِي الْأَوَّلِينَ﴾ (p. 141).',
-            '**المفعول فيه** (الظرف) — the act’s time or place «أحسني إلى أمكِ **أبدًا** فإن الجنةَ **تحتَ** قدميها» (p. 141). ظرف الزمان: **مبهم** (أبد، حين…) — naṣb by an implied jarr ﴿يَرَاكَ حِينَ تَقُومُ﴾ or overt jarr ﴿إِلَى حِينٍ﴾; **محدود** (يوم، شهر…) — same two options ﴿يَوْمَ الْقِيَامَةِ﴾ / ﴿إِلَى يَوْمِ الْقِيَامَةِ﴾ (p. 141).',
-            'ظرف المكان (p. 142): **مبهم** (الجهات الست، المقادير) — naṣb ﴿لِتَكُونَ لِمَنْ خَلْفَكَ آيَةً﴾ or jarr ﴿مِنْ خَلْفِهِمْ﴾; **محدود** — jarr ﴿فِي الْأَرْضِ﴾, with naṣb only when derived from the verb ﴿نَقْعُدُ مِنْهَا مَقَاعِدَ﴾ or after دخل/سكن/نزل ﴿يَدْخُلُونَ الْجَنَّةَ﴾ ﴿اسْكُنْ أَنْتَ وَزَوْجُكَ الْجَنَّةَ﴾. Standing in for the ẓarf: a maṣdar ﴿وَإِدْبَارَ النُّجُومِ﴾, a muḍāf to time ﴿أَوْ بَعْضَ يَوْمٍ﴾, a number ﴿ثَلَاثَ لَيَالٍ﴾ (pp. 142–143).',
+            '**الْمَفْعُول بِه** — what the act falls upon ﴿اعْبُدُوا رَبَّكُمْ﴾. It precedes the verb **jawāzan** ﴿إِيَّاكَ نَعْبُدُ﴾, **wujūban** with front-claiming words: شَرْط ﴿أَيًّا مَا تَدْعُوا﴾, اسْتِفْهَام ﴿فَأَيَّ آيَاتِ اللهِ تُنْكِرُونَ﴾, كَم الْخَبَرِيَّة ﴿وَكَمْ أَرْسَلْنَا مِنْ نَبِيٍّ فِي الْأَوَّلِينَ﴾ (p. 141).',
+            '**الْمَفْعُول فِيه** (الظَّرْف) — the act’s time or place «أَحْسِنِي إِلَى أُمِّكِ **أَبَدًا** فَإِنَّ الْجَنَّةَ **تَحْتَ** قَدَمَيْهَا» (p. 141). ظَرْف الزَّمَان: **مُبْهَم** (أَبَد، حِين…) — naṣb by an implied jarr ﴿يَرَاكَ حِينَ تَقُومُ﴾ or overt jarr ﴿إِلَى حِينٍ﴾; **مَحْدُود** (يَوْم، شَهْر…) — same two options ﴿يَوْمَ الْقِيَامَةِ﴾ / ﴿إِلَى يَوْمِ الْقِيَامَةِ﴾ (p. 141).',
+            'ظَرْف الْمَكَان (p. 142): **مُبْهَم** (الْجِهَات السِّتّ، الْمَقَادِير) — naṣb ﴿لِتَكُونَ لِمَنْ خَلْفَكَ آيَةً﴾ or jarr ﴿مِنْ خَلْفِهِمْ﴾; **مَحْدُود** — jarr ﴿فِي الْأَرْضِ﴾, with naṣb only when derived from the verb ﴿نَقْعُدُ مِنْهَا مَقَاعِدَ﴾ or after دَخَل/سَكَن/نَزَل ﴿يَدْخُلُونَ الْجَنَّةَ﴾ ﴿اسْكُنْ أَنْتَ وَزَوْجُكَ الْجَنَّةَ﴾. Standing in for the ẓarf: a maṣdar ﴿وَإِدْبَارَ النُّجُومِ﴾, a muḍāf to time ﴿أَوْ بَعْضَ يَوْمٍ﴾, a number ﴿ثَلَاثَ لَيَالٍ﴾ (pp. 142–143).',
           ] },
 
         { t: 'mcq', q: '﴿وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا﴾ — تبتيل is not تبتّل’s own maṣdar. Why does it still work?',
@@ -69,26 +69,26 @@ window.DARAM_COURSES.push({
     /* ═══ 2. المفعول له والمفعول معه ═══ */
     {
       id: 'maful-lahu-maahu',
-      title: 'المفعول له · المفعول معه',
-      subtitle: 'ابتغاءَ وجهِ ربهم · بُعثتُ والساعةَ',
+      title: 'الْمَفْعُولُ لَهُ · الْمَفْعُولُ مَعَهُ',
+      subtitle: 'ابْتِغَاءَ وَجْهِ رَبِّهِمْ · بُعِثْتُ وَالسَّاعَةَ',
       steps: [
-        { t: 'teach', title: 'المفعول له — the why of the act', page: 143,
-          ar: 'وهو ما وَقَعَ لِأَجْلِهِ الْفِعْلُ',
+        { t: 'teach', title: 'الْمَفْعُولُ لَهُ — the why of the act', page: 143,
+          ar: 'وَهُوَ مَا وَقَعَ لِأَجْلِهِ الْفِعْلُ',
           arEn: 'That for whose sake the act occurred.',
           body: '﴿وَالَّذِينَ صَبَرُوا ابْتِغَاءَ وَجْهِ رَبِّهِمْ﴾. Naṣb **without the lām** needs four conditions:',
           points: [
-            'It must be a **maṣdar** — unlike ﴿وَالْأَرْضَ وَضَعَهَا لِلْأَنَامِ﴾ — and a **قلبي** one — unlike «سافرتُ إلى مكةَ **للحجِّ**».',
-            'The **fāʿil of verb and maṣdar must be one** — unlike ﴿وَالْخَيْلَ وَالْبِغَالَ وَالْحَمِيرَ **لِتَرْكَبُوهَا** وَزِينَةً﴾ — and their **time one** — unlike «أرحمُ والدي كبيرًا **لِرحمتِهِ** إيايَ صغيرًا».',
-            'A **مصدر مؤول** can serve with an implied muḍāf: ﴿أَنْ تَمِيدَ بِكُمْ﴾ = **كراهةَ** أن تميد.',
+            'It must be a **maṣdar** — unlike ﴿وَالْأَرْضَ وَضَعَهَا لِلْأَنَامِ﴾ — and a **قَلْبِيّ** one — unlike «سَافَرْتُ إِلَى مَكَّةَ **لِلْحَجِّ**».',
+            'The **fāʿil of verb and maṣdar must be one** — unlike ﴿وَالْخَيْلَ وَالْبِغَالَ وَالْحَمِيرَ **لِتَرْكَبُوهَا** وَزِينَةً﴾ — and their **time one** — unlike «أَرْحَمُ وَالِدِي كَبِيرًا **لِرَحْمَتِهِ** إِيَّايَ صَغِيرًا».',
+            'A **مَصْدَر مُؤَوَّل** can serve with an implied muḍāf: ﴿أَنْ تَمِيدَ بِكُمْ﴾ = **كَرَاهَةَ** أَنْ تَمِيدَ.',
           ] },
 
-        { t: 'teach', title: 'المفعول معه — the with of the act', page: 143,
-          ar: 'وهو ما وَقَعَ مَعَهُ الْفِعْلُ',
+        { t: 'teach', title: 'الْمَفْعُولُ مَعَهُ — the with of the act', page: 143,
+          ar: 'وَهُوَ مَا وَقَعَ مَعَهُ الْفِعْلُ',
           arEn: 'That along with which the act occurred.',
           points: [
-            '«يفنى المالُ ويبقى ابنُ آدمَ **وعملَهُ**». Condition: before it a **jumla containing a verb or verb-like** — «أنا سائرٌ **والنهرَ**» works, «كلُّ امرئٍ وشأنُهُ» does not (no verb) (pp. 143–144).',
-            'Naṣb is **obligatory when ʿaṭf is barred**: «بُعثتُ **والساعةَ** كهاتينِ» — no ʿaṭf onto a connected rafʿ-pronoun without separation (p. 144).',
-            'Where ʿaṭf is possible, **both** readings stand: «حضر الأبُ **وولدُهُ/وولدَهُ**» (p. 144).',
+            '«يَفْنَى الْمَالُ وَيَبْقَى ابْنُ آدَمَ **وَعَمَلَهُ**». Condition: before it a **jumla containing a verb or verb-like** — «أَنَا سَائِرٌ **وَالنَّهْرَ**» works, «كُلُّ امْرِئٍ وَشَأْنُهُ» does not (no verb) (pp. 143–144).',
+            'Naṣb is **obligatory when ʿaṭf is barred**: «بُعِثْتُ **وَالسَّاعَةَ** كَهَاتَيْنِ» — no ʿaṭf onto a connected rafʿ-pronoun without separation (p. 144).',
+            'Where ʿaṭf is possible, **both** readings stand: «حَضَرَ الْأَبُ **وَوَلَدُهُ/وَوَلَدَهُ**» (p. 144).',
           ] },
 
         { t: 'mcq', q: '«سَافَرْتُ إِلَى مَكَّةَ لِلْحَجِّ» — why does الحج need its lām?',
@@ -115,29 +115,29 @@ window.DARAM_COURSES.push({
     /* ═══ 3. الحال ═══ */
     {
       id: 'hal',
-      title: 'السادس: الحال',
-      subtitle: 'صاحبها ومسوغاتها وأقسامها المتقابلة',
+      title: 'السَّادِسُ: الْحَالُ',
+      subtitle: 'صَاحِبُهَا وَمُسَوِّغَاتُهَا وَأَقْسَامُهَا الْمُتَقَابِلَةُ',
       steps: [
         { t: 'teach', title: 'The ḥāl and its owner', page: 144,
-          body: 'The **حال** shows the state of the **fāʿil** ﴿وَادْعُوهُ مُخْلِصِينَ لَهُ الدِّينَ﴾, the **mafʿūl** ﴿إِنَّا أَرْسَلْنَاكَ بِالْحَقِّ بَشِيرًا وَنَذِيرًا﴾, or another ﴿إِلَى اللهِ مَرْجِعُكُمْ جَمِيعًا﴾. It always has a **صاحب حال (ذو الحال)**, whose default is: **preceding** the ḥāl, and **definite**.',
+          body: 'The **حَال** shows the state of the **fāʿil** ﴿وَادْعُوهُ مُخْلِصِينَ لَهُ الدِّينَ﴾, the **mafʿūl** ﴿إِنَّا أَرْسَلْنَاكَ بِالْحَقِّ بَشِيرًا وَنَذِيرًا﴾, or another ﴿إِلَى اللهِ مَرْجِعُكُمْ جَمِيعًا﴾. It always has a **صَاحِب حَال (ذُو الْحَال)**, whose default is: **preceding** the ḥāl, and **definite**.',
           points: [
-            'A **nakira** owner needs a مسوغ: the ḥāl fronted «رأيتُ **راكبًا** رجلًا» · the nakira **غير محضة** ﴿أَمْرًا مِنْ عِنْدِنَا﴾ ﴿سَوَاءً لِلسَّائِلِينَ﴾ · after **نفي** ﴿وَمَا أَهْلَكْنَا مِنْ قَرْيَةٍ إِلَّا وَلَهَا كِتَابٌ مَعْلُومٌ﴾ or its like — نهي «لا يُصلِّينَّ أحدٌ غافلًا», استفهام «هل صلَّى أحدٌ جالسًا؟» · or the ḥāl carried by **wāw** ﴿وَهِيَ خَاوِيَةٌ عَلَى عُرُوشِهَا﴾ (p. 145).',
-            'Rarely with no مسوغ: «صلى رسولُ اللهِ ﷺ قاعدًا وصلى وراءَهُ **رجالٌ** قيامًا» (p. 145).',
-            'The ḥāl itself defaults to **nakira** ﴿إِذَا دُعِيَ اللهُ وَحْدَهُ﴾ — وحده read as منفردًا (p. 145).',
+            'A **nakira** owner needs a مُسَوِّغ: the ḥāl fronted «رَأَيْتُ **رَاكِبًا** رَجُلًا» · the nakira **غَيْر مَحْضَة** ﴿أَمْرًا مِنْ عِنْدِنَا﴾ ﴿سَوَاءً لِلسَّائِلِينَ﴾ · after **نَفْي** ﴿وَمَا أَهْلَكْنَا مِنْ قَرْيَةٍ إِلَّا وَلَهَا كِتَابٌ مَعْلُومٌ﴾ or its like — نَهْي «لَا يُصَلِّيَنَّ أَحَدٌ غَافِلًا», اسْتِفْهَام «هَلْ صَلَّى أَحَدٌ جَالِسًا؟» · or the ḥāl carried by **wāw** ﴿وَهِيَ خَاوِيَةٌ عَلَى عُرُوشِهَا﴾ (p. 145).',
+            'Rarely with no مُسَوِّغ: «صَلَّى رَسُولُ اللهِ ﷺ قَاعِدًا وَصَلَّى وَرَاءَهُ **رِجَالٌ** قِيَامًا» (p. 145).',
+            'The ḥāl itself defaults to **nakira** ﴿إِذَا دُعِيَ اللهُ وَحْدَهُ﴾ — وَحْدَهُ read as مُنْفَرِدًا (p. 145).',
           ] },
 
         { t: 'teach', title: 'Derived by default — jāmid by licence', page: 145,
-          body: 'The single-word ḥāl defaults to a **مشتق**. A jāmid one is **مؤولة بالمشتق** when it shows:',
+          body: 'The single-word ḥāl defaults to a **مُشْتَقّ**. A jāmid one is **مُؤَوَّلَة بِالْمُشْتَقّ** when it shows:',
           points: [
-            '**تشبيه** «بدا وجهُهُ **قمرًا**» · **مفاعلة** «بعتُهُ **يدًا بيدٍ**، وكلمتُهُ **فاهُ إلى فِيَّ**» · **ترتيب** ﴿وَجَاءَ رَبُّكَ وَالْمَلَكُ صَفًّا صَفًّا﴾.',
-            'And jāmid **without** taʾwīl when: **موصوفة** ﴿قُرْآنًا عَرَبِيًّا﴾ (الحال الموطئة) · a **number** ﴿فَتَمَّ مِيقَاتُ رَبِّهِ أَرْبَعِينَ لَيْلَةً﴾ · an **aṣl** ﴿أَأَسْجُدُ لِمَنْ خَلَقْتَ طِينًا﴾ · a **farʿ** ﴿وَتَنْحِتُونَ مِنَ الْجِبَالِ بُيُوتًا﴾ (p. 146).',
+            '**تَشْبِيه** «بَدَا وَجْهُهُ **قَمَرًا**» · **مُفَاعَلَة** «بِعْتُهُ **يَدًا بِيَدٍ**، وَكَلَّمْتُهُ **فَاهُ إِلَى فِيَّ**» · **تَرْتِيب** ﴿وَجَاءَ رَبُّكَ وَالْمَلَكُ صَفًّا صَفًّا﴾.',
+            'And jāmid **without** taʾwīl when: **مَوْصُوفَة** ﴿قُرْآنًا عَرَبِيًّا﴾ (الْحَال الْمُوَطِّئَة) · a **number** ﴿فَتَمَّ مِيقَاتُ رَبِّهِ أَرْبَعِينَ لَيْلَةً﴾ · an **aṣl** ﴿أَأَسْجُدُ لِمَنْ خَلَقْتَ طِينًا﴾ · a **farʿ** ﴿وَتَنْحِتُونَ مِنَ الْجِبَالِ بُيُوتًا﴾ (p. 146).',
           ] },
 
         { t: 'teach', title: 'The paired classifications', page: 146,
           points: [
-            '**متنقلة** (default) ﴿وَجَاءُوا أَبَاهُمْ عِشَاءً يَبْكُونَ﴾ vs **لازمة** (ثابتة/دائمة) ﴿وَخُلِقَ الْإِنْسَانُ ضَعِيفًا﴾ · **مؤسِّسة/مبيِّنة** — adds meaning ﴿وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا﴾ vs **مؤكِّدة** — repeats the governor’s meaning ﴿وَلَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ﴾.',
-            '**محكية** (past) ﴿وَقَدْ بَلَغَنِيَ الْكِبَرُ﴾ · **مقارنة** ﴿عِشَاءً يَبْكُونَ﴾ · **مقدَّرة** (future) ﴿فَادْخُلُوهَا خَالِدِينَ﴾ — and **مقصودة** vs **موطئة** (the jāmid one described by a مشتق ﴿قُرْآنًا عَرَبِيًّا﴾).',
-            'Multiple ḥāls (p. 147): **مترادفة** — one owner, several ḥāls «يُحشَرُ الناسُ حفاةً عراةً غُرلًا» — vs **متداخلة** — the second a ḥāl of a pronoun inside the first ﴿خَالِدِينَ فِيهَا لَا يُخَفَّفُ عَنْهُمُ الْعَذَابُ﴾. And **حقيقية** (owner’s own state) vs **سببية** — the state of something linked to the owner ﴿خُشَّعًا أَبْصَارُهُمْ يَخْرُجُونَ مِنَ الْأَجْدَاثِ﴾ (p. 147).',
+            '**مُتَنَقِّلَة** (default) ﴿وَجَاءُوا أَبَاهُمْ عِشَاءً يَبْكُونَ﴾ vs **لَازِمَة** (ثَابِتَة/دَائِمَة) ﴿وَخُلِقَ الْإِنْسَانُ ضَعِيفًا﴾ · **مُؤَسِّسَة/مُبَيِّنَة** — adds meaning ﴿وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا﴾ vs **مُؤَكِّدَة** — repeats the governor’s meaning ﴿وَلَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ﴾.',
+            '**مَحْكِيَّة** (past) ﴿وَقَدْ بَلَغَنِيَ الْكِبَرُ﴾ · **مُقَارِنَة** ﴿عِشَاءً يَبْكُونَ﴾ · **مُقَدَّرَة** (future) ﴿فَادْخُلُوهَا خَالِدِينَ﴾ — and **مَقْصُودَة** vs **مُوَطِّئَة** (the jāmid one described by a مُشْتَقّ ﴿قُرْآنًا عَرَبِيًّا﴾).',
+            'Multiple ḥāls (p. 147): **مُتَرَادِفَة** — one owner, several ḥāls «يُحْشَرُ النَّاسُ حُفَاةً عُرَاةً غُرْلًا» — vs **مُتَدَاخِلَة** — the second a ḥāl of a pronoun inside the first ﴿خَالِدِينَ فِيهَا لَا يُخَفَّفُ عَنْهُمُ الْعَذَابُ﴾. And **حَقِيقِيَّة** (owner’s own state) vs **سَبَبِيَّة** — the state of something linked to the owner ﴿خُشَّعًا أَبْصَارُهُمْ يَخْرُجُونَ مِنَ الْأَجْدَاثِ﴾ (p. 147).',
           ] },
 
         { t: 'mcq', q: '«رَأَيْتُ رَاكِبًا رَجُلًا» — a nakira owns a ḥāl. What is the مسوغ?',
@@ -169,23 +169,23 @@ window.DARAM_COURSES.push({
     /* ═══ 4. التمييز ═══ */
     {
       id: 'tamyiz',
-      title: 'السابع: التمييز',
-      subtitle: 'تمييز المفرد والجملة · إعراب تمييز العدد',
+      title: 'السَّابِعُ: التَّمْيِيزُ',
+      subtitle: 'تَمْيِيزُ الْمُفْرَدِ وَالْجُمْلَةِ · إِعْرَابُ تَمْيِيزِ الْعَدَدِ',
       steps: [
         { t: 'teach', title: 'Lifting the vagueness', page: 147,
-          ar: 'وهو ما يَرْفَعُ الْإِبْهَامَ عَنْ مُفْرَدٍ مُبْهَمٍ أَوْ نِسْبَةٍ مُبْهَمَةٍ',
+          ar: 'وَهُوَ مَا يَرْفَعُ الْإِبْهَامَ عَنْ مُفْرَدٍ مُبْهَمٍ أَوْ نِسْبَةٍ مُبْهَمَةٍ',
           arEn: 'Tamyīz clears the vagueness of a vague single word or a vague ascription.',
           points: [
-            '**تمييز مفرد** clears: the **number** — explicit ﴿أَحَدَ عَشَرَ كَوْكَبًا﴾ or vague ﴿كَمْ آتَيْنَاهُمْ مِنْ آيَةٍ﴾ · the **measure** — كيل «لترٌ لبنًا», وزن ﴿مِثْقَالَ ذَرَّةٍ خَيْرًا﴾, مساحة «جريبٌ نخلًا» · the **measure-like** «قدرُ راحةٍ سحابًا» · what runs their course ﴿وَلَوْ جِئْنَا بِمِثْلِهِ مَدَدًا﴾ · and the **farʿ**-type «خاتمٌ فضةً» (usually iḍāfa: خاتمُ فضةٍ) (p. 148).',
-            '**تمييز جملة** clears a vague ascription: **غير محوَّل** «للهِ درُّهُ فارسًا» — or **محوَّل** from the fāʿil ﴿وَاشْتَعَلَ الرَّأْسُ شَيْبًا﴾ (= شاب شيبُ الرأسِ), the mafʿūl ﴿وَفَجَّرْنَا الْأَرْضَ عُيُونًا﴾, the mubtadaʾ ﴿أَنَا أَكْثَرُ مِنْكَ مَالًا﴾, or its like ﴿وَكَانَ الْإِنْسَانُ أَكْثَرَ شَيْءٍ جَدَلًا﴾ (p. 148).',
-            'It defaults to **nakira**; it is listed among the manṣūbāt **تغليبًا** — it can come **majrūr** (p. 148), e.g. ﴿فِي سِتَّةِ أَيَّامٍ﴾ (p. 156).',
+            '**تَمْيِيز مُفْرَد** clears: the **number** — explicit ﴿أَحَدَ عَشَرَ كَوْكَبًا﴾ or vague ﴿كَمْ آتَيْنَاهُمْ مِنْ آيَةٍ﴾ · the **measure** — كَيْل «لِتْرٌ لَبَنًا», وَزْن ﴿مِثْقَالَ ذَرَّةٍ خَيْرًا﴾, مِسَاحَة «جَرِيبٌ نَخْلًا» · the **measure-like** «قَدْرُ رَاحَةٍ سَحَابًا» · what runs their course ﴿وَلَوْ جِئْنَا بِمِثْلِهِ مَدَدًا﴾ · and the **farʿ**-type «خَاتَمٌ فِضَّةً» (usually iḍāfa: خَاتَمُ فِضَّةٍ) (p. 148).',
+            '**تَمْيِيز جُمْلَة** clears a vague ascription: **غَيْر مُحَوَّل** «لِلَّهِ دَرُّهُ فَارِسًا» — or **مُحَوَّل** from the fāʿil ﴿وَاشْتَعَلَ الرَّأْسُ شَيْبًا﴾ (= شَابَ شَيْبُ الرَّأْسِ), the mafʿūl ﴿وَفَجَّرْنَا الْأَرْضَ عُيُونًا﴾, the mubtadaʾ ﴿أَنَا أَكْثَرُ مِنْكَ مَالًا﴾, or its like ﴿وَكَانَ الْإِنْسَانُ أَكْثَرَ شَيْءٍ جَدَلًا﴾ (p. 148).',
+            'It defaults to **nakira**; it is listed among the manṣūbāt **تَغْلِيبًا** — it can come **majrūr** (p. 148), e.g. ﴿فِي سِتَّةِ أَيَّامٍ﴾ (p. 156).',
           ] },
 
         { t: 'teach', title: 'Case rules of the number-tamyīz', page: 148,
           points: [
             '**Explicit numbers**: majrūr by iḍāfa — **plural for 3–10** ﴿ثَلَاثَةَ أَيَّامٍ﴾, **singular for 100 and 1000** ﴿مِائَةَ عَامٍ﴾ ﴿كَأَلْفِ سَنَةٍ﴾ — and **manṣūb singular** elsewhere ﴿أَحَدَ عَشَرَ كَوْكَبًا﴾.',
-            '**كم الاستفهامية**: manṣūb singular «كم يومًا لبثتَ؟» — deletable with a clue ﴿كَمْ لَبِثْتُمْ﴾ (p. 149). **كم الخبرية**: majrūr — by overt زائدة مِن ﴿كَمْ مِنْ فِئَةٍ قَلِيلَةٍ غَلَبَتْ فِئَةً كَثِيرَةً﴾ or implied «كم ملوكٍ بادَ ملكُهم» (p. 149).',
-            'خبرية-كم’s tamyīz defaults to singular nakira attached to it; plural, definite and separation are allowed — **overt مِن is obligatory at separation** ﴿كَمْ أَهْلَكْنَا قَبْلَهُمْ مِنَ الْقُرُونِ﴾ (p. 149). A tamyīz may even be pure **توكيد** ﴿اثْنَا عَشَرَ شَهْرًا﴾ (p. 149).',
+            '**كَم الِاسْتِفْهَامِيَّة**: manṣūb singular «كَمْ يَوْمًا لَبِثْتَ؟» — deletable with a clue ﴿كَمْ لَبِثْتُمْ﴾ (p. 149). **كَم الْخَبَرِيَّة**: majrūr — by overt زَائِدَة مِن ﴿كَمْ مِنْ فِئَةٍ قَلِيلَةٍ غَلَبَتْ فِئَةً كَثِيرَةً﴾ or implied «كَمْ مُلُوكٍ بَادَ مُلْكُهُمْ» (p. 149).',
+            'خَبَرِيَّة-كَم’s tamyīz defaults to singular nakira attached to it; plural, definite and separation are allowed — **overt مِن is obligatory at separation** ﴿كَمْ أَهْلَكْنَا قَبْلَهُمْ مِنَ الْقُرُونِ﴾ (p. 149). A tamyīz may even be pure **تَوْكِيد** ﴿اثْنَا عَشَرَ شَهْرًا﴾ (p. 149).',
           ] },
 
         { t: 'mcq', q: '﴿وَاشْتَعَلَ الرَّأْسُ شَيْبًا﴾ — what kind of tamyīz is شيبا?',
@@ -212,30 +212,30 @@ window.DARAM_COURSES.push({
     /* ═══ 5. المستثنى ═══ */
     {
       id: 'mustathna',
-      title: 'الثامن: المستثنى',
-      subtitle: 'تام ومفرغ · متصل ومنقطع · أدواته',
+      title: 'الثَّامِنُ: الْمُسْتَثْنَى',
+      subtitle: 'تَامٌّ وَمُفَرَّغٌ · مُتَّصِلٌ وَمُنْقَطِعٌ · أَدَوَاتُهُ',
       steps: [
         { t: 'teach', title: 'The exception and its pillars', page: 149,
-          ar: 'وهو ما أُخْرِجَ مِنْ حُكْمِ ما قَبْلَهُ',
+          ar: 'وَهُوَ مَا أُخْرِجَ مِنْ حُكْمِ مَا قَبْلَهُ',
           arEn: 'What is expelled from the ruling of what precedes it.',
           points: [
-            '**Three pillars**: المستثنى منه (القوم), the أداة (إلا), المستثنى (زيدًا) — «جاء القومُ إلا زيدًا».',
-            '**التام (غير المفرغ)**: the مستثنى منه is mentioned. **غير التام (المفرغ)**: it is not — occurring **only after نفي or its like**, where the أداة becomes a **restriction** and stops working: «ما محمدٌ إلا رسولٌ»، «لا نعبدُ إلا اللهَ» (p. 150).',
-            'The tāmm splits (p. 150): **متصل** — same genus ﴿ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًا مِنْكُمْ﴾ — and **منقطع** — different genus, valid only when the مستثنى منه seems to include it, the أداة then meaning **لكن**: ﴿فَسَجَدُوا إِلَّا إِبْلِيسَ﴾.',
+            '**Three pillars**: الْمُسْتَثْنَى مِنْه (الْقَوْم), the أَدَاة (إِلَّا), الْمُسْتَثْنَى (زَيْدًا) — «جَاءَ الْقَوْمُ إِلَّا زَيْدًا».',
+            '**التَّام (غَيْر الْمُفَرَّغ)**: the مُسْتَثْنَى مِنْه is mentioned. **غَيْر التَّام (الْمُفَرَّغ)**: it is not — occurring **only after نَفْي or its like**, where the أَدَاة becomes a **restriction** and stops working: «مَا مُحَمَّدٌ إِلَّا رَسُولٌ»، «لَا نَعْبُدُ إِلَّا اللهَ» (p. 150).',
+            'The tāmm splits (p. 150): **مُتَّصِل** — same genus ﴿ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًا مِنْكُمْ﴾ — and **مُنْقَطِع** — different genus, valid only when the مُسْتَثْنَى مِنْه seems to include it, the أَدَاة then meaning **لَكِنْ**: ﴿فَسَجَدُوا إِلَّا إِبْلِيسَ﴾.',
           ] },
 
-        { t: 'teach', title: 'Case of the مستثنى', page: 151,
+        { t: 'teach', title: 'Case of the الْمُسْتَثْنَى', page: 151,
           points: [
-            'Both المستثنى منه and المستثنى must be **definite** or a **useful/specified nakira**: «ما جاء أحدٌ إلا أحمدُ»، «جاء القومُ إلا رجلًا مريضًا» — not «جاء قومٌ إلا خالدًا» or «إلا رجلًا» bare (pp. 150–151).',
-            '**Tāmm muttaṣil in affirmative speech**: naṣb ﴿فَشَرِبُوا مِنْهُ إِلَّا قَلِيلًا مِنْهُمْ﴾. **In non-affirmative**: naṣb ﴿إِلَّا امْرَأَتَكَ﴾ or **badal** from the مستثنى منه ﴿مَا فَعَلُوهُ إِلَّا قَلِيلٌ مِنْهُمْ﴾ (p. 151).',
-            '**Fronted** مستثنى: naṣb «وما لي إلا آلَ أحمدَ شيعةٌ» · after an **exception-verb**: naṣb على المفعولية «ألا كلُّ شيءٍ ما خلا اللهَ باطلُ» · in the **منقطع**: naṣb ﴿إِلَّا إِبْلِيسَ﴾ (pp. 151–152).',
+            'Both الْمُسْتَثْنَى مِنْه and الْمُسْتَثْنَى must be **definite** or a **useful/specified nakira**: «مَا جَاءَ أَحَدٌ إِلَّا أَحْمَدُ»، «جَاءَ الْقَوْمُ إِلَّا رَجُلًا مَرِيضًا» — not «جَاءَ قَوْمٌ إِلَّا خَالِدًا» or «إِلَّا رَجُلًا» bare (pp. 150–151).',
+            '**Tāmm muttaṣil in affirmative speech**: naṣb ﴿فَشَرِبُوا مِنْهُ إِلَّا قَلِيلًا مِنْهُمْ﴾. **In non-affirmative**: naṣb ﴿إِلَّا امْرَأَتَكَ﴾ or **badal** from the مُسْتَثْنَى مِنْه ﴿مَا فَعَلُوهُ إِلَّا قَلِيلٌ مِنْهُمْ﴾ (p. 151).',
+            '**Fronted** مُسْتَثْنَى: naṣb «وَمَا لِي إِلَّا آلَ أَحْمَدَ شِيعَةٌ» · after an **exception-verb**: naṣb عَلَى الْمَفْعُولِيَّة «أَلَا كُلُّ شَيْءٍ مَا خَلَا اللهَ بَاطِلُ» · in the **مُنْقَطِع**: naṣb ﴿إِلَّا إِبْلِيسَ﴾ (pp. 151–152).',
           ] },
 
-        { t: 'teach', title: 'The tools — and غير/إلا crossing over', page: 150,
+        { t: 'teach', title: 'The tools — and غَيْر/إِلَّا crossing over', page: 150,
           points: [
-            '**Particle**: إلا (the أصل) and حاشا — حاشا adds **تنزيه** and its noun is **majrūr**: «كلُّ بني آدمَ خطّاؤونَ حاشا الأنبياءِ» (p. 152). **Verb**: خلا، عدا، ما خلا، ما عدا، ليس، لا يكون — «فكُلْ **ليس** السنَّ والظفرَ»; خلا/عدا are verbs for most (jarr-particles for some), ما خلا/ما عدا verbs for all (p. 151). **Noun**: غير وسوى — إعراب غير = the مستثنى’s after إلا; what follows غير is majrūr by iḍāfa (p. 152).',
-            '**غير**, made for the ṣifa ﴿غَيْرَ بُيُوتِكُمْ﴾, may do exception: «جاء الأولادُ غيرَ زيدٍ» — and **إلا**, made for exception, may describe: «الناسُ هلكى **إلا** العالمونَ…», ﴿لَوْ كَانَ فِيهِمَا آلِهَةٌ إِلَّا اللهُ لَفَسَدَتَا﴾ (pp. 152–153).',
-            '**اللهم إلا** signals the exception’s rarity: «لا يغيبُ … اللهم إلا أن يكونَ مريضًا» (p. 153).',
+            '**Particle**: إِلَّا (the أَصْل) and حَاشَا — حَاشَا adds **تَنْزِيه** and its noun is **majrūr**: «كُلُّ بَنِي آدَمَ خَطَّاؤُونَ حَاشَا الْأَنْبِيَاءِ» (p. 152). **Verb**: خَلَا، عَدَا، مَا خَلَا، مَا عَدَا، لَيْس، لَا يَكُون — «فَكُلْ **لَيْسَ** السِّنَّ وَالظُّفُرَ»; خَلَا/عَدَا are verbs for most (jarr-particles for some), مَا خَلَا/مَا عَدَا verbs for all (p. 151). **Noun**: غَيْر وَسِوَى — إِعْرَاب غَيْر = the مُسْتَثْنَى’s after إِلَّا; what follows غَيْر is majrūr by iḍāfa (p. 152).',
+            '**غَيْر**, made for the ṣifa ﴿غَيْرَ بُيُوتِكُمْ﴾, may do exception: «جَاءَ الْأَوْلَادُ غَيْرَ زَيْدٍ» — and **إِلَّا**, made for exception, may describe: «النَّاسُ هَلْكَى **إِلَّا** الْعَالِمُونَ…», ﴿لَوْ كَانَ فِيهِمَا آلِهَةٌ إِلَّا اللهُ لَفَسَدَتَا﴾ (pp. 152–153).',
+            '**اللَّهُمَّ إِلَّا** signals the exception’s rarity: «لَا يَغِيبُ … اللَّهُمَّ إِلَّا أَنْ يَكُونَ مَرِيضًا» (p. 153).',
           ] },
 
         { t: 'mcq', q: '«لَا نَعْبُدُ إِلَّا اللهَ» — where is the مستثنى منه, and what does إلا do?',
@@ -267,26 +267,26 @@ window.DARAM_COURSES.push({
     /* ═══ 6. بقية المنصوبات والمجرور ═══ */
     {
       id: 'bawaqi-mansubat',
-      title: 'المنصوبات التاسع–الثاني عشر · المجرور',
-      subtitle: 'خبر كان · خبر ما ولات · اسم إنّ · اسم لا',
+      title: 'الْمَنْصُوبَاتُ التَّاسِعُ–الثَّانِيَ عَشَرَ · الْمَجْرُورُ',
+      subtitle: 'خَبَرُ كَانَ · خَبَرُ مَا وَلَاتَ · اسْمُ إِنَّ · اسْمُ لَا',
       steps: [
         { t: 'teach', title: 'Four inherited manṣūbāt', page: 153,
           points: [
-            '**التاسع** — khabar of the deficient verbs ﴿إِنَّهُ كَانَ صِدِّيقًا نَبِيًّا﴾. It may precede the **ism** «ليس سواءً عالمٌ وجهولُ», and even the **verb itself** «قائمًا كان زيدٌ» — except after مصدرية-ما or نافية-ما (p. 153).',
-            '**العاشر** — khabar of the ليس-likes: **ما** ﴿مَا هَذَا بَشَرًا﴾ · **لا** «لا شيءٌ مشابهًا للهِ» · **لات** ﴿وَلَاتَ حِينَ مَنَاصٍ﴾ (p. 154). **الحادي عشر** — ism of the verb-likes «إنَّ اللهَ رحيمٌ» (p. 154).',
+            '**التَّاسِع** — khabar of the deficient verbs ﴿إِنَّهُ كَانَ صِدِّيقًا نَبِيًّا﴾. It may precede the **ism** «لَيْسَ سَوَاءً عَالِمٌ وَجَهُولُ», and even the **verb itself** «قَائِمًا كَانَ زَيْدٌ» — except after مَصْدَرِيَّة-مَا or نَافِيَة-مَا (p. 153).',
+            '**الْعَاشِر** — khabar of the لَيْس-likes: **مَا** ﴿مَا هَذَا بَشَرًا﴾ · **لَا** «لَا شَيْءٌ مُشَابِهًا لِلَّهِ» · **لَات** ﴿وَلَاتَ حِينَ مَنَاصٍ﴾ (p. 154). **الْحَادِي عَشَر** — ism of the verb-likes «إِنَّ اللهَ رَحِيمٌ» (p. 154).',
           ] },
 
-        { t: 'teach', title: 'اسم لا لنفي الجنس — the case map', page: 154,
+        { t: 'teach', title: 'اسْمُ لَا لِنَفْيِ الْجِنْسِ — the case map', page: 154,
           points: [
-            '**Manṣūb لفظًا** if **muḍāf** «لا عملَ مراءٍ مقبولٌ» or **شبيه بالمضاف** (operating on what follows) «لا عاصيًا أمَّهُ وأباهُ ناجحٌ».',
-            'Otherwise **manṣūb maḥallan, mabnī**: on **fatḥ** — singular or broken plural «لا رجلَ ولا رجالَ»; on **fatḥ or kasr** — sound fem. plural «لا مسلماتِ/مسلماتَ»; on **yāʾ** — dual or sound masc. plural «لا رجلينِ ولا مسلمينَ».',
-            'On a **definite** noun لا must **repeat** ﴿لَا الشَّمْسُ يَنْبَغِي لَهَا أَنْ تُدْرِكَ الْقَمَرَ وَلَا اللَّيْلُ سَابِقُ النَّهَارِ﴾ (p. 155). Repeated without separation, **five faces** open: فتح+فتح ﴿فَلَا رَفَثَ وَلَا فُسُوقَ﴾ · فتح+رفع «لا حولَ ولا قوةٌ» · فتح+نصب «لا حولَ ولا قوةً» · رفع+رفع ﴿لَا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَاعَةٌ﴾ · رفع+فتح (the other qirāʾah of الحج’s verse) (p. 155). Its ism may drop: «لا عليكَ» = لا بأسَ عليك (p. 155).',
+            '**Manṣūb لَفْظًا** if **muḍāf** «لَا عَمَلَ مُرَاءٍ مَقْبُولٌ» or **شَبِيه بِالْمُضَاف** (operating on what follows) «لَا عَاصِيًا أُمَّهُ وَأَبَاهُ نَاجِحٌ».',
+            'Otherwise **manṣūb maḥallan, mabnī**: on **fatḥ** — singular or broken plural «لَا رَجُلَ وَلَا رِجَالَ»; on **fatḥ or kasr** — sound fem. plural «لَا مُسْلِمَاتِ/مُسْلِمَاتَ»; on **yāʾ** — dual or sound masc. plural «لَا رَجُلَيْنِ وَلَا مُسْلِمِينَ».',
+            'On a **definite** noun لَا must **repeat** ﴿لَا الشَّمْسُ يَنْبَغِي لَهَا أَنْ تُدْرِكَ الْقَمَرَ وَلَا اللَّيْلُ سَابِقُ النَّهَارِ﴾ (p. 155). Repeated without separation, **five faces** open: فَتْح+فَتْح ﴿فَلَا رَفَثَ وَلَا فُسُوقَ﴾ · فَتْح+رَفْع «لَا حَوْلَ وَلَا قُوَّةٌ» · فَتْح+نَصْب «لَا حَوْلَ وَلَا قُوَّةً» · رَفْع+رَفْع ﴿لَا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَاعَةٌ﴾ · رَفْع+فَتْح (the other qirāʾah of الْحَجّ’s verse) (p. 155). Its ism may drop: «لَا عَلَيْكَ» = لَا بَأْسَ عَلَيْكَ (p. 155).',
           ] },
 
-        { t: 'teach', title: 'القسم الثالث: المجرور', page: 155,
+        { t: 'teach', title: 'الْقِسْمُ الثَّالِثُ: الْمَجْرُورُ', page: 155,
           points: [
-            'Two only: **بحرف الجر** ﴿أَوْفُوا الْمِكْيَالَ وَالْمِيزَانَ بِالْقِسْطِ﴾ and **بالإضافة** ﴿أُجِيبُ دَعْوَةَ الدَّاعِ﴾.',
-            'And the bridge-rule (p. 156): a **زائد** jarr-particle can sit on what is marfūʿ or manṣūb **in status**: ﴿وَكَفَى بِاللهِ وَكِيلًا﴾ ﴿وَمَا كَانَ لَنَا أَنْ نُشْرِكَ بِاللهِ مِنْ شَيْءٍ﴾.',
+            'Two only: **بِحَرْفِ الْجَرّ** ﴿أَوْفُوا الْمِكْيَالَ وَالْمِيزَانَ بِالْقِسْطِ﴾ and **بِالْإِضَافَة** ﴿أُجِيبُ دَعْوَةَ الدَّاعِ﴾.',
+            'And the bridge-rule (p. 156): a **زَائِد** jarr-particle can sit on what is marfūʿ or manṣūb **in status**: ﴿وَكَفَى بِاللهِ وَكِيلًا﴾ ﴿وَمَا كَانَ لَنَا أَنْ نُشْرِكَ بِاللهِ مِنْ شَيْءٍ﴾.',
           ] },
 
         { t: 'mcq', q: '«لَا عَاصِيًا أُمَّهُ وَأَبَاهُ نَاجِحٌ» — why tanwīned naṣb on عاصيا instead of binā?',

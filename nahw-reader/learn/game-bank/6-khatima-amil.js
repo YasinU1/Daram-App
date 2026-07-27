@@ -1,0 +1,232 @@
+/* ── Daram Bomb Game — extra bank · Chapter A6: خَاتِمَةُ الْعَامِلِ ──
+   Anki sub-decks 2.4.01–09 turned into MCQs. Game-only; conventions as in
+   1-muqaddimah.js.                                                        */
+
+window.DARAM_COURSES = window.DARAM_COURSES || [];
+
+window.DARAM_COURSES.push({
+  id: 'bank-khatima-amil',
+  num: 'A6',
+  titleAr: 'خَاتِمَةُ الْعَامِلِ',
+  titleEn: 'Bank — Closing topics of the governor',
+  sections: [
+
+    /* ═══ 01. التنازع ═══ */
+    {
+      id: 'bank-kh-tanazu',
+      title: 'التنازع',
+      steps: [
+        { t: 'mcq', q: 'What is **التنازع**?', choices: ['Two governors contending over a single معمول that comes after both of them', 'One governor taking two معمولان', 'A governor deleted with its معمول retained', 'A noun fronted before the verb that governs its pronoun'], correct: 0,
+          why: 'The last option is الاشتغال — a neighbouring but distinct topic.' },
+        { t: 'mcq', q: 'Between which kinds of governor can **التنازع** occur?', choices: ['Two verbs (﴿كلوا واشربوا من رزق الله﴾) or two nouns (﴿وإن أدري أقريب أم بعيد ما توعدون﴾)', 'Two verbs only', 'Two particles only', 'A verb and a particle'], correct: 0,
+          why: 'Any two governing words will do, since it is governance that is in contention.' },
+        { t: 'mcq', q: 'What is the other name for **التنازع**?', choices: ['الإعمال', 'الاشتغال', 'الإلغاء', 'التعليق'], correct: 0,
+          why: 'Named for the decision to be made: which of the two is “put to work”.' },
+        { t: 'mcq', q: 'In التنازع, **which** of the two governors may take the معمول?', choices: ['Either one — the first or the second', 'The first only', 'The second only', 'Neither — a third, deleted verb governs it'], correct: 0,
+          why: 'Both analyses are permitted; the schools differ only on which is preferable.' },
+        { t: 'mcq', q: 'Can **more than two** governors contend over one معمول?', choices: ['Yes — «تسبحون وتحمدون وتكبرون دبر كل صلاة ثلاثا وثلاثين مرة»: three verbs contending', 'No, exactly two', 'Yes, but only in poetry', 'Yes, but only with nouns'], correct: 0,
+          why: 'The name says “two”, but the ruling extends to any number.' },
+      ],
+    },
+
+    /* ═══ 02. حذف العامل ═══ */
+    {
+      id: 'bank-kh-hadhf',
+      title: 'حذف العامل — overview',
+      steps: [
+        { t: 'mcq', q: 'What are the two categories of **حذف العامل**?', choices: ['الحذف الجائز (permissible) and الحذف الواجب (obligatory)', 'السماعي and القياسي', 'اللفظي and المحلي', 'الظاهر and المقدر'], correct: 0,
+          why: 'And the obligatory kind then subdivides into سماعي and قياسي.' },
+        { t: 'mcq', q: 'When is deletion of the عامل **permissible**?', choices: ['When a contextual indicator supplies it — ﴿ماذا أنزل ربكم قالوا خيرا﴾, i.e. أنزل خيرا', 'Whenever the معمول is منصوب', 'Only in the five places of the مفعول به', 'Only with the مفعول المطلق'], correct: 0,
+          why: 'The question just asked supplies the verb, so repeating it would be redundant.' },
+        { t: 'mcq', q: 'In ﴿قَالُوا خَيْرًا﴾, why is خيرا منصوب?', choices: ['It is the مفعول به of a permissibly deleted verb (أنزل), understood from the preceding ماذا أنزل ربكم', 'It is a مفعول مطلق', 'It is a حال', 'It is a تمييز'], correct: 0,
+          why: 'The نصب is the only surviving trace of the elided verb.' },
+        { t: 'mcq', q: 'Obligatory deletion of the عامل occurs in which three **أضرب**?', choices: ['The عامل of the مفعول المطلق · of the مفعول به · of the حال', 'The عامل of the فاعل · of the مفعول · of the خبر', 'The عامل of the تمييز · of the نعت · of the بدل', 'The عامل of the مبتدأ · of the خبر · of the حال'], correct: 0,
+          why: 'Three complements only — and the second is by far the largest branch.' },
+        { t: 'mcq', q: 'In how many places is deletion of the عامل of the **مفعول به** obligatory?', choices: ['Five — التحذير، الإغراء، الاختصاص، الاشتغال، النداء', 'Four — التحذير، الإغراء، الاختصاص، النداء', 'Three — التحذير، الإغراء، النداء', 'Six, adding التنازع'], correct: 0,
+          why: 'التنازع is not a deletion topic at all — it is about which stated governor works.' },
+      ],
+    },
+
+    /* ═══ 03. حذف عامل المفعول المطلق ═══ */
+    {
+      id: 'bank-kh-maful-mutlaq',
+      title: 'حذف عامل المفعول المطلق',
+      steps: [
+        { t: 'mcq', q: 'Obligatory deletion of the عامل of the مفعول المطلق is of which two kinds?', choices: ['سماعي and قياسي', 'جائز and واجب', 'لفظي and محلي', 'ظاهر and مقدر'], correct: 0,
+          why: 'Heard expressions on one side, four rule-governed positions on the other.' },
+        { t: 'mcq', q: 'In how many places does the **قياسي** obligatory deletion occur, and which?', choices: ['Four — a مصدر as a prohibition following one meant as a command · after an استفهام of rebuke · after إما detailing a preceding summary · a مصدر confirming the sentence’s content', 'Three — the same list minus the إما case', 'Five, adding the النداء case', 'Two — rebuke and confirmation only'], correct: 0,
+          why: 'Four positions, each with a Qurʾānic or proverbial example.' },
+        { t: 'mcq', q: 'Give the example of a مصدر as a **prohibition following a command**.', choices: ['صبرا لا جزعا — i.e. اصبر صبرا ولا تجزع جزعا', 'أجرأةً على المعاصي؟', '﴿فإما منًّا بعد وإما فداءً﴾', '﴿أولئك هم المؤمنون حقا﴾'], correct: 0,
+          why: 'Two مصادر back to back, the second negating what the first enjoined.' },
+        { t: 'mcq', q: 'Give the example of a مفعول مطلق after an **استفهام of rebuke**.', choices: ['أجرأةً على المعاصي؟', 'صبرا لا جزعا', '﴿فإما منًّا بعد وإما فداءً﴾', 'سبحان الله'], correct: 0,
+          why: '“Such audacity toward sins?!” — the verb is unspoken because the reproach carries it.' },
+        { t: 'mcq', q: 'Give the example of a مفعول مطلق after **إما as تفصيل**.', choices: ['﴿فشدوا الوثاق فإما منًّا بعد وإما فداءً﴾', 'صبرا لا جزعا', 'أجرأةً على المعاصي؟', 'معاذ الله'], correct: 0,
+          why: 'منًّا and فداءً spell out the options summarised by فشدوا الوثاق.' },
+        { t: 'mcq', q: 'Why is **حقا** منصوب in ﴿أُولَٰئِكَ هُمُ الْمُؤْمِنُونَ حَقًّا﴾?', choices: ['It is a مفعول مطلق مؤكد لمضمون الجملة, its عامل obligatorily deleted (قياسي)', 'It is a حال', 'It is a تمييز', 'It is a مفعول به of a deleted verb'], correct: 0,
+          why: 'It confirms the whole preceding statement rather than modifying any one word.' },
+        { t: 'mcq', q: 'Give examples of the **سماعي** deletion of the عامل of the مفعول المطلق.', choices: ['سبحان الله · معاذ الله · عجبًا لك · حمدًا وشكرًا لا كفرًا · لبيك وأخواتها', 'صبرا لا جزعا · أجرأةً على المعاصي', '﴿حقا﴾ · ﴿منًّا وفداءً﴾', 'هنيئًا لك · سالمًا غانمًا'], correct: 0,
+          why: 'The last option is the سماعي set for the **حال**, not the مفعول المطلق.' },
+      ],
+    },
+
+    /* ═══ 04. التحذير ═══ */
+    {
+      id: 'bank-kh-tahdhir',
+      title: 'التحذير',
+      steps: [
+        { t: 'mcq', q: 'Define **التحذير**.', choices: ['Putting a noun in نصب by a deleted verb conveying warning against something disliked, so the addressee avoids it', 'Putting a noun in نصب by a deleted verb urging towards something desirable', 'Specifying the referent of a preceding pronoun', 'Fronting a noun before a verb occupied with its pronoun'], correct: 0,
+          why: 'Away from a harm — the mirror of الإغراء, which pushes towards a good.' },
+        { t: 'mcq', q: 'What are the four **أركان of التحذير**?', choices: ['The implied verb of warning (احذر، تجنب، قِ…) · المحذِّر · المحذَّر · المحذَّر منه', 'The verb · the فاعل · the مفعول · the حال', 'المغري · المغرَى · المغرَى به · the implied verb', 'المشغول · المشغول به · المشغول عنه · the pronoun'], correct: 0,
+          why: 'Warner, warned, and the thing warned of, plus the unspoken verb.' },
+        { t: 'mcq', q: 'How many **وجوه** does التحذير have?', choices: ['Three — with a detached منصوب pronoun (إياك…) · with an overt noun (نفسك…) · by naming only the thing warned of (الله الله…)', 'Two — with إياك and with an overt noun', 'Four', 'One only'], correct: 0,
+          why: 'The three differ by which pillar gets stated.' },
+        { t: 'mcq', q: 'Which are the ways التحذير is expressed with **إياك**?', choices: ['With عطف of the thing warned of (إياك والحسدَ) · نصب without عطف, repeating the pronoun (إياك إياك المراءَ) · with جر by مِن, overt (إياك من الحسد) or implied (إياك أن تحسد)', 'Only إياك والحسد', 'Only with a repeated pronoun', 'Only with مِن'], correct: 0,
+          why: 'Three constructions on the same detached pronoun.' },
+        { t: 'mcq', q: 'Which are the ways التحذير is expressed with an **overt noun**?', choices: ['Alone (نفسَك) · repeated (نفسَك نفسَك) · with the thing warned of conjoined (نفسَك والحسدَ)', 'Only repeated', 'Only with عطف', 'Only alone'], correct: 0,
+          why: 'The same three shapes as with إياك, minus the مِن option.' },
+        { t: 'mcq', q: 'Which are the ways التحذير is expressed by naming **only المحذَّر منه**?', choices: ['Repeated (اللهَ اللهَ) · with a second item conjoined (﴿ناقةَ الله وسقياها﴾)', 'Alone, without repetition', 'Only with إياك', 'Only with مِن'], correct: 0,
+          why: 'Naming it once and alone would not signal a warning at all.' },
+        { t: 'mcq', q: 'Can التحذير occur **without** deleting the verb?', choices: ['Yes — ﴿قوا أنفسكم وأهليكم نارا﴾, where قوا is stated', 'No, the deletion is always obligatory', 'Only in poetry', 'Only with إياك'], correct: 0,
+          why: 'The obligation attaches to the specific fixed shapes, not to warning as such.' },
+        { t: 'mcq', q: 'Parse **إياك والحسدَ**.', choices: ['إياك = المحذَّر, a detached pronoun منصوب by an obligatorily deleted verb (e.g. احذر) · والحسدَ = المحذَّر منه, conjoined to it', 'إياك = مبتدأ · والحسدَ = خبر', 'إياك = فاعل · والحسدَ = مفعول به', 'Both are منادى'], correct: 0,
+          why: 'Two منصوبات, one deleted governor.' },
+      ],
+    },
+
+    /* ═══ 05. الإغراء ═══ */
+    {
+      id: 'bank-kh-ighra',
+      title: 'الإغراء',
+      steps: [
+        { t: 'mcq', q: 'Define **الإغراء**.', choices: ['Putting a noun in نصب by a deleted verb conveying encouragement towards something desirable, so the addressee does it', 'Putting a noun in نصب by a deleted verb warning against something disliked', 'Specifying the referent of a pronoun', 'Calling someone with a particle standing for أدعو'], correct: 0,
+          why: 'الترغيب والتشويق — the positive counterpart of التحذير.' },
+        { t: 'mcq', q: 'What are the four **أركان of الإغراء**?', choices: ['The implied verb (الزم، اطلب، خذ…) · المغري · المغرَى · المغرَى به', 'The implied verb · المحذِّر · المحذَّر · المحذَّر منه', 'المشغول · المشغول به · المشغول عنه · the verb', 'The particle · the منادى · the deleted verb · the addressee'], correct: 0,
+          why: 'Same four-pillar shape as التحذير, with the roles renamed.' },
+        { t: 'mcq', q: 'When is deletion of the عامل **obligatory** in الإغراء?', choices: ['When المغرَى به is repeated (الصبرَ الصبرَ) or when something is conjoined to it (العلمَ والحلمَ)', 'Always', 'Never', 'Only when the addressee is named'], correct: 0,
+          why: 'Repetition or coordination is the formal signal that the verb must stay unspoken.' },
+        { t: 'mcq', q: 'Can الإغراء occur **without** deleting the verb?', choices: ['Yes — ﴿يا يحيى خذ الكتاب بقوة﴾', 'No', 'Only in poetry', 'Only when repeated'], correct: 0,
+          why: 'The verb خذ is stated outright.' },
+        { t: 'mcq', q: 'Which expressions are **attached (يلحق)** to التحذير and الإغراء, and with which implied verbs?', choices: ['مرحبًا · أهلًا وسهلًا — with the implied أصبتَ · and امرءًا ونفسَه — with the implied دعْ', 'سبحان الله · معاذ الله — with the implied أسبح', 'هنيئًا لك · سالمًا غانمًا — with the implied ثبتَ', 'اللهم · يا لله — with the implied أدعو'], correct: 0,
+          why: 'Everyday formulas whose نصب only makes sense once the elided verb is restored.' },
+      ],
+    },
+
+    /* ═══ 06. الاختصاص ═══ */
+    {
+      id: 'bank-kh-ikhtisas',
+      title: 'الاختصاص',
+      steps: [
+        { t: 'mcq', q: 'Define **الاختصاص**.', choices: ['Putting a noun in نصب by a deleted verb such as أخص or أعني, specifying the intended referent of a preceding pronoun', 'Warning against something disliked', 'Urging towards something desirable', 'Calling with a particle standing for أدعو'], correct: 0,
+          why: 'It narrows down who a pronoun already used refers to.' },
+        { t: 'mcq', q: 'Give the Qurʾānic example of **الاختصاص**.', choices: ['﴿رحمت الله وبركاته عليكم أهلَ البيت﴾ — أهل البيت منصوب by an implied أخص, specifying the كم', '﴿ناقةَ الله وسقياها﴾', '﴿قوا أنفسكم وأهليكم نارا﴾', '﴿يا يحيى خذ الكتاب بقوة﴾'], correct: 0,
+          why: 'The pronoun عليكم is general; أهل البيت pins it down.' },
+        { t: 'mcq', q: 'Can الاختصاص be expressed with **أيها/أيتها**?', choices: ['Yes, without يا, and it then follows the rules of النداء — «نهى رسول الله ﷺ المسلمين عن كلامنا أيها الثلاثة»', 'No', 'Yes, but only with يا', 'Only in poetry'], correct: 0,
+          why: 'Dropping the يا is what marks it as specification rather than a genuine call.' },
+      ],
+    },
+
+    /* ═══ 07. الاشتغال ═══ */
+    {
+      id: 'bank-kh-ishtighal',
+      title: 'الاشتغال',
+      steps: [
+        { t: 'mcq', q: 'Define **الاشتغال**.', choices: ['A noun precedes a verb that governs a pronoun referring back to it, such that freeing the verb from that pronoun would put the fronted noun in نصب — ﴿ورسلًا قد قصصناهم عليك﴾', 'Two governors contending over one معمول', 'A governor deleted with contextual evidence', 'Specifying a pronoun’s referent'], correct: 0,
+          why: 'The verb is “busy” with the pronoun, so a second, deleted verb is posited for the fronted noun.' },
+        { t: 'mcq', q: 'What are the three **أركان of الاشتغال**?', choices: ['المشغول (the عامل, also المشتغِل) · المشغول به (the referring pronoun) · المشغول عنه (the fronted noun)', 'المحذِّر · المحذَّر · المحذَّر منه', 'المفضل · المفضل عليه · اسم التفضيل', 'المستغاث · المستغاث له · حرف النداء'], correct: 0,
+          why: 'The governor, what occupies it, and what it was diverted from.' },
+        { t: 'mcq', q: 'What is the traditional descriptive name of **الاشتغال**?', choices: ['ما أضمر عامله على شريطة التفسير', 'ما حذف عامله وجوبا', 'ما نوزع فيه العاملان', 'ما نصب بنزع الخافض'], correct: 0,
+          why: '“That whose governor is concealed on condition of interpretation” — the stated verb interprets the hidden one.' },
+        { t: 'mcq', q: 'What two إعراب options exist in general for **المشغول عنه**?', choices: ['رفع as a مبتدأ, or نصب by a deleted verb — ﴿والموتى يبعثهم الله﴾', 'نصب only', 'رفع only', 'جر or نصب'], correct: 0,
+          why: 'Both readings are sound; the rest of the chapter is about when one is forced or preferred.' },
+        { t: 'mcq', q: 'When is **رفع** of المشغول عنه obligatory?', choices: ['When it falls after a particle specific to nouns, e.g. إذا الفجائية — فإذا الشيطانُ يتبعه', 'When it falls after a particle specific to verbs', 'When the عامل is a verb of طلب', 'When a verbal sentence precedes it'], correct: 0,
+          why: 'A noun-only particle rules out positing a verb after it.' },
+        { t: 'mcq', q: 'When is **نصب** of المشغول عنه obligatory?', choices: ['After a particle specific to verbs — التحضيض (هلا الجنةَ طلبتَها) or الشرط (إن الجنةَ تردْها فاعمل صالحا)', 'After إذا الفجائية', 'When the عامل is a verb of طلب', 'When a negation precedes'], correct: 0,
+          why: 'A verb-only particle forces a verb to be posited, which then governs the noun.' },
+        { t: 'mcq', q: 'In which three cases is **نصب preferred** (يترجح)?', choices: ['The عامل is a verb of طلب (اللهَ اعبدْه) · a verbal sentence precedes the معمول (أعبد الله ورسولَه أتبعه) · a particle mostly preceding verbs comes first, e.g. ما النافية or the interrogative hamza (﴿أبشرًا منا واحدا نتبعه﴾)', 'The same three, but رفع is preferred', 'Only when a negation precedes', 'Only after إذا الفجائية'], correct: 0,
+          why: 'Preference, not obligation — the رفع reading remains available in all three.' },
+        { t: 'mcq', q: 'Can the deleted verb in الاشتغال be a **synonym** rather than the stated verb itself?', choices: ['Yes — ﴿والظالمين أعد لهم عذابا أليما﴾, with an implied verb like أوعد', 'No, it must be the same verb', 'Only if the stated verb is intransitive', 'Only in poetry'], correct: 0,
+          why: 'أعدَّ لـ cannot govern الظالمين directly, so a compatible synonym is supplied.' },
+      ],
+    },
+
+    /* ═══ 08. النداء ═══ */
+    {
+      id: 'bank-kh-nida',
+      title: 'النداء',
+      steps: [
+        { t: 'mcq', q: 'Define **النداء**.', choices: ['Calling out with a particle standing in the place of the verb أدعو — يا زيد', 'Warning against something disliked', 'Urging towards something desirable', 'Specifying a pronoun’s referent'], correct: 0,
+          why: 'The particle is a stand-in for a verb, which is why the منادى is an object.' },
+        { t: 'mcq', q: 'What are the three **أركان of النداء**?', choices: ['The deleted verb of calling · the particle standing in its place · المنادى', 'The caller · the called · the thing called for', 'المستغاث · المستغاث له · اللام', 'The particle · the منادى · the ندبة'], correct: 0,
+          why: 'Three pillars, one of which is never uttered.' },
+        { t: 'mcq', q: 'List the seven **particles of النداء** and their uses.', choices: ['الهمزة and أي — for the near · يا، آ، أيا، هيا — for the far · وا — for الندبة', 'يا، أيا، هيا، آ — for the near · الهمزة، أي — for the far · وا — for التعجب', 'يا only, in all cases', 'يا، وا، أي — three particles only'], correct: 0,
+          why: 'Two for the near, four for the far, one for lament.' },
+        { t: 'mcq', q: 'When may the **particle of النداء be deleted**?', choices: ['When the منادى is مضاف (﴿اعملوا آلَ داودَ شكرا﴾) or a proper name (﴿يوسفُ أعرض عن هذا﴾)', 'Always', 'Never', 'Only with لفظ الجلالة'], correct: 0,
+          why: 'Both are recognisable enough as vocatives without the particle.' },
+        { t: 'mcq', q: 'With which منادى may the particle **not** be deleted?', choices: ['With لفظ الجلالة and with the نكرة مقصودة (يا رجلُ)', 'With a مضاف', 'With a proper name', 'With a شبيه بالمضاف'], correct: 0,
+          why: 'Without the particle, يا رجل would simply read as an ordinary indefinite noun.' },
+        { t: 'mcq', q: 'What is the **underlying إعراب of the منادى**?', choices: ['It is the مفعول به of the deleted أدعو — منصوب either لفظا or محلا', 'It is a مبتدأ', 'It is a حال', 'It has no إعراب at all'], correct: 0,
+          why: 'Everything else in the chapter follows from its being an object.' },
+        { t: 'mcq', q: 'When is the منادى **منصوب لفظا**?', choices: ['When مضاف (يا عبدَ الله) · شبيه بالمضاف (يا غافرًا ذنوبَنا) · or غير معين (يا غافلًا والموتُ يطلبه)', 'When it is a معرفة مفرد', 'When it is a نكرة مقصودة', 'Always'], correct: 0,
+          why: 'Three cases, all of them nouns that resist being built (مبني).' },
+        { t: 'mcq', q: 'When is the منادى **مبنيا**, and on what?', choices: ['The مفرد (neither مضاف nor شبيه) that is definite or a نكرة مقصودة — built on the sign of its رفع: يا زيدُ، يا رجلُ، يا رجلان، يا مسلمون', 'When it is مضاف — built on fatḥa', 'When it is شبيه بالمضاف — built on ḍamma', 'It is never مبنيا'], correct: 0,
+          why: 'Built on the **رفع sign**, not on ḍamma as such — hence the dual and plural forms.' },
+        { t: 'mcq', q: 'Why do we say **يا مسلمون** and not يا مسلمين?', choices: ['Because a definite مفرد منادى is built on the sign it would take in رفع — here the wāw — even though it is منصوب محلا', 'Because the plural is always مرفوع', 'Because مسلمون is مضاف', 'Because the vocative requires رفع'], correct: 0,
+          why: 'This is the payoff of the “built on the sign of its رفع” formulation.' },
+        { t: 'mcq', q: 'What are the four permitted forms for the منادى **annexed to ياء المتكلم**?', choices: ['Delete the yāʾ, keeping the kasra (﴿يا عبادِ فاتقون﴾) · keep it quiescent (﴿يا عباديْ لا خوف عليكم﴾) · keep it with fatḥa (﴿يا عباديَ الذين أسرفوا﴾) · turn the kasra to fatḥa and the yāʾ to alif (﴿يا حسرتى﴾)', 'Two forms only: with and without the yāʾ', 'Three forms', 'One form: the yāʾ must always be deleted'], correct: 0,
+          why: 'All four are attested in Qurʾānic readings.' },
+        { t: 'mcq', q: 'Define **الترخيم**.', choices: ['Deleting the end of the منادى for lightness — يا فاطمَ for فاطمة', 'Adding an alif to the end of the منادى', 'Building the منادى on the sign of its رفع', 'Deleting the particle of النداء'], correct: 0,
+          why: 'A clipping of the name, licensed only in the vocative.' },
+        { t: 'mcq', q: 'Which nouns may undergo **الترخيم**?', choices: ['Nouns ending in tāʾ (يا عائشَ) and masculine proper names of more than three letters that are not compound (يا جعفَ) — unlike زينب، زيد، عبد الله', 'Any noun whatever', 'Only feminine names', 'Only compound names'], correct: 0,
+          why: 'زينب is too short and lacks the tāʾ; عبد الله is compound.' },
+        { t: 'mcq', q: 'What two vowellings are permitted on the end of a **مرخَّم** منادى?', choices: ['Keeping the original vowel (يا حارِ) or the ḍamma (يا حارُ)', 'Only the ḍamma', 'Only the fatḥa', 'Only sukūn'], correct: 0,
+          why: 'One reading remembers the deleted letter, the other treats the clipped form as the whole word.' },
+        { t: 'mcq', q: 'What is **اللهم**?', choices: ['A vocative form (صيغة نداء) for لفظ الجلالة', 'A particle of oath', 'A particle of الاستغاثة', 'An اسم فعل meaning أدعو'], correct: 0,
+          why: 'The mīm compensates for the deleted يا.' },
+        { t: 'mcq', q: 'What does **اللهم before إلا** signify?', choices: ['The rarity (ندرة) of the exception — اللهم إلا أن يكون كذا', 'Certainty of the answer', 'A genuine supplication', 'Emphasis of the negation'], correct: 0,
+          why: 'It flags the following case as an outlier.' },
+        { t: 'mcq', q: 'What does **اللهم before نعم** signify?', choices: ['The responder’s certainty (تيقن) — اللهم نعم', 'The rarity of the case', 'A genuine call upon God', 'Doubt about the answer'], correct: 0,
+          why: 'Swearing by the divine name to underline the “yes”.' },
+        { t: 'mcq', q: 'Define **الاستغاثة**.', choices: ['A kind of نداء in which the caller calls a منادى to come to another’s aid', 'A kind of نداء expressing grief', 'A kind of نداء expressing wonder', 'A kind of نداء with the particle deleted'], correct: 0,
+          why: 'Three parties involved, unlike ordinary calling.' },
+        { t: 'mcq', q: 'What are the three **أركان of الاستغاثة**?', choices: ['The particle — يا only · المستغاث (the one called for help) · المستغاث له (the one for whose sake help is sought)', 'Any vocative particle · the منادى · the deleted verb', 'وا · the منادى · ألف الندبة', 'المحذِّر · المحذَّر · المحذَّر منه'], correct: 0,
+          why: 'Only يا serves here — no other vocative particle is admitted.' },
+        { t: 'mcq', q: 'What لام attaches to the **مستغاث**?', choices: ['A لام جارة with fatḥa — يا لَلّهِ', 'A لام جارة with kasra', 'No لام at all', 'A لام of emphasis with sukūn'], correct: 0,
+          why: 'The fatḥa is what distinguishes it from the لام on المستغاث له.' },
+        { t: 'mcq', q: 'What may **substitute for the لام of the مستغاث**?', choices: ['An alif at its end — يا زيدَا، يا زيدَاهْ', 'A ḍamma', 'The particle وا', 'A tanwīn'], correct: 0,
+          why: 'The lengthened ending carries the same appeal as the لام.' },
+        { t: 'mcq', q: 'What happens to the لام when a **second مستغاث** is conjoined without repeating يا?', choices: ['The second لام takes kasra — يا لَلأمير ولِلمسلمين للمظلومين', 'It takes fatḥa like the first', 'It is dropped', 'It becomes an alif'], correct: 0,
+          why: 'Only the first, directly after يا, keeps the fatḥa.' },
+        { t: 'mcq', q: 'What لام attaches to the **مستغاث له**?', choices: ['A لام جارة with kasra — يا لَلّه لِلمسلمين', 'A لام جارة with fatḥa', 'No لام', 'An alif'], correct: 0,
+          why: 'Fatḥa for the one called, kasra for the one helped.' },
+        { t: 'mcq', q: 'Define **نداء التعجب** and how it is formed.', choices: ['Calling out at what one marvels at, treated like الاستغاثة: the thing wondered at takes the place of the مستغاث (يا لَلقرآن، يا قرآنَاهْ) or of the مستغاث له with the مستغاث deleted (يا لِلقرآن)', 'Calling out in grief, with وا', 'Calling out for help, with يا only', 'Calling a near addressee with the hamza'], correct: 0,
+          why: 'Same machinery as الاستغاثة, redirected to wonder.' },
+        { t: 'mcq', q: 'Define **الندبة**.', choices: ['A kind of نداء expressing grief (إظهار الحزن)', 'A kind of نداء seeking aid', 'A kind of نداء expressing wonder', 'Calling with the particle deleted'], correct: 0,
+          why: 'Lament rather than summons — hence its own particle.' },
+        { t: 'mcq', q: 'With which particles is **الندبة** expressed?', choices: ['وا (وا أبتاه) · and يا, when confusion with plain نداء is not feared', 'يا only', 'وا only', 'أيا and هيا'], correct: 0,
+          why: 'وا is unambiguous; يا is admitted only where context rules out a real call.' },
+        { t: 'mcq', q: 'How is the منادى **parsed in الندبة**?', choices: ['Exactly as in ordinary نداء — وا زيدُ، وا عبدَ الله', 'Always منصوب لفظا', 'Always مرفوع', 'It has no إعراب'], correct: 0,
+          why: 'Same built/inflected split: مفرد معرفة built, مضاف overtly منصوب.' },
+        { t: 'mcq', q: 'What may be **attached to the منادى in الندبة**?', choices: ['ألف الندبة at its end (وا زيدَا) · and هاء السكت after the alif when pausing (وا رأسَاهْ، وا ويلاهْ)', 'A لام with fatḥa', 'A tanwīn', 'Nothing may be attached'], correct: 0,
+          why: 'The drawn-out ending is the audible mark of lament.' },
+      ],
+    },
+
+    /* ═══ 09. حذف عامل الحال ═══ */
+    {
+      id: 'bank-kh-hal',
+      title: 'حذف عامل الحال',
+      steps: [
+        { t: 'mcq', q: 'In which four places is deletion of the عامل of the **حال** obligatory by rule?', choices: ['The حال stands in for the خبر (دعائي ربي مستيقنًا) · it indicates gradual increase or decrease (تصدق بدرهم فصاعدًا) · it follows an استفهام of rebuke (أقاعدًا وقد أقيمت الصلاة؟) · it confirms the sentence’s content (﴿وهو الحق مصدقًا لما معهم﴾)', 'The same four, but only the first two are obligatory', 'Three places, omitting the rebuke case', 'Five places, adding النداء'], correct: 0,
+          why: 'Four positions — note the rebuke case mirrors one of the مفعول مطلق positions.' },
+        { t: 'mcq', q: 'Why is **مستيقنًا** منصوب in دعائي ربي مستيقنًا?', choices: ['It is a حال standing in for the خبر (سدت مسد الخبر), its عامل obligatorily deleted', 'It is a مفعول مطلق', 'It is a تمييز', 'It is the خبر itself'], correct: 0,
+          why: 'The nominal clause has no other predicate, so the حال fills the gap.' },
+        { t: 'mcq', q: 'Why is **فصاعدًا** منصوب in تصدق بدرهم فصاعدًا?', choices: ['It is a حال indicating gradual increase, its عامل obligatorily deleted', 'It is a مفعول به', 'It is a مفعول مطلق', 'It is a تمييز'], correct: 0,
+          why: '“A dirham and upwards” — an open-ended ascent.' },
+        { t: 'mcq', q: 'Why is **مصدقًا** منصوب in ﴿وَهُوَ الْحَقُّ مُصَدِّقًا لِمَا مَعَهُمْ﴾?', choices: ['It is a حال مؤكدة لمضمون الجملة, its عامل obligatorily deleted', 'It is the خبر', 'It is a نعت for الحق', 'It is a مفعول مطلق'], correct: 0,
+          why: 'It confirms the whole statement rather than describing any single word.' },
+        { t: 'mcq', q: 'Give examples of the **سماعي** deletion of the عامل of the حال.', choices: ['هنيئًا لك · سالمًا غانمًا', 'سبحان الله · معاذ الله', 'صبرا لا جزعا · أجرأةً على المعاصي', 'مرحبًا · أهلًا وسهلًا'], correct: 0,
+          why: 'The other options belong to the مفعول المطلق and to التحذير/الإغراء.' },
+      ],
+    },
+  ],
+});

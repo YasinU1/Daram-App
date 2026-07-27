@@ -65,20 +65,55 @@
   .hint { max-width:840px; margin:18px auto 0; text-align:center; direction:ltr;
     font-family:var(--sans); font-size:.78rem; color:var(--ink-soft); }
 
-  /* mobile: TOC collapses to top */
+  /* ── desktop: collapsible contents sidebar ── */
+  .toc .item.toc-toggle { justify-content:space-between; opacity:1; cursor:pointer;
+    margin-bottom:6px; padding-bottom:12px; border-bottom:1px solid var(--border-soft); border-radius:0; }
+  .toc .item.toc-toggle:hover { background:var(--bg-deep); }
+  .toc .item.toc-toggle .ar { font-family:var(--sans); font-size:.82rem; letter-spacing:.02em;
+    color:var(--ink-muted); flex:1; }
+  .toc .item.toc-toggle .chev { font-family:var(--sans); font-size:1.1rem; line-height:1; flex:none;
+    color:var(--ink-soft); transition:transform var(--fast) var(--ease); }
+  @media (min-width:901px) {
+    /* topbar “☰ Contents” fully hides the column to reclaim all its space */
+    .layout.toc-hidden { grid-template-columns:1fr; }
+    .layout.toc-hidden > .toc { display:none; }
+    .layout.toc-collapsed { grid-template-columns:48px 1fr; }
+    .layout.toc-collapsed .toc { padding:20px 6px 60px; overflow:hidden; }
+    .layout.toc-collapsed .toc .book-head,
+    .layout.toc-collapsed .toc #toc-list { display:none; }
+    .layout.toc-collapsed .toc .item.toc-toggle { justify-content:center; border-bottom:none; padding:6px 0; }
+    .layout.toc-collapsed .toc .item.toc-toggle .ar { display:none; }
+    .layout.toc-collapsed .toc .item.toc-toggle .chev { transform:rotate(180deg); }
+  }
+
+  /* mobile: TOC becomes an off-canvas drawer */
   .toc-toggle { display:none; }
+  .nav-toggle { display:inline-flex; align-items:center; gap:6px; background:none; cursor:pointer; }
+  .toc-backdrop { display:none; }
   @media (max-width:900px) {
     .layout { grid-template-columns:1fr; }
-    .toc { position:static; height:auto; border-right:none; border-bottom:1px solid var(--border-soft); order:1; }
-    .read { order:2; }
-    .toc.collapsed .grp, .toc.collapsed .book-head { display:none; }
-    .toc-toggle { display:inline-flex; }
+    .read { order:1; padding:22px 16px 100px; }
+    .topbar .crumb { display:none; }
+
+    .toc { position:fixed; inset:0 0 0 auto; height:100dvh; width:min(360px,86vw);
+      z-index:60; order:0; border-right:none; border-left:1px solid var(--border-soft);
+      box-shadow:-10px 0 30px rgba(0,0,0,.20); padding-top:20px;
+      transform:translateX(100%); transition:transform .28s var(--ease); }
+    .toc.open { transform:translateX(0); }
+    .toc .toc-toggle { display:none; }
+    .toc.collapsed .grp, .toc.collapsed .book-head { display:block; }
+
+    .toc-backdrop { display:block; position:fixed; inset:0; z-index:55;
+      background:rgba(20,16,10,.44); opacity:0; pointer-events:none;
+      transition:opacity .28s var(--ease); }
+    .toc-backdrop.show { opacity:1; pointer-events:auto; }
   }
 </style>
 </head>
 <body>
   <div class="topbar">
     <a class="back" href="../../index.html">← Library</a>
+    <button class="back nav-toggle" id="navToggle" aria-label="Open contents">☰ Contents</button>
     <span class="spacer"></span>
     <span class="crumb">al-Kubrā fī an-Naḥw</span>
     <label class="switch" title="Show an English translation beneath every line">
@@ -87,6 +122,8 @@
       <span class="switch-lbl">Line translation</span>
     </label>
   </div>
+
+  <div class="toc-backdrop" id="tocBackdrop"></div>
 
   <div class="layout">
     <!-- reading pane -->
@@ -103,8 +140,10 @@
         <div class="en-title">al-Kubrā fī an-Naḥw</div>
         <div class="author">هاشم بن إسماعيل محمد البريدوسي</div>
       </div>
-      <button class="item toc-toggle" onclick="document.getElementById('toc').classList.toggle('collapsed')">
+      <button class="item toc-toggle" title="Collapse / expand contents"
+              onclick="this.closest('.layout').classList.toggle('toc-collapsed')">
         <span class="ar">المحتويات — Contents</span>
+        <span class="chev" aria-hidden="true">‹</span>
       </button>
       <div id="toc-list"></div>
     </aside>
@@ -114,7 +153,7 @@
     <div class="p-ar"></div><div class="p-tr"></div><div class="p-en"></div><div class="p-note"></div>
   </div>
 
-<script src="../../reader.js"></script>
+<script src="../../reader.js?v=3"></script>
 <script src="muqaddimah.js"></script>
 <script src="muqaddimah-bab2.js"></script>
 <script src="muqaddimah-bab3.js"></script>

@@ -264,6 +264,36 @@ these book-only courses; (c) build bank questions for the new chapters.
 
 ---
 
+# Backward pass — الخاتمة · وجوه الكلمات (built from the END of the book)
+
+A separate "build backwards" pass authors the الخاتمة's particle dictionary (الفصل الرابع,
+*wujūh al-kalimāt*, pp. 233–254 — the alphabetical look-up of multi-faced words). Unlike the
+book-only courses above, **each of these carries BOTH a `page:` pill AND an interactive matn
+panel**: the passage is transcribed word-by-word into its own `books/kubra-nahw/khatima-wujuh-NN.js`
+(var `DATA_KH_WNN`), loaded in learn.html before its lesson. Courses use `num:` to sit at their
+true chapter position (20–25); nav is ordered ascending. Source note:
+`books/kubra-nahw/notes/khatima_04_wujuh-al-kalimat.md`.
+
+| `num` | Course id | Lesson file | Matn (var) | Entries | Pages | ✓ |
+|---|---|---|---|---|---|:--:|
+| 20 | `kh-wujuh-20` | `lessons/kh-wujuh-20.js` | `DATA_KH_W20` | الهمزة · إذْ · إذا · أل · أم · إمّا · إنْ · أنْ | 233–237 | ✅ |
+| 21 | `kh-wujuh-21` | `lessons/kh-wujuh-21.js` | `DATA_KH_W21` | إي · أيْ · أيّ · بل · التاء · حتى · حاشا · خلا/عدا | 237–242 | ✅ |
+| 22 | `kh-wujuh-22` | `lessons/kh-wujuh-22.js` | `DATA_KH_W22` | ذا · ذو · عسى · غير · الفاء · قد · الكاف · كلّا | 242–245 | ✅ |
+| 23 | `kh-wujuh-23` | `lessons/kh-wujuh-23.js` | `DATA_KH_W23` | كم · كي · كيف · اللام · لا · لمّا · لو · لولا | 246–249 | ✅ |
+| 24 | `kh-wujuh-24` | `lessons/kh-wujuh-24.js` | `DATA_KH_W24` | ليس · ما الاسمية · ما الحرفية · متى · مَن · منذ · النون · نعم | 249–253 | ✅ |
+| 25 | `kh-wujuh-tail` | `lessons/kh-wujuh-tail.js` | `DATA_KH_WT` | الواو · الياء (+ ختام الكتاب) | 253–254 | ✅ |
+
+**Progress (2026-07-18):** ch 25 (tail) pre-existed; this pass added **ch 20–24 (5 courses /
+26 sections)** working backward, covering the whole dictionary الهمزة→نعم (pp. 233–253). Each
+has a transcribed matn file + page-stamped teach cards + 2–3 MCQ + 1 written per section.
+Validated: `scratchpad/check-wujuh.js` per course (matn range/check/focus, mcq bounds) — 0 errors;
+full learn.html headless load (Playwright) — **36 scripts, 24 courses, 0 console errors, no
+matn-check warnings, no dup ids**; ch-20 section driven end-to-end (matn panel renders, "Book p.
+233" pill shows). **Next 🔜:** continue backward into the الخاتمة orthography فصول (الوقف p.232,
+الوصل 230–231, الرسم 228–229) then أحكام الفعل/الاسم (pp. 200–227) — notes already on disk.
+
+---
+
 # Shadhā al-ʿArf (ṣarf) — `learn/sarf.html`
 
 Second book on the same engine. `learn.js` reads `window.DARAM_LEARN_CONFIG`
@@ -290,8 +320,22 @@ peek, MCQ flow; nahw learn.html regression-checked).
 | 17–18 | `sarf-ism-1-2` | `lessons/sarf-ism1.js` | 5 | ✅ |
 | 19–20 | `sarf-masdar` | `lessons/sarf-masdar.js` | 6 | ✅ |
 | 21–23, 26 | `sarf-mushtaqqat` | `lessons/sarf-mushtaqqat.js` | 7 | ✅ |
+| 28 | `sarf-ism-4` | `lessons/sarf-ism4.js` | 5 | ✅ |
 
-**Totals:** 9 courses · 59 sections · 132 teach · 260 MCQ · 17 written.
-**Next 🔜:** if further weeks are transcribed (e.g. wk24–25 between tafḍīl and āla),
-fold them into `sarf-mushtaqqat` or a new course; optionally build a ṣarf question
+**Totals:** 10 courses · 64 sections · 149 teach · 288 MCQ · 22 written.
+
+**Wk 28 pass (2026-07-26):** added `sarf-ism-4` / `lessons/sarf-ism4.js` — the noun's
+fourth division by final letter, **5 sections** (17 teach / 28 MCQ / 5 written): the four
+kinds + المنقوص · المقصور/الممدود/الصحيح + the قياسي/سماعي split · the 8 analogical maqṣūr
+patterns · the 4 analogical mamdūd patterns · the سماعي of both. Every teach card carries a
+`focus` slice of `DATA_WK28`; `sarf.html` loads the week file and the lesson. Validated:
+node vm load of all 25 week files + 9 lesson files — 0 errors, no dup course/section ids,
+matn `check` strings match, all `focus` indices inside their section range, choices=4 and
+`correct` in range throughout. Browser-verified over http (jsdom): 10 courses, **0 console
+warnings, no matn-check mismatches**, and all 5 sections opened with their matn panel
+rendering glossed words (7 / 10 / 24 / 17 / 6).
+
+**Next 🔜:** **wk25 (اسما الزمان والمكان) and wk27 (المذكَّر والمؤنَّث) are transcribed in the
+reader but have no learn sections** — `sarf.html` does not yet load either week file; that is
+now the real gap, not wk24. Then wk29+ as worksheets arrive; optionally build a ṣarf question
 bank via test-maker and add `bank` steps.

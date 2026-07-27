@@ -15,23 +15,23 @@ window.DARAM_COURSES.push({
     /* ═══ 1. النعت ═══ */
     {
       id: 'nat',
-      title: 'التوابع الأول: النعت',
-      subtitle: 'المعمول بالتبعية · حقيقي وسببي',
+      title: 'التَّوَابِعُ الْأَوَّلُ: النَّعْتُ',
+      subtitle: 'الْمَعْمُولُ بِالتَّبَعِيَّةِ · حَقِيقِيٌّ وَسَبَبِيٌّ',
       steps: [
         { t: 'teach', title: 'The governed-by-dependency', page: 156,
-          ar: 'وهو ما يَعْمَلُ فيه الْعَامِلُ بِوَاسِطَةِ مَتْبُوعِهِ',
+          ar: 'وَهُوَ مَا يَعْمَلُ فِيهِ الْعَامِلُ بِوَاسِطَةِ مَتْبُوعِهِ',
           arEn: 'The dependent (tābiʿ): governed only through the word it follows.',
-          body: 'The second نوع of governed noun: **المعمول بالتبعية** — five: **النعت · البدل · عطف البيان · المعطوف بحرف عطف · التأكيد**. First, **النعت** (الصفة); its followed word = **المنعوت/الموصوف**.',
+          body: 'The second نَوْع of governed noun: **الْمَعْمُول بِالتَّبَعِيَّة** — five: **النَّعْت · الْبَدَل · عَطْف الْبَيَان · الْمَعْطُوف بِحَرْفِ عَطْف · التَّأْكِيد**. First, **النَّعْت** (الصِّفَة); its followed word = **الْمَنْعُوت/الْمَوْصُوف**.',
           points: [
-            'A نعت is only **مشتق بمعنى الفعل** ﴿وَقَالَ رَجُلٌ مُؤْمِنٌ﴾, or **مشابه** to it: ism ishāra «اذهبوا بقميصي هذا», ذو وفروعه ﴿جَنَّتَيْنِ ذَوَاتَيْ أَكُلٍ خَمْطٍ﴾, non-mīmī maṣdar «بدرٍ كذبٍ», ism mansūb ﴿كَأَنَّهَا كَوْكَبٌ دُرِّيٌّ﴾ (p. 156).',
-            'Also: the **موصولات starting with hamzat al-waṣl** ﴿اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ﴾ (not مَن وما), and **number-names** ﴿فِي ظُلُمَاتٍ ثَلَاثٍ﴾ (p. 157).',
+            'A نَعْت is only **مُشْتَقّ بِمَعْنَى الْفِعْل** ﴿وَقَالَ رَجُلٌ مُؤْمِنٌ﴾, or **مُشَابِه** to it: ism ishāra «اذْهَبُوا بِقَمِيصِي هَذَا», ذُو وَفُرُوعُهُ ﴿جَنَّتَيْنِ ذَوَاتَيْ أَكُلٍ خَمْطٍ﴾, non-mīmī maṣdar «بِدْرٍ كَذِبٍ», ism mansūb ﴿كَأَنَّهَا كَوْكَبٌ دُرِّيٌّ﴾ (p. 156).',
+            'Also: the **مَوْصُولَات starting with hamzat al-waṣl** ﴿اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ﴾ (not مَنْ وَمَا), and **number-names** ﴿فِي ظُلُمَاتٍ ثَلَاثٍ﴾ (p. 157).',
           ] },
 
-        { t: 'teach', title: 'حقيقي vs سببي', page: 157,
+        { t: 'teach', title: 'حَقِيقِيٌّ vs سَبَبِيٌّ', page: 157,
           points: [
-            '**نعت حقيقي** — describes a meaning **in the متبوع itself**, its fāʿil a hidden pronoun; it **follows the متبوع in FOUR things**: iʿrāb, definiteness, gender, and number ﴿وَقَالَ رَجُلٌ مُؤْمِنٌ﴾.',
-            '**نعت سببي** — describes a meaning in **something connected to** the متبوع, its fāʿil an **explicit noun after it**; it follows the متبوع in **iʿrāb and definiteness only** ﴿مِنْ هَذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا﴾; a pronoun back to the متبوع is a must, and أل may deputise for it ﴿شَدِيدِ الْعِقَابِ﴾ (= شديدٍ عقابُه).',
-            'The **منعوت may be deleted**, the نعت standing in: ﴿وَاعْمَلُوا صَالِحًا﴾ (= عملًا صالحًا) (p. 157).',
+            '**نَعْت حَقِيقِيّ** — describes a meaning **in the مَتْبُوع itself**, its fāʿil a hidden pronoun; it **follows the مَتْبُوع in FOUR things**: iʿrāb, definiteness, gender, and number ﴿وَقَالَ رَجُلٌ مُؤْمِنٌ﴾.',
+            '**نَعْت سَبَبِيّ** — describes a meaning in **something connected to** the مَتْبُوع, its fāʿil an **explicit noun after it**; it follows the مَتْبُوع in **iʿrāb and definiteness only** ﴿مِنْ هَذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا﴾; a pronoun back to the مَتْبُوع is a must, and أَلْ may deputise for it ﴿شَدِيدِ الْعِقَابِ﴾ (= شَدِيدٍ عِقَابُهُ).',
+            'The **مَنْعُوت may be deleted**, the نَعْت standing in: ﴿وَاعْمَلُوا صَالِحًا﴾ (= عَمَلًا صَالِحًا) (p. 157).',
           ] },
 
         { t: 'mcq', q: '﴿مِنْ هَذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا﴾ — الظالم is masc. though القرية is fem. Why no gender-match?',
@@ -58,25 +58,25 @@ window.DARAM_COURSES.push({
     /* ═══ 2. البدل وعطف البيان ═══ */
     {
       id: 'badal-bayan',
-      title: 'البدل · عطف البيان',
-      subtitle: 'أنواع البدل الأربعة · الفرق بينه وبين عطف البيان',
+      title: 'الْبَدَلُ · عَطْفُ الْبَيَانِ',
+      subtitle: 'أَنْوَاعُ الْبَدَلِ الْأَرْبَعَةُ · الْفَرْقُ بَيْنَهُ وَبَيْنَ عَطْفِ الْبَيَانِ',
       steps: [
-        { t: 'teach', title: 'البدل — the intended replacement', page: 157,
-          ar: 'وهو تَابِعٌ بِلَا وَاسِطَةِ حَرْفِ عَطْفٍ مَقْصُودٌ بِالْحُكْمِ',
+        { t: 'teach', title: 'الْبَدَلُ — the intended replacement', page: 157,
+          ar: 'وَهُوَ تَابِعٌ بِلَا وَاسِطَةِ حَرْفِ عَطْفٍ مَقْصُودٌ بِالْحُكْمِ',
           arEn: 'A dependent, no coordinator, itself the target of the ruling.',
           points: [
-            '**بدل الكل** (المطابق / بدل العين) — same reference ﴿اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ﴾ · **بدل البعض** — a part ﴿وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا﴾ (p. 158).',
-            '**بدل الاشتمال** — a connected attribute ﴿يَسْأَلُونَكَ عَنِ الشَّهْرِ الْحَرَامِ قِتَالٍ فِيهِ﴾. Both البعض and الاشتمال **need a pronoun** back to the مبدل منه, sometimes deleted (p. 158).',
-            '**بدل الغلط** — the مبدل منه was a slip «رأيتُ زيدًا عمرًا» — it does not occur in eloquent speech; there one uses بل «رأيتُ زيدًا بل عمرًا» (p. 158).',
+            '**بَدَل الْكُلّ** (الْمُطَابِق / بَدَل الْعَيْن) — same reference ﴿اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ﴾ · **بَدَل الْبَعْض** — a part ﴿وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا﴾ (p. 158).',
+            '**بَدَل الِاشْتِمَال** — a connected attribute ﴿يَسْأَلُونَكَ عَنِ الشَّهْرِ الْحَرَامِ قِتَالٍ فِيهِ﴾. Both الْبَعْض and الِاشْتِمَال **need a pronoun** back to the مُبْدَل مِنْه, sometimes deleted (p. 158).',
+            '**بَدَل الْغَلَط** — the مُبْدَل مِنْه was a slip «رَأَيْتُ زَيْدًا عَمْرًا» — it does not occur in eloquent speech; there one uses بَلْ «رَأَيْتُ زَيْدًا بَلْ عَمْرًا» (p. 158).',
           ] },
 
-        { t: 'teach', title: 'عطف البيان', page: 158,
-          ar: 'وهو تَابِعٌ بِلَا وَاسِطَةٍ غَيْرُ مَقْصُودٍ بِالْحُكْمِ مُوَضِّحٌ لِمَتْبُوعِهِ',
+        { t: 'teach', title: 'عَطْفُ الْبَيَانِ', page: 158,
+          ar: 'وَهُوَ تَابِعٌ بِلَا وَاسِطَةٍ غَيْرُ مَقْصُودٍ بِالْحُكْمِ مُوَضِّحٌ لِمَتْبُوعِهِ',
           arEn: 'A dependent, no coordinator, NOT the ruling-target, clarifying its متبوع.',
           points: [
             '﴿كَفَّارَةٌ طَعَامُ مَسَاكِينَ﴾. It **clarifies** and **specifies**; the definites it clears, the indefinites it narrows.',
-            'The line vs البدل: البدل is **intended by the ruling** (in نية إحلاله محلَّ المتبوع); عطف البيان is **only clarifying**, never on the نية of replacement (p. 158).',
-            'Where a بدل كل would work, عطف البيان usually can too — **except** where replacement is impossible: «يا زيدُ الحارثُ» — الحارث must be **عطف بيان**, since a منادى بدل «يا الحارثُ» فails (p. 159).',
+            'The line vs الْبَدَل: الْبَدَل is **intended by the ruling** (in نِيَّةِ إِحْلَالِهِ مَحَلَّ الْمَتْبُوع); عَطْف الْبَيَان is **only clarifying**, never on the نِيَّة of replacement (p. 158).',
+            'Where a بَدَل كُلّ would work, عَطْف الْبَيَان usually can too — **except** where replacement is impossible: «يَا زَيْدُ الْحَارِثُ» — الْحَارِث must be **عَطْف بَيَان**, since a مُنَادَى بَدَل «يَا الْحَارِثُ» fails (p. 159).',
           ] },
 
         { t: 'mcq', q: '﴿حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا﴾ — what is مَن to الناس?',
@@ -103,16 +103,16 @@ window.DARAM_COURSES.push({
     /* ═══ 3. المعطوف بحرف العطف ═══ */
     {
       id: 'matuf',
-      title: 'الرابع: المعطوف بحرف العطف',
-      subtitle: 'عطف النسق · على اللفظ والمحل والتوهم',
+      title: 'الرَّابِعُ: الْمَعْطُوفُ بِحَرْفِ الْعَطْفِ',
+      subtitle: 'عَطْفُ النَّسَقِ · عَلَى اللَّفْظِ وَالْمَحَلِّ وَالتَّوَهُّمِ',
       steps: [
-        { t: 'teach', title: 'عطف النسق — three targets', page: 159,
-          ar: 'وهو ﴿أَطِيعُوا اللهَ وَرَسُولَهُ﴾ — عَطْفُ النَّسَقِ',
+        { t: 'teach', title: 'عَطْفُ النَّسَقِ — three targets', page: 159,
+          ar: 'وَهُوَ ﴿أَطِيعُوا اللهَ وَرَسُولَهُ﴾ — عَطْفُ النَّسَقِ',
           arEn: 'Coordination proper: the متبوع is معطوف عليه, the joined word معطوف.',
           points: [
-            '**On the لفظ** (the default) «ليس زيدٌ بقائمٍ **ولا** جالسٍ» — jarr matching the لفظ.',
-            '**On the محل** «ليس زيدٌ بقائمٍ **ولا** جالسًا» (naṣb = the maḥall of the khabar), ﴿وَأَنْفِقُوا مِنْ مَا رَزَقْنَاكُمْ … وَيَوْمَ الْقِيَامَةِ﴾.',
-            '**On the توهُّم** (عطف على التوهم) — as if a variant governor had been there: «لستُ مُدرِكًا ما مضى ولا سابقٍ…» (p. 159).',
+            '**On the لَفْظ** (the default) «لَيْسَ زَيْدٌ بِقَائِمٍ **وَلَا** جَالِسٍ» — jarr matching the لَفْظ.',
+            '**On the مَحَلّ** «لَيْسَ زَيْدٌ بِقَائِمٍ **وَلَا** جَالِسًا» (naṣb = the maḥall of the khabar), ﴿وَأَنْفِقُوا مِنْ مَا رَزَقْنَاكُمْ … وَيَوْمَ الْقِيَامَةِ﴾.',
+            '**On the تَوَهُّم** (عَطْف عَلَى التَّوَهُّم) — as if a variant governor had been there: «لَسْتُ مُدْرِكًا مَا مَضَى وَلَا سَابِقٍ…» (p. 159).',
           ] },
 
         { t: 'teach', title: 'ʿAṭf on a pronoun — two safeguards', page: 159,
@@ -121,8 +121,8 @@ window.DARAM_COURSES.push({
             'ʿAṭf **on a connected majrūr-pronoun** demands **repeating the jarr-particle** ﴿لَهَا وَلِلْأَرْضِ﴾ — but not ﴿وَصَدٍّ عَنْ سَبِيلِ اللهِ وَكُفْرٍ بِهِ وَالْمَسْجِدِ الْحَرَامِ﴾ (p. 160).',
           ] },
 
-        { t: 'teach', title: 'قطع المعطوف', page: 160,
-          body: 'The معطوف may be **cut off from its متبوع’s iʿrāb** for **مدح or ذمّ**: ﴿وَالْمُوفُونَ بِعَهْدِهِمْ إِذَا عَاهَدُوا وَالصَّابِرِينَ فِي الْبَأْسَاءِ وَالضَّرَّاءِ﴾ — الصابرين cut to naṣb amid marfūʿ context.' },
+        { t: 'teach', title: 'قَطْعُ الْمَعْطُوفِ', page: 160,
+          body: 'The مَعْطُوف may be **cut off from its مَتْبُوع’s iʿrāb** for **مَدْح or ذَمّ**: ﴿وَالْمُوفُونَ بِعَهْدِهِمْ إِذَا عَاهَدُوا وَالصَّابِرِينَ فِي الْبَأْسَاءِ وَالضَّرَّاءِ﴾ — الصَّابِرِين cut to naṣb amid marfūʿ context.' },
 
         { t: 'mcq', q: '«لَيْسَ زَيْدٌ بِقَائِمٍ وَلَا جَالِسًا» — جالسًا is manṣūb after a majrūr قائم. On what is it ʿaṭfed?',
           choices: ['On the MAḤALL of the khabar (منصوب محلا despite the زائدة باء)', 'On the لفظ', 'On التوهم', 'It is an error'],
@@ -148,32 +148,32 @@ window.DARAM_COURSES.push({
     /* ═══ 4. التأكيد والخاتمة ═══ */
     {
       id: 'tawkid-tawabi',
-      title: 'الخامس: التأكيد',
-      subtitle: 'اللفظي والمعنوي · خاتمة أحكام التابع',
+      title: 'الْخَامِسُ: التَّأْكِيدُ',
+      subtitle: 'اللَّفْظِيُّ وَالْمَعْنَوِيُّ · خَاتِمَةُ أَحْكَامِ التَّابِعِ',
       steps: [
-        { t: 'teach', title: 'التأكيد اللفظي', page: 160,
-          ar: 'وهو ما يُثَبِّتُ مَتْبُوعَهُ …',
+        { t: 'teach', title: 'التَّأْكِيدُ اللَّفْظِيُّ', page: 160,
+          ar: 'وَهُوَ مَا يُثَبِّتُ مَتْبُوعَهُ …',
           arEn: 'Emphasis: it fixes its متبوع, or covers every member of it.',
           points: [
-            'Emphasis is two: **اللفظي** — repetition — and المعنوي. اللفظي repeats a **verb** «قامَ قامَ زيدٌ», an **explicit noun** ﴿الَّذِينَ يُبَلِّغُونَ رِسَالَاتِ اللهِ … أُولَئِكَ الْمُقَرَّبُونَ﴾ (repeated لفظ) or a synonym ﴿يَجْعَلْ صَدْرَهُ ضَيِّقًا حَرَجًا﴾ (p. 160).',
-            'It repeats a **pronoun**: detached «إياكَ إياكَ أردتُ»، «أنتَ أنتَ المجرمُ»; a **connected marfūʿ** via a detached one «ذهبتُ أنا» / «أكرمتُك أنتَ» (p. 160); a **connected manṣūb** «أكرمتُك إياكَ»; a **connected majrūr** «مررتُ بكَ أنتَ» or by repeating the jārr-majrūr «مررتُ بكَ بكَ» (p. 161).',
-            'On a **particle**: a **ḥarf jawāb** (non-operating) by repetition «لا لا أُشرِكُ باللهِ»; else with a connected word repeated ﴿أَنَّكُمْ إِذَا مِتُّمْ … أَنَّكُمْ مُخْرَجُونَ﴾ — but not «إنَّ زيدًا قائمٌ» alone; and a **jumla** by repetition ﴿فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾ or with ثم ﴿كَلَّا سَيَعْلَمُونَ ۝ ثُمَّ كَلَّا سَيَعْلَمُونَ﴾ (p. 161).',
+            'Emphasis is two: **اللَّفْظِيّ** — repetition — and الْمَعْنَوِيّ. اللَّفْظِيّ repeats a **verb** «قَامَ قَامَ زَيْدٌ», an **explicit noun** ﴿الَّذِينَ يُبَلِّغُونَ رِسَالَاتِ اللهِ … أُولَئِكَ الْمُقَرَّبُونَ﴾ (repeated لَفْظ) or a synonym ﴿يَجْعَلْ صَدْرَهُ ضَيِّقًا حَرَجًا﴾ (p. 160).',
+            'It repeats a **pronoun**: detached «إِيَّاكَ إِيَّاكَ أَرَدْتُ»، «أَنْتَ أَنْتَ الْمُجْرِمُ»; a **connected marfūʿ** via a detached one «ذَهَبْتُ أَنَا» / «أَكْرَمْتُكَ أَنْتَ» (p. 160); a **connected manṣūb** «أَكْرَمْتُكَ إِيَّاكَ»; a **connected majrūr** «مَرَرْتُ بِكَ أَنْتَ» or by repeating the jārr-majrūr «مَرَرْتُ بِكَ بِكَ» (p. 161).',
+            'On a **particle**: a **ḥarf jawāb** (non-operating) by repetition «لَا لَا أُشْرِكُ بِاللهِ»; else with a connected word repeated ﴿أَنَّكُمْ إِذَا مِتُّمْ … أَنَّكُمْ مُخْرَجُونَ﴾ — but not «إِنَّ زَيْدًا قَائِمٌ» alone; and a **jumla** by repetition ﴿فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾ or with ثُمَّ ﴿كَلَّا سَيَعْلَمُونَ ۝ ثُمَّ كَلَّا سَيَعْلَمُونَ﴾ (p. 161).',
           ] },
 
-        { t: 'teach', title: 'التأكيد المعنوي', page: 161,
+        { t: 'teach', title: 'التَّأْكِيدُ الْمَعْنَوِيُّ', page: 161,
           points: [
-            'Special words added to a pronoun **agreeing with the toucher**: **نفس · عين · كلا · كلتا · كل**.',
-            '**كلا وكلتا** — for the dual only «جاء الرجلانِ كلاهما ورأيتُ البنتينِ كلتيهما». **نفس وعين** — singular «جاء الرجلُ نفسُهُ/عينُهُ», dual «أنفسُهما/أعينُهما», plural «أنفسُهم/أعينُهم» (p. 161).',
-            'A connected marfūʿ pronoun emphasised by نفس/عين needs **first** a lafẓī emphasis «الأميرُ يَنظُفُ المسجدَ هو نفسُهُ» (p. 162); عين follows نفس when both meet «جاء زيدٌ نفسُهُ عينُهُ»; both may be **jarred by زائدة باء** «جاء الرجلُ بنفسِهِ»; **كل** may be reinforced with أجمع/جمعاء/أجمعون/جُمَع ﴿فَسَجَدَ الْمَلَائِكَةُ كُلُّهُمْ أَجْمَعُونَ﴾; and جميع gives emphasis but is parsed **ḥāl** ﴿خَلَقَ لَكُمْ مَا فِي الْأَرْضِ جَمِيعًا﴾ (p. 162).',
+            'Special words added to a pronoun **agreeing with the toucher**: **نَفْس · عَيْن · كِلَا · كِلْتَا · كُلّ**.',
+            '**كِلَا وَكِلْتَا** — for the dual only «جَاءَ الرَّجُلَانِ كِلَاهُمَا وَرَأَيْتُ الْبِنْتَيْنِ كِلْتَيْهِمَا». **نَفْس وَعَيْن** — singular «جَاءَ الرَّجُلُ نَفْسُهُ/عَيْنُهُ», dual «أَنْفُسُهُمَا/أَعْيُنُهُمَا», plural «أَنْفُسُهُمْ/أَعْيُنُهُمْ» (p. 161).',
+            'A connected marfūʿ pronoun emphasised by نَفْس/عَيْن needs **first** a lafẓī emphasis «الْأَمِيرُ يَنْظُفُ الْمَسْجِدَ هُوَ نَفْسُهُ» (p. 162); عَيْن follows نَفْس when both meet «جَاءَ زَيْدٌ نَفْسُهُ عَيْنُهُ»; both may be **jarred by زَائِدَة بَاء** «جَاءَ الرَّجُلُ بِنَفْسِهِ»; **كُلّ** may be reinforced with أَجْمَع/جَمْعَاء/أَجْمَعُون/جُمَع ﴿فَسَجَدَ الْمَلَائِكَةُ كُلُّهُمْ أَجْمَعُونَ﴾; and جَمِيع gives emphasis but is parsed **ḥāl** ﴿خَلَقَ لَكُمْ مَا فِي الْأَرْضِ جَمِيعًا﴾ (p. 162).',
           ] },
 
-        { t: 'teach', title: 'خاتمة أحكام التابع', page: 162,
-          body: 'When a متبوع has both a **lafẓī and a maḥallī iʿrāb**, the tābiʿ may follow either:',
+        { t: 'teach', title: 'خَاتِمَةُ أَحْكَامِ التَّابِعِ', page: 162,
+          body: 'When a مَتْبُوع has both a **lafẓī and a maḥallī iʿrāb**, the tābiʿ may follow either:',
           points: [
-            '**the لفظ** «ما أنا بكاذبٍ ولا خادعٍ» · **the محل** ﴿مِنْ خَالِقٍ غَيْرُ اللهِ﴾ (rafʿ on the maḥall of the زائد-jarr mubtadaʾ).',
-            '**the محل before a nāsikh entered** ﴿أَنَّ اللهَ بَرِيءٌ مِنَ الْمُشْرِكِينَ وَرَسُولُهُ﴾ — رسولُه marfūʿ on الله’s pre-إنّ ابتداء status.',
+            '**the لَفْظ** «مَا أَنَا بِكَاذِبٍ وَلَا خَادِعٍ» · **the مَحَلّ** ﴿مِنْ خَالِقٍ غَيْرُ اللهِ﴾ (rafʿ on the maḥall of the زَائِد-jarr mubtadaʾ).',
+            '**the مَحَلّ before a nāsikh entered** ﴿أَنَّ اللهَ بَرِيءٌ مِنَ الْمُشْرِكِينَ وَرَسُولُهُ﴾ — رَسُولُهُ marfūʿ on الله’s pre-إِنّ ابْتِدَاء status.',
           ],
-          after: 'And الفصل الثاني: the ungoverned noun (غير المعمول) = اسم الفعل ﴿هَلُمَّ شُهَدَاءَكُمْ﴾.' },
+          after: 'And الْفَصْل الثَّانِي: the ungoverned noun (غَيْر الْمَعْمُول) = اسْم الْفِعْل ﴿هَلُمَّ شُهَدَاءَكُمْ﴾.' },
 
         { t: 'mcq', q: '«الْأَمِيرُ يَنْظُفُ الْمَسْجِدَ هُوَ نَفْسُهُ» — why the هو before نفسه?',
           choices: ['A connected marfūʿ pronoun emphasised by نفس/عين needs a prior lafẓī emphasis (the detached هو) first', 'For rhyme', 'هو is the fāʿil', 'نفسه is a ḥāl'],
@@ -199,25 +199,25 @@ window.DARAM_COURSES.push({
     /* ═══ 5. الباب الثاني: معمول الفعل ═══ */
     {
       id: 'maful-fil',
-      title: 'الباب الثاني: معمول الفعل',
-      subtitle: 'المرفوع والمنصوب والمجزوم من الفعل',
+      title: 'الْبَابُ الثَّانِي: مَعْمُولُ الْفِعْلِ',
+      subtitle: 'الْمَرْفُوعُ وَالْمَنْصُوبُ وَالْمَجْزُومُ مِنَ الْفِعْلِ',
       steps: [
         { t: 'teach', title: 'The verb as a governed word', page: 162,
-          ar: 'لا يَكُونُ الْفِعْلُ مَعْمُولًا إِلَّا بِالْأَصَالَةِ',
+          ar: 'لَا يَكُونُ الْفِعْلُ مَعْمُولًا إِلَّا بِالْأَصَالَةِ',
           arEn: 'A verb is only ever governed directly — never by dependency.',
-          body: 'The معمول verb has **three أقسام**:',
+          body: 'The مَعْمُول verb has **three أَقْسَام**:',
           points: [
-            '**المرفوع** — the muḍāriʿ free of nāṣib and jāzim ﴿يُحِبُّ اللهُ التَّوَّابَ﴾.',
-            '**المنصوب** — the muḍāriʿ entered by a nāṣib «أُحِبُّ **أنْ** يَغفِرَ اللهُ ذنوبي».',
-            '**المجزوم** — the muḍāriʿ entered by a jāzim «إنْ **تَتُبْ** تُقبَلْ توبتُك»، «إنْ **أحسنتَ** أحسنَ اللهُ إليك».',
+            '**الْمَرْفُوع** — the muḍāriʿ free of nāṣib and jāzim ﴿يُحِبُّ اللهُ التَّوَّابَ﴾.',
+            '**الْمَنْصُوب** — the muḍāriʿ entered by a nāṣib «أُحِبُّ **أَنْ** يَغْفِرَ اللهُ ذُنُوبِي».',
+            '**الْمَجْزُوم** — the muḍāriʿ entered by a jāzim «إِنْ **تَتُبْ** تُقْبَلْ تَوْبَتُكَ»، «إِنْ **أَحْسَنْتَ** أَحْسَنَ اللهُ إِلَيْكَ».',
           ] },
 
         { t: 'teach', title: 'The ungoverned verb', page: 162,
-          body: 'الفصل الثاني: **غير المعمول** verb — two:',
+          body: 'الْفَصْل الثَّانِي: **غَيْر الْمَعْمُول** verb — two:',
           points: [
-            'the **māḍī** free of nāṣib/jāzim «آمنتُ باللهِ»,',
-            'the **amr by form** «اتقوا اللهَ» (jazm-marked for the Kūfans).',
-            'The **amr by lām** and the **nahy** are both **majzūm**: «لِيَذهَبْ لصلاةِ الفجرِ **ولا** يَكسَلْ».',
+            'the **māḍī** free of nāṣib/jāzim «آمَنْتُ بِاللهِ»,',
+            'the **amr by form** «اتَّقُوا اللهَ» (jazm-marked for the Kūfans).',
+            'The **amr by lām** and the **nahy** are both **majzūm**: «لِيَذْهَبْ لِصَلَاةِ الْفَجْرِ **وَلَا** يَكْسَلْ».',
           ] },
 
         { t: 'mcq', q: 'Which verb is مرفوع, and by what?',
@@ -239,30 +239,30 @@ window.DARAM_COURSES.push({
     /* ═══ 6. الباب الثالث: الجملة ═══ */
     {
       id: 'jumla-mamula',
-      title: 'الباب الثالث: معمول الجملة',
-      subtitle: 'الجملة التي لها محل من الإعراب',
+      title: 'الْبَابُ الثَّالِثُ: مَعْمُولُ الْجُمْلَةِ',
+      subtitle: 'الْجُمْلَةُ الَّتِي لَهَا مَحَلٌّ مِنَ الْإِعْرَابِ',
       steps: [
         { t: 'teach', title: 'A sentence with a place in iʿrāb', page: 163,
-          body: 'A **governed jumla** is called «جملة لها محل من الإعراب». Two أنواع; the **بالأصالة** kind has four أقسام:',
+          body: 'A **governed jumla** is called «جُمْلَةٌ لَهَا مَحَلٌّ مِنَ الْإِعْرَابِ». Two أَنْوَاع; the **بِالْأَصَالَة** kind has four أَقْسَام:',
           points: [
-            '**المرفوع** — two: **khabar of the mubtadaʾ** ﴿وَاللهُ يُحِبُّ الْمُحْسِنِينَ﴾ and **khabar of إنّ** ﴿إِنَّ اللهَ يُحِبُّ الْمُحْسِنِينَ﴾.',
-            '**المنصوب** — four: **مفعول به** (مقول القول) ﴿قَالَ اللهُ هَذَا يَوْمٌ يَنْفَعُ الصَّادِقِينَ صِدْقُهُمْ﴾ · **مفعول له** — a تعليلية jumla ﴿وَاتَّقُوا اللهَ لَعَلَّكُمْ تُفْلِحُونَ﴾ · **الحال** ﴿طَافَ رَسُولُ اللهِ ﷺ بِالْبَيْتِ وَهُوَ يُلَبِّي﴾ · **خبر الفعل الناقص** ﴿كَانُوا يَعْمَلُونَ﴾.',
+            '**الْمَرْفُوع** — two: **khabar of the mubtadaʾ** ﴿وَاللهُ يُحِبُّ الْمُحْسِنِينَ﴾ and **khabar of إِنّ** ﴿إِنَّ اللهَ يُحِبُّ الْمُحْسِنِينَ﴾.',
+            '**الْمَنْصُوب** — four: **مَفْعُول بِه** (مَقُول الْقَوْل) ﴿قَالَ اللهُ هَذَا يَوْمٌ يَنْفَعُ الصَّادِقِينَ صِدْقُهُمْ﴾ · **مَفْعُول لَه** — a تَعْلِيلِيَّة jumla ﴿وَاتَّقُوا اللهَ لَعَلَّكُمْ تُفْلِحُونَ﴾ · **الْحَال** ﴿طَافَ رَسُولُ اللهِ ﷺ بِالْبَيْتِ وَهُوَ يُلَبِّي﴾ · **خَبَر الْفِعْل النَّاقِص** ﴿كَانُوا يَعْمَلُونَ﴾.',
           ] },
 
         { t: 'teach', title: 'When the ḥāl-wāw is obligatory — and banned', page: 164,
-          body: 'The **wāw الحالية** is **obligatory** in three cases (p. 164):',
+          body: 'The **wāw الْحَالِيَّة** is **obligatory** in three cases (p. 164):',
           points: [
-            'the ḥāl-jumla has **no returning pronoun** ﴿لَئِنْ أَكَلَهُ الذِّئْبُ وَنَحْنُ عُصْبَةٌ﴾ · an **ismiyya** ḥāl **opened by a pronoun** of its owner ﴿لَا تَقْرَبُوا الصَّلَاةَ وَأَنْتُمْ سُكَارَى﴾ · a **muḍāriʿ ḥāl joined to قد** ﴿لِمَ تُؤْذُونَنِي وَقَدْ تَعْلَمُونَ أَنِّي رَسُولُ اللهِ إِلَيْكُمْ﴾.',
-            'It is **banned** in seven (p. 165): after a **coordinator** ﴿فَجَاءَهَا بَأْسُنَا … أَوْ هُمْ قَائِلُونَ﴾ · **emphasising the prior jumla** ﴿ذَلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ﴾ · a **māḍī after إلا** ﴿وَمَا يَأْتِيهِمْ مِنْ نَبِيٍّ إِلَّا كَانُوا بِهِ يَسْتَهْزِئُونَ﴾ · a **māḍī before أو** «أنصفِ الناسَ أنصفوك أو ظلموك» · a **muḍāriʿ affirmative without قد** ﴿وَلَا تَمْنُنْ تَسْتَكْثِرُ﴾ · a **muḍāriʿ negated by ما** «عهدتُك ما تصير» · a **muḍāriʿ negated by لا** ﴿وَمَا لِي لَا أَعْبُدُ الَّذِي فَطَرَنِي﴾.',
+            'the ḥāl-jumla has **no returning pronoun** ﴿لَئِنْ أَكَلَهُ الذِّئْبُ وَنَحْنُ عُصْبَةٌ﴾ · an **ismiyya** ḥāl **opened by a pronoun** of its owner ﴿لَا تَقْرَبُوا الصَّلَاةَ وَأَنْتُمْ سُكَارَى﴾ · a **muḍāriʿ ḥāl joined to قَد** ﴿لِمَ تُؤْذُونَنِي وَقَدْ تَعْلَمُونَ أَنِّي رَسُولُ اللهِ إِلَيْكُمْ﴾.',
+            'It is **banned** in seven (p. 165): after a **coordinator** ﴿فَجَاءَهَا بَأْسُنَا … أَوْ هُمْ قَائِلُونَ﴾ · **emphasising the prior jumla** ﴿ذَلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ﴾ · a **māḍī after إِلَّا** ﴿وَمَا يَأْتِيهِمْ مِنْ نَبِيٍّ إِلَّا كَانُوا بِهِ يَسْتَهْزِئُونَ﴾ · a **māḍī before أَوْ** «أَنْصِفِ النَّاسَ أَنْصَفُوكَ أَوْ ظَلَمُوكَ» · a **muḍāriʿ affirmative without قَد** ﴿وَلَا تَمْنُنْ تَسْتَكْثِرُ﴾ · a **muḍāriʿ negated by مَا** «عَهِدْتُكَ مَا تَصِيرُ» · a **muḍāriʿ negated by لَا** ﴿وَمَا لِي لَا أَعْبُدُ الَّذِي فَطَرَنِي﴾.',
           ] },
 
-        { t: 'teach', title: 'المجزوم — جواب الشرط, and when it takes الفاء', page: 166,
-          body: 'The fourth قسم, **المجزوم**, is **one**: the جواب of the jāzim شرط joined to a **rābiṭa** — the fujāʾiyya إذا or the فاء (called فاء الجواب / فاء الرابطة للجواب). The **فاء is obligatory** when the jawāb is (pp. 166–167):',
+        { t: 'teach', title: 'الْمَجْزُوم — جَوَابُ الشَّرْطِ, and when it takes الْفَاء', page: 166,
+          body: 'The fourth قِسْم, **الْمَجْزُوم**, is **one**: the جَوَاب of the jāzim شَرْط joined to a **rābiṭa** — the fujāʾiyya إِذَا or the فَاء (called فَاء الْجَوَاب / فَاء الرَّابِطَة لِلْجَوَاب). The **فَاء is obligatory** when the jawāb is (pp. 166–167):',
           points: [
             'an **ismiyya** ﴿وَإِنْ يَمْسَسْكَ بِخَيْرٍ فَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ﴾ · a **jāmid-verb** jumla ﴿إِنْ تَرَنِ أَنَا أَقَلَّ مِنْكَ … فَعَسَى رَبِّي﴾ · a **ṭalabiyya** (amr ﴿فَاتَّبِعُونِي﴾, nahy ﴿فَلَا تَرْجِعُوهُنَّ﴾).',
-            'a **māḍī with قد** ﴿فَقَدْ سَرَقَ أَخٌ لَهُ﴾ · negated **بما** ﴿فَمَا بَلَّغْتَ رِسَالَتَهُ﴾ · a **muḍāriʿ with a tanfīs-particle** ﴿فَسَوْفَ نُصْلِيهِ نَارًا﴾ · negated **بلن** ﴿فَلَنْ يُكْفَرُوهُ﴾ · opened by **كأنّما** ﴿فَكَأَنَّمَا خَرَّ مِنَ السَّمَاءِ﴾ or a **conditional device** ﴿فَإِنِ اسْتَطَعْتَ أَنْ تَبْتَغِيَ نَفَقًا﴾.',
+            'a **māḍī with قَد** ﴿فَقَدْ سَرَقَ أَخٌ لَهُ﴾ · negated **بِمَا** ﴿فَمَا بَلَّغْتَ رِسَالَتَهُ﴾ · a **muḍāriʿ with a tanfīs-particle** ﴿فَسَوْفَ نُصْلِيهِ نَارًا﴾ · negated **بِلَن** ﴿فَلَنْ يُكْفَرُوهُ﴾ · opened by **كَأَنَّمَا** ﴿فَكَأَنَّمَا خَرَّ مِنَ السَّمَاءِ﴾ or a **conditional device** ﴿فَإِنِ اسْتَطَعْتَ أَنْ تَبْتَغِيَ نَفَقًا﴾.',
           ],
-          after: 'Both faces (فاء or none) are allowed with a muḍāriʿ jawāb bare of tanfīs ﴿وَمَنْ عَادَ فَيَنْتَقِمُ اللهُ مِنْهُ﴾; and the فاء drops after إذا الفجائية ﴿إِذَا هُمْ يَقْنَطُونَ﴾ (p. 168).' },
+          after: 'Both faces (فَاء or none) are allowed with a muḍāriʿ jawāb bare of tanfīs ﴿وَمَنْ عَادَ فَيَنْتَقِمُ اللهُ مِنْهُ﴾; and the فَاء drops after إِذَا الْفُجَائِيَّة ﴿إِذَا هُمْ يَقْنَطُونَ﴾ (p. 168).' },
 
         { t: 'mcq', q: '﴿لَا تَقْرَبُوا الصَّلَاةَ وَأَنْتُمْ سُكَارَى﴾ — why is the wāw obligatory?',
           choices: ['An ismiyya ḥāl opened by a pronoun of its owner requires the wāw', 'A māḍī after إلا', 'It has no returning pronoun', 'It is banned here actually'],
@@ -293,27 +293,27 @@ window.DARAM_COURSES.push({
     /* ═══ 7. غير المعمول من الجملة ═══ */
     {
       id: 'ghayr-mamul-jumla',
-      title: 'الفصل الثاني: غير المعمول من الجملة',
-      subtitle: 'الجمل التي لا محل لها من الإعراب',
+      title: 'الْفَصْلُ الثَّانِي: غَيْرُ الْمَعْمُولِ مِنَ الْجُمْلَةِ',
+      subtitle: 'الْجُمَلُ الَّتِي لَا مَحَلَّ لَهَا مِنَ الْإِعْرَابِ',
       steps: [
         { t: 'teach', title: 'The eight placeless sentences (1)', page: 168,
-          body: 'A **غير معمول** jumla is «جملة لا محل لها من الإعراب» — **eight**:',
+          body: 'A **غَيْر مَعْمُول** jumla is «جُمْلَةٌ لَا مَحَلَّ لَهَا مِنَ الْإِعْرَابِ» — **eight**:',
           points: [
-            '**الابتدائية** — heading the speech ﴿إِنَّا أَنْزَلْنَاهُ﴾.',
-            '**المستأنفة** — beginning fresh mid-speech, cut off from what precedes: ʿaṭfed onto a placeless jumla ﴿اجْتَهَدَ زَيْدٌ وَنَجَحَ﴾-style, or unjoined ﴿وَمَا أُبَرِّئُ نَفْسِي إِنَّ النَّفْسَ لَأَمَّارَةٌ بِالسُّوءِ﴾. Its kin: **جواب النداء** ﴿يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمْ﴾ and جواب القسم. Its particles: الواو، ثم، حتى، أم المنقطعة، بل الانتقالية، أو بمعنى بل، ولكن المجردة عن الواو (p. 169).',
-            '**الصلة** ﴿اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ﴾.',
-            '**المعترضة** — parenthetical ﴿فَإِنْ لَمْ تَفْعَلُوا وَلَنْ تَفْعَلُوا فَاتَّقُوا النَّارَ﴾ (p. 169).',
+            '**الِابْتِدَائِيَّة** — heading the speech ﴿إِنَّا أَنْزَلْنَاهُ﴾.',
+            '**الْمُسْتَأْنِفَة** — beginning fresh mid-speech, cut off from what precedes: ʿaṭfed onto a placeless jumla ﴿اجْتَهَدَ زَيْدٌ وَنَجَحَ﴾-style, or unjoined ﴿وَمَا أُبَرِّئُ نَفْسِي إِنَّ النَّفْسَ لَأَمَّارَةٌ بِالسُّوءِ﴾. Its kin: **جَوَاب النِّدَاء** ﴿يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمْ﴾ and جَوَاب الْقَسَم. Its particles: الْوَاو، ثُمَّ، حَتَّى، أَم الْمُنْقَطِعَة، بَل الِانْتِقَالِيَّة، أَوْ بِمَعْنَى بَلْ، وَلَكِنْ الْمُجَرَّدَة عَنِ الْوَاو (p. 169).',
+            '**الصِّلَة** ﴿اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ﴾.',
+            '**الْمُعْتَرِضَة** — parenthetical ﴿فَإِنْ لَمْ تَفْعَلُوا وَلَنْ تَفْعَلُوا فَاتَّقُوا النَّارَ﴾ (p. 169).',
           ] },
 
-        { t: 'teach', title: 'The eight (2) — and القسم', page: 169,
+        { t: 'teach', title: 'The eight (2) — and الْقَسَم', page: 169,
           points: [
-            '**التفسيرية** — with a tafsīr particle ﴿وَنَادَيْنَاهُ أَنْ يَا إِبْرَاهِيمُ﴾ or without ﴿مَثَلُ الَّذِينَ خَلَوْا مِنْ قَبْلِكُمْ مَسَّتْهُمُ الْبَأْسَاءُ وَالضَّرَّاءُ﴾.',
-            '**جواب القسم** «أقسمُ باللهِ لأصدُقنَّ الحديثَ». القسم’s pillars: **فعل القسم** (أُقسِمُ), **المقسَم به** (بالله), **المقسَم عليه / جواب القسم** (لأصدُقنَّ). A قسم is assumed before **لام الابتداء** ﴿وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَى﴾ (لام موطئة للقسم) (p. 170).',
+            '**التَّفْسِيرِيَّة** — with a tafsīr particle ﴿وَنَادَيْنَاهُ أَنْ يَا إِبْرَاهِيمُ﴾ or without ﴿مَثَلُ الَّذِينَ خَلَوْا مِنْ قَبْلِكُمْ مَسَّتْهُمُ الْبَأْسَاءُ وَالضَّرَّاءُ﴾.',
+            '**جَوَاب الْقَسَم** «أُقْسِمُ بِاللهِ لَأَصْدُقَنَّ الْحَدِيثَ». الْقَسَم’s pillars: **فِعْل الْقَسَم** (أُقْسِمُ), **الْمُقْسَم بِه** (بِاللهِ), **الْمُقْسَم عَلَيْه / جَوَاب الْقَسَم** (لَأَصْدُقَنَّ). A قَسَم is assumed before **لَام الابْتِدَاء** ﴿وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَى﴾ (لَام مُوَطِّئَة لِلْقَسَم) (p. 170).',
           ] },
 
-        { t: 'teach', title: 'جواب القسم — its openers and the tawkīd-nūn', page: 170,
+        { t: 'teach', title: 'جَوَابُ الْقَسَمِ — its openers and the tawkīd-nūn', page: 170,
           points: [
-            'The jawāb comes **مصدَّرة** by: **إنّ المثقلة** ﴿وَالْفَجْرِ … إِنَّ رَبَّكَ لَبِالْمِرْصَادِ﴾ · **إنْ المخففة** ﴿تَاللهِ إِنْ كُنَّا لَفِي ضَلَالٍ مُبِينٍ﴾ · **قد** ﴿وَالشَّمْسِ وَضُحَاهَا … قَدْ أَفْلَحَ مَنْ زَكَّاهَا﴾ · **the fatḥ-lām** ﴿فَوَرَبِّكَ لَنَسْأَلَنَّهُمْ أَجْمَعِينَ﴾ · **ما النافية** ﴿وَالضُّحَى … مَا وَدَّعَكَ رَبُّكَ﴾ · **لا النافية** ﴿وَأَقْسَمُوا بِاللهِ جَهْدَ أَيْمَانِهِمْ لَا يَبْعَثُ اللهُ مَنْ يَمُوتُ﴾.',
+            'The jawāb comes **مُصَدَّرَة** by: **إِنّ الْمُثَقَّلَة** ﴿وَالْفَجْرِ … إِنَّ رَبَّكَ لَبِالْمِرْصَادِ﴾ · **إِنْ الْمُخَفَّفَة** ﴿تَاللهِ إِنْ كُنَّا لَفِي ضَلَالٍ مُبِينٍ﴾ · **قَد** ﴿وَالشَّمْسِ وَضُحَاهَا … قَدْ أَفْلَحَ مَنْ زَكَّاهَا﴾ · **the fatḥ-lām** ﴿فَوَرَبِّكَ لَنَسْأَلَنَّهُمْ أَجْمَعِينَ﴾ · **مَا النَّافِيَة** ﴿وَالضُّحَى … مَا وَدَّعَكَ رَبُّكَ﴾ · **لَا النَّافِيَة** ﴿وَأَقْسَمُوا بِاللهِ جَهْدَ أَيْمَانِهِمْ لَا يَبْعَثُ اللهُ مَنْ يَمُوتُ﴾.',
             'Emphasising the **jawāb-verb with the tawkīd-nūn is obligatory** if it is **muḍāriʿ, affirmative, not separated from the lām** ﴿وَتَاللهِ لَأَكِيدَنَّ أَصْنَامَكُمْ﴾.',
             'It is **barred** if the verb is **not affirmative** ﴿لَا يَبْعَثُ اللهُ مَنْ يَمُوتُ﴾, or **not joined to a lām** ﴿تَاللهِ تَفْتَؤُا تَذْكُرُ يُوسُفَ﴾.',
           ] },

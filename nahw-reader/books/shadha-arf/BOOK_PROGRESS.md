@@ -39,10 +39,12 @@ Legend: ✅ done · 🟡 partial · 🔜 next · ⬜ pending
 | 21 | التقسيم الثاني للاسم — اسم الفاعل (وصيغ المبالغة) | `wk21` | `wk21-ism2-ism-fail.js` | ✅ |
 | 22 | التقسيم الثاني للاسم — اسم المفعول والصفة المشبهة | `wk22` | `wk22-ism2-ism-maful.js` | ✅ |
 | 23 | التقسيم الثاني للاسم — اسم التفضيل (Wk 23–24) | `wk23` | `wk23-ism2-ism-tafdil.js` | ✅ |
-| 25 | التقسيم الثاني للاسم — اسما الزمان والمكان (placeholder in TOC) | `wk25` | — | 🔜 |
+| 25 | التقسيم الثاني للاسم — اسما الزمان والمكان | `wk25` | `wk25-ism2-zaman-makan.js` | ✅ |
 | 26 | التقسيم الثاني للاسم — اسم الآلة | `wk26` | `wk26-ism2-ism-ala.js` | ✅ |
+| 27 | التقسيم الثالث للاسم — المذكَّر والمؤنَّث | `wk27` | `wk27-ism3-mudhakkar-muannath.js` | ✅ |
+| 28 | التقسيم الرابع للاسم — المنقوص والمقصور والممدود والصحيح | `wk28` | `wk28-ism4-manqus-maqsur-mamdud.js` | ✅ |
 
-**Done so far — Worksheets 1–24 and 26 (there is no Wk 12).** The Introduction;
+**Done so far — Worksheets 1–28 (there is no Wk 12).** The Introduction;
 the morphological scale; the whole verb section (divisions 1–7); the **first division of
 the noun** (Wk 17); and the complete **second division of the noun** — jumūd vs ishtiqāq
 (Wk 18), the trilateral maṣdar (Wk 19), the non-trilateral maṣdar (Wk 20), the **active
@@ -51,13 +53,26 @@ participle + ṣiyagh al-mubālagha** (Wk 21), the **passive participle + ṣifa
 and the three states by wording — rendered as a `grid` — and by meaning), and the
 **noun of instrument** (Wk 26: definition, the three classical samāʿī patterns, the
 teacher's modern patterns faʿʿāla/fuʿʿāl/fāʿūl, the anomalous muḍmūm words, the jāmid
-instruments, and the singular/dual/plural `grid`).
+instruments, and the singular/dual/plural `grid`); the **nouns of time & place**
+(Wk 25: mafʿal vs mafʿil from the trilateral, the passive-participle form from the
+non-trilateral shared with the mīmī maṣdar, the mafʿala-of-abundance pattern, and the
+words heard with kasra against analogy — masjid, maṭliʿ … — with the opening ẓarf tree
+rendered as a `grid`); and the **third division of the noun by gender** (Wk 27:
+masculine vs feminine, ḥaqīqī/majāzī, lafẓī/maʿnawī, the two signs — the **tāʾ** with
+the five words that never take it and the purposes of adding it, and the **alif**
+maqṣūra with 8 patterns and mamdūda with 10 patterns); and the **fourth division of the
+noun by its final letter** (Wk 28: manqūṣ / maqṣūr / mamdūd / ṣaḥīḥ, each definition with
+what its wording excludes, then the qiyāsī maqṣūr's 8 patterns and the qiyāsī mamdūd's 4 —
+every one paired with its sound-lettered naẓīr — and the samāʿī of both).
 Awzān/maṣdar/tafḍīl tables are `grid` blocks (cf. wk07); Worksheet-5's large 10-column
 taṣrīf grids are still not reproduced; all prose matn is transcribed.
-**Next 🔜: Wk 25 — اسما الزمان والمكان (nouns of time & place).** A placeholder TOC entry
-(`wk25`) is already wired in `book.html`; transcribe the worksheet when its PDF arrives.
-Remaining polish if desired: proof the densest weeks (Wk 19/22/23) against the PDFs for
+**Next 🔜: Wk 29+ — awaiting the next worksheet PDF.** With Wk 28 the noun's fourth
+division (final letter) is now in; transcribe further worksheets as their PDFs arrive.
+Remaining polish if desired: proof the densest weeks (Wk 19/22/23/27) against the PDFs for
 example-word vocalisation, and decide whether to reproduce Worksheet-5's full taṣrīf grids.
+One reading note in Wk 28: worksheet item 4 of the qiyāsī mamdūd prints `المشاة` for the
+stomach-illness example; transcribed as `الْمُشَاءِ` (al-mushāʾ), since a mamdūd must end
+in hamza — flagged in that word's note.
 
 The teacher's "قوله…" commentary paragraphs are rendered as labelled `box` blocks.
 Worksheet colours are mirrored: blue headings (`c:'blue'`) and red key terms /

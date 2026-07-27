@@ -131,7 +131,26 @@
       crumb.append(g, pip, c, pip2, pg);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       document.getElementById('toc').classList.add('collapsed');
+      closeDrawer();
     }
+
+    /* ── mobile TOC drawer (elements are optional; no-op if absent) ── */
+    const tocEl    = document.getElementById('toc');
+    const navBtn   = document.getElementById('navToggle');
+    const backdrop = document.getElementById('tocBackdrop');
+    function openDrawer()  { tocEl.classList.add('open');  if (backdrop) backdrop.classList.add('show'); }
+    function closeDrawer() { tocEl.classList.remove('open'); if (backdrop) backdrop.classList.remove('show'); }
+    const mobileMq = window.matchMedia('(max-width:900px)');
+    if (navBtn)   navBtn.addEventListener('click', () => {
+                    if (mobileMq.matches) {           /* narrow: off-canvas drawer */
+                      tocEl.classList.contains('open') ? closeDrawer() : openDrawer();
+                    } else {                          /* wide: fully hide/show the column */
+                      const lay = document.querySelector('.layout');
+                      if (lay) lay.classList.toggle('toc-hidden');
+                    }
+                  });
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
     TOC.forEach(group => {
       const g = document.createElement('div'); g.className = 'grp';
@@ -307,20 +326,41 @@
       function layout() {
         const cs = getComputedStyle(read);
         const inner = read.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-        const avail = inner - wrap.offsetWidth - 20;
-        const side = avail >= 150;                     /* room for the column? else stack below */
+        const GAP = 20, MIN_PAGE = 480, MIN_RAIL = 170, MAX_RAIL = 280;
+        /* rail width kept modest so the reading column isn't squashed; it only
+           grows toward MAX_RAIL on wide panes where the page can stay full */
+        const railW = Math.max(MIN_RAIL,
+          Math.min(MAX_RAIL, Math.round(inner * 0.24), inner - GAP - MIN_PAGE));
+        /* keep the column to the right whenever the page can still hold MIN_PAGE;
+           only genuinely tiny widths fall back to stacking below */
+        const side = inner - GAP - MIN_RAIL >= MIN_PAGE;
         document.body.classList.toggle('cmt-side', side);
-        rail.style.width = side ? Math.min(300, avail) + 'px' : '';
+        if (!side) {
+          wrap.style.maxWidth = ''; wrap.style.marginLeft = '';
+          [...rail.children].forEach(el => { el.style.top = ''; });
+          wrap.style.minHeight = '';
+          return;
+        }
+        rail.style.width = railW + 'px';
+        /* shrink + left-align the page to open a gutter for the rail — but only
+           once there are cards, so comment-free reading stays full and centred */
+        const hasCards = rail.children.length > 0;
+        if (hasCards) {
+          wrap.style.maxWidth = Math.min(840, inner - GAP - railW) + 'px';
+          wrap.style.marginLeft = '';                 /* falls back to CSS margin-left:0 */
+        } else {
+          wrap.style.maxWidth = Math.min(840, inner) + 'px';
+          wrap.style.marginLeft = 'auto';             /* keep centred while empty */
+        }
         let bottom = 0;
         [...rail.children].forEach(el => {
-          if (!side) { el.style.top = ''; return; }
           const a = page.children[el._ci];
           let top = a ? a.offsetTop : 0;
           if (top < bottom) top = bottom;              /* push down so cards never overlap */
           el.style.top = top + 'px';
           bottom = top + el.offsetHeight + 10;
         });
-        wrap.style.minHeight = side && bottom ? Math.max(page.offsetHeight, bottom) + 'px' : '';
+        wrap.style.minHeight = bottom ? Math.max(page.offsetHeight, bottom) + 'px' : '';
       }
 
       page.addEventListener('mouseover', e => {
@@ -342,7 +382,10 @@
       });
 
       window.addEventListener('resize', layout);
-      if (window.ResizeObserver) new ResizeObserver(() => layout()).observe(page);
+      /* observe the reading pane, not the page: collapsing the TOC widens the
+         pane while the page's own width stays pinned by its inline max-width,
+         so observing page alone would miss the reflow */
+      if (window.ResizeObserver) new ResizeObserver(() => layout()).observe(read);
 
       return { chapter(id, isReady) { chapter = id; ready = isReady; draftCi = -1; editId = null; render(); } };
     }

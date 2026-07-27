@@ -3,10 +3,12 @@
 (function () {
   'use strict';
 
-  const PDF_URL = '../books/kubra-nahw/an-Nahw al-Kubra 2026 May (Website).pdf';
+  const PDF_URL = '../books/kubra-nahw/notes/an-Nahw al-Kubra (Website).pdf';
   const PDF_ID = 'kubra-nahw-2026';
-  const API_LS_KEY = 'daram-anthropic-key';
-  const MODEL = 'claude-opus-4-8';
+  const API_LS_KEY = 'daram-gemini-key';
+  // Clear the superseded Anthropic key left behind by the pre-Gemini version.
+  try { localStorage.removeItem('daram-anthropic-key'); } catch (_) {}
+  const MODEL = 'gemini-flash-latest'; // floating alias — survives model retirements
   const MAX_CSS_WIDTH = 860;
   const TOC_W = 252;
   const RAIL_W = 280;
@@ -55,11 +57,13 @@
   const zoomLabel = document.getElementById('zoomLabel');
   const pageLabel = document.getElementById('pageLabel');
   const btnHlMode = document.getElementById('btnHlMode');
+  const btnLearn = document.getElementById('btnLearn');
   const tocPanel = document.getElementById('tocPanel');
 
   let pdfDoc = null;
   let scaleMult = 1;
   let hlMode = true;
+  let learnMode = false;
   let baseAspect = 1.414;
   let pages = []; // 1-indexed: {row, container, layer, rail, canvas, rendered, rendering}
   let highlights = []; // {id, pdf, page, x, y, w, h, ar, en}
@@ -110,51 +114,68 @@
     }, 250);
   }
 
-  /* ================= translation (Anthropic API, direct from browser) ================= */
+  /* ================= translation (Gemini API, direct from browser) ================= */
 
-  async function translateImage(b64png) {
+  const BLOCKED_REASONS = ['SAFETY', 'RECITATION', 'PROHIBITED_CONTENT', 'BLOCKLIST', 'SPII', 'IMAGE_SAFETY'];
+
+  async function translateImage(b64png, learn) {
     const key = localStorage.getItem(API_LS_KEY);
     if (!key) {
       openKeyPanel();
-      throw new Error('Set your Anthropic API key first (⚙︎ Key).');
+      throw new Error('Set your Gemini API key first (⚙︎ Key).');
     }
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+
+    const props = {
+      arabic: { type: 'string', description: 'The Arabic text exactly as written in the image' },
+      translation: { type: 'string', description: 'Concise English translation' },
+    };
+    const order = ['arabic', 'translation'];
+    const required = ['arabic', 'translation'];
+    let prompt =
+      'This image is a small crop from a classical Arabic grammar (nahw) textbook, an-Nahw al-Kubra. ' +
+      'Read the Arabic word or short phrase exactly as written, including harakat if visible, ' +
+      'and give one concise English translation suited to the grammar context. ' +
+      'If several words are shown, translate them as one phrase.';
+    if (learn) {
+      props.explanation = {
+        type: 'string',
+        description: 'A short, self-contained teaching explanation of the nahw/sarf concept this word or phrase ' +
+                     'relates to, for a student learning classical Arabic grammar. Exactly 2–3 complete sentences, ' +
+                     'no more than ~60 words total. Plain English; transliterated technical terms (e.g. mubtada, ' +
+                     'iʿrab, marfuʿ) are fine with a brief gloss. Must end with a complete sentence — never trail off.',
+      };
+      order.push('explanation');
+      required.push('explanation');
+      prompt += ' Then, since the reader is studying this, add a short explanation of the underlying grammar ' +
+                'concept: what kind of word/construction this is, the rule that governs it, and why it matters. ' +
+                'Keep it to 2–3 complete sentences (~60 words max) and pitched at a student. Do not trail off mid-sentence.';
+    }
+
+    const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + MODEL + ':generateContent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true',
+        'x-goog-api-key': key, // header, not ?key= — query strings leak into logs/referrers
       },
       body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 512,
-        messages: [{
+        contents: [{
           role: 'user',
-          content: [
-            { type: 'image', source: { type: 'base64', media_type: 'image/png', data: b64png } },
-            {
-              type: 'text',
-              text: 'This image is a small crop from a classical Arabic grammar (nahw) textbook, an-Nahw al-Kubra. ' +
-                    'Read the Arabic word or short phrase exactly as written, including harakat if visible, ' +
-                    'and give one concise English translation suited to the grammar context. ' +
-                    'If several words are shown, translate them as one phrase.',
-            },
+          parts: [
+            { inline_data: { mime_type: 'image/png', data: b64png } },
+            { text: prompt },
           ],
         }],
-        output_config: {
-          format: {
-            type: 'json_schema',
-            schema: {
-              type: 'object',
-              properties: {
-                arabic: { type: 'string', description: 'The Arabic text exactly as written in the image' },
-                translation: { type: 'string', description: 'Concise English translation' },
-              },
-              required: ['arabic', 'translation'],
-              additionalProperties: false,
-            },
+        generationConfig: {
+          responseMimeType: 'application/json',
+          responseSchema: {
+            type: 'object',
+            properties: props,
+            required,
+            propertyOrdering: order,
           },
+          // Budget covers thinking tokens too — thinking-capable models spend from this.
+          maxOutputTokens: learn ? 4096 : 2048,
+          temperature: 0,
         },
       }),
     });
@@ -163,10 +184,28 @@
       throw new Error((err && err.error && err.error.message) || 'HTTP ' + res.status);
     }
     const data = await res.json();
-    if (data.stop_reason === 'refusal') throw new Error('Model declined this image.');
-    const text = (data.content.find(b => b.type === 'text') || {}).text || '';
-    const parsed = JSON.parse(text);
-    return { ar: parsed.arabic, en: parsed.translation };
+    const cand = (data.candidates || [])[0];
+    if (!cand || BLOCKED_REASONS.indexOf(cand.finishReason) !== -1) throw new Error('Model declined this image.');
+    // Skip thought parts; the answer itself may span several text parts.
+    const text = ((cand.content && cand.content.parts) || [])
+      .filter(p => !p.thought)
+      .map(p => p.text || '')
+      .join('');
+    let parsed;
+    try {
+      parsed = JSON.parse(text);
+    } catch (_) {
+      if (cand.finishReason === 'MAX_TOKENS') throw new Error('Response was cut off — try again.');
+      throw new Error('Could not read the model’s reply.');
+    }
+    // Coerce — a missing field must not persist the string "undefined" into highlights.json.
+    const out = {
+      ar: String(parsed.arabic || ''),
+      en: String(parsed.translation || ''),
+      ex: String(parsed.explanation || ''),
+    };
+    if (!out.ar && !out.en) throw new Error('The model’s reply was missing the text and translation.');
+    return out;
   }
 
   /* ================= page rendering ================= */
@@ -288,7 +327,7 @@
 
   function makeHlEl(h) {
     const el = document.createElement('div');
-    el.className = 'hl';
+    el.className = 'hl' + (h.ex ? ' learned' : '');
     el.style.left = (h.x * 100) + '%';
     el.style.top = (h.y * 100) + '%';
     el.style.width = (h.w * 100) + '%';
@@ -350,24 +389,26 @@
       id: 'hl_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
       pdf: PDF_ID, page: pageNum,
       x: rect.x, y: rect.y, w: rect.w, h: rect.h,
-      ar: '', en: '',
+      ar: '', en: '', ex: '',
     };
+    const learn = learnMode;
 
     const el = makeHlEl(h);
     el.classList.add('pending');
     p.layer.appendChild(el);
-    showPopup(el, { status: 'Translating…' }, false);
+    showPopup(el, { status: learn ? 'Reading & explaining…' : 'Translating…' }, false);
 
     const run = async () => {
       try {
         const b64 = cropToBase64(p.canvas, rect);
-        const t = await translateImage(b64);
-        h.ar = t.ar; h.en = t.en;
+        const t = await translateImage(b64, learn);
+        h.ar = t.ar; h.en = t.en; h.ex = t.ex;
         highlights.push(h);
         persist();
         el.classList.remove('pending', 'err');
+        el.classList.toggle('learned', !!h.ex);
         showPopup(el, h, false);
-        setTimeout(() => { if (!popupPinned) hidePopup(); }, 2600);
+        setTimeout(() => { if (!popupPinned) hidePopup(); }, h.ex ? 4200 : 2600);
       } catch (err) {
         el.classList.remove('pending');
         el.classList.add('err');
@@ -674,6 +715,7 @@
   function showPopup(anchorEl, data, pinned) {
     popupPinned = pinned;
     popup.innerHTML = '';
+    popup.classList.remove('has-explain');
     if (data.comment) {
       const c = data.comment;
       const txt = document.createElement('div');
@@ -726,6 +768,12 @@
       const en = document.createElement('div');
       en.className = 'en'; en.textContent = data.en;
       popup.append(ar, en);
+      if (data.ex) {
+        popup.classList.add('has-explain');
+        const ex = document.createElement('div');
+        ex.className = 'explain'; ex.textContent = data.ex;
+        popup.appendChild(ex);
+      }
       if (pinned) {
         const acts = document.createElement('div');
         acts.className = 'pp-actions';
@@ -819,10 +867,27 @@
     rerenderAll();
   }
 
+  const pageInput = document.getElementById('pageInput');
+  function jumpToInput() {
+    const n = parseInt(pageInput.value, 10);
+    if (!pdfDoc || isNaN(n)) return;
+    scrollToPage(Math.max(1, Math.min(n, pdfDoc.numPages)));
+    pageInput.blur();
+  }
+  pageInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') jumpToInput(); });
+  pageInput.addEventListener('change', jumpToInput);
+
   btnHlMode.onclick = () => {
     hlMode = !hlMode;
     btnHlMode.classList.toggle('on', hlMode);
     document.querySelectorAll('.hl-layer').forEach(l => l.classList.toggle('active', hlMode));
+  };
+
+  btnLearn.onclick = () => {
+    learnMode = !learnMode;
+    btnLearn.classList.toggle('on', learnMode);
+    // Learn needs highlight mode to actually capture a word.
+    if (learnMode && !hlMode) btnHlMode.onclick();
   };
 
   const keyPanel = document.getElementById('keyPanel');
@@ -850,6 +915,7 @@
       if (r.top <= mid) current = n; else break;
     }
     pageLabel.textContent = current + ' / ' + pdfDoc.numPages;
+    if (document.activeElement !== pageInput) pageInput.placeholder = current;
     updateActiveChapter(current);
   }
 
@@ -879,6 +945,7 @@
     const vp1 = page1.getViewport({ scale: 1 });
     baseAspect = vp1.height / vp1.width;
     document.getElementById('loading').remove();
+    pageInput.max = pdfDoc.numPages;
     buildToc();
     buildPages();
     setupObserver();
