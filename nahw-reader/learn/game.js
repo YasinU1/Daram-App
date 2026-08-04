@@ -48,60 +48,15 @@
 
   const root = document.getElementById('game-root');
 
-  /* ── text formatting: escape first, then **bold** + Arabic runs ──
-     Same rules as learn.js `fmt()`, so a question reads identically in
-     both apps. Question text is trusted repo data but is escaped all
-     the same — `<`/`&` in a gloss must render, not parse.            */
-  const AR_RE = /[«؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿﴾﴿][؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿﴾﴿\s،؛؟.:()«»0-9٠-٩…!?-]*/g;
-  const WEAK_TAIL = /[\s.:()!?…0-9-]+$/;
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-  function fmt(s) {
-    if (s == null) return '';
-    let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
-    h = h.replace(AR_RE, m => {
-      const t = m.match(WEAK_TAIL);
-      const core = t ? m.slice(0, m.length - t[0].length) : m;
-      const tail = t ? t[0] : '';
-      if (!core) return m;
-      return '<bdi class="arb">' + core + '</bdi>' + tail;
-    });
-    return h;
-  }
-
-  /* `el` is text-only — the safe default. `elHtml` is the one and only
+  /* ── shared helpers (shared/core.js) ──────────────────────────
+     `el` is text-only — the safe default. `elHtml` is the one and only
      innerHTML sink, so every markup-bearing call site is visible by name;
-     its argument must already have gone through esc()/fmt().           */
-  function el(tag, cls, text) {
-    const n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-  function elHtml(tag, cls, html) {
-    const n = el(tag, cls);
-    if (html != null) n.innerHTML = html;
-    return n;
-  }
-  function icon(name, extra) { return el('span', 'msym' + (extra ? ' ' + extra : ''), name); }
-
-  /* A choice that is *entirely* Arabic reads far better set right-to-left
-     across the whole button than as an inline <bdi> island on the left. */
-  const AR_CHAR = /[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]/g;
-  function mostlyArabic(s) {
-    const letters = String(s).replace(/[\s\d.,;:!?()«»""''…\-–—]/g, '');
-    if (!letters) return false;
-    return (letters.match(AR_CHAR) || []).length / letters.length > 0.6;
-  }
-
-  /* Fisher–Yates. (The React original used sort(() => Math.random()-.5),
-     which is measurably biased — fixed here.) */
-  function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const t = a[i]; a[i] = a[j]; a[j] = t;
-    }
-    return a;
-  }
+     its argument must already have gone through esc()/fmt(). `fmt` gives
+     a question the same **bold** + Arabic-run treatment as learn.js, so
+     it reads identically in both apps. */
+  const D = window.Daram;
+  const fmt = D.fmt, el = D.el, elHtml = D.elHtml, icon = D.icon,
+        shuffle = D.shuffle, mostlyArabic = D.mostlyArabic;
 
   /* ── harvest: courses → chapters → section groups → questions ────
      A question is only playable if it has a prompt, ≥2 choices and a
@@ -157,15 +112,10 @@
 
   /* ── prefs (game-only store) ─────────────────────────────────── */
   function loadPrefs() {
-    try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
-    catch (e) { return {}; }
+    return D.loadJSON(localStorage, STORE_KEY, {});
   }
   function savePrefs() {
-    try {
-      localStorage.setItem(STORE_KEY, JSON.stringify({
-        chapter: G.chapterId, mode: G.mode, limit: G.limit,
-      }));
-    } catch (e) { /* private mode / quota — the run still works */ }
+    D.saveJSON(localStorage, STORE_KEY, { chapter: G.chapterId, mode: G.mode, limit: G.limit });
   }
 
   /* ── state ───────────────────────────────────────────────────── */
