@@ -17,18 +17,18 @@ import { tmpdir } from 'node:os';
 import vm from 'node:vm';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadEnvFile } from './lib/env-file.mjs';
+import { extractJson } from './lib/extract-json.mjs';
+import { ARCHETYPES, CANON_MARKS, bankFileSource, parseBankFile, sortBank, toBankItems } from './lib/bank.mjs';
+import blocksText from '../lib/blocks-text.js';
+
+const { blocksToText } = blocksText;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const READER = join(__dirname, '..');
 
 // ── minimal .env loader (mirror server.js) ────────────────────────────────────
-const envPath = join(__dirname, '.env');
-if (existsSync(envPath)) {
-  for (const line of readFileSync(envPath, 'utf8').split('\n')) {
-    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/i);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
-  }
-}
+loadEnvFile(join(__dirname, '.env'));
 const MODEL = process.env.CLAUDE_MODEL || 'claude-opus-4-8';
 const CLAUDE_BIN = process.env.CLAUDE_BIN || 'claude';
 const NO_TOOLS = ['Bash', 'Edit', 'Write', 'Read', 'Glob', 'Grep', 'WebFetch', 'WebSearch', 'NotebookEdit', 'Task', 'TodoWrite'];
@@ -45,91 +45,11 @@ const CHAPTERS = [
   { id: 'm1-bab-2',  global: 'DATA_M1_BAB2', group: 'المَقْصِدُ الأوَّل', ar: 'الباب الثاني في الحرف',                       en: 'The Particle' },
 ];
 
-// canonical mark value per archetype, taken from the Year 2 Term 1 paper
-const CANON_MARKS = {
-  'explain-line': 5, 'state-types': 6, 'compare': 8, 'explain-statement': 15,
-  'define-types-examples': 15, 'enumerate': 12, 'classify-tarkib': 9,
-};
-const ARCHETYPES = Object.keys(CANON_MARKS);
-
 // ── load the DATA_* globals in one vm context (const ⇒ read via trailing expr) ─
 function loadChapterData() {
   const src = DATA_FILES.map((f) => readFileSync(join(READER, f), 'utf8')).join('\n')
     + `\n;({ ${CHAPTERS.map((c) => c.global).join(', ')} })`;
   return vm.runInNewContext(src, {});
-}
-
-// ── block → compact text (copied verbatim from test-maker.html) ───────────────
-function tokLine(w) {
-  const ar = (w || []).filter((t) => t && t.a).map((t) => t.a).join(' ');
-  const en = (w || []).filter((t) => t && t.e).map((t) => t.e).join(' ');
-  return { ar, en };
-}
-function deepText(v) {
-  if (v == null) return '';
-  if (typeof v === 'string') return v;
-  if (Array.isArray(v)) return v.map(deepText).filter(Boolean).join(' ');
-  if (typeof v === 'object') {
-    const parts = [];
-    for (const k of ['a', 'e', 'ar', 'en', 'label', 'labelEn', 'text', 'caption']) if (typeof v[k] === 'string') parts.push(v[k]);
-    for (const k of Object.keys(v)) if (Array.isArray(v[k])) parts.push(deepText(v[k]));
-    return parts.join(' ');
-  }
-  return '';
-}
-function blocksToText(blocks) {
-  const out = [];
-  for (const b of (blocks || [])) {
-    if (!b || typeof b !== 'object') continue;
-    switch (b.t) {
-      case 'page': break;
-      case 'h1': out.push(`\n# ${b.ar || ''}${b.en ? '  (' + b.en + ')' : ''}`); break;
-      case 'h2': out.push(`\n## ${b.ar || ''}${b.en ? '  (' + b.en + ')' : ''}`); break;
-      case 'line': { const { ar, en } = tokLine(b.w); if (ar) out.push(`${ar}${en ? '  — ' + en : ''}`); break; }
-      case 'box': {
-        out.push(`[${b.label || ''}${b.labelEn ? ' / ' + b.labelEn : ''}]`);
-        (b.lines || []).forEach((ln) => { const { ar, en } = tokLine(ln); if (ar) out.push(`  ${ar}${en ? '  — ' + en : ''}`); });
-        break;
-      }
-      case 'table': {
-        if (b.head) out.push(`[table: ${[].concat(b.head).join(' | ')}]`);
-        (b.rows || []).forEach((r) => out.push('  ' + [].concat(r).join(' | ')));
-        break;
-      }
-      default: { const s = deepText(b); if (s) out.push(s); }
-    }
-  }
-  return out.join('\n');
-}
-
-// ── JSON extraction (copied from server.js) ───────────────────────────────────
-function extractJson(text) {
-  let t = text.trim();
-  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  if (fence) t = fence[1].trim();
-  const start = t.search(/[[{]/);
-  if (start === -1) throw new Error('No JSON found in model response');
-  const open = t[start];
-  const close = open === '{' ? '}' : ']';
-  let depth = 0, inStr = false, esc = false, end = -1;
-  for (let i = start; i < t.length; i++) {
-    const c = t[i];
-    if (inStr) {
-      if (esc) esc = false;
-      else if (c === '\\') esc = true;
-      else if (c === '"') inStr = false;
-    } else if (c === '"') inStr = true;
-    else if (c === open) depth++;
-    else if (c === close) { depth--; if (depth === 0) { end = i; break; } }
-  }
-  if (end === -1) throw new Error('Unbalanced JSON in model response');
-  const slice = t.slice(start, end + 1);
-  try { return JSON.parse(slice); }
-  catch (e) {
-    // common model glitch: a trailing comma before } or ]. Strip and retry once.
-    const repaired = slice.replace(/,(\s*[}\]])/g, '$1');
-    return JSON.parse(repaired);
-  }
 }
 
 function callClaude({ system, user }) {
@@ -199,8 +119,6 @@ ${text}`;
 }
 
 // ── main ──────────────────────────────────────────────────────────────────────
-const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-
 async function main() {
   const only = process.argv.slice(2);
   const targets = only.length ? CHAPTERS.filter((c) => only.includes(c.id)) : CHAPTERS;
@@ -215,9 +133,8 @@ async function main() {
   const outPath = join(READER, 'questions-bank.js');
   let bank = [];
   if (existsSync(outPath) && only.length) {
-    const m = readFileSync(outPath, 'utf8').match(/QUESTION_BANK\s*=\s*(\[[\s\S]*?\]);/);
-    if (m) { try { bank = JSON.parse(m[1]); } catch { /* ignore, rebuild clean */ } }
-    bank = bank.filter((q) => !targets.some((t) => t.id === q.chapterId));
+    bank = parseBankFile(readFileSync(outPath, 'utf8'))
+      .filter((q) => !targets.some((t) => t.id === q.chapterId));
   }
 
   for (const c of targets) {
@@ -233,37 +150,16 @@ async function main() {
         try { items = extractJson(await callClaude({ system: SYSTEM, user: userPrompt(c, text, CANON_MARKS) })); break; }
         catch (e) { if (attempt >= 2) throw e; process.stdout.write('(retry) '); }
       }
-      let added = 0;
-      for (const it of (Array.isArray(items) ? items : [])) {
-        const arch = String(it.archetype || '').trim();
-        if (!ARCHETYPES.includes(arch)) continue;
-        if (!it.promptEn) continue;
-        bank.push({
-          id: `${c.id}--${arch}--${slug(it.promptEn).slice(0, 32)}-${(bank.length + added).toString(36)}`,
-          chapterId: c.id, chapterAr: c.ar, chapterEn: c.en,
-          archetype: arch,
-          marks: CANON_MARKS[arch],            // pin to canonical so papers sum cleanly
-          promptEn: String(it.promptEn).trim(),
-          promptAr: String(it.promptAr || '').trim(),
-          markScheme: String(it.markScheme || '').trim(),
-        });
-        added++;
-      }
-      console.log(`${added} questions  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
+      const fresh = toBankItems(c, items, bank.length);
+      bank.push(...fresh);
+      console.log(`${fresh.length} questions  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
     } catch (e) {
       console.log(`FAILED — ${e.message}`);
     }
   }
 
-  bank.sort((a, b) => CHAPTERS.findIndex((c) => c.id === a.chapterId) - CHAPTERS.findIndex((c) => c.id === b.chapterId)
-    || ARCHETYPES.indexOf(a.archetype) - ARCHETYPES.indexOf(b.archetype));
-
-  const header = `// Daram — pre-generated question bank.  DO NOT EDIT BY HAND.
-// Built by test-maker/build-bank.mjs on ${new Date().toISOString()}.
-// ${bank.length} questions across ${new Set(bank.map((q) => q.chapterId)).size} chapters.
-// Each item: { id, chapterId, chapterAr, chapterEn, archetype, marks, promptEn, promptAr, markScheme }.
-`;
-  writeFileSync(outPath, `${header}const QUESTION_BANK =\n${JSON.stringify(bank, null, 2)};\n`);
+  bank = sortBank(bank, CHAPTERS.map((c) => c.id));
+  writeFileSync(outPath, bankFileSource(bank));
   console.log(`\n✓ wrote ${bank.length} questions → ${outPath}`);
 }
 

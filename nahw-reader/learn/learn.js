@@ -34,9 +34,8 @@
   }, window.DARAM_LEARN_CONFIG || {});
 
   const STORE_KEY = CFG.storeKey;
-  const DAY = 24 * 60 * 60 * 1000;
-  const INTERVALS = [1 * DAY, 3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY];
-  const REVIEW_LIMIT = 15;
+  const SRS = window.DaramSrs;
+  const REVIEW_LIMIT = SRS.REVIEW_LIMIT;
 
   const root = document.getElementById('learn-root');
 
@@ -72,11 +71,7 @@
   function save() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
 
   function recordAnswer(qKey, correct) {
-    const s = store.q[qKey] || { seen: 0, wrong: 0, streak: 0, due: 0 };
-    s.seen++;
-    if (correct) { s.streak++; s.due = Date.now() + INTERVALS[Math.min(s.streak - 1, INTERVALS.length - 1)]; }
-    else { s.wrong++; s.streak = 0; s.due = Date.now() + 10 * 60 * 1000; }
-    store.q[qKey] = s;
+    store.q[qKey] = SRS.applyAnswer(store.q[qKey], correct, Date.now());
     save();
   }
 
@@ -112,10 +107,7 @@
   }
 
   function dueReview() {
-    const now = Date.now();
-    return Object.keys(store.q)
-      .filter(k => QINDEX[k] && store.q[k].due <= now)
-      .sort((a, b) => store.q[a].due - store.q[b].due);
+    return SRS.dueKeys(store.q, k => !!QINDEX[k], Date.now());
   }
 
   /* ── text formatting: escape, **bold**, wrap Arabic runs ─────── */

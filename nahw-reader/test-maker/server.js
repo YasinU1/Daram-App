@@ -9,21 +9,18 @@
 
 import express from 'express';
 import { spawn } from 'node:child_process';
-import { readFileSync, existsSync } from 'node:fs';
+import { realpathSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadEnvFile } from './lib/env-file.mjs';
+import { extractJson } from './lib/extract-json.mjs';
+import { normalizeGrade } from './lib/grade.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // ── minimal .env loader (avoids a dotenv dependency) ──────────────────────────
-const envPath = join(__dirname, '.env');
-if (existsSync(envPath)) {
-  for (const line of readFileSync(envPath, 'utf8').split('\n')) {
-    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/i);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
-  }
-}
+loadEnvFile(join(__dirname, '.env'));
 
 // This app drives the local Claude Code CLI in headless mode, so it uses the SAME
 // login as your `claude` terminal (your Claude subscription) — no API key required.
@@ -36,32 +33,6 @@ app.use(express.json({ limit: '6mb' }));
 app.use(express.static(join(__dirname, '..')));
 
 // ── helpers ───────────────────────────────────────────────────────────────────
-
-// Pull the first JSON value out of a model response, tolerant of code fences
-// or stray prose around it.
-function extractJson(text) {
-  let t = text.trim();
-  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  if (fence) t = fence[1].trim();
-  const start = t.search(/[[{]/);
-  if (start === -1) throw new Error('No JSON found in model response');
-  // walk to the matching closing bracket
-  const open = t[start];
-  const close = open === '{' ? '}' : ']';
-  let depth = 0, inStr = false, esc = false, end = -1;
-  for (let i = start; i < t.length; i++) {
-    const c = t[i];
-    if (inStr) {
-      if (esc) esc = false;
-      else if (c === '\\') esc = true;
-      else if (c === '"') inStr = false;
-    } else if (c === '"') inStr = true;
-    else if (c === open) depth++;
-    else if (c === close) { depth--; if (depth === 0) { end = i; break; } }
-  }
-  if (end === -1) throw new Error('Unbalanced JSON in model response');
-  return JSON.parse(t.slice(start, end + 1));
-}
 
 // Tools we never want the headless call to use — it should just return text.
 const NO_TOOLS = ['Bash', 'Edit', 'Write', 'Read', 'Glob', 'Grep', 'WebFetch', 'WebSearch', 'NotebookEdit', 'Task', 'TodoWrite'];
@@ -196,10 +167,7 @@ Return ONLY this JSON (no prose, no code fence):
 }`;
 
     const text = await callClaude({ system, user, maxTokens: 1600 });
-    const result = extractJson(text);
-    result.max = question.marks;
-    result.awarded = Math.max(0, Math.min(question.marks, Number(result.awarded) || 0));
-    res.json(result);
+    res.json(normalizeGrade(extractJson(text), question.marks));
   } catch (err) {
     fail(res, err);
   }
@@ -234,7 +202,12 @@ Return ONLY this JSON (no prose, no code fence):
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`\n  Daram Test Maker running → http://localhost:${PORT}/test-maker.html\n`);
-});
+export default app;
+
+// only start listening when run directly (`node server.js`), not when imported
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`\n  Daram Test Maker running → http://localhost:${PORT}/test-maker.html\n`);
+  });
+}
