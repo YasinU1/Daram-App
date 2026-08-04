@@ -276,14 +276,16 @@
       $('genStatus').textContent='';
       $('paperHost').scrollIntoView({behavior:'smooth'});
     }catch(e){
-      $('genStatus').innerHTML=`<span class="err">${e.message}</span>`;
+      $('genStatus').innerHTML=`<span class="err">${esc(e.message)}</span>`;
     }finally{
       $('assembleBtn').disabled=false;
     }
   });
 
   // ── render the exam paper ──
-  function esc(s){ return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+  // Model output and server error text land in markup (including attributes), so
+  // escape quotes too.
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function renderPaper(p, totalMarks){
     const host=$('paperHost');
     const sum=(p.questions||[]).reduce((a,q)=>a+(+q.marks||0),0);
@@ -299,7 +301,7 @@
 
     (p.questions||[]).forEach((q,i)=>{
       html+=`<div class="q" id="q-${i}">
-        <div class="q-head"><span class="q-n">Question ${q.n||i+1}</span><span class="q-marks">Marks: ${q.marks}</span></div>
+        <div class="q-head"><span class="q-n">Question ${esc(q.n||i+1)}</span><span class="q-marks">Marks: ${esc(q.marks)}</span></div>
         <div class="q-prompt">${esc(q.promptEn)}</div>
         ${q.promptAr?`<div class="q-ar">${esc(q.promptAr)}</div>`:''}
         <textarea dir="auto" id="ans-${i}" placeholder="Write your answer…"></textarea>
@@ -332,7 +334,7 @@
         ${h.explanation?`<p>${esc(h.explanation)}</p>`:''}
         ${h.encouragement?`<p style="font-style:italic;color:var(--gold-hover)">${esc(h.encouragement)}</p>`:''}
       </div>`;
-    }catch(e){ slot.innerHTML=`<div class="help err">${e.message}</div>`; }
+    }catch(e){ slot.innerHTML=`<div class="help err">${esc(e.message)}</div>`; }
   }
 
   // ── mark the whole paper ──
@@ -348,14 +350,14 @@
         const r=await postJSON('/api/grade', { question:q, answer:$('ans-'+i).value });
         awarded+=r.awarded; max+=r.max;
         slot.innerHTML=`<div class="mark ${esc(r.verdict)}">
-          <div><span class="score">${r.awarded} / ${r.max}</span> &nbsp;<span class="lbl">${esc(r.verdict)}</span></div>
+          <div><span class="score">${esc(r.awarded)} / ${esc(r.max)}</span> &nbsp;<span class="lbl">${esc(r.verdict)}</span></div>
           <p>${esc(r.feedback)}</p>
           ${r.good&&r.good.length?`<div class="good"><span class="lbl">Got right</span><ul>${r.good.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
           ${r.missing&&r.missing.length?`<div class="miss"><span class="lbl">To improve</span><ul>${r.missing.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
           ${(r.verdict==='weak'||r.verdict==='off')?`<button class="btn btn-ghost" style="margin-top:8px" data-help2="${i}">Get support on this →</button>`:''}
         </div>`;
         const sb=slot.querySelector('[data-help2]'); if(sb) sb.addEventListener('click',()=>getHelp(i));
-      }catch(e){ slot.innerHTML=`<div class="mark off err">${e.message}</div>`; }
+      }catch(e){ slot.innerHTML=`<div class="mark off err">${esc(e.message)}</div>`; }
     }
     const pct=max?Math.round(100*awarded/max):0;
     $('totalScore').innerHTML=`${awarded} / ${max} &nbsp;<small>(${pct}%)</small>`;

@@ -32,8 +32,10 @@ const CLAUDE_BIN = process.env.CLAUDE_BIN || 'claude';
 
 const app = express();
 app.use(express.json({ limit: '6mb' }));
-// Serve the reader pages (book.html, styles.css, data files, test-maker.html …)
-app.use(express.static(join(__dirname, '..')));
+// Serve the reader pages (book.html, styles.css, data files, test-maker.html …).
+// `dotfiles: 'deny'` keeps .env / .git out of reach — the static root is the
+// parent of this folder, so it contains test-maker/.env.
+app.use(express.static(join(__dirname, '..'), { dotfiles: 'deny', index: false }));
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -95,6 +97,48 @@ function callClaude({ system, user }) {
   });
 }
 
+// ── request validation ──────────────────────────────────────────────────────
+// The endpoints spawn the local `claude` CLI on the user's own login, so every
+// request costs real quota. Cap and type-check whatever the page sends.
+const MAX_CHAPTERS = 40;
+const MAX_CORPUS_CHARS = 400_000;
+const MAX_FIELD_CHARS = 20_000;
+const MAX_ANSWER_CHARS = 20_000;
+
+// Mirrors the #difficulty options in test-maker.html.
+const DIFFICULTIES = new Set(['foundation', 'standard', 'challenging']);
+
+function str(v, max) {
+  return typeof v === 'string' ? v.slice(0, max) : '';
+}
+
+function clampInt(v, min, max, fallback) {
+  const n = Math.round(Number(v));
+  if (!Number.isFinite(n)) return fallback;
+  return Math.min(max, Math.max(min, n));
+}
+
+function badRequest(message) {
+  const err = new Error(message);
+  err.status = 400;
+  return err;
+}
+
+// Normalise the question object echoed back by the client into a fixed shape.
+function cleanQuestion(q) {
+  if (!q || typeof q !== 'object') throw badRequest('Missing question.');
+  const marks = Math.round(Number(q.marks));
+  if (!Number.isFinite(marks) || marks < 1 || marks > 100) throw badRequest('Invalid marks.');
+  const promptEn = str(q.promptEn, MAX_FIELD_CHARS);
+  if (!promptEn.trim()) throw badRequest('Missing question prompt.');
+  return {
+    marks,
+    promptEn,
+    promptAr: str(q.promptAr, MAX_FIELD_CHARS),
+    markScheme: str(q.markScheme, MAX_FIELD_CHARS),
+  };
+}
+
 function fail(res, err) {
   console.error(err);
   const status = err?.status || 500;
@@ -128,12 +172,22 @@ modelled exactly on the "Dar al-Ulum Oxford" Nahw (al-Kubrā) papers. The house 
 // Generate an exam paper from selected chapters.
 app.post('/api/generate-test', async (req, res) => {
   try {
-    const { chapters = [], totalMarks = 70, numQuestions = 7, difficulty = 'standard' } = req.body || {};
-    if (!chapters.length) return res.status(400).json({ error: 'No chapters supplied.' });
+    const body = req.body || {};
+    const chapters = Array.isArray(body.chapters) ? body.chapters : [];
+    if (!chapters.length) throw badRequest('No chapters supplied.');
+    if (chapters.length > MAX_CHAPTERS) throw badRequest('Too many chapters supplied.');
+
+    const totalMarks = clampInt(body.totalMarks, 1, 500, 70);
+    const numQuestions = clampInt(body.numQuestions, 1, 30, 7);
+    const difficulty = DIFFICULTIES.has(body.difficulty) ? body.difficulty : 'standard';
 
     const corpus = chapters
-      .map((c) => `### Chapter: ${c.ar || ''} (${c.en || ''}) [id:${c.id}]\n${c.text || ''}`)
-      .join('\n\n');
+      .map((c) => {
+        const ch = c && typeof c === 'object' ? c : {};
+        return `### Chapter: ${str(ch.ar, 200)} (${str(ch.en, 200)}) [id:${str(ch.id, 100)}]\n${str(ch.text, MAX_CORPUS_CHARS)}`;
+      })
+      .join('\n\n')
+      .slice(0, MAX_CORPUS_CHARS);
 
     const user = `Create an exam paper of ${numQuestions} questions totalling about ${totalMarks} marks,
 at "${difficulty}" difficulty, drawn strictly from the chapter content below.
@@ -168,8 +222,8 @@ ${corpus}`;
 // Mark one answer against its (hidden) mark scheme.
 app.post('/api/grade', async (req, res) => {
   try {
-    const { question, answer } = req.body || {};
-    if (!question) return res.status(400).json({ error: 'Missing question.' });
+    const question = cleanQuestion((req.body || {}).question);
+    const answer = str((req.body || {}).answer, MAX_ANSWER_CHARS);
 
     const system = `You are a fair but rigorous nahw examiner marking a written answer against a mark scheme.
 Award partial credit. Be specific about what earned marks and what was missing. Reward correct Arabic
@@ -183,7 +237,7 @@ ${question.promptAr ? `Arabic shown to student: ${question.promptAr}` : ''}
 MARK SCHEME (examiner-only): ${question.markScheme || '(none provided — judge against standard nahw knowledge)'}
 
 STUDENT ANSWER:
-${(answer || '').trim() || '(left blank)'}
+${answer.trim() || '(left blank)'}
 
 Return ONLY this JSON (no prose, no code fence):
 {
@@ -208,8 +262,8 @@ Return ONLY this JSON (no prose, no code fence):
 // Offer hints / a supporting explanation when the student is stuck or way off.
 app.post('/api/help', async (req, res) => {
   try {
-    const { question, answer } = req.body || {};
-    if (!question) return res.status(400).json({ error: 'Missing question.' });
+    const question = cleanQuestion((req.body || {}).question);
+    const answer = str((req.body || {}).answer, MAX_ANSWER_CHARS);
 
     const system = `You are a warm, encouraging nahw tutor. Help the student think the question through.
 Give graded hints that nudge without handing over the full answer. Keep it focused and supportive.`;
@@ -218,7 +272,7 @@ Give graded hints that nudge without handing over the full answer. Keep it focus
 
 QUESTION (${question.marks} marks): ${question.promptEn}
 ${question.promptAr ? `Arabic: ${question.promptAr}` : ''}
-${answer && answer.trim() ? `Their attempt so far:\n${answer.trim()}` : 'They have not written an answer yet.'}
+${answer.trim() ? `Their attempt so far:\n${answer.trim()}` : 'They have not written an answer yet.'}
 
 Return ONLY this JSON (no prose, no code fence):
 {
@@ -234,7 +288,10 @@ Return ONLY this JSON (no prose, no code fence):
   }
 });
 
+// Bind to loopback only: the endpoints are unauthenticated and spend the local
+// Claude login's quota, so they must not be reachable from the network.
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
+const HOST = process.env.HOST || '127.0.0.1';
+app.listen(PORT, HOST, () => {
   console.log(`\n  Daram Test Maker running → http://localhost:${PORT}/test-maker.html\n`);
 });

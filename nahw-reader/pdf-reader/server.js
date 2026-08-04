@@ -11,8 +11,12 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 8017;
+// Loopback only: the highlights API is unauthenticated and writes to disk.
+const HOST = '127.0.0.1';
 const ROOT = path.join(__dirname, '..'); // nahw-reader/
 const HL_FILE = path.join(__dirname, 'highlights.json');
+const MAX_BODY = 10e6;
+const MAX_ITEMS = 20000;
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -29,6 +33,25 @@ const MIME = {
   '.ttf': 'font/ttf',
   '.otf': 'font/otf',
 };
+
+// Keep only plain JSON values of a sane size, so a malformed POST can't grow
+// highlights.json without bound or push functions/prototypes into it.
+function sanitiseItems(arr, what) {
+  if (!Array.isArray(arr)) throw new Error(what + ' must be an array');
+  if (arr.length > MAX_ITEMS) throw new Error('too many ' + what);
+  return arr.map((item) => {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) {
+      throw new Error(what + ' entries must be objects');
+    }
+    const out = {};
+    for (const [k, v] of Object.entries(item)) {
+      const t = typeof v;
+      if (t === 'string') out[k] = v.slice(0, 20000);
+      else if (t === 'number' || t === 'boolean' || v === null) out[k] = v;
+    }
+    return out;
+  });
+}
 
 function readHighlights() {
   try {
@@ -51,17 +74,16 @@ const server = http.createServer((req, res) => {
     }
     if (req.method === 'POST') {
       let body = '';
-      req.on('data', (c) => { body += c; if (body.length > 10e6) req.destroy(); });
+      req.on('data', (c) => { body += c; if (body.length > MAX_BODY) req.destroy(); });
       req.on('end', () => {
         try {
           const data = JSON.parse(body);
-          if (!Array.isArray(data.highlights)) throw new Error('highlights must be an array');
-          if (data.comments !== undefined && !Array.isArray(data.comments)) throw new Error('comments must be an array');
+          const highlights = sanitiseItems(data.highlights, 'highlights');
           const prev = readHighlights();
-          fs.writeFileSync(HL_FILE, JSON.stringify({
-            highlights: data.highlights,
-            comments: data.comments !== undefined ? data.comments : prev.comments,
-          }, null, 2));
+          const comments = data.comments !== undefined
+            ? sanitiseItems(data.comments, 'comments')
+            : prev.comments;
+          fs.writeFileSync(HL_FILE, JSON.stringify({ highlights, comments }, null, 2));
           res.writeHead(200, { 'content-type': 'application/json' });
           res.end('{"ok":true}');
         } catch (err) {
@@ -76,8 +98,18 @@ const server = http.createServer((req, res) => {
   }
 
   // --- static files ---
-  let filePath = path.normalize(path.join(ROOT, decodeURIComponent(url.pathname)));
-  if (!filePath.startsWith(ROOT)) { res.writeHead(403).end(); return; }
+  let pathname;
+  try { pathname = decodeURIComponent(url.pathname); } catch (_) { res.writeHead(400).end(); return; }
+  if (pathname.includes('\0')) { res.writeHead(400).end(); return; }
+  let filePath = path.normalize(path.join(ROOT, pathname));
+  // path.sep guards against a sibling directory sharing ROOT's name as a prefix.
+  if (filePath !== ROOT && !filePath.startsWith(ROOT + path.sep)) { res.writeHead(403).end(); return; }
+  // Never serve dotfiles (.env, .git…) or dependency trees.
+  const rel = path.relative(ROOT, filePath);
+  if (rel.split(path.sep).some((seg) => seg.startsWith('.') || seg === 'node_modules')) {
+    res.writeHead(403).end();
+    return;
+  }
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
     filePath = path.join(filePath, 'index.html');
   }
@@ -88,6 +120,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, HOST, () => {
   console.log(`Daram PDF Reader → http://localhost:${PORT}/pdf-reader/`);
 });
