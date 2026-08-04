@@ -63,13 +63,38 @@
     } catch (e) { /* audio unavailable — stay silent */ }
   }
 
+  /* ── notices ─────────────────────────────────────────────────── */
+  const warned = new Set();
+  function warnOnce(message) {
+    if (warned.has(message)) return;
+    warned.add(message);
+    const host = document.body;
+    if (!host) return;
+    const box = document.createElement('div');
+    box.className = 'learn-toast';
+    box.textContent = message;
+    host.appendChild(box);
+    setTimeout(() => box.remove(), 8000);
+  }
+
   /* ── persistence ─────────────────────────────────────────────── */
   function load() {
     try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { sections: {}, q: {} }; }
-    catch (e) { return { sections: {}, q: {} }; }
+    catch (e) {
+      console.warn('saved progress could not be read — starting fresh', e);
+      warnOnce('Your saved progress could not be read (' + e.message + '), so this session starts fresh.');
+      return { sections: {}, q: {} };
+    }
   }
-  const store = load();
-  function save() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+  /* Progress is only worth anything if it actually persists, so a failed write is
+     surfaced instead of leaving the lesson looking saved. */
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+    catch (e) {
+      console.error('could not save progress', e);
+      warnOnce('Your progress cannot be saved in this browser (' + e.message + ') — this session will not be remembered.');
+    }
+  }
 
   function recordAnswer(qKey, correct) {
     const s = store.q[qKey] || { seen: 0, wrong: 0, streak: 0, due: 0 };
@@ -93,7 +118,7 @@
     section.steps.forEach((raw, i) => {
       if (raw.t === 'bank') {
         const b = bankById[raw.id];
-        if (!b) return; // bank question missing — skip quietly
+        if (!b) { console.warn('bank question missing from questions-bank.js, step dropped:', raw.id); return; }
         out.push({ t: 'written', prompt: b.promptEn, ar: b.promptAr || null, model: b.markScheme,
           marks: b.marks, exam: true, qKey: 'bank|' + b.id, label: 'Exam practice · ' + b.archetype });
       } else if (raw.t === 'teach') {

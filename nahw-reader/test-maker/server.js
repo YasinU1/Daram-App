@@ -83,6 +83,11 @@ function callClaude({ system, user }) {
       reject(e.code === 'ENOENT'
         ? new Error('`claude` CLI not found. Install Claude Code and run `claude login`, or set CLAUDE_BIN.')
         : e));
+    // The prompt goes in over stdin, which fails if the child never starts or exits
+    // early. An unhandled stream 'error' would take the server down with it.
+    child.stdin.on('error', (e) => {
+      if (e.code !== 'EPIPE') reject(e); // EPIPE: the 'error'/'close' handlers report the real cause
+    });
     child.on('close', (code) => {
       let env;
       try { env = JSON.parse(out); } catch { /* response wasn't the JSON envelope */ }
@@ -99,6 +104,13 @@ function fail(res, err) {
   console.error(err);
   const status = err?.status || 500;
   res.status(status).json({ error: err?.message || 'Request failed' });
+}
+
+// An unusable model reply is an upstream fault, not ours.
+function badGateway(message) {
+  const err = new Error(message);
+  err.status = 502;
+  return err;
 }
 
 // ── prompts ─────────────────────────────────────────────────────────────────
@@ -157,8 +169,11 @@ The "marks" across all questions should sum to about ${totalMarks}. Vary the arc
 --- CHAPTER CONTENT ---
 ${corpus}`;
 
-    const text = await callClaude({ system: EXAM_STYLE, user, maxTokens: 8000 });
+    const text = await callClaude({ system: EXAM_STYLE, user });
     const paper = extractJson(text);
+    if (!paper || !Array.isArray(paper.questions) || !paper.questions.length) {
+      throw badGateway('The model did not return any questions — try again.');
+    }
     res.json(paper);
   } catch (err) {
     fail(res, err);
@@ -195,10 +210,15 @@ Return ONLY this JSON (no prose, no code fence):
   "missing": ["key points the student missed or got wrong"]
 }`;
 
-    const text = await callClaude({ system, user, maxTokens: 1600 });
+    const text = await callClaude({ system, user });
     const result = extractJson(text);
+    // A reply we can't read must not be passed off as a mark of zero.
+    const awarded = Number(result && result.awarded);
+    if (!result || !Number.isFinite(awarded)) {
+      throw badGateway('The model did not return a usable mark — try marking again.');
+    }
     result.max = question.marks;
-    result.awarded = Math.max(0, Math.min(question.marks, Number(result.awarded) || 0));
+    result.awarded = Math.max(0, Math.min(question.marks, awarded));
     res.json(result);
   } catch (err) {
     fail(res, err);
@@ -227,14 +247,30 @@ Return ONLY this JSON (no prose, no code fence):
   "encouragement": "one short encouraging line"
 }`;
 
-    const text = await callClaude({ system, user, maxTokens: 1400 });
-    res.json(extractJson(text));
+    const text = await callClaude({ system, user });
+    const help = extractJson(text);
+    if (!help || (!Array.isArray(help.hints) && !help.explanation)) {
+      throw badGateway('The model did not return any hints — try again.');
+    }
+    res.json(help);
   } catch (err) {
     fail(res, err);
   }
 });
 
+// Express only catches throws from the handlers themselves; anything escaping a
+// callback or a stray promise would otherwise die without a trace.
+process.on('unhandledRejection', (err) => { console.error('unhandled rejection:', err); });
+
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`\n  Daram Test Maker running → http://localhost:${PORT}/test-maker.html\n`);
+});
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use — stop the other server or set PORT to a free port.`);
+  } else {
+    console.error('server error:', err);
+  }
+  process.exit(1);
 });

@@ -76,9 +76,36 @@
 
   const railVisible = () => window.innerWidth >= 1000;
 
+  /* ================= notices ================= */
+
+  /* Highlights and comments are the user's own work, so a failure to save it has to
+     be visible rather than only in the console. Repeats of the same notice are
+     dropped so a retrying save can't stack up banners. */
+  const shownNotices = new Set();
+  function notify(message) {
+    if (shownNotices.has(message)) return;
+    shownNotices.add(message);
+    console.warn(message);
+    let host = document.querySelector('.toast-host');
+    if (!host) {
+      host = document.createElement('div');
+      host.className = 'toast-host';
+      document.body.appendChild(host);
+    }
+    const el = document.createElement('div');
+    el.className = 'toast';
+    el.textContent = message;
+    host.appendChild(el);
+    setTimeout(() => el.remove(), 8000);
+  }
+
   /* ================= storage (JSON via server, localStorage fallback) ================= */
 
+  const HL_LS_KEY = 'daram-pdf-hl::' + PDF_ID;
+  const CMT_LS_KEY = 'daram-pdf-cmt::' + PDF_ID;
+
   async function loadStore() {
+    let reason = '';
     try {
       const res = await fetch('/api/highlights');
       if (res.ok) {
@@ -88,11 +115,23 @@
         comments = (data.comments || []).filter(c => c.pdf === PDF_ID);
         return;
       }
-    } catch (_) { /* no server — fall back */ }
+      reason = 'the server answered HTTP ' + res.status;
+    } catch (err) {
+      reason = err.message;
+    }
     serverOk = false;
-    try { highlights = JSON.parse(localStorage.getItem('daram-pdf-hl::' + PDF_ID)) || []; } catch (_) { highlights = []; }
-    try { comments = JSON.parse(localStorage.getItem('daram-pdf-cmt::' + PDF_ID)) || []; } catch (_) { comments = []; }
-    console.warn('highlights.json server not reachable — using localStorage. Run: node pdf-reader/server.js');
+    try { highlights = JSON.parse(localStorage.getItem(HL_LS_KEY)) || []; } catch (err) { highlights = []; notify('Saved highlights in this browser could not be read (' + err.message + ') — starting empty.'); }
+    try { comments = JSON.parse(localStorage.getItem(CMT_LS_KEY)) || []; } catch (err) { comments = []; notify('Saved comments in this browser could not be read (' + err.message + ') — starting empty.'); }
+    notify('highlights.json server not reachable (' + reason + ') — saving in this browser only. Run: node pdf-reader/server.js');
+  }
+
+  function persistLocal() {
+    try {
+      localStorage.setItem(HL_LS_KEY, JSON.stringify(highlights));
+      localStorage.setItem(CMT_LS_KEY, JSON.stringify(comments));
+    } catch (err) {
+      notify('Could not save your highlights in this browser (' + err.message + ') — they will be lost on reload.');
+    }
   }
 
   let saveTimer = null;
@@ -101,16 +140,22 @@
     saveTimer = setTimeout(async () => {
       if (serverOk) {
         try {
-          await fetch('/api/highlights', {
+          const res = await fetch('/api/highlights', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ highlights, comments }),
           });
-          return;
-        } catch (_) { serverOk = false; }
+          if (res.ok) return;
+          // A rejected save is not a save: say so and keep a browser-local copy.
+          const body = await res.json().catch(() => null);
+          serverOk = false;
+          notify('The server refused to save (' + ((body && body.error) || 'HTTP ' + res.status) + ') — saving in this browser instead.');
+        } catch (err) {
+          serverOk = false;
+          notify('Lost contact with the save server (' + err.message + ') — saving in this browser instead.');
+        }
       }
-      localStorage.setItem('daram-pdf-hl::' + PDF_ID, JSON.stringify(highlights));
-      localStorage.setItem('daram-pdf-cmt::' + PDF_ID, JSON.stringify(comments));
+      persistLocal();
     }, 250);
   }
 
@@ -257,6 +302,7 @@
     if (!p || p.rendered || p.rendering) return;
     p.rendering = true;
     try {
+      p.container.querySelectorAll('.page-err').forEach(el => el.remove());
       const page = await pdfDoc.getPage(n);
       const vp1 = page.getViewport({ scale: 1 });
       const w = cssPageWidth();
@@ -277,6 +323,18 @@
       p.canvas = canvas;
       p.rendered = true;
       layoutComments(n);
+    } catch (err) {
+      // Without this the page just stays blank and the rejection is never seen.
+      console.error('page ' + n + ' failed to render', err);
+      const msg = document.createElement('div');
+      msg.className = 'page-err';
+      msg.textContent = 'Page ' + n + ' could not be rendered (' + err.message + ').';
+      const retry = document.createElement('button');
+      retry.type = 'button';
+      retry.textContent = 'Retry';
+      retry.addEventListener('click', () => { renderPage(n); });
+      msg.appendChild(retry);
+      p.container.appendChild(msg);
     } finally {
       p.rendering = false;
     }
@@ -901,8 +959,13 @@
   document.getElementById('btnKeyClose').onclick = () => { keyPanel.hidden = true; };
   document.getElementById('btnKeySave').onclick = () => {
     const v = keyInput.value.trim();
-    if (v) localStorage.setItem(API_LS_KEY, v);
-    else localStorage.removeItem(API_LS_KEY);
+    try {
+      if (v) localStorage.setItem(API_LS_KEY, v);
+      else localStorage.removeItem(API_LS_KEY);
+    } catch (err) {
+      notify('Could not store the API key in this browser (' + err.message + ').');
+      return;
+    }
     keyPanel.hidden = true;
   };
 
@@ -941,14 +1004,22 @@
         'Could not load PDF. Serve the site over HTTP (node pdf-reader/server.js) — file:// will not work. (' + err.message + ')';
       return;
     }
-    const page1 = await pdfDoc.getPage(1);
-    const vp1 = page1.getViewport({ scale: 1 });
-    baseAspect = vp1.height / vp1.width;
-    document.getElementById('loading').remove();
-    pageInput.max = pdfDoc.numPages;
-    buildToc();
-    buildPages();
-    setupObserver();
-    updatePageLabel();
+    try {
+      const page1 = await pdfDoc.getPage(1);
+      const vp1 = page1.getViewport({ scale: 1 });
+      baseAspect = vp1.height / vp1.width;
+      document.getElementById('loading').remove();
+      pageInput.max = pdfDoc.numPages;
+      buildToc();
+      buildPages();
+      setupObserver();
+      updatePageLabel();
+    } catch (err) {
+      // A half-built reader is worse than a stated failure.
+      console.error('reader failed to start', err);
+      const loading = document.getElementById('loading');
+      if (loading) loading.textContent = 'The reader failed to start (' + err.message + '). Reload to try again.';
+      else notify('The reader failed to start (' + err.message + '). Reload to try again.');
+    }
   })();
 })();

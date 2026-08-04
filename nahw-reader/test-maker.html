@@ -199,7 +199,11 @@
   const $=(id)=>document.getElementById(id);
   async function postJSON(url, body){
     const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
-    if(!r.ok){ let m='Request failed'; try{ m=(await r.json()).error||m; }catch{} throw new Error(m); }
+    if(!r.ok){
+      let m='Request failed (HTTP '+r.status+')';
+      try{ m=(await r.json()).error||m; }catch(e){ /* error body wasn't JSON — keep the status */ }
+      throw new Error(m);
+    }
     return r.json();
   }
 
@@ -263,7 +267,19 @@
     ev.preventDefault();
     const ids=selectedIds();
     if(!ids.length){ $('genStatus').innerHTML='<span class="err">Pick at least one chapter.</span>'; return; }
-    const chapters=ids.map(id=>{ const c=CHAPTERS.find(x=>x.id===id); return {id, ar:c.ar, en:c.en, text:blocksToText(c.blocks())}; });
+    // A chapter whose data script failed to load throws here; report it instead of
+    // dying in an event handler nobody is watching.
+    let chapters;
+    try{
+      chapters=ids.map(id=>{
+        const c=CHAPTERS.find(x=>x.id===id);
+        if(!c) throw new Error('Unknown chapter: '+id);
+        return {id, ar:c.ar, en:c.en, text:blocksToText(c.blocks())};
+      });
+    }catch(e){
+      $('genStatus').innerHTML=`<span class="err">Could not read the selected chapters: ${esc(e.message)}</span>`;
+      return;
+    }
     const want=Math.max(1, +$('numQuestions').value||7);
     const totalMarks=TEMPLATE.slice(0,want).reduce((a,s)=>a+s.marks,0) || 70;
     const body={ chapters, totalMarks, numQuestions:want, difficulty:$('difficulty').value };
@@ -276,7 +292,7 @@
       $('genStatus').textContent='';
       $('paperHost').scrollIntoView({behavior:'smooth'});
     }catch(e){
-      $('genStatus').innerHTML=`<span class="err">${e.message}</span>`;
+      $('genStatus').innerHTML=`<span class="err">${esc(e.message)}</span>`;
     }finally{
       $('assembleBtn').disabled=false;
     }
@@ -332,21 +348,21 @@
         ${h.explanation?`<p>${esc(h.explanation)}</p>`:''}
         ${h.encouragement?`<p style="font-style:italic;color:var(--gold-hover)">${esc(h.encouragement)}</p>`:''}
       </div>`;
-    }catch(e){ slot.innerHTML=`<div class="help err">${e.message}</div>`; }
+    }catch(e){ slot.innerHTML=`<div class="help err">${esc(e.message)}</div>`; }
   }
 
   // ── mark the whole paper ──
   async function markPaper(){
     const btn=$('submitBtn'); btn.disabled=true;
     $('statusMsg').innerHTML='<span class="spinner"></span>Marking…';
-    let awarded=0, max=0;
+    let awarded=0, max=0, failures=0;
     for(let i=0;i<paper.questions.length;i++){
       const q=paper.questions[i];
       const slot=$('mark-'+i);
       slot.innerHTML='<div class="mark"><span class="spinner"></span>Marking question '+(q.n||i+1)+'…</div>';
       try{
         const r=await postJSON('/api/grade', { question:q, answer:$('ans-'+i).value });
-        awarded+=r.awarded; max+=r.max;
+        awarded+=Number(r.awarded)||0; max+=Number(r.max)||0;
         slot.innerHTML=`<div class="mark ${esc(r.verdict)}">
           <div><span class="score">${r.awarded} / ${r.max}</span> &nbsp;<span class="lbl">${esc(r.verdict)}</span></div>
           <p>${esc(r.feedback)}</p>
@@ -355,10 +371,13 @@
           ${(r.verdict==='weak'||r.verdict==='off')?`<button class="btn btn-ghost" style="margin-top:8px" data-help2="${i}">Get support on this →</button>`:''}
         </div>`;
         const sb=slot.querySelector('[data-help2]'); if(sb) sb.addEventListener('click',()=>getHelp(i));
-      }catch(e){ slot.innerHTML=`<div class="mark off err">${e.message}</div>`; }
+      }catch(e){ failures++; slot.innerHTML=`<div class="mark off err">${esc(e.message)}</div>`; }
     }
     const pct=max?Math.round(100*awarded/max):0;
-    $('totalScore').innerHTML=`${awarded} / ${max} &nbsp;<small>(${pct}%)</small>`;
+    // A question that failed to mark is missing from the total, so say so rather than
+    // presenting a partial score as the whole paper.
+    $('totalScore').innerHTML=`${awarded} / ${max} &nbsp;<small>(${pct}%)</small>`
+      +(failures?` &nbsp;<small class="err">${failures} question${failures>1?'s':''} could not be marked — not counted</small>`:'');
     btn.disabled=false;
   }
   </script>

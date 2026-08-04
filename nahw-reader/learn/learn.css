@@ -405,3 +405,17 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
   color: var(--primary-container); font-weight: 600; }
 .mbody .box-label { font-size: 1rem; direction: rtl; text-align: right; }
 .mbody .box-label .en { margin-right: 10px; margin-left: 0; unicode-bidi: isolate; }
+
+/* ---- failure notices (progress that could not be saved / read) ---- */
+.learn-toast {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 200;
+  max-width: min(560px, calc(100vw - 24px));
+  background: var(--error-container, #ffdad6);
+  color: var(--on-error-container, #93000a);
+  border-left: 4px solid var(--error, #ba1a1a);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+  padding: 10px 14px;
+  font-size: .84rem; line-height: 1.45;
+}
