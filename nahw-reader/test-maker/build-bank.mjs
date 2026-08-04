@@ -143,6 +143,9 @@ function callClaude({ system, user }) {
     child.stderr.on('data', (d) => (err += d));
     child.on('error', (e) => reject(e.code === 'ENOENT'
       ? new Error('`claude` CLI not found. Install Claude Code and run `claude login`, or set CLAUDE_BIN.') : e));
+    // Writing the prompt to a child that never started (or already exited) fails on
+    // stdin; unhandled that would kill the build instead of reporting the chapter.
+    child.stdin.on('error', (e) => { if (e.code !== 'EPIPE') reject(e); });
     child.on('close', (code) => {
       let env;
       try { env = JSON.parse(out); } catch { /* not the envelope */ }
@@ -211,19 +214,40 @@ async function main() {
 
   const globals = loadChapterData();
 
-  // start from the existing bank so a per-chapter rebuild only replaces its slice
+  // The whole file is rewritten every run, so the existing questions of every chapter
+  // are kept per chapter and only replaced once that chapter regenerates successfully.
   const outPath = join(READER, 'questions-bank.js');
-  let bank = [];
-  if (existsSync(outPath) && only.length) {
+  const byChapter = new Map();
+  if (existsSync(outPath)) {
     const m = readFileSync(outPath, 'utf8').match(/QUESTION_BANK\s*=\s*(\[[\s\S]*?\]);/);
-    if (m) { try { bank = JSON.parse(m[1]); } catch { /* ignore, rebuild clean */ } }
-    bank = bank.filter((q) => !targets.some((t) => t.id === q.chapterId));
+    const unreadable = (why) => {
+      // A partial rebuild would silently drop every chapter it was not asked to build.
+      if (only.length) throw new Error(`${why} in ${outPath}. Rebuild the whole bank (no chapter ids) to recreate it.`);
+      console.warn(`! ${why} — rebuilding from scratch.`);
+    };
+    if (!m) unreadable('Could not find QUESTION_BANK');
+    else {
+      let parsed = null;
+      try { parsed = JSON.parse(m[1]); }
+      catch (e) { unreadable(`QUESTION_BANK is not valid JSON (${e.message})`); }
+      for (const q of (parsed || [])) {
+        if (!byChapter.has(q.chapterId)) byChapter.set(q.chapterId, []);
+        byChapter.get(q.chapterId).push(q);
+      }
+    }
   }
 
+  const failed = [];
   for (const c of targets) {
+    const kept = byChapter.get(c.id) || [];
+    const keepNote = kept.length ? ` — keeping the ${kept.length} question(s) already in the bank` : '';
     const blocks = globals[c.global];
     const text = blocksToText(blocks);
-    if (!text.trim()) { console.warn(`! ${c.id}: no text extracted, skipping`); continue; }
+    if (!text.trim()) {
+      console.warn(`! ${c.id}: no text extracted, skipping${keepNote}`);
+      failed.push(`${c.id}: no text extracted from ${c.global}`);
+      continue;
+    }
     process.stdout.write(`• ${c.id} (${c.en}) … `);
     const t0 = Date.now();
     try {
@@ -233,13 +257,13 @@ async function main() {
         try { items = extractJson(await callClaude({ system: SYSTEM, user: userPrompt(c, text, CANON_MARKS) })); break; }
         catch (e) { if (attempt >= 2) throw e; process.stdout.write('(retry) '); }
       }
-      let added = 0;
+      const produced = [];
       for (const it of (Array.isArray(items) ? items : [])) {
         const arch = String(it.archetype || '').trim();
         if (!ARCHETYPES.includes(arch)) continue;
         if (!it.promptEn) continue;
-        bank.push({
-          id: `${c.id}--${arch}--${slug(it.promptEn).slice(0, 32)}-${(bank.length + added).toString(36)}`,
+        produced.push({
+          id: `${c.id}--${arch}--${slug(it.promptEn).slice(0, 32)}-${produced.length.toString(36)}`,
           chapterId: c.id, chapterAr: c.ar, chapterEn: c.en,
           archetype: arch,
           marks: CANON_MARKS[arch],            // pin to canonical so papers sum cleanly
@@ -247,12 +271,33 @@ async function main() {
           promptAr: String(it.promptAr || '').trim(),
           markScheme: String(it.markScheme || '').trim(),
         });
-        added++;
       }
-      console.log(`${added} questions  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
+      // A reply we could parse but got nothing usable out of is a failure, not an
+      // instruction to empty the chapter.
+      if (!produced.length) throw new Error('the model returned no usable questions');
+      byChapter.set(c.id, produced);
+      console.log(`${produced.length} questions  (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
     } catch (e) {
-      console.log(`FAILED — ${e.message}`);
+      console.log(`FAILED — ${e.message}${keepNote}`);
+      failed.push(`${c.id}: ${e.message}`);
     }
+  }
+
+  const bank = [...byChapter.values()].flat();
+
+  const report = () => {
+    if (!failed.length) return;
+    console.error(`\n✗ ${failed.length} of ${targets.length} chapters did not build:`);
+    for (const f of failed) console.error(`  - ${f}`);
+    process.exitCode = 1;
+  };
+
+  // Never replace a usable bank with an empty one just because every call failed.
+  if (!bank.length) {
+    console.error('\n✗ nothing to write — leaving the existing bank untouched.');
+    report();
+    process.exitCode = 1;
+    return;
   }
 
   bank.sort((a, b) => CHAPTERS.findIndex((c) => c.id === a.chapterId) - CHAPTERS.findIndex((c) => c.id === b.chapterId)
@@ -265,6 +310,10 @@ async function main() {
 `;
   writeFileSync(outPath, `${header}const QUESTION_BANK =\n${JSON.stringify(bank, null, 2)};\n`);
   console.log(`\n✓ wrote ${bank.length} questions → ${outPath}`);
+
+  // The file is still written (the chapters that worked are worth keeping) but an
+  // incomplete build must not look like a clean one.
+  report();
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

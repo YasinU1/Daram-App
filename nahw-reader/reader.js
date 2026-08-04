@@ -237,8 +237,28 @@
       const bookId = (location.pathname.match(/books\/([^\/]+)/) || [0, 'book'])[1];
       const KEY = 'daram-comments:' + bookId;
       let store = {};
-      try { store = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { /* corrupt → start fresh */ }
-      const save = () => localStorage.setItem(KEY, JSON.stringify(store));
+      try {
+        store = JSON.parse(localStorage.getItem(KEY)) || {};
+      } catch (e) {
+        console.warn('stored comments for ' + bookId + ' could not be read — starting fresh', e);
+        alert('Your saved comments for this book could not be read (' + e.message + '), so the margin starts empty. '
+            + 'New comments will replace them once you save.');
+      }
+      /* A comment the reader believes is saved but isn't would be lost silently on
+         reload (private mode, full quota), so say so at the moment it fails. */
+      let saveFailed = false;
+      const save = () => {
+        try {
+          localStorage.setItem(KEY, JSON.stringify(store));
+          saveFailed = false;
+        } catch (e) {
+          console.error('could not save comments', e);
+          if (!saveFailed) {
+            saveFailed = true;
+            alert('This comment could not be saved (' + e.message + ') — it will disappear when you reload the page.');
+          }
+        }
+      };
 
       let chapter = null, ready = false, hoverCi = -1, draftCi = -1, editId = null;
       const list = () => store[chapter] || [];

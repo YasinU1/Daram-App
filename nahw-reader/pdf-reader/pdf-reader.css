@@ -279,3 +279,38 @@ body:not(.cmt-side) .pdf-cmt-rail { display: none; }
   .pdf-toolbar { flex-wrap: wrap; }
   .pt-left { display: none; }
 }
+
+/* ---- failure notices ---- */
+.toast-host {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 100;
+  display: flex; flex-direction: column; gap: 8px; align-items: center;
+  pointer-events: none;
+}
+.toast {
+  max-width: min(560px, calc(100vw - 24px));
+  background: var(--surface, #FBF8F0);
+  border: 1px solid #C9857C;
+  border-left: 4px solid #A33F35;
+  border-radius: var(--r-md, 8px);
+  box-shadow: 0 10px 30px rgba(40,30,10,.22);
+  padding: 10px 14px;
+  font-family: var(--sans, system-ui); font-size: .82rem; line-height: 1.45;
+  color: var(--ink, #2A2418);
+}
+
+.page-err {
+  margin: 10px 0;
+  padding: 12px 14px;
+  background: var(--surface, #FBF8F0);
+  border: 1px dashed #C9857C;
+  border-radius: var(--r-md, 8px);
+  font-family: var(--sans, system-ui); font-size: .82rem;
+  color: #A33F35;
+}
+.page-err button {
+  margin-left: 10px;
+  font-family: var(--sans, system-ui); font-size: .78rem; font-weight: 600;
+  background: none; border: none; padding: 0; cursor: pointer;
+  color: var(--gold-hover, #8F6D2C);
+}
