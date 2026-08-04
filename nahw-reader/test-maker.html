@@ -132,6 +132,8 @@
   <script src="books/kubra-nahw/maqsad1-bab2.js"></script>
   <!-- pre-generated question bank (built offline by test-maker/build-bank.mjs) -->
   <script src="questions-bank.js"></script>
+  <script src="lib/blocks-text.js"></script>
+  <script src="lib/paper.js"></script>
   <script>
   // ── chapter registry (the readable, "ready" chapters) ──
   const CHAPTERS = [
@@ -144,47 +146,7 @@
   ];
 
   // ── turn structured blocks into compact text for the model ──
-  function tokLine(w){
-    const ar=(w||[]).filter(t=>t&&t.a).map(t=>t.a).join(' ');
-    const en=(w||[]).filter(t=>t&&t.e).map(t=>t.e).join(' ');
-    return {ar,en};
-  }
-  function deepText(v){
-    if(v==null) return '';
-    if(typeof v==='string') return v;
-    if(Array.isArray(v)) return v.map(deepText).filter(Boolean).join(' ');
-    if(typeof v==='object'){
-      const parts=[];
-      for(const k of ['a','e','ar','en','label','labelEn','text','caption']) if(typeof v[k]==='string') parts.push(v[k]);
-      for(const k of Object.keys(v)) if(Array.isArray(v[k])) parts.push(deepText(v[k]));
-      return parts.join(' ');
-    }
-    return '';
-  }
-  function blocksToText(blocks){
-    const out=[];
-    for(const b of (blocks||[])){
-      if(!b||typeof b!=='object') continue;
-      switch(b.t){
-        case 'page': break;
-        case 'h1': out.push(`\n# ${b.ar||''}${b.en?'  ('+b.en+')':''}`); break;
-        case 'h2': out.push(`\n## ${b.ar||''}${b.en?'  ('+b.en+')':''}`); break;
-        case 'line': { const {ar,en}=tokLine(b.w); if(ar) out.push(`${ar}${en?'  — '+en:''}`); break; }
-        case 'box': {
-          out.push(`[${b.label||''}${b.labelEn?' / '+b.labelEn:''}]`);
-          (b.lines||[]).forEach(ln=>{const {ar,en}=tokLine(ln); if(ar) out.push(`  ${ar}${en?'  — '+en:''}`);});
-          break;
-        }
-        case 'table': {
-          if(b.head) out.push(`[table: ${[].concat(b.head).join(' | ')}]`);
-          (b.rows||[]).forEach(r=>out.push('  '+[].concat(r).join(' | ')));
-          break;
-        }
-        default: { const s=deepText(b); if(s) out.push(s); }
-      }
-    }
-    return out.join('\n');
-  }
+  const { blocksToText } = window.DaramBlocksText;
 
   // ── build chapter checkboxes ──
   const chapList=document.getElementById('chapList');
@@ -207,40 +169,9 @@
 
   // ── question bank (pre-generated, loaded from questions-bank.js) ──
   const BANK = (typeof QUESTION_BANK!=='undefined' && Array.isArray(QUESTION_BANK)) ? QUESTION_BANK : [];
-  // The Year 2 Term 1 template: archetype order + canonical marks.
-  const TEMPLATE = [
-    {archetype:'explain-line',          marks:5},
-    {archetype:'state-types',           marks:6},
-    {archetype:'compare',               marks:8},
-    {archetype:'explain-statement',     marks:15},
-    {archetype:'define-types-examples', marks:15},
-    {archetype:'enumerate',             marks:12},
-    {archetype:'classify-tarkib',       marks:9},
-  ];
-  const shuffle=(a)=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+  const { assemblePaper, templateMarks } = window.DaramPaper;
 
   function selectedIds(){ return [...chapList.querySelectorAll('input:checked')].map(i=>i.value); }
-
-  // Assemble a paper INSTANTLY by sampling the bank to fit the template.
-  function assemblePaper(ids, want){
-    const pool=BANK.filter(q=>ids.includes(q.chapterId));
-    const byArch={}; for(const q of pool){ (byArch[q.archetype]||(byArch[q.archetype]=[])).push(q); }
-    Object.values(byArch).forEach(shuffle);
-    const used=new Set(); const picked=[];
-    // 1) follow the template order, one question per archetype slot
-    for(const slot of TEMPLATE){
-      const cand=(byArch[slot.archetype]||[]).find(q=>!used.has(q.id));
-      if(cand){ used.add(cand.id); picked.push(cand); if(picked.length>=want) break; }
-    }
-    // 2) if the chapters can't fill the template, top up with any unused questions
-    if(picked.length<want){
-      for(const q of shuffle(pool.slice())){ if(used.has(q.id)) continue; used.add(q.id); picked.push(q); if(picked.length>=want) break; }
-    }
-    return {
-      title:`Practice Paper — ${ids.length===1?(CHAPTERS.find(c=>c.id===ids[0])||{}).en||'selected chapter':ids.length+' chapters'}`,
-      questions:picked.map((q,i)=>({n:i+1, type:q.archetype, marks:q.marks, promptEn:q.promptEn, promptAr:q.promptAr, markScheme:q.markScheme})),
-    };
-  }
 
   function doAssemble(){
     const ids=selectedIds();
@@ -248,7 +179,7 @@
     const want=Math.max(1, +$('numQuestions').value||7);
     const available=BANK.filter(q=>ids.includes(q.chapterId)).length;
     if(!available){ $('genStatus').innerHTML='<span class="err">No bank questions for these chapters yet — try “Generate a fresh paper”, or run build-bank.mjs.</span>'; return; }
-    paper=assemblePaper(ids, want);
+    paper=assemblePaper({ bank:BANK, ids, want, chapters:CHAPTERS });
     renderPaper(paper);
     const sum=paper.questions.reduce((a,q)=>a+(+q.marks||0),0);
     $('genStatus').innerHTML=`Assembled ${paper.questions.length} questions · ${sum} marks${paper.questions.length<want?' (bank had fewer to offer)':''}`;
@@ -265,7 +196,7 @@
     if(!ids.length){ $('genStatus').innerHTML='<span class="err">Pick at least one chapter.</span>'; return; }
     const chapters=ids.map(id=>{ const c=CHAPTERS.find(x=>x.id===id); return {id, ar:c.ar, en:c.en, text:blocksToText(c.blocks())}; });
     const want=Math.max(1, +$('numQuestions').value||7);
-    const totalMarks=TEMPLATE.slice(0,want).reduce((a,s)=>a+s.marks,0) || 70;
+    const totalMarks=templateMarks(want);
     const body={ chapters, totalMarks, numQuestions:want, difficulty:$('difficulty').value };
 
     $('assembleBtn').disabled=true;

@@ -25,3 +25,22 @@ node server.js
 ```
 
 No API key needed — it uses your local `claude` CLI login. See `.env.example` for optional overrides.
+
+## Tests
+
+Unit tests for the shared logic modules (`nahw-reader/lib/`, `nahw-reader/test-maker/lib/`) run on
+Node's built-in test runner — no test dependencies.
+
+```sh
+npm test               # run the suite
+npm run test:coverage  # run it with a coverage report
+```
+
+The reusable logic lives in modules that both the browser pages and Node load:
+
+| Module | Used by |
+|---|---|
+| `nahw-reader/lib/srs.js` | `learn/learn.js` — spaced-review scheduling |
+| `nahw-reader/lib/paper.js` | `test-maker.html` — paper assembly from the question bank |
+| `nahw-reader/lib/blocks-text.js` | `test-maker.html`, `test-maker/build-bank.mjs` — block data → prompt text |
+| `nahw-reader/test-maker/lib/*.mjs` | `test-maker/server.js`, `test-maker/build-bank.mjs` — JSON extraction, marking, bank shaping, `.env` loading |

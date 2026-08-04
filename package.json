@@ -1,0 +1,11 @@
+{
+  "name": "daram",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Daram — Arabic grammar study apps. Unit tests for the shared logic modules.",
+  "scripts": {
+    "test": "node --test test/",
+    "test:coverage": "node --test --experimental-test-coverage test/",
+    "pretest": "npm --prefix nahw-reader/test-maker install --no-audit --no-fund"
+  }
+}
