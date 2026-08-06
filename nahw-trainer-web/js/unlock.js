@@ -1,27 +1,44 @@
-// Hidden unlock widget -- a near-invisible dot in the bottom-right corner.
-// Click it, type the code, Enter: loads the ported desktop progress (see
-// desktop-save.js) into localStorage under persistence.js's SAVE_KEY and
-// reloads. This is obfuscation, not real security -- the save data and the
-// code both live in this file, readable by anyone who opens dev tools.
+// Hidden unlock widget -- a small lock glyph pinned to the top-right
+// corner, in line with the app header/nav bar. Click it, type the code,
+// Enter: loads the ported desktop progress (see desktop-save.js) into
+// localStorage under persistence.js's SAVE_KEY and reloads. This is
+// obfuscation, not real security -- the save data and the code both live in
+// this file, readable by anyone who opens dev tools.
+//
+// Fixed to the viewport (not appended inside .app-header) deliberately --
+// main.js's rerender() does root.innerHTML = html on every render, which
+// would wipe out any node placed inside #root/.app-header. Living on
+// document.body and lining up its own top offset with the header's padding
+// is what keeps it visually "in the nav bar" without needing to survive
+// that wipe.
 import { DESKTOP_SAVE } from './desktop-save.js';
 
 const SAVE_KEY = 'an-nahw-save-data';
 const CODE = '2';
 
+// Same lock glyph render.js draws for locked modules/lessons (see its
+// `ICONS.lock` path), reused here so it reads as part of the same icon set.
+const LOCK_SVG = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>`;
+
 const dot = document.createElement('button');
 dot.type = 'button';
 dot.setAttribute('aria-label', '');
 dot.tabIndex = -1;
+dot.innerHTML = LOCK_SVG;
 dot.style.cssText = [
   'position:fixed',
-  'bottom:10px',
-  'right:10px',
-  'width:9px',
-  'height:9px',
-  'border-radius:50%',
+  'top:24px',
+  'right:18px',
+  'width:20px',
+  'height:20px',
+  'display:flex',
+  'align-items:center',
+  'justify-content:center',
+  'border-radius:4px',
   'border:none',
   'padding:0',
-  'background:rgba(120,100,70,0.16)',
+  'background:none',
+  'color:rgba(120,100,70,0.35)',
   'cursor:default',
   'z-index:99999',
 ].join(';');
@@ -43,8 +60,8 @@ dot.addEventListener('click', () => {
   input.autocomplete = 'off';
   input.style.cssText = [
     'position:fixed',
-    'bottom:8px',
-    'right:24px',
+    'top:25px',
+    'right:42px',
     'width:36px',
     'height:15px',
     'font-size:11px',
