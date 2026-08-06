@@ -38,11 +38,14 @@
     <div class="kp-inner">
       <label for="keyInput">Gemini API key</label>
       <input id="keyInput" type="password" placeholder="AQ..." autocomplete="off" />
+      <label for="keyInputAnthropic">Anthropic API key <span class="kp-sub">(fallback)</span></label>
+      <input id="keyInputAnthropic" type="password" placeholder="sk-ant-..." autocomplete="off" />
       <div class="kp-row">
         <button id="btnKeySave" class="pt-btn primary">Save</button>
         <button id="btnKeyClose" class="pt-btn">Close</button>
       </div>
-      <p class="kp-hint">Stored only in this browser's localStorage. Used to read &amp; translate the words you highlight.</p>
+      <p class="kp-hint">Stored only in this browser's localStorage. Used to read &amp; translate the words you highlight.
+        Gemini is tried first; if it fails, Anthropic is tried next. Either key alone is enough.</p>
     </div>
   </div>
 

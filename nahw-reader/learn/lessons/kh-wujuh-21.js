@@ -7,7 +7,7 @@ window.DARAM_COURSES = window.DARAM_COURSES || [];
 
 window.DARAM_COURSES.push({
   id: 'kh-wujuh-21',
-  num: 21,
+  num: 23,
   titleAr: 'وُجُوهُ الْكَلِمَاتِ: إِي ← خَلَا وَعَدَا',
   titleEn: 'Faces of words — ī → khalā & ʿadā',
   pages: '237–242',

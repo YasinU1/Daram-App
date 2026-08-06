@@ -61,6 +61,9 @@ body { background: var(--bg-deep, #F2EDE2); }
   padding: 8px 10px; border: 1px solid var(--border, #DDD5C2); border-radius: var(--r-md, 8px);
   background: #fff; color: var(--ink, #2A2418);
 }
+/* Pull each input up against its own label so the two key groups read as pairs. */
+.kp-inner label + input { margin-top: -4px; }
+.kp-sub { font-weight: 400; text-transform: none; letter-spacing: 0; opacity: .75; }
 .kp-row { display: flex; gap: 8px; }
 .kp-hint { font-size: .72rem; color: var(--ink-soft, #8A8069); margin: 0; line-height: 1.45; }
 
@@ -158,33 +161,118 @@ body.toc-open .viewer { margin-left: 252px; }
 .hl.err { background: rgba(200,80,70,.3); }
 @keyframes hlPulse { 0%,100% { opacity: .45; } 50% { opacity: .95; } }
 
-/* ---- margin comments (right rail per page) ---- */
-.pdf-cmt-rail { position: relative; width: 280px; flex: none; }
-body:not(.cmt-side) .pdf-cmt-rail { display: none; }
-
-/* card base styles come from ../styles.css (.cmt-card etc.); rail-local tweaks: */
-.pdf-cmt-rail .cmt-card { position: absolute; left: 0; right: 0; }
-
-/* floating editor for narrow windows (rail hidden) */
-.cmt-card.floating {
-  position: fixed !important; left: auto; right: auto;
-  width: 280px; z-index: 85;
-  box-shadow: 0 14px 38px rgba(40,30,10,.28);
-}
-.pdf-cmt-rail .cmt-card.flash { box-shadow: 0 0 0 3px var(--gold-soft, rgba(176,138,64,.25)); border-left-color: var(--gold, #B08A40); }
-
-/* anchor tick on the page edge */
-.cmt-marker {
-  position: absolute; right: -4px; z-index: 7;
-  width: 8px; height: 22px; margin-top: -4px;
-  border-radius: 3px;
-  background: var(--gold-line, rgba(176,138,64,.5));
-  border: 1px solid var(--gold, #B08A40);
+/* ---- anchored comment pins ---- */
+/* left/top are page-relative % set by the JS, so zoom and re-render keep the
+   pin glued to the spot it was dropped on */
+.cmt-pin {
+  position: absolute; z-index: 7;
+  width: 13px; height: 13px; padding: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--gold, #B08A40);
+  border: 1px solid var(--gold-hover, #8F6D2C);
+  box-shadow: 0 0 0 3px rgba(176,138,64,.20), 0 1px 3px rgba(40,30,10,.28);
   cursor: pointer;
-  transition: background .15s ease, transform .15s ease;
+  transition: transform .14s ease, box-shadow .14s ease;
 }
-.cmt-marker:hover, .cmt-marker.hot { background: var(--gold, #B08A40); transform: scaleX(1.4); }
-.cmt-marker.draft { background: rgba(120,150,220,.6); border-color: #5A79C4; }
+.cmt-pin:hover, .cmt-pin.open {
+  transform: translate(-50%, -50%) scale(1.22);
+  box-shadow: 0 0 0 5px rgba(176,138,64,.28), 0 2px 5px rgba(40,30,10,.3);
+}
+.cmt-pin:focus-visible { outline: 2px solid var(--gold-hover, #8F6D2C); outline-offset: 3px; }
+.cmt-pin.draft {
+  background: rgba(120,150,220,.6); border-color: #5A79C4;
+  box-shadow: 0 0 0 3px rgba(120,150,220,.24), 0 1px 3px rgba(20,30,60,.28);
+}
+.cmt-pin.draft:hover, .cmt-pin.draft.open {
+  box-shadow: 0 0 0 5px rgba(120,150,220,.32), 0 2px 5px rgba(20,30,60,.3);
+}
+
+/* ---- the bubble the pin expands into ---- */
+/* left/top land on the anchor; --tip-dx/--tip-dy are the offsets placeTip()
+   works out so the bubble stays on screen. Below .hl-popup (80) and .ar-kb (90). */
+.cmt-tip {
+  position: absolute; z-index: 55;
+  width: max-content; min-width: 200px; max-width: 272px;
+  transform: translate(var(--tip-dx, 0), var(--tip-dy, 0)) scale(.96);
+  transform-origin: left center;
+  opacity: 0;
+  /* only a faded-in bubble takes the pointer — a fading one would sit there as an
+     invisible hit target, swallowing clicks and firing its own hover handlers */
+  pointer-events: none;
+  background: var(--raised, #FFFDF6);
+  border: 1px solid var(--border, #DDD5C2);
+  border-radius: var(--r-md, 8px);
+  box-shadow: var(--sh-md, 0 6px 20px rgba(40,30,10,.16));
+  direction: ltr; text-align: left;
+  transition: opacity .15s ease, transform .15s ease;
+}
+/* the textarea has no useful intrinsic width — pin the editor to a fixed one */
+.cmt-tip.editing { width: 272px; }
+.cmt-tip.flip { transform-origin: right center; }
+.cmt-tip.in { opacity: 1; pointer-events: auto; transform: translate(var(--tip-dx, 0), var(--tip-dy, 0)) scale(1); }
+.cmt-tip.closing { opacity: 0; pointer-events: none; }
+/* an editor with unsaved text refuses to be collapsed by a pin click — a refused click that
+   simply did nothing would read as a broken pin, so the bubble says no */
+.cmt-tip.nudge { animation: cmt-nudge .22s ease; }
+@keyframes cmt-nudge {
+  0%, 100% { transform: translate(var(--tip-dx, 0), var(--tip-dy, 0)) scale(1); }
+  30%      { transform: translate(calc(var(--tip-dx, 0) - 5px), var(--tip-dy, 0)) scale(1); }
+  70%      { transform: translate(calc(var(--tip-dx, 0) + 5px), var(--tip-dy, 0)) scale(1); }
+}
+
+.cmt-tip-body { position: relative; padding: 10px 12px 9px; }
+/* the textarea is full-width, so give the × a row of its own */
+.cmt-tip.editing .cmt-tip-body { padding-top: 24px; }
+
+/* arrow: ::before is the 1px border, ::after the fill laid over it */
+.cmt-tip::before, .cmt-tip::after {
+  content: ''; position: absolute;
+  top: var(--tip-ay, 20px); margin-top: -8px;
+  width: 0; height: 0;
+  border: 8px solid transparent;
+}
+.cmt-tip::before { left: -8px; border-left-width: 0; border-right-color: var(--border, #DDD5C2); }
+.cmt-tip::after  { left: -7px; border-left-width: 0; border-right-color: var(--raised, #FFFDF6); }
+.cmt-tip.flip::before {
+  left: auto; right: -8px;
+  border-left-width: 8px; border-right-width: 0;
+  border-right-color: transparent; border-left-color: var(--border, #DDD5C2);
+}
+.cmt-tip.flip::after {
+  left: auto; right: -7px;
+  border-left-width: 8px; border-right-width: 0;
+  border-right-color: transparent; border-left-color: var(--raised, #FFFDF6);
+}
+/* clamped so hard the bubble sits over its own anchor — no arrow beats a lying one */
+.cmt-tip.no-arrow::before, .cmt-tip.no-arrow::after { display: none; }
+
+.cmt-tip-x {
+  position: absolute; top: 3px; right: 4px;
+  width: 19px; height: 19px; padding: 0;
+  font-family: var(--sans, system-ui); font-size: 15px; line-height: 1;
+  color: var(--ink-soft, #8A8069);
+  background: none; border: none; border-radius: var(--r-sm, 4px);
+  cursor: pointer; opacity: .6;
+  transition: color .12s ease, background .12s ease, opacity .12s ease;
+}
+.cmt-tip-x:hover { color: var(--gold-hover, #8F6D2C); background: var(--gold-soft, rgba(176,138,64,.12)); opacity: 1; }
+
+/* base .cmt-text/.cmt-foot/.cmt-btn/.cmt-input live in ../styles.css — bubble tweaks only.
+   text-align:start (not the bubble's ltr) so dir="auto" Arabic notes stay right-aligned. */
+.cmt-tip .cmt-text {
+  padding-right: 16px; text-align: start;
+  max-height: 230px; overflow-y: auto;
+}
+.cmt-tip .cmt-foot { margin-top: 8px; }
+/* the shared stylesheet makes the date look clickable; in the bubble it is just a label */
+.cmt-tip .cmt-when { cursor: default; }
+.cmt-tip .cmt-when:hover { color: var(--ink-soft, #8A8069); text-decoration: none; }
+.cmt-tip .cmt-input {
+  text-align: start;
+  min-height: 46px; max-height: 240px; /* no fixed height — the JS auto-grows it */
+  overflow-y: auto;
+}
 
 /* ---- popup ---- */
 .hl-popup {

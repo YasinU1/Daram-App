@@ -7,7 +7,7 @@ window.DARAM_COURSES = window.DARAM_COURSES || [];
 
 window.DARAM_COURSES.push({
   id: 'kh-wujuh-23',
-  num: 23,
+  num: 25,
   titleAr: 'وُجُوهُ الْكَلِمَاتِ: كَمْ ← لَوْلَا',
   titleEn: 'Faces of words — kam → lawlā',
   pages: '246–249',

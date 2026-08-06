@@ -7,7 +7,7 @@ window.DARAM_COURSES = window.DARAM_COURSES || [];
 
 window.DARAM_COURSES.push({
   id: 'kh-wujuh-20',
-  num: 20,
+  num: 22,
   titleAr: 'وُجُوهُ الْكَلِمَاتِ: الْهَمْزَةُ ← أَنْ',
   titleEn: 'Faces of words — the hamzah → an',
   pages: '233–237',

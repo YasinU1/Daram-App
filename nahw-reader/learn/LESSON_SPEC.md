@@ -271,17 +271,18 @@ A separate "build backwards" pass authors the الخاتمة's particle dictiona
 book-only courses above, **each of these carries BOTH a `page:` pill AND an interactive matn
 panel**: the passage is transcribed word-by-word into its own `books/kubra-nahw/khatima-wujuh-NN.js`
 (var `DATA_KH_WNN`), loaded in learn.html before its lesson. Courses use `num:` to sit at their
-true chapter position (20–25); nav is ordered ascending. Source note:
+true chapter position (**22–27** — bumped up from 20–25 in 2026-08-06 to make room for ch 19–21,
+see below); nav is ordered ascending. Source note:
 `books/kubra-nahw/notes/khatima_04_wujuh-al-kalimat.md`.
 
 | `num` | Course id | Lesson file | Matn (var) | Entries | Pages | ✓ |
 |---|---|---|---|---|---|:--:|
-| 20 | `kh-wujuh-20` | `lessons/kh-wujuh-20.js` | `DATA_KH_W20` | الهمزة · إذْ · إذا · أل · أم · إمّا · إنْ · أنْ | 233–237 | ✅ |
-| 21 | `kh-wujuh-21` | `lessons/kh-wujuh-21.js` | `DATA_KH_W21` | إي · أيْ · أيّ · بل · التاء · حتى · حاشا · خلا/عدا | 237–242 | ✅ |
-| 22 | `kh-wujuh-22` | `lessons/kh-wujuh-22.js` | `DATA_KH_W22` | ذا · ذو · عسى · غير · الفاء · قد · الكاف · كلّا | 242–245 | ✅ |
-| 23 | `kh-wujuh-23` | `lessons/kh-wujuh-23.js` | `DATA_KH_W23` | كم · كي · كيف · اللام · لا · لمّا · لو · لولا | 246–249 | ✅ |
-| 24 | `kh-wujuh-24` | `lessons/kh-wujuh-24.js` | `DATA_KH_W24` | ليس · ما الاسمية · ما الحرفية · متى · مَن · منذ · النون · نعم | 249–253 | ✅ |
-| 25 | `kh-wujuh-tail` | `lessons/kh-wujuh-tail.js` | `DATA_KH_WT` | الواو · الياء (+ ختام الكتاب) | 253–254 | ✅ |
+| 22 | `kh-wujuh-20` | `lessons/kh-wujuh-20.js` | `DATA_KH_W20` | الهمزة · إذْ · إذا · أل · أم · إمّا · إنْ · أنْ | 233–237 | ✅ |
+| 23 | `kh-wujuh-21` | `lessons/kh-wujuh-21.js` | `DATA_KH_W21` | إي · أيْ · أيّ · بل · التاء · حتى · حاشا · خلا/عدا | 237–242 | ✅ |
+| 24 | `kh-wujuh-22` | `lessons/kh-wujuh-22.js` | `DATA_KH_W22` | ذا · ذو · عسى · غير · الفاء · قد · الكاف · كلّا | 242–245 | ✅ |
+| 25 | `kh-wujuh-23` | `lessons/kh-wujuh-23.js` | `DATA_KH_W23` | كم · كي · كيف · اللام · لا · لمّا · لو · لولا | 246–249 | ✅ |
+| 26 | `kh-wujuh-24` | `lessons/kh-wujuh-24.js` | `DATA_KH_W24` | ليس · ما الاسمية · ما الحرفية · متى · مَن · منذ · النون · نعم | 249–253 | ✅ |
+| 27 | `kh-wujuh-tail` | `lessons/kh-wujuh-tail.js` | `DATA_KH_WT` | الواو · الياء (+ ختام الكتاب) | 253–254 | ✅ |
 
 **Progress (2026-07-18):** ch 25 (tail) pre-existed; this pass added **ch 20–24 (5 courses /
 26 sections)** working backward, covering the whole dictionary الهمزة→نعم (pp. 233–253). Each
@@ -289,8 +290,37 @@ has a transcribed matn file + page-stamped teach cards + 2–3 MCQ + 1 written p
 Validated: `scratchpad/check-wujuh.js` per course (matn range/check/focus, mcq bounds) — 0 errors;
 full learn.html headless load (Playwright) — **36 scripts, 24 courses, 0 console errors, no
 matn-check warnings, no dup ids**; ch-20 section driven end-to-end (matn panel renders, "Book p.
-233" pill shows). **Next 🔜:** continue backward into the الخاتمة orthography فصول (الوقف p.232,
-الوصل 230–231, الرسم 228–229) then أحكام الفعل/الاسم (pp. 200–227) — notes already on disk.
+233" pill shows).
+
+---
+
+# الخاتمة · أحكام الاسم / أحكام الفعل / orthography — pp. 200–232 (ch 19–21, closes the gap to وجوه الكلمات)
+
+Authored **2026-08-06** directly from the already-written backward-pass notes in
+`books/kubra-nahw/notes/ahkam-ism_*.md`, `ahkam-fil_*.md`, and `khatima_01/02/03_*.md` (see
+`books/kubra-nahw/notes/NOTES_PROGRESS.md`) — these 19 notes existed but had no learn sections
+yet. NO matn panels (same reasoning as the book-only courses: reader transcription does not
+reach these pages) — every teach card carries `page:`. **No bank steps, no `written` steps**
+(key-idea + MCQ only, per request — ADHD-friendly: max 3 points + 2 examples per card).
+
+| `num` | Course id | Lesson file | Sections | Pages | ✓ |
+|---|---|---|---|---|:--:|
+| 19 | `kh-ahkam-ism` | `lessons/kh-ahkam-ism.js` | 12 — أقسام الاسم · الضمير (أشكال/استعمال) · العلم والمعرَّف بأل · الإشارة/الموصول/المضاف · النكرة · التذكير والتأنيث · المثنى · المجموع · التصغير والنسبة · العدد (أقسام/تذكير · إفراد/إعراب) | 200–219 | ✅ |
+| 20 | `kh-ahkam-fil` | `lessons/kh-ahkam-fil.js` | 7 — الأزمنة الثلاثة · المبني للفاعل/المفعول · تصرف الفعل · نفي الفعل · تأكيد الفعل · تأنيث الفعل · توحيد الفعل | 220–227 | ✅ |
+| 21 | `kh-khatima-rasm` | `lessons/kh-khatima-rasm.js` | 3 — رسم الحروف · الوصل · الوقف | 228–232 | ✅ |
+
+**Totals:** 3 courses · 22 sections · 49 teach · 53 MCQ · 0 written. Validated: node vm full-load
+of all 37 lesson files — 0 syntax errors, 0 dup course/section ids, all MCQ choices=4 with
+`correct` in range and `why` present, and a targeted check confirms zero `written` steps across
+these 3 new courses. `learn.html` updated: 3 new script tags inserted before the (now-renumbered)
+`kh-wujuh-*` tags; kh-wujuh's `num:` bumped 20→22 … 25→27 in each lesson file (see table above).
+
+**Next 🔜:** the real remaining gap is **pp. 171–199** — شبه الجملة (172–175, closes the forward
+learn pass at m2-tawabi/p.170) and المقصد الثالث في الإعراب (176–199) — **no notes exist yet for
+this range** (see `NOTES_PROGRESS.md`); would need fresh note-writing from the PDF before a
+learn course can be built, unlike ch 19–21 above which had ready notes. Once that range has
+notes, a course at `num: 18.5`-equivalent (or renumber again) closes the book-only nav from 1
+through 27 with no gaps.
 
 ---
 

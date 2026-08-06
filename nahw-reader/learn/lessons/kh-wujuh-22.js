@@ -7,7 +7,7 @@ window.DARAM_COURSES = window.DARAM_COURSES || [];
 
 window.DARAM_COURSES.push({
   id: 'kh-wujuh-22',
-  num: 22,
+  num: 24,
   titleAr: 'وُجُوهُ الْكَلِمَاتِ: ذَا ← كَلَّا',
   titleEn: 'Faces of words — dhā → kallā',
   pages: '242–245',

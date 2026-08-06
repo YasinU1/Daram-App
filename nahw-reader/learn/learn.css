@@ -223,7 +223,7 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
   border-top: 1px solid rgba(191, 200, 201, .3); border-radius: 0 0 var(--r-def) var(--r-def);
   margin: -1px 0 0; padding: 12px 24px 16px; }
 
-/* bilingual example bento grid */
+/* bilingual example bento grid (legacy 2-col; still used by older sections) */
 .ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 700px) { .ex-grid { grid-template-columns: 1fr; } }
 .ex-cell { background: var(--surface-container-low); border: 1px solid rgba(191, 200, 201, .3);
@@ -235,6 +235,17 @@ html, body { margin: 0; padding: 0; background: var(--background); color: var(--
 .ex-cell .xfoot { border-top: 1px solid rgba(191, 200, 201, .2); padding-top: 12px; }
 .ex-cell .xnote { color: var(--secondary); display: block; margin-bottom: 4px; }
 .ex-cell .xen { font-size: 15px; color: var(--on-surface); }
+
+/* worked-examples box: one stacked, labelled, divided list (replaces the bento grid) */
+.ex-box { background: var(--surface-container-low); border: 1px solid rgba(191, 200, 201, .35);
+  border-radius: var(--r-def); padding: 22px 24px 6px; margin: 0 0 24px; }
+.ex-boxlabel { color: var(--secondary); margin: 0 0 14px; }
+.ex-item { padding: 0 0 16px; }
+.ex-item + .ex-item { border-top: 1px solid rgba(191, 200, 201, .3); padding-top: 16px; }
+.ex-item .xar { font-family: var(--body-ar); direction: rtl; text-align: right; font-size: 26px;
+  line-height: 1.8; color: var(--primary); display: block; margin-bottom: 6px; }
+.ex-item .xen { font-size: 15px; color: var(--on-surface); display: block; margin-bottom: 4px; }
+.ex-item .xnote { font-size: 14px; color: var(--secondary); display: block; }
 
 /* ── action rows ──────────────────────────────────────────────── */
 .actionbar { display: flex; justify-content: space-between; align-items: center;

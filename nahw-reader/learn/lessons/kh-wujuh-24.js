@@ -8,7 +8,7 @@ window.DARAM_COURSES = window.DARAM_COURSES || [];
 
 window.DARAM_COURSES.push({
   id: 'kh-wujuh-24',
-  num: 24,
+  num: 26,
   titleAr: 'وُجُوهُ الْكَلِمَاتِ: لَيْسَ ← نَعَمْ',
   titleEn: 'Faces of words — laysa → naʿam',
   pages: '249–253',

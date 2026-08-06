@@ -666,17 +666,16 @@
       pad.append(ul);
     }
     if (step.examples) {
-      const g = el('div', 'ex-grid');
+      const box = el('div', 'ex-box');
+      box.append(el('div', 'ex-boxlabel label-caps', 'Worked examples'));
       step.examples.forEach(x => {
-        const c = el('div', 'ex-cell');
-        c.append(el('span', 'xar', x.ar));
-        const f = el('div', 'xfoot');
-        if (x.note) f.append(el('span', 'xnote label-caps', fmt(x.note)));
-        f.append(el('span', 'xen', fmt(x.en || '')));
-        c.append(f);
-        g.append(c);
+        const it = el('div', 'ex-item');
+        it.append(el('span', 'xar', x.ar));
+        it.append(el('span', 'xen', fmt(x.en || '')));
+        if (x.note) it.append(el('span', 'xnote', fmt(x.note)));
+        box.append(it);
       });
-      pad.append(g);
+      pad.append(box);
     }
     if (step.after) pad.append(el('p', 'prose synth', fmt(step.after)));
     paper.append(pad);

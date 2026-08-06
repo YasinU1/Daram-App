@@ -1,0 +1,3169 @@
+/* ==========================================================================
+   Nahw Trainer — "Classical" design system.
+   Editorial, book-like: a soft paper ground, serif type, hairline rules
+   carrying the structure, colour applied as stroke rather than fill. Five
+   colour themes and three Arabic typefaces, switchable at runtime and
+   persisted (see js/main.js applyTheme/applyFace) -- every theme sets six
+   --color-* custom properties on <html data-theme="...">, and everything
+   else in this file reads var(--color-*) or one of the legacy alias names
+   below, so no rule branches on the active theme directly.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Amiri';
+  src: url('vendor/fonts/Amiri-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Amiri';
+  src: url('vendor/fonts/Amiri-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('vendor/fonts/Lora-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('vendor/fonts/Lora-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('vendor/fonts/Lora-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+/* Variable font -- Google serves every static weight instance from this one
+   file (see the woff2's own @font-face set, which does the same); the two
+   declarations below just register the instances this app actually uses.
+   Latin UI chrome only -- has no Arabic glyphs, so it never touches h1-h3
+   when their content is Arabic (see the Amiri rule below). */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('vendor/fonts/CormorantGaramond-Variable.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('vendor/fonts/CormorantGaramond-Variable.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* Naskh (default Arabic typeface) -- only the Arabic-script subset is
+   self-hosted (matches the Amiri/Lora pattern above); weight 700 points at
+   the same file as 400 because upstream Noto Naskh Arabic has no distinct
+   bold instance for Arabic glyphs either. */
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  src: url('vendor/fonts/NotoNaskhArabic-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  src: url('vendor/fonts/NotoNaskhArabic-Regular.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Kufi heading face (the "Kufi headings" typeface option, and the header's
+   نحو wordmark). Arabic-script subset only, single weight. */
+@font-face {
+  font-family: 'Reem Kufi';
+  src: url('vendor/fonts/ReemKufi-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-en: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-heading: var(--font-display);
+
+  /* Arabic body/heading faces -- overridden inline on <html> per the user's
+     chosen typeface (see js/main.js applyFace). These are just the
+     'naskh'-default fallbacks so the page isn't unstyled before boot. */
+  --font-ar: 'Noto Naskh Arabic', 'Simplified Arabic', 'Traditional Arabic', serif;
+  --font-ar-heading: var(--font-ar);
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-card: 0 2px 10px rgba(43, 36, 28, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  --shadow-whisper: 0 1px 2px rgba(43, 36, 28, 0.08);
+  --shadow-md: 0 8px 22px rgba(43, 36, 28, 0.12);
+}
+
+/* ---------- Themes ---------- */
+/* Six variables per theme (--color-divider is the seventh, derived from
+   --color-text so it always follows the active theme's ink). manuscript is
+   both the :root default (in case data-theme hasn't been set yet) and the
+   explicit [data-theme="manuscript"] case. lamp is the only dark theme --
+   its --color-accent-600 is deliberately LIGHTER than its base accent
+   (hover on a dark ground goes up in value, not down); do not "fix" that. */
+:root,
+[data-theme='manuscript'] {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201f1d;
+  --color-accent: #b68235;
+  --color-accent-600: #a06f24;
+}
+[data-theme='mushaf'] {
+  --color-bg: #f7f1e1;
+  --color-surface: #efe7d2;
+  --color-text: #22271f;
+  --color-accent: #2f6b4f;
+  --color-accent-600: #24573f;
+}
+[data-theme='lamp'] {
+  --color-bg: #16130f;
+  --color-surface: #211d16;
+  --color-text: #ece3d1;
+  --color-accent: #c9a04a;
+  --color-accent-600: #d8b25c;
+}
+[data-theme='ink'] {
+  --color-bg: #eceef1;
+  --color-surface: #e0e4ea;
+  --color-text: #1b2028;
+  --color-accent: #3d4d80;
+  --color-accent-600: #2f3d68;
+}
+[data-theme='sepia'] {
+  --color-bg: #ece0ca;
+  --color-surface: #e2d4b9;
+  --color-text: #2d2115;
+  --color-accent: #7d5029;
+  --color-accent-600: #653f1e;
+}
+:root {
+  --color-divider: color-mix(in srgb, var(--color-text) 18%, transparent);
+}
+
+/* ---------- Legacy colour aliases ---------- */
+/* Every pre-existing rule in this file (module cards, buttons, tags,
+   exercise choices, tarkeeb, progress bars...) was written against these
+   names, not --color-*. Deriving them from the active theme's tokens here
+   re-themes the whole app without touching every one of those rules
+   individually. Home, Settings, and the shared header/footer are written
+   fresh against var(--color-*) directly, per the design handoff. */
+:root {
+  --paper: var(--color-bg);
+  --paper-deep: var(--color-surface);
+  --card: var(--color-bg);
+  --card-border: var(--color-divider);
+  --ink: var(--color-text);
+  --ink-soft: color-mix(in srgb, var(--color-text) 70%, transparent);
+  --ink-dim: color-mix(in srgb, var(--color-text) 50%, transparent);
+  --gold: var(--color-accent);
+  --gold-bright: var(--color-accent-600);
+  --maroon: var(--color-accent-600);
+  --maroon-deep: var(--color-accent-600);
+  --accent-100: color-mix(in srgb, var(--color-accent) 12%, var(--color-bg));
+  --accent-200: color-mix(in srgb, var(--color-accent) 24%, var(--color-bg));
+  --accent-500: var(--color-accent);
+  --accent-600: var(--color-accent-600);
+  --accent-700: var(--color-accent-600);
+  --accent-800: var(--color-accent-600);
+  --accent-900: var(--color-accent-600);
+  --neutral-200: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+  --neutral-300: color-mix(in srgb, var(--color-text) 20%, var(--color-bg));
+  --neutral-500: color-mix(in srgb, var(--color-text) 42%, var(--color-bg));
+  --neutral-600: color-mix(in srgb, var(--color-text) 55%, var(--color-bg));
+  /* Kept for anything not yet migrated off semantic red/green -- new
+     correct/incorrect states use the accent and neutral ramps above
+     instead (see .mcq-option, .tarkeeb-slot, .exercise-choice). */
+  --sage: #5c7a52;
+  --brick: #a13a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* A fixed height (not min-height) so #root's flex children get a real
+     bound to stretch/scroll against -- without it the whole page grows
+     with .main's content and scrolls as one unit, dragging the sidebar
+     (and its streak/XP footer) off-screen along with it. */
+  height: 100vh;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-en);
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(182, 130, 53, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(182, 130, 53, 0.04), transparent 40%);
+  background-attachment: fixed;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* One consistent treatment for every run of Arabic wherever it appears --
+   just the right font for legible glyphs and bidi isolation so brackets,
+   commas and full stops stay with the English instead of being dragged into
+   the RTL run. No size/colour bump: a highlighted grammatical term should
+   read as the same text as an incidental Arabic quote beside it, not as a
+   different, louder style. <bdi> marks grammatical terms authored directly
+   in content; .ar is the auto-wrap for any other Arabic run (see
+   isolateArabic in js/html.js). */
+bdi,
+.ar {
+  font-family: var(--font-ar);
+  unicode-bidi: isolate;
+  /* A bare space character butting straight up against an isolate
+     boundary can render with little to no visible gap (worst inside
+     centered flex text like .exercise-choice, where several Arabic/English
+     switches in one line end up looking like one crammed, hard-to-parse
+     run). A small fixed margin guarantees breathing room on both sides
+     regardless of the run's resolved direction. */
+  margin: 0 0.15em;
+}
+
+/* Headings -- module/lesson titles included -- read in the same font as
+   the reading content around them. .app-title (the app's own Latin name)
+   is the one exception. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-ar);
+  color: var(--maroon-deep);
+  margin: 0 0 0.3em;
+  font-weight: 700;
+}
+.app-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0 0 0.9em;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Themed focus ring, everywhere -- never the browser default (design
+   handoff non-negotiable #10). */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+[dir='rtl'] {
+  font-family: var(--font-ar);
+  line-height: 2.1;
+}
+
+/* ---------- Header: one bar, every screen ---------- */
+/* Per the design handoff's "Shared chrome" spec: brand left, nav right,
+   border-bottom only -- no fill, the header just blends into the page
+   ground. On module/lesson/quiz screens the same right-hand slot swaps the
+   static Home/Schedule/Settings tabs for a back-arrow + breadcrumb instead
+   (see headerHtml in render.js) -- one bar either way, never two stacked. */
+
+.app-header {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 22px 56px 18px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.app-header-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  cursor: pointer;
+  flex: none;
+}
+.app-header-kicker {
+  font-family: 'Reem Kufi', var(--font-ar-heading);
+  font-size: 26px;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.app-header-rule {
+  flex: none;
+  width: 1px;
+  height: 22px;
+  background: var(--color-divider);
+}
+.app-header-name {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 26px;
+  min-width: 0;
+}
+
+.app-header-right {
+  display: flex;
+  align-items: baseline;
+  gap: 26px;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+}
+.app-header-nav {
+  display: flex;
+  align-items: baseline;
+  gap: 26px;
+}
+
+.app-header-tab {
+  background: none;
+  border: none;
+  padding: 0 0 3px;
+  font: inherit;
+  border-bottom: 1px solid transparent;
+  color: color-mix(in srgb, var(--color-text) 48%, transparent);
+  cursor: pointer;
+}
+.app-header-tab:hover {
+  color: var(--color-text);
+}
+.app-header-tab.is-active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Breadcrumb mode -- same slot as the tabs, shown instead of them on
+   module/lesson/quiz screens. */
+.app-header-crumbs-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.app-header-back {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-divider);
+  background: transparent;
+  color: var(--color-text);
+  transition: border-color 0.15s ease;
+}
+.app-header-back:hover {
+  border-color: var(--color-accent);
+}
+.app-header-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-family: var(--font-ar-heading);
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-header-crumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  font: inherit;
+}
+.app-header-crumb-link:hover {
+  color: var(--color-accent);
+}
+.app-header-crumb-current {
+  color: var(--color-text);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-header-crumb-en {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+.app-header-crumb-sep {
+  color: color-mix(in srgb, var(--color-text) 40%, transparent);
+  font-family: var(--font-en);
+}
+
+/* Quiz-question progress pills -- centred on the header's full width, same
+   technique as before: a plain flex child can't be guaranteed true-center
+   when the brand and the right-hand group aren't the same width. */
+.app-header-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.app-header-dot {
+  height: 5px;
+  width: 14px;
+  border-radius: 3px;
+  background: var(--color-divider);
+  transition: width 0.35s cubic-bezier(0.22, 0.9, 0.32, 1), background-color 0.3s ease;
+}
+.app-header-dot.done {
+  background: var(--color-accent);
+}
+.app-header-dot.active {
+  width: 22px;
+  background: var(--color-accent);
+}
+
+/* Streak/XP/level -- not part of the design handoff (it has no gamification
+   layer), folded into the same right-hand group as a small tabular cluster
+   so it reads as native to the system rather than bolted on. */
+.app-header-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-left: 20px;
+  border-left: 1px solid var(--color-divider);
+}
+.app-header-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.app-header-stat .icon {
+  color: var(--color-accent);
+}
+.app-header-level {
+  flex: none;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 3px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Footer: one bar, every screen ---------- */
+
+.app-footer {
+  flex: none;
+  padding: 22px 56px 30px;
+  border-top: 1px solid var(--color-divider);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 12.5px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.app-footer-state {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Main content ---------- */
+
+/* .main is the fixed-header/fixed-footer, scrolling-body column between
+   .app-header and .app-footer (both flex:none siblings in #root -- see
+   render()'s dispatch). */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  /* #root is a column flex container (.app-header / .main / .app-footer)
+     -- without this, flex's default min-height:auto lets .main grow to fit
+     its content instead of being capped to the space its siblings left it,
+     which would push .main-content's overflow-y:auto scrolling to the
+     whole window instead of staying inside this column. */
+  min-height: 0;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 56px 64px 96px;
+  overflow-y: auto;
+}
+
+/* Scroll-driven reveal of the lesson title into the header: a plain fade,
+   not a tracked slide/morph. main.js clones the real <h1> into this fixed,
+   header-centered clone and fades it in once the real title (which stays
+   in normal flow, and simply clips out of view against .main-content's
+   own overflow as usual) has scrolled up to roughly the header's bottom
+   edge. Position is set once in JS at clone-creation (see
+   setupScrollObserver); only opacity changes per scroll frame, hence no
+   CSS transition here either -- one would lag behind the scroll-linked
+   value instead of tracking it. */
+.title-dock-clone {
+  position: fixed;
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-ar-heading);
+  font-weight: 700;
+  font-size: 18.5px;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 46vw;
+}
+
+.col {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.col-wide {
+  max-width: 980px;
+  margin: 0 auto;
+}
+/* Shared by Module/Lesson/Schedule -- same edge treatment as .dashboard-page
+   below, minus its 50vh reveal-trailing padding (each of those three pages
+   already carries its own trailing room where it actually needs one --
+   .lesson-main, .schedule-page -- so this stays a plain, modest gap). */
+.hero-page {
+  margin: -56px -64px 0;
+  padding: 0 56px 40px;
+}
+
+.dashboard-page {
+  /* Cancels .main-content's generic padding (56px top, 64px sides) so the
+     hero panel's border sits flush against the header's own bottom rule
+     (its border-top is 0 -- see .home-hero -- the header rule serves as
+     its top edge) and the page uses the design handoff's own 56px side
+     measure instead of the app-wide 64px. */
+  margin: -56px -64px 0;
+  padding: 0 56px;
+  /* Scroll-reveal trigger line sits at the scroll container's vertical
+     center (see handleScrollReveal in main.js), so the last row of
+     chapter cards needs guaranteed scroll room below it to ever reach
+     that line. Applied here rather than on .chapter-grid directly so the
+     gap lands after the badges row, at the true end of the page, instead
+     of pushing in right under the grid itself. */
+  padding-bottom: 50vh;
+}
+.complete-col {
+  max-width: 560px;
+  margin: 80px auto 0;
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.lede {
+  color: var(--ink-soft);
+  font-size: 16px;
+  max-width: 620px;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--maroon);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 18px;
+  display: inline-block;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.divider-fade {
+  height: 1px;
+  margin: 26px 0;
+  /* Symmetric fade (solid in the middle, out at both ends) rather than a
+     one-directional fade -- the latter reads as leaning left, not centered. */
+  background: linear-gradient(90deg, transparent, var(--card-border) 50%, transparent);
+}
+.hr {
+  height: 1px;
+  margin: 20px 0;
+  background: var(--card-border);
+}
+
+/* ---------- Cards / tags / buttons ---------- */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 22px 26px;
+  transition: opacity 0.5s ease-out,
+              transform 0.5s ease-out,
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(43, 36, 28, 0.13), 0 2px 6px rgba(182, 130, 53, 0.12), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  border-color: var(--accent-500);
+}
+
+.card-kicker {
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--maroon);
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+h1 + .card-kicker,
+.concept-dots + .card-kicker {
+  margin-top: 4px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  font-family: var(--font-display);
+}
+.tag-accent {
+  background: var(--accent-100);
+  color: var(--accent-700);
+  border-color: var(--accent-200);
+}
+.tag-outline {
+  background: transparent;
+  color: var(--ink-soft);
+  border-color: var(--card-border);
+}
+.tag-neutral {
+  background: var(--neutral-200);
+  color: var(--neutral-600);
+  border-color: var(--neutral-300);
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-family: var(--font-en);
+}
+.btn-primary {
+  background: var(--accent-600);
+  color: #fffaf1;
+  border-color: var(--accent-700);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-700);
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--card-border);
+}
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--ink-dim);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--accent-700);
+  border-color: var(--card-border);
+}
+.btn-outline:hover:not(:disabled) {
+  border-color: var(--gold);
+}
+.btn-outline:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: none;
+  text-decoration: underline;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-push-right {
+  margin-left: auto;
+}
+
+/* Design-system buttons -- Home/Settings only (see headerHtml/dashboardHtml/
+   settingsHtml in render.js). Outline-on-transparent per the design
+   handoff's "colour is stroke, never fill" rule -- deliberately separate
+   from .btn/.btn-primary above, which is a solid-fill button the rest of
+   the app (module/lesson/quiz/schedule) still uses as-is. */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 17px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+}
+.ds-btn-primary {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.ds-btn-primary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+.ds-btn-primary:active:not(:disabled) {
+  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+.ds-btn-secondary {
+  border-color: var(--color-divider);
+  color: var(--color-text);
+}
+.ds-btn-secondary:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-text) 40%, transparent);
+}
+.ds-btn-ghost {
+  border-color: transparent;
+  color: var(--color-accent);
+}
+.ds-btn-ghost:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+.ds-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Line icons scale with, and inherit the colour of, their container. */
+.icon {
+  display: block;
+  flex: none;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.action-row.split {
+  justify-content: space-between;
+}
+
+/* ---------- Progress bar ---------- */
+
+/* Hairline track + solid accent fill, no border/shadow/gradient/pill-radius
+   -- same "colour is stroke" language as .chapter-card-track on Home. */
+.progress-bar {
+  height: 2px;
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+  margin: 10px 0 18px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Dashboard ---------- */
+
+.stat-row {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+.stat-card {
+  flex: 1;
+  padding: 16px 20px;
+}
+.stat-kicker {
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  margin-bottom: 6px;
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--maroon-deep);
+  font-variant-numeric: tabular-nums;
+}
+.stat-sub {
+  font-size: 11px;
+  color: var(--ink-dim);
+  margin-top: 2px;
+}
+
+/* ---------- Home hero ---------- */
+/* Per the design handoff's Screen 1. Populated with real progress data (see
+   dashboardHtml/findContinueLesson in render.js), not the handoff's fixed
+   sample copy. */
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-divider);
+  border-top: 0;
+  padding: 54px 48px 46px;
+}
+.home-hero-watermark {
+  position: absolute;
+  right: 20px;
+  bottom: -6px;
+  direction: rtl;
+  white-space: nowrap;
+  font-family: 'Amiri', serif;
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 1.5;
+  color: var(--color-accent);
+  opacity: 0.072;
+  pointer-events: none;
+}
+.home-hero-row {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.home-hero-main {
+  max-width: 620px;
+}
+.home-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 18px 8px;
+  border: 1px solid var(--color-accent);
+  border-radius: 2px;
+  margin-bottom: 26px;
+}
+.home-hero-badge-mark {
+  width: 5px;
+  height: 5px;
+  background: var(--color-accent);
+  transform: rotate(45deg);
+}
+.home-hero-badge-text {
+  font-family: var(--font-ar-heading);
+  font-size: 19px;
+  color: var(--color-accent);
+  line-height: 1.6;
+}
+.home-hero-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 1.06;
+  margin: 0 0 16px;
+  color: var(--color-text);
+}
+.home-hero-body {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+  margin: 0 0 28px;
+  max-width: 54ch;
+  color: color-mix(in srgb, var(--color-text) 82%, transparent);
+}
+.home-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.home-ledger {
+  position: relative;
+  margin: 0;
+  min-width: 232px;
+  font-variant-numeric: tabular-nums;
+}
+.home-ledger-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.home-ledger-row:last-child {
+  border-bottom: none;
+}
+.home-ledger-label {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  margin: 0;
+  font-weight: 400;
+}
+.home-ledger-value {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-text);
+}
+
+.home-hero-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--color-accent);
+}
+.home-hero-corner.tl { top: 10px; left: 10px; border-top: 1px solid; border-left: 1px solid; }
+.home-hero-corner.tr { top: 10px; right: 10px; border-top: 1px solid; border-right: 1px solid; }
+.home-hero-corner.bl { bottom: 10px; left: 10px; border-bottom: 1px solid; border-left: 1px solid; }
+.home-hero-corner.br { bottom: 10px; right: 10px; border-bottom: 1px solid; border-right: 1px solid; }
+
+/* ---------- Home: arabesque separator ---------- */
+
+.home-separator {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0 34px;
+}
+.home-separator-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-divider);
+}
+
+/* ---------- Home: chapters grid ---------- */
+
+.home-chapters h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0 0 20px;
+  color: var(--color-text);
+}
+.home-chapter-heading {
+  /* .chapter-grid is a CSS grid, not flex -- this has to span every
+     column explicitly (grid-column, not a flex-basis trick) or it just
+     lands in the grid's first cell like any other item, leaving a blank
+     cell where a chapter card should be. */
+  grid-column: 1 / -1;
+  /* Heading (first child) at the inline-start, subheading (second child)
+     at the inline-end -- in this dir="rtl" row that's right and left
+     respectively, with no separate left/right markup needed. */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent);
+  margin: 28px 0 8px;
+  padding-top: 20px;
+  /* The actual dividing line between one group's cards and the next
+     group's heading -- text/spacing alone (the previous version of this
+     rule) didn't read as a real separator. */
+  border-top: 1px solid var(--color-divider);
+}
+.home-chapter-heading:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.home-chapter-heading-main {
+  font-family: var(--font-ar-heading);
+}
+.home-chapter-subheading {
+  font-family: var(--font-ar-heading);
+  font-size: 15px;
+  color: var(--color-accent);
+}
+/* Real gaps, no shared coloured backdrop -- each card carries its own
+   full border instead of the grid drawing hairlines through 1px gaps
+   over a --color-divider background (that read as a grey panel rather
+   than a hairline once cards had any height mismatch). */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 16px;
+}
+.chapter-card {
+  background: var(--color-bg);
+  padding: 28px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 210px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--color-divider);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  font: inherit;
+  color: inherit;
+}
+.chapter-card:hover:not(:disabled),
+.chapter-card:focus-visible {
+  background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+  border-color: var(--color-accent);
+}
+.chapter-card:disabled {
+  cursor: not-allowed;
+}
+.chapter-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.chapter-card-kicker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+.chapter-card-arabic {
+  font-family: var(--font-ar-heading);
+  font-size: 20px;
+  color: var(--color-accent);
+  line-height: 1.6;
+}
+.chapter-card-title {
+  font-family: var(--font-ar-heading);
+  font-weight: 500;
+  font-size: 23px;
+  margin: 4px 0 0;
+  color: var(--color-text);
+}
+.chapter-card-body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  text-align: justify;
+  hyphens: auto;
+  margin: 0;
+  flex: 1;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.chapter-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-divider);
+  font-variant-numeric: tabular-nums;
+}
+.chapter-card-track {
+  flex: 1;
+  height: 2px;
+  background: color-mix(in srgb, var(--color-text) 14%, transparent);
+}
+.chapter-card-fill {
+  display: block;
+  height: 2px;
+  background: var(--color-accent);
+}
+.chapter-card-meta {
+  font-size: 12.5px;
+  color: color-mix(in srgb, var(--color-text) 58%, transparent);
+  white-space: nowrap;
+}
+
+/* Earned badges, shown on the dashboard under the stat row -- only
+   rendered when state.badges has at least one entry. */
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0 24px;
+}
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+}
+
+/* ---------- Settings ---------- */
+/* Per the design handoff's Screen 2: two columns separated by a 1px rule,
+   drawn the same "1px gap over a divider-coloured background" technique as
+   the chapters grid. */
+
+.settings-page {
+  margin: -56px -64px 0;
+  padding: 0 56px 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 384px;
+  gap: 1px;
+  background: var(--color-divider);
+}
+.settings-col {
+  background: var(--color-bg);
+  padding: 46px 44px 56px;
+}
+.settings-kicker {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent);
+}
+.settings-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 1.08;
+  margin: 10px 0 0;
+  color: var(--color-text);
+}
+.settings-lede {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+  max-width: 56ch;
+  margin: 14px 0 0;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+}
+.settings-hr {
+  height: 1px;
+  margin: 38px 0 30px;
+  background: var(--color-divider);
+  border: none;
+}
+.settings-group-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0 0 4px;
+  color: var(--color-text);
+}
+.settings-group-sub {
+  font-size: 14px;
+  margin: 0 0 22px;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+}
+
+/* Theme cards -- a radio group, not buttons (they select, they don't act;
+   see the role/aria-checked/keyboard handling in settingsHtml). Each
+   swatch previews that theme in ITS OWN colours (literal hex from
+   render.js's THEMES, not var(--color-*)) regardless of which theme is
+   currently active; the card chrome (border/shadow) follows the theme
+   that's actually selected. Both are correct per the handoff. */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  gap: 14px;
+}
+.theme-card {
+  cursor: pointer;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--color-divider);
+  background: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+.theme-card.is-selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+}
+.theme-swatch {
+  position: relative;
+  height: 84px;
+  border-bottom: 1px solid var(--color-divider);
+  padding: 16px 16px 0;
+}
+.theme-swatch-rule {
+  display: block;
+  height: 1px;
+  margin-bottom: 9px;
+}
+.theme-swatch-mark {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid;
+  transform: rotate(45deg);
+}
+.theme-card-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px 13px;
+}
+.theme-card-name {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-text);
+}
+.theme-card-note {
+  font-size: 11.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent);
+}
+
+/* Typeface rows -- also a radio group. */
+.face-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.face-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.face-row {
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border-radius: 2px;
+  border: 1px solid var(--color-divider);
+  background: none;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+.face-row.is-selected {
+  border-color: var(--color-accent);
+}
+.face-radio {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 50%;
+  border: 1px solid var(--color-divider);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.face-row.is-selected .face-radio {
+  border-color: var(--color-accent);
+}
+.face-radio-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.face-row.is-selected .face-radio-dot {
+  background: var(--color-accent);
+}
+.face-row-body {
+  flex: 1;
+  min-width: 0;
+}
+.face-row-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.face-row-name {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-text);
+}
+.face-row-note {
+  font-size: 12.5px;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.face-row-sample {
+  margin-top: 6px;
+  font-size: 23px;
+  line-height: 1.9;
+  color: color-mix(in srgb, var(--color-text) 88%, transparent);
+}
+
+/* Specimen rail -- the right column. */
+.specimen-rail {
+  position: relative;
+  overflow: hidden;
+}
+.specimen-watermark {
+  position: absolute;
+  left: -30px;
+  bottom: 18px;
+  direction: rtl;
+  white-space: nowrap;
+  font-family: 'Amiri', serif;
+  font-weight: 400;
+  font-size: 92px;
+  line-height: 1.5;
+  color: var(--color-accent);
+  opacity: 0.072;
+  pointer-events: none;
+}
+.specimen-inner {
+  position: relative;
+}
+.specimen-box {
+  border: 1px solid var(--color-divider);
+  padding: 30px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.specimen-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 22px;
+  justify-content: center;
+}
+.specimen-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 4px;
+  border-bottom: 1px solid var(--color-accent);
+}
+.specimen-word-text {
+  font-size: 26px;
+  line-height: 1.9;
+}
+.specimen-word-label {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  white-space: nowrap;
+}
+.specimen-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.specimen-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-divider);
+}
+.specimen-divider-mark {
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--color-accent);
+  transform: rotate(45deg);
+}
+.specimen-gloss {
+  font-size: 13.5px;
+  line-height: 1.7;
+  text-align: justify;
+  color: color-mix(in srgb, var(--color-text) 72%, transparent);
+}
+.specimen-actions {
+  margin-top: 26px;
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- Lesson grid (a module's lessons, as a grid of boxes) ---------- */
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Same family as .module-card on the dashboard (cover strip, kicker +
+   tag row, title + blurb) -- lesson boxes were asked to read as siblings
+   of the module boxes, not a visually distinct component. */
+.lesson-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 18px;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.lesson-card:not(.locked):hover {
+  transform: translateY(-4px) scale(1.012);
+  box-shadow: 0 10px 26px rgba(43, 36, 28, 0.16), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  border-color: var(--gold);
+}
+.lesson-card:not(.locked):active {
+  transform: translateY(-1px) scale(0.995);
+}
+.lesson-card.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.lesson-card.complete {
+  border-color: var(--sage);
+}
+.lesson-card-cover {
+  height: 70px;
+  margin: -18px -18px 14px;
+  border-bottom: 1px solid var(--card-border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(168, 130, 58, 0.14), transparent);
+}
+.lesson-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.lesson-card-num {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  font-weight: 600;
+}
+.lesson-card-body h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+.lesson-card-body p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ---------- "Start lesson" modal ---------- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(59, 44, 31, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(30, 20, 10, 0.4);
+  padding: 32px 36px;
+  max-width: 420px;
+  text-align: center;
+}
+.modal h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+.modal-kicker {
+  margin: 0 0 10px;
+  color: var(--gold);
+}
+.modal-sub {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ---------- Badge-unlock modal (reuses .modal/.modal-backdrop) ---------- */
+
+.badge-modal-icon {
+  color: var(--gold);
+  margin: 0 auto 12px;
+  display: flex;
+  justify-content: center;
+}
+.badge-modal-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--maroon-deep);
+  margin: 0 0 6px;
+}
+.badge-modal-desc {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+/* ---------- XP toast ---------- */
+
+@keyframes toast-float {
+  0% { opacity: 0; transform: translate(-50%, 10px); }
+  12%, 80% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -6px); }
+}
+.xp-toast {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  /* --color-bg text on a --color-accent-600 fill: guaranteed-readable pair
+     in every theme, including lamp, where accent-600 is the light one (see
+     the theme block above) -- var(--ink)/light-text pairing would invert
+     there and go unreadable. */
+  background: var(--color-accent-600);
+  color: var(--color-bg);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  z-index: 70;
+  pointer-events: none;
+  animation: toast-float 1.8s ease forwards;
+}
+
+/* ---------- Concept dots ---------- */
+
+.concept-dots {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.concept-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--card-border);
+}
+.concept-dot.filled {
+  background: var(--gold);
+}
+
+/* ---------- Exercise / MCQ ---------- */
+
+/* Flat, corner-bracketed .card override -- same framed-page treatment as
+   the rest of the app (see cornerBracketsHtml/.home-hero-corner in
+   render.js/styles.css), applied here to concept exercises, Practice Mode's
+   تركيب card, and (see .quiz-question-single/.quiz-result below) the quiz
+   and MCQ practice cards. */
+.exercise-card {
+  margin-top: 18px;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: none;
+}
+.exercise-prompt {
+  font-size: 16px;
+}
+
+.mcq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+.mcq-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  background: transparent;
+  border: 1.5px solid var(--card-border);
+  border-radius: 8px;
+  padding: 13px 18px;
+  font-size: 14.5px;
+  color: var(--ink);
+}
+.mcq-option:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--accent-600) 6%, transparent);
+}
+.mcq-option.selected {
+  border-color: var(--accent-600);
+  color: var(--accent-700);
+}
+.mcq-option.correct {
+  border-color: var(--accent-600);
+  background: var(--accent-100);
+  color: var(--accent-700);
+}
+.mcq-option.incorrect {
+  border-color: var(--neutral-500);
+  background: var(--neutral-200);
+  color: var(--neutral-600);
+}
+.mcq-option:disabled:not(.correct):not(.incorrect) {
+  opacity: 0.5;
+}
+.mcq-letter {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  color: inherit;
+}
+.mcq-check-icon,
+.mcq-cross-icon {
+  flex: none;
+  margin-left: auto;
+}
+
+/* ---------- Concepts (all on one scrolling lesson page) ---------- */
+
+/* Each concept is its own stop on the page, not one more paragraph in a
+   run of them: generous rhythm between blocks plus a hairline rule with a
+   small accent lozenge centred on it, the same rule + ornament vocabulary
+   the home page's arabesque separator and the corner-bracketed cards use.
+   A learner scrolling back up can find where a concept starts without
+   reading a word of it. */
+.concept-block {
+  position: relative;
+  margin-bottom: 40px;
+}
+.concept-block + .concept-block {
+  margin-top: 44px;
+  padding-top: 44px;
+  border-top: 1px solid var(--card-border);
+}
+.concept-block + .concept-block::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--paper);
+  border: 1px solid var(--color-accent);
+}
+.concept-block h3 {
+  font-size: 20px;
+}
+.concept-body {
+  color: var(--ink);
+  /* A comfortable measure: past ~70 characters the eye loses the start of
+     the next line, which is exactly the failure mode short chunks are
+     meant to prevent. */
+  max-width: 68ch;
+}
+/* One <p> per sentence -- the prose is split in content/index.js. Leading
+   and paragraph gap are deliberately loose so consecutive short sentences
+   read as separate chunks rather than as one block of text. */
+.concept-line {
+  line-height: 1.75;
+  margin: 0 0 0.95em;
+}
+.concept-body > .concept-line:last-child,
+.concept-body > .concept-list:last-child {
+  margin-bottom: 0;
+}
+
+/* Enumerations inside a concept ("(1) …, (2) …", "a; b; c") get one line
+   each. Numbered items keep the author's own "(n)" marker, so the list is
+   unstyled; clause lists get a gold bullet instead. */
+.concept-list {
+  list-style: none;
+  margin: 0 0 0.95em;
+  padding: 0 0 0 1.5em;
+  max-width: 68ch;
+}
+.concept-list li {
+  position: relative;
+  line-height: 1.75;
+  margin: 0 0 0.5em;
+}
+.concept-list li.bulleted::before {
+  content: '·';
+  position: absolute;
+  left: -0.9em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- Concept: the TL;DR line ---------- */
+/* The single takeaway, sitting tight under the h3 and above the prose, so
+   the concept can be got in one glance and the body read (or skipped) on
+   that basis. Accent rail down the leading edge -- border-inline-start, so
+   it moves to the right if the block ever sits in an RTL context, unlike
+   .concept-clarification's older physical border-left. Same uppercase
+   label treatment as .concept-clarification-label / .card-kicker. */
+.concept-tldr {
+  margin: 0 0 20px;
+  padding: 13px 20px;
+  max-width: 68ch;
+  border-inline-start: 3px solid var(--gold);
+  /* Logical radii to match the logical rail above: square against the rail,
+     rounded on the far side, whichever side the rail ends up on. The physical
+     `0 x x 0` shorthand this replaces stayed left-square in an RTL context
+     while the rail moved to the right. */
+  border-radius: 0;
+  border-start-end-radius: var(--radius-sm);
+  border-end-end-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-accent) 7%, transparent);
+}
+.concept-tldr-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-700);
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+}
+/* Exactly one <p> -- conceptTldrHtml() in js/render.js renders the takeaway
+   as a single line rather than putting it through the sentence/list splitter,
+   so there is no sibling line and no list in here to space against. */
+.concept-tldr .concept-line {
+  font-size: 17.5px;
+  line-height: 1.55;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ---------- Concept: worked examples ---------- */
+/* One row per example: the Arabic line carries the point and reads
+   largest (in whatever Arabic face the learner has chosen -- var(--font-ar)
+   is set on <html>, see applyAppearance in js/main.js), the English gloss
+   sits under it, and the note explaining *why* the example illustrates the
+   concept is smaller and dimmer again. Rows are divided by a hairline, the
+   same rule weight used everywhere else in the app. Concepts with no
+   authored `examples` fall back to their `sample` string and render
+   Arabic-only rows (see conceptExampleRows in js/render.js). */
+.concept-examples {
+  margin: 22px 0;
+  padding: 16px 22px 14px;
+  max-width: 68ch;
+  border: 1px solid var(--card-border);
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-surface) 55%, transparent);
+}
+.concept-examples-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-700);
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+/* Hairline between rows only -- the first row sits straight under the
+   label, and no row draws a rule against the box's own border. Written as
+   an adjacent-sibling rule rather than :first-of-type because the label is
+   a <div> too, so "first of type" is the label, not the first example. */
+.concept-example + .concept-example {
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 1px solid var(--card-border);
+}
+.concept-example-ar {
+  font-family: var(--font-ar);
+  font-size: 20px;
+  line-height: 2;
+  color: var(--ink);
+}
+.concept-example-en {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-top: 2px;
+}
+.concept-example-note {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-top: 5px;
+}
+
+/* A supplementary note on a concept whose prose alone left a gap. Reads
+   with the same sentence-per-paragraph, list-for-enumerations structure as
+   the concept body above it (see conceptProseHtml in render.js) -- the
+   accent rule down the side is the only thing marking the shift in voice.
+   Only concepts with a `clarification` field render one at all. Border
+   only, no fill/shadow/hover-lift -- same "colour is stroke" treatment as
+   the rest of the app. */
+.concept-clarification {
+  margin: 22px 0;
+  padding: 18px 22px;
+  max-width: 68ch;
+  border: 1px solid var(--card-border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 2px 2px 0;
+}
+.concept-clarification-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-700);
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+}
+.concept-clarification .concept-line,
+.concept-clarification .concept-list {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+.concept-clarification > *:last-child {
+  margin-bottom: 0;
+}
+/* …and the *item* inside it: the rule above zeroes the <ul>'s own margin, but
+   .concept-list li keeps its 0.5em inter-item gap, which is dead space at the
+   bottom of the box when the clarification ends on a list. The other two
+   boxes can't hit this -- the TL;DR renders a single <p> (see
+   conceptTldrHtml) and the examples box builds its own rows, not a list. */
+.concept-clarification .concept-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Border only, no fill/shadow/hover-lift -- same treatment as
+   .concept-clarification above. */
+.quiz-prompt {
+  text-align: center;
+  border: 1px solid var(--card-border);
+  border-radius: 2px;
+  padding: 28px;
+  margin-top: 12px;
+}
+.quiz-prompt .kicker {
+  margin-bottom: 8px;
+  color: color-mix(in srgb, var(--color-text) 52%, transparent);
+}
+.quiz-prompt h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+.quiz-prompt p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+/* ---------- Quiz ---------- */
+
+.quiz-question {
+  margin: 20px 0;
+}
+.quiz-q-text {
+  font-weight: 600;
+  font-size: 15.5px;
+}
+
+/* ---------- Drill complete ---------- */
+
+.complete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+/* ---------- Practice Mode ---------- */
+
+/* Anchored under the (centered) Practice Mode button: a matching centered,
+   tighter box with a small caret (::before) pointing back up at it, so the
+   popout visually reads as having come FROM that button rather than just
+   materializing on the page. See .practice-popout.anim-in below for the
+   entrance animation that reinforces the same idea. */
+.practice-popout {
+  position: relative;
+  max-width: 380px;
+  margin: 20px auto 22px;
+  padding: 18px 22px;
+  text-align: center;
+  /* Flat, hairline .card override -- same "stroke not fill" treatment as
+     the rest of the module/lesson pages. */
+  border-radius: 2px;
+  box-shadow: none;
+}
+.practice-popout::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--card);
+  border-top: 1px solid var(--card-border);
+  border-left: 1px solid var(--card-border);
+  border-radius: 2px 0 0 0;
+  transform: translateX(-50%) rotate(45deg);
+}
+.practice-popout-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+}
+.practice-popout-close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--ink-dim);
+  font-size: 15px;
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+}
+.practice-popout-close:hover {
+  color: var(--maroon);
+}
+
+.practice-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+.practice-tab {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--ink-soft);
+}
+.practice-tab.active {
+  background: var(--maroon);
+  color: #f3e9d2;
+  border-color: var(--maroon-deep);
+}
+
+.practice-count-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0 2px;
+}
+.practice-count-btn {
+  min-width: 72px;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 18px 0;
+}
+.review-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 11px 15px;
+}
+.review-row.incorrect {
+  border-color: var(--neutral-500);
+}
+.review-row-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-dim);
+  width: 20px;
+}
+.review-row-title {
+  flex: 1;
+  font-size: 14px;
+}
+
+.empty-state {
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ---------- Schedule tab (Deadline / Revision / Mastery) ---------- */
+
+/* Trailing scroll room, same trick as .dashboard-page/.lesson-main: the
+   "Up Next" card reveals later than usual (75% down the container instead
+   of the app-wide 50% -- see data-reveal-line in scheduleUpcomingHtml and
+   handleScrollReveal in main.js), which needs even more guaranteed room
+   below it to ever be scrolled past that deeper line than the standard
+   50vh already provides elsewhere -- bumped a little further here for
+   exactly that reason. */
+.schedule-page {
+  padding-bottom: 60vh;
+}
+
+.schedule-panel {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+/* The whole panel slides up on every tab switch (see animAttr/
+   scheduleTabAttempt in render.js) -- a bigger version of the same
+   bottom-to-top motion its own children use (the generic .anim-in default,
+   see below), so paging between Deadline/Revision/Mastery reads as a
+   distinct "new panel" moment while everything settling inside it still
+   reads as one consistent, purely-vertical slide-up language. Deliberately
+   NOT a horizontal slide (this used to reuse the lesson quiz's sideways
+   question-slide-in) -- a translateX on the panel firing at the same time
+   as its children's own translateY compose into a visibly diagonal path,
+   since the children's motion is rendered relative to the panel's
+   already-shifting position. Keeping every transform on this page on the
+   Y axis only rules that out entirely, no matter what overlaps in time. */
+@keyframes schedule-panel-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.schedule-panel.anim-in {
+  animation: schedule-panel-in 0.4s cubic-bezier(0.22, 0.9, 0.36, 1) both;
+}
+
+.schedule-field {
+  margin-top: 14px;
+}
+.schedule-field label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.schedule-field-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* Native date/number/select inputs have no themed baseline anywhere else in
+   the app (the only prior input, the progress-import file picker, stays
+   hidden and unstyled) -- this is that baseline, matched to .btn/.card's
+   tokens rather than the browser default. */
+.schedule-input {
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  width: 100%;
+  max-width: 320px;
+  transition: border-color 0.15s ease;
+}
+.schedule-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.schedule-input-narrow {
+  width: 90px;
+  max-width: 90px;
+}
+select.schedule-input {
+  cursor: pointer;
+}
+
+.schedule-upcoming-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  border-radius: var(--radius-sm);
+}
+.schedule-upcoming-row + .schedule-upcoming-row {
+  border-top: 1px solid var(--card-border);
+}
+.schedule-upcoming-row.unlocked {
+  cursor: pointer;
+}
+.schedule-upcoming-row.unlocked:hover {
+  background: var(--paper-deep);
+}
+
+/* The card itself is the one reveal-on-scroll target (see
+   scheduleUpcomingHtml) -- rows aren't independently scroll-gated, they
+   just stay hidden until the card is, then cascade in one at a time via a
+   per-index transition-delay once it flips .is-revealed. Exactly the
+   .exercise-choices technique (see that block for the fuller rationale),
+   reused here so "the box and each of its sub-components" reads as one
+   continuous reveal. */
+.schedule-upcoming-rows .schedule-upcoming-row {
+  opacity: 0;
+  /* Matches .reveal-on-scroll's own travel distance elsewhere in the app --
+     big enough to read clearly as sliding up from below the card, not just
+     a subtle nudge. Pure Y-axis, same reasoning as .schedule-panel.anim-in
+     above: no horizontal component anywhere on this page, so nothing can
+     ever compose into a diagonal path regardless of what else is animating
+     at the same moment. */
+  transform: translateY(32px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Higher specificity than the plain .is-revealed rule above, so a locked
+   row still settles at its usual dimmed resting opacity instead of full 1. */
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row.locked {
+  opacity: 0.55;
+}
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row:nth-child(1) { transition-delay: 0.05s; }
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row:nth-child(2) { transition-delay: 0.12s; }
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row:nth-child(3) { transition-delay: 0.19s; }
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row:nth-child(4) { transition-delay: 0.26s; }
+.schedule-upcoming-card.is-revealed .schedule-upcoming-rows .schedule-upcoming-row:nth-child(5) { transition-delay: 0.33s; }
+.schedule-upcoming-icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--card-border);
+  color: var(--maroon);
+}
+.schedule-upcoming-body {
+  flex: 1;
+  min-width: 0;
+}
+.schedule-upcoming-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.schedule-upcoming-module {
+  font-size: 12px;
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Tarkeeb (drag-and-drop word labeling) ---------- */
+
+.tarkeeb-source {
+  font-size: 22px;
+  text-align: center;
+  color: var(--maroon-deep);
+  margin: 6px 0 20px;
+}
+
+.tarkeeb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  padding: 18px;
+  background: var(--paper-deep);
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.tarkeeb-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 84px;
+}
+
+.tarkeeb-word {
+  font-size: 22px;
+  color: var(--ink);
+  padding: 4px 10px;
+  background: var(--card);
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+}
+
+.tarkeeb-slot {
+  min-width: 76px;
+  min-height: 34px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--paper);
+  border: 2px dashed var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: var(--ink);
+  text-align: center;
+}
+
+.tarkeeb-slot.filled {
+  border-style: solid;
+  border-color: var(--gold-bright);
+  background: var(--accent-100);
+}
+
+.tarkeeb-slot.correct {
+  border-color: var(--accent-600);
+  background: var(--accent-100);
+  color: var(--accent-700);
+}
+
+.tarkeeb-slot.incorrect {
+  border-color: var(--neutral-500);
+  background: var(--neutral-200);
+  color: var(--neutral-600);
+}
+
+.tarkeeb-tray-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 14px 0 8px;
+  font-family: var(--font-en);
+  line-height: 1.4;
+}
+
+.tarkeeb-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 14px;
+  border: 1px dashed var(--card-border);
+  border-radius: 8px;
+}
+
+.tarkeeb-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: var(--gold-bright);
+  color: #3b2c1f;
+  font-size: 15px;
+  border: 1px solid var(--gold);
+  cursor: grab;
+  user-select: none;
+}
+
+.tarkeeb-chip.selected {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
+}
+
+.tarkeeb-chip.used {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---------- Motion: view transitions (page-turn crossfade) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: page-out 0.32s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+  ::view-transition-new(root) {
+    animation: page-in 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  /* Opacity-only -- a scale/translateY here used to animate the entire
+     rest of the page underneath a morphing view-transition-name element
+     (module/lesson title flying from its card/row into the page header),
+     and that whole-page drift competed with the title's own clean 1:1
+     rect morph, reading as "something else moving" alongside it. */
+  @keyframes page-out {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes page-in {
+    from {
+      opacity: 0;
+    }
+  }
+  ::view-transition-group(*) {
+    animation-duration: 0.42s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* ---------- Motion: entrances & feedback ---------- */
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  70% {
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+@keyframes streak-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.streak-icon {
+  animation: streak-pulse 1.8s ease-in-out infinite;
+}
+
+/* Scroll-triggered item appearance on lesson page */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-in {
+  animation: reveal-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+/* A concept appears when the one above it is cleared, so the whole block
+   -- not just its exercise -- is what cascades in. */
+.concept-block.anim-in {
+  animation-duration: 0.45s;
+}
+.exercise-card.anim-in {
+  animation-duration: 0.5s;
+}
+
+/* Options stagger in with the card (or question) that owns them. */
+.anim-in .mcq-options .mcq-option {
+  animation: reveal-up 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-in .mcq-options .mcq-option:nth-child(1) { animation-delay: 0.02s; }
+.anim-in .mcq-options .mcq-option:nth-child(2) { animation-delay: 0.08s; }
+.anim-in .mcq-options .mcq-option:nth-child(3) { animation-delay: 0.14s; }
+.anim-in .mcq-options .mcq-option:nth-child(4) { animation-delay: 0.2s; }
+
+.mcq-option {
+  transition: border-color 0.2s ease, background-color 0.25s ease, transform 0.15s ease;
+}
+.mcq-option:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.mcq-option.anim-in.correct {
+  animation: pop-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.mcq-option.anim-in.incorrect {
+  animation: shake 0.4s ease both;
+}
+
+.tag-accent.anim-in {
+  animation: pop-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scales up from its own top edge -- where the caret meets the button
+   above it -- instead of the shared reveal-up's slide-from-below, so it
+   reads as growing out of the Practice Mode button rather than just
+   appearing on the page. */
+@keyframes practice-popout-in {
+  from { opacity: 0; transform: scale(0.9) translateY(-4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.practice-popout.anim-in {
+  animation: practice-popout-in 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+}
+/* Mirrors practice-popout-in exactly (same keyframe values, same duration
+   and easing, just playing the reverse direction) -- added by
+   closePracticeSetup in main.js, which holds off the actual state change
+   (and the rerender that would otherwise yank this out of the DOM
+   instantly) until this finishes. */
+.practice-popout.closing {
+  animation: practice-popout-in 0.26s cubic-bezier(0.22, 1, 0.36, 1) reverse both;
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+.modal-backdrop.anim-in {
+  animation: reveal-up 0.25s ease both;
+}
+.modal.anim-in {
+  animation: pop-in 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---------- Motion: hover polish (cards, buttons) ---------- */
+
+.btn {
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.12s ease, box-shadow 0.2s ease;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(182, 130, 53, 0.32);
+}
+
+.practice-tab {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.practice-count-btn {
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+.practice-count-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+/* ---------- Motion: tarkeeb drag-and-drop ---------- */
+
+.tarkeeb-chip {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+.tarkeeb-chip:hover:not(.used) {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 10px rgba(59, 44, 31, 0.2);
+}
+.tarkeeb-chip.dragging {
+  opacity: 0.4;
+  transform: scale(0.94);
+}
+.tarkeeb-slot {
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.tarkeeb-slot.drag-over {
+  border-color: var(--accent-600);
+  background: var(--accent-100);
+  transform: scale(1.05);
+}
+.tarkeeb-slot.anim-in.filled {
+  animation: pop-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tarkeeb-slot.anim-in.correct {
+  animation: pop-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tarkeeb-slot.anim-in.incorrect {
+  animation: shake 0.4s ease both;
+}
+.tarkeeb-col.anim-in:nth-child(1) { animation-delay: 0.02s; }
+.tarkeeb-col.anim-in:nth-child(2) { animation-delay: 0.07s; }
+.tarkeeb-col.anim-in:nth-child(3) { animation-delay: 0.12s; }
+.tarkeeb-col.anim-in:nth-child(4) { animation-delay: 0.17s; }
+.tarkeeb-col.anim-in:nth-child(5) { animation-delay: 0.22s; }
+.tarkeeb-col.anim-in:nth-child(6) { animation-delay: 0.27s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   Redesign additions (design_handoff_gamified_grammar_app): centered page
+   headers, the module page's row-list, the lesson page's two-column layout
+   with restyled exercise chips, and the quiz's one-question-at-a-time flow
+   with a gamification strip + result screen. Arabic font/content untouched
+   throughout -- only English chrome and colour.
+   ========================================================================== */
+
+/* ---------- Centered page header (module / lesson / quiz) ---------- */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.page-header .kicker {
+  justify-content: center;
+  display: flex;
+  /* Muted rather than the base .kicker's accent colour -- matches the
+     design handoff's "kickers, inactive nav items" ink-52% convention for
+     this page-title chrome specifically (concept headings inside the
+     lesson body keep the app's existing accent-coloured .kicker/h1-h3
+     treatment; this override is scoped to .page-header only). */
+  color: color-mix(in srgb, var(--color-text) 52%, transparent);
+}
+.page-header h1 {
+  margin: 6px 0 14px;
+  /* Shrink-to-fit its own text -- see .module-card-title (its
+     view-transition morph partner) for why: without this, a full-width
+     centered block leaves empty space on both sides baked into the
+     captured snapshot, which the transition then stretches independently
+     from the old (left-aligned, space-on-the-right) snapshot, landing the
+     two runs of glyphs in different spots instead of one clean scale. */
+  display: inline-block;
+}
+.page-header-hr {
+  width: 64px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 18px;
+}
+.page-header-lede {
+  max-width: 460px;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* ---------- Module page: lesson row-list (replaces the card grid) ---------- */
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px;
+  /* Flat, hairline-bordered row -- no card fill/shadow/lift, matching the
+     rest of the app's "colour is stroke" treatment (see .chapter-card). */
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+  border-radius: 2px;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+/* Applied (only) to rows whose slide-in is being deliberately held back
+   while a view transition is in flight (see markEntrances in main.js) --
+   without this they'd sit in the DOM at full opacity for that stretch,
+   since a plain .lesson-row with neither this nor .anim-in yet is meant to
+   read as "already settled, don't replay" (a same-screen re-render, e.g.
+   toggling the practice panel, recreates the same rows but they've already
+   had their turn and shouldn't re-animate or re-hide). */
+.lesson-row.entrance-pending {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.lesson-row:not(.locked):hover {
+  background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+  border-color: var(--color-accent);
+}
+.lesson-row.locked {
+  cursor: not-allowed;
+}
+/* Mastery Mode (Schedule tab) clearing every card in a lesson -- the row
+   itself turns the app's main accent colour rather than staying plain
+   .card white, so a mastered lesson visibly stands apart from a merely
+   "Done" one at a glance, not just via its tag text. */
+.lesson-row.mastered {
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg));
+  border-color: var(--color-accent);
+}
+.lesson-row.mastered .lesson-row-indicator {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+/* Staggered slide-in on arrival, upper rows first -- plain entrance
+   animation via the ordinary data-anim-key/.anim-in system (see
+   markEntrances in main.js), not a scroll-gated reveal. A dedicated
+   keyframe (not the shared, subtler .anim-in default) for a slide
+   pronounced enough to read clearly on a full-width card. Locked rows get
+   their own variant ending at the same dimmed opacity as their resting
+   .locked state -- CSS animations override plain property declarations
+   regardless of specificity, so settling at opacity:1 and dimming via a
+   separate static rule can't work here; the animation has to own the
+   final opacity itself. */
+@keyframes lesson-row-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes lesson-row-in-locked {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 0.6; transform: translateY(0); }
+}
+.lesson-row.anim-in {
+  animation: lesson-row-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.lesson-row.locked.anim-in {
+  animation-name: lesson-row-in-locked;
+}
+.lesson-list .lesson-row:nth-child(1).anim-in { animation-delay: 0s; }
+.lesson-list .lesson-row:nth-child(2).anim-in { animation-delay: 0.06s; }
+.lesson-list .lesson-row:nth-child(3).anim-in { animation-delay: 0.12s; }
+.lesson-list .lesson-row:nth-child(4).anim-in { animation-delay: 0.18s; }
+.lesson-list .lesson-row:nth-child(5).anim-in { animation-delay: 0.24s; }
+.lesson-list .lesson-row:nth-child(6).anim-in { animation-delay: 0.3s; }
+.lesson-list .lesson-row:nth-child(7).anim-in { animation-delay: 0.36s; }
+.lesson-list .lesson-row:nth-child(8).anim-in { animation-delay: 0.42s; }
+.lesson-row-indicator {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-600);
+  color: var(--accent-700);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+.lesson-row-indicator.locked {
+  border-color: var(--neutral-300);
+  color: var(--neutral-500);
+}
+.lesson-row-body {
+  flex: 1;
+  min-width: 0;
+}
+.lesson-row-body h3 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--ink);
+  /* Shrink-to-fit -- see .module-card-title for why: its view-transition
+     morph partner (the lesson page's .page-header h1) needs a matching
+     tight box on both ends of the transition. */
+  display: inline-block;
+  max-width: 100%;
+}
+.lesson-row.locked .lesson-row-body h3 {
+  color: var(--ink-dim);
+}
+.lesson-row-subtitle {
+  font-size: 12px;
+  opacity: 0.55;
+  margin-top: 2px;
+}
+
+/* ---------- Lesson page: two-column layout ---------- */
+
+.lesson-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.lesson-main {
+  min-width: 0;
+  /* Just enough trailing room to breathe below the last item (the "Move
+     onto the quiz?" prompt, once every concept is cleared) -- NOT the
+     50vh this used to carry to guarantee the reveal-on-scroll trigger
+     line could always be reached. That let scrolling run on for another
+     half a viewport of blank space past the real end of the lesson.
+     handleScrollReveal now force-reveals anything left over once you hit
+     true max scroll (see the atBottom check there), so this can be small
+     without ever leaving an unrevealed, stuck-invisible last item. */
+  padding-bottom: 24px;
+}
+.lesson-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* First concept's opening paragraph gets a drop-cap, English-chrome only
+   (the paragraph itself is always English-carrier prose, see content spec). */
+.dropcap {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 58px;
+  line-height: 0.8;
+  font-weight: 600;
+  color: var(--accent-700);
+  padding: 8px 8px 0 0;
+}
+
+.lesson-objectives {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+.lesson-objective {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  padding: 8px 8px;
+  margin: 0 -8px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* Only concepts already reached in the lesson get data-action="scrollToConcept"
+   (see lessonHtml) -- anything further ahead isn't on the page yet to
+   scroll to, so it stays a plain, non-interactive label. */
+.lesson-objective.clickable {
+  cursor: pointer;
+}
+.lesson-objective.clickable:hover {
+  background: color-mix(in srgb, var(--accent-100) 50%, transparent);
+  transform: translateX(3px);
+}
+.lesson-objective-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--card-border);
+  flex: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.lesson-objective.done {
+  color: var(--ink);
+}
+.lesson-objective.done .lesson-objective-dot {
+  border-color: var(--accent-600);
+  background: var(--accent-600);
+}
+
+/* Flat, hairline-bordered sidebar cards -- overrides .card's shadow/lift/
+   heavier radius specifically here, same "stroke not fill" treatment as
+   the rest of the app; .card itself stays as-is for modals, stat cards,
+   etc. elsewhere. Roomier padding than the .card default -- with the
+   (removed) Examples card gone, these two are the whole sidebar now and
+   read as skimpy at the old, three-card-shared spacing. */
+.lesson-sidebar-card {
+  padding: 32px 28px;
+  border-radius: 2px;
+  box-shadow: none;
+}
+.lesson-sidebar-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--card-border);
+}
+
+.lesson-progress-card {
+  text-align: center;
+  padding: 40px 28px;
+}
+.lesson-progress-value {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-variant-numeric: tabular-nums;
+  margin: 14px 0 6px;
+  color: var(--maroon-deep);
+}
+.lesson-progress-label {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* ---------- Concept exercise: chip-style choices (was stacked lettered
+   options -- concept exercises now read like the handoff's "Try It" cards;
+   the lesson quiz and Practice Mode MCQ keep the lettered-circle style,
+   matching the handoff's separate Quiz-screen component). ---------- */
+
+.exercise-content {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.exercise-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exercise-left .exercise-prompt {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--ink);
+}
+
+.exercise-left .exercise-feedback {
+  margin-top: 4px;
+}
+
+.exercise-left .action-row {
+  margin-top: 6px;
+}
+
+.exercise-right {
+  flex: none;
+  width: 240px;
+}
+
+.exercise-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Pills stay hidden until the .exercise-choices wrapper itself is revealed
+   (see .reveal-on-scroll), then cascade in one at a time via a per-index
+   transition-delay -- rather than all fading in at once as a single block. */
+.exercise-choices .exercise-choice {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.exercise-choices.is-revealed .exercise-choice {
+  opacity: 1;
+  transform: translateY(0);
+}
+.exercise-choices.is-revealed .exercise-choice:nth-child(1) { transition-delay: 0s; }
+.exercise-choices.is-revealed .exercise-choice:nth-child(2) { transition-delay: 0.08s; }
+.exercise-choices.is-revealed .exercise-choice:nth-child(3) { transition-delay: 0.16s; }
+.exercise-choices.is-revealed .exercise-choice:nth-child(4) { transition-delay: 0.24s; }
+.exercise-choices.is-revealed .exercise-choice:nth-child(5) { transition-delay: 0.32s; }
+.exercise-choices.is-revealed .exercise-choice:nth-child(6) { transition-delay: 0.4s; }
+
+.exercise-choice {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font: inherit;
+  border: 1.5px solid var(--card-border);
+  background: var(--card);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-whisper);
+  transition: opacity 0.5s ease-out,
+              transform 0.5s ease-out,
+              background-color 0.18s ease,
+              border-color 0.18s ease,
+              color 0.18s ease,
+              box-shadow 0.18s ease;
+}
+
+.exercise-choice:hover:not(:disabled) {
+  background: var(--accent-100);
+  border-color: var(--accent-600);
+  color: var(--accent-700);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(182, 130, 53, 0.22);
+}
+
+.exercise-choice:disabled {
+  cursor: not-allowed;
+}
+
+.exercise-choice.selected {
+  border-color: var(--accent-600);
+  background: var(--accent-100);
+  color: var(--accent-700);
+  font-weight: 600;
+}
+
+.exercise-choice.correct {
+  border-color: var(--accent-600);
+  background: var(--accent-100);
+  color: var(--accent-700);
+  font-weight: 600;
+}
+
+.exercise-choice.incorrect {
+  border-color: var(--neutral-500);
+  background: var(--neutral-200);
+  color: var(--neutral-600);
+}
+.exercise-feedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  margin-top: 12px;
+}
+.exercise-feedback.correct {
+  color: var(--accent-700);
+}
+.exercise-feedback.incorrect {
+  color: var(--neutral-600);
+}
+
+/* ---------- Quiz: gamification strip + result screen ---------- */
+
+.quiz-gamify-strip {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 22px;
+  font-size: 12.5px;
+}
+.quiz-gamify-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-700);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Same framed-page treatment as .exercise-card -- this is the "unboxed"
+   layout's own box now (see the comment on quizHtml/practiceHtml in
+   render.js), corner-bracketed via cornerBracketsHtml(). */
+.quiz-question-single {
+  position: relative;
+  border: 1px solid var(--card-border);
+  border-radius: 2px;
+  padding: 32px 36px;
+}
+.quiz-question-single h2 {
+  /* Override the global h1,h2,h3{font-family:var(--font-ar)} rule -- that
+     rule is meant for module/lesson/concept titles, which are pure Arabic.
+     A quiz question is English-carrier prose with Arabic terms (see
+     content/README.md's "Language of prompts"), so it wants the English
+     display font; any <bdi> term inside still renders in font-ar regardless,
+     since a direct rule on the element always wins over an inherited one. */
+  font-family: var(--font-display);
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.3;
+  margin: 10px 0 36px;
+  font-weight: 700;
+}
+
+.quiz-feedback-line {
+  text-align: center;
+  font-size: 13.5px;
+  margin-top: 16px;
+}
+.quiz-feedback-line.correct {
+  color: var(--accent-700);
+}
+.quiz-feedback-line.incorrect {
+  color: var(--ink-soft);
+}
+
+.quiz-result {
+  text-align: center;
+  padding: 32px 36px 28px;
+  position: relative;
+  border: 1px solid var(--card-border);
+  border-radius: 2px;
+}
+.quiz-result-score {
+  font-family: var(--font-display);
+  font-size: 48px;
+  margin: 10px 0 6px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--maroon-deep);
+}
+.quiz-result-message {
+  opacity: 0.72;
+  font-size: 15px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.quiz-result-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  animation: confetti-fall 1.6s ease-in forwards;
+}
+@keyframes confetti-fall {
+  0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(220px) rotate(220deg); }
+}
+
+@keyframes question-slide-in {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.quiz-question-single.anim-in {
+  animation: question-slide-in 0.4s cubic-bezier(0.22, 0.9, 0.32, 1) both;
+}
+
+@media (max-width: 860px) {
+  .lesson-layout {
+    grid-template-columns: 1fr;
+  }
+  .lesson-sidebar {
+    position: static;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .app-header {
+    padding: 14px 20px;
+    gap: 16px;
+  }
+  .app-header-right {
+    gap: 16px;
+  }
+  .app-header-nav {
+    gap: 16px;
+  }
+  .app-header-stats {
+    gap: 10px;
+    padding-left: 12px;
+  }
+  .app-footer {
+    padding: 16px 20px 20px;
+  }
+  .main-content {
+    padding: 32px 20px 60px;
+  }
+  .exercise-card,
+  .card {
+    padding: 18px;
+  }
+  /* Same tightening as .exercise-card/.card above, for the two boxes a
+     concept now renders alongside its prose. The between-concept rule keeps
+     its lozenge but loses some of its rhythm -- there's less scroll to lose
+     your place in on a narrow screen. */
+  .concept-tldr {
+    padding: 12px 16px;
+  }
+  .concept-examples {
+    padding: 14px 16px 12px;
+  }
+  .concept-clarification {
+    padding: 16px 18px;
+  }
+  .concept-block + .concept-block {
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+  .concept-example-ar {
+    font-size: 18px;
+  }
+}

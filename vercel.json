@@ -1,6 +1,8 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/nahw-reader/index.html" },
-    { "source": "/((?!nahw-reader/).*)", "destination": "/nahw-reader/$1" }
+    { "source": "/nahw-trainer", "destination": "/nahw-trainer-web/index.html" },
+    { "source": "/nahw-trainer/(.*)", "destination": "/nahw-trainer-web/$1" },
+    { "source": "/((?!nahw-reader/|nahw-trainer/|nahw-trainer-web/).*)", "destination": "/nahw-reader/$1" }
   ]
 }

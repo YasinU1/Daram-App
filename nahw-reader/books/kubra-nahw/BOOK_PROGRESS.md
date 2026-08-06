@@ -22,15 +22,17 @@ Legend: ✅ done · 🟡 partial · 🔜 next · ⬜ pending
 | 41–59 | المقصد الأول · الباب الثاني في الحرف — القسم الأول حروف الجر complete (الأصلي 13، الشبيه بالزائد: رُبّ/التبعيضية/حاشا، الزائد: الباء/مِن/اللام/الكاف، + appendix) | `m1-bab-2` | `maqsad1-bab2.js` | 🟡 |
 | 104–119 | المقصد الأول · الباب الثالث في الاسم | `m1-bab-3` | — | ⬜ |
 | 120–121 | المقصد الأول · الباب الرابع في العامل المعنوي + الخاتمة | `m1-bab-4`,`m1-kh` | — | ⬜ |
-| 132–172 | المقصد الثاني: في المعمول وغير المعمول | `m2-*` | — | ⬜ |
+| 130–150 | المقصد الثاني · الباب الأول في الاسم — المبتدأ والخبر، ثم المنصوبات: المفعول المطلق · به · فيه · له · معه · الحال · التمييز · المستثنى · خبر الأفعال الناقصة · خبر الحروف المشبهة بليس · اسم إنّ · اسم لا لنفي الجنس | `m2-bab-1` | `maqsad2a.js` + `maqsad2b.js` | 🟡 |
+| 151–172 | المقصد الثاني · بقيّة الباب الأول + الأبواب ٢–٤ (الفعل، الجملة، شبه الجملة) | `m2-bab-2`…`m2-bab-4` | — | ⬜ |
 | 176–197 | المقصد الثالث: في الإعراب | `m3-*` | — | ⬜ |
 | 200–228 | الخاتمة | `kh-*` | — | ⬜ |
 
 **Done so far:** the entire Introduction (pp. 6–19) + Aim One's مقدمة, the **complete** Verb chapter
-(pp. 22–40), and the Particle chapter through **all of حروف الجر** (القسم الأول: الأصلي، الشبيه بالزائد،
-الزائد — pp. 41–59).
-**Next 🔜:** continue `m1-bab-2` — القسم الثاني (حروف تجرّ اسمين / تنصب وترفع، إنّ وأخواتها …) from p. 60,
-then the remaining particle types through p. 103.
+(pp. 22–40), the Particle chapter through **all of حروف الجر** (القسم الأول: الأصلي، الشبيه بالزائد،
+الزائد — pp. 41–59), and **Aim Two pp. 130–150** (`m2-bab-1`, live in `book.html`).
+**Next 🔜:** two open fronts —
+1. `m1-bab-2` — القسم الثاني (حروف تجرّ اسمين / تنصب وترفع، إنّ وأخواتها …) from p. 60 through p. 103.
+2. `m2-bab-1` — continue from p. 151 (`maqsad2c.js`) to the end of the Noun chapter at p. 162.
 
 ## Notes on conventions
 - Page breaks are `{ t:'page', n:'<arabic-numeral>' }`; they render as a labelled divider.

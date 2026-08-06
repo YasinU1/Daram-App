@@ -160,6 +160,8 @@
 <script src="maqsad1-muq.js"></script>
 <script src="maqsad1-bab1.js"></script>
 <script src="maqsad1-bab2.js"></script>
+<script src="maqsad2a.js"></script>
+<script src="maqsad2b.js"></script>
 <script>
 /* ── table of contents — mirrors the printed book ── */
 const TOC = [
@@ -204,6 +206,7 @@ const CONTENT = {
   'm1-muq':    { blocks: DATA_M1_MUQ,  group:'المَقْصِدُ الأوَّل', groupEn:'Aim One' },
   'm1-bab-1':  { blocks: DATA_M1_BAB1, group:'المَقْصِدُ الأوَّل', groupEn:'Aim One' },
   'm1-bab-2':  { blocks: DATA_M1_BAB2, group:'المَقْصِدُ الأوَّل', groupEn:'Aim One' },
+  'm2-bab-1':  { blocks: DATA_M2A.concat(DATA_M2B), group:'المَقْصِدُ الثاني', groupEn:'Aim Two' },
 };
 
 Reader.init(TOC, CONTENT);

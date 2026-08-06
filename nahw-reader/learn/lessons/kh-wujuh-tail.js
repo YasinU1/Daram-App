@@ -7,7 +7,7 @@ window.DARAM_COURSES = window.DARAM_COURSES || [];
 
 window.DARAM_COURSES.push({
   id: 'kh-wujuh-tail',
-  num: 25,
+  num: 27,
   titleAr: 'خَاتِمَةُ الْكِتَابِ: الْوَاوُ وَالْيَاءُ',
   titleEn: 'End of the Book — the wāw & the yāʾ',
   pages: '253–254',
