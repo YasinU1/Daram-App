@@ -3,3 +3,14 @@
 # /nahw-reader/pdf-reader/local-key.js and leak the API key.
 nahw-reader/pdf-reader/local-key.js
 .env
+
+# Electron desktop app source -- nothing in vercel.json routes to it (the
+# web build lives in nahw-trainer-web/, served at /nahw-trainer/). Deploying
+# it anyway put files like nahw-trainer/js/persistence.js on the filesystem
+# at the exact same relative path as nahw-trainer-web/js/persistence.js, and
+# Vercel's filesystem routing wins over vercel.json rewrites -- so every
+# request for /nahw-trainer/js/persistence.js was silently served the
+# desktop file (require('fs') stubbed out to no-ops in-browser) instead of
+# the real localStorage-backed one. That's why web progress never actually
+# persisted across reloads/devices.
+nahw-trainer/

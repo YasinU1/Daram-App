@@ -1,9 +1,10 @@
 // Hidden unlock widget -- a small lock glyph pinned to the top-right
 // corner, in line with the app header/nav bar. Click it, type the code,
-// Enter: loads the ported desktop progress (see desktop-save.js) into
-// localStorage under persistence.js's SAVE_KEY and reloads. This is
-// obfuscation, not real security -- the save data and the code both live in
-// this file, readable by anyone who opens dev tools.
+// Enter: pulls the latest progress pushed from any browser (see
+// persistence.js's pushRemote, and /api/progress) into localStorage under
+// persistence.js's SAVE_KEY and reloads. This is obfuscation, not real
+// security -- the code lives in this file, readable by anyone who opens
+// dev tools.
 //
 // Fixed to the viewport (not appended inside .app-header) deliberately --
 // main.js's rerender() does root.innerHTML = html on every render, which
@@ -11,8 +12,6 @@
 // document.body and lining up its own top offset with the header's padding
 // is what keeps it visually "in the nav bar" without needing to survive
 // that wipe.
-import { DESKTOP_SAVE } from './desktop-save.js';
-
 const SAVE_KEY = 'an-nahw-save-data';
 const CODE = '2';
 
@@ -77,8 +76,17 @@ dot.addEventListener('click', () => {
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       if (input.value.trim() === CODE) {
-        localStorage.setItem(SAVE_KEY, JSON.stringify(DESKTOP_SAVE));
-        location.reload();
+        fetch(`/api/progress?code=${CODE}`)
+          .then((r) => r.json())
+          .then((data) => {
+            if (data) {
+              localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+              location.reload();
+            } else {
+              closeInput();
+            }
+          })
+          .catch(() => closeInput());
       } else {
         closeInput();
       }

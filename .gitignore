@@ -23,3 +23,5 @@ nahw-reader/pdf-reader/local-key.js
 Screenshot*.png
 app-design/screenshots/
 .dmux/
+.vercel
+.env*
