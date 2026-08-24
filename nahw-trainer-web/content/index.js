@@ -44,16 +44,9 @@ export function isLessonComplete(moduleId, lessonId, completed) {
   return !!(completed[moduleId] && completed[moduleId][lessonId]);
 }
 
-// Lessons within an unlocked module are gated sequentially: lesson N is
-// reachable once lesson N-1 is complete (the first lesson is always
-// reachable).
+// All lessons are unlocked regardless of progress.
 export function isLessonUnlocked(moduleId, lessonId, completed) {
-  if (!isModuleUnlocked(moduleId, completed)) return false;
-  const idx = lessonIndex(moduleId, lessonId);
-  if (idx <= 0) return true;
-  const mod = getModule(moduleId);
-  const prevLessonId = mod.lessons[idx - 1].id;
-  return isLessonComplete(moduleId, prevLessonId, completed);
+  return true;
 }
 
 export function completedCount(moduleId, completed) {
@@ -67,14 +60,9 @@ export function isModuleComplete(moduleId, completed) {
   return completedCount(moduleId, completed) === mod.lessons.length;
 }
 
-// Module 1 is always unlocked; module N unlocks once every lesson in
-// module N-1 is complete (only one module exists today, but this keeps the
-// door open for a Module 2 later without touching this file).
+// All modules are unlocked regardless of progress.
 export function isModuleUnlocked(moduleId, completed) {
-  const idx = moduleIndex(moduleId);
-  if (idx === 0) return true;
-  const prev = MODULES[idx - 1];
-  return isModuleComplete(prev.id, completed);
+  return true;
 }
 
 export function totalLessonsCleared(completed) {
