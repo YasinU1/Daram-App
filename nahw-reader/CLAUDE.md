@@ -26,6 +26,10 @@ the table + the "Next 🔜" line. Do **not** rely on memory or assume where you 
 - Block types: `page · h1 · h2(green|blue|red|plain) · line · box · table · grid · note`.
 - The shared engine is `reader.js`; each week file only supplies its data and the book's
   `book.html` assembles `TOC` + content map and calls `Reader.init(...)`.
+- Cross-app helpers live in `shared/`: `core.js` (`Daram.esc/fmt/el/elHtml/icon/shuffle/
+  loadJSON/saveJSON`) and `blocks.js` (`Daram.Blocks` block renderer + `Daram.WordPop`
+  word glosses, used by both the reader and Learn's matn panels). Load them before the
+  app script; put anything used by two apps there instead of copying it.
 - al-Kubrā only: drop footnotes from p.10 onward.
 
 ## MANDATORY before you stop

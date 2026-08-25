@@ -7,26 +7,15 @@
 
   // ---------- generic helpers ----------
 
-  function escapeHtml(str) {
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
+  const D = window.Daram; // shared/core.js
+  const escapeHtml = D.esc;
 
   function escapeRegExp(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
   function shuffle(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
+    return D.shuffle(arr.slice());
   }
 
   // Case-insensitive, harakat-insensitive comparison: strips Arabic
@@ -63,19 +52,12 @@
   // ---------- durable progress (localStorage) ----------
 
   function loadProgress() {
-    try {
-      return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {};
-    } catch {
-      return {};
-    }
+    return D.loadJSON(localStorage, PROGRESS_KEY, {});
   }
 
+  /* a failed save just means progress won't persist — nothing to do */
   function saveProgress(progress) {
-    try {
-      localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
-    } catch {
-      /* localStorage unavailable — progress just won't persist */
-    }
+    D.saveJSON(localStorage, PROGRESS_KEY, progress);
   }
 
   function getChapterProgress(progress, id) {
@@ -91,20 +73,12 @@
   // ---------- per-run tally (sessionStorage) ----------
 
   function getSession(chapterId) {
-    try {
-      const raw = sessionStorage.getItem(SESSION_PREFIX + chapterId);
-      return raw ? JSON.parse(raw) : { score: 0, total: 0, missed: [] };
-    } catch {
-      return { score: 0, total: 0, missed: [] };
-    }
+    return D.loadJSON(sessionStorage, SESSION_PREFIX + chapterId, { score: 0, total: 0, missed: [] });
   }
 
+  /* a failed save just means the score recap won't show */
   function saveSession(chapterId, session) {
-    try {
-      sessionStorage.setItem(SESSION_PREFIX + chapterId, JSON.stringify(session));
-    } catch {
-      /* sessionStorage unavailable — score recap just won't show */
-    }
+    D.saveJSON(sessionStorage, SESSION_PREFIX + chapterId, session);
   }
 
   function clearSession(chapterId) {

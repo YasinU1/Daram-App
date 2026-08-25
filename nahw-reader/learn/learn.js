@@ -20,6 +20,12 @@
 (function () {
   'use strict';
 
+  /* ── shared helpers (shared/core.js) ──────────────────────────
+     `el` writes innerHTML here, so its text must already have gone
+     through esc()/fmt(). */
+  const D = window.Daram;
+  const esc = D.esc, fmt = D.fmt, el = D.elHtml, icon = D.icon, shuffle = D.shuffle;
+
   const COURSES = window.DARAM_COURSES || [];
   const BANK = (typeof QUESTION_BANK !== 'undefined') ? QUESTION_BANK : [];
   const bankById = Object.fromEntries(BANK.map(q => [q.id, q]));
@@ -64,12 +70,8 @@
   }
 
   /* ── persistence ─────────────────────────────────────────────── */
-  function load() {
-    try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { sections: {}, q: {} }; }
-    catch (e) { return { sections: {}, q: {} }; }
-  }
-  const store = load();
-  function save() { localStorage.setItem(STORE_KEY, JSON.stringify(store)); }
+  const store = D.loadJSON(localStorage, STORE_KEY, { sections: {}, q: {} });
+  function save() { D.saveJSON(localStorage, STORE_KEY, store); }
 
   function recordAnswer(qKey, correct) {
     const s = store.q[qKey] || { seen: 0, wrong: 0, streak: 0, due: 0 };
@@ -118,35 +120,6 @@
       .sort((a, b) => store.q[a].due - store.q[b].due);
   }
 
-  /* ── text formatting: escape, **bold**, wrap Arabic runs ─────── */
-  const AR_RE = /[«؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿﴾﴿][؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿﴾﴿\s،؛؟.:()«»0-9٠-٩…!?-]*/g;
-  const WEAK_TAIL = /[\s.:()!?…0-9-]+$/;
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-  function fmt(s) {
-    if (s == null) return '';
-    let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
-    h = h.replace(AR_RE, m => {
-      const t = m.match(WEAK_TAIL);
-      const core = t ? m.slice(0, m.length - t[0].length) : m;
-      const tail = t ? t[0] : '';
-      if (!core) return m;
-      return '<bdi class="arb">' + core + '</bdi>' + tail;
-    });
-    return h;
-  }
-
-  function el(tag, cls, html) {
-    const n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (html != null) n.innerHTML = html;
-    return n;
-  }
-  function icon(name, extra) { return el('span', 'msym' + (extra ? ' ' + extra : ''), name); }
-  function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
-    return a;
-  }
-
   /* ══ MATN PANEL — interactive book excerpt ═══════════════════──
      Renders slices of the reader's block data (books/<slug>/*.js) with
      the same word-hover glosses and line-translation toggle as the
@@ -170,118 +143,14 @@
     return arr;
   }
 
-  function matnWord(tok) {
-    if (tok.g !== undefined) {
-      const s = el('span', 'glyph' + (tok.g === '﴿' || tok.g === '﴾' ? ' qbrace' : ''));
-      s.textContent = tok.g; return s;
-    }
-    const s = el('span', 'word' + (tok.q ? ' qz' : '') + (tok.c ? ' hl-' + tok.c : ''));
-    s.dataset.tr = tok.t || ''; s.dataset.en = tok.e || ''; s.dataset.note = tok.n || '';
-    s.textContent = tok.a; return s;
-  }
-  function matnLine(words) {
-    const block = el('div', 'line-block');
-    const p = el('p', 'line');
-    words.forEach(tok => { p.append(matnWord(tok)); p.append(document.createTextNode(' ')); });
-    block.append(p);
-    const tr = words.filter(t => t.g === undefined && t.e).map(t => t.e)
-      .join(' ').replace(/\s+([,.;:!?])/g, '$1').replace(/\(\s+/g, '(').trim();
-    if (tr) block.append(el('div', 'line-tr', esc(tr)));
-    return block;
-  }
-  function matnBlocks(host, blocks) {
-    blocks.forEach(b => {
-      if (!b) return;
-      if (b.t === 'h1' || b.t === 'h2') {
-        const h = el('div', b.t === 'h1' ? 'h1' + (b.c ? ' ' + b.c : '') : 'h2 ' + (b.c || 'plain'));
-        const ar = el('span', 'ar'); ar.textContent = b.ar; h.append(ar);
-        if (b.en) { const en = el('span', 'en'); en.textContent = b.en; h.append(en); }
-        host.append(h);
-      } else if (b.t === 'line') {
-        host.append(matnLine(b.w));
-      } else if (b.t === 'box') {
-        const box = el('div', 'box');
-        if (b.label) {
-          const lab = el('div', 'box-label'); lab.textContent = b.label;
-          if (b.labelEn) { const e2 = el('span', 'en'); e2.textContent = b.labelEn; lab.append(e2); }
-          box.append(lab);
-        }
-        b.lines.forEach(ln => box.append(matnLine(ln)));
-        host.append(box);
-      } else if (b.t === 'table') {
-        const wrap = el('div', 'tbl-wrap');
-        const t = document.createElement('table'); t.className = 'bk';
-        t.innerHTML =
-          '<tr><th colspan="2">' + esc(b.head[0]) + '</th><th rowspan="2">' + esc(b.head[1]) + '</th></tr>' +
-          '<tr><th class="sub">' + esc(b.sub[0]) + '</th><th class="sub">' + esc(b.sub[1]) + '</th></tr>' +
-          b.rows.map(r => '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>').join('');
-        wrap.append(t);
-        if (b.caption) wrap.append(el('div', 'tbl-cap', esc(b.caption)));
-        host.append(wrap);
-      } else if (b.t === 'grid') {
-        const wrap = el('div', 'tbl-wrap');
-        const t = document.createElement('table'); t.className = 'grid';
-        t.innerHTML =
-          '<tr><th class="corner"></th>' + b.cols.map(c => '<th>' + esc(c) + '</th>').join('') + '</tr>' +
-          b.rows.map(r => '<tr><th class="rowlab">' + esc(r.h) + '</th>' +
-            r.c.map(c => '<td' + (c === '✗' ? ' class="x"' : '') + '>' + esc(c) + '</td>').join('') + '</tr>').join('');
-        wrap.append(t);
-        if (b.caption) wrap.append(el('div', 'tbl-cap', esc(b.caption)));
-        host.append(wrap);
-      } /* page / note blocks are not shown in lesson excerpts */
-    });
-  }
-
-  /* word popover — same behaviour as reader.js, one shared element */
-  let popEl = null, popActive = null, popPinned = false;
-  function ensurePop() {
-    if (popEl) return popEl;
-    popEl = el('div', 'pop');
-    popEl.innerHTML = '<div class="p-ar"></div><div class="p-tr"></div><div class="p-en"></div><div class="p-note"></div>';
-    document.body.append(popEl);
-    popEl.addEventListener('click', e => e.stopPropagation());
-    document.addEventListener('click', () => { if (popPinned) { popPinned = false; hidePop(); } });
-    window.addEventListener('keydown', e => { if (e.key === 'Escape') { popPinned = false; hidePop(); } });
-    return popEl;
-  }
-  function showPop(w) {
-    const pop = ensurePop();
-    if (popActive && popActive !== w) popActive.classList.remove('active');
-    popActive = w; w.classList.add('active');
-    pop.querySelector('.p-ar').textContent = w.textContent;
-    pop.querySelector('.p-tr').textContent = w.dataset.tr;
-    pop.querySelector('.p-en').textContent = w.dataset.en;
-    const noteEl = pop.querySelector('.p-note');
-    noteEl.textContent = w.dataset.note || ''; noteEl.style.display = w.dataset.note ? 'block' : 'none';
-    pop.classList.add('show');
-    const r = w.getBoundingClientRect(), pr = pop.getBoundingClientRect();
-    const sx = window.scrollX, sy = window.scrollY, vw = document.documentElement.clientWidth, mg = 10;
-    let left = r.left + sx + r.width / 2 - pr.width / 2;
-    left = Math.max(mg + sx, Math.min(left, sx + vw - pr.width - mg));
-    let top = r.top + sy - pr.height - 12;
-    if (top < sy + 4) top = r.bottom + sy + 12;
-    pop.style.left = left + 'px'; pop.style.top = top + 'px';
-    pop.style.setProperty('--arrow', ((r.left + sx + r.width / 2) - left) + 'px');
-  }
-  function hidePop() {
-    if (popEl) popEl.classList.remove('show');
-    if (popActive) { popActive.classList.remove('active'); popActive = null; }
-  }
-  function bindMatnEvents(body) {
-    const canHover = window.matchMedia('(hover: hover)').matches;
-    body.addEventListener('mouseover', e => { const w = e.target.closest('.word'); if (w && canHover && !popPinned) showPop(w); });
-    body.addEventListener('mouseout', e => { const w = e.target.closest('.word'); if (w && canHover && !popPinned) hidePop(); });
-    body.addEventListener('click', e => {
-      const w = e.target.closest('.word'); if (!w) return; e.stopPropagation();
-      if (popPinned && popActive === w) { popPinned = false; hidePop(); return; }
-      popPinned = true; showPop(w);
-    });
-  }
+  /* the reader's own block renderer + word popover (shared/blocks.js):
+     page rules and footnotes are dropped — a lesson shows an excerpt */
+  const hidePop = D.WordPop.hide;
 
   function matnBody(blocks) {
     const body = el('div', 'mbody' + (MATN.tr ? ' show-tr' : ''));
-    matnBlocks(body, blocks);
-    bindMatnEvents(body);
+    D.Blocks.render(body, blocks, { pages: false, notes: false });
+    D.WordPop.bind(body);
     return body;
   }
   function matnTrToggle(getBody) {
