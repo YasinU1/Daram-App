@@ -33,16 +33,32 @@ const MODEL = process.env.CLAUDE_MODEL || 'claude-opus-4-8';
 const CLAUDE_BIN = process.env.CLAUDE_BIN || 'claude';
 const NO_TOOLS = ['Bash', 'Edit', 'Write', 'Read', 'Glob', 'Grep', 'WebFetch', 'WebSearch', 'NotebookEdit', 'Task', 'TodoWrite'];
 
-// ── chapter registry (mirrors CHAPTERS in test-maker.html) ────────────────────
-const DATA_FILES = ['muqaddimah.js', 'muqaddimah-bab2.js', 'muqaddimah-bab3.js', 'maqsad1-muq.js', 'maqsad1-bab1.js', 'maqsad1-bab2.js']
-  .map((f) => join('books', 'kubra-nahw', f));
+// ── chapter registry (mirrors CHAPTERS in test-maker.html — 13 chapters, kept in
+//    lockstep with that file since bank.sort() and the merge-guard both key off
+//    every real chapterId being present here, not just the ones this script can
+//    still LLM-generate) ──────────────────────────────────────────────────────
+const DATA_FILES = [
+  'muqaddimah.js', 'muqaddimah-bab2.js', 'muqaddimah-bab3.js',
+  'maqsad1-muq.js', 'maqsad1-bab1.js', 'maqsad1-bab2.js',
+  'maqsad2a.js', 'maqsad2b.js',
+].map((f) => join('books', 'kubra-nahw', f));
+// Fixed list of the DATA_* globals each DATA_FILES entry declares, in file order — loadChapterData()
+// grabs exactly these out of the vm context; CHAPTERS below reads them via each entry's own blocks(g).
+const DATA_GLOBALS = ['DATA', 'DATA_BAB2', 'DATA_BAB3', 'DATA_M1_MUQ', 'DATA_M1_BAB1', 'DATA_M1_BAB2', 'DATA_M2A', 'DATA_M2B'];
 const CHAPTERS = [
-  { id: 'muq-bab-1', global: 'DATA',         group: 'المُقَدِّمَة',     ar: 'الباب الأول في الكلمة',                       en: 'The Word (al-kalimah)' },
-  { id: 'muq-bab-2', global: 'DATA_BAB2',    group: 'المُقَدِّمَة',     ar: 'الباب الثاني في الجملة وشبه الجملة والكلام',  en: 'Sentence, quasi-sentence & speech' },
-  { id: 'muq-bab-3', global: 'DATA_BAB3',    group: 'المُقَدِّمَة',     ar: 'الباب الثالث في العامل والمعمول والإعراب',    en: 'Governor, governed & iʿrāb' },
-  { id: 'm1-muq',    global: 'DATA_M1_MUQ',  group: 'المَقْصِدُ الأوَّل', ar: 'المقدمة',                                    en: 'Introduction (Aim One)' },
-  { id: 'm1-bab-1',  global: 'DATA_M1_BAB1', group: 'المَقْصِدُ الأوَّل', ar: 'الباب الأول في الفعل',                        en: 'The Verb' },
-  { id: 'm1-bab-2',  global: 'DATA_M1_BAB2', group: 'المَقْصِدُ الأوَّل', ar: 'الباب الثاني في الحرف',                       en: 'The Particle' },
+  { id: 'muq-bab-1',  blocks: (g) => g.DATA,         group: 'المُقَدِّمَة',       ar: 'الباب الأول في الكلمة',                       en: 'The Word (al-kalimah)' },
+  { id: 'muq-bab-2',  blocks: (g) => g.DATA_BAB2,    group: 'المُقَدِّمَة',       ar: 'الباب الثاني في الجملة وشبه الجملة والكلام',  en: 'Sentence, quasi-sentence & speech' },
+  { id: 'muq-bab-3',  blocks: (g) => g.DATA_BAB3,    group: 'المُقَدِّمَة',       ar: 'الباب الثالث في العامل والمعمول والإعراب',    en: 'Governor, governed & iʿrāb' },
+  { id: 'm1-muq',     blocks: (g) => g.DATA_M1_MUQ,  group: 'المَقْصِدُ الأوَّل',   ar: 'المقدمة',                                    en: 'Introduction (Aim One)' },
+  { id: 'm1-bab-1a',  blocks: (g) => g.DATA_M1_BAB1.slice(0, 10),    group: 'المَقْصِدُ الأوَّل',   ar: 'القياسي: اللازم',                            en: 'The Regular Verb I — intransitive (lāzim)' },
+  { id: 'm1-bab-1b',  blocks: (g) => g.DATA_M1_BAB1.slice(10, 66),   group: 'المَقْصِدُ الأوَّل',   ar: 'القياسي: المتعدي',                           en: 'The Regular Verb II — transitive (mutaʿaddī)' },
+  { id: 'm1-bab-1c',  blocks: (g) => g.DATA_M1_BAB1.slice(66, 133),  group: 'المَقْصِدُ الأوَّل',   ar: 'السماعي: الأفعال الناقصة',                   en: 'The Heard Verb I — defective verbs' },
+  { id: 'm1-bab-1d',  blocks: (g) => g.DATA_M1_BAB1.slice(133, 149), group: 'المَقْصِدُ الأوَّل',   ar: 'أفعال المدح والذم',                          en: 'Verbs of Praise & Blame' },
+  { id: 'm1-bab-1e',  blocks: (g) => g.DATA_M1_BAB1.slice(149),      group: 'المَقْصِدُ الأوَّل',   ar: 'صيغ التعجب',                                 en: 'Forms of Wonder (taʿajjub)' },
+  { id: 'm1-bab-2',   blocks: (g) => g.DATA_M1_BAB2, group: 'المَقْصِدُ الأوَّل',   ar: 'الباب الثاني في الحرف',                       en: 'The Particle' },
+  { id: 'm1-bab-3',   blocks: () => [],              group: 'المَقْصِدُ الأوَّل',   ar: 'الباب الثالث في الاسم',                       en: 'The Noun' },
+  { id: 'm1-kh',      blocks: () => [],              group: 'المَقْصِدُ الأوَّل',   ar: 'خاتمة المقصد الأول: التنازع وحذف العامل',    en: 'Aim One Epilogue — tanāzuʿ & the deleted governor' },
+  { id: 'm2-bab-1',   blocks: (g) => [...g.DATA_M2A, ...g.DATA_M2B.slice(0, 74)], group: 'المَقْصِدُ الثاني', ar: 'الباب الأول في الاسم (إلى نهاية المستثنى)', en: 'Aim Two, Bab One — up to the end of the Mustathnā' },
 ];
 
 // canonical mark value per archetype, taken from the Year 2 Term 1 paper
@@ -55,7 +71,7 @@ const ARCHETYPES = Object.keys(CANON_MARKS);
 // ── load the DATA_* globals in one vm context (const ⇒ read via trailing expr) ─
 function loadChapterData() {
   const src = DATA_FILES.map((f) => readFileSync(join(READER, f), 'utf8')).join('\n')
-    + `\n;({ ${CHAPTERS.map((c) => c.global).join(', ')} })`;
+    + `\n;({ ${DATA_GLOBALS.join(', ')} })`;
   return vm.runInNewContext(src, {});
 }
 
@@ -161,8 +177,17 @@ modelled exactly on the "Dar al-Ulum Oxford" Nahw (al-Kubrā) papers. House styl
 - ALL questions are written/free-response (no multiple choice).
 - Questions are drawn ONLY from the supplied chapter content. Never test material not present.
 - Arabic (matn lines, terms, example sentences) carries full ḥarakāt where natural.
-- For EACH question also produce a private mark scheme: the model answer plus how the marks break down.
-  The mark scheme is examiner-only and must never be shown to the student.
+- Mark schemes are written in ENGLISH PROSE with Arabic dropped in only for: technical
+  grammar terms (اسم فاعل، حرف الجر، الأصلي — never transliterated, e.g. not "ḥarf al-jarr"),
+  quoted matn words/phrases, and iʿrāb labels. Do NOT write whole explanatory clauses or
+  sentences in Arabic — the reasoning, connective words ("because", "since", "note that"),
+  and grammar-in-English go in English; only the term/word being discussed switches to Arabic
+  script, inline, the way a bilingual textbook glosses a term. Every bullet should read as an
+  English sentence with Arabic terms embedded, not an Arabic sentence with English embedded.
+- For EACH question also produce a private mark scheme: the model answer PLUS how the marks
+  break down. The mark scheme is examiner-only and must never be shown to the student. It is
+  an ARRAY of short bullet strings, never one paragraph — each entry is one idea/point, one
+  short sentence; the last entry is "Total: n marks".
 
 The seven archetypes and their fixed mark values:
   explain-line (5)          — quote a matn line in Arabic, ask the student to explain it.
@@ -190,7 +215,7 @@ Return ONLY a JSON array (no prose, no code fence) of objects of this exact shap
     "marks": <the canonical value for that archetype>,
     "promptEn": "the instruction to the student, in English",
     "promptAr": "Arabic matn line / statement / sentence to display, with ḥarakāt (empty string if none)",
-    "markScheme": "model answer + brief breakdown of how the marks are awarded (examiner-only)"
+    "markScheme": ["array of 3-7 short bullet strings (examiner-only): model answer points then mark breakdown, nahw/sarf terms in Arabic script not transliteration, last string is 'Total: n marks'"]
   }
 ]
 
@@ -203,7 +228,8 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)
 
 async function main() {
   const only = process.argv.slice(2);
-  const targets = only.length ? CHAPTERS.filter((c) => only.includes(c.id)) : CHAPTERS;
+  const explicit = only.length > 0;
+  const targets = explicit ? CHAPTERS.filter((c) => only.includes(c.id)) : CHAPTERS;
   if (!targets.length) {
     console.error(`No matching chapter ids. Known: ${CHAPTERS.map((c) => c.id).join(', ')}`);
     process.exit(1);
@@ -211,17 +237,29 @@ async function main() {
 
   const globals = loadChapterData();
 
-  // start from the existing bank so a per-chapter rebuild only replaces its slice
   const outPath = join(READER, 'questions-bank.js');
   let bank = [];
-  if (existsSync(outPath) && only.length) {
+  if (existsSync(outPath)) {
     const m = readFileSync(outPath, 'utf8').match(/QUESTION_BANK\s*=\s*(\[[\s\S]*?\]);/);
     if (m) { try { bank = JSON.parse(m[1]); } catch { /* ignore, rebuild clean */ } }
-    bank = bank.filter((q) => !targets.some((t) => t.id === q.chapterId));
   }
 
-  for (const c of targets) {
-    const blocks = globals[c.global];
+  // The whole bank is now hand-authored/hand-maintained (see its own header comment) — an
+  // implicit no-arg run must never silently discard that by re-running the LLM over every
+  // chapter. Only chapters named explicitly on the CLI are allowed to be wiped-and-regenerated;
+  // a no-arg run just re-sorts/re-writes the file as-is (still useful after hand-edits).
+  const regenTargets = explicit
+    ? targets
+    : targets.filter((c) => !bank.some((q) => q.chapterId === c.id));
+  if (!explicit && regenTargets.length < targets.length) {
+    console.log(`No chapter ids given — leaving ${targets.length - regenTargets.length} chapter(s) with existing (hand-authored) bank content untouched.`);
+    console.log(`Pass a chapter id explicitly (e.g. \`node build-bank.mjs ${targets[0].id}\`) to force-regenerate one via the LLM.\n`);
+  }
+  bank = bank.filter((q) => !regenTargets.some((t) => t.id === q.chapterId));
+
+  for (const c of regenTargets) {
+    const blocks = c.blocks(globals);
+    if (!blocks.length) { console.warn(`! ${c.id}: no reader-transcribed source, skipping (bank-only chapter)`); continue; }
     const text = blocksToText(blocks);
     if (!text.trim()) { console.warn(`! ${c.id}: no text extracted, skipping`); continue; }
     process.stdout.write(`• ${c.id} (${c.en}) … `);
@@ -245,7 +283,9 @@ async function main() {
           marks: CANON_MARKS[arch],            // pin to canonical so papers sum cleanly
           promptEn: String(it.promptEn).trim(),
           promptAr: String(it.promptAr || '').trim(),
-          markScheme: String(it.markScheme || '').trim(),
+          markScheme: Array.isArray(it.markScheme)
+            ? it.markScheme.map((s) => String(s).trim()).filter(Boolean)
+            : String(it.markScheme || '').trim(),
         });
         added++;
       }

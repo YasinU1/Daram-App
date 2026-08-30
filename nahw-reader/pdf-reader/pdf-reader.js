@@ -7,8 +7,8 @@
   const PDF_ID = 'kubra-nahw-2026';
   const GEMINI_LS_KEY = 'daram-gemini-key';
   const ANTHROPIC_LS_KEY = 'daram-anthropic-key';
-  const GEMINI_MODEL = 'gemini-flash-latest'; // floating alias — survives model retirements
-  const ANTHROPIC_MODEL = 'claude-opus-5';
+  const GEMINI_MODEL = 'gemini-flash-lite-latest'; // floating alias — cheaper/higher-quota tier than flash, survives model retirements
+  const ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001'; // cheapest model — this is just a Gemini-failure fallback
   const MAX_CSS_WIDTH = 860;
   const TOC_W = 252;
   const PAGE_OFFSET = 0; // printed page N = PDF page N (verified against the PDF)
@@ -288,10 +288,19 @@
       throw new Error('Set a Gemini or Anthropic API key first (⚙︎ Key).');
     }
 
+    const PROVIDER_TIMEOUT_MS = 30000;
+
+    function withTimeout(promise, ms) {
+      return new Promise((resolve, reject) => {
+        const t = setTimeout(() => reject(new Error('timed out after ' + Math.round(ms / 1000) + 's')), ms);
+        promise.then(v => { clearTimeout(t); resolve(v); }, e => { clearTimeout(t); reject(e); });
+      });
+    }
+
     const failures = [];
     for (const { p, key } of configured) {
       try {
-        return await p.call(b64png, learn, key);
+        return await withTimeout(p.call(b64png, learn, key), PROVIDER_TIMEOUT_MS);
       } catch (err) {
         failures.push(p.name + ': ' + err.message);
       }

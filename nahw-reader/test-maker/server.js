@@ -120,8 +120,18 @@ modelled exactly on the "Dar al-Ulum Oxford" Nahw (al-Kubrā) papers. The house 
   7. "classify-tarkib"   — classify a word's category, then translate and give the tarkīb/iʿrāb
                            of a supplied Arabic sentence. (~9)
 - Arabic (matn lines, terms, example sentences) should carry full ḥarakāt where natural.
-- For EACH question also produce a private mark scheme: the model answer plus how the marks break down.
-  The mark scheme is for the examiner only and must never be shown to the student.`;
+- Mark schemes are written in ENGLISH PROSE with Arabic dropped in only for: technical
+  grammar terms (اسم فاعل، حرف الجر، الأصلي — never transliterated, e.g. not "ḥarf al-jarr"),
+  quoted matn words/phrases, and iʿrāb labels. Do NOT write whole explanatory clauses or
+  sentences in Arabic — the reasoning, connective words ("because", "since", "note that"),
+  and grammar-in-English go in English; only the term/word being discussed switches to Arabic
+  script, inline, the way a bilingual textbook glosses a term. Every bullet should read as an
+  English sentence with Arabic terms embedded, not an Arabic sentence with English embedded.
+- For EACH question also produce a private mark scheme: the model answer PLUS how the marks
+  break down. The mark scheme is for the examiner only and must never be shown to the student.
+  It is returned as an ARRAY of short bullet strings (see JSON shape below), never as one
+  paragraph — each array entry is one idea/point, one short sentence, plain text (no markdown
+  bullet dash, the array structure IS the bullet).`;
 
 // ── routes ──────────────────────────────────────────────────────────────────
 
@@ -148,7 +158,7 @@ Return ONLY a JSON object of this exact shape (no prose, no code fence):
       "marks": 5,
       "promptEn": "the instruction to the student, in English",
       "promptAr": "optional Arabic matn line / statement / sentence to display (omit or empty string if none)",
-      "markScheme": "the model answer and a brief breakdown of how the marks are awarded (examiner-only)"
+      "markScheme": ["array of 3-7 short bullet strings (examiner-only): model answer points then mark breakdown, each string ONE short sentence, nahw/sarf terms written in Arabic script not transliteration, last string is 'Total: n marks'"]
     }
   ]
 }
@@ -180,7 +190,7 @@ examples and correct iʿrāb/tarkīb. Do not penalise minor transliteration choi
 QUESTION (${question.marks} marks): ${question.promptEn}
 ${question.promptAr ? `Arabic shown to student: ${question.promptAr}` : ''}
 
-MARK SCHEME (examiner-only): ${question.markScheme || '(none provided — judge against standard nahw knowledge)'}
+MARK SCHEME (examiner-only): ${Array.isArray(question.markScheme) ? question.markScheme.join(' | ') : (question.markScheme || '(none provided — judge against standard nahw knowledge)')}
 
 STUDENT ANSWER:
 ${(answer || '').trim() || '(left blank)'}

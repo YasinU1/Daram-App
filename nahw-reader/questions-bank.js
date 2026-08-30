@@ -1,6 +1,6 @@
 // Daram — pre-generated question bank.  DO NOT EDIT BY HAND.
-// Built by test-maker/build-bank.mjs on 2026-06-29T20:41:48.678Z.
-// 70 questions across 6 chapters.
+// Built by test-maker/build-bank.mjs (+ add-more-bank.mjs) on 2026-08-29T20:50:41.426Z.
+// 234 questions across 13 chapters.
 // Each item: { id, chapterId, chapterAr, chapterEn, archetype, marks, promptEn, promptAr, markScheme }.
 const QUESTION_BANK =
 [
@@ -13,7 +13,20 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following matn line, making clear what kind of word it defines and how the definition works.",
     "promptAr": "الِاسْمُ وَهُوَ مَا دَلَّ عَلَى مَعْنًى فِي نَفْسِهِ غَيْرِ مُقْتَرِنٍ بِزَمَانٍ.",
-    "markScheme": "Model answer: This is the definition of the noun (al-ism). 'مَا دَلَّ عَلَى مَعْنًى' = it denotes a meaning; 'فِي نَفْسِهِ' = that meaning is complete in itself, i.e. understood without needing another word (this distinguishes the noun from the ḥarf, whose meaning is فِي غَيْرِهِ); 'غَيْرِ مُقْتَرِنٍ بِزَمَانٍ' = not coupled with a tense/time, which distinguishes it from the verb (which is مُقْتَرِنٌ بِزَمَانٍ). Examples: رَجُلٌ, عِلْمٌ. Marks: 1 for identifying it as the definition of the noun; 2 for 'meaning in itself' and its distinction from the ḥarf; 2 for 'not coupled with time' and its distinction from the verb."
+    "markScheme": [
+      "This is the definition of the noun (الاسم).",
+      "'مَا دَلَّ عَلَى مَعْنًى' = it denotes a meaning.",
+      "'فِي نَفْسِهِ' = that meaning is complete in itself.",
+      "I.e. it is understood without needing another word.",
+      "This distinguishes the noun from الحرف, whose meaning is فِي غَيْرِهِ.",
+      "'غَيْرِ مُقْتَرِنٍ بِزَمَانٍ' = not coupled with a tense/time.",
+      "This distinguishes it from the verb, which is مُقْتَرِنٌ بِزَمَانٍ.",
+      "Examples: رَجُلٌ، عِلْمٌ.",
+      "Breakdown: 1 — identifying it as the definition of the noun.",
+      "Breakdown: 2 — 'meaning in itself' and its distinction from الحرف.",
+      "Breakdown: 2 — 'not coupled with time' and its distinction from the verb.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-1--explain-line--explain-the-following-matn-line--c",
@@ -24,7 +37,20 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following matn line and show, with an example, why a ḥarf differs from a noun and a verb in how it conveys meaning.",
     "promptAr": "الْحَرْفُ مَا دَلَّ عَلَى مَعْنًى فِي غَيْرِهِ، نَحْوُ فِي وَإِنَّ.",
-    "markScheme": "Model answer: This defines the particle (al-ḥarf). 'مَا دَلَّ عَلَى مَعْنًى فِي غَيْرِهِ' = it denotes a meaning only in/through another word — it cannot convey its meaning standing alone but needs a متعلَّق. Contrast: the noun and verb denote a meaning فِي نَفْسِهِ (complete in themselves). Example: فِي (in) has no understood sense until joined to something, e.g. فِي الْبَيْتِ; likewise إِنَّ requires a following clause. Marks: 1 identify as definition of the ḥarf; 2 explain 'meaning in another' / dependence on a متعلَّق; 1 contrast with noun and verb; 1 valid worked example."
+    "markScheme": [
+      "This defines the particle (الحرف).",
+      "'مَا دَلَّ عَلَى مَعْنًى فِي غَيْرِهِ' = it denotes a meaning only in/through another word.",
+      "It cannot convey its meaning standing alone.",
+      "It needs a متعلَّق.",
+      "Contrast: the noun and verb denote a meaning فِي نَفْسِهِ (complete in themselves).",
+      "Example: فِي (in) has no understood sense until joined to something, e.g. فِي الْبَيْتِ.",
+      "Likewise إِنَّ requires a following clause.",
+      "Breakdown: 1 — identify as definition of الحرف.",
+      "Breakdown: 2 — explain 'meaning in another' / dependence on a متعلَّق.",
+      "Breakdown: 1 — contrast with noun and verb.",
+      "Breakdown: 1 — valid worked example.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-1--state-types--state-the-three-divisions-of-the-e",
@@ -35,7 +61,14 @@ const QUESTION_BANK =
     "marks": 6,
     "promptEn": "State the three divisions of the word (al-kalimah) and, for each, give one recognising sign (ʿalāmah) by which it may be identified, with an example.",
     "promptAr": "",
-    "markScheme": "Model answer: (1) الِاسْم (noun) — recognised e.g. by being مَجْرُور (بِسْمِ اللهِ), or by أل (الرَّحْمٰنِ), or by tanwīn (هُدًى), etc. (2) الْفِعْل (verb) — recognised e.g. by accepting قَدْ / السِّين / سَوْفَ / لَمْ / لَنْ, or تاء التأنيث الساكنة (آمَنَتْ), or the مُضارعة letters (يُحْيِي). (3) الْحَرْف (particle) — recognised by the absence in it of any sign of the noun or verb (هَلْ، بَلْ). Marks: 2 per division (1 for naming it, 1 for a correct sign + example). Total 6."
+    "markScheme": [
+      "(1) الاسم (noun) — recognised e.g. by being مَجْرُور (بِسْمِ اللهِ), or by أل (الرَّحْمٰنِ), or by tanwīn (هُدًى).",
+      "(2) الفعل (verb) — recognised e.g. by accepting قَدْ / السِّين / سَوْفَ / لَمْ / لَنْ.",
+      "Also by تاء التأنيث الساكنة (آمَنَتْ), or the مُضارَعة letters (يُحْيِي).",
+      "(3) الحرف (particle) — recognised by the absence in it of any sign of the noun or verb (هَلْ، بَلْ).",
+      "Breakdown: 2 per division — 1 for naming it, 1 for a correct sign + example.",
+      "Total: 6 marks"
+    ]
   },
   {
     "id": "muq-bab-1--compare--explain-with-examples-the-differ-g",
@@ -46,7 +79,18 @@ const QUESTION_BANK =
     "marks": 8,
     "promptEn": "Explain, with examples, the difference between اسم العين (noun of a concrete entity) and اسم المعنى (noun of an abstract meaning).",
     "promptAr": "",
-    "markScheme": "Model answer: Both fall under the مَوْصُوف (substantive: مَا دَلَّ عَلَى ذَاتٍ تَحْتَمِلُ الصِّفَةَ). اسْمُ الْعَيْن = denotes something that subsists by itself (مَا يَقُومُ بِذَاتِهِ), e.g. رَجُلٌ, a man — a self-standing entity. اسْمُ الْمَعْنَى = denotes something that does NOT subsist by itself but subsists through another (لَا يَقُومُ بِذَاتِهِ بَلْ يَقُومُ بِغَيْرِهِ), e.g. عِلْمٌ, knowledge — which exists only in a knower. Marks: 2 for placing both under al-mawṣūf; 2 for correct definition of ism ʿayn + example; 2 for correct definition of ism maʿnā + example; 2 for clearly articulating the contrast (self-subsisting vs. subsisting-through-another)."
+    "markScheme": [
+      "Both fall under the مَوْصُوف (substantive: مَا دَلَّ عَلَى ذَاتٍ تَحْتَمِلُ الصِّفَةَ).",
+      "اسْمُ الْعَيْن = denotes something that subsists by itself (مَا يَقُومُ بِذَاتِهِ).",
+      "Example: رَجُلٌ, a man — a self-standing entity.",
+      "اسْمُ الْمَعْنَى = denotes something that does NOT subsist by itself but subsists through another (لَا يَقُومُ بِذَاتِهِ بَلْ يَقُومُ بِغَيْرِهِ).",
+      "Example: عِلْمٌ, knowledge — which exists only in a knower.",
+      "Breakdown: 2 — placing both under المَوْصُوف.",
+      "Breakdown: 2 — correct definition of اسْمُ الْعَيْن + example.",
+      "Breakdown: 2 — correct definition of اسْمُ الْمَعْنَى + example.",
+      "Breakdown: 2 — clearly articulating the contrast (self-subsisting vs. subsisting-through-another).",
+      "Total: 8 marks"
+    ]
   },
   {
     "id": "muq-bab-1--compare--explain-with-examples-the-differ-i",
@@ -57,7 +101,21 @@ const QUESTION_BANK =
     "marks": 8,
     "promptEn": "Explain, with examples, the difference between حرف المدّ (letter of prolongation) and حرف اللين (letter of softness).",
     "promptAr": "حَرْفُ مَدٍّ حَرْفُ عِلَّةٍ سَاكِنٌ قَبْلَهُ حَرَكَةٌ تُنَاسِبُهُ — حَرْفُ لِينٍ حَرْفُ وَاوٍ أَوْ يَاءٍ سَاكِنٌ قَبْلَهُ فَتْحَةٌ.",
-    "markScheme": "Model answer: حرف المدّ is a vowelless letter of ʿillah (ا/و/ي) preceded by a homogeneous (matching) vowel — alif after fatḥa, wāw after ḍamma, yāʾ after kasra, e.g. كُونُوا (ḍamma before sākin wāw). حرف اللين is specifically a vowelless wāw or yāʾ preceded by a fatḥa (which does NOT match it), e.g. الخَيْر، التَّوْبَة. Key difference: madd requires the preceding vowel to be homogeneous with the letter; līn has a wāw/yāʾ sākin preceded by a non-homogeneous fatḥa; also līn is restricted to wāw and yāʾ. Marks: 2 definition+example of madd; 2 definition+example of līn; 2 the homogeneity (مناسبة) point; 2 noting alif cannot be a līn letter / līn limited to wāw & yāʾ."
+    "markScheme": [
+      "حرف المدّ is a vowelless letter of علّة (ا/و/ي) preceded by a homogeneous (matching) vowel.",
+      "Alif after fatḥa, wāw after ḍamma, yāʾ after kasra.",
+      "Example: كُونُوا (ḍamma before sākin wāw).",
+      "حرف اللين is specifically a vowelless wāw or yāʾ preceded by a fatḥa (which does NOT match it).",
+      "Example: الخَيْر، التَّوْبَة.",
+      "Key difference: المدّ requires the preceding vowel to be homogeneous with the letter.",
+      "اللين has a wāw/yāʾ sākin preceded by a non-homogeneous fatḥa.",
+      "Also اللين is restricted to wāw and yāʾ.",
+      "Breakdown: 2 — definition + example of المدّ.",
+      "Breakdown: 2 — definition + example of اللين.",
+      "Breakdown: 2 — the homogeneity (مناسبة) point.",
+      "Breakdown: 2 — noting alif cannot be an اللين letter / اللين limited to wāw & yāʾ.",
+      "Total: 8 marks"
+    ]
   },
   {
     "id": "muq-bab-1--explain-statement--explain-the-following-statement--k",
@@ -68,7 +126,25 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "Explain the following statement as fully as possible, with examples.",
     "promptAr": "يَشْتَمِلُ الْفِعْلُ عَلَى ثَلَاثَةِ مَعَانٍ: الْأَوَّلُ الْحَدَثُ وَهُوَ مَعْنَى الْمَصْدَرِ، وَالثَّانِي الزَّمَانُ، وَالثَّالِثُ الْفَاعِلُ. وَالْفِعْلُ يَتَكَوَّنُ مِنْ مَادَّةٍ وَهَيْئَةٍ.",
-    "markScheme": "Model answer: The verb comprises three meanings together: (1) الحدث — the event/action itself, which is the meaning of the maṣdar; (2) الزمان — the time of its occurrence (past/present); (3) الفاعل — the doer. So جَلَسَ denotes the act of sitting, that it occurred in the past, and a doer. Composition: every verb is made of a مَادَّة (root-material) and a هَيْئَة (pattern). The mādda of نَصَرَ is ن-ص-ر and denotes the event (النصر = help); the hayʾa is the pattern فَعَلَ and denotes that it occurred in the past. Note: some nouns indicate time by their material (mādda) not their pattern, e.g. أَمْسِ، الآنَ، غَدًا — but they remain nouns because the time is not from a verbal pattern. Marks: 3 for naming/explaining ḥadath (=maṣdar meaning); 3 for zamān; 3 for fāʿil; 3 for the mādda/hayʾa distinction with a worked example (naṣara); 2 for the ams/al-ān/ghadan nuance; 1 for the worked example جلس. Total 15."
+    "markScheme": [
+      "The verb comprises three meanings together.",
+      "(1) الحدث — the event/action itself, which is the meaning of the مصدر.",
+      "(2) الزمان — the time of its occurrence (past/present).",
+      "(3) الفاعل — the doer.",
+      "So جَلَسَ denotes the act of sitting, that it occurred in the past, and a doer.",
+      "Composition: every verb is made of a مَادَّة (root-material) and a هَيْئَة (pattern).",
+      "The مادّة of نَصَرَ is ن-ص-ر and denotes the event (النصر = help).",
+      "The هيئة is the pattern فَعَلَ and denotes that it occurred in the past.",
+      "Note: some nouns indicate time by their مادّة not their pattern, e.g. أَمْسِ، الآنَ، غَدًا.",
+      "But they remain nouns because the time is not from a verbal pattern.",
+      "Breakdown: 3 — naming/explaining الحدث (= مصدر meaning).",
+      "Breakdown: 3 — الزمان.",
+      "Breakdown: 3 — الفاعل.",
+      "Breakdown: 3 — the مادّة/هيئة distinction with a worked example (نَصَرَ).",
+      "Breakdown: 2 — the أمس/الآن/غدًا nuance.",
+      "Breakdown: 1 — the worked example جلس.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-1--explain-statement--explain-the-following-statement--m",
@@ -79,7 +155,24 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "Explain the following statement on the signs of the noun as fully as possible, with examples, noting how the verb and particle are excluded.",
     "promptAr": "يُعْرَفُ الِاسْمُ بِأَنْ يَكُونَ مَجْرُورًا، وَبِأَلْ لِلتَّعْرِيفِ، وَبِالتَّنْوِينِ، وَبِأَنْ يَكُونَ مُسْنَدًا إِلَيْهِ، وَبِأَنْ يَكُونَ مُنَادًى، وَبِأَنْ يَكُونَ مُضَافًا.",
-    "markScheme": "Model answer: The noun is recognised by six signs: (1) being majrūr — بِسْمِ اللهِ; (2) أل of definiteness — الرَّحْمٰنِ الرَّحِيمِ; (3) tanwīn — هُدًى لِلْمُتَّقِينَ (the tanwīn intended excludes تنوين الترنّم of poetry); (4) being musnad ilayhi (subject/predicated-to) — إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ; (5) being a munādā (vocative) — يَا نُوحُ; (6) being muḍāf (possessor) — رَبِّ الْعَالَمِينَ. The verb and ḥarf can never be majrūr even if a jārr precedes them (لِيَكُونَ لِلْعَالَمِينَ نَذِيرًا; بِأَنَّا مُسْلِمُونَ — here أن + clause is an interpreted noun). Likewise vocative particles may enter on a non-munādā (يَا لَيْتَ قَوْمِي), where يا is a particle of tanbīh / the munādā is omitted. Marks: 1 per sign with example (6); 3 for the verb/ḥarf not taking jarr point with example; 2 for the muʾawwal/jarr nuance; 2 for the tanwīn al-tarannum or yā-non-munādā nuance; 1 organisation/completeness. Total 15."
+    "markScheme": [
+      "The noun is recognised by six signs.",
+      "(1) being مجرور — بِسْمِ اللهِ.",
+      "(2) أل of definiteness — الرَّحْمٰنِ الرَّحِيمِ.",
+      "(3) tanwīn — هُدًى لِلْمُتَّقِينَ (the tanwīn intended excludes تنوين الترنّم of poetry).",
+      "(4) being مسند إليه (subject/predicated-to) — إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ.",
+      "(5) being a مُنادى (vocative) — يَا نُوحُ.",
+      "(6) being مضاف (possessor) — رَبِّ الْعَالَمِينَ.",
+      "The verb and الحرف can never be مجرور even if a جارّ precedes them (لِيَكُونَ لِلْعَالَمِينَ نَذِيرًا؛ بِأَنَّا مُسْلِمُونَ — here أن + clause is an interpreted noun).",
+      "Likewise vocative particles may enter on a non-مُنادى (يَا لَيْتَ قَوْمِي).",
+      "There يا is a particle of التنبيه / the مُنادى is omitted.",
+      "Breakdown: 1 per sign with example (6).",
+      "Breakdown: 3 — the verb/الحرف not taking الجرّ point with example.",
+      "Breakdown: 2 — the المؤوّل/الجرّ nuance.",
+      "Breakdown: 2 — the تنوين الترنّم or يا-non-مُنادى nuance.",
+      "Breakdown: 1 — organisation/completeness.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-1--define-types-examples--what-is-the-noun-considered-with-o",
@@ -90,7 +183,19 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "What is the noun considered with respect to its being simple or compound (bi-iʿtibār ifrādihi wa-tarkībihi)? State its types and give examples.",
     "promptAr": "",
-    "markScheme": "Model answer: By this consideration the noun is of two kinds (ضربان): (1) الاسم الصريح (the explicit noun) — the noun standing on its own, e.g. الصَّوْمُ. (2) الاسم المؤوّل (the interpreted noun) — a حرف مصدر together with the clause after it, taken in the sense of a maṣdar, e.g. وَأَنْ تَصُومُوا خَيْرٌ (= وَصِيَامُكُمْ خَيْرٌ). Supporting points: what takes the genitive includes the muʾawwal too, not just the ṣarīḥ — e.g. أن + clause functions as a noun and can be governed; the bare verb/ḥarf cannot take jarr. Marks: 2 for framing as 'two kinds by ifrād/tarkīb'; 4 for ṣarīḥ defined + example; 4 for muʾawwal defined (ḥarf maṣdar + clause) + example; 3 for showing the muʾawwal works as a noun (e.g. can be majrūr / paraphrase to maṣdar); 2 quality of examples. Total 15."
+    "markScheme": [
+      "By this consideration the noun is of two kinds (ضربان).",
+      "(1) الاسم الصريح (the explicit noun) — the noun standing on its own, e.g. الصَّوْمُ.",
+      "(2) الاسم المؤوّل (the interpreted noun) — a حرف مصدر together with the clause after it, taken in the sense of a مصدر, e.g. وَأَنْ تَصُومُوا خَيْرٌ (= وَصِيَامُكُمْ خَيْرٌ).",
+      "Supporting point: what takes the genitive includes the المؤوّل too, not just the الصريح.",
+      "E.g. أن + clause functions as a noun and can be governed; the bare verb/الحرف cannot take الجرّ.",
+      "Breakdown: 2 — framing as 'two kinds by إفراد/تركيب'.",
+      "Breakdown: 4 — الصريح defined + example.",
+      "Breakdown: 4 — المؤوّل defined (حرف مصدر + clause) + example.",
+      "Breakdown: 3 — showing the المؤوّل works as a noun (e.g. can be مجرور / paraphrase to مصدر).",
+      "Breakdown: 2 — quality of examples.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-1--define-types-examples--what-is-the-substantive-consider-q",
@@ -101,7 +206,21 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "What is the مَوْصُوف (substantive) considered by its meaning? State its types and give examples, and contrast it with the صِفَة.",
     "promptAr": "",
-    "markScheme": "Model answer: By its meaning the noun is two kinds: المَوْصُوف and الصِّفَة. The mawṣūf = مَا دَلَّ عَلَى ذَاتٍ تَحْتَمِلُ الصِّفَةَ (denotes an entity that can bear an attribute); it is itself two: (1) اسم عين — denotes what subsists by itself (مَا يَقُومُ بِذَاتِهِ), e.g. رَجُلٌ; (2) اسم معنى — denotes what does not subsist by itself but through another, e.g. عِلْمٌ. The ṣifah = مَا دَلَّ عَلَى وَصْفِ مَوْصُوفٍ (denotes a quality of something described), e.g. صَالِحٌ / عَالِمٌ. Marks: 2 for the two-kinds framing (mawṣūf vs ṣifah); 3 for defining mawṣūf; 3 for ism ʿayn + example; 3 for ism maʿnā + example; 3 for ṣifah defined + example; 1 completeness. Total 15."
+    "markScheme": [
+      "By its meaning the noun is two kinds: المَوْصُوف and الصِّفَة.",
+      "The مَوْصُوف = مَا دَلَّ عَلَى ذَاتٍ تَحْتَمِلُ الصِّفَةَ (denotes an entity that can bear an attribute).",
+      "It is itself two kinds.",
+      "(1) اسم عين — denotes what subsists by itself (مَا يَقُومُ بِذَاتِهِ), e.g. رَجُلٌ.",
+      "(2) اسم معنى — denotes what does not subsist by itself but through another, e.g. عِلْمٌ.",
+      "The الصِّفَة = مَا دَلَّ عَلَى وَصْفِ مَوْصُوفٍ (denotes a quality of something described), e.g. صَالِحٌ / عَالِمٌ.",
+      "Breakdown: 2 — the two-kinds framing (مَوْصُوف vs الصِّفَة).",
+      "Breakdown: 3 — defining المَوْصُوف.",
+      "Breakdown: 3 — اسم عين + example.",
+      "Breakdown: 3 — اسم معنى + example.",
+      "Breakdown: 3 — الصِّفَة defined + example.",
+      "Breakdown: 1 — completeness.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-1--enumerate--enumerate-the-signs-al-m-t-of-th-s",
@@ -112,7 +231,19 @@ const QUESTION_BANK =
     "marks": 12,
     "promptEn": "Enumerate the signs (ʿalāmāt) of the verb that are special to the muḍāriʿ (present tense), giving the meaning/function of each with an example.",
     "promptAr": "",
-    "markScheme": "Model answer (signs special to the muḍāriʿ): (1) لَمْ — negation+jazm of the present, لَمْ يَلِدْ; (2) لَنْ — negation of the future ('never'), لَنْ يُصِيبَنَا; (3) السِّين — near future ('will'), سَيَرْحَمُهُمُ اللهُ; (4) سَوْفَ — future ('shall'), سَوْفَ أَسْتَغْفِرُ; (5) the letters of muḍāraʿah ن-أ-ت-ي (نأتي) opening the verb, يُحْيِي وَيُمِيتُ; (6) نُونَا التَّأْكِيد (the two nūns of emphasis), لَيُسْجَنَنَّ. Marks: 2 per item (1 name, 1 meaning+example) for six items = 12. Award partial if fewer items; accept also قَدْ noting it is shared with the past (not exclusive to muḍāriʿ) — do not penalise listing it as shared."
+    "markScheme": [
+      "Signs special to the المُضارِع.",
+      "(1) لَمْ — negation + الجزم of the present, لَمْ يَلِدْ.",
+      "(2) لَنْ — negation of the future ('never'), لَنْ يُصِيبَنَا.",
+      "(3) السِّين — near future ('will'), سَيَرْحَمُهُمُ اللهُ.",
+      "(4) سَوْفَ — future ('shall'), سَوْفَ أَسْتَغْفِرُ.",
+      "(5) the letters of المُضارَعة ن-أ-ت-ي (نأتي) opening the verb, يُحْيِي وَيُمِيتُ.",
+      "(6) نُونَا التَّأْكِيد (the two nūns of emphasis), لَيُسْجَنَنَّ.",
+      "Breakdown: 2 per item (1 name, 1 meaning+example) for six items = 12.",
+      "Award partial if fewer items.",
+      "Accept also قَدْ noting it is shared with the past (not exclusive to المُضارِع) — do not penalise listing it as shared.",
+      "Total: 12 marks"
+    ]
   },
   {
     "id": "muq-bab-1--enumerate--enumerate-the-six-signs-by-which-u",
@@ -123,7 +254,16 @@ const QUESTION_BANK =
     "marks": 12,
     "promptEn": "Enumerate the six signs by which the noun (al-ism) is recognised, stating the function of each with an example.",
     "promptAr": "",
-    "markScheme": "Model answer: (1) كونه مجرورًا — being in the genitive: بِسْمِ اللهِ; (2) أل التعريف — the definite article: الرَّحْمٰنِ الرَّحِيمِ; (3) التنوين — nunation: هُدًى لِلْمُتَّقِينَ; (4) كونه مسندًا إليه — being that which is predicated to: إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ; (5) كونه منادًى — being a vocative: يَا نُوحُ; (6) كونه مضافًا — being a possessor/muḍāf: رَبِّ الْعَالَمِينَ. Marks: 2 per sign (1 naming, 1 correct example) = 12 total."
+    "markScheme": [
+      "(1) كونه مجرورًا — being in the genitive: بِسْمِ اللهِ.",
+      "(2) أل التعريف — the definite article: الرَّحْمٰنِ الرَّحِيمِ.",
+      "(3) التنوين — nunation: هُدًى لِلْمُتَّقِينَ.",
+      "(4) كونه مسندًا إليه — being that which is predicated to: إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ.",
+      "(5) كونه منادًى — being a vocative: يَا نُوحُ.",
+      "(6) كونه مضافًا — being a possessor/مضاف: رَبِّ الْعَالَمِينَ.",
+      "Breakdown: 2 per sign (1 naming, 1 correct example) = 12 total.",
+      "Total: 12 marks"
+    ]
   },
   {
     "id": "muq-bab-1--classify-tarkib--classify-the-category-ism-fi-l-a-w",
@@ -134,7 +274,23 @@ const QUESTION_BANK =
     "marks": 9,
     "promptEn": "Classify the category (ism / fiʿl / ḥarf) of each underlined word, then translate the phrase and give its tarkīb (iʿrāb).",
     "promptAr": "كِتَابُ الْوَلَدِ",
-    "markScheme": "Model answer: Classification — كِتَابُ is an ism (noun); الْوَلَدِ is an ism (noun); the phrase as a whole is مُرَكَّب (its parts each denote a meaning, unlike the مُفْرَد). Translation: 'the book of the child / the child's book.' Tarkīb: this is a tarkīb iḍāfī (genitive construction): كِتَابُ = muḍāf, marfūʿ/here showing ḍamma as the base form, and it is the muḍāf; الْوَلَدِ = muḍāf ilayhi, majrūr, sign of jarr the kasra. The whole is an example of المُرَكَّب because كِتَاب denotes a meaning and الوَلَد denotes a meaning. Marks: 1 kitāb = ism; 1 walad = ism; 1 phrase = murakkab (with reason); 2 correct translation; 2 identifying iḍāfah (muḍāf / muḍāf ilayhi); 2 iʿrāb of al-walad as majrūr by kasra (muḍāf ilayhi). Total 9."
+    "markScheme": [
+      "Classification — كِتَابُ is an اسم (noun).",
+      "الْوَلَدِ is an اسم (noun).",
+      "The phrase as a whole is مُرَكَّب (its parts each denote a meaning, unlike the مُفْرَد).",
+      "Translation: 'the book of the child / the child's book.'",
+      "التركيب: this is a تركيب إضافي (genitive construction).",
+      "كِتَابُ = مضاف, مرفوع/here showing ضمّة as the base form, and it is the مضاف.",
+      "الْوَلَدِ = مضاف إليه, مجرور, sign of الجرّ the كسرة.",
+      "The whole is an example of المُرَكَّب because كِتَاب denotes a meaning and الوَلَد denotes a meaning.",
+      "Breakdown: 1 — كتاب = اسم.",
+      "Breakdown: 1 — ولد = اسم.",
+      "Breakdown: 1 — phrase = مُرَكَّب (with reason).",
+      "Breakdown: 2 — correct translation.",
+      "Breakdown: 2 — identifying الإضافة (مضاف / مضاف إليه).",
+      "Breakdown: 2 — إعراب of الوَلَد as مجرور by كسرة (مضاف إليه).",
+      "Total: 9 marks"
+    ]
   },
   {
     "id": "muq-bab-1--classify-tarkib--classify-the-category-ism-fi-l-a-y",
@@ -145,7 +301,25 @@ const QUESTION_BANK =
     "marks": 9,
     "promptEn": "Classify the category (ism / fiʿl / ḥarf) of each word, then translate the sentence and give its tarkīb (iʿrāb), commenting on the sign that identifies the verb.",
     "promptAr": "سَيَرْحَمُهُمُ اللهُ.",
-    "markScheme": "Model answer: Classification — السِّين is a ḥarf (a sign of the muḍāriʿ verb, here a particle of near-future); يَرْحَمُ is a fiʿl muḍāriʿ (recognised by the مُضارعة letter يـ and by accepting the سِّين); هُمُ is an ism (attached object pronoun, mabnī); اللهُ is an ism. Translation: 'Allah will (soon) have mercy on them.' Tarkīb: السِّين حرف تنفيس / استقبال; يَرْحَمُ fiʿl muḍāriʿ marfūʿ, sign ḍamma; the ـهُمُ is a connected pronoun in maḥall naṣb as the object (mafʿūl bihi); اللهُ is the fāʿil, marfūʿ, sign ḍamma (lafẓ al-jalālah). The verbhood of يرحم is confirmed by the prefixed سِّين, a sign special to the muḍāriʿ. Marks: 1 sīn = ḥarf; 1 yarḥamu = fiʿl; 1 hum/Allāh = ism; 2 translation; 2 fāʿil + maf'ūl identification; 2 verb-sign comment (sīn special to muḍāriʿ). Total 9."
+    "markScheme": [
+      "Classification — السِّين is a حرف (a sign of the المُضارِع verb, here a particle of near-future).",
+      "يَرْحَمُ is a فعل مضارع (recognised by the المُضارَعة letter يـ and by accepting the السِّين).",
+      "هُمُ is an اسم (attached object pronoun, مبني).",
+      "اللهُ is an اسم.",
+      "Translation: 'Allah will (soon) have mercy on them.'",
+      "التركيب: السِّين حرف تنفيس / استقبال.",
+      "يَرْحَمُ فعل مضارع مرفوع, sign ضمّة.",
+      "The ـهُمُ is a connected pronoun in محلّ نصب as the object (مفعول به).",
+      "اللهُ is the فاعل, مرفوع, sign ضمّة (لفظ الجلالة).",
+      "The verbhood of يرحم is confirmed by the prefixed السِّين, a sign special to the المُضارِع.",
+      "Breakdown: 1 — سين = حرف.",
+      "Breakdown: 1 — يرحم = فعل.",
+      "Breakdown: 1 — هم/الله = اسم.",
+      "Breakdown: 2 — translation.",
+      "Breakdown: 2 — فاعل + مفعول identification.",
+      "Breakdown: 2 — verb-sign comment (سين special to المُضارِع).",
+      "Total: 9 marks"
+    ]
   },
   {
     "id": "muq-bab-2--explain-line--explain-the-following-matn-line--1n",
@@ -156,7 +330,18 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following matn line, clarifying the term it defines.",
     "promptAr": "الْكَلَامُ هُوَ قَوْلٌ مُفِيدٌ",
-    "markScheme": "Model answer: This is the definition of al-kalām (speech) given in the third section. Al-kalām is a 'qawl' (an utterance — articulate sounds carrying letters) that is 'mufīd' (beneficial), i.e. it conveys a complete meaning upon which it is sound for the listener to remain silent, e.g. أَعْبُدُ اللهَ. The qualifier mufīd excludes utterances that do not yield a complete benefit. Breakdown: 2 marks for explaining 'qawl' (an utterance); 2 marks for explaining 'mufīd' (conveys complete benefit / listener can be silent); 1 mark for noting this is the definition of kalām with a correct example."
+    "markScheme": [
+      "This is the definition of الكلام (speech) given in the third section.",
+      "الكلام is a قول (an utterance) — articulate sounds carrying letters.",
+      "It must be مفيد (beneficial).",
+      "مفيد means it conveys a complete meaning upon which it is sound for the listener to remain silent.",
+      "Example: أَعْبُدُ اللهَ.",
+      "The qualifier مفيد excludes utterances that do not yield a complete benefit.",
+      "Breakdown: 2 marks — explaining قول (an utterance).",
+      "2 marks — explaining مفيد (conveys complete benefit / listener can be silent).",
+      "1 mark — noting this is the definition of كلام with a correct example.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-2--explain-line--explain-the-following-matn-line--1p",
@@ -167,7 +352,18 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following matn line and what it defines, with an example.",
     "promptAr": "وَهِيَ مَا تَقَعُ مَوْقِعَ مُفْرَدٍ فِي الْكُبْرَى",
-    "markScheme": "Model answer: This defines al-jumlah aṣ-ṣughrā (the minor sentence) under the third issue (division by relation to another sentence). The minor sentence is one that occupies the position of a single word (mufrad) within a larger/major sentence — i.e. it functions grammatically as one unit (such as a khabar) inside the kubrā. Example: in وَاللهُ يَعْلَمُ, the verbal sentence يَعْلَمُ is the ṣughrā occupying the place of the khabar of اللهُ, while the whole is the kubrā. Breakdown: 2 marks for identifying the term (ṣughrā); 2 marks for explaining 'occupies the place of a single word in the kubrā'; 1 mark for a correct example showing the ṣughrā inside the kubrā."
+    "markScheme": [
+      "This defines الجملة الصغرى (the minor sentence).",
+      "It falls under the third issue: division by relation to another sentence.",
+      "The minor sentence occupies the position of a single word (مفرد) within a larger/major sentence.",
+      "It functions grammatically as one unit (such as a خبر) inside the كبرى.",
+      "Example: in وَاللهُ يَعْلَمُ, the verbal sentence يَعْلَمُ is the صغرى occupying the place of the خبر of اللهُ.",
+      "The whole is the كبرى.",
+      "Breakdown: 2 marks — identifying the term (الصغرى).",
+      "2 marks — explaining that it occupies the place of a single word in the كبرى.",
+      "1 mark — a correct example showing the صغرى inside the كبرى.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-2--state-types--state-the-divisions-of-the-sente-1r",
@@ -178,7 +374,19 @@ const QUESTION_BANK =
     "marks": 6,
     "promptEn": "State the divisions of the sentence (al-jumlah) with respect to its form (hayʾah), and for each give the recognising sign (ʿalāmah) by which it is identified, with an example.",
     "promptAr": "",
-    "markScheme": "Model answer: By its form the sentence is two kinds: (1) al-jumlah al-ismiyyah (nominal) — ʿalāmah: it begins with a noun (مَا صَدَرَتْ بِاسْمٍ), e.g. وَاللهُ غَفُورٌ رَحِيمٌ; (2) al-jumlah al-fiʿliyyah (verbal) — ʿalāmah: it begins with a verb (مَا صَدَرَتْ بِفِعْلٍ), e.g. وَخَلَقَ كُلَّ شَيْءٍ. Breakdown: 1 mark each for naming the two types (2); 1 mark each for the correct ʿalāmah of each (2); 1 mark each for a sound example of each (2)."
+    "markScheme": [
+      "By its form the sentence is two kinds.",
+      "(1) الجملة الاسمية (nominal).",
+      "علامة: it begins with a noun (مَا صَدَرَتْ بِاسْمٍ).",
+      "Example: وَاللهُ غَفُورٌ رَحِيمٌ.",
+      "(2) الجملة الفعلية (verbal).",
+      "علامة: it begins with a verb (مَا صَدَرَتْ بِفِعْلٍ).",
+      "Example: وَخَلَقَ كُلَّ شَيْءٍ.",
+      "Breakdown: 1 mark each for naming the two types (2).",
+      "1 mark each for the correct علامة of each (2).",
+      "1 mark each for a sound example of each (2).",
+      "Total: 6 marks"
+    ]
   },
   {
     "id": "muq-bab-2--state-types--state-the-divisions-of-the-quasi-1t",
@@ -189,7 +397,19 @@ const QUESTION_BANK =
     "marks": 6,
     "promptEn": "State the divisions of the quasi-sentence (shibh al-jumlah) with respect to its form, giving for each its recognising sign and an example.",
     "promptAr": "",
-    "markScheme": "Model answer: By its form shibh al-jumlah is two kinds: (1) al-jārr wa-l-majrūr — recognised by a preposition followed by its genitive noun, e.g. فِي مَكَّةَ; (2) aẓ-ẓarf wa-l-muḍāf ilayh — recognised by an adverb (of time/place) followed by the noun it is annexed to, e.g. عِنْدَ الْكَعْبَةِ. Breakdown: 1 mark each for naming the two kinds (2); 1 mark each for the recognising sign (2); 1 mark each for a correct example (2)."
+    "markScheme": [
+      "By its form شبه الجملة is two kinds.",
+      "(1) الجار والمجرور.",
+      "Recognised by a preposition (حرف جر) followed by its genitive noun.",
+      "Example: فِي مَكَّةَ.",
+      "(2) الظرف والمضاف إليه.",
+      "Recognised by an adverb (of time/place) followed by the noun it is annexed to.",
+      "Example: عِنْدَ الْكَعْبَةِ.",
+      "Breakdown: 1 mark each for naming the two kinds (2).",
+      "1 mark each for the recognising sign (2).",
+      "1 mark each for a correct example (2).",
+      "Total: 6 marks"
+    ]
   },
   {
     "id": "muq-bab-2--compare--explain-with-examples-the-differ-1v",
@@ -200,7 +420,21 @@ const QUESTION_BANK =
     "marks": 8,
     "promptEn": "Explain, with examples, the difference between the declarative sentence (al-jumlah al-khabariyyah) and the performative sentence (al-jumlah al-inshāʾiyyah).",
     "promptAr": "",
-    "markScheme": "Model answer: This is the division of the sentence by its meaning. The khabariyyah is that in which the speaker may be described as truthful or lying — its content can be tested against reality, e.g. إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ. The inshāʾiyyah is that in which the speaker can be described as neither truthful nor lying, because it creates rather than reports a meaning; its categories include interrogation, wishing, calling, command, prohibition, etc., e.g. أَإِلَهٌ مَعَ اللهِ (istifhām) and أَقِيمُوا الصَّلَاةَ (amr). Breakdown: 3 marks for the defining criterion of khabariyyah (admits truth/falsehood) with example; 3 marks for the defining criterion of inshāʾiyyah (admits neither) with example; 2 marks for clearly contrasting the two."
+    "markScheme": [
+      "This is the division of the sentence by its meaning.",
+      "الخبرية is that in which the speaker may be described as truthful or lying.",
+      "Its content can be tested against reality.",
+      "Example: إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ.",
+      "الإنشائية is that in which the speaker can be described as neither truthful nor lying.",
+      "This is because it creates rather than reports a meaning.",
+      "Its categories include interrogation, wishing, calling, command, prohibition, etc.",
+      "Example: أَإِلَهٌ مَعَ اللهِ (استفهام).",
+      "Example: أَقِيمُوا الصَّلَاةَ (أمر).",
+      "Breakdown: 3 marks — the defining criterion of الخبرية (admits truth/falsehood) with example.",
+      "3 marks — the defining criterion of الإنشائية (admits neither) with example.",
+      "2 marks — clearly contrasting the two.",
+      "Total: 8 marks"
+    ]
   },
   {
     "id": "muq-bab-2--compare--explain-with-examples-the-differ-1x",
@@ -211,7 +445,21 @@ const QUESTION_BANK =
     "marks": 8,
     "promptEn": "Explain, with examples, the difference between aẓ-ẓarf al-laghw and aẓ-ẓarf al-mustaqarru fīh.",
     "promptAr": "",
-    "markScheme": "Model answer: Both are divisions of shibh al-jumlah by its governor (ʿāmil). (1) Aẓ-ẓarf al-laghw: a quasi-sentence whose governor is either mentioned (madhkūr), e.g. لَقَدْ أَرْسَلْنَا نُوحًا إِلَى قَوْمِهِ (governor أَرْسَلْنَا stated), or omitted but a specific/particular verb (maḥdhūf makhṣūṣ), e.g. وَإِلَى عَادٍ أَخَاهُمْ هُودًا, i.e. أَرْسَلْنَا. (2) Aẓ-ẓarf al-mustaqarru fīh: a quasi-sentence whose governor is omitted and general (maḥdhūf ʿāmm) — a word denoting mere existence such as استقرّ/ثبت/وُجد — e.g. إِنَّكَ عَلَى صِرَاطٍ مُسْتَقِيمٍ, i.e. ثَابِتٌ. The key contrast: laghw has a mentioned or specific omitted governor; mustaqarr always has an omitted general governor of existence. Breakdown: 3 marks for laghw (mentioned / specific omitted) with example; 3 marks for mustaqarr (omitted general governor of existence) with example; 2 marks for the explicit contrast."
+    "markScheme": [
+      "Both are divisions of شبه الجملة by its governor (العامل).",
+      "(1) الظرف اللغو: a quasi-sentence whose governor is either mentioned or omitted but a specific verb.",
+      "Governor mentioned (مذكور): e.g. لَقَدْ أَرْسَلْنَا نُوحًا إِلَى قَوْمِهِ (governor أَرْسَلْنَا stated).",
+      "Governor omitted but a specific/particular verb (محذوف مخصوص): e.g. وَإِلَى عَادٍ أَخَاهُمْ هُودًا, i.e. أَرْسَلْنَا.",
+      "(2) الظرف المستقر فيه: a quasi-sentence whose governor is omitted and general (محذوف عام).",
+      "Its governor is a word denoting mere existence such as استقرّ / ثبت / وُجد.",
+      "Example: إِنَّكَ عَلَى صِرَاطٍ مُسْتَقِيمٍ, i.e. ثَابِتٌ.",
+      "The key contrast: اللغو has a mentioned or specific omitted governor.",
+      "المستقر فيه always has an omitted general governor of existence.",
+      "Breakdown: 3 marks — اللغو (mentioned / specific omitted) with example.",
+      "3 marks — المستقر (omitted general governor of existence) with example.",
+      "2 marks — the explicit contrast.",
+      "Total: 8 marks"
+    ]
   },
   {
     "id": "muq-bab-2--explain-statement--explain-the-following-statement--1z",
@@ -222,7 +470,21 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "Explain the following statement as fully as possible, with examples.",
     "promptAr": "الْغَالِبُ فِي عَامِلِ الظَّرْفِ اللَّغْوِ أَنْ يُذْكَرَ، وَيَجِبُ حَذْفُهُ فِي مَوَاضِعَ",
-    "markScheme": "Model answer: The governor (ʿāmil) of aẓ-ẓarf al-laghw is most commonly mentioned (madhkūr), as in لَقَدْ أَرْسَلْنَا نُوحًا إِلَى قَوْمِهِ. However, in certain places its omission is obligatory (yajib ḥadhfuhu). These are four: (1) al-amthāl — proverbs, e.g. الْكِلَابُ عَلَى الْبَقَرِ; (2) al-ʿibārāt al-maʾthūrah — transmitted/set expressions, e.g. بِأَبِي أَنْتَ وَأُمِّي, i.e. أَنْتَ مَفْدِيٌّ بِأَبِي وَأُمِّي; (3) al-qasam bi-ghayr al-bāʾ — an oath with other than the bāʾ, e.g. تَاللهِ تَفْتَأُ تَذْكُرُ يُوسُفَ; (4) khabar kāna with lām al-juḥūd (the lām of denial), e.g. مَا كَانَ اللهُ لِيُعَذِّبَهُمْ وَأَنْتَ فِيهِمْ, i.e. قَاصِدًا لِيُعَذِّبَهُمْ. Breakdown: 3 marks for the general principle (governor usually mentioned, sometimes obligatorily omitted); 3 marks for each of the four places correctly named with its example (3×4 = 12 available, capped so total = 15). Award up to 3 per place: name (1) + example (1) + brief explanation (1); cap overall at 15."
+    "markScheme": [
+      "The governor (العامل) of الظرف اللغو is most commonly mentioned (مذكور).",
+      "Example: لَقَدْ أَرْسَلْنَا نُوحًا إِلَى قَوْمِهِ.",
+      "However, in certain places its omission is obligatory (يجب حذفه).",
+      "These are four.",
+      "(1) الأمثال (proverbs): e.g. الْكِلَابُ عَلَى الْبَقَرِ.",
+      "(2) العبارات المأثورة (transmitted/set expressions): e.g. بِأَبِي أَنْتَ وَأُمِّي, i.e. أَنْتَ مَفْدِيٌّ بِأَبِي وَأُمِّي.",
+      "(3) القسم بغير الباء (an oath with other than the باء): e.g. تَاللهِ تَفْتَأُ تَذْكُرُ يُوسُفَ.",
+      "(4) خبر كان with لام الجحود (the lām of denial): e.g. مَا كَانَ اللهُ لِيُعَذِّبَهُمْ وَأَنْتَ فِيهِمْ, i.e. قَاصِدًا لِيُعَذِّبَهُمْ.",
+      "Breakdown: 3 marks — the general principle (governor usually mentioned, sometimes obligatorily omitted).",
+      "3 marks for each of the four places correctly named with its example (3×4 = 12 available, capped so total = 15).",
+      "Award up to 3 per place: name (1) + example (1) + brief explanation (1).",
+      "Cap overall at 15.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-2--explain-statement--explain-the-following-statement--21",
@@ -233,7 +495,27 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "Explain the following statement as fully as possible, with examples, including the forms the omitted governor may take and the places in which this quasi-sentence occurs.",
     "promptAr": "الظَّرْفُ الْمُسْتَقَرُّ فِيهِ هُوَ شِبْهُ جُمْلَةٍ عَامِلُهَا مَحْذُوفٌ عَامٌّ",
-    "markScheme": "Model answer: Aẓ-ẓarf al-mustaqarru fīh is a quasi-sentence whose governor is omitted and general (maḥdhūf ʿāmm) — i.e. a word denoting mere existence such as استقرّ، وُجد، ثبت — e.g. إِنَّكَ عَلَى صِرَاطٍ مُسْتَقِيمٍ, i.e. تَثْبُتُ / ثَابِتٌ. The omitted governor may take two forms: (a) a verb, e.g. اسْتَقَرَّ، ثَبَتَ، وُجِدَ، يَكُونُ; or (b) a noun with the sense of the verb, e.g. مُسْتَقِرٌّ، ثَابِتٌ، مَوْجُودٌ، كَائِنٌ — except in the ṣilah (relative clause), where it must be a verb only, e.g. الَّذِي فِي مَكَّةَ, i.e. اسْتَقَرَّ. It occurs in five places: (1) the khabar and what is in its ruling — وَهُوَ عَلَى صِرَاطٍ مُسْتَقِيمٍ; (2) the ḥāl — فَخَرَجَ عَلَى قَوْمِهِ فِي زِينَتِهِ; (3) the naʿt — أُولَئِكَ عَلَى هُدًى مِنْ رَبِّهِمْ; (4) the ṣilah — وَلَهُ مَنْ فِي السَّمَاوَاتِ وَالْأَرْضِ; (5) al-iʿtimād (dependence) — أَفِي اللهِ شَكٌّ. Breakdown: 3 marks for the definition (omitted general governor of existence) with example; 3 marks for the two forms (verb / noun in verb's sense) plus the ṣilah exception; 5 marks for naming the five places (1 each); 4 marks for supplying correct examples across the places. Cap total at 15."
+    "markScheme": [
+      "الظرف المستقر فيه is a quasi-sentence whose governor is omitted and general (محذوف عام).",
+      "Its governor is a word denoting mere existence such as استقرّ، وُجد، ثبت.",
+      "Example: إِنَّكَ عَلَى صِرَاطٍ مُسْتَقِيمٍ, i.e. تَثْبُتُ / ثَابِتٌ.",
+      "The omitted governor may take two forms.",
+      "(a) A verb, e.g. اسْتَقَرَّ، ثَبَتَ، وُجِدَ، يَكُونُ.",
+      "(b) A noun with the sense of the verb, e.g. مُسْتَقِرٌّ، ثَابِتٌ، مَوْجُودٌ، كَائِنٌ.",
+      "Exception: in the صلة (relative clause) it must be a verb only, e.g. الَّذِي فِي مَكَّةَ, i.e. اسْتَقَرَّ.",
+      "It occurs in five places.",
+      "(1) The خبر and what is in its ruling: وَهُوَ عَلَى صِرَاطٍ مُسْتَقِيمٍ.",
+      "(2) The حال: فَخَرَجَ عَلَى قَوْمِهِ فِي زِينَتِهِ.",
+      "(3) The نعت: أُولَئِكَ عَلَى هُدًى مِنْ رَبِّهِمْ.",
+      "(4) The صلة: وَلَهُ مَنْ فِي السَّمَاوَاتِ وَالْأَرْضِ.",
+      "(5) الاعتماد (dependence): أَفِي اللهِ شَكٌّ.",
+      "Breakdown: 3 marks — the definition (omitted general governor of existence) with example.",
+      "3 marks — the two forms (verb / noun in verb's sense) plus the صلة exception.",
+      "5 marks — naming the five places (1 each).",
+      "4 marks — supplying correct examples across the places.",
+      "Cap total at 15.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-2--define-types-examples--what-is-shibh-al-jumlah-the-quas-23",
@@ -244,7 +526,24 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "What is shibh al-jumlah (the quasi-sentence)? What are its types (by form and by governor)? Give examples.",
     "promptAr": "",
-    "markScheme": "Model answer: Shibh al-jumlah is an expression that resembles a sentence but is not a full one, divided in two respects. (A) By its form (hayʾah), two kinds: (1) al-jārr wa-l-majrūr — e.g. فِي مَكَّةَ; (2) aẓ-ẓarf wa-l-muḍāf ilayh — e.g. عِنْدَ الْكَعْبَةِ. (B) By its governor (ʿāmil) — noting its governor is called the mutaʿallaq and the shibh al-jumlah itself the mutaʿalliq — two kinds: (1) aẓ-ẓarf al-laghw, whose governor is mentioned (e.g. لَقَدْ أَرْسَلْنَا نُوحًا إِلَى قَوْمِهِ) or specifically omitted (e.g. وَإِلَى عَادٍ أَخَاهُمْ هُودًا, i.e. أَرْسَلْنَا); (2) aẓ-ẓarf al-mustaqarru fīh, whose governor is omitted and general (e.g. إِنَّكَ عَلَى صِرَاطٍ مُسْتَقِيمٍ, i.e. ثَابِتٌ). Breakdown: 3 marks for a sound description of shibh al-jumlah and the two-respects framework; 4 marks for the two form-types with examples (2 each); 4 marks for the two governor-types with examples (2 each); 2 marks for the mutaʿallaq/mutaʿalliq terminology; 2 marks for overall accuracy/coverage. Cap at 15."
+    "markScheme": [
+      "شبه الجملة is an expression that resembles a sentence but is not a full one.",
+      "It is divided in two respects.",
+      "(A) By its form (هيئة), two kinds.",
+      "(1) الجار والمجرور — e.g. فِي مَكَّةَ.",
+      "(2) الظرف والمضاف إليه — e.g. عِنْدَ الْكَعْبَةِ.",
+      "(B) By its governor (العامل), two kinds.",
+      "Note: its governor is called the المتعلَّق and the شبه الجملة itself the المتعلِّق.",
+      "(1) الظرف اللغو, whose governor is mentioned (e.g. لَقَدْ أَرْسَلْنَا نُوحًا إِلَى قَوْمِهِ) or specifically omitted (e.g. وَإِلَى عَادٍ أَخَاهُمْ هُودًا, i.e. أَرْسَلْنَا).",
+      "(2) الظرف المستقر فيه, whose governor is omitted and general (e.g. إِنَّكَ عَلَى صِرَاطٍ مُسْتَقِيمٍ, i.e. ثَابِتٌ).",
+      "Breakdown: 3 marks — a sound description of شبه الجملة and the two-respects framework.",
+      "4 marks — the two form-types with examples (2 each).",
+      "4 marks — the two governor-types with examples (2 each).",
+      "2 marks — the المتعلَّق/المتعلِّق terminology.",
+      "2 marks — overall accuracy/coverage.",
+      "Cap at 15.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-2--enumerate--enumerate-the-categories-of-the--25",
@@ -255,7 +554,25 @@ const QUESTION_BANK =
     "marks": 12,
     "promptEn": "Enumerate the categories of the performative sentence (al-jumlah al-inshāʾiyyah) mentioned in the chapter, giving for each a brief identification and an example.",
     "promptAr": "",
-    "markScheme": "Model answer (the eleven categories with examples): (1) al-istifhām (interrogation) — أَإِلَهٌ مَعَ اللهِ; (2) at-tamannī (wishing) — يَا لَيْتَ قَوْمِي يَعْلَمُونَ; (3) an-nidāʾ (calling) — يَا أَيُّهَا الرَّسُولُ; (4) at-taḥdhīr (warning) — نَاقَةَ اللهِ وَسُقْيَاهَا; (5) al-ighrāʾ (incitement) — الْعِلْمَ الْعِلْمَ; (6) al-amr (command) — وَأَقِيمُوا الصَّلَاةَ; (7) an-nahy (prohibition) — وَلَا تَقْرَبُوا الْفَوَاحِشَ; (8) ad-duʿāʾ (supplication) — سَلَامٌ عَلَيْكُمْ; (9) ṣiyagh al-madḥ wa-dh-dhamm (forms of praise/blame) — وَلَنِعْمَ دَارُ الْمُتَّقِينَ; (10) ṣiyagh at-tawajjuʿ wa-t-tafajjuʿ (lamentation/grief) — يَا حَسْرَتَا عَلَى مَا فَرَّطْتُ فِي جَنْبِ اللهِ; (11) al-qasam (oath) — وَالْعَصْرِ. Breakdown: 11 marks — approx. 1 mark per category correctly named with a fitting example (accept the chapter examples); +1 mark for completeness/correct framing as inshāʾiyyah. Deduct for items invented outside the chapter list. Cap at 12."
+    "markScheme": [
+      "The eleven categories with examples.",
+      "(1) الاستفهام (interrogation): أَإِلَهٌ مَعَ اللهِ.",
+      "(2) التمني (wishing): يَا لَيْتَ قَوْمِي يَعْلَمُونَ.",
+      "(3) النداء (calling): يَا أَيُّهَا الرَّسُولُ.",
+      "(4) التحذير (warning): نَاقَةَ اللهِ وَسُقْيَاهَا.",
+      "(5) الإغراء (incitement): الْعِلْمَ الْعِلْمَ.",
+      "(6) الأمر (command): وَأَقِيمُوا الصَّلَاةَ.",
+      "(7) النهي (prohibition): وَلَا تَقْرَبُوا الْفَوَاحِشَ.",
+      "(8) الدعاء (supplication): سَلَامٌ عَلَيْكُمْ.",
+      "(9) صيغ المدح والذم (forms of praise/blame): وَلَنِعْمَ دَارُ الْمُتَّقِينَ.",
+      "(10) صيغ التوجع والتفجع (lamentation/grief): يَا حَسْرَتَا عَلَى مَا فَرَّطْتُ فِي جَنْبِ اللهِ.",
+      "(11) القسم (oath): وَالْعَصْرِ.",
+      "Breakdown: 11 marks — approx. 1 mark per category correctly named with a fitting example (accept the chapter examples).",
+      "+1 mark for completeness/correct framing as إنشائية.",
+      "Deduct for items invented outside the chapter list.",
+      "Cap at 12.",
+      "Total: 12 marks"
+    ]
   },
   {
     "id": "muq-bab-2--classify-tarkib--classify-the-category-noun-verb--27",
@@ -266,7 +583,26 @@ const QUESTION_BANK =
     "marks": 9,
     "promptEn": "Classify the category (noun / verb / particle) of the word شَكٌّ in the sentence below; then translate the sentence and give its full tarkīb (iʿrāb).",
     "promptAr": "أَفِي اللهِ شَكٌّ",
-    "markScheme": "Model answer: Classification — شَكٌّ is an ism (noun). Translation — 'Is there any doubt about Allah?'. Tarkīb: الهمزة (أ) — hamzat al-istifhām, ḥarf, no place in iʿrāb; فِي — ḥarf jarr; اللهِ — lafẓ al-jalālah, majrūr by فِي, sign is the kasrah; the jārr wa-majrūr فِي اللهِ is shibh jumlah (aẓ-ẓarf al-mustaqarru fīh, here in the place of iʿtimād / khabar muqaddam), its general governor omitted (i.e. كائن/موجود); شَكٌّ — mubtadaʾ muʾakhkhar, marfūʿ, sign is the ḍammah (tanwīn). The sentence is a jumlah ismiyyah (inshāʾiyyah – istifhām). Breakdown: 2 marks for correctly classifying شَكٌّ as a noun; 2 marks for an accurate translation; 5 marks for the iʿrāb — 1 for the hamzat al-istifhām, 1 for فِي as ḥarf jarr, 1 for اللهِ majrūr, 1 for identifying the jārr-majrūr as shibh jumlah / khabar muqaddam (iʿtimād), 1 for شَكٌّ as mubtadaʾ muʾakhkhar marfūʿ."
+    "markScheme": [
+      "Classification: شَكٌّ is an اسم (noun).",
+      "Translation: 'Is there any doubt about Allah?'",
+      "التركيب follows.",
+      "الهمزة (أ): همزة الاستفهام, حرف, no place in الإعراب.",
+      "فِي: حرف جر.",
+      "اللهِ: لفظ الجلالة, مجرور by فِي, sign is the كسرة.",
+      "The جار ومجرور فِي اللهِ is شبه جملة (الظرف المستقر فيه, here in the place of الاعتماد / خبر مقدم), its general governor omitted (i.e. كائن/موجود).",
+      "شَكٌّ: مبتدأ مؤخر, مرفوع, sign is the ضمة (تنوين).",
+      "The sentence is a جملة اسمية (إنشائية – استفهام).",
+      "Breakdown: 2 marks — correctly classifying شَكٌّ as a noun.",
+      "2 marks — an accurate translation.",
+      "5 marks — the الإعراب.",
+      "1 mark — the همزة الاستفهام.",
+      "1 mark — فِي as حرف جر.",
+      "1 mark — اللهِ مجرور.",
+      "1 mark — identifying the جار-مجرور as شبه جملة / خبر مقدم (الاعتماد).",
+      "1 mark — شَكٌّ as مبتدأ مؤخر مرفوع.",
+      "Total: 9 marks"
+    ]
   },
   {
     "id": "muq-bab-3--explain-line--explain-the-following-line-of-th-n",
@@ -277,7 +613,17 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following line of the matn, which defines the governor (al-ʿāmil).",
     "promptAr": "فَالْعَامِلُ مَا يُوجِبُ حَالَةً، نَحْوُ «لَنْ» فِي قَوْلِهِ تَعَالَى: وَلَنْ نُشْرِكَ بِرَبِّنَا أَحَدًا",
-    "markScheme": "Model answer: The ʿāmil (governor) is that which necessitates/brings about a grammatical state (ḥālah) in another word, i.e. it makes a word take a particular iʿrāb. The example is «لَنْ»: it is a naṣb-particle that necessitates the naṣb of the muḍāriʿ «نُشْرِكَ» (note the fatḥah). So «لَنْ» governs and the verb is what receives the state. Breakdown: definition of ʿāmil as 'what necessitates a state' (2); linking 'state' to iʿrāb effect on another word (1); identifying لن as the ʿāmil necessitating naṣb in نُشْرِكَ (2)."
+    "markScheme": [
+      "العامل (governor) is that which necessitates/brings about a grammatical state (حالة) in another word.",
+      "It makes a word take a particular إعراب.",
+      "Example is «لَنْ».",
+      "«لَنْ» is a particle of النصب that necessitates the نصب of the مضارع «نُشْرِكَ» (note the فتحة).",
+      "So «لَنْ» governs and the verb is what receives the state.",
+      "Definition of العامل as 'what necessitates a state' — 2 marks.",
+      "Linking 'state' to إعراب effect on another word — 1 mark.",
+      "Identifying لن as the العامل necessitating نصب in نُشْرِكَ — 2 marks.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-3--explain-line--explain-the-following-line-of-th-p",
@@ -288,7 +634,18 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following line of the matn, which defines iʿrāb.",
     "promptAr": "وَهُوَ أَثَرٌ يَجْلِبُهُ الْعَامِلُ فِي آخِرِ الْكَلِمَةِ",
-    "markScheme": "Model answer: Iʿrāb is an effect (athar) — i.e. a change of the ending — that the governor (ʿāmil) brings about (yajlibu) at the end (ākhir) of the word. Three elements: (a) it is an effect/sign, not the letter itself; (b) its cause is the ʿāmil; (c) its locus is the final part of the word. E.g. the ḍammah on «الْمُؤْمِنُ» brought by the rāfiʿ. Breakdown: athar = effect at word-end (2); caused by the ʿāmil (2); located at the end of the word (1)."
+    "markScheme": [
+      "الإعراب is an أثر (effect) — a change of the ending — that the العامل (governor) brings about (يجلب) at the آخِر (end) of the word.",
+      "Three elements follow.",
+      "(a) It is an effect/sign, not the letter itself.",
+      "(b) Its cause is the العامل.",
+      "(c) Its locus is the final part of the word.",
+      "E.g. the ضمة on «الْمُؤْمِنُ» brought by the الرافع.",
+      "أثر = effect at word-end — 2 marks.",
+      "Caused by the العامل — 2 marks.",
+      "Located at the end of the word — 1 mark.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-3--explain-line--explain-the-following-line-of-th-r",
@@ -299,7 +656,16 @@ const QUESTION_BANK =
     "marks": 5,
     "promptEn": "Explain the following line of the matn, which defines the governed (al-maʿmūl).",
     "promptAr": "الْمَعْمُولُ مَا يَقْبَلُ حَالَةً وَيَكُونُ لَهُ إِعْرَابٌ، نَحْوُ «صَاحِبٌ» فِي قَوْلِهِ تَعَالَى: مَا ضَلَّ صَاحِبُكُمْ",
-    "markScheme": "Model answer: The maʿmūl (governed) is that which accepts a grammatical state and has iʿrāb (a varying ending). Example: «صَاحِبُكُمْ» — it accepts the state of rafʿ as fāʿil and so carries a ḍammah; it is the word acted upon by the ʿāmil (here ضَلَّ). Breakdown: maʿmūl accepts a ḥālah (2); it possesses iʿrāb (1); correct identification of صَاحِب as the governed word taking rafʿ (2)."
+    "markScheme": [
+      "المعمول (governed) is that which accepts a grammatical state and has إعراب (a varying ending).",
+      "Example: «صَاحِبُكُمْ».",
+      "It accepts the state of رفع as فاعل and so carries a ضمة.",
+      "It is the word acted upon by the العامل (here ضَلَّ).",
+      "المعمول accepts a حالة — 2 marks.",
+      "It possesses إعراب — 1 mark.",
+      "Correct identification of صَاحِب as the governed word taking رفع — 2 marks.",
+      "Total: 5 marks"
+    ]
   },
   {
     "id": "muq-bab-3--state-types--state-the-divisions-aqs-m-of-i-r-t",
@@ -310,7 +676,17 @@ const QUESTION_BANK =
     "marks": 6,
     "promptEn": "State the divisions (aqsām) of iʿrāb. For each one give a recognising sign/feature by which it is identified.",
     "promptAr": "",
-    "markScheme": "Model answer — iʿrāb is three divisions: (1) al-lafẓī (overt) — sign: the ʿalāmah actually appears in pronunciation, e.g. ḍammah/kasrah in «يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ». (2) at-taqdīrī (estimated) — sign: the ʿalāmah is prevented from appearing by an impediment (māniʿ) on a maqṣūr/manqūṣ word, e.g. estimated ḍammah/kasrah in «يَسْعَى الْفَتَى إِلَى الْهُدَى». (3) al-maḥallī (positional) — sign: the word is a mabnī that cannot bear any iʿrāb mark, so the iʿrāb is assigned to its position, e.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ». Breakdown: 2 marks per type (1 for naming/defining + 1 for its recognising sign/example)."
+    "markScheme": [
+      "الإعراب is three divisions.",
+      "(1) اللفظي (overt) — sign: the علامة actually appears in pronunciation.",
+      "Example: ضمة/كسرة in «يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ».",
+      "(2) التقديري (estimated) — sign: the علامة is prevented from appearing by an impediment (مانع) on a مقصور/منقوص word.",
+      "Example: estimated ضمة/كسرة in «يَسْعَى الْفَتَى إِلَى الْهُدَى».",
+      "(3) المحلي (positional) — sign: the word is a مبني that cannot bear any إعراب mark, so the إعراب is assigned to its position.",
+      "Example: «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ».",
+      "2 marks per type — 1 for naming/defining + 1 for its recognising sign/example.",
+      "Total: 6 marks"
+    ]
   },
   {
     "id": "muq-bab-3--compare--explain-with-examples-the-differ-v",
@@ -321,7 +697,20 @@ const QUESTION_BANK =
     "marks": 8,
     "promptEn": "Explain, with examples, the difference between al-ʿāmil (the governor) and al-maʿmūl (the governed).",
     "promptAr": "",
-    "markScheme": "Model answer: The ʿāmil is what necessitates a grammatical state in another word (it acts); it comprises all verbs, some particles and some nouns — e.g. «لَنْ» in «لَنْ نُشْرِكَ» necessitating naṣb. The maʿmūl is what accepts that state and consequently has iʿrāb (it is acted upon); it comprises all nouns except asmāʾ al-fiʿl, the muḍāriʿ, the māḍī entered by a nāṣib/jāzim, part of sentences, and all quasi-sentences — e.g. «صَاحِبُكُمْ» taking rafʿ in «مَا ضَلَّ صَاحِبُكُمْ». Key contrast: ʿāmil = cause/actor; maʿmūl = recipient/object of the action. Breakdown: define ʿāmil (2); define maʿmūl (2); state the cause-vs-recipient relationship (2); a correct example of each (2)."
+    "markScheme": [
+      "العامل is what necessitates a grammatical state in another word (it acts).",
+      "It comprises all verbs, some particles and some nouns.",
+      "E.g. «لَنْ» in «لَنْ نُشْرِكَ» necessitating نصب.",
+      "المعمول is what accepts that state and consequently has إعراب (it is acted upon).",
+      "It comprises all nouns except أسماء الفعل, the مضارع, the الماضي entered by a ناصب/جازم, part of sentences, and all quasi-sentences.",
+      "E.g. «صَاحِبُكُمْ» taking رفع in «مَا ضَلَّ صَاحِبُكُمْ».",
+      "Key contrast: العامل = cause/actor; المعمول = recipient/object of the action.",
+      "Define العامل — 2 marks.",
+      "Define المعمول — 2 marks.",
+      "State the cause-vs-recipient relationship — 2 marks.",
+      "A correct example of each — 2 marks.",
+      "Total: 8 marks"
+    ]
   },
   {
     "id": "muq-bab-3--compare--explain-with-examples-the-differ-x",
@@ -332,7 +721,20 @@ const QUESTION_BANK =
     "marks": 8,
     "promptEn": "Explain, with examples, the difference between al-iʿrāb at-taqdīrī (estimated iʿrāb) and al-iʿrāb al-maḥallī (positional iʿrāb).",
     "promptAr": "",
-    "markScheme": "Model answer: Both share that the iʿrāb sign does not appear in the utterance, but the reason differs. In at-taqdīrī the word IS capable of bearing the mark, yet a māniʿ (impediment, e.g. the final alif/yāʾ of a maqṣūr or manqūṣ) prevents it, so the mark is 'estimated' on the letter — e.g. estimated ḍammah on «الْفَتَى» and kasrah on «الْهُدَى» in «يَسْعَى الْفَتَى إِلَى الْهُدَى». In al-maḥallī the word is mabnī and inherently CANNOT bear any iʿrāb mark, so iʿrāb is attributed to its grammatical position (maḥall) — e.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ». Breakdown: shared feature (non-appearance) (1); taqdīrī = impediment though capable + example (3); maḥallī = inability of mabnī word + position + example (3); explicit statement of the contrasting cause (1)."
+    "markScheme": [
+      "Both share that the إعراب sign does not appear in the utterance, but the reason differs.",
+      "In التقديري the word IS capable of bearing the mark, yet a مانع (impediment, e.g. the final alif/yāʾ of a مقصور or منقوص) prevents it.",
+      "So the mark is 'estimated' on the letter.",
+      "E.g. estimated ضمة on «الْفَتَى» and كسرة on «الْهُدَى» in «يَسْعَى الْفَتَى إِلَى الْهُدَى».",
+      "In المحلي the word is مبني and inherently CANNOT bear any إعراب mark.",
+      "So إعراب is attributed to its grammatical position (محل).",
+      "E.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ».",
+      "Shared feature (non-appearance) — 1 mark.",
+      "التقديري = impediment though capable + example — 3 marks.",
+      "المحلي = inability of مبني word + position + example — 3 marks.",
+      "Explicit statement of the contrasting cause — 1 mark.",
+      "Total: 8 marks"
+    ]
   },
   {
     "id": "muq-bab-3--explain-statement--explain-the-following-statement--z",
@@ -343,7 +745,23 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "Explain the following statement as fully as possible, with examples.",
     "promptAr": "وَهُوَ أَثَرٌ يَجْلِبُهُ الْعَامِلُ فِي آخِرِ الْكَلِمَةِ، وَهُوَ ثَلَاثَةُ أَقْسَامٍ: الْإِعْرَابُ اللَّفْظِيُّ، وَالْإِعْرَابُ التَّقْدِيرِيُّ، وَالْإِعْرَابُ الْمَحَلِّيُّ",
-    "markScheme": "Model answer: Definition — iʿrāb is an effect (athar) brought about by the ʿāmil at the end of the word; its cause is the governor, its locus the word-ending, and it is the changing of the ending according to the governing factor. It has three divisions: (1) al-lafẓī (overt): the sign appears in pronunciation, e.g. the visible ḍammah on «الْمُؤْمِنُ» and kasrah on «الْخَيْرِ» in «يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ». (2) at-taqdīrī (estimated): the sign does not appear due to an impediment, though the word could bear it, e.g. the estimated ḍammah on «الْفَتَى» and kasrah on «الْهُدَى» in «يَسْعَى الْفَتَى إِلَى الْهُدَى». (3) al-maḥallī (positional): the sign does not appear because a mabnī word cannot bear it, so iʿrāb is given to its position, e.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ». One may add what receives iʿrāb: all nouns, some verbs, sentences partly, quasi-sentences fully — never particles. Breakdown: explain the definition fully (athar / by ʿāmil / at word-end) (3); each of the three divisions defined with example (3×3 = 9); overall coherence + correct examples / note on what takes iʿrāb (3)."
+    "markScheme": [
+      "Definition — الإعراب is an أثر (effect) brought about by the العامل at the end of the word.",
+      "Its cause is the governor, its locus the word-ending.",
+      "It is the changing of the ending according to the governing factor.",
+      "It has three divisions.",
+      "(1) اللفظي (overt): the sign appears in pronunciation.",
+      "E.g. the visible ضمة on «الْمُؤْمِنُ» and كسرة on «الْخَيْرِ» in «يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ».",
+      "(2) التقديري (estimated): the sign does not appear due to an impediment, though the word could bear it.",
+      "E.g. the estimated ضمة on «الْفَتَى» and كسرة on «الْهُدَى» in «يَسْعَى الْفَتَى إِلَى الْهُدَى».",
+      "(3) المحلي (positional): the sign does not appear because a مبني word cannot bear it, so إعراب is given to its position.",
+      "E.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ».",
+      "One may add what receives إعراب: all nouns, some verbs, sentences partly, quasi-sentences fully — never particles.",
+      "Explain the definition fully (أثر / by العامل / at word-end) — 3 marks.",
+      "Each of the three divisions defined with example — 3×3 = 9 marks.",
+      "Overall coherence + correct examples / note on what takes إعراب — 3 marks.",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-3--define-types-examples--what-is-i-r-b-what-are-its-types-11",
@@ -354,7 +772,21 @@ const QUESTION_BANK =
     "marks": 15,
     "promptEn": "What is iʿrāb? What are its types? Give examples of each.",
     "promptAr": "",
-    "markScheme": "Model answer: Definition — iʿrāb is an effect (athar) brought about by the ʿāmil at the end of the word (the change of the word-ending caused by the governor). Types (three): (1) al-iʿrāb al-lafẓī — overt iʿrāb that appears in the utterance, e.g. ḍammah/kasrah in «يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ». (2) al-iʿrāb at-taqdīrī — estimated iʿrāb that does not appear because of an impediment, e.g. estimated ḍammah/kasrah in «يَسْعَى الْفَتَى إِلَى الْهُدَى». (3) al-iʿrāb al-maḥallī — positional iʿrāb that does not appear because the word (mabnī) cannot bear the sign, so it is assigned to its position, e.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ». Breakdown: correct definition (3); naming all three types (3); definition of each (3); a correct example for each (6 — 2 each)."
+    "markScheme": [
+      "Definition — الإعراب is an أثر (effect) brought about by the العامل at the end of the word (the change of the word-ending caused by the governor).",
+      "Types (three) follow.",
+      "(1) الإعراب اللفظي — overt إعراب that appears in the utterance.",
+      "E.g. ضمة/كسرة in «يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ».",
+      "(2) الإعراب التقديري — estimated إعراب that does not appear because of an impediment.",
+      "E.g. estimated ضمة/كسرة in «يَسْعَى الْفَتَى إِلَى الْهُدَى».",
+      "(3) الإعراب المحلي — positional إعراب that does not appear because the word (مبني) cannot bear the sign, so it is assigned to its position.",
+      "E.g. «تَسْعَيْنَ أَنْتُنَّ إِلَيْهِ».",
+      "Correct definition — 3 marks.",
+      "Naming all three types — 3 marks.",
+      "Definition of each — 3 marks.",
+      "A correct example for each — 6 marks (2 each).",
+      "Total: 15 marks"
+    ]
   },
   {
     "id": "muq-bab-3--classify-tarkib--for-the-sentence-below-a-classif-13",
@@ -365,7 +797,23 @@ const QUESTION_BANK =
     "marks": 9,
     "promptEn": "For the sentence below: (a) classify the category of each main word (ism / fiʿl / ḥarf); (b) translate the sentence; (c) give its tarkīb / iʿrāb, naming the type of iʿrāb each word carries.",
     "promptAr": "يَجْتَهِدُ الْمُؤْمِنُ فِي الْخَيْرِ",
-    "markScheme": "Model answer: (a) «يَجْتَهِدُ» fiʿl muḍāriʿ; «الْمُؤْمِنُ» ism; «فِي» ḥarf jarr; «الْخَيْرِ» ism. (b) Translation: 'The believer strives in (doing) good.' (c) Iʿrāb: «يَجْتَهِدُ» fiʿl muḍāriʿ marfūʿ, sign = ḍammah ẓāhirah (lafẓī); «الْمُؤْمِنُ» fāʿil marfūʿ, ḍammah ẓāhirah (lafẓī); «فِي» ḥarf jarr mabnī; «الْخَيْرِ» ism majrūr by فِي, kasrah ẓāhirah (lafẓī) — the jārr + majrūr forms a shibh al-jumlah. This is an example of overt (lafẓī) iʿrāb. Breakdown: correct word classification (3); accurate translation (2); iʿrāb of each word with iʿrāb-type identified as lafẓī (4)."
+    "markScheme": [
+      "(a) Classification: «يَجْتَهِدُ» فعل مضارع.",
+      "«الْمُؤْمِنُ» اسم.",
+      "«فِي» حرف جر.",
+      "«الْخَيْرِ» اسم.",
+      "(b) Translation: 'The believer strives in (doing) good.'",
+      "(c) الإعراب: «يَجْتَهِدُ» فعل مضارع مرفوع, sign = ضمة ظاهرة (لفظي).",
+      "«الْمُؤْمِنُ» فاعل مرفوع, ضمة ظاهرة (لفظي).",
+      "«فِي» حرف جر مبني.",
+      "«الْخَيْرِ» اسم مجرور by فِي, كسرة ظاهرة (لفظي).",
+      "The الجار + مجرور forms a شبه الجملة.",
+      "This is an example of overt (لفظي) إعراب.",
+      "Correct word classification — 3 marks.",
+      "Accurate translation — 2 marks.",
+      "إعراب of each word with إعراب-type identified as لفظي — 4 marks.",
+      "Total: 9 marks"
+    ]
   },
   {
     "id": "muq-bab-3--classify-tarkib--for-the-sentence-below-a-classif-15",
@@ -376,402 +824,3927 @@ const QUESTION_BANK =
     "marks": 9,
     "promptEn": "For the sentence below: (a) classify the category of each main word (ism / fiʿl / ḥarf); (b) translate the sentence; (c) give its tarkīb / iʿrāb, stating which type of iʿrāb (lafẓī / taqdīrī / maḥallī) each word carries and why.",
     "promptAr": "يَسْعَى الْفَتَى إِلَى الْهُدَى",
-    "markScheme": "Model answer: (a) «يَسْعَى» fiʿl muḍāriʿ; «الْفَتَى» ism (maqṣūr); «إِلَى» ḥarf jarr; «الْهُدَى» ism (maqṣūr). (b) Translation: 'The youth strives toward guidance.' (c) Iʿrāb: «يَسْعَى» fiʿl muḍāriʿ marfūʿ with an estimated ḍammah (taqdīrī) — prevented by the final alif; «الْفَتَى» fāʿil marfūʿ, estimated ḍammah (taqdīrī) — māniʿ of the maqṣūr alif; «إِلَى» ḥarf jarr mabnī; «الْهُدَى» ism majrūr by إِلَى with an estimated kasrah (taqdīrī) — also a maqṣūr, the jārr+majrūr = shibh al-jumlah. This illustrates estimated (taqdīrī) iʿrāb. Breakdown: correct classification (3); accurate translation (2); iʿrāb with taqdīrī identified and impediment explained (4)."
+    "markScheme": [
+      "(a) Classification: «يَسْعَى» فعل مضارع.",
+      "«الْفَتَى» اسم (مقصور).",
+      "«إِلَى» حرف جر.",
+      "«الْهُدَى» اسم (مقصور).",
+      "(b) Translation: 'The youth strives toward guidance.'",
+      "(c) الإعراب: «يَسْعَى» فعل مضارع مرفوع with an estimated ضمة (تقديري) — prevented by the final alif.",
+      "«الْفَتَى» فاعل مرفوع, estimated ضمة (تقديري) — مانع of the مقصور alif.",
+      "«إِلَى» حرف جر مبني.",
+      "«الْهُدَى» اسم مجرور by إِلَى with an estimated كسرة (تقديري) — also a مقصور.",
+      "The الجار+مجرور = شبه الجملة.",
+      "This illustrates estimated (تقديري) إعراب.",
+      "Correct classification — 3 marks.",
+      "Accurate translation — 2 marks.",
+      "إعراب with تقديري identified and impediment explained — 4 marks.",
+      "Total: 9 marks"
+    ]
   },
   {
-    "id": "m1-muq--explain-line--explain-the-following-line-of-th-0",
+    "id": "m1-muq--explain-line--explain-the-following-line-of-th-1s",
     "chapterId": "m1-muq",
     "chapterAr": "المقدمة",
     "chapterEn": "Introduction (Aim One)",
     "archetype": "explain-line",
     "marks": 5,
-    "promptEn": "Explain the following line of the matn fully, making clear what category of word it concerns and what is being affirmed of it.",
-    "promptAr": "الْأَوَّلُ: الْأَفْعَالُ كُلُّهَا عَامِلَةٌ",
-    "markScheme": "Model answer: This is the first of the five principles (mabādiʾ) of the Introduction. It states that the verbs (الأفعال), in their entirety — every one of them without exception (note كُلُّهَا, 'all of them') — are governing words (عاملة), i.e. each verb exercises ʿamal (grammatical government) over what comes after it, causing raf‘/naṣb/jarr in the words it governs. There is no verb that is non-governing. Breakdown: identifying it as the first mabdaʾ (1); that the subject is الأفعال = verbs (1); that كُلُّها means 'all/every one without exception' (1); that عاملة = it governs / exercises ʿamal (1); the point that NO verb is exempt — all verbs govern (1)."
+    "promptEn": "Explain the following line of the matn as fully as possible.",
+    "promptAr": "الْأَوَّلُ الْأَفْعَالُ كُلُّهَا عَامِلَةٌ",
+    "markScheme": [
+      "This is the first of the five مبادئ of the مقدمة.",
+      "It states that the أفعال, without exception, are عاملة — i.e. every verb is a governing word.",
+      "The word كلّها stresses generality: no verb is excluded from being an عامل.",
+      "An عامل is a word that produces an iʿrāb effect (رفع، نصب، جزم) in another word.",
+      "Example: a verb puts its فاعل in رفع and its مفعول in نصب.",
+      "1 mark identifying it as the first principle; 2 marks for the meaning of عاملة; 1 mark for the force of كلّها; 1 mark for a correct example.",
+      "Total: 5 marks"
+    ]
   },
   {
-    "id": "m1-muq--explain-line--explain-the-following-line-of-th-2",
+    "id": "m1-muq--explain-line--explain-the-following-line-of-th-1u",
     "chapterId": "m1-muq",
     "chapterAr": "المقدمة",
     "chapterEn": "Introduction (Aim One)",
     "archetype": "explain-line",
     "marks": 5,
-    "promptEn": "Explain the following line of the matn, making clear the meaning of the key term and what is denied of it.",
-    "promptAr": "الْخَامِسُ: شِبْهُ الْجُمْلَةِ كُلُّهَا غَيْرُ عَامِلَةٍ",
-    "markScheme": "Model answer: This is the fifth principle. شِبْهُ الْجُمْلَةِ (the 'quasi-sentence' — i.e. the ظرف and the جار ومجرور) is, in its entirety (كُلُّهَا), غَيْرُ عَامِلَةٍ — non-governing; it does not exercise ʿamal over other words. No type of shibh al-jumlah governs. Breakdown: identifying it as the fifth mabdaʾ (1); شبه الجملة = quasi-sentence (1); كُلُّها = the whole of it / every kind (1); غير عاملة = does not govern (1); the totality point — none of it governs (1)."
+    "promptEn": "Explain the following line of the matn as fully as possible.",
+    "promptAr": "الرَّابِعُ الْجُمْلَةُ كُلُّهَا غَيْرُ عَامِلَةٍ",
+    "markScheme": [
+      "This is the fourth of the five مبادئ.",
+      "It states that the جملة — the complete sentence — as a whole is غير عاملة, exercising no iʿrāb over another word.",
+      "The word كلّها shows this is universal: no sentence, whether اسمية or فعلية, acts as an عامل.",
+      "Note that although a جملة may occupy a position of iʿrāb (محلّ), it does not itself govern.",
+      "1 mark identifying it as the fourth principle; 2 marks for the meaning of غير عاملة; 1 mark for the force of كلّها; 1 mark for the note on محلّ / an example.",
+      "Total: 5 marks"
+    ]
   },
   {
-    "id": "m1-muq--explain-line--explain-what-this-opening-line-t-4",
-    "chapterId": "m1-muq",
-    "chapterAr": "المقدمة",
-    "chapterEn": "Introduction (Aim One)",
-    "archetype": "explain-line",
-    "marks": 5,
-    "promptEn": "Explain what this opening line tells the student about the structure of what follows.",
-    "promptAr": "وَفِيهَا خَمْسَةُ مَبَادِئَ",
-    "markScheme": "Model answer: Spoken of the Introduction (المقدمة), this line states that within it (فِيهَا, the feminine pronoun referring back to المقدمة) there are five mabādiʾ — five foundational principles laid down before the four chapters and conclusion. مَبَادِئُ is the plural of مَبْدَأٌ (a starting-point/principle). Breakdown: فيها refers to المقدمة (1); خمسة = five (1); مبادئ = principles, plural of مبدأ (1); meaning of mabdaʾ as a foundational starting-point (1); that these precede the abwāb (chapters) as preliminaries (1)."
-  },
-  {
-    "id": "m1-muq--compare--explain-with-examples-the-differ-8",
+    "id": "m1-muq--compare--explain-with-examples-the-differ-1w",
     "chapterId": "m1-muq",
     "chapterAr": "المقدمة",
     "chapterEn": "Introduction (Aim One)",
     "archetype": "compare",
     "marks": 8,
-    "promptEn": "Explain, with examples, the difference between a word that is عامِلة (governing) and one that is غير عامِلة (non-governing).",
-    "promptAr": "",
-    "markScheme": "Model answer: A عامِلة word is one that exercises ʿamal — it has a grammatical effect on the word(s) following it, producing a particular iʿrāb (raf‘, naṣb or jarr). According to the mabādiʾ, all verbs are of this kind, as are SOME particles and SOME nouns — e.g. a verb governs its faaʿil/maf‘ūl, a governing particle like an inflecting ḥarf affects what follows. A غير عامِلة word has no such effect; the structures called الجملة and شبه الجملة are wholly non-governing, and likewise SOME particles and SOME nouns. The dividing line is the presence or absence of ʿamal (grammatical government). Breakdown: definition of عاملة as exercising ʿamal/changing iʿrāb (2); definition of غير عاملة as having no such effect (2); correct examples of each drawn from the mabādiʾ — all verbs / some particles / some nouns vs jumlah & shibh jumlah / some particles / some nouns (2); clearly stating the criterion of distinction (2)."
+    "promptEn": "Explain, with examples, the difference between the الأفعال and the الأسماء with respect to عمل (governance), as laid down in the مقدمة.",
+    "promptAr": "الْأَفْعَالُ كُلُّهَا عَامِلَةٌ — الْأَسْمَاءُ بَعْضُهَا عَامِلَةٌ وَبَعْضُهَا غَيْرُ عَامِلَةٍ",
+    "markScheme": [
+      "The أفعال are all عاملة without exception (كلّها عاملة).",
+      "The أسماء are divided: some are عاملة and some are غير عاملة (بعضها عاملة وبعضها غير عاملة).",
+      "So the contrast is between a total ruling for verbs and a partial ruling for nouns.",
+      "Example of a governing verb: a verb raising its فاعل and putting its مفعول in نصب.",
+      "Example of a governing noun (اسم عامل): اسم الفاعل or the المصدر, which act like their verbs.",
+      "Example of a non-governing noun: an ordinary اسم such as a bare اسم جامد that exercises no iʿrāb.",
+      "2 marks for the ruling on verbs; 2 marks for the ruling on nouns; 2 marks for the noun examples; 2 marks for the verb example / clear contrast.",
+      "Total: 8 marks"
+    ]
   },
   {
-    "id": "m1-muq--compare--explain-with-reference-to-the-ma-a",
+    "id": "m1-muq--compare--explain-with-examples-the-differ-1y",
     "chapterId": "m1-muq",
     "chapterAr": "المقدمة",
     "chapterEn": "Introduction (Aim One)",
     "archetype": "compare",
     "marks": 8,
-    "promptEn": "Explain, with reference to the mabādiʾ, the difference between the verbs (الأفعال) and the nouns (الأسماء) with respect to government (العمل).",
-    "promptAr": "",
-    "markScheme": "Model answer: With respect to ʿamal the mabādiʾ treat the two categories differently. The first principle states الأفعال كلها عاملة — the verbs are governing words UNIVERSALLY: every verb without exception exercises ʿamal (note كُلُّها). The third principle states الأسماء بعضها عاملة وبعضها غير عاملة — the nouns are governing only PARTIALLY: some nouns govern (e.g. a noun that acts as an ʿāmil) while others do not. So the contrast is totality vs partiality: 'all verbs govern' versus 'only some nouns govern'. Breakdown: stating the verbs' principle (كلها عاملة) with meaning (2); stating the nouns' principle (بعضها عاملة وبعضها غير) with meaning (2); drawing out the key contrast of كُلّ (all) vs بعض (some) (2); accurate examples / illustration of governing vs non-governing instances (2)."
+    "promptEn": "Explain, with examples, the difference between a word that is عاملة and a word that is غير عاملة.",
+    "promptAr": "عَامِلَةٌ / غَيْرُ عَامِلَةٍ",
+    "markScheme": [
+      "An عامل is a word that causes a change of iʿrāb (رفع، نصب، جرّ، جزم) in another word.",
+      "A غير عامل is a word that produces no such iʿrāb effect on what follows it.",
+      "Example عامل: حرف الجر, which puts the following noun in جرّ; or إنَّ, which puts its اسم in نصب.",
+      "Example عامل among verbs: a verb governing its فاعل in رفع.",
+      "Example غير عامل: a particle such as هَلْ or بَلْ, which does not alter the iʿrāb of what follows.",
+      "Per the مقدمة, all verbs are عاملة, while particles and nouns are split, and the جملة and شبه الجملة are wholly غير عاملة.",
+      "3 marks for defining عامل; 2 marks for defining غير عامل; 3 marks for the examples on each side.",
+      "Total: 8 marks"
+    ]
   },
   {
-    "id": "m1-muq--explain-statement--explain-the-following-principle--c",
+    "id": "m1-muq--explain-statement--explain-the-following-statement--20",
     "chapterId": "m1-muq",
     "chapterAr": "المقدمة",
     "chapterEn": "Introduction (Aim One)",
-    "archetype": "explain-statement",
-    "marks": 15,
-    "promptEn": "Explain the following principle as fully as possible, with examples, clarifying why the particles are treated differently from the verbs.",
-    "promptAr": "الثَّانِي: الْحُرُوفُ بَعْضُهَا عَامِلَةٌ، وَبَعْضُهَا غَيْرُ عَامِلَةٍ",
-    "markScheme": "Model answer: This is the second mabdaʾ. Unlike the verbs (first principle: الأفعال كلها عاملة), the particles (الحروف) are split: بَعْضُهَا عَامِلَةٌ — some of them are governing, exercising ʿamal on what follows them and effecting a particular iʿrāb; وَبَعْضُهَا غَيْرُ عَامِلَةٍ — and some of them are non-governing, having no grammatical effect. So the qualifier here is بعض (some), not كُلّ (all): government is not universal among particles. The word بعض is repeated to mark a genuine two-way division of the category. Examples: a governing particle (ḥarf ʿāmil) imposes its iʿrāb on the following word, whereas a non-governing particle (such as a mere connective/answer particle) leaves the following word as it is. Breakdown: identifying it as the second principle (2); الحروف = particles (1); بعضها عاملة = some govern, with explanation of ʿamal/effect on iʿrāb (3); بعضها غير عاملة = some do not govern (3); the significance of بعض vs كُلّ — partial not universal (2); contrast with verbs being wholly governing (2); supporting examples of governing and non-governing particles (2)."
-  },
-  {
-    "id": "m1-muq--explain-statement--explain-the-following-two-princi-e",
-    "chapterId": "m1-muq",
-    "chapterAr": "المقدمة",
-    "chapterEn": "Introduction (Aim One)",
-    "archetype": "explain-statement",
-    "marks": 15,
-    "promptEn": "Explain the following two principles together as fully as possible, with examples, clarifying what is meant by الجملة and شبه الجملة and why both are said not to govern.",
-    "promptAr": "الرَّابِعُ: الْجُمْلَةُ كُلُّهَا غَيْرُ عَامِلَةٍ — الْخَامِسُ: شِبْهُ الْجُمْلَةِ كُلُّهَا غَيْرُ عَامِلَةٍ",
-    "markScheme": "Model answer: These are the fourth and fifth mabādiʾ, and they pair together because both deny ʿamal of a whole class of structures. الجُملة (the sentence — whether ismiyya or fi‘liyya) is, in its entirety (كُلُّها), غير عاملة: as a complete structure it does not itself act as a governing word over other words. شِبه الجُملة (the quasi-sentence — the ظرف and the جار ومجرور) is likewise كُلُّها غير عاملة: none of it governs. The key word in both is كُلّ ('all/the whole of'), marking a UNIVERSAL denial — there is no governing jumlah and no governing shibh jumlah, in contrast to the particles and nouns where only بعض (some) govern. Breakdown: identifying them as the fourth and fifth principles (2); meaning of الجملة, with the sentence types (2); meaning of شبه الجملة as ظرف and جار ومجرور (3); كلها غير عاملة = the whole class does not govern, for each (4); the force of كُلّ as universal denial (2); contrast with the partial (بعض) cases of particles/nouns (2)."
-  },
-  {
-    "id": "m1-muq--define-types-examples--using-the-five-mab-di-of-the-int-g",
-    "chapterId": "m1-muq",
-    "chapterAr": "المقدمة",
-    "chapterEn": "Introduction (Aim One)",
-    "archetype": "define-types-examples",
-    "marks": 15,
-    "promptEn": "Using the five mabādiʾ of the Introduction, explain how words and structures are divided with respect to government (العمل). What are the categories, which fall under each, and give examples.",
-    "promptAr": "",
-    "markScheme": "Model answer: ʿAmal (government) is a word's grammatical effect upon what follows it, producing a definite iʿrāb. The mabādiʾ classify five categories by whether they exercise ʿamal: (a) العاملة دائماً (always governing): the verbs (الأفعال كلها عاملة) — every verb governs, e.g. a verb governing its subject/object. (b) ما بعضه عامل (partly governing): the particles (الحروف بعضها عاملة وبعضها غير) and the nouns (الأسماء بعضها عاملة وبعضها غير) — some members govern, some do not. (c) غير العاملة دائماً (never governing): the sentence (الجملة كلها غير عاملة) and the quasi-sentence — ظرف and جار ومجرور — (شبه الجملة كلها غير عاملة), neither of which governs. The organising criterion throughout is كُلّ (all) vs بعض (some): universal for verbs (all govern) and for jumal/shibh jumal (none govern), but partial for particles and nouns. Breakdown: defining ʿamal (2); the verbs category — all govern, with example (3); the particles & nouns category — some govern, some not (3); the jumla category — none govern (2); the shibh jumla category — ظرف & جار ومجرور, none govern (3); drawing out the كُلّ/بعض organising principle (2)."
-  },
-  {
-    "id": "m1-muq--enumerate--list-the-five-principles-mab-di--6",
-    "chapterId": "m1-muq",
-    "chapterAr": "المقدمة",
-    "chapterEn": "Introduction (Aim One)",
-    "archetype": "enumerate",
-    "marks": 12,
-    "promptEn": "List the five principles (mabādiʾ) of the Introduction in order, stating for each one what it affirms or denies.",
-    "promptAr": "",
-    "markScheme": "Model answer (the five mabādiʾ): (1) الأول — الأفعال كلها عاملة: the verbs, all of them, govern. (2) الثاني — الحروف بعضها عاملة وبعضها غير عاملة: the particles, some of them govern and some do not. (3) الثالث — الأسماء بعضها عاملة وبعضها غير عاملة: the nouns, some govern and some do not. (4) الرابع — الجملة كلها غير عاملة: the sentence, all of it, does not govern. (5) الخامس — شبه الجملة كلها غير عاملة: the quasi-sentence, all of it, does not govern. Breakdown: 2 marks per principle correctly stated with its ḥukm (10 marks total), plus 2 marks for correct order/numbering = 12. Deduct for any principle whose 'all / some' qualifier is wrong."
-  },
-  {
-    "id": "m1-muq--classify-tarkib--classify-the-word-in-the-sentenc-i",
-    "chapterId": "m1-muq",
-    "chapterAr": "المقدمة",
-    "chapterEn": "Introduction (Aim One)",
-    "archetype": "classify-tarkib",
-    "marks": 9,
-    "promptEn": "Classify the word كُلُّ in the sentence below by its word-category (kind of kalima). Then translate the sentence and give its full tarkīb / iʿrāb.",
-    "promptAr": "الْأَفْعَالُ كُلُّهَا عَامِلَةٌ",
-    "markScheme": "Model answer — Classification: كُلّ is an اسم (noun); here it functions as a tawkīd ma‘nawī (word of corroboration) and is in construct (muḍāf) to the pronoun ها. Translation: 'The verbs, all of them, are governing (words).' Tarkīb/iʿrāb: الْأَفْعَالُ — mubtadaʾ, marfū‘, sign of raf‘ the ḍamma; كُلُّ — tawkīd ma‘nawī of الأفعال, following it in raf‘ (marfū‘ bi-l-ḍamma) and muḍāf; ها — ḍamīr muttaṣil in maḥall jarr, muḍāf ilayh; عَامِلَةٌ — khabar of the mubtadaʾ, marfū‘, sign of raf‘ the ḍamma; and the jumla is ismiyya. Breakdown: correctly classifying كُلّ as a noun / tawkīd (2); accurate translation (2); iʿrāb of الأفعال as mubtadaʾ marfū‘ (1.5); كلها as tawkīd marfū‘ + ها muḍāf ilayh (2); عاملة as khabar marfū‘ (1.5)."
-  },
-  {
-    "id": "m1-bab-1--explain-line--explain-the-following-matn-line--x",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "explain-line",
-    "marks": 5,
-    "promptEn": "Explain the following matn line, clarifying the key technical term it defines and what makes a verb belong to it.",
-    "promptAr": "الْقِيَاسِيُّ مَا لَهُ قَاعِدَةٌ مُطَّرِدَةٌ",
-    "markScheme": "Model answer: The qiyāsī (regular) verb is defined as that which has a consistent, always-applicable rule (qāʿida muṭṭarida) — i.e. its behaviour follows a fixed grammatical pattern that does not depend on what was specifically heard from the Arabs. This is the first of the two main types of verb (the other being samāʿī). It is the qiyāsī verb that raises the fāʿil/nāʾib al-fāʿil and puts the mafāʿīl and ḥāl in the accusative, and it subdivides into lāzim and mutaʿaddī. Breakdown: 2 marks for correctly translating/defining qiyāsī as having a consistent rule; 1 mark for noting it is one of the two types of verb (contrast with samāʿī); 2 marks for placing it in context (governs fāʿil/objects, divides into lāzim & mutaʿaddī)."
-  },
-  {
-    "id": "m1-bab-1--explain-line--explain-the-following-matn-line--z",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "explain-line",
-    "marks": 5,
-    "promptEn": "Explain the following matn line and illustrate it with an example of your own or from the chapter.",
-    "promptAr": "الْإِلْغَاءُ إِبْطَالُ عَمَلِ فِعْلِ الْقَلْبِ اللَّفْظِيِّ وَالْمَحَلِّيِّ",
-    "markScheme": "Model answer: Ilghāʾ (cancellation) means nullifying the governance of a heart-verb both in form (lafẓ) and in position (maḥall) — i.e. unlike taʿlīq (where governance is dropped only in form but retained in position), in ilghāʾ the verb does not operate at all. It is preferred (yatarajjaḥ) when the verb comes after its two governed terms, e.g. مُحَمَّدٌ صَادِقٌ عَلِمْتُ (both terms stay nominative). By contrast, applying the governance is preferred when the verb sits between its two objects, e.g. مُحَمَّدًا عَلِمْتُ صَادِقًا. Breakdown: 2 marks for defining ilghāʾ as nullifying governance in both lafẓ and maḥall; 1 mark for contrasting it implicitly/explicitly with taʿlīq; 2 marks for a correct example of the cancelled state (verb deferred, terms nominative)."
-  },
-  {
-    "id": "m1-bab-1--state-types--state-the-types-of-the-transitiv-11",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "state-types",
-    "marks": 6,
-    "promptEn": "State the types of the transitive verb (al-fiʿl al-mutaʿaddī) and, for each, give a recognising sign/example.",
-    "promptAr": "وَالْفِعْلُ الْمُتَعَدِّي ثَلَاثَةُ أَضْرُبٍ",
-    "markScheme": "Model answer: The transitive verb is of three kinds: (1) transitive to one object — sign: it takes a single mafʿūl bihi, e.g. خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ; (2) transitive to two objects — sign: it governs two accusatives (either originally mubtadaʾ/khabar or not), e.g. وَهَدَيْنَاهُمَا الصِّرَاطَ الْمُسْتَقِيمَ and وَمَا أَظُنُّ السَّاعَةَ قَائِمَةً; (3) transitive to three objects — sign: it is always a heart-verb whose 2nd and 3rd objects were originally mubtadaʾ/khabar, e.g. يُرِيهِمُ اللهُ أَعْمَالَهُمْ حَسَرَاتٍ. Breakdown: 2 marks per kind (1 for naming the kind, 1 for a correct recognising sign/example), total 6."
-  },
-  {
-    "id": "m1-bab-1--state-types--the-verbs-of-the-heart-af-l-al-q-13",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "state-types",
-    "marks": 6,
-    "promptEn": "The verbs of the heart (afʿāl al-qulūb) fall into two categories. State them, and for each give its recognising feature with an example verb.",
-    "promptAr": "أَفْعَالُ الْقُلُوبِ اثْنَانِ",
-    "markScheme": "Model answer: (1) Those denoting certainty (yaqīn) — recognised by the sense of definite knowledge/finding; verbs include وَجَدَ، أَلْفَى، رَأَى، عَلِمَ، عَرَفَ، دَرَى، تَعَلَّمْ, e.g. وَيَعْلَمُونَ أَنَّهُ الْحَقُّ. (2) Those denoting preponderant opinion (ẓann), also called afʿāl al-rujḥān — recognised by the sense of thinking/supposing; verbs include ظَنَّ، حَسِبَ، زَعَمَ، جَعَلَ، حَجَا، عَدَّ، وَهَبَ، خَالَ, e.g. وَيَحْسَبُونَ أَنَّهُمْ مُهْتَدُونَ. Breakdown: 3 marks each category — 1 for naming (yaqīn / ẓann-rujḥān), 1 for the distinguishing sense, 1 for a correct example verb."
-  },
-  {
-    "id": "m1-bab-1--compare--explain-with-examples-the-differ-15",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "compare",
-    "marks": 8,
-    "promptEn": "Explain, with examples, the difference between al-taʿlīq and al-ilghāʾ as they affect the governance of a heart-verb.",
-    "promptAr": "إِذَا سَدَّتِ الْجُمْلَةُ مَسَدَّ مَفْعُولَيْ فِعْلِ الْقَلْبِ لَمْ يَعْمَلْ فِيهَا لَفْظًا بَلْ مَحَلًّا، وَيُسَمَّى ذَلِكَ تَعْلِيقًا",
-    "markScheme": "Model answer: Taʿlīq (suspension): the heart-verb is prevented from governing in form (lafẓ) but still governs in position (maḥall); it occurs when the following clause begins with a word that has clause-initial right (ṣadr al-kalām), e.g. إِنِ النَّافِيَة، مَا النَّافِيَة، لَامِ الِابْتِدَاءِ، لَعَلَّ، الِاسْتِفْهَام، لَامِ جَوَابِ الْقَسَمِ — e.g. لَقَدْ عَلِمْتَ مَا أَنْزَلَ هَؤُلَاءِ... (mā nāfiya suspends ʿalima). Ilghāʾ (cancellation): governance is nullified in BOTH form and position — the verb does not operate at all; it is preferred when the verb is deferred after its two terms, e.g. مُحَمَّدٌ صَادِقٌ عَلِمْتُ. Key contrast: taʿlīq retains maḥall governance and is triggered by a ṣadr-al-kalām word; ilghāʾ removes all governance and is a matter of word-order preference. Breakdown: 3 marks for explaining taʿlīq (with a trigger + example); 3 marks for explaining ilghāʾ (with example); 2 marks for articulating the precise distinction (maḥall retained vs. wholly nullified / trigger vs. word-order)."
-  },
-  {
-    "id": "m1-bab-1--compare--explain-with-examples-the-differ-17",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "compare",
-    "marks": 8,
-    "promptEn": "Explain, with examples, the difference between ʿasā and kāda, both of which denote proximity (muqāraba).",
-    "promptAr": "تَدُلُّ عَلَى مَعْنَى الْمُقَارَبَةِ عَسَى عَلَى سَبِيلِ الرَّجَاءِ، وَكَادَ وَأَخَوَاتُهَا عَلَى سَبِيلِ الْحُصُولِ",
-    "markScheme": "Model answer: Both express muqāraba (proximity of the predicate's occurrence), but ʿasā does so by way of hope/expectation (rajāʾ) — it is a verb of hoping, e.g. عَسَى اللهُ أَنْ يَعْفُوَ عَنْهُمْ — whereas kāda does so by way of actual nearness to occurrence (ḥuṣūl) — it is a verb of proximity, e.g. وَكَادُوا يَقْتُلُونَنِي (they were on the verge of killing me). Further: an is frequent in ʿasā's predicate but rare with kāda; and kāda has a special affirmative/negative behaviour — affirmative كَادَ = act did NOT happen though nearly did; negative لَا يَكَادُ = act did not happen and was not even near (more emphatic). Breakdown: 2 marks ʿasā (rajāʾ sense + example); 2 marks kāda (ḥuṣūl sense + example); 2 marks for the rajāʾ-vs-ḥuṣūl distinction; 2 marks for a supporting nuance (an usage, or kāda's affirmative/negative meaning)."
-  },
-  {
-    "id": "m1-bab-1--compare--distinguish-with-examples-betwee-19",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "compare",
-    "marks": 8,
-    "promptEn": "Distinguish, with examples, between a verb used as nāqiṣ (defective) and the same verb used as tāmm (complete).",
-    "promptAr": "الْفِعْلُ التَّامُّ مَا يَكْتَفِي بِفَاعِلِهِ وَلَا يَحْتَاجُ إِلَى خَبَرٍ",
-    "markScheme": "Model answer: A nāqiṣ (defective) verb does not give complete meaning with its marfūʿ alone: it enters upon a mubtadaʾ and khabar, raising the first (its ism) and putting the second in the accusative (its khabar), e.g. كَانَ زَيْدٌ قَائِمًا. A tāmm (complete) verb is content with its fāʿil and needs no khabar, e.g. كَانَتْ حَرْبٌ (a war occurred), وَإِنْ كَانَ ذُو عُسْرَةٍ (if there is one in hardship), حِينَ تُمْسُونَ وَحِينَ تُصْبِحُونَ, and مَا دَامَتِ السَّمَاوَاتُ وَالْأَرْضُ. Kāna and most of its sisters can be tāmm — except مَا زَالَ، مَا فَتِئَ، مَا بَرِحَ، and لَيْسَ, which only function as nāqiṣ. Breakdown: 3 marks for the nāqiṣ description (raises ism, naṣb khabar) with example; 3 marks for the tāmm description (suffices with fāʿil) with example; 2 marks for noting which sisters cannot be tāmm."
-  },
-  {
-    "id": "m1-bab-1--explain-statement--explain-the-following-statement--1b",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "explain-statement",
-    "marks": 15,
-    "promptEn": "Explain the following statement as fully as possible, with examples, covering every trigger mentioned.",
-    "promptAr": "يُعَلَّقُ عَمَلُ فِعْلِ الْقَلْبِ عَنِ الْجُمْلَةِ بَعْدَهُ إِنْ صُدِّرَتْ بِمَا لَهُ صَدْرُ الْكَلَامِ، مِثْلُ: إِنِ النَّافِيَةِ وَمَا النَّافِيَةِ وَلَامِ الِابْتِدَاءِ وَلَعَلَّ وَالِاسْتِفْهَامِ وَلَامِ جَوَابِ الْقَسَمِ",
-    "markScheme": "Model answer: When a sentence fills the place of the two objects of a heart-verb, the verb cannot govern that sentence in form (lafẓ) — instead it governs only in position (maḥall); this is taʿlīq. The cause is a word possessing ṣadr al-kalām (the right to head the utterance) appearing at the start of the clause, blocking the verb's lafẓī governance. The chapter lists six triggers: (1) إِنْ النَّافِيَة — وَتَظُنُّونَ إِنْ لَبِثْتُمْ إِلَّا قَلِيلًا; (2) مَا النَّافِيَة — لَقَدْ عَلِمْتَ مَا أَنْزَلَ هَؤُلَاءِ إِلَّا رَبُّ السَّمَاوَاتِ; (3) لَامُ الِابْتِدَاءِ — وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ مَا لَهُ فِي الْآخِرَةِ مِنْ خَلَاقٍ; (4) لَعَلَّ — وَمَا أَدْرِي لَعَلَّهُ فِتْنَةٌ لَكُمْ; (5) الِاسْتِفْهَام — وَسَيَعْلَمُ الَّذِينَ ظَلَمُوا أَيَّ مُنْقَلَبٍ يَنْقَلِبُونَ; (6) لَامُ جَوَابِ الْقَسَمِ — وَلَقَدْ عَلِمْتُ لَتَأْتِيَنَّ مَنِيَّتِي. Breakdown: 3 marks for the core principle (governance suspended in lafẓ, retained in maḥall = taʿlīq) and the ṣadr-al-kalām rationale; 2 marks for each of the six triggers correctly named with a valid example (12 marks), capped so total = 15. Award full marks for the principle + at least five well-exemplified triggers."
-  },
-  {
-    "id": "m1-bab-1--explain-statement--explain-the-following-statement--1d",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "explain-statement",
-    "marks": 15,
-    "promptEn": "Explain the following statement about kāna as fully as possible, with an example for each meaning.",
-    "promptAr": "يَدُلُّ كَانَ عَلَى الْمَاضِي الْمُنْقَطِعِ، وَالْمَاضِي الْمُتَجَدِّدِ، وَالْحَالِ بِمَعْنَى مَا زَالَ، وَالِاسْتِقْبَالِ، وَقَدْ يَدُلُّ عَلَى الِانْتِفَاءِ وَالْقُدْرَةِ",
-    "markScheme": "Model answer: Kāna carries several time-senses: (1) the completed/cut-off past (māḍī munqaṭiʿ) — either in the manner of fixedness, وَكَانُوا عَلَيْهِ شُهَدَاءَ, or of occurrence, وَلَقَدْ كَانُوا عَاهَدُوا اللهَ مِنْ قَبْلُ; (2) the recurring past (māḍī mutajaddid) — either continuity, كُنْتُ أَذْهَبُ يَوْمًا, or habit, كَانَا يَأْكُلَانِ الطَّعَامَ; (3) the present in the sense of mā zāla (still is) — وَكَانَ الْإِنْسَانُ عَجُولًا; (4) the future — كَانَتْ لَهُمْ جَنَّاتُ الْفِرْدَوْسِ نُزُلًا. Beyond time it may denote: (5) negation (intifāʾ) — مَا كَانَ لَنَا أَنْ نُشْرِكَ بِاللهِ مِنْ شَيْءٍ; and (6) capability/fittingness (qudra) — وَمَا كَانَ لِنَفْسٍ أَنْ تَمُوتَ إِلَّا بِإِذْنِ اللهِ. Breakdown: 2 marks for each of the six senses (name + valid example) = 12; 3 marks for organising and correctly distinguishing the sub-types (munqaṭiʿ thubūt/ḥudūth, mutajaddid istimrār/ʿāda). Total 15."
-  },
-  {
-    "id": "m1-bab-1--define-types-examples--what-are-the-defective-verbs-al--1f",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "define-types-examples",
-    "marks": 15,
-    "promptEn": "What are the defective verbs (al-afʿāl al-nāqiṣa)? What are their four kinds? Give examples.",
-    "promptAr": "الْأَفْعَالُ النَّاقِصَةُ: وَهِيَ أَفْعَالٌ تَدْخُلُ عَلَى الْمُبْتَدَأِ وَالْخَبَرِ، وَتَرْفَعُ الْأَوَّلَ وَيُسَمَّى اسْمَهَا، وَتَنْصِبُ الثَّانِيَ وَيُسَمَّى خَبَرَهَا",
-    "markScheme": "Model answer: Definition — defective verbs are verbs that enter upon a mubtadaʾ and khabar, raising the first (called their ism) and putting the second in the accusative (called their khabar); they are part of the samāʿī verb. Their four kinds (aḍrub) are: (1) كَانَ وَأَخَوَاتُهَا (thirteen: كان، أصبح، أضحى، أمسى، ظلّ، بات، صار، ما برح، ما انفكّ، ما زال، ما فتئ، ما دام، ليس), e.g. صَارَ الْخَمْرُ خَلًّا; (2) أَفْعَالُ الرَّجَاءِ (verbs of hoping: عسى، اخلولق، حرى), e.g. عَسَى أَنْ يَنْفَعَنَا; (3) أَفْعَالُ الْمُقَارَبَةِ (verbs of proximity: كاد، كرب، أوشك), e.g. وَكَادُوا يَقْتُلُونَنِي; (4) أَفْعَالُ الشُّرُوعِ (verbs of beginning: جعل، أخذ، طفق، علق، أنشأ), e.g. وَطَفِقَا يَخْصِفَانِ. Breakdown: 3 marks for the definition (governance of ism/khabar); 3 marks for each of the four kinds correctly named with at least one example (12), capped to make total 15. Bonus-worthy detail (sense of each kind) can offset a missing example."
-  },
-  {
-    "id": "m1-bab-1--define-types-examples--what-are-the-forms-of-wonder-iya-1h",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "define-types-examples",
-    "marks": 15,
-    "promptEn": "What are the forms of wonder (ṣiyagh al-taʿajjub)? What are their two kinds and their sub-forms? Give examples.",
-    "promptAr": "صِيَغُ التَّعَجُّبِ: وَهِيَ مَا وُضِعَتْ لِلدَّلَالَةِ عَلَى التَّعَجُّبِ، وَهِيَ ضَرْبَانِ",
-    "markScheme": "Model answer: Definition — ṣiyagh al-taʿajjub are forms coined to express wonder/amazement; they are the third division of the samāʿī verb's praise/blame/wonder category. Two kinds: (A) Qiyāsī (regular) — three forms: (1) مَا أَفْعَلَهُ, e.g. فَمَا أَصْبَرَهُمْ عَلَى النَّارِ (with two parsing views of mā: interrogative, or an indefinite qualified noun meaning 'a great thing'); (2) أَفْعِلْ بِهِ, e.g. أَسْمِعْ بِهِمْ وَأَبْصِرْ (originally afʿala, changed to command form, with bāʾ added to the fāʿil because predicating a command to an overt noun is ugly); (3) فَعُلَ — original or transferred, e.g. كَبُرَتْ كَلِمَةً تَخْرُجُ مِنْ أَفْو��اهِهِمْ. (B) Samāʿī (heard) — among them: سُبْحَانَ اللهِ (سُبْحَانَكَ...), the interrogative (كَيْفَ تَكْفُرُونَ بِاللهِ), and the vocative/nidāʾ (يَا بُشْرَى هَذَا غُلَامٌ). Breakdown: 2 marks for the definition; 2 marks for the qiyāsī/samāʿī division; 3 marks for the three qiyāsī forms (1 each, with example); 3 marks for at least two samāʿī forms with examples; up to 3 marks for the extra parsing notes (mā afʿalahu views, afʿil bihi derivation). Total 15."
-  },
-  {
-    "id": "m1-bab-1--enumerate--enumerate-k-na-and-its-sisters-k-1j",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "enumerate",
-    "marks": 12,
-    "promptEn": "Enumerate kāna and its sisters (kāna wa-akhawātuhā) — list them and state the meaning/function of each.",
-    "promptAr": "الضَّرْبُ الْأَوَّلُ: كَانَ وَأَخَوَاتُهَا، وَهِيَ ثَلَاثَةَ عَشَرَ",
-    "markScheme": "Model answer (13 items): (1) كَانَ — being/was (past, present, future, etc.); (2) أَصْبَحَ — qualifying of the noun by the khabar at morning; (3) أَضْحَى — at forenoon (ḍuḥā); (4) أَمْسَى — at evening; (5) ظَلَّ — during the daytime; (6) بَاتَ — during the night; (7) صَارَ — for change of essence/attributes (becoming); (8) مَا بَرِحَ — continuity (to keep on); (9) مَا انْفَكَّ — continuity; (10) مَا زَالَ — continuity; (11) مَا فَتِئَ — continuity; (12) مَا دَامَ — to set the time of what precedes by the duration of the qualifying; (13) لَيْسَ — negating the present. Breakdown: 12 marks total ≈ ~0.9 per item — award roughly 1 mark per correctly named verb WITH its meaning/function; allow full 12 for all thirteen named with at least an acceptable gloss. Deduct for a verb named without meaning or for any non-sister wrongly included."
-  },
-  {
-    "id": "m1-bab-1--enumerate--enumerate-the-verbs-of-praise-an-1l",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "enumerate",
-    "marks": 12,
-    "promptEn": "Enumerate the verbs of praise and blame (afʿāl al-madḥ wa-l-dhamm) with the meaning of each, and state what they govern.",
-    "promptAr": "أَفْعَالُ الْمَدْحِ وَالذَّمِّ: وَهِيَ تَرْفَعُ فَاعِلَهَا وَمَخْصُوصَهَا، وَهِيَ خَمْسَةٌ",
-    "markScheme": "Model answer: They are five, governing (raising) both their fāʿil and their makhṣūṣ: (1) نِعْمَ — how excellent (praise), e.g. نِعْمَ الْعَبْدُ; (2) حَبَّذَا — how excellent (praise), e.g. حَبَّذَا خَالِدٌ; (3) بِئْسَ — how wretched (blame); (4) سَاءَ — how evil (blame), e.g. بِئْسَ الشَّرَابُ وَسَاءَتْ مُرْتَفَقًا; (5) لَا حَبَّذَا — how wretched (blame), e.g. لَا حَبَّذَا الْكِبْرُ. Also appended (mulḥaq): any verb on the pattern فَعُلَ, originally (وَحَسُنَتْ مُرْتَفَقًا) or transferred to it (كَتُبَ زَيْدٌ). Breakdown: 2 marks for stating they are five and that they raise fāʿil + makhṣūṣ; 8 marks for the five verbs (≈1.5 each: naming + meaning/example); 2 marks for the appended faʿula category. Total 12."
-  },
-  {
-    "id": "m1-bab-1--classify-tarkib--first-classify-the-category-of-t-1n",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "classify-tarkib",
-    "marks": 9,
-    "promptEn": "First classify the category of the verb صَارَ (what kind of verb is it, and what does it do grammatically?). Then translate the sentence and give the full tarkīb/iʿrāb of each word.",
-    "promptAr": "صَارَ الْخَمْرُ خَلًّا",
-    "markScheme": "Model answer: Classification — صَارَ is a samāʿī, defective verb (fiʿl nāqiṣ), one of kāna's sisters, denoting taḥawwul (change of essence/attributes); it raises an ism and puts a khabar in the accusative. Translation: 'The wine became vinegar.' Iʿrāb: صَارَ — fiʿl māḍin nāqiṣ mabnī ʿalā al-fatḥ; الْخَمْرُ — ismu ṣāra marfūʿ, ʿalāmatuhu al-ḍamma; خَلًّا — khabaru ṣāra manṣūb, ʿalāmatuhu al-fatḥa. Breakdown: 3 marks for correct classification (nāqiṣ, sister of kāna, sense of taḥawwul, raises ism / naṣb khabar); 2 marks for an accurate translation; 4 marks for the iʿrāb (≈1.3 each: verb as nāqiṣ māḍī, الخمر as marfūʿ ism, خلًّا as manṣūb khabar — award the 4th mark for citing the ʿalāmāt correctly)."
-  },
-  {
-    "id": "m1-bab-1--classify-tarkib--first-classify-the-category-of-t-1p",
-    "chapterId": "m1-bab-1",
-    "chapterAr": "الباب الأول في الفعل",
-    "chapterEn": "The Verb",
-    "archetype": "classify-tarkib",
-    "marks": 9,
-    "promptEn": "First classify the category of the word نِعْمَ (what kind of verb is it and what does it govern?). Then translate the sentence and give the full tarkīb/iʿrāb of each word.",
-    "promptAr": "نِعْمَ الْعَبْدُ",
-    "markScheme": "Model answer: Classification — نِعْمَ is a samāʿī jāmid verb of praise (fiʿl al-madḥ), one of the five praise/blame verbs; it raises a fāʿil (here definite by lām al-jins) and a makhṣūṣ bi-l-madḥ. Translation: 'How excellent (an) excellent is the servant.' (The makhṣūṣ may be elided or stated.) Iʿrāb: نِعْمَ — fiʿl māḍin jāmid li-inshāʾ al-madḥ, mabnī ʿalā al-fatḥ; الْعَبْدُ — fāʿil niʿma marfūʿ, ʿalāmatuhu al-ḍamma, muʿarraf bi-lām al-jins; the makhṣūṣ bi-l-madḥ is here omitted/understood (or, if stated, would be mubtadaʾ muʾakhkhar marfūʿ with the preceding jumla as its khabar muqaddam). Breakdown: 3 marks for classification (verb of madḥ, jāmid, raises fāʿil + makhṣūṣ, fāʿil definite by lām al-jins); 2 marks for translation; 4 marks for iʿrāb (niʿma as jāmid māḍī li-l-madḥ; al-ʿabd as marfūʿ fāʿil with its ʿalāma; correct treatment of the makhṣūṣ)."
-  },
-  {
-    "id": "m1-bab-2--explain-line--explain-the-following-line-from--1c",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
-    "archetype": "explain-line",
-    "marks": 5,
-    "promptEn": "Explain the following line from the matn, stating which particle is intended, its grammatical category, and its core meaning, with an example.",
-    "promptAr": "مَعْنَى عَنِ الْمُجَاوَزَةُ",
-    "markScheme": "Model answer: عَنْ is the fourth of the thirteen original prepositions (حرف الجر الأصلي). Its core meaning is الْمُجَاوَزَة — passing beyond / going away from something. As an original preposition it (with its genitive) is positionally accusative, governed by a verb or quasi-verb. Example: وَيَنْهَوْنَ عَنِ الْمُنْكَرِ (here عن المنكر is in the sense of the مفعول به). Breakdown: 1 — identifies عَنْ as a preposition / original preposition; 2 — gives the meaning مجاوزة and explains it (passing beyond/away from); 1 — notes it governs a genitive; 1 — supplies a correct Qur'anic/illustrative example."
-  },
-  {
-    "id": "m1-bab-2--explain-line--explain-this-line-what-situation-1e",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
-    "archetype": "explain-line",
-    "marks": 5,
-    "promptEn": "Explain this line: what situation does it describe, and what is the term coined for the affected noun?",
-    "promptAr": "وَيُسَمَّى الْمَجْرُورُ بَعْدَ حَذْفِ الْجَارِّ مَنْصُوبًا بِنَزْعِ الْخَافِضِ",
-    "markScheme": "Model answer: When a preposition is dropped (which is permitted — قياسًا e.g. before أَنْ and أَنَّ, and سماعًا), the noun that would have been its genitive is no longer kept in the genitive; instead it is regarded as accusative, and this accusative is technically named مَنْصُوب بِنَزْعِ الْخَافِضِ (accusative by removal of the genitive-marker). Example: إِنَّ عَادًا كَفَرُوا رَبَّهُمْ — the base being كَفَرُوا بِرَبِّهِمْ, so رَبَّهُمْ became accusative after the omission of the bāʾ. Breakdown: 2 — explains that the preposition has been omitted and the noun is now treated as accusative; 1 — gives the technical name نزع الخافض; 1 — notes omission is permitted (قياسًا/سماعًا) e.g. before أن/أنّ; 1 — supplies a valid example such as كفروا ربهم ← كفروا بربهم."
-  },
-  {
-    "id": "m1-bab-2--state-types--state-the-kinds-of-the-prepositi-1g",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
-    "archetype": "state-types",
-    "marks": 6,
-    "promptEn": "State the kinds (أضرُب) of the preposition (حرف الجر), and for each give the distinguishing feature (علامة) by which it is recognised.",
-    "promptAr": "",
-    "markScheme": "Model answer — three kinds: (1) الْأَصْلِيُّ (original): gives a special meaning AND it (with its genitive) is positionally accusative, governed by a verb or quasi-verb — e.g. خُذِ الْكِتَابَ بِقُوَّةٍ. (2) الشَّبِيهُ بِالزَّائِدِ (resembling the redundant): gives a special meaning BUT is NOT governed by a verb or quasi-verb — e.g. رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا. (3) الزَّائِدُ (redundant): gives no meaning except emphasis (التأكيد) and is NOT governed by a verb or quasi-verb — e.g. لَيْسَ كَمِثْلِهِ شَيْءٌ. Breakdown: 2 marks per kind (1 for naming the kind, 1 for its correct distinguishing feature/sign). Total 6."
-  },
-  {
-    "id": "m1-bab-2--compare--explain-with-examples-the-differ-1i",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
-    "archetype": "compare",
-    "marks": 8,
-    "promptEn": "Explain, with examples, the difference between لَام التَّعْلِيل (لَام كَي) and لَام الْعَاقِبَة (لَام الصَّيْرُورَة).",
-    "promptAr": "",
-    "markScheme": "Model answer: Both are uses of the lām (السادس من الحروف) when it conveys the sense of the مفعول له. (a) لَام التَّعْلِيل / لَام كَي expresses a genuine purpose intended by the doer (عن قصد الفاعل), and this is the more frequent use — e.g. نَزَّلَ الْفُرْقَانَ عَلَى عَبْدِهِ لِيَكُونَ لِلْعَالَمِينَ نَذِيرًا (the warning was the intended aim). (b) لَام الْعَاقِبَة / لَام الصَّيْرُورَة expresses an unintended outcome/result (نتيجة عن غير قصد) — e.g. فَالْتَقَطَهُ آلُ فِرْعَوْنَ لِيَكُونَ لَهُمْ عَدُوًّا وَحَزَنًا (they did not pick him up in order that he become an enemy; that was merely the eventual outcome). Breakdown: 2 — defines lām al-taʿlīl as intended purpose; 2 — its example; 2 — defines lām al-ʿāqiba as unintended consequence; 2 — its example. Total 8."
-  },
-  {
-    "id": "m1-bab-2--compare--explain-with-examples-the-differ-1k",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
-    "archetype": "compare",
-    "marks": 8,
-    "promptEn": "Explain, with examples, the difference between حرف الجر الشَّبِيه بالزَّائِد and حرف الجر الزَّائِد.",
-    "promptAr": "",
-    "markScheme": "Model answer: Both share that they are NOT (with their genitive) governed by a verb or quasi-verb (لا يكون مع مجروره معمولًا لفعل أو شبه الفعل). They differ in meaning: (1) الشَّبِيه بالزَّائِد DOES give a special meaning (يفيد معنى خاصًّا) — its members are رُبَّ (for making the genitive many or few), the partitive مِنْ (التبعيضية, e.g. عِنْدِي مِنْ مَاءٍ), and حَاشَا for exception (هَلَكَ النَّاسُ حَاشَا الْعَالِمِ). (2) الزَّائِد gives NO meaning except emphasis (لا يفيد معنى إلا التأكيد) — its members are the redundant بَاء (لَيْسَ بِظَلَّامٍ), مِنْ (مَا جَاءَنَا مِنْ بَشِيرٍ), لَام (فَعَّالٌ لِمَا يُرِيدُ), and كَاف (لَيْسَ كَمِثْلِهِ شَيْءٌ). Breakdown: 2 — states the shared feature (not governed); 2 — shabīh gives a special meaning + example; 2 — zāʾid gives only taʾkīd + example; 2 — lists/illustrates the members of each. Total 8."
-  },
-  {
-    "id": "m1-bab-2--explain-statement--explain-the-following-statement--1m",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
     "archetype": "explain-statement",
     "marks": 15,
     "promptEn": "Explain the following statement as fully as possible, with examples.",
-    "promptAr": "وَهِيَ لِتَكْثِيرِ مَجْرُورِهَا أَوْ تَقْلِيلِهِ، وَالْقَرِينَةُ تُعَيِّنُ الْمُرَادَ، وَلَا تَقَعُ رُبَّ إِلَّا فِي صَدْرِ الْكَلَامِ",
-    "markScheme": "Model answer (rubba — رُبَّ, the first of the prepositions resembling the redundant): (1) Meaning: it serves to make its genitive MANY (تكثير) or FEW (تقليل), and the context (القرينة) determines which is intended — e.g. رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا طَوِيلًا. (2) Position: it occurs only at the beginning of the speech (صدر الكلام); it may be preceded by the particle of calling — يَا رُبَّ كَاسِيَةٍ فِي الدُّنْيَا عَارِيَةٍ فِي الْآخِرَةِ. (3) Its genitive must be either an overt indefinite noun (اسم ظاهر نكرة) or an ambiguous pronoun explained by a tamyīz — رُبَّهُ رَجُلًا كَرِيمًا لَقِيتُهُ. (4) Adding the kāffah mā (ما الكافة) stops it from governing — رُبَّمَا يَصُومُ زَيْدٌ. (5) Its bāʾ may be lightened — رُبَمَا يَوَدُّ الَّذِينَ كَفَرُوا. (6) رُبَّ may be dropped while its governance remains: often after the wāw (وَلَيْلٍ كَمَوْجِ الْبَحْرِ أَرْخَى سُدُولَهُ) and rarely after the fāʾ; and مَا after مِنْ may carry the sense of rubba (كَانَ ﷺ مِمَّا يُحَرِّكُ شَفَتَيْهِ). Breakdown: 2 — takthīr/taqlīl + role of qarīna; 2 — must be at start of speech / may follow yā; 2 — nature of its genitive (indefinite noun or ambiguous pronoun + tamyīz); 2 — mā al-kāffa stops governance; 2 — lightening of the bāʾ; 2 — dropping rubba after wāw/fāʾ and min mā; 3 — supplying apt examples throughout. Total 15."
+    "promptAr": "وَفِيهَا خَمْسَةُ مَبَادِئَ: الْأَوَّلُ الْأَفْعَالُ كُلُّهَا عَامِلَةٌ، وَالثَّانِي الْحُرُوفُ بَعْضُهَا عَامِلَةٌ وَبَعْضُهَا غَيْرُ عَامِلَةٍ، وَالثَّالِثُ الْأَسْمَاءُ بَعْضُهَا عَامِلَةٌ وَبَعْضُهَا غَيْرُ عَامِلَةٍ، وَالرَّابِعُ الْجُمْلَةُ كُلُّهَا غَيْرُ عَامِلَةٍ، وَالْخَامِسُ شِبْهُ الْجُمْلَةِ كُلُّهَا غَيْرُ عَامِلَةٍ",
+    "markScheme": [
+      "The مقدمة sets out five مبادئ (foundational principles) governing which words act as عوامل.",
+      "First: the أفعال are all عاملة without exception, each verb governing e.g. its فاعل in رفع.",
+      "Second: the حروف are split — some are عاملة (e.g. حروف الجر, إنَّ وأخواتها) and some are غير عاملة (e.g. هَلْ، بَلْ).",
+      "Third: the أسماء are likewise split — some عاملة (e.g. اسم الفاعل، المصدر) and some غير عاملة.",
+      "Fourth: the جملة as a whole is غير عاملة — no sentence governs another word.",
+      "Fifth: the شبه الجملة (the جار ومجرور and the ظرف) as a whole is غير عاملة.",
+      "Note the pattern: only the two of the five categories that are fully fixed are verbs (all govern) versus جملة and شبه الجملة (none govern), with حروف and أسماء in between.",
+      "3 marks for the framing as five مبادئ; 2 marks for each of the five principles correctly stated with a ruling; up to 2 marks for apt examples throughout.",
+      "Total: 15 marks"
+    ]
   },
   {
-    "id": "m1-bab-2--explain-statement--explain-the-following-statement--1o",
+    "id": "m1-muq--explain-statement--explain-the-following-statement--22",
+    "chapterId": "m1-muq",
+    "chapterAr": "المقدمة",
+    "chapterEn": "Introduction (Aim One)",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "الثَّانِي الْحُرُوفُ بَعْضُهَا عَامِلَةٌ، وَبَعْضُهَا غَيْرُ عَامِلَةٍ",
+    "markScheme": [
+      "This is the second of the five مبادئ, concerning the حروف (particles).",
+      "Unlike the أفعال, particles are not uniform: some are عاملة and some are غير عاملة.",
+      "A عامل particle produces an iʿrāb effect on what follows it.",
+      "Examples of عاملة particles: حروف الجر, which put the following noun in جرّ; إنَّ وأخواتها, which put the اسم in نصب and the خبر in رفع; and the حروف of نصب or جزم acting on the verb.",
+      "A غير عامل particle produces no iʿrāb change in what follows.",
+      "Examples of غير عاملة particles: حروف العطف, the interrogative هَلْ, and بَلْ.",
+      "Contrast this with the first principle, where the أفعال were كلّها عاملة, and with the fourth and fifth, where the جملة and شبه الجملة are wholly غير عاملة.",
+      "2 marks for placing it as the second principle; 3 marks for the split of particles; 4 marks each for the two sets of examples (عاملة / غير عاملة); 2 marks for the contrast with the other principles.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-muq--define-types-examples--what-is-meant-by-an-a-governing--26",
+    "chapterId": "m1-muq",
+    "chapterAr": "المقدمة",
+    "chapterEn": "Introduction (Aim One)",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is meant by an عامل (a governing word)? According to the مقدمة, into which categories are the parts of speech and structures divided with respect to عمل, and what is the ruling of each? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "An عامل is a word that causes a change of iʿrāb (رفع، نصب، جرّ، جزم) in another word; a غير عامل produces no such effect.",
+      "The مقدمة treats five categories under its five مبادئ.",
+      "الأفعال: all of them are عاملة (كلّها عاملة); e.g. a verb governing its فاعل in رفع and its مفعول in نصب.",
+      "الحروف: some عاملة (e.g. حروف الجر, إنَّ وأخواتها) and some غير عاملة (e.g. هَلْ، بَلْ).",
+      "الأسماء: some عاملة (e.g. اسم الفاعل، المصدر) and some غير عاملة.",
+      "الجملة: wholly غير عاملة — no sentence governs.",
+      "شبه الجملة (the جار ومجرور and the ظرف): wholly غير عاملة.",
+      "3 marks for defining عامل; 2 marks for each of the five categories with its ruling; 2 marks for apt examples throughout.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-muq--enumerate--the-states-that-it-contains-five-24",
+    "chapterId": "m1-muq",
+    "chapterAr": "المقدمة",
+    "chapterEn": "Introduction (Aim One)",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "The مقدمة states that it contains five مبادئ. List all five, giving for each the category concerned and its ruling with respect to عمل.",
+    "promptAr": "",
+    "markScheme": [
+      "The مقدمة contains five مبادئ (principles).",
+      "First: الأفعال كلّها عاملة — the verbs, all of them, govern.",
+      "Second: الحروف بعضها عاملة وبعضها غير عاملة — the particles, some govern and some do not.",
+      "Third: الأسماء بعضها عاملة وبعضها غير عاملة — the nouns, some govern and some do not.",
+      "Fourth: الجملة كلّها غير عاملة — the sentence, as a whole, does not govern.",
+      "Fifth: شبه الجملة كلّها غير عاملة — the quasi-sentence, as a whole, does not govern.",
+      "2 marks for correctly stating there are five مبادئ; 2 marks for each of the five principles named with its correct ruling.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--explain-line--explain-the-following-line-from--20",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn.",
+    "promptAr": "الْقِيَاسِيُّ مَا لَهُ قَاعِدَةٌ مُطَّرِدَةٌ",
+    "markScheme": [
+      "The line defines the القياسي (the regular verb).",
+      "It is the verb that has a قاعدة مطردة, i.e. a rule that is consistent and always applicable.",
+      "Because its pattern is uniform, its forms can be derived by analogy (قياس), which is the sense of القياسي.",
+      "Award 2 marks for identifying that it defines القياسي; 2 for explaining قاعدة مطردة as a consistent/uniform rule; 1 for linking it to قياس (analogy).",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--explain-line--explain-the-following-line-from--22",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn.",
+    "promptAr": "وَهُوَ الَّذِي لَا يَتَجَاوَزُ أَثَرُ فَاعِلِهِ إِلَى الْمَفْعُولِ بِهِ",
+    "markScheme": [
+      "The line defines the الفعل اللازم (the intransitive verb).",
+      "It is the verb whose أثر (effect) of its فاعل does not pass beyond it to a مفعول به (direct object).",
+      "The sense is complete with the فاعل alone, since nothing is transmitted onward to an object.",
+      "Award 2 marks for naming the اللازم; 2 for explaining لا يتجاوز as the effect not crossing to a مفعول به; 1 for noting completeness with the فاعل.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--state-types--state-the-categories-of-words-th-24",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the categories of words that the qiyāsī verb governs, and for each give the case it assigns together with its recognising sign.",
+    "promptAr": "وَهُوَ يَرْفَعُ الْفَاعِلَ أَوْ نَائِبَهُ وَيَنْصِبُ الْمَفَاعِيلَ وَالْحَالَ",
+    "markScheme": [
+      "The qiyāsī verb governs two categories of nouns.",
+      "First, it assigns رفع to the فاعل, or to its deputy نائب الفاعل when the doer is unnamed; the recognising sign of رفع is the ḍamma.",
+      "Second, it assigns نصب to the objects المفاعيل and to the الحال; the recognising sign of نصب is the fatḥa.",
+      "So the doer-role is recognised by the nominative, while the objects and the حال are recognised by the accusative.",
+      "Award 3 marks for the رفع category (فاعل / نائب الفاعل) with its sign, and 3 for the نصب category (مفاعيل / حال) with its sign.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--compare--explain-with-examples-the-differ-26",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between the فاعل and the نائب الفاعل.",
+    "promptAr": "يَرْفَعُ الْفَاعِلَ أَوْ نَائِبَهُ",
+    "markScheme": [
+      "Both the فاعل and the نائب الفاعل take رفع from the verb, so they share the nominative case.",
+      "The فاعل is the doer that is mentioned with an active verb (المعلوم), e.g. نَصَرَ زَيْدٌ where زَيْدٌ is the فاعل.",
+      "The نائب الفاعل is the deputy that stands in the doer's place when the doer is dropped and the verb is passive (المجهول), e.g. نُصِرَ زَيْدٌ where زَيْدٌ is نائب الفاعل.",
+      "The distinguishing point is the presence versus absence of the named doer, matched by the active versus passive form of the verb, even though the case is رفع in both.",
+      "Award 2 marks for the shared رفع, 2 for defining the فاعل with an example, 2 for the نائب الفاعل with an example, and 2 for stating the distinguishing point.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--explain-statement--explain-the-following-statement--28",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "وَهُوَ يَرْفَعُ الْفَاعِلَ أَوْ نَائِبَهُ وَيَنْصِبُ الْمَفَاعِيلَ وَالْحَالَ",
+    "markScheme": [
+      "The statement describes the عمل (case-government) of the القياسي verb.",
+      "It assigns رفع to the فاعل (the doer), e.g. قَامَ زَيْدٌ where زَيْدٌ is مرفوع; when the doer is dropped the same رفع goes to the نائب الفاعل, e.g. ضُرِبَ اللِّصُّ.",
+      "It assigns نصب to the المفاعيل — the objects, of which the مفعول به is one — e.g. ضَرَبَ زَيْدٌ عَمْرًا where عَمْرًا is منصوب.",
+      "It also assigns نصب to the الحال, e.g. جَاءَ زَيْدٌ رَاكِبًا where رَاكِبًا is حال منصوب.",
+      "Note that المفاعيل is a plural, covering the several kinds of object a verb may take; the sign of رفع is the ḍamma and the sign of نصب is the fatḥa.",
+      "Award 5 marks for the رفع of فاعل/نائب with an example, 5 for the نصب of المفاعيل with an example, and 5 for the نصب of الحال with an example plus the signs.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--explain-statement--explain-the-following-statement--2a",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "وَهُوَ الَّذِي لَا يَتَجَاوَزُ أَثَرُ فَاعِلِهِ إِلَى الْمَفْعُولِ بِهِ، نَحْوَ وَلَا هُمْ يَحْزَنُونَ",
+    "markScheme": [
+      "The statement defines the الفعل اللازم, the first division (القسم الأول) of the qiyāsī verb.",
+      "Its meaning is that the أثر (effect) of the doer فاعل does not cross over (لا يتجاوز) to a مفعول به.",
+      "The action therefore stays with its doer and needs no object to complete the sense.",
+      "The cited example is يَحْزَنُونَ in وَلَا هُمْ يَحْزَنُونَ (\"nor will they grieve\") — the grieving belongs to its doer only and takes no مفعول به.",
+      "Further examples of the لازم are قَامَ, جَلَسَ, نَامَ, each complete with its فاعل alone.",
+      "By contrast, a verb that does pass its effect onward would take a مفعول به, unlike the لازم.",
+      "Award 4 marks for identifying the اللازم, 4 for explaining لا يتجاوز الأثر, 4 for the quoted example, and 3 for extra examples or the contrast.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--define-types-examples--what-is-the-verb-what-are-its-di-2c",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the القياسي verb? What are its divisions? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "The القياسي is the regular verb: that which has a قاعدة مطردة, a consistent and always-applicable pattern.",
+      "It is called qiyāsī because its forms follow قياس (analogy).",
+      "Grammatically it raises the فاعل or its نائب to رفع and puts the المفاعيل and the الحال into نصب.",
+      "It has two divisions (قسمان); the first is the الفعل اللازم (the intransitive verb).",
+      "The اللازم is that whose effect does not pass to a مفعول به, e.g. يَحْزَنُونَ, قَامَ, جَلَسَ.",
+      "Award 4 marks for the definition (قاعدة مطردة), 3 for the meaning of qiyāsī/analogy, 4 for naming the two divisions with the اللازم, and 4 for examples.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1a--classify-tarkib--state-the-category-of-the-verb-t-2e",
+    "chapterId": "m1-bab-1a",
+    "chapterAr": "القياسي: اللازم",
+    "chapterEn": "The Regular Verb I — intransitive (lāzim)",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the category of the verb يَحْزَنُونَ, then translate the sentence and give its tarkīb / iʿrāb.",
+    "promptAr": "وَلَا هُمْ يَحْزَنُونَ",
+    "markScheme": [
+      "يَحْزَنُونَ is a فعل لازم (intransitive verb), since its action does not pass to a مفعول به.",
+      "Translation: \"and they will not grieve\" / \"nor will they grieve\".",
+      "وَ is a حرف عطف (the الواو); لَا is a حرف نفي (particle of negation), نافية.",
+      "هُمْ is a ضمير منفصل, standing as مبتدأ, in محل رفع.",
+      "يَحْزَنُونَ is a فعل مضارع مرفوع, its sign of رفع being ثبوت النون as one of الأفعال الخمسة; the واو is the فاعل, a ضمير in محل رفع; and the جملة يَحْزَنُونَ is the خبر of هُمْ, in محل رفع.",
+      "Award 2 marks for classifying it as لازم, 2 for the translation, and 5 for the tarkīb / iʿrāb.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--explain-line--explain-the-following-matn-line--28",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following matn line as fully as you can.",
+    "promptAr": "وَهُوَ الَّذِي يَتَجَاوَزُ أَثَرُ فَاعِلِهِ إِلَى الْمَفْعُولِ بِهِ",
+    "markScheme": [
+      "This is the definition of the transitive verb المتعدّي.",
+      "Explain يَتَجَاوَزُ أَثَرُ فَاعِلِهِ: the effect of the doer passes beyond the فاعل to reach an object.",
+      "The verb does not stop at its فاعل but extends to a مفعول به.",
+      "Contrast with the intransitive (اللازم), whose effect stays with the فاعل and does not pass on.",
+      "Example: أَذْهَبَ عَنَّا الْحَزَنَ, where الْحَزَنَ is the مفعول به receiving the effect.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--explain-line--explain-what-this-example-illust-2a",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain what this example illustrates and why the words are voweled as they are.",
+    "promptAr": "مُحَمَّدًا عَلِمْتُ صَادِقًا",
+    "markScheme": [
+      "Here the heart-verb عَلِمْتُ comes between its two objects (تَوَسَّطَ بَيْنَ مَفْعُولَيْهِ).",
+      "مُحَمَّدًا is the first object (مفعول أول) and صَادِقًا the second (مفعول ثانٍ).",
+      "When the verb is medial, applying its governance (الإعمال) is preferred (يَتَرَجَّح).",
+      "Because governance operates, both objects are manṣūb, hence مُحَمَّدًا and صَادِقًا.",
+      "Note this is the opposite of الإلغاء, which is preferred when the verb comes last.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--state-types--state-the-types-kinds-of-the-tra-2c",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the types (kinds) of the transitive verb, and for each give a recognising sign (علامة) with an example.",
+    "promptAr": "",
+    "markScheme": [
+      "Type 1: transitive to one object (المتعدّي إلى مفعول واحد); sign: the effect reaches a single مفعول به, e.g. خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ.",
+      "Type 2: transitive to two objects (المتعدّي إلى مفعولين); sign: the verb governs two objects, e.g. هَدَيْنَاهُمَا الصِّرَاطَ الْمُسْتَقِيمَ.",
+      "Type 3: transitive to three objects (المتعدّي إلى ثلاثة مفاعيل); sign: only a فعل قلب can do this, with the 2nd and 3rd originally mubtadaʾ/khabar, e.g. يُرِيهِمُ اللهُ أَعْمَالَهُمْ حَسَرَاتٍ.",
+      "Award 2 marks per kind (naming the type + its sign/example).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--compare--explain-with-examples-the-differ-2e",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between التعليق and الإلغاء in the governance of the heart-verbs.",
+    "promptAr": "",
+    "markScheme": [
+      "التعليق: the governance of the فعل قلب is suspended in form (لفظًا) but kept in position (محلًّا).",
+      "It is caused by a word with صدر الكلام (clause-initial right) standing after the verb — e.g. إن النافية, ما النافية, لام الابتداء, لعلّ, the interrogative, لام جواب القسم.",
+      "Example: وَتَظُنُّونَ إِنْ لَبِثْتُمْ إِلَّا قَلِيلًا — ظنّ does not govern the clause in لفظ.",
+      "الإلغاء: total nullification (إبطال) of governance both in form and in position (اللفظي والمحلّي).",
+      "It is preferred when the verb comes after its two governed terms (تأخّر عن معموليه), e.g. مُحَمَّدٌ صَادِقٌ عَلِمْتُ.",
+      "Key difference: taʿlīq retains محلّ governance and is forced by a clause-initial word; ilghāʾ removes governance entirely and is a matter of position/choice.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--compare--explain-with-examples-the-differ-2g",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between الاختصار and الاقتصار in dropping the objects of the heart-verbs.",
+    "promptAr": "",
+    "markScheme": [
+      "الاختصار: dropping BOTH objects of a فعل قلب, done with an indicator (بدليل) of what was omitted.",
+      "It is permitted (يجوز), e.g. كُنْتُمْ تَزْعُمُونَ meaning تَزْعُمُونَهُمْ شُرَكَائِي.",
+      "الاقتصار: dropping ONE of the two objects, done without an indicator (بغير دليل).",
+      "It is NOT permitted (لا يجوز) with heart-verbs, e.g. saying ظَنَنْتُ alone.",
+      "The difference lies in the number dropped (both vs. one) and in the presence or absence of a دليل.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--compare--explain-with-examples-the-differ-2i",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between a verb that is transitive بنفسه and one transitive بواسطة حرف الجر.",
+    "promptAr": "",
+    "markScheme": [
+      "المتعدّي بنفسه: the verb reaches its object directly, with no preposition, e.g. أَذْهَبَ عَنَّا الْحَزَنَ (الْحَزَنَ a direct مفعول به).",
+      "المتعدّي بواسطة حرف الجر: the verb reaches its object through a preposition, e.g. ذَهَبَ اللهُ بِنُورِهِمْ.",
+      "In the second case the object is called مفعول به بواسطة حرف الجر, or متعلّق, or مفعول به غير صريح.",
+      "Difference: the direct object is manṣūb and صريح, while the indirect one is majrūr by the حرف الجر and غير صريح.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--explain-statement--explain-the-following-rule-as-fu-2k",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following rule as fully as possible, with examples.",
+    "promptAr": "يُعَلَّقُ عَمَلُ فِعْلِ الْقَلْبِ عَنِ الْجُمْلَةِ بَعْدَهُ إِنْ صُدِّرَتْ بِمَا لَهُ صَدْرُ الْكَلَامِ",
+    "markScheme": [
+      "Define التعليق: when a sentence fills the place of the two objects, the فعل قلب does not govern لفظًا but only محلًّا.",
+      "The trigger is a word possessing صدر الكلام (the right to lead the clause) coming between the verb and the clause.",
+      "إن النافية — وَتَظُنُّونَ إِنْ لَبِثْتُمْ إِلَّا قَلِيلًا.",
+      "ما النافية — لَقَدْ عَلِمْتَ مَا أَنْزَلَ هَؤُلَاءِ إِلَّا رَبُّ السَّمَاوَاتِ.",
+      "لام الابتداء — وَلَقَدْ عَلِمُوا لَمَنِ اشْتَرَاهُ; and لعلّ — وَمَا أَدْرِي لَعَلَّهُ فِتْنَةٌ لَكُمْ.",
+      "The interrogative — أَيَّ مُنْقَلَبٍ يَنْقَلِبُونَ; and لام جواب القسم — وَلَقَدْ عَلِمْتُ لَتَأْتِيَنَّ مَنِيَّتِي.",
+      "The following clause is then in maḥall naṣb, standing in for the two objects.",
+      "Marks: definition 3, mechanism (لفظًا/محلًّا) 2, the six triggers with examples ~9, maḥall point 1.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--define-types-examples--what-is-the-verb-that-is-transit-2m",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the verb that is transitive to two objects? What are its two types? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: a verb whose effect passes to two objects (مفعولين).",
+      "Type 1: a verb whose two objects were NOT mubtadaʾ and khabar in origin, e.g. هَدَيْنَاهُمَا الصِّرَاطَ الْمُسْتَقِيمَ.",
+      "With such verbs one may drop the first object (لَتَهْدِي إِلَى صِرَاطٍ), the second (هَدَاهُمُ اللهُ), or both (أَعْطَى كُلَّ شَيْءٍ خَلْقَهُ ثُمَّ هَدَى).",
+      "Type 2: a verb whose two objects WERE mubtadaʾ and khabar in origin, e.g. وَمَا أَظُنُّ السَّاعَةَ قَائِمَةً — these are أفعال القلوب.",
+      "Note the heart-verbs split into اليقين and الرجحان, and their two objects may be dropped only together (اختصار), not singly.",
+      "Marks: definition 3, Type 1 with drop-examples 5, Type 2 with example 5, note 2.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--enumerate--enumerate-the-verbs-of-certainty-2o",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the verbs of certainty (أفعال اليقين) among the heart-verbs, giving the meaning of each.",
+    "promptAr": "",
+    "markScheme": [
+      "وَجَدَ — to find / deem (وَإِنْ وَجَدْنَا أَكْثَرَهُمْ لَفَاسِقِينَ).",
+      "أَلْفَى — to find (أَلْفَوْا آبَاءَهُمْ ضَالِّينَ); رَأَى — to deem (يَرَوْنَهُ بَعِيدًا).",
+      "عَلِمَ — to know for certain (يَعْلَمُونَ أَنَّهُ الْحَقُّ); عَرَفَ — to know (عَرَفْتُ مُحَمَّدًا نَبِيًّا).",
+      "دَرَى — to know (مَا أَدْرِي مَا يُفْعَلُ بِي); تَعَلَّمْ — meaning ‘know for sure!’ (تَعَلَّمْ شِفَاءَ النَّفْسِ).",
+      "These all denote يقين (certainty), as opposed to أفعال الرجحان (ẓann).",
+      "Award roughly 1.5 marks per verb correctly named and glossed.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--enumerate--enumerate-the-transformation-ver-2q",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the transformation verbs (أفعال التحويل) that carry the sense of صيّر, with an example of each.",
+    "promptAr": "",
+    "markScheme": [
+      "They all carry the meaning of صَيَّرَ, ‘to render / turn into’.",
+      "صَيَّرَ — صَيَّرَ عَذْبَ الشَّرَابِ مُرًّا; رَدَّ — لَوْ يَرُدُّونَكُمْ ... كُفَّارًا.",
+      "تَرَكَ — فَتَرَكَهُ صَلْدًا.",
+      "تَخِذَ and اتَّخَذَ — وَاتَّخَذَ اللهُ إِبْرَاهِيمَ خَلِيلًا.",
+      "جَعَلَ — فَجَعَلْنَاهُ هَبَاءً مَنْثُورًا; وَهَبَ — وَهَبَنِيَ اللهُ فِدَاءً لِلْعِلْمِ.",
+      "These take two objects like the heart-verbs but express transformation, not knowledge or opinion.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1b--classify-tarkib--classify-the-category-of-the-ver-2s",
+    "chapterId": "m1-bab-1b",
+    "chapterAr": "القياسي: المتعدي",
+    "chapterEn": "The Regular Verb II — transitive (mutaʿaddī)",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify the category of the verb أَظُنُّ; then translate the sentence and give its tarkīb/iʿrāb.",
+    "promptAr": "وَمَا أَظُنُّ السَّاعَةَ قَائِمَةً",
+    "markScheme": [
+      "أَظُنُّ is a فعل قلب of the الرجحان (ẓann) class, transitive to two objects.",
+      "Translation: ‘and I do not think the Hour will occur (stand).’",
+      "مَا is نافية (negating); أَظُنُّ is a muḍāriʿ verb with its فاعل the concealed أنا.",
+      "السَّاعَةَ is the first object (مفعول أول), manṣūb.",
+      "قَائِمَةً is the second object (مفعول ثانٍ), manṣūb; the two were originally mubtadaʾ and khabar.",
+      "Marks: classification 2, translation 2, iʿrāb 5.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--explain-line--explain-the-following-line-from--2j",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the chapter, making clear what it defines and how it operates.",
+    "promptAr": "وَهِيَ أَفْعَالٌ تَدْخُلُ عَلَى الْمُبْتَدَأِ وَالْخَبَرِ، وَتَرْفَعُ الْأَوَّلَ وَيُسَمَّى اسْمَهَا، وَتَنْصِبُ الثَّانِيَ وَيُسَمَّى خَبَرَهَا",
+    "markScheme": [
+      "The line defines الأفعال الناقصة (the defective verbs).",
+      "They enter upon a nominal sentence composed of مبتدأ and خبر.",
+      "They raise the first element (formerly المبتدأ) to رفع, now called their اسم.",
+      "They put the second element (formerly الخبر) into نصب, now called their خبر.",
+      "Example: كَانَ زَيْدٌ قَائِمًا — زَيْدٌ is اسم كان (marfūʿ), قَائِمًا is خبر كان (manṣūb).",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--explain-line--explain-the-following-rule-stati-2l",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following rule, stating the conditions and giving contrasting examples.",
+    "promptAr": "يَجُوزُ حَذْفُ نُونِ يَكُونُ وَتَكُونُ وَأَكُونُ وَتَكُونِ إِذَا كَانَتْ مَجْزُومَةً، وَلَيْسَ بَعْدَهَا سَاكِنٌ وَلَا ضَمِيرُ نَصْبٍ مُتَّصِلٌ",
+    "markScheme": [
+      "The rule permits dropping the نون of the forms يَكُونُ، تَكُونُ، أَكُونُ، تَكُونِ.",
+      "First condition: the verb must be مجزوم (jussive).",
+      "Second condition: it must not be followed by a ساكن (vowelless letter) nor by an attached ضمير نصب.",
+      "Permitted example: لَمْ تَكُ مِنَ الْمُصَلِّينَ — the نون is dropped.",
+      "Not permitted: لَمْ يَكُنِ الَّذِينَ كَفَرُوا (a ساكن follows) and لَمْ أَكُنْ.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--state-types--state-the-four-kinds-of-the-defe-2n",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the four kinds (أضرب) of the defective verbs (الأفعال الناقصة), and for each give a recognising sign or defining function.",
+    "promptAr": "",
+    "markScheme": [
+      "كَانَ وَأَخَوَاتُهَا — recognised because they qualify the اسم with the خبر, often tied to a time (morning, night, etc.).",
+      "أَفْعَالُ الرَّجَاءِ — coined to denote الرجاء (hope); recognised as عَسَى، اخْلَوْلَقَ، حَرَى.",
+      "أَفْعَالُ الْمُقَارَبَةِ — denote nearness of the خبر occurring; recognised as كَادَ، كَرَبَ، أَوْشَكَ.",
+      "أَفْعَالُ الشُّرُوعِ — denote الشروع (beginning) in an action; recognised as جَعَلَ، أَخَذَ، طَفِقَ، عَلِقَ، أَنْشَأَ.",
+      "Award 1½ marks per kind: correct name plus a valid recognising sign.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--compare--explain-with-examples-the-differ-2p",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between عَسَى and كَادَ.",
+    "promptAr": "عَسَى اللهُ أَنْ يَعْفُوَ عَنْهُمْ — وَكَادُوا يَقْتُلُونَنِي",
+    "markScheme": [
+      "Both verbs denote the sense of مقاربة (proximity).",
+      "عَسَى is a verb of رجاء (hope): the proximity is عَلَى سَبِيلِ الرَّجَاءِ (by way of hope/expectation).",
+      "Example of عَسَى: عَسَى اللهُ أَنْ يَعْفُوَ عَنْهُمْ.",
+      "كَادَ is a verb of مقاربة proper: the proximity is عَلَى سَبِيلِ الْحُصُولِ (by way of actual imminent occurrence).",
+      "Example of كَادَ: وَكَادُوا يَقْتُلُونَنِي.",
+      "Further difference: أَنْ is frequent in خبر عسى but rare in خبر كاد.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--compare--explain-with-examples-the-differ-2r",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between زَالَ used as a defective verb (ناقصة) and زَالَ used as a complete verb (تامّة).",
+    "promptAr": "فَمَا زِلْتُمْ فِي شَكٍّ — إِنَّ اللهَ يُمْسِكُ السَّمَاوَاتِ وَالْأَرْضَ أَنْ تَزُولَا",
+    "markScheme": [
+      "زَالَ يَزَالُ is ناقصة: it needs an اسم and a خبر, means 'to keep on / not cease', and operates only after نفي، نهي، or دعاء.",
+      "Defective example: فَمَا زِلْتُمْ فِي شَكٍّ.",
+      "زَالَ يَزُولُ is تامّة: it suffices with its فاعل, needs no خبر, and means 'to cease / vanish'.",
+      "Its مصدر is زَوَالٌ.",
+      "Complete example: إِنَّ اللهَ يُمْسِكُ السَّمَاوَاتِ وَالْأَرْضَ أَنْ تَزُولَا.",
+      "The two are told apart by the مضارع: يَزَالُ (defective) versus يَزُولُ (complete).",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--explain-statement--explain-as-fully-as-possible-wit-2t",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the meanings that كَانَ can denote.",
+    "promptAr": "يَدُلُّ كَانَ عَلَى الْمَاضِي الْمُنْقَطِعِ، وَالْمَاضِي الْمُتَجَدِّدِ، وَالْحَالِ بِمَعْنَى مَا زَالَ، وَالِاسْتِقْبَالِ، وَقَدْ يَدُلُّ عَلَى الِانْتِفَاءِ وَمَعْنَى الْقُدْرَةِ",
+    "markScheme": [
+      "الماضي المنقطع (completed, no longer continuing): على وجه الثبوت, e.g. وَكَانُوا عَلَيْهِ شُهَدَاءَ; على وجه الحدوث, e.g. وَلَقَدْ كَانُوا عَاهَدُوا اللهَ.",
+      "الماضي المتجدد (recurring): على وجه الاستمرار, e.g. كُنْتُ أَذْهَبُ يَوْمًا; على وجه العادة, e.g. كَانَا يَأْكُلَانِ الطَّعَامَ.",
+      "الحال in the sense of مَا زَالَ (still is): وَكَانَ الْإِنْسَانُ عَجُولًا.",
+      "الاستقبال (the future): كَانَتْ لَهُمْ جَنَّاتُ الْفِرْدَوْسِ نُزُلًا.",
+      "الانتفاء (negation): مَا كَانَ لَنَا أَنْ نُشْرِكَ بِاللهِ مِنْ شَيْءٍ.",
+      "القدرة (capability): وَمَا كَانَ لِنَفْسٍ أَنْ تَمُوتَ إِلَّا بِإِذْنِ اللهِ.",
+      "Note كَانَ may also come in the sense of صَارَ, e.g. وَكَانَ مِنَ الْكَافِرِينَ.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--explain-statement--explain-the-following-statement--2v",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples, making clear which verbs it concerns and what conditions govern them.",
+    "promptAr": "هَذِهِ الْأَرْبَعَةُ نَاقِصَةُ التَّصَرُّفِ فَيَأْتِي مِنْهَا الْمَاضِي وَالْمُضَارِعُ لَا غَيْرُ، وَلَا تَعْمَلُ إِلَّا إِذَا تَقَدَّمَهَا نَهْيٌ أَوْ نَفْيٌ أَوْ دُعَاءٌ",
+    "markScheme": [
+      "'The four' refers to مَا بَرِحَ، مَا انْفَكَّ، مَا زَالَ، مَا فَتِئَ, all denoting الاستمرار (continuity).",
+      "They are ناقصة التصرف (deficient in conjugation): only the ماضي and المضارع come from them, and nothing else.",
+      "They do not operate (raising the اسم and putting the خبر in نصب) unless preceded by نهي (prohibition), نفي (negation), or دعاء (supplication).",
+      "Negation example: فَمَا زِلْتُمْ فِي شَكٍّ — the مَا is the نفي.",
+      "Prohibition/negation example: قَالُوا لَنْ نَبْرَحَ عَلَيْهِ عَاكِفِينَ.",
+      "Note the مَا prefixed to these verbs supplies the negation that licenses their operation.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--define-types-examples--what-are-the-verbs-of-hoping-wha-2x",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What are أفعال الرجاء (the verbs of hoping)? What are their types? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: verbs coined to denote الرجاء (hope), containing the sense of مقاربة (proximity).",
+      "They are three: عَسَى، اخْلَوْلَقَ، حَرَى.",
+      "عَسَى denotes الترجي in the desired (عَسَى اللهُ أَنْ يَعْفُوَ عَنْهُمْ), الإشفاق of the disliked, and التعليل (causation).",
+      "اخْلَوْلَقَ means صَارَ خَلِيقًا: اخْلَوْلَقَ الْمُسْلِمُونَ أَنْ يُحَافِظُوا عَلَى الصَّلَاةِ.",
+      "حَرَى means صَارَ حَرِيًّا: حَرَى الْمُذْنِبُ أَنْ يَتُوبَ.",
+      "The particle أَنْ is frequent in خبر عسى, and obligatory in خبر اخلولق and خبر حرى.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--define-types-examples--what-are-the-verbs-of-proximity--2z",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What are أفعال المقاربة (the verbs of proximity)? What are their types? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: verbs coined to denote قرب وقوع الخبر (the nearness of the predicate occurring), by way of الحصول (actual occurrence).",
+      "They are three: كَادَ، كَرَبَ، أَوْشَكَ.",
+      "كَادَ: وَكَادُوا يَقْتُلُونَنِي — affirmative denotes non-occurrence with nearness; negative لَا يَكَادُ is آكَد (more emphatic) in negation.",
+      "كَرَبَ: كَرَبَ الْمُؤَذِّنُ يُقِيمُ.",
+      "أَوْشَكَ: مَنْ زَرَعَ شَرًّا يُوشِكُ أَنْ يَحْصُدَ نَدَامَةً.",
+      "أَنْ is frequent in خبر أوشك, rare in خبر كاد and كرب; all are bound to the ماضي except كَادَ and أَوْشَكَ, which also give the مضارع.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--enumerate--list-k-na-and-its-sisters-the-th-31",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "List كَانَ وَأَخَوَاتُهَا (kāna and its sisters — the thirteen), giving the meaning or function of each.",
+    "promptAr": "",
+    "markScheme": [
+      "كَانَ — being in the past (with its several time-senses).",
+      "أَصْبَحَ — qualifying at وقت الصباح (morning); أَضْحَى — at وقت الضحى (forenoon); أَمْسَى — at وقت المساء (evening).",
+      "ظَلَّ — during النهار (daytime); بَاتَ — during الليل (night).",
+      "صَارَ — for التحول (change of essence or of attribute).",
+      "مَا بَرِحَ، مَا انْفَكَّ، مَا زَالَ، مَا فَتِئَ — all for الاستمرار (continuity).",
+      "مَا دَامَ — sets the time of what precedes it by the duration of the qualifying; لَيْسَ — for نفي الحال (negating the present).",
+      "Award roughly 1 mark per verb correctly named with its meaning (thirteen verbs).",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1c--classify-tarkib--classify-the-category-of-the-wor-33",
+    "chapterId": "m1-bab-1c",
+    "chapterAr": "السماعي: الأفعال الناقصة",
+    "chapterEn": "The Heard Verb I — defective verbs",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify the category of the word صَارَ; then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "صَارَ الْمُذْنِبُ مُتَّقِيًا",
+    "markScheme": [
+      "صَارَ is a فعل ناقص (defective verb), one of كان وأخواتها, denoting التحول (change).",
+      "Translation: 'The sinner became God-fearing.'",
+      "صَارَ: فعل ماضٍ ناقص.",
+      "الْمُذْنِبُ: اسم صار, مرفوع, sign the ضمة.",
+      "مُتَّقِيًا: خبر صار, منصوب, sign the فتحة.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--explain-line--explain-the-following-line-ident-2u",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, identifying the verb of praise, its فاعل, and its مخصوص:",
+    "promptAr": "وَلَنِعْمَ دَارُ الْمُتَّقِينَ جَنَّاتُ عَدْنٍ",
+    "markScheme": [
+      "نِعْمَ is a verb of praise (فعل ماضٍ جامد) meaning 'how excellent'.",
+      "Its فاعل is دَارُ, which is مُضَاف to الْمُتَّقِينَ — a noun made definite by annexation to a noun carrying لام الجنس.",
+      "جَنَّاتُ عَدْنٍ is the مخصوص بالمدح, the specified term being praised.",
+      "Note the لام of ابتداء prefixed for emphasis (وَلَنِعْمَ), stressing the praise.",
+      "Sense: 'and how excellent is the home of the righteous — Gardens of perpetual residence.'",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--explain-line--explain-the-following-line-givin-2w",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, giving special attention to why رِجَالًا is منصوب and why ذَا does not agree with الْأَنْصَارُ:",
+    "promptAr": "حَبَّذَا رِجَالًا الْأَنْصَارُ",
+    "markScheme": [
+      "حَبَّذَا is a verb of praise formed from حَبَّ (verb) + ذَا (its فاعل, an اسم إشارة).",
+      "ذَا is بمنزلة the فاعل and stays fixed in the الإفراد والتذكير — singular and masculine — regardless of the مخصوص.",
+      "Hence ذَا does not become جمع to match الْأَنْصَارُ; it is لازم الإفراد.",
+      "رِجَالًا is تمييز, منصوب, clarifying the category of praise.",
+      "الْأَنْصَارُ is the مخصوص بالمدح: 'how excellent, as men, are the Anṣār.'",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--state-types--state-the-forms-that-the-of-the--2y",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the forms that the فاعل of the verbs of praise and blame may take, giving for each a recognising علامة and an example.",
+    "promptAr": "",
+    "markScheme": [
+      "Type 1: a noun made definite by لام الجنس — recognised by the ال of genus prefixed directly, e.g. نِعْمَ الْعَبْدُ.",
+      "Type 2: a noun مُضَاف to a noun definite by لام الجنس — recognised by its being the first term of إضافة to such a noun, e.g. نِعْمَ أَجْرُ الْعَامِلِينَ.",
+      "Type 3: a ضمير مستتر explained by a تمييز محوّل عن الفاعل — recognised by the hidden pronoun plus a following منصوب تمييز, e.g. وَسَاءَتْ مَصِيرًا.",
+      "One mark per correctly named type, one per valid علامة/example.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--compare--explain-with-examples-the-differ-30",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between the فاعل and the مخصوص in a sentence of praise or blame.",
+    "promptAr": "",
+    "markScheme": [
+      "The فاعل is the doer that the praise/blame verb raises (مرفوع), and it is general — definite by لام الجنس or مضاف to such, e.g. الْعَبْدُ in نِعْمَ الْعَبْدُ.",
+      "The مخصوص is the specific person/thing intended by the praise or blame, e.g. زَيْدٌ in نِعْمَ الْعَبْدُ زَيْدٌ.",
+      "The verb raises both (ترفع فاعلها ومخصوصها) but they play distinct roles.",
+      "The فاعل must be present or a ضمير مستتر; the مخصوص may be dropped when السياق indicates it, e.g. نِعْمَ الْمَوْلَى وَنِعْمَ النَّصِيرُ (مخصوص = اللهُ omitted).",
+      "Illustrate with نِعْمَ الْمَرْأَةُ فَاطِمَةُ: الْمَرْأَةُ = فاعل, فَاطِمَةُ = مخصوص.",
+      "2 marks each for defining فاعل and مخصوص; up to 4 for examples and the dropping/agreement contrast.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--compare--explain-with-examples-the-differ-32",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between حَبَّذَا and لَا حَبَّذَا, and how each is constructed.",
+    "promptAr": "",
+    "markScheme": [
+      "حَبَّذَا is a verb of praise ('how excellent'), formed of the verb حَبَّ + the فاعل ذَا, e.g. حَبَّذَا خَالِدٌ.",
+      "لَا حَبَّذَا is its opposite, a verb of blame ('how wretched'), the same compound preceded by لا النافية, e.g. لَا حَبَّذَا الْكِبْرُ.",
+      "In both, ذَا is the فاعل and is لازم for الإفراد والتذكير — always singular and masculine.",
+      "In both, the following noun (خَالِدٌ / الْكِبْرُ) is the مخصوص.",
+      "The difference is purely في المعنى: مدح for حَبَّذَا vs ذمّ for لَا حَبَّذَا, marked by the لا.",
+      "حَبَّذَا may also take يا, e.g. يَا حَبَّذَا مُحَمَّدٌ مِنْ جَارِ.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--explain-statement--explain-the-following-statement--34",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples:",
+    "promptAr": "أَفْعَالُ الْمَدْحِ وَالذَّمِّ هِيَ مَا وُضِعَتْ لِلدَّلَالَةِ عَلَى الْمَدْحِ وَالذَّمِّ، وَهِيَ تَرْفَعُ فَاعِلَهَا وَمَخْصُوصَهَا، وَهِيَ خَمْسَةٌ",
+    "markScheme": [
+      "These verbs are coined (وُضِعَت) specifically to denote praise (مدح) or blame (ذمّ), not ordinary events.",
+      "They are أفعال جامدة — frozen verbs — and each raises two elements: the فاعل and the مخصوص (ترفع فاعلها ومخصوصها).",
+      "They number five: نِعْمَ (praise), حَبَّذَا (praise), بِئْسَ (blame), سَاءَ (blame), and لَا حَبَّذَا (blame).",
+      "Give examples: نِعْمَ الْعَبْدُ زَيْدٌ; حَبَّذَا خَالِدٌ; بِئْسَ الشَّرَابُ; سَاءَتْ مُرْتَفَقًا; لَا حَبَّذَا الْكِبْرُ.",
+      "Explain فاعل: general noun definite by لام الجنس or مضاف to such, or ضمير مستتر مفسّر بتمييز.",
+      "Explain مخصوص: the specific thing praised/blamed, which may be dropped when السياق indicates it.",
+      "Note appended forms on وزن فَعُلَ, e.g. حَسُنَتْ مُرْتَفَقًا, and feminizing e.g. نِعْمَتِ الْمَرْأَةُ.",
+      "Marks: 3 for the definition/purpose, 3 for raising فاعل and مخصوص, 3 for naming the five with meanings, up to 6 for examples and elaboration.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--define-types-examples--what-are-the-verbs-of-praise-and-36",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What are the verbs of praise and blame (أفعال المدح والذم)? What are their types? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: verbs coined to denote praise or blame; they are جامدة and raise both فاعل and مخصوص.",
+      "They are five, split into praise and blame.",
+      "Praise verbs: نِعْمَ ('how excellent'), e.g. نِعْمَ الْعَبْدُ; and حَبَّذَا, e.g. حَبَّذَا خَالِدٌ.",
+      "Blame verbs: بِئْسَ ('how wretched'), e.g. بِئْسَ الشَّرَابُ; سَاءَ ('how evil'), e.g. سَاءَتْ مُرْتَفَقًا; and لَا حَبَّذَا, e.g. لَا حَبَّذَا الْكِبْرُ.",
+      "Add the appended category: any verb on وزن فَعُلَ — أصالةً (e.g. حَسُنَتْ مُرْتَفَقًا) or حُوِّل إليه (e.g. كَتُبَ زَيْدٌ).",
+      "Marks: 3 for definition, 5 for correctly naming the five with meanings, 4 for valid examples, 3 for the appended فَعُلَ category.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--enumerate--list-the-five-verbs-of-praise-an-38",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "List the five verbs of praise and blame in order, stating for each its meaning and whether it denotes praise or blame, with an example.",
+    "promptAr": "",
+    "markScheme": [
+      "1. نِعْمَ — 'how excellent' — praise — e.g. وَلَنِعْمَ دَارُ الْمُتَّقِينَ جَنَّاتُ عَدْنٍ.",
+      "2. حَبَّذَا — 'how excellent' — praise — e.g. حَبَّذَا خَالِدٌ.",
+      "3. بِئْسَ — 'how wretched' — blame — e.g. بِئْسَ الشَّرَابُ.",
+      "4. سَاءَ — 'how evil' — blame — e.g. سَاءَتْ مُرْتَفَقًا.",
+      "5. لَا حَبَّذَا — 'how wretched' — blame — e.g. لَا حَبَّذَا الْكِبْرُ.",
+      "Award roughly 2 marks per item (verb + meaning + praise/blame + example); part-credit for partial.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--classify-tarkib--classify-by-category-then-transl-3a",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify نِعْمَ by category. Then translate the following sentence and give its full tarkīb/iʿrāb:",
+    "promptAr": "نِعْمَ الْمَرْأَةُ فَاطِمَةُ",
+    "markScheme": [
+      "نِعْمَ is a فعل ماضٍ جامد — a frozen verb of praise (فعل مدح), مبني على الفتح.",
+      "Translation: 'How excellent a woman is Fāṭima' / 'Excellent is the woman, Fāṭima.'",
+      "الْمَرْأَةُ: فاعل نِعْمَ, مرفوع, definite by لام الجنس, علامة رفعه الضمة.",
+      "فَاطِمَةُ: مخصوص بالمدح, مرفوع — either مبتدأ مؤخّر with the جملة before it its خبر, or خبر لمبتدأ محذوف.",
+      "Note: the verb may be feminized here (نِعْمَتِ الْمَرْأَةُ) since the فاعل is مؤنّث.",
+      "Marks: 2 for classifying نِعْمَ, 2 for translation, 5 for iʿrāb of the three words.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1d--classify-tarkib--classify-by-category-then-transl-3c",
+    "chapterId": "m1-bab-1d",
+    "chapterAr": "أفعال المدح والذم",
+    "chapterEn": "Verbs of Praise & Blame",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify سَاءَ by category. Then translate the following and give its full tarkīb/iʿrāb, explaining the hidden pronoun:",
+    "promptAr": "وَسَاءَتْ مَصِيرًا",
+    "markScheme": [
+      "سَاءَ is a فعل ماضٍ جامد for blame (فعل ذمّ), 'how evil'; the ت is تاء التأنيث الساكنة.",
+      "Translation: 'and evil is it as a destination.'",
+      "Its فاعل is a ضمير مستتر (تقديره هي), a hidden pronoun.",
+      "مَصِيرًا: تمييز محوّل عن الفاعل, منصوب, علامة نصبه الفتحة — it interprets/explains the hidden فاعل.",
+      "The مخصوص بالذمّ is محذوف, understood from السياق (e.g. جهنم).",
+      "Marks: 2 for classifying سَاءَ, 2 for translation, 5 for iʿrāb including the ضمير مستتر and تمييز.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--explain-line--explain-the-following-line-from--34",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the chapter on صِيَغ التَّعَجُّب.",
+    "promptAr": "الثَّانِيَةُ أَفْعِلْ بِهِ، نحو أَسْمِعْ بِهِمْ وَأَبْصِرْ",
+    "markScheme": [
+      "This is the second of the three regular (قياسي) forms of taʿajjub, the pattern أَفْعِلْ بِهِ, translating as \"how … he is!\".",
+      "The example أَسْمِعْ بِهِمْ وَأَبْصِرْ means \"how well they will hear and how well they will see!\".",
+      "Note the بَاء attached to the doer (بِهِمْ) is characteristic of this form.",
+      "Award 2 for naming/identifying the form, 2 for the sense of wonder, 1 for glossing the example.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--explain-line--explain-the-following-line-from--36",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the chapter on صِيَغ التَّعَجُّب.",
+    "promptAr": "الثَّالِثَةُ فَعُلَ الْأَصْلِيُّ أَوِ الْمُحَوَّلُ، نحو كَبُرَتْ كَلِمَةً تَخْرُجُ مِنْ أَفْوَاهِهِمْ",
+    "markScheme": [
+      "This is the third regular (قياسي) form of taʿajjub, the pattern فَعُلَ.",
+      "It covers فَعُلَ whether original (الأصلي) or transferred (المحوَّل) into that pattern to convey wonder.",
+      "The example كَبُرَتْ كَلِمَةً is مُحَوَّل, meaning \"grave is it as a word coming out of their mouths!\".",
+      "Award 2 for identifying the فَعُلَ form, 2 for the original-vs-transferred distinction, 1 for the example.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--state-types--state-the-two-kinds-of-the-forms-38",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the two kinds (ضَرْبَانِ) of the forms of taʿajjub, and for each give a recognising علامة.",
+    "promptAr": "",
+    "markScheme": [
+      "First kind — regular (قياسي): coined on a fixed measured pattern that can be produced analogically.",
+      "Its علامة: it conforms to one of three set patterns — مَا أَفْعَلَهُ, أَفْعِلْ بِهِ, فَعُلَ.",
+      "Second kind — heard (سماعي): not analogical, only transmitted expressions carry the sense of wonder.",
+      "Its علامة: recognised from usage/context, e.g. سُبْحَان اللهِ, interrogation, or calling (النداء).",
+      "Award 3 per kind (naming + a valid علامة).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--compare--explain-with-examples-the-differ-3a",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between the regular (قياسي) and the heard (سماعي) forms of taʿajjub.",
+    "promptAr": "",
+    "markScheme": [
+      "Regular (قياسي) is analogical — coined on a fixed pattern and generable at will.",
+      "It has exactly three forms: مَا أَفْعَلَهُ, أَفْعِلْ بِهِ, and فَعُلَ.",
+      "Example فَمَا أَصْبَرَهُمْ عَلَى النَّارِ.",
+      "Heard (سماعي) is not built by pattern; only transmitted expressions convey wonder.",
+      "Its examples: سُبْحَان اللهِ, interrogation كَيْفَ تَكْفُرُونَ, and calling يَا بُشْرَى هَذَا غُلَامٌ.",
+      "The key contrast: قياسي is produced by rule/pattern, whereas سماعي is fixed by transmission only.",
+      "Award 4 for قياسي (with example) and 4 for سماعي (with examples).",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--explain-statement--explain-the-following-statement--3c",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "أَفْعِلْ بِهِ أَصْلُهُ أَفْعَلَ، فَغُيِّرَ مِنَ الْمَاضِي إِلَى الْأَمْرِ، ثُمَّ زِيدَتِ الْبَاءُ فِي الْفَاعِلِ لِأَنَّ إِسْنَادَ الْأَمْرِ إِلَى اسْمٍ ظَاهِرٍ قَبِيحٌ",
+    "markScheme": [
+      "The statement gives the derivation/parsing of the second regular form أَفْعِلْ بِهِ.",
+      "Its origin is the past-tense verb أَفْعَلَ.",
+      "It was changed from the past (الماضي) to the command form (الأمر), yielding أَفْعِلْ.",
+      "Then the بَاء was added onto the doer (الفاعل).",
+      "Reason: predicating a command (الأمر) directly to an overt noun (اسم ظاهر) is deemed ugly (قبيح), so the بَاء intervenes.",
+      "Example أَسْمِعْ بِهِمْ وَأَبْصِرْ — بِهِمْ is grammatically the فاعل though بَاء-marked.",
+      "Award 3 identify form, 3 origin أَفْعَلَ, 3 change to الأمر, 3 addition of بَاء with reason, 3 example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--explain-statement--explain-the-following-statement--3e",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "فِي مَا أَفْعَلَهُ قَوْلَانِ: الْأَوَّلُ أَنَّهُ اسْتِفْهَامٌ، وَالثَّانِي نَكِرَةٌ مَوْصُوفَةٌ بِمَعْنَى شَيْءٌ عَظِيمٌ",
+    "markScheme": [
+      "The statement concerns the parsing of the مَا in the first regular form مَا أَفْعَلَهُ.",
+      "Two views (قولان) are reported among grammarians.",
+      "First view: the مَا is interrogative (استفهام).",
+      "Second view: the مَا is an indefinite noun qualified (نكرة موصوفة) meaning \"a great thing\" (شيء عظيم).",
+      "Example فَمَا أَصْبَرَهُمْ عَلَى النَّارِ — \"how persevering they are toward the Fire!\".",
+      "On the second view the sense is roughly \"a great thing made them so persevering toward the Fire\".",
+      "Award 3 context/form, 4 first view, 4 second view, 4 example with gloss.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--define-types-examples--what-are-what-are-their-kinds-gi-3g",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What are صِيَغ التَّعَجُّب? What are their kinds? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: forms coined to denote wonder (التعجب).",
+      "They are two kinds (ضربان): regular (قياسي) and heard (سماعي).",
+      "قياسي has three forms — مَا أَفْعَلَهُ (فَمَا أَصْبَرَهُمْ عَلَى النَّارِ), أَفْعِلْ بِهِ (أَسْمِعْ بِهِمْ وَأَبْصِرْ), and فَعُلَ (كَبُرَتْ كَلِمَةً).",
+      "سماعي includes سُبْحَان اللهِ (سُبْحَانَكَ...), interrogation (كَيْفَ تَكْفُرُونَ), and calling/النداء (يَا بُشْرَى هَذَا غُلَامٌ).",
+      "Award 3 definition, 3 the two kinds, 5 the three قياسي forms with examples, 4 the three سماعي forms with examples.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--enumerate--enumerate-the-forms-by-which-won-3i",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the forms by which wonder (التعجب) is expressed under both its kinds, giving one example of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Regular (قياسي): مَا أَفْعَلَهُ — example فَمَا أَصْبَرَهُمْ عَلَى النَّارِ.",
+      "Regular (قياسي): أَفْعِلْ بِهِ — example أَسْمِعْ بِهِمْ وَأَبْصِرْ.",
+      "Regular (قياسي): فَعُلَ (original or transferred) — example كَبُرَتْ كَلِمَةً تَخْرُجُ مِنْ أَفْوَاهِهِمْ.",
+      "Heard (سماعي): سُبْحَان اللهِ — example سُبْحَانَكَ مَا يَكُونُ لِي أَنْ أَقُولَ...",
+      "Heard (سماعي): interrogation (الاستفهام) — example كَيْفَ تَكْفُرُونَ بِاللهِ وَكُنْتُمْ أَمْوَاتًا.",
+      "Heard (سماعي): calling (النداء) — example يَا بُشْرَى هَذَا غُلَامٌ.",
+      "Award 2 per correct form-with-example (6 items).",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-1e--classify-tarkib--classify-the-word-in-the-sentenc-3k",
+    "chapterId": "m1-bab-1e",
+    "chapterAr": "صيغ التعجب",
+    "chapterEn": "Forms of Wonder (taʿajjub)",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify the word مَا in the sentence below. Then translate the sentence and give its tarkīb/iʿrāb.",
+    "promptAr": "فَمَا أَصْبَرَهُمْ عَلَى النَّارِ",
+    "markScheme": [
+      "مَا here is a taʿajjub form of the pattern مَا أَفْعَلَهُ — parsed either as interrogative (استفهام) or as نكرة موصوفة meaning شيء عظيم (the two reported views).",
+      "Translation: \"How persevering they are toward the Fire!\".",
+      "Tarkīb: مَا is مبتدأ (on the نكرة موصوفة view); أَصْبَرَ is the verb of wonder, فعل ماضٍ, with its فاعل concealed.",
+      "هُمْ is مفعول به, منصوب.",
+      "عَلَى is حرف الجر and النَّارِ is مجرور by it.",
+      "Award 3 for classifying مَا, 2 for translation, 4 for the tarkīb/iʿrāb.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-from--3d",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn as fully as you can.",
+    "promptAr": "وَيُسَمَّى الْمَجْرُورُ بَعْدَ حَذْفِ الْجَارِّ مَنْصُوبًا بِنَزْعِ الْخَافِضِ",
+    "markScheme": [
+      "State that a حرف الجر may be dropped, sometimes قياسًا (as before أَنْ and أَنَّ) and sometimes سماعًا.",
+      "Note that the noun which was formerly مجرور no longer has anything to govern it in the genitive.",
+      "Explain that it is then read as منصوب, and this state is named منصوب بنزع الخافض (accusative by removal of the genitive-marker).",
+      "Give the example إِنَّ عَادًا كَفَرُوا رَبَّهُمْ, where رَبَّهُمْ is منصوب, the original being كَفَرُوا بِرَبِّهِمْ with the بَاء.",
+      "Award 2 marks for the rule of dropping, 2 for the naming منصوب بنزع الخافض, 1 for the example.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-sayin-3f",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, saying what it tells us about the parsing of these two oath-particles.",
+    "promptAr": "تَكُونُ وَاوُ الْقَسَمِ وَتَاءُ الْقَسَمِ مَعَ مَجْرُورَيْهِمَا بِمَعْنَى الْمَفْعُولِ بِهِ لِفِعْلٍ مَحْذُوفٍ، تَقْدِيرُهُ أُقْسِمُ",
+    "markScheme": [
+      "Identify وَاوُ الْقَسَمِ and تَاءُ الْقَسَمِ as the tenth and eleventh of the original حروف الجر.",
+      "Explain that each takes a مجرور after it (the thing sworn by).",
+      "State that particle with its مجرور stands positionally as the مفعول به of an omitted verb.",
+      "Give the estimated omitted verb أُقْسِمُ (I swear).",
+      "Cite examples: وَالْعَصْرِ for the wāw and تَاللهِ تَفْتَأُ تَذْكُرُ يُوسُفَ for the tāʾ.",
+      "Award 2 for the مفعول به role, 1 for فعل محذوف تقديره أُقْسِمُ, 2 for examples.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-from--3y",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn as fully as you can.",
+    "promptAr": "تَكُونُ كَلِمَةُ عَنْ اسْمًا بِمَعْنَى جَانِبٍ إِذَا سُبِقَتْ بِمِنْ، نحو جِئْتُ مِنْ عَنْ يَمِينِهِ",
+    "markScheme": [
+      "By default عن is a حرف الجر whose meaning is المجاوزة (passing beyond).",
+      "This line gives an exception: عن can instead be an اسم meaning جانب (side).",
+      "The condition for this is that it be preceded by مِن.",
+      "In جِئْتُ مِنْ عَنْ يَمِينِهِ the مِن governs عن as a genitive noun = 'I came from the side of his right'.",
+      "Marks: 1 for default sense المجاوزة; 2 for عن becoming an اسم meaning جانب; 1 for the condition (preceded by مِن); 1 for explaining the example.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-from--3z",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn as fully as you can.",
+    "promptAr": "تَقَعُ اللَّامُ الزَّائِدَةُ عَلَى خَبَرِ كَانَ الْمَنْفِيِّ، وَتُسَمَّى لَامَ الْجُحُودِ، نحو فَمَا كَانَ اللهُ لِيَظْلِمَهُمْ",
+    "markScheme": [
+      "The line describes one position of the اللام الزائدة (redundant lām).",
+      "That position is the خبر of a negated كان.",
+      "In this position it carries the name لام الجحود (lām of denial).",
+      "Being زائدة, it adds only التأكيد and governs no real meaning.",
+      "In فَمَا كَانَ اللهُ لِيَظْلِمَهُمْ, كان is negated by ما and the lām precedes its predicate يَظْلِمَ.",
+      "Marks: 1 position; 1 name لام الجحود; 1 for redundancy = only تأكيد; 2 for the worked example.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-from--56",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn as fully as you can.",
+    "promptAr": "مَعْنَى مِنِ ابْتِدَاءُ الْغَايَةِ",
+    "markScheme": [
+      "The line gives the core meaning (معنى) of the original preposition مِنْ.",
+      "ابتداء الغاية means the starting-point of a limit or extent — where something begins.",
+      "So مِنْ marks the origin or opening boundary of an action, place or time.",
+      "Example of place: مِنَ الْمَسْجِدِ الْحَرَامِ (\"from the Sacred Mosque\").",
+      "Note this is the sense of مِنْ as حرف الجر الأصلي, since it conveys a special meaning.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-from--57",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn as fully as you can.",
+    "promptAr": "تَكُونُ كَلِمَةُ عَنْ اسْمًا بِمَعْنَى جَانِبٍ إِذَا سُبِقَتْ بِمِنْ، نحو جِئْتُ مِنْ عَنْ يَمِينِهِ",
+    "markScheme": [
+      "The line records an exceptional use where عَنْ is not a حرف but an اسم.",
+      "This occurs specifically when عَنْ is itself preceded by مِنْ.",
+      "As a noun it carries the meaning جانب (side).",
+      "In جِئْتُ مِنْ عَنْ يَمِينِهِ the عَنْ is مجرور by مِنْ, so: \"I came from the side of his right.\"",
+      "The clue is that a حرف cannot be governed by another حرف, so عَنْ must here be a noun.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-line--explain-the-following-line-from--58",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line from the matn as fully as you can.",
+    "promptAr": "وَيُسَمَّى الْمَجْرُورُ بَعْدَ حَذْفِ الْجَارِّ مَنْصُوبًا بِنَزْعِ الْخَافِضِ",
+    "markScheme": [
+      "The line supplies the parsing label used once a preposition has been dropped.",
+      "Normally the noun after a حرف الجر is مجرور.",
+      "When the حرف is omitted, that noun turns منصوب.",
+      "This accusative is termed منصوب بنزع الخافض (accusative by removal of the genitive-marker).",
+      "Example: كَفَرُوا رَبَّهُمْ (originally كَفَرُوا بِرَبِّهِمْ) — رَبَّهُمْ is accusative by نزع الخافض.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--state-types--state-the-three-kinds-of-and-for-3h",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the three kinds (أضرب) of حرف الجر, and for each give a recognising sign (علامة) by which it is told apart from the others.",
+    "promptAr": "",
+    "markScheme": [
+      "الأصلي: recognise it because it gives a special meaning (يُفِيدُ مَعْنًى خَاصًّا) and, with its مجرور, is معمول (governed) by a verb or شبه الفعل — e.g. the بَاء in خُذِ الْكِتَابَ بِقُوَّةٍ.",
+      "الشبيه بالزائد: recognise it because it gives a special meaning but is NOT معمول to a verb or شبه الفعل — e.g. رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا.",
+      "الزائد: recognise it because it gives no meaning except التأكيد (emphasis) and is not معمول to a verb or شبه الفعل — e.g. the بَاء in لَيْسَ بِظَلَّامٍ.",
+      "Award 2 marks per kind (naming + its علامة + example).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--state-types--state-the-positions-in-which-the-40",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the positions in which the redundant lām (اللام الزائدة) occurs, and for each give the name (علامة) by which it is recognised.",
+    "promptAr": "",
+    "markScheme": [
+      "On the خبر of a negated كان — called لام الجحود; e.g. فَمَا كَانَ اللهُ لِيَظْلِمَهُمْ.",
+      "On the فاعل — called لام التبيين; e.g. هَيْتَ لَكَ.",
+      "On a معمول fronted before its فعل; e.g. إِنْ كُنْتُمْ لِلرُّؤْيَا تَعْبُرُونَ.",
+      "On the معمول of شبه الفعل — called لام التقوية; e.g. فَعَّالٌ لِمَا يُرِيدُ.",
+      "Note all four merely emphasise (التأكيد); none governs meaning.",
+      "Marks: 1.5 for each of the four positions with its correct name/sign.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--compare--explain-with-examples-the-differ-3j",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between حرف الجر الشبيه بالزائد and حرف الجر الزائد.",
+    "promptAr": "",
+    "markScheme": [
+      "State the shared trait: neither is معمول (governed) with its مجرور by a verb or شبه الفعل.",
+      "Difference: the شبيه بالزائد still gives a special meaning (يُفِيدُ مَعْنًى خَاصًّا), whereas the زائد gives no meaning except التأكيد.",
+      "List the شبيه بالزائد: رُبَّ, مِن التبعيضية, and حَاشَا — e.g. رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا, عِنْدِي مِنْ مَاءٍ, هَلَكَ النَّاسُ حَاشَا الْعَالِمِ.",
+      "List the زائد: الباء, مِن, اللام, الكاف — e.g. كَفَى بِاللهِ شَهِيدًا, مَا جَاءَنَا مِنْ بَشِيرٍ, لَيْسَ كَمِثْلِهِ شَيْءٌ.",
+      "Note that both differ from الأصلي, which IS معمول to a verb or شبه الفعل.",
+      "Award 2 for shared trait, 3 for the meaning-versus-emphasis distinction with examples, 3 for correct listing with examples.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--compare--explain-with-examples-the-differ-3l",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between مُذْ / مُنْذُ when their genitive is definite (معرفة) and when it is indefinite (نكرة).",
+    "promptAr": "",
+    "markScheme": [
+      "State that مُذْ and مُنْذُ, with their مجرور, both stand in the sense of the مفعول فيه (the adverbial object).",
+      "When the مجرور is معرفة, they convey the sense of فِي (in) — e.g. مَا رَأَيْتُهُ مُنْذُ الْيَوْمِ = 'I have not seen him in the day / today'.",
+      "When the مجرور is نكرة, they convey the sense of مِن (from) — e.g. مَا رَأَيْتُهُ مُنْذُ يَوْمَيْنِ = 'I have not seen him for two days'.",
+      "Add the condition on the preceding verb: it must be ماضٍ منفيّ (as in the examples) or مُثبَت مُمتدّ, e.g. نِمْتُ مُنْذُ بَعْدَ الْعِشَاءِ.",
+      "Award 2 for the مفعول فيه role, 3 for the فِي/مِن distinction with examples, 3 for the condition on the verb with example.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--compare--explain-with-examples-the-differ-41",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between حرف الجر الأصلي and حرف الجر الشبيه بالزائد.",
+    "promptAr": "",
+    "markScheme": [
+      "Both give a special meaning (كلاهما يفيد معنى خاصًّا) — so this is not where they differ.",
+      "الأصلي: its جار with its مجرور is معمول (governed) by a verb or شبه الفعل, holding محل النصب.",
+      "الشبيه بالزائد: its جار with its مجرور is NOT معمول for a verb or شبه الفعل.",
+      "So the difference is whether the جار والمجرور has a grammatical محل under a عامل.",
+      "أصلي example: خُذِ الْكِتَابَ بِقُوَّةٍ — the بِ phrase is governed by خُذ.",
+      "شبيه بالزائد example: رُبَّ رَجُلٍ or حَاشَا الْعَالِمِ — meaning present but no عامل.",
+      "Marks: 2 shared feature (both يفيد معنى); 2 الأصلي is معمول; 2 الشبيه not معمول; 2 examples.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--compare--explain-with-examples-the-differ-42",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between مِن التبعيضية and مِن الزائدة.",
+    "promptAr": "",
+    "markScheme": [
+      "مِن التبعيضية is a حرف الجر شبيه بالزائد: it DOES add a meaning, namely التبعيض ('some of / a part of'), but is not عامل.",
+      "Examples of التبعيضية: وَلَقَدْ جَاءَكَ مِنْ نَبَإِ الْمُرْسَلِينَ; عِنْدِي مِنْ مَاءٍ.",
+      "مِن الزائدة is a حرف الجر زائد: it adds no meaning except التأكيد (emphasis).",
+      "الزائدة occurs on the تمييز of كم الخبرية (كَمْ آتَيْنَاهُمْ مِنْ آيَةٍ) and in non-affirmative speech — negation (مَا جَاءَنَا مِنْ بَشِيرٍ) or interrogative (هَلْ مِنْ خَالِقٍ / هَلْ مِنْ مَزِيدٍ).",
+      "Core contrast: التبعيضية contributes the sense 'part of', الزائدة contributes only emphasis.",
+      "Marks: 2 التبعيضية meaning + example; 2 الزائدة = only تأكيد; 2 positions of الزائدة with example; 2 stating the contrast clearly.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-statement--explain-the-following-statement--3n",
     "chapterId": "m1-bab-2",
     "chapterAr": "الباب الثاني في الحرف",
     "chapterEn": "The Particle",
     "archetype": "explain-statement",
     "marks": 15,
-    "promptEn": "Explain the following statement as fully as possible, with examples, detailing where this particle occurs.",
-    "promptAr": "تَقَعُ الْبَاءُ الزَّائِدَةُ قِيَاسًا فِي خَبَرِ النَّفْيِ بِلَيْسَ وَمَا، وَتَقَعُ سَمَاعًا فِي مَوَاضِعَ أُخَرَ",
-    "markScheme": "Model answer (the redundant bāʾ — الباء الزائدة, the first of the four redundant prepositions; it adds no meaning except emphasis): It occurs (A) regularly/analogically (قياسًا) in the predicate of negation: with لَيْسَ — وَأَنَّ اللهَ لَيْسَ بِظَلَّامٍ لِلْعَبِيدِ; and with مَا — وَمَا رَبُّكَ بِظَلَّامٍ لِلْعَبِيدِ. (B) By heard usage (سماعًا) in several places: (1) the predicate of an interrogative with هل — هَلْ زَيْدٌ بِقَائِمٍ؟; (2) the maʿnawī emphasis with نَفْس — نَظَّفَ الْأَمِيرُ الْمَسْجِدَ بِنَفْسِهِ; (3) the agent of أَفْعِلْ بِهِ of wonder — أَسْمِعْ بِهِمْ وَأَبْصِرْ; (4) the subject after the sudden إذا الفجائية — دَخَلَ الرَّجُلُ فَإِذَا بِابْنِهِ يُصَلِّي; (5) the subject expressed with حَسْب — بِحَسْبِكَ أَنْ تَصُومَ...; (6) the predicate of حَسْب — حَسْبُكَ بِزَيْدٍ; (7) the agent of كَفَى meaning ḥasb (suffice) — كَفَى بِاللهِ شَهِيدًا (unlike كَفَى meaning protect: وَكَفَى اللهُ الْمُؤْمِنِينَ الْقِتَالَ). Breakdown: 1 — notes it only emphasises (no added meaning); 3 — the قياسًا cases (laysa & mā) with examples; 7 — the سماعًا cases (≈1 each) with examples; 2 — the kafā distinction (suffice vs protect); 2 — overall accuracy and ḥarakāt of examples. Total 15."
+    "promptEn": "Explain the following statement about رُبَّ as fully as possible, with examples.",
+    "promptAr": "وَهِيَ لِتَكْثِيرِ مَجْرُورِهَا أَوْ تَقْلِيلِهِ، وَالْقَرِينَةُ تُعَيِّنُ الْمُرَادَ، وَلَا تَقَعُ إِلَّا فِي صَدْرِ الْكَلَامِ",
+    "markScheme": [
+      "State that رُبَّ is a حرف الجر الشبيه بالزائد: it gives meaning but is not معمول to a verb or شبه الفعل.",
+      "Explain its meaning: it can be for making many (تكثير) or few (تقليل) of its مجرور, and only the context (القرينة) decides which is intended.",
+      "Note that it occurs only at the head of speech (صدر الكلام), and may be preceded by حرف النداء — e.g. يَا رُبَّ كَاسِيَةٍ فِي الدُّنْيَا عَارِيَةٍ فِي الْآخِرَةِ.",
+      "State its مجرور must be an اسم ظاهر نكرة, or a ضمير مبهم explained by a تمييز — e.g. رُبَّهُ رَجُلًا كَرِيمًا لَقِيتُهُ.",
+      "Mention مَا الكافّة: رُبَّمَا stops it from governing, e.g. رُبَّمَا يَصُومُ زَيْدٌ; and its بَاء may be lightened, رُبَمَا يَوَدُّ الَّذِينَ كَفَرُوا.",
+      "Mention that رُبَّ may be dropped while its governance remains, often after the وَاو and rarely after the فَاء — e.g. وَلَيْلٍ كَمَوْجِ الْبَحْرِ أَرْخَى سُدُولَهُ.",
+      "Award roughly 3 for meaning, 3 for صدر الكلام + نداء, 3 for the مجرور conditions, 3 for مَا الكافّة/تخفيف, 3 for حذف رُبّ — all with examples.",
+      "Total: 15 marks"
+    ]
   },
   {
-    "id": "m1-bab-2--define-types-examples--what-is-the-redundant-prepositio-1q",
+    "id": "m1-bab-2--explain-statement--explain-the-following-statement--43",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement about the redundant bāʾ (الباء الزائدة) as fully as possible, with examples.",
+    "promptAr": "تَقَعُ الْبَاءُ الزَّائِدَةُ قِيَاسًا فِي خَبَرِ النَّفْيِ بِلَيْسَ وَمَا، وَتَقَعُ سَمَاعًا فِي مَوَاضِعَ أُخَرَ",
+    "markScheme": [
+      "الباء الزائدة adds only التأكيد, and its genitive is not معمول for a verb or شبه الفعل.",
+      "قياسًا (regularly) it falls in the خبر of a negation: with ليس, e.g. لَيْسَ بِظَلَّامٍ لِلْعَبِيدِ; and with ما, e.g. وَمَا رَبُّكَ بِظَلَّامٍ لِلْعَبِيدِ.",
+      "سماعًا (by heard usage) it falls in the خبر of an interrogative with هل, e.g. هَلْ زَيْدٌ بِقَائِمٍ؟",
+      "In التأكيد المعنوي with نفس, e.g. نَظَّفَ الْأَمِيرُ الْمَسْجِدَ بِنَفْسِهِ.",
+      "In the فاعل of أفعِل به for تعجب, e.g. أَسْمِعْ بِهِمْ وَأَبْصِرْ.",
+      "In the مبتدأ after إذا الفجائية, e.g. فَإِذَا بِابْنِهِ يُصَلِّي; and with the word حسب as مبتدأ (بِحَسْبِكَ) or خبر (حَسْبُكَ بِزَيْدٍ).",
+      "In the فاعل of كفى meaning حسب (suffice), e.g. كَفَى بِاللهِ شَهِيدًا.",
+      "Note: كفى meaning وقى (to protect) does NOT take the redundant بِ, e.g. وَكَفَى اللهُ الْمُؤْمِنِينَ الْقِتَالَ.",
+      "Marks: 2 definition (only تأكيد, not معمول); 3 the two قياسي cases with examples; 8 the سماعي cases with examples; 2 the كفى distinction.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-statement--explain-the-following-statement--44",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement about dropping the preposition as fully as possible, with examples.",
+    "promptAr": "يَجُوزُ حَذْفُ حَرْفِ الْجَرِّ قِيَاسًا قَبْلَ أَنْ وَأَنَّ، وَيَجُوزُ سَمَاعًا، وَيُسَمَّى الْمَجْرُورُ بَعْدَ حَذْفِ الْجَارِّ مَنْصُوبًا بِنَزْعِ الْخَافِضِ",
+    "markScheme": [
+      "The حرف الجر may be dropped قياسًا (regularly) before أنْ, e.g. أَنْ تُؤَدُّوا الْأَمَانَاتِ إِلَى أَهْلِهَا.",
+      "And قياسًا before أنَّ, e.g. أَشْهِدُ اللهَ ... أَنِّي بَرِيءٌ مِمَّا تُشْرِكُونَ.",
+      "It may also be dropped سماعًا (by heard usage), e.g. إِنَّ عَادًا كَفَرُوا رَبَّهُمْ.",
+      "The base of that سماعي example is with the بِ: كَفَرُوا بِرَبِّهِمْ.",
+      "After the جار is removed, the noun that had been مجرور is called منصوب بنزع الخافض (accusative by removal of the genitive-marker).",
+      "Marks: 4 the قياسي cases (قبل أن / قبل أنّ) with examples; 4 the سماعي case with its base form; 4 the term نزع الخافض explained; 3 overall clarity and full use of examples.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-statement--explain-the-following-statement--5f",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement about مُذْ / مُنْذُ as fully as possible, with examples.",
+    "promptAr": "يُشْتَرَطُ فِي الْفِعْلِ قَبْلَهُمَا أَنْ يَكُونَ مَاضِيًا مَنْفِيًّا، أَوْ مُثْبَتًا مُمْتَدًّا",
+    "markScheme": [
+      "The statement fixes the condition on the verb that precedes مُذْ / مُنْذُ.",
+      "The verb must be past (ماضٍ) and either negated (منفي) or affirmative-and-extended (مثبت ممتد).",
+      "Negated-past example: مَا رَأَيْتُهُ مُنْذُ يَوْمِ الْجُمُعَةِ (\"I have not seen him since Friday\").",
+      "Affirmative-extended example: نِمْتُ مُنْذُ بَعْدَ الْعِشَاءِ (\"I have slept since after ʿishāʾ\"), where the sleeping is a continuous state.",
+      "With their genitive مُذْ / مُنْذُ stand as مفعول فيه, marking the span of time.",
+      "Note the force of \"extended\": the affirmative verb must denote an ongoing action, not a single completed one.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-statement--explain-the-following-statement--5g",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement defining the redundant preposition (حرف الجر الزائد) as fully as possible, with examples.",
+    "promptAr": "وَهُوَ مَا لَا يُفِيدُ مَعْنًى إِلَّا التَّأْكِيدَ، وَلَا يَكُونُ مَعَ مَجْرُورِهِ مَعْمُولًا لِفِعْلٍ أَوْ شِبْهِ الْفِعْلِ",
+    "markScheme": [
+      "The statement defines حرف الجر الزائد (the redundant preposition).",
+      "Unlike the أصلي, it adds no new special sense — only التأكيد (emphasis).",
+      "It and its genitive are not governed (معمول) by a verb or a verb-like word.",
+      "So the noun it governs is genitive only in wording (لفظًا) while keeping its underlying case (محلًّا) as mubtadaʾ, fāʿil, and so on.",
+      "The redundant prepositions are four: الباء، مِنْ، اللام، الكاف.",
+      "Example: مَا رَبُّكَ بِظَلَّامٍ لِلْعَبِيدِ — بِ is redundant, ظلّام is خبر ما marfūʿ محلًّا but majrūr لفظًا.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--explain-statement--explain-the-following-statement--5h",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement about the bāʾ of oath (باء القسم) as fully as possible, with examples.",
+    "promptAr": "تَأْتِي الْبَاءُ لِلْقَسَمِ، وَهِيَ أَصْلُ أَحْرُفِ الْقَسَمِ، وَيَجُوزُ فِي فِعْلِ الْقَسَمِ مَعَهَا ذِكْرُهُ وَحَذْفُهُ",
+    "markScheme": [
+      "The statement concerns the bāʾ used for the oath (باء القسم).",
+      "The bāʾ is the أصل (root) of the oath-particles, from which the others branch.",
+      "Unlike the wāw and tāʾ, with the bāʾ the oath-verb may be stated (ذِكره): لَا أُقْسِمُ بِيَوْمِ الْقِيَامَةِ.",
+      "Or the oath-verb may be dropped (حذفه): فَبِعِزَّتِكَ لَأُغْوِيَنَّهُمْ أَجْمَعِينَ.",
+      "The bāʾ with its genitive stands as مفعول به of the oath-verb (أُقْسِمُ), whether stated or implied.",
+      "Note that this freedom to state or omit the verb is a feature the واو and تاء of oath do not share.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--define-types-examples--what-is-the-redundant-prepositio-3p",
     "chapterId": "m1-bab-2",
     "chapterAr": "الباب الثاني في الحرف",
     "chapterEn": "The Particle",
     "archetype": "define-types-examples",
     "marks": 15,
-    "promptEn": "What is the redundant preposition (حرف الجر الزائد)? What are its members, and in which positions does each occur? Give examples.",
+    "promptEn": "What is the redundant preposition (حرف الجر الزائد)? What are its types? Give examples of each.",
     "promptAr": "",
-    "markScheme": "Model answer: Definition — حرف الجر الزائد is a preposition that gives no meaning except emphasis (التأكيد), and it (with its genitive) is not governed by a verb or quasi-verb. Its members are four: (1) الباء الزائدة — qiyāsan in the predicate of negation with laysa/mā (لَيْسَ بِظَلَّامٍ), and samāʿan in several places (هَلْ زَيْدٌ بِقَائِمٍ؟; كَفَى بِاللهِ شَهِيدًا). (2) مِنْ الزائدة — on the tamyīz of declarative كم (كَمْ آتَيْنَاهُمْ مِنْ آيَةٍ بَيِّنَةٍ), and in non-affirmative speech: after a negation particle (مَا جَاءَنَا مِنْ بَشِيرٍ), after an interrogative meaning negation (هَلْ مِنْ خَالِقٍ غَيْرُ اللهِ), or with هل (هَلْ مِنْ مَزِيدٍ). (3) اللام الزائدة — on the predicate of negated kāna (لام الجحود): فَمَا كَانَ اللهُ لِيَظْلِمَهُمْ; on the agent (لام التبيين): هَيْتَ لَكَ; on a fronted governed term: إِنْ كُنْتُمْ لِلرُّؤْيَا تَعْبُرُونَ; on the object of a quasi-verb (لام التقوية): فَعَّالٌ لِمَا يُرِيدُ. (4) الكاف الزائدة — لَيْسَ كَمِثْلِهِ شَيْءٌ. Breakdown: 3 — correct definition (emphasis only; not governed); 3 each for بَاء، مِنْ، لَام with their positions + examples (9); the كَاف with example; remaining marks for accuracy/examples. Total 15."
+    "markScheme": [
+      "Define it: a حرف الجر that gives no meaning except التأكيد (emphasis) and is not, with its مجرور, معمول to a verb or شبه الفعل.",
+      "State the four types: الباء, مِن, اللام, الكاف — each الزائدة.",
+      "الباء الزائدة: قياسًا in خبر النفي with لَيْسَ (لَيْسَ بِظَلَّامٍ) and مَا (وَمَا رَبُّكَ بِظَلَّامٍ); سماعًا in e.g. هَلْ زَيْدٌ بِقَائِمٍ, كَفَى بِاللهِ شَهِيدًا.",
+      "مِن الزائدة: on the تمييز of كَمْ الخبرية (كَمْ آتَيْنَاهُمْ مِنْ آيَةٍ), and in غير موجب after a particle of النفي or استفهام — مَا جَاءَنَا مِنْ بَشِيرٍ, هَلْ مِنْ خَالِقٍ غَيْرُ اللهِ.",
+      "اللام الزائدة: لام الجحود on خبر كَانَ المنفيّ (فَمَا كَانَ اللهُ لِيَظْلِمَهُمْ), لام التبيين (هَيْتَ لَكَ), لام التقوية (فَعَّالٌ لِمَا يُرِيدُ).",
+      "الكاف الزائدة: e.g. لَيْسَ كَمِثْلِهِ شَيْءٌ.",
+      "Award 3 for the definition, 3 for naming the four, and up to 9 for correct positions/examples of each.",
+      "Total: 15 marks"
+    ]
   },
   {
-    "id": "m1-bab-2--enumerate--list-the-thirteen-original-prepo-1s",
+    "id": "m1-bab-2--define-types-examples--what-is-what-are-its-members-giv-45",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is حرف الجر الشبيه بالزائد? What are its members? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: a preposition that gives a special meaning (يفيد معنى خاصًّا) but whose جار والمجرور is NOT معمول for a verb or شبه الفعل.",
+      "It has three (وهو ثلاث): رُبَّ, the partitive مِن (التبعيضية), and حاشا.",
+      "رُبَّ — for making its genitive many or few (تكثير / تقليل), context deciding; e.g. رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا طَوِيلًا.",
+      "التبعيضية — 'some of / part of'; e.g. عِنْدِي مِنْ مَاءٍ, and وَلَقَدْ جَاءَكَ مِنْ نَبَإِ الْمُرْسَلِينَ.",
+      "حاشا — for exception (استثناء); e.g. هَلَكَ النَّاسُ حَاشَا الْعَالِمِ.",
+      "Marks: 3 definition; 2 naming the three members; 10 for the three members explained with a correct example each.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--define-types-examples--what-is-the-l-m-as-a-preposition-5c",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the lām (اللام) as a preposition? What meanings does it carry? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "The lām is an original preposition (حرف الجر الأصلي) governing one noun in the genitive and giving a special meaning.",
+      "التخصيص, also called الاستحقاق (assignment, entitlement): الْحَمْدُ لِلهِ.",
+      "الملك (ownership): لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ.",
+      "شبه الملك, also called النسبة (quasi-ownership, relation): لَآيَاتٍ لِلْمُؤْمِنِينَ.",
+      "Its genitive may also stand for the مفعول به (وَوَهَبْنَا لَهُ إِسْحَاقَ) or the مفعول لأجله: as an intended cause it is لام التعليل / لام كي, as an unintended outcome لام العاقبة / لام الصيرورة.",
+      "Full marks require each meaning named and illustrated with its own example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--define-types-examples--what-is-the-core-meaning-of-the--5d",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the core meaning of the original preposition مِنْ, and what maʿmūl senses can it carry with its genitive? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "مِنْ is an original preposition (حرف الجر الأصلي); its core meaning is ابتداء الغاية (the starting-point of a limit).",
+      "With its genitive it may stand as مفعول به: أَنَا تَائِبٌ مِنْ كُلِّ ذَنْبٍ.",
+      "As مفعول فيه of place (مِنَ الْمَسْجِدِ الْحَرَامِ) or of time (مِنْ أَوَّلِ يَوْمٍ).",
+      "As مفعول لأجله: يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِمْ مِنَ الصَّوَاعِقِ.",
+      "As تمييز (تَفِيضُ مِنَ الدَّمْعِ) and as عوض (بِالْحَيَاةِ الدُّنْيَا مِنَ الْآخِرَةِ).",
+      "As آلة (instrument): يَنْظُرُونَ مِنْ طَرْفٍ خَفِيٍّ; full marks need each sense named with an example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--define-types-examples--what-is-the-particle-as-a-prepos-5e",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the particle حَتَّى as a preposition? What does it signify, and what maʿmūl senses can it carry with its genitive? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "حَتَّى is an original preposition (حرف الجر الأصلي) putting one noun in the genitive.",
+      "Its meaning is انتهاء الغاية (the end-point of a limit).",
+      "With its genitive it can stand as مفعول فيه of place: سِرْنَا حَتَّى مَكَّةَ.",
+      "As مفعول فيه of time: هِيَ حَتَّى مَطْلَعِ الْفَجْرِ.",
+      "As مفعول لأجله: وَقَاتِلُوهُمْ حَتَّى لَا تَكُونَ فِتْنَةٌ.",
+      "Full marks require the meaning stated plus each sense illustrated with an example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--enumerate--list-the-thirteen-original-prepo-3r",
     "chapterId": "m1-bab-2",
     "chapterAr": "الباب الثاني في الحرف",
     "chapterEn": "The Particle",
     "archetype": "enumerate",
     "marks": 12,
-    "promptEn": "List the thirteen original prepositions (حروف الجر الأصلية) in order, and for each give its core meaning (where the matn states one).",
+    "promptEn": "List the thirteen original prepositions (حروف الجر الأصلية) in order, giving the core meaning stated in the matn for each one that has one.",
     "promptAr": "",
-    "markScheme": "Model answer (in order): 1 الْبَاء — الإلصاق (adhesion); 2 مِنْ — ابتداء الغاية (start of the limit); 3 إِلَى — انتهاء الغاية (end of the limit); 4 عَنْ — المجاوزة (passing beyond); 5 عَلَى — الاستعلاء (being upon); 6 اللَّام — التخصيص/الاستحقاق, الملك, شبه الملك/النسبة (assignment/entitlement, ownership, quasi-ownership/relation); 7 فِي — الظرفية (containment); 8 الْكَاف — التشبيه (comparison); 9 حَتَّى — انتهاء الغاية (end of the limit); 10 وَاو الْقَسَم (the wāw of oath); 11 تَاء الْقَسَم (the tāʾ of oath); 12 مُذْ (since); 13 مُنْذُ (since) — mudh/mundhu give the sense of فِي with a definite genitive and مِنْ with an indefinite. Breakdown: roughly 1 mark per particle correctly named in order (13 items → cap at 12), with its meaning required where the matn supplies one; deduct for omissions, wrong order, or missing meanings. Total 12."
+    "markScheme": [
+      "الباء — الإلصاق (adhesion); مِن — ابتداء الغاية; إلى — انتهاء الغاية; عن — المجاوزة.",
+      "على — الاستعلاء; اللام — التخصيص (also called الاستحقاق), الملك, and شبه الملك (النسبة).",
+      "في — الظرفية; الكاف — التشبيه; حتى — لانتهاء الغاية.",
+      "واو القسم; تاء القسم (both أدوات القسم); then مُذْ and مُنْذُ (both for since / مفعول فيه).",
+      "Award 1 mark per correctly named particle in roughly the right order (13), with a bonus/allowance for correct meanings; cap at 12.",
+      "Total: 12 marks"
+    ]
   },
   {
-    "id": "m1-bab-2--classify-tarkib--classify-the-word-which-category-1u",
+    "id": "m1-bab-2--enumerate--list-the-four-particles-which-so-46",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "List the four particles which some grammarians count among the prepositions, giving for each the sense or dialect stated in the matn.",
+    "promptAr": "",
+    "markScheme": [
+      "لَعَلَّ in the dialect of عُقَيْل; e.g. لَعَلَّ اللهِ فَضَّلَكُمْ عَلَيْنَا.",
+      "خَلَا and عَدَا for exception (استثناء), though most hold them to be فعلان (verbs) and not حرفان.",
+      "مَتَى meaning مِن in the dialect of هُذَيْل.",
+      "كَيْ meaning 'why' (لِمَ); e.g. كَيْمَهْ عَصَيْتَ اللهَ؟",
+      "Marks: 3 for each of the four items correctly stated with its sense/dialect.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-what-category-the-particle-b-3t",
     "chapterId": "m1-bab-2",
     "chapterAr": "الباب الثاني في الحرف",
     "chapterEn": "The Particle",
     "archetype": "classify-tarkib",
     "marks": 9,
-    "promptEn": "Classify the word رُبَّ (which category of particle is it?). Then translate the sentence and give its full tarkīb/iʿrāb.",
-    "promptAr": "رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا طَوِيلًا",
-    "markScheme": "Model answer: Classification — رُبَّ is a حرف جر شَبِيه بالزَّائِد (it gives a special meaning, here تقليل/تكثير, but is not governed by a verb or quasi-verb); it occurs at the start of the speech (صدر الكلام) and its genitive is an indefinite overt noun. Translation: 'Many a desire bequeaths long grief.' Iʿrāb: رُبَّ — حرف جر شبيه بالزائد، مبني، لا محل له. شَهْوَةٍ — مجرور لفظًا برُبَّ، مرفوع محلًّا مبتدأ (indefinite, permitted after rubba). تُورِثُ — فعل مضارع مرفوع، وفاعله ضمير مستتر تقديره هي (يعود على شهوة)، والجملة الفعلية خبر المبتدأ. حُزْنًا — مفعول به منصوب. طَوِيلًا — نعت لـ حُزْنًا منصوب. Breakdown: 2 — correct classification of rubba as shabīh bil-zāʾid; 2 — accurate translation; 5 — iʿrāb (1 rubba, 1 shahwa as lafẓan majrūr/maḥallan mubtadaʾ, 1 tūrithu + hidden agent + jumla khabar, 1 ḥuznan mafʿūl bih, 1 ṭawīlan naʿt). Total 9."
-  },
-  {
-    "id": "m1-bab-2--classify-tarkib--classify-the-particle-in-this-se-1w",
-    "chapterId": "m1-bab-2",
-    "chapterAr": "الباب الثاني في الحرف",
-    "chapterEn": "The Particle",
-    "archetype": "classify-tarkib",
-    "marks": 9,
-    "promptEn": "Classify the particle الباء in this sentence (which category of preposition is it?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptEn": "Say what category the particle بِ belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
     "promptAr": "كَفَى بِاللهِ شَهِيدًا",
-    "markScheme": "Model answer: Classification — the بَاء here is a باء زائدة (redundant preposition, adding emphasis only); specifically it falls on the agent of كَفَى when كَفَى carries the meaning of حَسْب (to suffice) — distinct from كَفَى meaning وَقَى (to protect), as in وَكَفَى اللهُ الْمُؤْمِنِينَ الْقِتَالَ. Translation: 'Allah suffices as a witness' / 'Sufficient is Allah as a witness.' Iʿrāb: كَفَى — فعل ماضٍ مبني على الفتح المقدَّر. بِ — حرف جر زائد. اللهِ — لفظ الجلالة مجرور لفظًا بالباء الزائدة، مرفوع محلًّا فاعل كَفَى. شَهِيدًا — تمييز (أو حال) منصوب. Breakdown: 2 — classifies the bāʾ as redundant on the fāʿil of kafā (= ḥasb); 2 — accurate translation; 5 — iʿrāb (1 kafā as māḍī, 1 bāʾ zāʾida, 1 Allāh majrūr lafẓan/marfūʿ maḥallan fāʿil, 1 shahīdan manṣūb tamyīz/ḥāl, 1 noting the kafā=ḥasb vs waqā distinction). Total 9."
+    "markScheme": [
+      "Category: the بَاء here is الباء الزائدة, occurring سماعًا in the فاعل of كَفَى when كَفَى means حَسْبُ (to suffice) — unlike كَفَى meaning وَقَى (to protect).",
+      "Translation: 'Sufficient is Allah as a witness.'",
+      "كَفَى — فعل ماضٍ.",
+      "بِاللهِ — بِ حرف جر زائد; لفظ الجلالة اللهِ مجرور لفظًا, and it is مرفوع محلًّا as the فاعل of كَفَى.",
+      "شَهِيدًا — منصوب as تمييز (or حال).",
+      "Award 2 for category, 2 for translation, 5 for the iʿrāb (especially the مجرور لفظًا مرفوع محلًّا point).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-what-category-the-particle-b-3v",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Say what category the particle الكاف belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
+    "promptAr": "لَيْسَ كَمِثْلِهِ شَيْءٌ",
+    "markScheme": [
+      "Category: the كَاف here is الكاف الزائدة (added for التأكيد), not the original كَاف of التشبيه.",
+      "Translation: 'There is nothing like Him.'",
+      "لَيْسَ — فعل ماضٍ ناقص.",
+      "كَمِثْلِهِ — الكاف حرف جر زائد; مِثْلِ مجرور لفظًا, and مرفوع محلًّا as the خبر of لَيْسَ (muqaddam); هِ ضمير مضاف إليه.",
+      "شَيْءٌ — اسم لَيْسَ مرفوع (muʾakhkhar).",
+      "Award 2 for category, 2 for translation, 5 for the iʿrāb (the زائدة كاف and the محلًّا خبر ليس point weighted).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-which-category-the-particle--47",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Say which category the particle رُبَّ belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
+    "promptAr": "رُبَّ شَهْوَةٍ تُورِثُ حُزْنًا طَوِيلًا",
+    "markScheme": [
+      "رُبَّ is a حرف الجر الشبيه بالزائد (gives تكثير / تقليل but is not عامل).",
+      "Translation: 'Many a desire bequeaths long grief.'",
+      "رُبَّ — حرف جر شبيه بالزائد, مبني, no محل.",
+      "شَهْوَةٍ — مجرور لفظًا by رُبّ but مبتدأ محلًّا مرفوع (its genitive is only an overt indefinite noun).",
+      "تُورِثُ — فعل مضارع مرفوع, فاعله هي مستتر; the جملة الفعلية is خبر المبتدأ.",
+      "حُزْنًا — مفعول به منصوب, علامته الفتحة; طَوِيلًا — نعت (صفة) for حُزْن, منصوب.",
+      "Marks: 2 category; 2 translation; 5 iʿrāb of the words.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-which-category-the-particle--48",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Say which category the particle حاشا belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
+    "promptAr": "هَلَكَ النَّاسُ حَاشَا الْعَالِمِ",
+    "markScheme": [
+      "حاشا here is a حرف الجر الشبيه بالزائد, used for exception (استثناء).",
+      "Translation: 'The people perished except the scholar.'",
+      "هَلَكَ — فعل ماضٍ مبني على الفتح.",
+      "النَّاسُ — فاعل مرفوع, علامته الضمة.",
+      "حَاشَا — حرف جر شبيه بالزائد للاستثناء, no محل.",
+      "الْعَالِمِ — مجرور by حاشا, علامته الكسرة.",
+      "Marks: 2 category; 2 translation; 5 iʿrāb of the words.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-which-category-the-particle--59",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Say which category the particle مِنْ belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
+    "promptAr": "هَلْ مِنْ خَالِقٍ غَيْرُ اللهِ",
+    "markScheme": [
+      "مِنْ here is the redundant preposition (حرف الجر الزائد), since it follows the interrogative هَلْ carrying a negation sense.",
+      "Translation: \"Is there any creator other than Allah?\"",
+      "هَلْ: حرف استفهام.",
+      "مِنْ: حرف جر زائد.",
+      "خَالِقٍ: مبتدأ مرفوع محلًّا، مجرور لفظًا بمن الزائدة.",
+      "غَيْرُ: خبر مرفوع، واللهِ مضاف إليه مجرور.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-which-category-the-particle--5a",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Say which category the particle فِي belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
+    "promptAr": "فَادْخُلِي فِي عِبَادِي",
+    "markScheme": [
+      "فِي here is the original preposition (حرف الجر الأصلي); with its genitive it stands in the sense of the مفعول معه.",
+      "Translation: \"So enter among My servants.\"",
+      "الفاء حرف، وادْخُلِي فعل أمر مبني، والياء فاعل.",
+      "فِي: حرف جر أصلي.",
+      "عِبَادِ: مجرور بفي وعلامته الكسرة، وهو مضاف؛ والياء ضمير في محل جر مضاف إليه.",
+      "والجار والمجرور متعلقان بالفعل ادْخُلِي.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-2--classify-tarkib--say-which-category-the-particle--5b",
+    "chapterId": "m1-bab-2",
+    "chapterAr": "الباب الثاني في الحرف",
+    "chapterEn": "The Particle",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Say which category the particle مُنْذُ belongs to here, then translate the sentence and give the tarkīb (iʿrāb) of each word.",
+    "promptAr": "مَا رَأَيْتُهُ مُنْذُ يَوْمَيْنِ",
+    "markScheme": [
+      "مُنْذُ here is an original preposition (حرف الجر الأصلي); as its genitive is نكرة it carries the sense of مِنْ, and with its genitive it stands as مفعول فيه.",
+      "Translation: \"I have not seen him for two days.\"",
+      "مَا حرف نفي؛ رَأَيْتُ فعل ماض والتاء فاعل، والهاء مفعول به.",
+      "مُنْذُ: حرف جر.",
+      "يَوْمَيْنِ: مجرور بمنذ وعلامته الياء لأنه مثنى.",
+      "والجار والمجرور متعلقان بالفعل رأى.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--jaail-fi-l-ard-khalifa",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً",
+    "markScheme": [
+      "جَاعِلٌ is اسم فاعل نكرة.",
+      "Here بمعنى الاستقبال ('I am about to place').",
+      "Licensed to govern because it leans (يعتمد) on being خبر إنّ.",
+      "Its معمول خَلِيفَةً is separated from it by the شبه جملة فِي الْأَرْضِ.",
+      "Rule for a منكّر اسم فاعل: the separated معمول must be منصوبًا وجوبًا (not إضافة).",
+      "Hence خَلِيفَةً is نصب, not *جاعلُ خليفةٍ.",
+      "Meaning: 'Indeed I am placing upon the earth a khalīfah.'",
+      "1 — identify جاعل as اسم فاعل نكرة بمعنى الاستقبال.",
+      "1 — note its اعتماد على خبرية إنّ.",
+      "1 — identify خليفة as معمول منفصل.",
+      "1 — state the obligatory-نصب rule for a separated معمول.",
+      "1 — translation.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--sarii-l-hisab",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "وَاللهُ سَرِيعُ الْحِسَابِ",
+    "markScheme": [
+      "سَرِيعُ is صفة مشبهة باسم الفاعل.",
+      "Derived from the لازم verb سَرُعَ.",
+      "Works like the اسم فاعل of a verb transitive to one object, though its own verb is لازم.",
+      "Its معمول الْحِسَابِ takes جر بالإضافة.",
+      "This جر is one of its four possible cases.",
+      "The four: رفع على الفاعلية، نصب على المفعولية (if the معمول is معرفة) أو على التمييز (if نكرة)، جر بالإضافة.",
+      "Meaning: 'And Allah is swift in reckoning.'",
+      "1 — identify سريع as صفة مشبهة.",
+      "1 — note it derives from a لازم verb yet takes a معمول like a متعدٍّ إلى واحد.",
+      "1 — identify الحساب as جر بالإضافة.",
+      "1 — name the other three case options.",
+      "1 — translation.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--explain-the-following-line-showi-49",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, showing how the highlighted noun operates and what it governs.",
+    "promptAr": "﴿ذَلِكَ يَوْمٌ مَجْمُوعٌ لَهُ النَّاسُ﴾",
+    "markScheme": [
+      "مَجْمُوع is an اسم مفعول, working the work of its passive verb (فعله المجهول).",
+      "Just as يُجمَع raises a نائب فاعل, مجموع raises النَّاسُ as its نائب فاعل, مرفوع, standing in for the deleted agent.",
+      "It operates here because it leans (اعتماد) on يَوْمٌ, a mubtadaʾ-like support, being its صفة.",
+      "Meaning: 'That is a Day for which mankind will be gathered.'",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--explain-the-following-line-ident-4a",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, identifying the operator and what it raises.",
+    "promptAr": "﴿أَفِي اللهِ شَكٌّ﴾",
+    "markScheme": [
+      "The الظرف المستقر — here the جار ومجرور فِي اللهِ — works the work of استقرَّ.",
+      "It operates because it leans (اعتماد) on an استفهام, namely the hamza أ.",
+      "شَكٌّ is raised as its fāʿil (the fāʿil of the جار والمجرور).",
+      "Sense in full: أمستقرٌّ في اللهِ شكٌّ — 'Is there any doubt concerning Allah?'",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--explain-the-following-line-showi-5i",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, showing which noun is the operator, what it governs, and why it is licensed to operate here.",
+    "promptAr": "﴿وَكَلْبُهُمْ بَاسِطٌ ذِرَاعَيْهِ بِالْوَصِيدِ﴾",
+    "markScheme": [
+      "The operator is بَاسِط, an indefinite اسم فاعل working the work of its active verb يَبسُط.",
+      "As a منكَّر it may operate on an explicit object only when it means الحال or الاستقبال and leans on a support (مُعتمِد).",
+      "Here it leans on the mubtadaʾ كَلْبُهُم, satisfying the support condition.",
+      "It therefore naṣbs its object ذِرَاعَيْه (a معمول attached to it), منصوب by the yāʾ as a مثنّى.",
+      "Sense: their dog stretching out its two forelegs at the threshold.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--explain-the-following-line-ident-5j",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, identifying the operator, the state of its معمول, and the rule that fixes that state.",
+    "promptAr": "﴿إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً﴾",
+    "markScheme": [
+      "The operator is جَاعِل, an indefinite اسم فاعل leaning on the mubtadaʾ (the yāʾ of إنّي, standing in the khabar position).",
+      "Its object is خَلِيفَة.",
+      "The object is separated from جَاعِل by the ẓarf فِي الْأَرْض, so it is a معمول منفصل.",
+      "A separated معمول must take naṣb — hence خَلِيفَةً منصوب — unlike the attached معمول which allows rafʿ, naṣb or iḍāfa.",
+      "Sense: I am placing on the earth a vicegerent.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-line--explain-the-following-line-accou-5k",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line, accounting for the ḍamm on قَبْلُ and بَعْدُ.",
+    "promptAr": "﴿لِلهِ الْأَمْرُ مِنْ قَبْلُ وَمِنْ بَعْدُ﴾",
+    "markScheme": [
+      "قَبْل and بَعْد belong to the words that go مبني على الضمّ when muḍāf and the muḍāf ilayhi is deleted with its meaning intended.",
+      "Each is really a muḍāf whose muḍāf ilayhi has been dropped, so it is cut off from iḍāfa in form but not in sense.",
+      "Because of that severance they are built (مبني) on ḍamm, not majrūr by مِن despite the preceding حرف الجر.",
+      "Note this is the same category as الجهات الست and كل / حسب / لا غيرُ / ليس غيرُ.",
+      "Sense: to Allah belongs the command, before and after.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--state-types--shibh-al-fil-five",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the five أسماء تعمل عمل الفعل (شبه الفعل, excluding المصدر), and the verb-type each works like.",
+    "promptAr": "",
+    "markScheme": [
+      "اسم الفاعل — works like الفعل المعلوم (the active verb).",
+      "اسم المفعول — works like الفعل المجهول (the passive verb).",
+      "الصفة المشبهة — works like اسم فاعل of a verb transitive to one object.",
+      "اسم المبالغة — works like its own verb (intensified).",
+      "اسم التفضيل — works like its own verb, comparing two things in a quality.",
+      "1.2 marks per correctly-paired item — cap at 6.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--state-types--tafdil-three-states",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the three أحوال of اسم التفضيل, and the agreement rule of each.",
+    "promptAr": "",
+    "markScheme": [
+      "(1) Followed by مِن + المفضل عليه — وجوب الإفراد والتذكير, e.g. ﴿لَيُوسُفُ وَأَخُوهُ أَحَبُّ إِلَى أَبِينَا مِنَّا﴾.",
+      "(2) مضاف إلى نكرة — وجوب الإفراد والتذكير أيضًا ﴿أَوَّلَ كَافِرٍ بِهِ﴾.",
+      "(2) مضاف إلى معرفة — يجوز الإفراد والتذكير أو المطابقة ﴿أَحْرَصَ النَّاسِ﴾ / ﴿هُمْ أَرَاذِلُنَا﴾.",
+      "(3) محلّى بأل — وجوب المطابقة ﴿النَّارَ الْكُبْرَى﴾.",
+      "2 marks per state correctly explained with example.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--state-types--state-the-particles-that-may-be--4b",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the جرّ-particles that may be implied inside الإضافة المعنوية, and for each give the recognising sense (علامة) with an example.",
+    "promptAr": "",
+    "markScheme": [
+      "اللام — implied when the iḍāfa denotes ownership or association: ﴿رَسُولُ اللهِ﴾.",
+      "مِن — implied when the muḍāf is a part of the muḍāf ilayhi: ﴿آيَاتُ الْقُرْآنِ﴾.",
+      "فِي — implied when the muḍāf ilayhi is a ẓarf for the muḍāf: ﴿لَهُ عَاقِبَةُ الدَّارِ﴾.",
+      "Award for each particle plus its recognising sense plus an example (2 marks each).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--state-types--state-the-three-kinds-of-the-abs-4c",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the three kinds of العامل المعنوي (the abstract governor), and for each state what it governs.",
+    "promptAr": "",
+    "markScheme": [
+      "الابتداء — raises the mubtadaʾ and the khabar: ﴿مُحَمَّدٌ رَسُولُ اللهِ﴾.",
+      "خلوّ المضارع عن الناصب والجازم — the مضارع's freedom from naṣb/jazm devices raises it: ﴿وَلَا أُشْرِكُ بِرَبِّي أَحَدًا﴾.",
+      "معنى الفعل في الاسم أو الحرف — naṣbs the ḥāl: ﴿فَتِلْكَ بُيُوتُهُمْ خَاوِيَةً﴾.",
+      "Award for each kind plus its effect (2 marks each).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--compare--idafa-manawiyya-vs-lafziyya",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between الإضافة المعنوية and الإضافة اللفظية.",
+    "promptAr": "",
+    "markScheme": [
+      "معنوية: المضاف اسم لا يعمل عمل الفعل.",
+      "معنوية: a hidden جر particle sits inside it (اللام/مِن/في).",
+      "معنوية: it gives the مضاف التعريف (if المضاف إليه معرفة) or التخصيص (if نكرة) — ﴿رَسُولُ اللهِ﴾.",
+      "لفظية: المضاف مشتق بمعنى الفعل and المضاف إليه is its فاعل or مفعول.",
+      "لفظية: it gives NO تعريف ولا تخصيص, only تخفيف (dropping تنوين or the نون).",
+      "لفظية: ﴿إِنَّا مُرْسِلُو النَّاقَةِ﴾ (lighter than مُرسِلونَ الناقةَ).",
+      "لفظية: أل must enter the مضاف itself to define it.",
+      "4 — معنوية explained with example.",
+      "4 — لفظية explained with example.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--compare--ism-fail-marifa-vs-nakira",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between اسم الفاعل المعرَّف باللام and اسم الفاعل المنكَّر (in their operation).",
+    "promptAr": "",
+    "markScheme": [
+      "المعرَّف باللام operates مطلقًا.",
+      "Whether its فاعل is ظاهرًا or مستترًا, and whatever tense it denotes — ﴿الْقَرْيَةِ الظَّالِمِ أَهْلُهَا﴾.",
+      "المنكَّر operates on its hidden فاعل مطلقًا.",
+      "On an explicit فاعل or objects, المنكَّر operates only under TWO conditions together.",
+      "Condition 1: it must mean الحال or الاستقبال.",
+      "Condition 2: it must lean (يعتمد) on one of five supports.",
+      "The five supports: a مبتدأ, ما جرى مجراه, a ذو حال, همزة الاستفهام, or a negative particle — ﴿وَكَلْبُهُمْ بَاسِطٌ ذِرَاعَيْهِ﴾.",
+      "4 — المعرَّف باللام explained with example.",
+      "4 — المنكَّر's two-condition rule explained with example.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--compare--explain-with-examples-the-differ-4d",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between اسم الفاعل and اسم المفعول in their operation.",
+    "promptAr": "",
+    "markScheme": [
+      "اسم الفاعل works the work of its active verb (فعله المعلوم): it raises a fāʿil and naṣbs an object: ﴿إِنِّي خَالِقٌ بَشَرًا﴾.",
+      "اسم المفعول works the work of its passive verb (فعله المجهول): it has no fāʿil, only a نائب فاعل: ﴿ذَلِكَ يَوْمٌ مَجْمُوعٌ لَهُ النَّاسُ﴾ — النَّاسُ its نائب فاعل.",
+      "So اسم الفاعل carries an explicit or hidden fāʿil, whereas اسم المفعول's raised noun replaces the deleted agent.",
+      "Both share the اعتماد conditions when منكَّر and denoting الحال أو الاستقبال.",
+      "Award for each operation, its example, and the point of contrast.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--compare--explain-with-examples-the-differ-4e",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between the أسماء الشرط that cause jazm and إذا / لمّا الظرفية.",
+    "promptAr": "",
+    "markScheme": [
+      "The eleven أسماء الشرط الجازمة carry شرط meaning and jazm two verbs — the شرط and the جواب: ﴿مَنْ يَعْمَلْ سُوءًا يُجْزَ بِهِ﴾.",
+      "إذا and لمّا الظرفية carry شرط meaning but do NOT cause jazm.",
+      "They are muḍāf nouns (ẓarfs) governed by their جواب: ﴿فَلَمَّا جَاءَ أَمْرُنَا نَجَّيْنَا صَالِحًا﴾ ﴿وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلَامًا﴾.",
+      "Shared feature: شرط meaning; the difference is jazm — present with the eleven, absent with إذا / لمّا.",
+      "Award for each side, examples, and the contrast.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-statement--mamul-ism-fail-nakira",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the statement: 'معمول اسم الفاعل المنكَّر، إن اتصل به جاز فيه الرفع والنصب والإضافة، وإن انفصل عنه وجب فيه النصب.'",
+    "promptAr": "",
+    "markScheme": [
+      "When المعمول is attached directly to the indefinite اسم فاعل, three إعراب options open.",
+      "رفعًا على الفاعلية — ﴿فَإِنَّهُ آثِمٌ قَلْبُهُ﴾.",
+      "نصبًا على المفعولية — ﴿إِنِّي خَالِقٌ بَشَرًا﴾.",
+      "جرًّا بالإضافة — ﴿إِنَّ رَبَّكَ وَاسِعُ الْمَغْفِرَةِ﴾.",
+      "When the معمول is separated from the اسم فاعل by something intervening (a شبه جملة, for instance), only النصب remains valid, وجوبًا.",
+      "﴿إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً﴾ (never *جاعلٌ في الأرضِ خليفةٍ).",
+      "6 — the three connected options with example each.",
+      "6 — the separated case + obligatory نصب rule with example.",
+      "3 — coherence/accuracy.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-statement--ism-tamm-six-ways",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, how a noun becomes الاسم المبهم التام, and what it governs.",
+    "promptAr": "",
+    "markScheme": [
+      "الاسم المبهم التام governs نصب on تمييز الذات.",
+      "A noun becomes تام (complete — unable to take a further مضاف إليه) in six ways.",
+      "(1) being a ضمير — ﴿إِنَّهَا سَاءَتْ مُسْتَقَرًّا وَمُقَامًا﴾.",
+      "(2) an اسم إشارة — ﴿مَاذَا أَرَادَ اللهُ بِهَذَا مَثَلًا﴾.",
+      "(3) already مضاف — ﴿مِلْءُ الْأَرْضِ ذَهَبًا���.",
+      "(4) carrying تنوين لفظًا — ﴿مِثْقَالَ ذَرَّةٍ خَيْرًا﴾ — أو تقديرًا — «كَمْ يَوْمًا صُمْتَ».",
+      "(5) carrying نون التثنية — «عِنْدِي رِطْلَانِ زَيْتًا».",
+      "(6) carrying نون الجمع — ﴿وَحَمْلُهُ وَفِصَالُهُ ثَلَاثُونَ شَهْرًا﴾.",
+      "2 marks per correctly-named way with example — cap at 12.",
+      "3 for correctly stating what it governs (تمييز الذات).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-statement--explain-as-fully-as-possible-wit-4f",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the following statement about the operation of اسم الفاعل المنكَّر.",
+    "promptAr": "«المنكَّرُ يعملُ في فاعلِهِ الظاهرِ ومفاعيلِهِ إن كان بمعنى الحالِ أو الاستقبالِ ومعتمدًا على مبتدأٍ أو ما في معناه أو ذي الحالِ أو همزةِ الاستفهامِ أو حرفِ النفيِ»",
+    "markScheme": [
+      "The منكَّر اسم فاعل operates on its hidden fāʿil unconditionally (مطلقًا): ﴿وَهُوَ قَائِمٌ يُصَلِّي فِي الْمِحْرَابِ﴾.",
+      "To operate on an explicit fāʿil or the objects it needs two conditions.",
+      "Condition 1: it must mean الحال أو الاستقبال, not the past.",
+      "Condition 2: it must lean (اعتماد) on one of five supports.",
+      "A mubtadaʾ: ﴿وَكَلْبُهُمْ بَاسِطٌ ذِرَاعَيْهِ بِالْوَصِيدِ﴾ — or what stands like one: ﴿فَإِنَّهُ آثِمٌ قَلْبُهُ﴾.",
+      "A ذو الحال: ﴿فَاعْبُدِ اللهَ مُخْلِصًا لَهُ الدِّينَ﴾.",
+      "The hamza of استفهام: ﴿أَرَاغِبٌ أَنْتَ عَنْ آلِهَتِي﴾ — or a negative particle: «ما ناصرٌ زيدٌ عمرًا».",
+      "Award for the hidden-fāʿil point, the two conditions, and each of the five supports with an example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-statement--explain-as-fully-as-possible-wit-5r",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the following statement about the muḍāf acquiring gender.",
+    "promptAr": "قَدْ يَكْتَسِبُ الْمُضَافُ تَأْنِيثَ الْمُضَافِ إِلَيْهِ إِذَا صَحَّ قِيَامُ الْمُضَافِ إِلَيْهِ مَقَامَ الْمُضَافِ",
+    "markScheme": [
+      "The claim: a muḍāf may take on the gender of its muḍāf ilayhi (here، feminine gender), against its own gender.",
+      "The condition (علامة): this happens only when the muḍāf ilayhi could stand in for the muḍāف without wrecking the sense.",
+      "Example: ﴿وَتَضَعُ كُلُّ ذَاتِ حَمْلٍ حَمْلَهَا﴾ — the verb تَضَع is feminine although كُلّ is masculine, because ذَات (feminine) could replace كُلّ.",
+      "The gender is 'caught' from the muḍāف ilayhi precisely because dropping the muḍāف would leave the sense intact.",
+      "Counter-case: «طَافَ ابْنُ الْأُمِّ» stays masculine — dropping ابْن and putting الأمّ in its place would wreck the meaning, so no contagion occurs.",
+      "Note the licence is 'قَدْ' — permissible, not obligatory.",
+      "Marks: the rule (3); the standing-in condition (3); the ﴿تضع كل ذات حمل﴾ example explained (4); the طاف ابن الأم counter-case explained (4); qualification قد (1).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-statement--explain-as-fully-as-possible-wit-5s",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the following statement about when أل may enter the muḍāf.",
+    "promptAr": "لَا تَدْخُلُ الْأَلِفُ وَاللَّامُ عَلَى الْمُضَافِ إِلَّا فِي الْإِضَافَةِ اللَّفْظِيَّةِ، فِي خَمْسَةِ مَوَاضِعَ",
+    "markScheme": [
+      "Principle: a muḍāف normally rejects أل, because the muḍāف ilayhi already supplies its تعريف; only the إضافة لفظية (which gives no تعريف, merely lightening) admits أل.",
+      "Place 1 — the muḍāف is a مثنّى: «الضَّارِبَا زَيْدٍ».",
+      "Place 2 — the muḍāف is a جمع مذكر سالم: ﴿وَالْمُقِيمِي الصَّلَاةِ﴾.",
+      "Place 3 — the muḍāف ilayhi itself carries أل: «الْمُكْرِمُ الرَّجُلِ».",
+      "Place 4 — the muḍāف ilayhi is muḍāف to an أل-noun: «الْمُكْرِمُ مُعَلِّمِ الْأَوْلَادِ».",
+      "Place 5 — the muḍāف ilayhi is a pronoun referring to an أل-noun: «الرَّجُلُ الْمُكْرِمُ مُعَلِّمِهِ».",
+      "Note the whole rule presupposes the muḍāف is a مشتق بمعنى الفعل (لفظية); in the إضافة معنوية أل is barred.",
+      "Marks: the لفظية restriction and its reason (3); each of the five مواضع with example (2 each, 10); معنوية exclusion note (2).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--explain-statement--explain-as-fully-as-possible-wit-5t",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the following statement about the operation of the maṣdar.",
+    "promptAr": "لَا يَتَقَدَّمُ مَعْمُولُ الْمَصْدَرِ عَلَيْهِ، إِلَّا الظَّرْفَ عِنْدَ أَكْثَرِ النُّحَاةِ",
+    "markScheme": [
+      "The maṣدر is the first ḍارب of شبه الفعل and operates the work of its verb — mostly مضافًا إلى معموله (to its fāʿل, its mafʿūl, or neither), also منوَّنًا.",
+      "The statement singles out a restriction on its معمول: unlike some other operators, the maṣدر's معمول may not be fronted before it.",
+      "Reason: the maṣدر's governing force is weaker, so its معمول must follow.",
+      "The exception: the ẓarف may precede it, according to most grammarians, because the ẓarف enjoys wider licence (يُتَّسَع فيه).",
+      "Example: ﴿فَلَمَّا بَلَغَ مَعَهُ السَّعْيَ﴾ — the ẓarف مَعَه precedes السَّعْي, the معمول of the maṣدر.",
+      "Contrast: an ordinary object of a maṣدر cannot be fronted the way it can with a strong operator.",
+      "Marks: maṣدر as operator and its forms (3); the fronting-bar rule (3); the reason (3); the ẓarف exception عند الأكثر (3); the ﴿فلما بلغ معه السعي﴾ example (3).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--ism-tafdil",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is اسم التفضيل؟ What are its three أركان (pillars), and what is the exception in مسألة الكحل؟ Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "اسم التفضيل works the work of its verb, expressing that one thing exceeds another in a quality — ﴿يَهْدِي لِلَّتِي هِيَ أَقْوَمُ﴾.",
+      "Its three أركان follow.",
+      "Pillar 1: اسم التفضيل itself.",
+      "Pillar 2: المفضَّل (its فاعل, the thing exceeding).",
+      "Pillar 3: المفضَّل عليه (the thing exceeded).",
+      "Its فاعل is normally a مضمر مستتر.",
+      "Exception — مسألة الكحل: a negation, then a genus-noun described by اسم التفضيل, followed by a thing preferred over itself in TWO respects — where the فاعل is an explicit noun.",
+      "«مَا رَأَيْتُ رَجُلًا أَحْسَنَ فِي عَيْنِهِ الْكُحْلُ مِنْهُ فِي عَيْنِ زَيْدٍ» (الكحل فاعل ظاهر).",
+      "4 — definition.",
+      "5 — the three pillars named.",
+      "4 — the مسألة الكحل exception explained.",
+      "2 — example accuracy.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--ism-al-fil",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is اسم الفعل؟ Classify it by tense and by origin, and state the ruling on its معمول. Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "اسم الفعل is a word carrying the meaning of a verb though it is a noun in form.",
+      "Works like the verb it means — raising a فاعل and governing نصب on a مفعول («بَلْهَ الشَّرَّ»).",
+      "By tense: ماضٍ-meaning (هَيْهَاتَ = بَعُدَ).",
+      "مضارع-meaning (أُفٍّ = أتضجَّرُ, ﴿فَلَا تَقُلْ لَهُمَا أُفٍّ﴾).",
+      "أمر-meaning (آمِينَ = اسْتَجِبْ).",
+      "By origin: مرتجل — coined as such from the start (هيهات، وَيْ، رُوَيْدَ، هَلُمَّ).",
+      "منقول — transferred from a جار ومجرور («عَلَيْكُمْ» بسنّتي), ظرف («دُونَكَ» الكتابَ), مصدر («بَلْهَ» الشرَّ), or حرف تنبيه («هَاءَ» زيدًا).",
+      "قياسي — the productive وزن فَعَالِ from الأمر (نَزَالِ = انْزِلْ).",
+      "Its معمول may NEVER precede it — «زَيدًا عَلَيْكَ» ✗.",
+      "4 — definition + working.",
+      "3 — tense classification with examples.",
+      "5 — origin classification with examples.",
+      "3 — the no-fronting rule.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--what-is-the-operation-of-as-a-in-4g",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the operation of المصدر as a شبه الفعل? In what states does it operate, and what two special rules single it out? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "المصدر works the work of its verb — raising a fāʿil and naṣbing an object.",
+      "State 1: مضافًا إلى معموله — to its fāʿil ﴿كَذِكْرِكُمْ آبَاءَكُمْ﴾, to its mafʿūl ﴿وَلِلهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ﴾, or to neither ﴿مَكْرُ اللَّيْلِ وَالنَّهَارِ﴾.",
+      "State 2: منوَّنًا — ﴿أَوْ إِطْعَامٌ فِي يَوْمٍ ذِي مَسْغَبَةٍ ۝ يَتِيمًا﴾, where يَتِيمًا is mafʿūl of the tanwīned إطعام.",
+      "State 3: معرَّفًا باللام — but this operation is شاذّ: «كيف التَّوَقِّي ظَهْرَ ما أنتَ راكبُهُ».",
+      "Special rule 1: its fāʿil may be deleted with no substitute (بلا نائب), unlike every other operating noun.",
+      "Special rule 2: its معمول may not precede it — except the ẓarf for most grammarians: ﴿فَلَمَّا بَلَغَ مَعَهُ السَّعْيَ﴾.",
+      "Award for the definition, three states, and two special rules with examples.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--what-is-which-verb-does-it-work--4h",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is الصفة المشبهة باسم الفاعل? Which verb does it work like, and what are the cases (إعراب) of its معمول? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "الصفة المشبهة باسم الفاعل works like the اسم فاعل of a verb transitive to one object — even though her own verb is لازم; the Arabs simply treat its معمول that way.",
+      "Its معمول takes rafʿ على الفاعلية: «اللهُ سَرِيعٌ حِسَابُهُ».",
+      "naṣb على المفعولية if the معمول is definite: «اللهُ سَرِيعٌ حِسَابَهُ».",
+      "naṣb على التمييز if the معمول is indefinite: «اللهُ سَرِيعٌ حِسَابًا».",
+      "jarr بالإضافة: ﴿وَاللهُ سَرِيعُ الْحِسَابِ﴾.",
+      "Award for the definition / what-it-works-like plus the four cases each with an example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--what-is-the-abstract-governor-wh-5o",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the abstract governor معنى الفعل في الاسم أو الحرف? What does it govern, and through which carriers does it operate? Give examples for each.",
+    "promptAr": "",
+    "markScheme": [
+      "It is one of the three kinds of العامل المعنوي (the abstract governor): the presence of a verb's meaning inside a noun or a particle.",
+      "What it governs: it naṣbs the ḥāl (الحال).",
+      "Carrier 1 — the اسم إشارة (= أُشير): ﴿فَتِلْكَ بُيُوتُهُمْ خَاوِيَةً﴾.",
+      "Carrier 2 — أدوات الاستفهام (= أسأل): ﴿فَمَا لَهُمْ عَنِ التَّذْكِرَةِ مُعْرِضِينَ﴾.",
+      "Carrier 3 — أدوات التشبيه (= أُشبّه): «كَأَنَّ خَالِدًا مُقبِلًا أَسَدٌ».",
+      "Carrier 4 — أدوات التمنّي والترجّي (= أتمنّى/أرجو): «لَيْتَ السُّرُورَ دَائِمًا عِنْدَنَا».",
+      "Carrier 5 — حرف التنبيه (= أُنبّه): «هَا هُوَ ذَا الْبَدْرُ طَالِعًا»; Carrier 6 — the ظرف مستقر (= استقرّ): «الْفَرَسُ لَكَ وَحْدَكَ».",
+      "Marks: definition and what it governs (3); each of the six carriers with its verb-sense and example (2 each, 12).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--what-is-which-verb-does-it-work--5p",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is اسم المفعول? Which verb does it work like, what is its معمول called, and under what condition does the منكَّر operate? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "اسم المفعول is one of the five verb-like مشتقات (المشتقات بمعنى الفعل).",
+      "It works the work of its passive verb (فعله المجهول).",
+      "Its raised معمول stands as a نائب فاعل, not a fāʿل: ﴿ذَلِكَ يَوْمٌ مَجْمُوعٌ لَهُ النَّاسُ﴾ — النَّاس is the نائب فاعل of مَجْمُوع.",
+      "The معرَّف باللام operates مطلقًا (unconditionally), like the parallel اسم فاعل.",
+      "The منكَّر, like the indefinite اسم فاعل, operates on an explicit معمول only when it means الحال or الاستقبال and leans on a support (mubtadaʾ, ذو الحال, همزة الاستفهام, or a negative particle).",
+      "In the إضافة اللفظية it may be muḍāf to its نائب فاعل: «التَّائِبُ مَقْبُولُ التَّوْبَةِ».",
+      "Marks: definition and derivative-status (3); works like passive verb (3); نائب فاعل with example (3); operation of معرّف/منكّر (3); iḍāfa example (3).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--define-types-examples--besides-what-are-the-other-in-th-5q",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "Besides اسم الفعل, what are the other أسماء فيها معنى الفعل in the third ḍarb? Name each, state which verb it works like, and give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "The third ḍarب is أسماء فيها معنى الفعل — every لفظ from which a verb's meaning is understood; besides اسم الفعل there are three others.",
+      "Type 1 — الظرف المستقر: leaning on نفي or استفهام it works like استقرّ, raising a fāʿل.",
+      "Example: ﴿أَفِي اللهِ شَكٌّ﴾ — شكّ is fāʿل of the jārr-majrūr.",
+      "Type 2 — الاسم المنسوب: it works like the اسم مفعول.",
+      "Example: «يَنْبَغِي لِلْعَالِمِ أَنْ يَكُونَ مُحَمَّدِيًّا خُلُقُهُ» — خُلُقه its raised معمول.",
+      "Type 3 — الاسم الجامد المؤول بمعنى المشتق: ﴿وَهُوَ اللهُ فِي السَّمَاوَاتِ﴾, where الله is read as مستحقّ للعبادة.",
+      "Marks: naming the ḍارب (3); each of the three types with the verb it works like and an example (4 each, 12).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--enumerate--shibh-al-fil-three-darb",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the three أضرب of أسماء تعمل عمل الفعل (شبه الفعل), and what falls under each.",
+    "promptAr": "",
+    "markScheme": [
+      "(1) المصدر — works مضافًا إلى فاعله أو إلى مفعوله أو منوَّنًا.",
+      "المصدر is unique: its فاعل may be dropped with no substitute.",
+      "(2) المشتقات الخمسة بمعنى الفعل — اسم الفاعل، اسم المفعول، الصفة المشبهة، اسم المبالغة، اسم التفضيل.",
+      "(3) أسماء فيها معنى الفعل — اسم الفعل، الظرف المستقر، الاسم المنسوب، الاسم الجامد المؤول بالمشتق.",
+      "4 marks per ضرب correctly explained with its members named.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--enumerate--asma-shart-eleven",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the eleven أسماء الشرط, grouped by what each ranges over (rational/non-rational/time/place), and state the three-way iʿrāb rule for مَن/ما/مهما.",
+    "promptAr": "",
+    "markScheme": [
+      "مَن — العاقل.",
+      "ما — غير العاقل.",
+      "مهما — غير العاقل أو الزمان.",
+      "متى، إذاما، أيّان — الزمان.",
+      "أين، أينما، أنّى — المكان.",
+      "حيثما — المكان والزمان.",
+      "أيّ — إعرابها بحسب ما تضاف إليه.",
+      "إعراب مَن/ما/مهما: إن استغنى الفعل الشرطي عن مفعول — مبتدأ («مَن يَصْدُقْ يَنْجُ»).",
+      "إن احتاج مفعولًا لكنه اشتغل بضمير الاسم — مبتدأ أيضًا («مَن تُكْرِمْهُ يُكْرِمْكَ»).",
+      "إن كان محل المفعول خاليًا — مفعول به مقدَّم («مَن تُكْرِمْ يُكْرِمْكَ»).",
+      "1 mark per correctly-grouped noun (cap 8).",
+      "4 for the three-way اشتغال rule.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--enumerate--enumerate-the-that-are-coined-as-4i",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the أسماء الفعل that are سماعي مرتجل (coined as ism fiʿl from the outset), giving the verb-meaning each stands for.",
+    "promptAr": "",
+    "markScheme": [
+      "هيهات = بَعُدَ; وَيْ = أعجبُ ﴿وَيْكَأَنَّ اللهَ﴾.",
+      "رُوَيْدَ = أمهِلْ ﴿أَمْهِلْهُمْ رُوَيْدًا﴾; هَلُمَّ = احضُرْ ﴿هَلُمَّ شُهَدَاءَكُمْ﴾.",
+      "آمين = استجِبْ; حَيَّ وحَيَّهَل = أقبِلْ.",
+      "سَرْعانَ = ما أسرعَ; مَهْ = اكفُفْ.",
+      "صَهْ = اسكُتْ; أُفٍّ = أتضجَّرُ; شَتَّانَ = بَعُدَ «شتانَ ما بين الصدقِ والكذبِ».",
+      "Award roughly 1 mark per item with its correct meaning.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--inni-khaliqun-basharan",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify خَالِقٌ (which category, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "إِنِّي خَالِقٌ بَشَرًا",
+    "markScheme": [
+      "Classification — خالقٌ = اسم فاعل نكرة عامل.",
+      "Operates in its مفعول بشرًا because it means الاستقبال and leans (يعتمد) on being خبر إنّ.",
+      "Translation: 'Indeed I am going to create a human being.'",
+      "إعراب: إِنِّي — إنّ حرف توكيد ونصب، والياء ضمير متصل في محل نصب اسمها.",
+      "خَالِقٌ — خبر إنّ مرفوع، وهو اسم فاعل عامل عمل فعله.",
+      "بَشَرًا — مفعول به لاسم الفاعل خالقٍ منصوب.",
+      "2 — classification + reasoning.",
+      "2 — translation.",
+      "5 — إعراب.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--ka-dhikrikum-abaakum",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify ذِكْرِ (which category, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "كَذِكْرِكُمْ آبَاءَكُمْ",
+    "markScheme": [
+      "Classification — ذِكْرِ = مصدر عامل عمل فعله (يَذكُر), مضاف إلى فاعله (كم) وناصب لمفعوله (آباءَكم).",
+      "Translation: '…as you remember your fathers.'",
+      "إعراب: الْكَافُ — حرف جر تشبيه مبني.",
+      "ذِكْرِ — مجرور بالكاف، وهو مضاف.",
+      "كُمْ — ضمير متصل مبني في محل جر مضاف إليه، وهو فاعل المصدر.",
+      "آبَاءَكُمْ — مفعول به للمصدر منصوب، والكاف مضاف إليه.",
+      "2 — classification.",
+      "2 — translation.",
+      "5 — إعراب.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--hayhata-hayhata",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify هَيْهَاتَ (which category, and by origin/tense?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "هَيْهَاتَ هَيْهَاتَ لِمَا تُوعَدُونَ",
+    "markScheme": [
+      "Classification — هَيْهَاتَ = اسم فعل ماضٍ بمعنى بَعُدَ, سماعي مرتجل, غير متصرف.",
+      "Translation: 'Far, far is what you are promised.'",
+      "إعراب: هَيْهَاتَ (الأولى) — اسم فعل ماضٍ مبني على الفتح بمعنى بَعُدَ، لا محل له من الإعراب.",
+      "هَيْهَاتَ (الثانية) — توكيد لفظي للأولى.",
+      "لِمَا — اللام حرف جر، ما اسم موصول مبني في محل جر، والجار والمجرور متعلقان بـ هيهات، وما هو فاعل هيهات.",
+      "تُوعَدُونَ — فعل مضارع مبني للمجهول مرفوع، والواو نائب فاعل، والجملة صلة الموصول لا محل لها.",
+      "2 — classification.",
+      "2 — translation.",
+      "5 — إعراب.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--classify-which-category-and-how--4j",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify سَرِيع (which category, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "﴿وَاللهُ سَرِيعُ الْحِسَابِ﴾",
+    "markScheme": [
+      "سَرِيع is a صفة مشبهة باسم الفاعل, working like the اسم فاعل of a one-object transitive though its verb is لازم.",
+      "Here its معمول الْحِسَابِ takes jarr بالإضافة — an إضافة لفظية, على نية الانفصال («سريعٌ الحسابَ»).",
+      "Translation: 'And Allah is swift at reckoning.'",
+      "اللهُ: mubtadaʾ مرفوع (الواو استئنافية).",
+      "سَرِيعُ: khabar مرفوع, and it is muḍāf.",
+      "الْحِسَابِ: muḍāf ilayhi مجرور — its معمول in intent.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--classify-which-category-and-how--4k",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify مَجْمُوع (which category, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "﴿ذَلِكَ يَوْمٌ مَجْمُوعٌ لَهُ النَّاسُ﴾",
+    "markScheme": [
+      "مَجْمُوع is an اسم مفعول, working the work of its passive verb; it operates by leaning (اعتماد) on يَوْمٌ, a mubtadaʾ-like support.",
+      "It raises النَّاسُ as its نائب فاعل.",
+      "Translation: 'That is a Day for which mankind will be gathered.'",
+      "ذَلِكَ: اسم اشارة mabnī in محل رفع mubtadaʾ; يَوْمٌ: khabar مرفوع.",
+      "مَجْمُوعٌ: صفة to يَوْمٌ, مرفوع; لَهُ: جار ومجرور متعلق بـ مجموع.",
+      "النَّاسُ: نائب فاعل for مجموع, مرفوع.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--classify-which-category-and-how--5l",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify فَعَّال (which category, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "﴿إِنَّ رَبَّكَ فَعَّالٌ لِمَا يُرِيدُ﴾",
+    "markScheme": [
+      "فَعَّال is an اسم مبالغة, built on the intensive pattern فَعَّال and working the work of its verb يَفعَل.",
+      "Its معمول is carried by the jārr-majrūr لِمَا يُرِيد, in the object position of its verbal force.",
+      "Translation: indeed your Lord is the doer of whatever He wills.",
+      "إنّ حرف توكيد ونصب; رَبَّ اسم إنّ منصوب, and كَ muḍāf ilayhi مبني في محل جر.",
+      "فَعَّالٌ خبر إنّ مرفوع, its fāʿil a ضمير مستتر (هو).",
+      "لِمَا جار ومجرور متعلق بفعّال; يُرِيد فعل مضارع مرفوع, فاعله ضمير مستتر (هو), and the جملة is صلة الموصول ما.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--classify-which-category-and-by-o-5m",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify دُونَكَ (which category, and by origin/tense, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "دُونَكَ الْكِتَابَ",
+    "markScheme": [
+      "دُونَك is an اسم فعل with the meaning of the amr خُذْ.",
+      "By origin it is سماعي منقول — transferred from a ẓarف (دُون); by tense it is أمر-meaning.",
+      "As an اسم فعل it raises a fāʿل and naṣbs an object; its معمول may never precede it.",
+      "Translation: take the book.",
+      "دُونَك اسم فعل أمر مبني, فاعله ضمير مستتر (أنت); the كَ is حرف خطاب, no maḥall of iʿrāb.",
+      "الْكِتَابَ مفعول به منصوب.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-bab-3--classify-tarkib--classify-which-category-and-how--5n",
+    "chapterId": "m1-bab-3",
+    "chapterAr": "الباب الثالث في الاسم",
+    "chapterEn": "The Noun",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify أَحْرَصَ (which category, and how does it operate here?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "﴿وَلَتَجِدَنَّهُمْ أَحْرَصَ النَّاسِ عَلَى حَيَاةٍ﴾",
+    "markScheme": [
+      "أَحْرَص is an اسم تفضيل working the work of its verb, its fāʿل a ضمير مستتر.",
+      "It is here muḍāf to a definite noun (النَّاس), so it takes the إفراد وتذكير option (singular masculine).",
+      "Translation: and you will surely find them the greediest of people for life.",
+      "اللام لام القسم; تَجِدَنَّ فعل مضارع مبني على الفتح لاتصاله بنون التوكيد, فاعله ضمير مستتر (أنت), and هُم مفعول به أول.",
+      "أَحْرَصَ مفعول به ثانٍ منصوب, وهو مضاف; النَّاسِ مضاف إليه مجرور.",
+      "عَلَى حَيَاةٍ جار ومجرور متعلق بأحرص.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--kulu-wa-shrabu",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "كُلُوا وَاشْرَبُوا مِنْ رِزْقِ اللهِ",
+    "markScheme": [
+      "Example of التنازع.",
+      "Two governors كُلُوا وَاشْرَبُوا (both verbs) contend over one delayed معمول.",
+      "The معمول is مِنْ رِزْقِ اللهِ, expressed only once though both verbs want it.",
+      "Either governor may be permitted to operate on it (also called الإعمال).",
+      "Both readings are allowed.",
+      "Meaning: 'Eat and drink from the provision of Allah.'",
+      "Breakdown: 1 — identify التنازع.",
+      "1 — state its definition (عاملان في معمول واحد متأخر).",
+      "1 — name the two contending عاملين.",
+      "1 — note either may be permitted to operate.",
+      "1 — translation.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--iyyaka-wa-l-hasad",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "إِيَّاكَ وَالْحَسَدَ",
+    "markScheme": [
+      "This is التحذير.",
+      "نصب of a noun by a deleted warning verb (تقديره باعِدْ نفسَك).",
+      "إِيَّاكَ is the detached ضمير نصب, standing as مفعول به لفعل محذوف تقديره باعِدْ.",
+      "وَالْحَسَدَ is معطوف عليه, marking المحذَّر منه (the thing warned against).",
+      "Meaning: 'Beware of envy!'",
+      "Breakdown: 1 — identify التحذير.",
+      "1 — name its pillars (فعل محذوف، محذِّر، محذَّر، محذَّر منه).",
+      "1 — parse إياك (ضمير نصب منفصل، مفعول به لمحذوف).",
+      "1 — parse الحسد (معطوف، محذَّر منه).",
+      "1 — translation.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--explain-this-line-4l",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "رَحْمَةُ اللهِ وَبَرَكَاتُهُ عَلَيْكُمْ أَهْلَ الْبَيْتِ",
+    "markScheme": [
+      "The line illustrates الاختصاص, not النداء: أهلَ is manṣūb by a hidden verb أخُصُّ (or أعني).",
+      "That governor is deleted وجوبًا; the noun pins down who is meant by the preceding pronoun in عليكم.",
+      "أهلَ is therefore مفعول به for the deleted أخُصُّ, which is why it is manṣūb with a fatḥa.",
+      "Note it is not vocative despite the resemblance, since no يا is intended here.",
+      "2 marks for identifying الاختصاص with the hidden أخُصُّ; 2 marks for the iʿrāb of أهلَ; 1 mark for the pronoun-specification point.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--explain-this-line-4m",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "تَصَدَّقْ بِدِرْهَمٍ فَصَاعِدًا",
+    "markScheme": [
+      "The line shows a حال whose wording indicates gradual increase, so its عامل is deleted قياسًا وجوبًا.",
+      "فصاعدًا is a حال manṣūb by a deleted governor ≈ يزيد (the amount rising from a dirham upward).",
+      "Such a حال of increase or decrease must ride الفاء or ثمّ — here الفاء, which is the more common.",
+      "Meaning: give a dirham in charity, then upward (i.e. more than that).",
+      "2 marks for the حال of increase with obligatory deletion; 2 marks for the deleted governor ≈ يزيد plus the الفاء/ثمّ condition; 1 mark for translation.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--explain-this-line-5u",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "تُسَبِّحُونَ وَتَحْمَدُونَ وَتُكَبِّرُونَ دُبُرَ كُلِّ صَلَاةٍ ثَلَاثًا وَثَلَاثِينَ مَرَّةً",
+    "markScheme": [
+      "The line illustrates التنازع — two (or more) governors contending over one delayed معمول.",
+      "The three verbs تسبحون، تحمدون، تكبرون each seek to operate on the one following governee دبر كل صلاة.",
+      "Shows that تنازع is not limited to two عاملان; more than two may contend.",
+      "Either (any) governor may be made to operate on the معمول — the process called الإعمال.",
+      "Identify التنازع (1); name the three verbal governors (1); identify the single delayed معمول دبر كل صلاة (1); note more than two may contend (1); note either may operate = الإعمال (1).",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--explain-this-line-5v",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "صَبْرًا لَا جَزَعًا",
+    "markScheme": [
+      "Both words are مفعول مطلق whose عامل is deleted واجبًا (قياسًا).",
+      "صبرًا is a command-maṣdar standing for its verb, تقدير: اصبر صبرًا.",
+      "جزعًا is a نهي (prohibition-maṣdar) following the command-maṣdar — one of the four قياسي places of obligatory deletion.",
+      "Both remain منصوب by the hidden verb.",
+      "Both = مفعول مطلق (1); deletion واجب/قياسي (1); صبرًا = command-maṣdar تقدير اصبر (1); جزعًا = نهي after it (1); naṣb throughout (1).",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-line--explain-this-line-5w",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain this line.",
+    "promptAr": "أُولَئِكَ هُمُ الْمُؤْمِنُونَ حَقًّا",
+    "markScheme": [
+      "حقًّا is a مفعول مطلق whose عامل is deleted واجبًا.",
+      "Its function is مؤكّد لمضمون الجملة — it emphasises the content of the whole preceding sentence.",
+      "This is one of the four قياسي places where the عامل of the مفعول مطلق must vanish.",
+      "It is منصوب by a hidden verb ≈ أحُقُّ ذلك حقًّا.",
+      "حقًّا = مفعول مطلق (1); عامل deleted واجبًا/قياسًا (1); role = emphasising the sentence's content (1); one of the four قياسي places (1); naṣb (1).",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--state-types--tahdhir-three-ways",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the three ways (طرق) of التحذير, with a recognising علامة for each.",
+    "promptAr": "",
+    "markScheme": [
+      "(1) الضمير المنفصل إياك.",
+      "With عطف: «إِيَّاكَ وَالْحَسَدَ».",
+      "Repeated without عطف: «إِيَّاكَ إِيَّاكَ الْمِرَاءَ».",
+      "Or with مِن (uttered or implied).",
+      "(2) اسم ظاهر دالّ على المحذَّر منه.",
+      "«نَفْسَكَ» alone, repeated, or with عطف.",
+      "(3) المحذَّر منه نفسه.",
+      "Repeated «اللهَ اللهَ» أو with عطف onto a second «نَاقَةَ اللهِ وَسُقْيَاهَا».",
+      "Breakdown: 2 marks per way correctly named with example.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--state-types--maful-mutlaq-four-hadhf",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the four قياسي places in which the عامل of المفعول المطلق must be deleted.",
+    "promptAr": "",
+    "markScheme": [
+      "(1) a نهي following a command-مصدر — «صَبْرًا لَا جَزَعًا».",
+      "(2) after an استفهام of توبيخ — «أَجُرْأَةً عَلَى الْمَعَاصِي؟».",
+      "(3) detailing after إمّا what was summarised before — ﴿فَإِمَّا مَنًّا بَعْدُ وَإِمَّا فِدَاءً﴾.",
+      "(4) emphasising the content of the whole sentence — ﴿أُولَئِكَ هُمُ الْمُؤْمِنُونَ حَقًّا﴾.",
+      "Breakdown: 1.5 marks per place correctly named with example.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--state-types--state-the-two-kinds-of-noun-that-4n",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the two kinds of noun that may undergo الترخيم, giving a recognising sign/example for each; then state the two permitted ḥarakāt of the clipped منادى.",
+    "promptAr": "يَا فَاطِمَ — يَا حَارِ / يَا حَارُ",
+    "markScheme": [
+      "الترخيم is deleting the end of the منادى for lightness, e.g. «يا فاطمَ» for فاطمة.",
+      "Kind 1: the noun ending in tāʾ — its recognising sign is the final ة, e.g. «يا عائشُ» for عائشة.",
+      "Kind 2: the masculine proper name of more than three letters and not compound, e.g. «يا جعفُ» for جعفر.",
+      "So excluded are زيد (only three letters) and عبد الله (compound).",
+      "The clipped منادى then takes either the original ḥaraka (the better view) «يا حارِ» for حارث, or ḍamm «يا حارُ».",
+      "2 marks for each kind with its sign; 2 marks for the two ḥaraka options.",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--compare--tahdhir-vs-ighra",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between التحذير and الإغراء.",
+    "promptAr": "",
+    "markScheme": [
+      "التحذير: نصب by a deleted verb warning the addressee AWAY from something hateful (المحذَّر منه).",
+      "Implied verb احذر/باعِد — «إِيَّاكَ وَالْحَسَدَ».",
+      "الإغراء: نصب by a deleted verb urging the addressee TOWARD something desirable (المغرى به).",
+      "Implied verb الزَمْ/خُذْ — «الصَّبْرَ الصَّبْرَ».",
+      "Both delete the verb obligatorily when the noun is repeated or has عطف.",
+      "Both may appear WITH the verb stated.",
+      "﴿قُوا أَنْفُسَكُمْ وَأَهْلِيكُمْ نَارًا﴾ (تحذير مذكور الفعل).",
+      "﴿يَا يَحْيَى خُذِ الْكِتَابَ بِقُوَّةٍ﴾ (إغراء مذكور الفعل).",
+      "Breakdown: 3 — التحذير explained with example.",
+      "3 — الإغراء explained with example.",
+      "2 — the shared repetition/عطف deletion rule.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--compare--ikhtisas-vs-ishtighal",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between الاختصاص and الاشتغال.",
+    "promptAr": "",
+    "markScheme": [
+      "الاختصاص: نصب of a noun by a deleted أخُصُّ/أعني that pins down who is meant by a preceding pronoun.",
+      "Example: ﴿رَحْمَتُ اللهِ وَبَرَكَاتُهُ عَلَيْكُمْ أَهْلَ الْبَيْتِ﴾.",
+      "الاشتغال: a noun precedes a verb that has already governed a pronoun referring back to it.",
+      "If freed of that pronoun, the verb would itself نصب the fronted noun.",
+      "Example: ﴿وَرُسُلًا قَدْ قَصَصْنَاهُمْ عَلَيْكَ﴾.",
+      "رسلًا could be مبتدأ مرفوع or مفعول به منصوب بفعل محذوف يفسره قصصناهم.",
+      "Breakdown: 4 — الاختصاص explained with example.",
+      "4 — الاشتغال explained with example (naming its three pillars: المشغول، المشغول به، المشغول عنه).",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--compare--explain-with-examples-the-differ-4o",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between الحذف الجائز and الحذف الواجب of the عامل.",
+    "promptAr": "",
+    "markScheme": [
+      "الحذف الجائز means deleting the governor is optional, licensed by a contextual clue, so the verb could equally be uttered.",
+      "Example: ﴿وَمَاذَا أَنْزَلَ رَبُّكُمْ قَالُوا خَيْرًا﴾ — خيرًا is understood as أنزلَ خيرًا, the verb deleted but restorable.",
+      "الحذف الواجب means the governor must be deleted and restoring it is not permitted.",
+      "It has three ḍarbs: the deleted عامل of the مفعول مطلق, of the مفعول به, and of the حال.",
+      "Example (مفعول مطلق): «سبحانَ اللهِ», where no verb may be spoken; or (مفعول به) «إياكَ والحسدَ».",
+      "Key contrast: الجائز rests on a clue and is reversible, whereas الواجب is fixed by the construction itself.",
+      "3 marks for الجائز with example; 3 marks for الواجب with its three ḍarbs; 2 marks for a الواجب example plus the contrast.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--compare--explain-with-examples-the-differ-4p",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between نداء الاستغاثة and الندبة.",
+    "promptAr": "",
+    "markScheme": [
+      "الاستغاثة is calling someone to rescue another; its particle is يا only, and the مستغاث takes a fatḥa-lām «يا لَلّهِ».",
+      "الندبة is the grief-call (إظهار الحزن), lamenting a lost or painful thing; it uses وا «وا أبتاه», or يا when no confusion with plain calling arises.",
+      "In الاستغاثة the مستغاث له takes a kasra-lām «يا لَلّهِ لِلمسلمينَ»; الندبة has no lām apparatus.",
+      "الندبة allows the ندبة-alif «وا زيدَا» and هاء السكت at pause «وارأساهْ»; الاستغاثة may instead substitute an alif for the lām «يا زيدَاه».",
+      "Function differs: الاستغاثة seeks help, whereas الندبة merely displays grief.",
+      "3 marks for الاستغاثة with lām example; 3 marks for الندبة with a وا example; 2 marks for the alif/هاء السكت contrast.",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--mashghul-anhu-rafa-nasb",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the rafʿ/naṣb rules of المشغول عنه (the fronted noun in الاشتغال).",
+    "promptAr": "",
+    "markScheme": [
+      "Two free options: رفعًا بالابتداء or نصبًا بفعل محذوف — ﴿وَالْمَوْتَى يَبْعَثُهُمُ اللهُ﴾.",
+      "رفع is وجوبًا after a noun-specific device like إذا الفجائية — «فَإِذَا الشَّيْطَانُ يَتْبَعُهُ».",
+      "نصب is وجوبًا after a verb-specific device.",
+      "التحضيض: «هَلَّا الْجَنَّةَ طَلَبْتَهَا».",
+      "الشرط: «إِنِ الْجَنَّةَ تُرِدْهَا فَاعْمَلْ صَالِحًا».",
+      "نصب is preferred (not obligatory) when العامل فعل طلب — «اللهَ اعْبُدْهُ وَرَسُولَهُ اتَّبِعْهُ».",
+      "Preferred when a جملة فعلية precedes the noun — «أَعْبُدُ اللهَ وَرَسُولَهُ أَتَّبِعُهُ».",
+      "Preferred after a mostly-verbal particle.",
+      "ما النافية: «مَا الشَّيْطَانَ أَتَّبِعُهُ».",
+      "همزة الاستفهام: ﴿أَبَشَرًا مِنَّا وَاحِدًا نَتَّبِعُهُ﴾.",
+      "Breakdown: 3 — the two free options with example.",
+      "4 — the two obligatory cases with example.",
+      "6 — the three نصب-preferring cases with example.",
+      "2 — coherence.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--istighatha-pillars-lam",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain as fully as possible, with examples, the pillars and لام-rules of الاستغاثة, and how نداء التعجب rides on the same frame.",
+    "promptAr": "",
+    "markScheme": [
+      "الاستغاثة is calling one to rescue another.",
+      "Pillars: the particle (يَا only), المستغاث (the one called), المستغاث له (the one for whose sake).",
+      "المستغاث takes a لام with فتحة — «يَا لَلّهِ».",
+      "Or an ألف substituting for it — «يَا زَيْدَا / يَا زَيْدَاهْ».",
+      "A second مستغاث with عطف without repeating يَا takes a لام with كسرة.",
+      "المستغاث له itself takes a لام with كسرة — «يَا لَلّهِ لِلْمُسْلِمِينَ».",
+      "نداء التعجب runs on the same frame.",
+      "المتعجَّب منه fills either the مستغاث slot — «يَا لَلْقُرْآنِ / يَا قُرْآنَاهْ».",
+      "Or the المستغاث له slot with المستغاث deleted — «يَا لِلْقُرْآنِ».",
+      "Breakdown: 6 — pillars + لام-with-فتحة rule with example.",
+      "4 — the عطف/لام-with-كسرة rules with example.",
+      "5 — the تعجب-rides-on-استغاثة point with example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--explain-this-statement-as-fully--4q",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain this statement as fully as possible, with examples.",
+    "promptAr": "كَلِمَةُ اللَّهُمَّ صِيغَةُ نِدَاءٍ لِلْجَلَالَةِ",
+    "markScheme": [
+      "اللَّهُمَّ is the vocative form reserved for the Majestic Name لفظ الجلالة.",
+      "Its origin is يا اللهُ: the particle يا is deleted and a doubled mīm (ـمَّ) is added at the end to compensate for it.",
+      "So the shadda-mīm stands in place of the removed حرف النداء.",
+      "Beyond calling, it carries two rhetorical uses before certain words.",
+      "Before إلا it signals the rarity of the exception: «اللهم إلا أن يكونَ كذا».",
+      "Before نعم it signals the answerer's certainty and emphasis: «اللهم نعم».",
+      "In its plain sense it simply functions as يا اللهُ, addressing Allah.",
+      "3 marks that it is نداء of لفظ الجلالة; 4 marks for the origin يا الله with deleted particle and compensating mīm; 4 marks for before إلا (rarity) with example; 4 marks for before نعم (certainty) with example.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--explain-this-statement-as-fully--4r",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain this statement as fully as possible, with examples.",
+    "promptAr": "الْمُنَادَى مَفْعُولٌ بِهِ لِأَدْعُو، مَنْصُوبٌ لَفْظًا أَوْ مَحَلًّا",
+    "markScheme": [
+      "The منادى is in origin a مفعول به governed by the deleted verb أدعو, so it is always manṣūb.",
+      "That naṣb appears either لفظًا (in wording) or محلًّا (in place).",
+      "Manṣūb لفظًا in three cases — (1) المضاف: «يا عبدَ اللهِ».",
+      "(2) الشبيه بالمضاف, a noun governing what follows it: «يا غافرًا ذنوبَنا».",
+      "(3) the غير معيَّن / نكرة غير مقصودة: «يا غافلًا والموتُ يطلبُهُ».",
+      "Manṣūb محلًّا is the مفرد (neither muḍāf nor shabīh) that is معرفة or نكرة مقصودة.",
+      "Such a منادى is مبني on its rafʿ-sign yet منصوب محلًّا: «يا زيدُ»، «يا رجلُ»، «يا رجلانِ»، «يا مسلمونَ».",
+      "So the ḍamma, alif or wāw seen on them are build-signs, the naṣb being محلّي.",
+      "3 marks for مفعول به لأدعو; 6 marks for the three cases of لفظًا with examples; 4 marks for محلًّا being مبني على علامة الرفع; 2 marks for the محلًّا examples.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--explain-this-statement-as-fully--63",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain this statement as fully as possible, with examples.",
+    "promptAr": "الْمُنَادَى مَفْعُولٌ بِهِ لِأَدْعُو، يُنْصَبُ لَفْظًا أَوْ مَحَلًّا",
+    "markScheme": [
+      "The منادى is a مفعول به governed by the deleted فعل النداء أدعو, so it is منصوب in principle.",
+      "It is منصوب لفظًا (with visible naṣb) in three cases.",
+      "Case 1 — مضاف: «يا عبدَ اللهِ».",
+      "Case 2 — شبيه بالمضاف (a noun governing what follows it): «يا غافرًا ذنوبَنا».",
+      "Case 3 — غير معيَّن (unspecified nakira): «يا غافلًا والموتُ يطلبُه».",
+      "It is منصوب محلًّا when it is مفرد (neither muḍāf nor shabīh) that is معرفة or نكرة مقصودة: it is built on its rafʿ-sign — «يا زيدُ» (ḍamm), «يا رجلانِ» (alif), «يا مسلمونَ» (wāw).",
+      "Marks: منادى = مفعول به لأدعو (2); لفظًا vs محلًّا distinction (2); لفظًا مضاف + example (2); لفظًا شبيه بالمضاف + example (2); لفظًا غير معيّن + example (2); محلًّا مفرد معرفة/نكرة مقصودة built on rafʿ-sign (2); examples across ḍamm/alif/wāw (2); vocalisation/accuracy (1).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--explain-this-statement-as-fully--64",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain this statement as fully as possible, with examples.",
+    "promptAr": "كَلِمَةُ اللَّهُمَّ صِيغَةُ نِدَاءٍ لِلْجَلَالَةِ، أَصْلُهَا يَا اللهُ",
+    "markScheme": [
+      "اللهم is the vocative form reserved for لفظ الجلالة (the Majestic Name).",
+      "Its origin is يا اللهُ.",
+      "The particle يا is deleted.",
+      "A doubled mīm (ميم مشددة) appended at the end compensates for the deleted particle.",
+      "Placed before إلا it signals the rarity of the exception: «اللهم إلا أن يكونَ كذا».",
+      "Placed before نعم it signals the answerer's certainty: «اللهم نعم».",
+      "Marks: اللهم = vocative of the Majestic Name (2); origin يا الله (2); particle deleted (2); doubled mīm compensating (2); before إلا = rarity + example (3); before نعم = certainty + example (3); accuracy (1).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--explain-statement--explain-this-statement-as-fully--65",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain this statement as fully as possible, with examples.",
+    "promptAr": "حَذْفُ الْعَامِلِ ضَرْبَانِ: جَائِزٌ وَوَاجِبٌ، وَالْوَاجِبُ فِي ثَلَاثَةِ أَضْرُبٍ",
+    "markScheme": [
+      "Deleting the governor is of two kinds: جائز and واجب.",
+      "الحذف الجائز occurs when a contextual clue (قرينة) supplies the governor: ﴿وماذا أنزل ربكم قالوا خيرًا﴾, i.e. أنزل خيرًا.",
+      "الحذف الواجب is obligatory and falls in three ḍarbs: the deleted governor of the مفعول مطلق, of the مفعول به, and of the حال.",
+      "Ḍarb 1 — مفعول مطلق: «سبحان الله»، «صبرًا لا جزعًا».",
+      "Ḍarb 2 — مفعول به: التحذير «إياك والحسد» and الإغراء «الصبرَ الصبرَ».",
+      "Ḍarb 3 — حال: «دعائي ربي مستيقنًا».",
+      "Marks: two kinds جائز/واجب (2); الجائز needs a قرينة + example أنزل خيرًا (3); الواجب = three ḍarbs (2); ḍarb 1 مفعول مطلق + example (2); ḍarb 2 مفعول به تحذير/إغراء + example (2); ḍarb 3 حال + example (2); examples vocalised / accuracy (2).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--define-types-examples--tanazu",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is التنازع؟ What kinds of governors may contend, and what is the ruling on which one operates? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "التنازع is تنازع عاملين في معمول واحد متأخر (also called الإعمال).",
+      "Governors may be two فعلان — ﴿كُلُوا وَاشْرَبُوا مِنْ رِزْقِ اللهِ﴾.",
+      "Or two اسمان — ﴿أَقَرِيبٌ أَمْ بَعِيدٌ مَا تُوعَدُونَ﴾.",
+      "More than two may contend, e.g. the three verbs in the حديث of التسبيح before دُبُرَ كُلِّ صَلَاةٍ.",
+      "Either the first or the second governor may be permitted to operate on the shared معمول.",
+      "Both readings are valid.",
+      "Breakdown: 5 — correct definition.",
+      "5 — the two kinds of contending governors with examples.",
+      "3 — more than two may contend, with example.",
+      "2 — the either-may-operate ruling.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--define-types-examples--nida-pillars-particles",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is النداء؟ What are its three pillars and seven particles (with their ranges), and when may the vocative particle be deleted? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "النداء is calling by a particle standing in for the deleted فعل النداء (أَدْعُو).",
+      "Pillars: الفعل المحذوف, the particle, المنادى.",
+      "Seven particles: الهمزة وأَيْ for the near.",
+      "يَا وآ وأَيَا وهَيَا for the far.",
+      "وَا for الندبة.",
+      "The particle may be dropped before a مضاف — ﴿اعْمَلُوا آلَ دَاوُدَ شُكْرًا﴾.",
+      "Or before a proper name — ﴿يُوسُفُ أَعْرِضْ عَنْ هَذَا﴾.",
+      "But NEVER before لفظ الجلالة or a نكرة مقصودة.",
+      "Breakdown: 4 — definition.",
+      "5 — the three pillars + seven particles named.",
+      "4 — the deletion rule (when allowed/forbidden) with examples.",
+      "2 — accuracy.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--define-types-examples--what-is-what-are-its-pillars-and-4s",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is الإغراء? What are its pillars, and when is deletion of its governor obligatory? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "الإغراء is the naṣb of a noun by a deleted verb of encouragement, urging the addressee toward something desirable.",
+      "Its pillars are four: the implied verb (الزم / اطلب / خذ / افعل), المغري (speaker), المغرى (addressee), and المغرى به (the thing urged).",
+      "Deletion of the verb is obligatory when the مغرى به is repeated: «الصبرَ الصبرَ».",
+      "…or when it is ʿaṭfed upon: «العلمَ والحلمَ».",
+      "Otherwise the verb may appear intact: ﴿يَا يَحْيَى خُذِ الْكِتَابَ بِقُوَّةٍ﴾.",
+      "Appended to this chapter: «مرحبًا وأهلًا وسهلًا» (تقدير: أصبتَ) and «امرأً ونفسَه» (تقدير: دَعْ).",
+      "3 marks for the definition; 3 marks for the four pillars; 4 marks for the two obligatory-deletion cases with examples; 2 marks for the verb-intact example; 3 marks for the appended expressions with their تقدير.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--define-types-examples--what-is-what-are-its-pillars-and-60",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is التحذير? What are its pillars, and by what ways (طرق) is it expressed? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: التحذير is naṣb of a noun by an obligatorily-deleted verb warning the addressee off something hateful.",
+      "Four pillars: the implied verb (احذر/باعد/تجنب/قِ/توقَّ), المحذِّر (speaker), المحذَّر (addressee), المحذَّر منه (thing warned against).",
+      "Way 1 — the detached naṣb-pronoun إيا: with ʿaṭf «إياك والحسد»؛ repeated without ʿaṭf «إياك إياك المراء»؛ or the warned-against jarred by من, uttered «إياك من الحسد» or implied «إياك أن تحسد».",
+      "Way 2 — an explicit noun for the warned-against: alone «نفسك»، repeated «نفسك نفسك»، or with ʿaṭf «نفسك والحسد».",
+      "Way 3 — the warned-against itself: repeated «الله الله» or with a second ʿaṭfed on it ﴿ناقة الله وسقياها﴾.",
+      "It may also occur with the verb intact: ﴿قوا أنفسكم وأهليكم نارا﴾.",
+      "Marks: definition (2); four pillars (2); Way 1 with its three forms + examples (3); Way 2 with examples (2); Way 3 with examples (2); verb-intact case + example (2); examples fully vocalised / accuracy (2).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--define-types-examples--what-is-what-forms-does-it-take--61",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is الاختصاص? What forms does it take? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: الاختصاص is naṣb of a noun by a deleted verb — أخُصُّ or أعني — that pins down who is meant by a preceding pronoun.",
+      "The governing verb is deleted obligatorily; the noun is منصوب على الاختصاص.",
+      "Its function is to specify the referent of the earlier pronoun, so it differs from النداء (no calling, no يا).",
+      "Form 1 — an explicit noun منصوب by أخصّ: ﴿رحمة الله وبركاته عليكم أهلَ البيت﴾, where أهل specifies the كم.",
+      "Form 2 — أيُّها / أيَّتُها without يا, taking the vocative's rulings: «نهى رسول الله ﷺ المسلمين عن كلامنا أيها الثلاثةُ».",
+      "Marks: definition (3); deleted أخصّ/أعني, obligatory (2); function = specify the preceding pronoun (2); Form 1 explicit noun + example أهل البيت (3); Form 2 أيها/أيتها without يا carrying vocative rulings + example (3); contrast with النداء / example accuracy (2).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--define-types-examples--what-is-by-what-particles-is-it--62",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is الندبة? By what particles is it made, how is its منادى inflected, and what endings may it take? Give examples.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: الندبة is the grief-call (إظهار الحزن / التفجّع) — calling the mourned one or the pained part.",
+      "Its particle is وا: «وا أبتاه»؛ يا may also be used when no confusion with plain النداء arises.",
+      "The iʿrāب of its منادى matches ordinary النداء: «وا زيدُ»، «وا عبدَ اللهِ».",
+      "It allows a ندبة-alif appended at the end: «وا زيدَا».",
+      "At pause, هاء السكت may follow that alif: «وارأساهْ»، «واويلاهْ».",
+      "Marks: definition = grief-call (3); particle وا + example (2); يا permitted when no confusion (2); منادى iʿrāب same as ordinary النداء + examples (3); ندبة-alif + example (2); هاء السكت at pause + examples (3).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--enumerate--hadhf-amil-hal-four",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the four قياسي places where the عامل of الحال must be deleted, with an example of each.",
+    "promptAr": "",
+    "markScheme": [
+      "(1) a حال standing in for the خبر — «دُعَائِي رَبِّي مُسْتَيْقِنًا».",
+      "(2) a حال whose لفظ shows gradual increase/decrease, carried by الفاء or ثمّ — «تَصَدَّقْ بِدِرْهَمٍ فَصَاعِدًا».",
+      "(3) after a rebuking استفهام — «أَقَاعِدًا وَقَدْ أُقِيمَتِ الصَّلَاةُ؟».",
+      "(4) emphasising the content of the sentence, with a definite جامد مبتدأ and خبر — ﴿وَهُوَ الْحَقُّ مُصَدِّقًا لِمَا مَعَهُمْ﴾.",
+      "Breakdown: 3 marks per place correctly named with example.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--enumerate--nidaa-ya-mutakallim-four",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the four treatments of منادى مضاف إلى ياء المتكلم (يا عبادي), with an example of each.",
+    "promptAr": "",
+    "markScheme": [
+      "(1) delete the ياء, keep the كسرة — ﴿يَا عِبَادِ فَاتَّقُونِ﴾.",
+      "(2) keep it سَاكِنَة — ﴿يَا عِبَادِيْ لَا خَوْفٌ عَلَيْكُمُ الْيَوْمَ﴾.",
+      "(3) keep it مَفْتُوحَة — ﴿يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا﴾.",
+      "(4) flip the كسرة to فتحة and the ياء to ألف — ﴿يَا حَسْرَتَى﴾.",
+      "Breakdown: 3 marks per treatment correctly named with example.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--enumerate--enumerate-the-heard-expressions--4t",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "Enumerate the heard (سماعي) expressions in which the عامل of the مفعول مطلق is deleted, giving the meaning of each, and include لبَّيك with its sisters.",
+    "promptAr": "",
+    "markScheme": [
+      "«سبحانَ اللهِ» — declaring Allah's transcendence (تنزيه).",
+      "«معاذَ اللهِ» — seeking Allah's refuge and protection.",
+      "«عجبًا لك» — expressing astonishment at the addressee.",
+      "«حمدًا وشكرًا لا كفرًا» — praise and thanks, not ingratitude.",
+      "«لبَّيكَ» — answering a call, repeatedly at your service.",
+      "Its sisters: «سعديكَ، حنانيكَ، دواليكَ، حذاريكَ».",
+      "Note their dual form signifies التكثير (abundance), not a real two.",
+      "6 marks for the four expressions with meaning (1.5 each); 2 marks for لبَّيك with meaning; 2 marks for the four sisters; 2 marks for the dual-for-تكثير point.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--iyyaka-wa-l-hasad",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify إِيَّاكَ (which category — its role in التحذير?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "إِيَّاكَ وَالْحَسَدَ",
+    "markScheme": [
+      "Classification — إياك هنا مفعول به لفعل تحذير محذوف وجوبًا تقديره باعِدْ.",
+      "Translation: 'Beware of envy!'",
+      "إعراب: إِيَّاكَ — ضمير نصب منفصل مبني في محل نصب مفعول به لفعل محذوف تقديره باعِدْ.",
+      "وَ — حرف عطف.",
+      "الْحَسَدَ — معطوف على الضمير المنصوب منصوب مثله، وهو المحذَّر منه.",
+      "Breakdown: 2 — classification.",
+      "2 — translation.",
+      "5 — إعراب.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--ya-abda-llah",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify عَبْدَ (which category of منادى?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "يَا عَبْدَ اللهِ",
+    "markScheme": [
+      "Classification — عبدَ الله منادى مضاف, منصوب لفظًا.",
+      "Translation: 'O ʿAbd Allāh!'",
+      "إعراب: يَا — حرف نداء للبعيد مبني لا محل له.",
+      "عَبْدَ — منادى مضاف منصوب وعلامة نصبه الفتحة.",
+      "اللهِ — لفظ الجلالة مضاف إليه مجرور.",
+      "Breakdown: 2 — classification (منادى مضاف).",
+      "2 — translation.",
+      "5 — إعراب.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--wa-l-mawta-yabathuhumu-llah",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify الْمَوْتَى (اشتغال — which options apply?). Then translate the sentence and give both possible iʿrābs.",
+    "promptAr": "وَالْمَوْتَى يَبْعَثُهُمُ اللهُ",
+    "markScheme": [
+      "Classification — this is باب الاشتغال.",
+      "الموتى is المشغول عنه, allowing either رفع بالابتداء or نصب بفعل محذوف يفسره المذكور.",
+      "Translation: 'And the dead — Allah will resurrect them.'",
+      "إعراب (رفع): الْمَوْتَى — مبتدأ مرفوع بضمة مقدرة.",
+      "يَبْعَثُهُمُ اللهُ — فعل ومفعوله وفاعله، والجملة في محل رفع خبر المبتدأ.",
+      "إعراب (نصب): الْمَوْتَى — مفعول به منصوب لفعل محذوف يفسره المذكور، تقديره وَيَبْعَثُ الْمَوْتَى.",
+      "يَبْعَثُهُمُ اللهُ — الجملة المذكورة مفسِّرة للمحذوف لا محل لها من الإعراب.",
+      "Breakdown: 2 — classification (اشتغال).",
+      "2 — translation.",
+      "5 — إعراب (both readings).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--classify-which-category-does-it--4u",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify الصَّبْرَ (which category does it fall under?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "الصَّبْرَ الصَّبْرَ",
+    "markScheme": [
+      "Classification: الصبرَ is a مغرى به in الإغراء — a noun urged upon the addressee.",
+      "Because it is repeated, deletion of the governing verb is obligatory.",
+      "Translation: \"Patience! Patience!\" i.e. \"Cling to patience!\"",
+      "iʿrāb: the first الصبرَ is مفعول به منصوب for a deleted verb ≈ الزم, its naṣb-sign the fatḥa.",
+      "The second الصبرَ is توكيد لفظي of the first, likewise manṣūb.",
+      "The deleted الزم and its subject are hidden وجوبًا.",
+      "2 marks for classifying as مغرى به / إغراء; 1 mark for obligatory deletion via repetition; 2 marks for translation; 3 marks for iʿrāb of the first الصبر as مفعول به لفعل محذوف; 1 mark for the second الصبر as توكيد.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--classify-which-construction-is-t-4v",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify وَا زَيْدَاهْ (which construction is this, and what is زيد's role?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "وَا زَيْدَاهْ",
+    "markScheme": [
+      "Classification: this is الندبة (the grief-call), with زيد being the مندوب.",
+      "وا is a حرف ندبة (the particle of lament).",
+      "The iʿrāb of the مندوب matches ordinary النداء: زيد is a منادى مبني on ḍamm in محل نصب as مفعول به for the deleted أدعو.",
+      "The final alif is the ندبة-alif appended for the lament; the هـ is هاء السكت at pause.",
+      "Translation: \"Alas, Zayd!\" — a call of grief.",
+      "2 marks for classifying as ندبة with زيد as مندوب; 1 mark for وا = حرف ندبة; 3 marks for the iʿrāb of زيد (منادى مبني، محل نصب، مفعول به لأدعو); 1 mark for the alif ندبة plus هاء السكت; 2 marks for translation.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--classify-which-construction-is-t-5x",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify لَلّهِ (which construction is this, and what is اللّه's role?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "يَا لَلّٰهِ لِلْمُسْلِمِينَ",
+    "markScheme": [
+      "Construction is نداء الاستغاثة — calling someone to rescue another.",
+      "لفظ الجلالة اللّه is المستغاث, prefixed with the لام المفتوحة (لام الاستغاثة).",
+      "Its particle must be يا, no other; المسلمون is the المستغاث له with the kasra-lām.",
+      "Translation: \"O God, (come) to the aid of the Muslims!\"",
+      "iʿrāب: يا حرف نداء واستغاثة؛ اللام لام الاستغاثة (حرف جر مفتوح)؛ اللّه المستغاث، مجرور بلام الاستغاثة لفظًا، منصوب محلًّا على النداء.",
+      "iʿrāب: لِلمسلمين — اللام المكسورة حرف جر، المسلمين المستغاث له مجرور، sign الياء (جمع مذكر سالم).",
+      "Marks: identify الاستغاثة (1); اللّه = المستغاث (1); fatḥa-lām = لام الاستغاثة (1); المسلمين = المستغاث له with kasra-lām (1); يا only particle (1); translation (1); iʿrāب of اللّه (1); iʿrāب of المسلمين (1); overall accuracy (1).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--classify-which-category-which-op-5y",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify الظَّالِمِينَ (which category — which اشتغال option applies?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "وَالظَّالِمِينَ أَعَدَّ لَهُمْ عَذَابًا أَلِيمًا",
+    "markScheme": [
+      "This is الاشتغال; الظالمين is the المشغول عنه (the fronted noun).",
+      "The visible verb أعدّ is busy with the pronoun هم (المشغول به), so الظالمين is منصوب by a separate deleted verb.",
+      "The deleted governor is a synonym, تقدير أوعَدَ, because أعدّ wants a لام (أعدّ لهم) and so cannot itself govern الظالمين directly.",
+      "Translation: \"And the wrongdoers — He has prepared for them a painful punishment.\"",
+      "iʿrāب: الظالمين مفعول به لفعل محذوف تقديره أوعَدَ، منصوب, sign الياء؛ أعدّ فعل ماضٍ والفاعل هو؛ لهم جار ومجرور فيه المشغول به.",
+      "iʿrāب: عذابًا مفعول به منصوب، أليمًا صفة منصوبة.",
+      "Marks: identify الاشتغال (1); الظالمين = المشغول عنه منصوب (1); naṣb by deleted verb تقدير أوعَدَ (1); reason أعدّ needs a لام (1); المشغول به = هم (1); translation (1); iʿrāب الظالمين (1); iʿrāب عذابًا/أليمًا (1); coherence (1).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m1-kh--classify-tarkib--classify-which-construction-is-t-5z",
+    "chapterId": "m1-kh",
+    "chapterAr": "خاتمة المقصد الأول: التنازع وحذف العامل",
+    "chapterEn": "Aim One Epilogue — tanāzuʿ & the deleted governor",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "Classify أَهْلَ (which construction is this, and why is it manṣūb?). Then translate the sentence and give its full tarkīb/iʿrāb.",
+    "promptAr": "رَحْمَةُ اللهِ وَبَرَكَاتُهُ عَلَيْكُمْ أَهْلَ الْبَيْتِ",
+    "markScheme": [
+      "Construction is الاختصاص, not النداء — there is no يا and the aim is specification, not calling.",
+      "أهل is منصوب على الاختصاص by a hidden verb, تقدير أخُصُّ or أعني.",
+      "Its role is to pin down who is meant by the preceding pronoun كم in عليكم.",
+      "Translation: \"The mercy of God and His blessings be upon you, O People of the House.\"",
+      "iʿrāب: رحمةُ مبتدأ مرفوع وهو مضاف، اللهِ مضاف إليه؛ وبركاتُه معطوف؛ عليكم جار ومجرور خبر، والضمير كم هو المخصوص.",
+      "iʿrāب: أهلَ مفعول به لفعل محذوف تقديره أخصّ، منصوب وهو مضاف، البيتِ مضاف إليه مجرور.",
+      "Marks: identify الاختصاص (1); أهل naṣb by hidden أخصّ/أعني (1); function = specify the pronoun كم (1); distinguish from النداء (1); رحمةُ mubtadaʾ / عليكم khabar (1); translation (1); iʿrāب أهلَ (1); البيت مضاف إليه (1); coherence (1).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-line--explain-the-following-line-of-th-3n",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line of the matn as fully as you can.",
+    "promptAr": "الثَّانِي نَائِبُ الْفَاعِلِ، وَهُوَ مَا نُسِبَ إِلَيْهِ الْفِعْلُ التَّامُّ الْمَجْهُولُ فَاعِلُهُ",
+    "markScheme": [
+      "Identifies نائب الفاعل as the noun that takes the place of the omitted فاعل and inherits its رفع.",
+      "Verb must be تام (complete), excluding the defective كان and sisters.",
+      "The agent is unknown or suppressed, so the verb is built مجهول (passive, مبني للمجهول).",
+      "What was the مفعول به is then attributed to (نُسِبَ إليه) the verb and raised, e.g. جُمِعَ الشَّمْسُ وَالْقَمَرُ.",
+      "Note it may also be a noun bearing that sense (اسم مفعول), e.g. مَجْمُوعٌ لَهُ النَّاسُ.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-line--explain-the-following-line-of-th-3p",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line of the matn, noting the three pillars it implies.",
+    "promptAr": "الثَّامِنُ الْمُسْتَثْنَى، وَهُوَ مَا أُخْرِجَ مِنْ حُكْمِ مَا قَبْلَهُ، نَحْوُ جَاءَ الْقَوْمُ إِلَّا زَيْدًا",
+    "markScheme": [
+      "Defines المستثنى as what is removed from the حكم (ruling) of what precedes it.",
+      "Identifies the المستثنى منه, here الْقَوْم, that from which the exception is drawn.",
+      "Identifies the أداة الاستثناء, here إلَّا.",
+      "Identifies the المستثنى itself, here زَيْد, excluded from the coming.",
+      "Note this is استثناء تام متصل موجب, so زيدًا is منصوب.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-line--explain-the-following-line-of-th-4w",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line of the matn as fully as you can.",
+    "promptAr": "قَدْ تَدْخُلُ اللَّامُ الْمُزَحْلَقَةُ عَلَى خَبَرِ إِنَّ، نحو وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ",
+    "markScheme": [
+      "The اللام المزحلقة is the emphatic lām that \"slides\" from its original front position onto a later element for التوكيد.",
+      "Its primary place is the خبر إنّ, as in لَعَلَى of \"وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ\".",
+      "It also enters the postponed اسم إنّ, e.g. \"إِنَّ فِي ذَلِكَ لَعِبْرَةً\".",
+      "It may enter the ضمير الفصل between the noun and predicate, e.g. \"إِنَّ هَذَا لَهُوَ الْقَصَصُ الْحَقُّ\".",
+      "Award: definition plus main position with example (2), each further position/function (1 each).",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-line--explain-the-following-line-of-th-66",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line of the matn as fully as you can.",
+    "promptAr": "الثَّانِي نَائِبُ الْفَاعِلِ، وَهُوَ مَا نُسِبَ إِلَيْهِ الْفِعْلُ التَّامُّ الْمَجْهُولُ فَاعِلُهُ، نحو وَجُمِعَ الشَّمْسُ وَالْقَمَرُ",
+    "markScheme": [
+      "This introduces the second of the raised nouns (المرفوعات), the نائب الفاعل, the deputy standing in the vacated place of the agent.",
+      "Its definition: the noun to which is attributed a complete verb (الفعل التامّ) whose true agent has been suppressed and left unnamed — i.e. the verb is built for the passive (المجهول).",
+      "Note the two conditions folded into the wording: the verb must be تامّ (not defective like كان), and its فاعل must be unknown/omitted so the object is promoted to the raised position.",
+      "The example وَجُمِعَ الشَّمْسُ وَالْقَمَرُ: the passive verb جُمِعَ has الشمس as its نائب الفاعل, marked مرفوع, filling the slot the deleted agent left.",
+      "1 mark identifying it as second of the مرفوعات; 2 marks unpacking the definition (تامّ + مجهول الفاعل); 1 mark the two implied conditions; 1 mark applying to the example.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-line--explain-the-following-line-of-th-67",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line of the matn as fully as you can.",
+    "promptAr": "قَدْ يَكُونُ شِبْهُ الْجُمْلَةِ نَائِبَ الْفَاعِلِ، نحو وَجِيءَ يَوْمَئِذٍ بِجَهَنَّمَ",
+    "markScheme": [
+      "The line states that a quasi-clause (شبه الجملة) — a جار ومجرور or a ظرف — may itself occupy the position of the نائب الفاعل, not only an overt or pronoun noun.",
+      "This is signalled by قَدْ with the imperfect, i.e. it happens sometimes, not as the norm; the norm is an اسم ظاهر or ضمير.",
+      "In وَجِيءَ يَوْمَئِذٍ بِجَهَنَّمَ the verb جِيءَ is passive, and the جار ومجرور بِجَهَنَّمَ stands in the place of the deleted agent as نائب الفاعل.",
+      "Its position is محلّ رفع on being نائب الفاعل even though its own word جهنّم is مجرور by the حرف الجرّ بِ.",
+      "1 mark the claim (شبه الجملة may be نائب فاعل); 1 mark the force of قَدْ / departure from norm; 2 marks the example analysis; 1 mark the محلّ رفع point.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-line--explain-the-following-line-of-th-68",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-line",
+    "marks": 5,
+    "promptEn": "Explain the following line of the matn as fully as you can.",
+    "promptAr": "وَيُحْذَفُ خَبَرُ لَا لِنَفْيِ الْجِنْسِ كَثِيرًا إِنْ كَانَ عَامًّا كَالْمَوْجُودِ، نحو لَا ضَيْرَ",
+    "markScheme": [
+      "The line concerns the خبر of لا النافية للجنس (the لا that negates the whole genus, giving its اسم the accusative-built form).",
+      "It states that this خبر is frequently omitted when it is a general term such as \"present/existing\" (كالموجود), because the meaning is understood without it.",
+      "In لَا ضَيْرَ the اسم is ضَيْرَ built on فتح in محلّ نصب, and the خبر is deleted, understood as مَوْجُودٌ عَلَيْكُمْ — \"there is no harm (present) upon you\".",
+      "Note the contrast with the usual case where the خبر of لا is a شبه جملة (e.g. لَا رَيْبَ فِيهِ); here it is dropped altogether under the قرينة of generality.",
+      "1 mark identifying لا لنفي الجنس; 1 mark the deletion rule; 1 mark the condition (عامّ كالموجود); 2 marks the example with its تقدير.",
+      "Total: 5 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--state-types--state-the-types-of-the-and-for-e-3r",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the types of the مفعول فيه (ظرف), and for each give a recognising sign or example.",
+    "promptAr": "",
+    "markScheme": [
+      "It splits into ظرف زمان (time) and ظرف مكان (place); ظرف answers متى or أين of the action.",
+      "ظرف زمان مبهم: an unspecified time like حِين، وَقْت، أبَد — takes نصب by an implicit حرف جر or جر by an overt one.",
+      "ظرف زمان محدود: a specified time like سَاعَة، يَوْم، شَهْر، سَنَة — likewise both نصب and جر permitted.",
+      "ظرف مكان مبهم: an unspecified place like the الجهات الست and measures (مِيل، فرسخ) — نصب or جر permitted.",
+      "ظرف مكان محدود: a specified place — normally جر by an overt حرف, نصب only if مشتق from the verb or with special verbs (دخل، سكن، نزل).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--state-types--state-the-cases-in-which-the-com-4x",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "state-types",
+    "marks": 6,
+    "promptEn": "State the cases in which the حال comes جامدة (non-derived) yet مؤوّلة بالمشتق (construed as derived), giving a recognising example of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Preface: the أصل is that a single-word حال be مشتقّ; these three cases are read as derived.",
+      "Case تشبيه (simile): e.g. \"بَدَا وَجْهُهُ قَمَرًا\", i.e. shining like a moon.",
+      "Case مفاعلة (reciprocity): e.g. \"بِعْتُهُ يَدًا بِيَدٍ\" and \"كَلَّمْتُهُ فَاهُ إِلَى فِيَّ\".",
+      "Case ترتيب (sequence): e.g. \"وَجَاءَ رَبُّكَ وَالْمَلَكُ صَفًّا صَفًّا\".",
+      "Award: 2 marks per case (name of case plus example).",
+      "Total: 6 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--compare--explain-with-examples-the-differ-3t",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between الاستثناء التام (غير المفرّغ) and الاستثناء المفرّغ (غير التام).",
+    "promptAr": "",
+    "markScheme": [
+      "In التام the المستثنى منه is mentioned, e.g. جَاءَ الْقَوْمُ إِلَّا زَيْدًا.",
+      "In المفرّغ the المستثنى منه is not mentioned, e.g. مَا مُحَمَّدٌ إِلَّا رَسُولٌ.",
+      "المفرّغ occurs only after a نفي or شبه نفي.",
+      "There إلَّا becomes an أداة حصر (restriction) and does not govern (لا تعمل إلا).",
+      "The word after إلَّا in المفرّغ is parsed by the verb as if إلَّا were absent, e.g. رَسُولٌ is خبر, اللهَ in لَا نَعْبُدُ إِلَّا اللهَ is مفعول به.",
+      "In the التام the المستثنى has its own ruling (نصب in موجب, نصب or بدل in غير موجب).",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--compare--explain-with-examples-the-differ-3v",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between the حال مؤسّسة (مبيّنة) and the حال مؤكّدة.",
+    "promptAr": "",
+    "markScheme": [
+      "The حال clarifies the هيئة (state) of its صاحب at the time of the action.",
+      "A حال مؤسّسة conveys a sense independent of its عامل, adding new information.",
+      "Example: وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا — مَرَحًا adds a manner not in تَمْشِ.",
+      "A حال مؤكّدة conveys no independent sense; it merely corroborates the عامل's meaning.",
+      "Example: وَلَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ — مُفْسِدِينَ restates the sense already in تَعْثَوْا.",
+      "So the test is whether dropping the حال would lose new meaning (مؤسّسة) or not (مؤكّدة).",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--compare--explain-with-examples-the-differ-4y",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "compare",
+    "marks": 8,
+    "promptEn": "Explain, with examples, the difference between الاستثناء المتّصل and الاستثناء المنقطع.",
+    "promptAr": "",
+    "markScheme": [
+      "Both are subtypes of الاستثناء التام, in which the مستثنى منه is mentioned.",
+      "المتّصل: the مستثنى is of the same جنس as the مستثنى منه, e.g. \"ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًا مِنْكُمْ\".",
+      "المنقطع: the مستثنى is not of the جنس of the مستثنى منه, e.g. \"فَسَجَدُوا إِلَّا إِبْلِيسَ\".",
+      "In المنقطع the أداة إلّا works for الاستدراك, meaning لكن, not true exception.",
+      "المنقطع comes only when the مستثنى منه gives the impression (أوهم) that the مستثنى was included in the ruling.",
+      "iʿrāb note: the مستثنى is منصوب in المنقطع, as it is in the موجب المتّصل.",
+      "Award: genus criterion plus example each (4), sense of لكن / أوهم (2), iʿrāb note (2).",
+      "Total: 8 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--3x",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "الْأَصْلُ فِي الْمُبْتَدَأِ أَنْ يَكُونَ مَعْرِفَةً، وَيَجُوزُ أَنْ يَكُونَ نَكِرَةً مُفِيدَةً",
+    "markScheme": [
+      "The norm (الأصل) is that the مبتدأ be معرفة, e.g. زَيْدٌ، الرَّجُلُ.",
+      "A نكرة is allowed only when it becomes مفيدة (informative).",
+      "It may be مخصّصة بالإضافة, in wording (خَمْسُ صَلَوَاتٍ كَتَبَهُنَّ اللهُ) or in estimation (كُلٌّ يَعْمَلُ أي كل أحد).",
+      "It may be مخصّصة بالوصف, in wording (وَلَعَبْدٌ مُؤْمِنٌ خَيْرٌ) or in estimation (وَطَائِفَةٌ قَدْ أَهَمَّتْهُمْ أي طائفة منهم).",
+      "It may be عامّة after نفي (مَا أَحَدٌ خَيْرًا مِنْ أَحَدٍ) or استفهام (أَإِلَهٌ مَعَ اللهِ).",
+      "It is beneficial when its خبر is a شبه جملة placed before it, e.g. وَفَوْقَ كُلِّ ذِي عِلْمٍ عَلِيمٌ.",
+      "Also after إذا الفجائية (فَإِذَا رَجُلٌ قَاعِدٌ) and when it is a دعاء (سَلَا��ٌ عَلَيْكُمْ).",
+      "Bare unspecified نكرة like رَجُلٌ alone remains غير مفيدة and is not allowed.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--3z",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, giving for each condition an example of where it is not met.",
+    "promptAr": "وَيُشْتَرَطُ لِنَصْبِ الْمَفْعُولِ لَهُ أَنْ يَكُونَ مَصْدَرًا قَلْبِيًّا مُتَّحِدًا مَعَ عَامِلِهِ فِي الْفَاعِلِ وَالزَّمَانِ",
+    "markScheme": [
+      "The مفعول له states the reason for which the action occurred, e.g. صَبَرُوا ابْتِغَاءَ وَجْهِ رَبِّهِمْ.",
+      "Condition 1: it must be a مصدر; else it takes the لام, as in وَضَعَهَا لِلْأَنَامِ.",
+      "Condition 2: it must be قلبي (an inner act); a non-heart cause takes the لام, as in سَافَرْتُ إِلَى مَكَّةَ لِلْحَجِّ.",
+      "Condition 3: the فاعل of the verb and of the مصدر must be one; if not, the لام is used, as in خَلَقَهَا لَكُمْ ... لِتَرْكَبُوهَا.",
+      "Condition 4: the زمان of the verb and of the مصدر must be one; if not, the لام is used, as in أَرْحَمُ وَالِدَيَّ كِبَرًا لِرَحْمَتِهِ إِيَّايَ صَغِيرًا.",
+      "When all four hold, نصب without the لام is valid.",
+      "Note a مصدر مؤوّل (أن + verb) can be مفعول له by supplying an annexed noun, e.g. أَنْ تَمِيدَ أي كَرَاهَةَ أَنْ تَمِيدَ.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--4z",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "قَدْ يَتَضَمَّنُ الْمُبْتَدَأُ مَعْنَى الشَّرْطِ، فَيَصِحُّ دُخُولُ الْفَاءِ عَلَى الْخَبَرِ",
+    "markScheme": [
+      "Principle: when the مبتدأ carries the sense of a شرط, the خبر resembles a جواب الشرط, so the فاء may enter it.",
+      "After أمّا: e.g. \"فَأَمَّا ثَمُودُ فَأُهْلِكُوا بِالطَّاغِيَةِ\".",
+      "When the مبتدأ is an اسم موصول: e.g. \"الَّذِينَ خَسِرُوا أَنْفُسَهُمْ فَهُمْ لَا يُؤْمِنُونَ\".",
+      "When موصوف بموصول with فعل or ظرف: e.g. \"إِنَّ الْمَوْتَ الَّذِي تَفِرُّونَ مِنْهُ فَإِنَّهُ مُلَاقِيكُمْ\".",
+      "When a نكرة موصوفة by فعل or ظرف: e.g. \"وَلَدٌ حَفِظَ الْقُرْآنَ فَلَهُ أَجْرٌ\" / \"وَلَدٌ فِي الْفَصْلِ فَلَهُ أَجْرٌ\".",
+      "When مضاف إلى نكرة موصوفة, e.g. \"أُمُّ يَتِيمٍ تَأْتِينِي فَلَهَا مَالٌ\"; or كلمة كلّ مضاف إلى نكرة, e.g. \"كُلُّ يَتِيمٍ فَلَهُ فِي قَلْبِي رَأْفَةٌ\".",
+      "Award: principle (3), then 2 per case with example up to 12.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--50",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "وَيَجِبُ حَذْفُ الْخَبَرِ إِنْ دَلَّ عَلَيْهِ جَوَابُ الْقَسَمِ، وَفِي لَوْلَا، وَإِذَا كَانَ الْمُبْتَدَأُ مَعْطُوفًا عَلَيْهِ بِوَاوٍ هِيَ نَصٌّ فِي الْمَعِيَّةِ",
+    "markScheme": [
+      "Principle: the خبر is dropped obligatorily in fixed constructions where context supplies it.",
+      "Case جواب القسم points to it: e.g. \"لَعَمْرُكَ إِنَّهُمْ لَفِي سَكْرَتِهِمْ يَعْمَهُونَ\", i.e. لَعَمْرُكَ قَسَمِي, the خبر قَسَمِي dropped.",
+      "Case with لولا: e.g. \"وَلَوْلَا رَهْطُكَ لَرَجَمْنَاكَ\", i.e. لولا رهطك مَوْجُودٌ, the خبر (existence) dropped.",
+      "Case مبتدأ conjoined by a واو نصّ في المعيّة: e.g. \"فَأَنْتُمْ وَمَا تَعْبُدُونَ\", the خبر dropped since the واو fixes accompaniment.",
+      "Contrast with جواز الحذف: in جواب الاستفهام \"مَنْ خَلَقَ ... لَيَقُولُنَّ اللهُ\" and after إذا الفجائية \"خَرَجْتُ فَإِذَا الْأَسَدُ\".",
+      "Award: principle (3), each obligatory case with example (3 each = 9), contrast with جواز (3).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--6f",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples of each place.",
+    "promptAr": "يَجِبُ حَذْفُ الْمُبْتَدَأِ فِي أَرْبَعَةِ مَوَاضِعَ: النَّعْتُ الْمَقْطُوعُ إِلَى الرَّفْعِ، وَإِنْ دَلَّ عَلَيْهِ جَوَابُ الْقَسَمِ، وَإِنْ كَانَ الْخَبَرُ مَصْدَرًا نَابَ عَنْ فِعْلِهِ، وَإِنْ كَانَ الْخَبَرُ مَخْصُوصًا بِالْمَدْحِ أَوِ الذَّمِّ",
+    "markScheme": [
+      "General sense: beyond the cases of permissible omission, there are four places where deleting the مبتدأ is obligatory (واجب) because the context fixes it and mentioning it would be faulty; in each the deleted مبتدأ is recovered by تقدير.",
+      "First: the نعت المقطوع إلى الرفع — an adjective severed from following its noun and put in the nominative on a hidden مبتدأ, نحو الْحَمْدُ لِلهِ الْحَمِيدُ, i.e. هُوَ الْحَمِيدُ.",
+      "Second: when the جواب القسم points to it, نحو فِي ذِمَّتِي لَأَقُولَنَّ الصِّدْقَ, i.e. فِي ذِمَّتِي عَهْدٌ — the خبر فِي ذِمَّتِي stands and the مبتدأ عهد is dropped.",
+      "Third: when the خبر is a مصدر standing in for its verb, نحو فَصَبْرٌ جَمِيلٌ, i.e. صَبْرِي or أَمْرِي صَبْرٌ جَمِيلٌ.",
+      "Fourth: when the خبر is the مخصوص بالمدح أو الذمّ after نِعْمَ / بِئْسَ, نحو نِعْمَ الطَّالِبُ الْمُجْتَهِدُ (أي هُوَ الْمُجْتَهِدُ) and بِئْسَ الطَّالِبُ الْكَسُولُ (أي هُوَ الْكَسُولُ).",
+      "3 marks the principle of obligatory حذف vs permissible; 3 marks per place (statement + example + تقدير), best three scored, capped at 12.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--6g",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples.",
+    "promptAr": "وَقَدْ يَتَضَمَّنُ الْمُبْتَدَأُ مَعْنَى الشَّرْطِ، فَيَصِحُّ دُخُولُ الْفَاءِ عَلَى الْخَبَرِ، وَذَلِكَ إِذَا كَانَ الْمُبْتَدَأُ بَعْدَ أَمَّا، أَوِ اسْمَ مَوْصُولٍ، أَوْ نَكِرَةً مَوْصُوفَةً بِفِعْلٍ أَوْ ظَرْفٍ",
+    "markScheme": [
+      "General sense: sometimes the مبتدأ carries the meaning of a شرط (condition), so its خبر resembles a جواب الشرط, and it becomes valid for the فاء to enter upon that خبر.",
+      "Case أمّا: نحو فَأَمَّا ثَمُودُ فَأُهْلِكُوا بِالطَّاغِيَةِ — أمّا itself holds conditional force, so the فاء attaches to the خبر.",
+      "Case اسم موصول (whose صلة is a فعل or ظرف): نحو الَّذِينَ خَسِرُوا أَنْفُسَهُمْ فَهُمْ لَا يُؤْمِنُونَ — the موصول with its verbal صلة gives the shade of condition.",
+      "Case نكرة موصوفة بفعل: نحو وَلَدٌ حَفِظَ الْقُرْآنَ فَلَهُ أَجْرٌ; or موصوفة بظرف: نحو وَلَدٌ فِي الْفَصْلِ فَلَهُ أَجْرٌ — the description supplies the conditional sense.",
+      "May add the further cases in the chapter: مضاف to such a نكرة (أُمُّ يَتِيمٍ تَأْتِينِي فَلَهَا مَالٌ) and كلّ مضاف to a نكرة (كُلُّ يَتِيمٍ فَلَهُ فِي قَلْبِي رَأْفَةٌ).",
+      "Note that the point throughout is that the فاء is only licensed because a latent شرط is felt in the مبتدأ; without it the فاء would be invalid.",
+      "3 marks the core principle (شرط sense → فاء on خبر); up to 12 marks the licensing cases, each statement + example, best four scored.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--explain-statement--explain-the-following-statement--6h",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "explain-statement",
+    "marks": 15,
+    "promptEn": "Explain the following statement as fully as possible, with examples of each case.",
+    "promptAr": "وَيَجِبُ حَذْفُ الْخَبَرِ إِنْ دَلَّ عَلَيْهِ جَوَابُ الْقَسَمِ، وَفِي لَوْلَا، وَإِذَا كَانَ الْمُبْتَدَأُ مَعْطُوفًا عَلَيْهِ بِوَاوٍ هِيَ نَصٌّ فِي الْمَعِيَّةِ",
+    "markScheme": [
+      "General sense: just as the مبتدأ may be obligatorily dropped, so too the خبر is obligatorily deleted in three situations where context makes uttering it faulty; the deleted خبر is recovered by تقدير.",
+      "First: when the جواب القسم indicates it, نحو لَعَمْرُكَ إِنَّهُمْ لَفِي سَكْرَتِهِمْ يَعْمَهُونَ, i.e. لَعَمْرُكَ قَسَمِي — the مبتدأ لَعَمْرُكَ stands and the خبر قَسَمِي is dropped.",
+      "Second: with لَوْلَا, نحو وَلَوْلَا رَهْطُكَ لَرَجَمْنَاكَ, i.e. لَوْلَا رَهْطُكَ مَوْجُودٌ — after لولا the خبر (usually مَوْجُودٌ) is obligatorily deleted.",
+      "Third: when the مبتدأ is conjoined to by a واو that is explicit in accompaniment (نصّ في المعيّة), نحو فَأَنْتُمْ وَمَا تَعْبُدُونَ — the خبر is dropped because the واو المعيّة fills the sense.",
+      "Contrast with permissible deletion elsewhere given a قرينة — e.g. answering a question, or after إذا الفجائيّة (خَرَجْتُ فَإِذَا الْأَسَدُ) — to show these three are the obligatory ones.",
+      "3 marks the principle of obligatory حذف الخبر; 4 marks per case (statement + example + تقدير), best three scored, capped at 12.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-are-its-types-g-41",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the مفعول مطلق? What are its types? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "It is a مصدر placed after a عامل (verb, مصدر, or مشتق) sharing its sense; named مطلق because it is not restricted by a حرف جر unlike other مفاعيل.",
+      "Type 1 — للتوكيد (emphasis): indefinite, not described, annexed, dualised or pluralised, e.g. وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا.",
+      "Type 2 — للنوع (kind): shows the manner of the action, formed by إضافة (ظَنَّ السَّوْءِ), صفة (فَتْحًا مُبِينًا), إشارة (ذَلِكَ الِاجْتِهَادَ), or لام العهد.",
+      "Type 3 — للعدد (number): shows how many times the action occurred, e.g. سَجَدْتُ سَجْدَتَيْنِ; the عدد type may be dualised or pluralised, unlike the other two.",
+      "Things standing in for it: its اسم مصدر (وُضُوءَ رسول الله), its صفة (كَثِيرًا), its ضمير, إشارة, and كُلّ / بَعْض / أيّ annexed to the مصدر.",
+      "It may replace its verb — as أمر (وَبِالْوَالِدَيْنِ إِحْسَانًا), نهي, دعاء (بُعْدًا لِلْقَوْمِ), or heard idioms (سُبْحَانَكَ، مَعَاذَ اللهِ).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-are-its-two-mai-43",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the تمييز? What are its two main kinds? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "The تمييز removes vagueness (إبهام) from a vague single word (مفرد مبهم) or a vague predication (نسبة مبهمة); its norm is to be نكرة.",
+      "Kind 1 — تمييز مفرد: clarifies a single vague word.",
+      "It covers عدد, whether صريح (أَحَدَ عَشَرَ كَوْكَبًا) or مبهم (كَمْ آتَيْنَاهُمْ مِنْ آيَةٍ).",
+      "It covers مقدار — كيل (لِتْرٌ لَبَنًا), وزن (مِثْقَالَ ذَرَّةٍ خَيْرًا), مساحة (جَرِيبٌ نَخْلًا) — and what resembles it.",
+      "Kind 2 — تمييز نسبة (تمييز جملة): may be غير محوّل (لِلهِ دَرُّهُ فَارِسًا).",
+      "Or محوّل — from the فاعل (اشْتَعَلَ الرَّأْسُ شَيْبًا), from the مفعول به (فَجَّرْنَا الْأَرْضَ عُيُونًا), or from the مبتدأ (أَنَا أَكْثَرُ مِنْكَ مَالًا).",
+      "Note the تمييز may itself be مجرور (by إضافة or a redundant حرف), so it is listed among the منصوبات only تغليبًا.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-may-occupy-its--51",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the نائب الفاعل? What may occupy its position? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: the نائب الفاعل is what the action is attributed to (ما نُسِبَ إليه) after the فاعل is dropped, with a فعل تام مجهول (passive verb).",
+      "Type 1: the noun after a passive verb whose agent is unknown, e.g. \"وَجُمِعَ الشَّمْسُ وَالْقَمَرُ\".",
+      "Type 2: what is in its sense (ما بمعناه, e.g. an اسم مفعول), e.g. \"ذَلِكَ يَوْمٌ مَجْمُوعٌ لَهُ النَّاسُ\".",
+      "Type 3: a شبه الجملة may stand as نائب الفاعل, e.g. \"وَجِيءَ يَوْمَئِذٍ بِجَهَنَّمَ\".",
+      "Note: it takes the رفع that originally belonged to the فاعل.",
+      "Award: definition (5), each type with example (3 each = 9), note (1).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-are-its-two-kin-52",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the مبتدأ? What are its two kinds? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: the مبتdaʾ is the noun about which a statement (خبر) is made, standing at the head of the nominal sentence.",
+      "Kind 1: an اسم مجرّد عن عامل لفظي مسند إليه, e.g. \"مُحَمَّدٌ رَسُولُ اللهِ\".",
+      "Kind 2: an اسم عامل رافع لاسم ظاهر after نفي or استفهام, e.g. \"أَرَاغِبٌ أَنْتَ عَنْ آلِهَتِي\".",
+      "The second is called المبتدأ المكتفي بمرفوعه (self-sufficient through its raised noun) and has no خبر.",
+      "Note: الأصل is that the مبتدأ be معرفة, though a نكرة مفيدة is allowed.",
+      "Award: definition (5), kind 1 with example (4), kind 2 with example (4), المكتفي بمرفوعه note (2).",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-are-its-main-ki-6c",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the حال? What are its main kinds (by the several classifications given in the chapter)? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: the حال is what clarifies the هيئة (state/manner) of the فاعل, the مفعول به, or another, e.g. وَادْعُوهُ مُخْلِصِينَ لَهُ الدِّينَ (state of the agent); every حال needs a صاحب حال (ذو الحال), and its أصل is to be نكرة مشتقّة while its صاحب is معرفة.",
+      "By newness of sense: مؤسّسة (مبيّنة), adding an independent sense, نحو وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا; vs مؤكّدة, merely corroborating the عامل, نحو وَلَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ.",
+      "By permanence: متنقّلة (the norm), نحو وَجَاءُوا أَبَاهُمْ عِشَاءً يَبْكُونَ; vs لازمة (ثابتة / دائمة), نحو وَخُلِقَ الْإِنْسَانُ ضَعِيفًا.",
+      "By time: محكيّة (past), نحو وَقَدْ بَلَغَنِيَ الْكِبَرُ; مقارنة (concurrent), نحو عِشَاءً يَبْكُونَ; مقدّرة (future), نحو فَادْخُلُوهَا خَالِدِينَ.",
+      "By reference: حقيقيّة, clarifying its own صاحب's state; vs سببيّة, clarifying the state of something attached to it, نحو خُشَّعًا أَبْصَارُهُمْ.",
+      "May also mention: multiple حال as مترادفة (حُفَاةً عُرَاةً غُرْلًا) vs متداخلة; and جامدة مؤوّلة بالمشتقّ (بَدَا وَجْهُهُ قَمَرًا) vs the موطّئة (قُرْآنًا عَرَبِيًّا).",
+      "3 marks definition + صاحب حال + its أصل; up to 12 marks across the classifications, roughly 2 marks per pair (statement of both terms + one example each); credit any valid subset covering at least four classifications.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-are-its-types-o-6d",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the مستثنى? What are its types (of exception)? Give examples of each, with a note on the iʿrāb.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: the مستثنى is what is taken out from the ruling of what precedes it, نحو زَيْدًا in جَاءَ الْقَوْمُ إِلَّا زَيْدًا; the استثناء has three pillars — the مستثنى منه, the أداة, and the مستثنى.",
+      "First division by completeness: الاستثناء التامّ (غير المفرّغ) where the مستثنى منه is mentioned, نحو جَاءَ الْقَوْمُ إِلَّا زَيْدًا; vs غير التامّ (المفرّغ) where it is omitted and only after نفي or شبه نفي, the أداة becoming a أداة حصر, نحو مَا مُحَمَّدٌ إِلَّا رَسُولٌ.",
+      "The تامّ subdivides into المتّصل, where the مستثنى is of the kind (جنس) of the مستثنى منه, نحو ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًا مِنْكُمْ; and المنقطع, where it is not of that kind and إلّا means لكن (استدراك), نحو فَسَجَدُوا إِلَّا إِبْلِيسَ.",
+      "iʿrāb: in the تامّ متّصل موجب the مستثنى is منصوب (فَشَرِبُوا مِنْهُ إِلَّا قَلِيلًا مِنْهُمْ); in غير موجب either نصب or بدل from the مستثنى منه (مَا فَعَلُوهُ إِلَّا قَلِيلٌ مِنْهُمْ); in the مفرّغ إلّا does not govern and the noun takes its position's case; in the منقطع it is منصوب.",
+      "May also note the أدوات: the حرف إلّا (the أصل) and حاشا; the أفعال خلا / عدا / ما خلا / ما عدا / ليس / لا يكون; and the أسماء غير and سوى.",
+      "Definition + three pillars: 3 marks; each type-pair with an example: up to 8 marks; iʿrāb notes: up to 4 marks.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--define-types-examples--what-is-the-what-are-its-types-a-6e",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "define-types-examples",
+    "marks": 15,
+    "promptEn": "What is the مفعول فيه (ظرف)? What are its types, and what iʿrāb (naṣb / jarr) does each admit? Give examples of each.",
+    "promptAr": "",
+    "markScheme": [
+      "Definition: the مفعول فيه is what the action occurred within, of place or time, نحو تَحْتَ قَدَمَيْهَا; it is named a ظرف.",
+      "It divides into ظرف زمان and ظرف مكان, and each of these into مبهم (unspecified) and محدود (delimited).",
+      "ظرف الزمان المبهم — vague time like أبد، حين، وقت — admits نصب by a مقدّر حرف جرّ (يَرَاكَ حِينَ تَقُومُ) and جرّ by an overt one (إِلَى حِينٍ); المحدود — like ساعة، يوم، شهر، سنة — likewise both (لَا تُخْزِنَا يَوْمَ الْقِيَامَةِ / إِلَى يَوْمِ الْقِيَامَةِ).",
+      "ظرف المكان المبهم — the six directions and measures like ميل، فرسخ — admits both نصب by مقدّر and جرّ by ظاهر (لِمَنْ خَلْفَكَ / مِنْ خَلْفِهِمْ).",
+      "ظرف المكان المحدود takes only جرّ by an overt حرف (لَا تُفْسِدُوا فِي الْأَرْضِ), except نصب in two cases: when derived from the verb (مَقَاعِدَ) and with specific verbs — دخول، سكون، نزول (يَدْخُلُونَ الْجَنَّةَ / اسْكُنْ ... الْجَنَّةَ / نَزَلَ الْمَدِينَةَ).",
+      "May also note what stands in for the ظرف: the مصدر (وَمِنَ اللَّيْلِ فَسَبِّحْهُ), the مضاف to time (بَعْضَ يَوْمٍ), and what denotes number (ثَلَاثَ لَيَالٍ).",
+      "Definition + naming ظرف: 2 marks; the two divisions each into مبهم/محدود: 3 marks; iʿrāb of each with example: up to 8 marks; the substitutes: up to 2 marks.",
+      "Total: 15 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--enumerate--list-the-given-in-the-chapter-gr-45",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "List the أدوات الاستثناء given in the chapter, grouped by their word-class, with a note on each.",
+    "promptAr": "",
+    "markScheme": [
+      "Particles (حرف): إلَّا — the base case (الأصل) of the whole chapter of exception.",
+      "حَاشَا — coined for exception together with تنزيه (exalting) of the excepted; what follows it is مجرور.",
+      "Verbs (فعل): خَلَا and عَدَا — verbs per the majority, حرفا جر per some; the noun after them is منصوب as مفعول (or مجرور on the particle view).",
+      "مَا خَلَا and مَا عَدَا — verbs by consensus of all; what follows is منصوب.",
+      "لَيْسَ and لَا يَكُونُ — exception-verbs; the excepted after them is منصوب على المفعولية, e.g. فَكُلْ لَيْسَ السِّنَّ وَالظُّفُرَ.",
+      "Nouns (اسم): غَيْر and سِوَى — غير takes the same iʿrāb the excepted would have after إلَّا, and the word after it is مجرور بالإضافة.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--enumerate--list-what-may-stand-in-place-of--53",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "enumerate",
+    "marks": 12,
+    "promptEn": "List what may stand in place of the مصدر (as the مفعول مطلق), giving an example of each.",
+    "promptAr": "",
+    "markScheme": [
+      "اسم المصدر: e.g. \"نَتَوَضَّأُ وُضُوءَ رَسُولِ اللهِ\".",
+      "صفته (its adjective): e.g. \"وَاذْكُرْ رَبَّكَ كَثِيرًا\".",
+      "ضميره (its pronoun): e.g. \"فَإِنِّي أُعَذِّبُهُ عَذَابًا لَا أُعَذِّبُهُ أَحَدًا\".",
+      "الإشارة (a demonstrative to it): e.g. \"اجْتَهَدَ ذَلِكَ الِاجْتِهَادَ\"; and ما يدل على عدده, e.g. \"يُصَلِّي الْمُسْلِمُونَ خَمْسَ مَرَّاتٍ\".",
+      "ما يدل على نوعه: e.g. \"رَجَعَ الْقَهْقَرَى\".",
+      "كلّ / بعض / أيّ annexed to the مصدر: e.g. \"وَلَا تَبْسُطْهَا كُلَّ الْبَسْطِ\", \"سَعَيْتُ بَعْضَ السَّعْيِ\", \"أَيَّ مُنْقَلَبٍ يَنْقَلِبُونَ\".",
+      "Award: roughly 1.5 marks per substitute correctly named with example.",
+      "Total: 12 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--classify-tarkib--state-the-grammatical-category-o-47",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the grammatical category of the word زَيْدًا in the sentence below. Then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "جَاءَ الْقَوْمُ إِلَّا زَيْدًا",
+    "markScheme": [
+      "زَيْدًا is an اسم (عَلَم), functioning as the المستثنى.",
+      "Translation: “The people came except Zayd.”",
+      "جَاءَ — فعل ماضٍ.",
+      "الْقَوْمُ — فاعل مرفوع.",
+      "إِلَّا — أداة استثناء (حرف).",
+      "زَيْدًا — مستثنى منصوب; because this is استثناء تام متصل موجب, نصب is obligatory (الأصل في الباب).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--classify-tarkib--state-the-grammatical-category-o-54",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the grammatical category of the word مُخْلِصِينَ in the sentence below. Then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "وَادْعُوهُ مُخْلِصِينَ لَهُ الدِّينَ",
+    "markScheme": [
+      "Category: مُخْلِصِينَ is a حال, clarifying the state of the فاعل (the واو of ادعوه).",
+      "Translation: \"And call upon Him, being sincere to Him in religion.\"",
+      "ادْعُوا: فعل أمر, the واو is فاعل; الهاء: مفعول به.",
+      "مُخْلِصِينَ: حال منصوب, sign of naṣb is الياء (جمع مذكر سالم).",
+      "لَهُ: جار ومجرور متعلّق بـ مخلصين; الدِّينَ: مفعول به of the اسم فاعل مخلصين, منصوب.",
+      "Award: category (2), translation (2), iʿrāb of the elements (5).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--classify-tarkib--state-the-grammatical-category-o-55",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the grammatical category of the word مَالًا in the sentence below. Then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "أَنَا أَكْثَرُ مِنْكَ مَالًا",
+    "markScheme": [
+      "Category: مَالًا is a تمييز, specifically تمييز نسبة محوّل عن المبتدأ, the underlying sense being مَالِي أَكْثَرُ.",
+      "Translation: \"I am greater than you in wealth.\"",
+      "أَنَا: مبتدأ (ضمير منفصل في محل رفع); أَكْثَرُ: خبر مرفوع.",
+      "مِنْكَ: جار ومجرور (مِن of comparison) متعلّق بـ أكثر.",
+      "مَالًا: تمييز منصوب, removing the vagueness of النسبة.",
+      "Award: category including محوّل عن المبتدأ (3), translation (2), iʿrāb (4).",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--classify-tarkib--state-the-grammatical-category-o-69",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the grammatical category of the word شَيْبًا in the sentence below. Then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "وَاشْتَعَلَ الرَّأْسُ شَيْبًا",
+    "markScheme": [
+      "Category: شَيْبًا is a تمييز (تمييز نسبة / تمييز جملة), and specifically محوّل عن الفاعل — the original sense being اشْتَعَلَ شَيْبُ الرَّأْسِ.",
+      "Translation: \"and the head has blazed/flared with grey.\"",
+      "الواو: حرف عطف or استئناف, no place in إعراب.",
+      "اشْتَعَلَ: فعل ماضٍ مبنيّ على الفتح.",
+      "الرَّأْسُ: فاعل مرفوع, sign the ضمّة.",
+      "شَيْبًا: تمييز منصوب, sign the فتحة; it removes the vagueness (الإبهام) in the نسبة of the flaring to the head.",
+      "1 mark category (تمييز محوّل عن الفاعل); 2 marks translation; 5 marks the four-part iʿrāb; 1 mark noting the نسبة it clarifies.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--classify-tarkib--state-the-grammatical-category-o-6a",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the grammatical category of the word قَلِيلًا in the sentence below. Then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "ثُمَّ تَوَلَّيْتُمْ إِلَّا قَلِيلًا مِنْكُمْ",
+    "markScheme": [
+      "Category: قَلِيلًا is a مستثنى, and the exception is تامّ متّصل — the مستثنى منه (the addressees in تولّيتم) is mentioned and قليل is of their kind; since the speech is موجب the مستثنى is منصوب.",
+      "Translation: \"then you turned away, except a few of you.\"",
+      "ثُمَّ: حرف عطف.",
+      "تَوَلَّيْتُمْ: فعل ماضٍ مبنيّ على السكون, and تُمْ ضمير متّصل in محلّ رفع فاعل.",
+      "إِلَّا: أداة استثناء (حرف), the أصل in the باب.",
+      "قَلِيلًا: مستثنى منصوب, sign the فتحة.",
+      "مِنْكُمْ: جار ومجرور, صفة for قليلًا.",
+      "1 mark category (مستثنى تامّ متّصل موجب → نصب); 2 marks translation; 5 marks iʿrāb; 1 mark justifying the نصب by the موجب context.",
+      "Total: 9 marks"
+    ]
+  },
+  {
+    "id": "m2-bab-1--classify-tarkib--state-the-grammatical-category-o-6b",
+    "chapterId": "m2-bab-1",
+    "chapterAr": "الباب الأول في الاسم (إلى نهاية المستثنى)",
+    "chapterEn": "Aim Two, Bab One — up to the end of the Mustathnā",
+    "archetype": "classify-tarkib",
+    "marks": 9,
+    "promptEn": "State the grammatical category of the word ضَعِيفًا in the sentence below. Then translate the sentence and give its full tarkīb / iʿrāb.",
+    "promptAr": "وَخُلِقَ الْإِنْسَانُ ضَعِيفًا",
+    "markScheme": [
+      "Category: ضَعِيفًا is a حال, an اسم مشتقّ clarifying the state of its صاحب; here it is a حال لازمة (ثابتة / دائمة), not transient, since weakness is a fixed trait of man.",
+      "Translation: \"and man was created weak.\"",
+      "الواو: حرف عطف / استئناف.",
+      "خُلِقَ: فعل ماضٍ مبنيّ للمجهول.",
+      "الْإِنْسَانُ: نائب فاعل مرفوع, sign the ضمّة (its agent being suppressed).",
+      "ضَعِيفًا: حال منصوبة, sign the فتحة, and its صاحب الحال is الإنسان.",
+      "1 mark category (حال، لازمة); 2 marks translation; 5 marks iʿrāb (note الإنسان is نائب فاعل, not فاعل); 1 mark naming the صاحب الحال.",
+      "Total: 9 marks"
+    ]
   }
 ];

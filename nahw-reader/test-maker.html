@@ -78,6 +78,26 @@
   @keyframes spin { to { transform:rotate(360deg); } }
   .hidden { display:none; }
   .err { color:var(--red); font-family:var(--serif); }
+
+  /* ── self-check answer key ── */
+  .key { margin-top:12px; border-radius:var(--r-md); padding:12px 14px; font-family:var(--serif); font-size:.92rem; line-height:1.55; background:var(--gold-soft); border:1px solid var(--gold-line); }
+  .key h4 { font-family:var(--sans); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; margin:0 0 6px; color:var(--gold-hover); }
+  .key p { margin:0; white-space:pre-wrap; }
+  .key-list { margin:0; padding-inline-start:1.2em; }
+  .key-list li { margin:0 0 6px; }
+  .key-list li:last-child { margin-bottom:0; font-weight:600; }
+
+  /* ── printable blank paper: no chrome, no answer keys, always blank writing space ── */
+  @media print {
+    body * { visibility:hidden; }
+    .paper, .paper * { visibility:visible; }
+    .paper { position:absolute; left:0; top:0; width:100%; border:none; box-shadow:none; padding:0; }
+    .no-print, .key { display:none !important; }
+    .q { break-inside:avoid; page-break-inside:avoid; }
+    /* color:transparent (not a white-on-white match) so the printed blank stays blank even
+       when the browser's "print background graphics" is off */
+    .q textarea { border:1px solid #999; min-height:140px; resize:none; background:#fff; color:transparent !important; -webkit-text-fill-color:transparent !important; }
+  }
 </style>
 </head>
 <body>
@@ -90,8 +110,8 @@
   <div class="wrap">
     <div class="eyebrow">Mock exams from the book</div>
     <h1 class="page-title">Practice Papers</h1>
-    <p class="lede">Pick the chapters you've studied, generate a past-paper-style exam from al-Kubrā,
-      answer it, and have it marked — with hints whenever you're stuck.</p>
+    <p class="lede">Pick the chapters you've studied, assemble a past-paper-style exam from al-Kubrā,
+      then self-check against the answer key — or print it as a blank paper first.</p>
 
     <!-- setup -->
     <div class="panel" id="setup">
@@ -130,17 +150,32 @@
   <script src="books/kubra-nahw/maqsad1-muq.js"></script>
   <script src="books/kubra-nahw/maqsad1-bab1.js"></script>
   <script src="books/kubra-nahw/maqsad1-bab2.js"></script>
-  <!-- pre-generated question bank (built offline by test-maker/build-bank.mjs) -->
+  <script src="books/kubra-nahw/maqsad2a.js"></script>
+  <script src="books/kubra-nahw/maqsad2b.js"></script>
+  <!-- pre-generated question bank (built offline by test-maker/build-bank.mjs, hand-extended since) -->
   <script src="questions-bank.js"></script>
   <script>
   // ── chapter registry (the readable, "ready" chapters) ──
   const CHAPTERS = [
-    { id:'muq-bab-1', group:'المُقَدِّمَة', ar:'الباب الأول في الكلمة', en:'The Word (al-kalimah)', blocks:()=>DATA },
-    { id:'muq-bab-2', group:'المُقَدِّمَة', ar:'الباب الثاني في الجملة وشبه الجملة والكلام', en:'Sentence, quasi-sentence & speech', blocks:()=>DATA_BAB2 },
-    { id:'muq-bab-3', group:'المُقَدِّمَة', ar:'الباب الثالث في العامل والمعمول والإعراب', en:'Governor, governed & iʿrāb', blocks:()=>DATA_BAB3 },
-    { id:'m1-muq', group:'المَقْصِدُ الأوَّل', ar:'المقدمة', en:'Introduction (Aim One)', blocks:()=>DATA_M1_MUQ },
-    { id:'m1-bab-1', group:'المَقْصِدُ الأوَّل', ar:'الباب الأول في الفعل', en:'The Verb', blocks:()=>DATA_M1_BAB1 },
-    { id:'m1-bab-2', group:'المَقْصِدُ الأوَّل', ar:'الباب الثاني في الحرف', en:'The Particle', blocks:()=>DATA_M1_BAB2 },
+    { id:'muq-bab-1', group:'المُقَدِّمَة', ar:'الباب الأول في الكلمة', en:'The Word (al-kalimah) · pp.6–10', blocks:()=>DATA },
+    { id:'muq-bab-2', group:'المُقَدِّمَة', ar:'الباب الثاني في الجملة وشبه الجملة والكلام', en:'Sentence, quasi-sentence & speech · pp.10–16', blocks:()=>DATA_BAB2 },
+    { id:'muq-bab-3', group:'المُقَدِّمَة', ar:'الباب الثالث في العامل والمعمول والإعراب', en:'Governor, governed & iʿrāb · pp.17–19', blocks:()=>DATA_BAB3 },
+    { id:'m1-muq', group:'المَقْصِدُ الأوَّل', ar:'المقدمة', en:'Introduction (Aim One) · p.22', blocks:()=>DATA_M1_MUQ },
+    /* Bab 1 (الفعل) split into its own القياسي/السماعي divisions for finer-grained paper selection;
+       slice indices verified empirically against DATA_M1_BAB1's own h2 headings. */
+    { id:'m1-bab-1a', group:'المَقْصِدُ الأوَّل', ar:'القياسي: اللازم', en:'The Regular Verb I — intransitive (lāzim) · p.22', blocks:()=>DATA_M1_BAB1.slice(0, 10) },
+    { id:'m1-bab-1b', group:'المَقْصِدُ الأوَّل', ar:'القياسي: المتعدي', en:'The Regular Verb II — transitive (mutaʿaddī) · pp.23–29', blocks:()=>DATA_M1_BAB1.slice(10, 66) },
+    { id:'m1-bab-1c', group:'المَقْصِدُ الأوَّل', ar:'السماعي: الأفعال الناقصة', en:'The Heard Verb I — defective verbs (kāna & sisters, rajāʾ, muqāraba, shurūʿ) · pp.29–36', blocks:()=>DATA_M1_BAB1.slice(66, 133) },
+    { id:'m1-bab-1d', group:'المَقْصِدُ الأوَّل', ar:'أفعال المدح والذم', en:'Verbs of Praise & Blame · pp.37–38', blocks:()=>DATA_M1_BAB1.slice(133, 149) },
+    { id:'m1-bab-1e', group:'المَقْصِدُ الأوَّل', ar:'صيغ التعجب', en:'Forms of Wonder (taʿajjub) · pp.39–40', blocks:()=>DATA_M1_BAB1.slice(149) },
+    { id:'m1-bab-2', group:'المَقْصِدُ الأوَّل', ar:'الباب الثاني في الحرف', en:'The Particle · pp.41–104', blocks:()=>DATA_M1_BAB2 },
+    // pp.104–120 — not reader-transcribed (see BOOK_PROGRESS.md); the bank is the only source, so no live-fallback text.
+    { id:'m1-bab-3', group:'المَقْصِدُ الأوَّل', ar:'الباب الثالث في الاسم', en:'The Noun · pp.104–120', blocks:()=>[] },
+    // pp.121–130 — likewise not reader-transcribed.
+    { id:'m1-kh', group:'المَقْصِدُ الأوَّل', ar:'خاتمة المقصد الأول: التنازع وحذف العامل', en:'Aim One Epilogue — tanāzuʿ & the deleted governor · pp.121–130', blocks:()=>[] },
+    // DATA_M2B sliced to index 74 (exclusive): that's the "التاسع: خبر الأفعال الناقصة" heading,
+    // the first topic past the Mustathnā — keeps this chapter's live-generate scope honest.
+    { id:'m2-bab-1', group:'المَقْصِدُ الثاني', ar:'الباب الأول في الاسم (إلى نهاية المستثنى)', en:'Aim Two, Bab One — up to the end of the Mustathnā · pp.130–149', blocks:()=>[...DATA_M2A, ...DATA_M2B.slice(0, 74)] },
   ];
 
   // ── turn structured blocks into compact text for the model ──
@@ -264,6 +299,7 @@
     const ids=selectedIds();
     if(!ids.length){ $('genStatus').innerHTML='<span class="err">Pick at least one chapter.</span>'; return; }
     const chapters=ids.map(id=>{ const c=CHAPTERS.find(x=>x.id===id); return {id, ar:c.ar, en:c.en, text:blocksToText(c.blocks())}; });
+    if(!chapters.some(c=>c.text.trim())){ $('genStatus').innerHTML='<span class="err">These chapters aren’t reader-transcribed yet, so there’s no source text to generate from — try the pre-built bank instead.</span>'; return; }
     const want=Math.max(1, +$('numQuestions').value||7);
     const totalMarks=TEMPLATE.slice(0,want).reduce((a,s)=>a+s.marks,0) || 70;
     const body={ chapters, totalMarks, numQuestions:want, difficulty:$('difficulty').value };
@@ -284,6 +320,11 @@
 
   // ── render the exam paper ──
   function esc(s){ return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+  function renderMarkScheme(ms){
+    if(Array.isArray(ms) && ms.length) return `<ul class="key-list">${ms.map(pt=>`<li>${esc(pt)}</li>`).join('')}</ul>`;
+    if(typeof ms==='string' && ms.trim()) return `<p>${esc(ms)}</p>`;
+    return '<p>No answer key available for this question.</p>';
+  }
   function renderPaper(p, totalMarks){
     const host=$('paperHost');
     const sum=(p.questions||[]).reduce((a,q)=>a+(+q.marks||0),0);
@@ -294,8 +335,10 @@
         <div><b>Time allowed</b>60 minutes</div>
         <div><b>Subject</b>Nahw (al-Kubrā)</div>
         <div><b>Total marks</b>${sum}</div>
+        <div><b>Candidate name</b>&nbsp;</div>
+        <div><b>Date</b>&nbsp;</div>
       </div>
-      <div class="answer-all">Answer all questions.</div>`;
+      <div class="answer-all">Answer all questions. Self-check your answers against the answer key once done — no AI marking on this paper.</div>`;
 
     (p.questions||[]).forEach((q,i)=>{
       html+=`<div class="q" id="q-${i}">
@@ -303,63 +346,28 @@
         <div class="q-prompt">${esc(q.promptEn)}</div>
         ${q.promptAr?`<div class="q-ar">${esc(q.promptAr)}</div>`:''}
         <textarea dir="auto" id="ans-${i}" placeholder="Write your answer…"></textarea>
-        <div class="q-tools"><button class="btn btn-ghost" data-help="${i}">Stuck? Get help</button></div>
-        <div id="help-${i}"></div>
-        <div id="mark-${i}"></div>
+        <div class="q-tools no-print"><button class="btn btn-ghost" data-reveal="${i}">Reveal answer key</button></div>
+        <div class="key hidden no-print" id="key-${i}">
+          <h4>Answer key</h4>
+          ${renderMarkScheme(q.markScheme)}
+        </div>
       </div>`;
     });
 
-    html+=`<div class="total" id="totalBar">
-        <button class="btn btn-primary" id="submitBtn">Submit &amp; mark paper</button>
-        <span class="num" id="totalScore"><span id="statusMsg" class="status"></span></span>
+    html+=`<div class="total no-print" id="totalBar">
+        <button class="btn btn-ghost" id="revealAllBtn">Reveal all answers</button>
+        <button class="btn btn-primary" id="printBtn">Print / Save as PDF</button>
       </div></div>`;
     host.innerHTML=html;
 
-    host.querySelectorAll('[data-help]').forEach(btn=>btn.addEventListener('click',()=>getHelp(+btn.dataset.help)));
-    $('submitBtn').addEventListener('click', markPaper);
-  }
-
-  // ── help for one question ──
-  async function getHelp(i){
-    const q=paper.questions[i];
-    const slot=$('help-'+i);
-    slot.innerHTML='<div class="help"><span class="spinner"></span>Thinking of some hints…</div>';
-    try{
-      const h=await postJSON('/api/help', { question:q, answer:$('ans-'+i).value });
-      slot.innerHTML=`<div class="help">
-        <h4>Hints</h4>
-        <ul>${(h.hints||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
-        ${h.explanation?`<p>${esc(h.explanation)}</p>`:''}
-        ${h.encouragement?`<p style="font-style:italic;color:var(--gold-hover)">${esc(h.encouragement)}</p>`:''}
-      </div>`;
-    }catch(e){ slot.innerHTML=`<div class="help err">${e.message}</div>`; }
-  }
-
-  // ── mark the whole paper ──
-  async function markPaper(){
-    const btn=$('submitBtn'); btn.disabled=true;
-    $('statusMsg').innerHTML='<span class="spinner"></span>Marking…';
-    let awarded=0, max=0;
-    for(let i=0;i<paper.questions.length;i++){
-      const q=paper.questions[i];
-      const slot=$('mark-'+i);
-      slot.innerHTML='<div class="mark"><span class="spinner"></span>Marking question '+(q.n||i+1)+'…</div>';
-      try{
-        const r=await postJSON('/api/grade', { question:q, answer:$('ans-'+i).value });
-        awarded+=r.awarded; max+=r.max;
-        slot.innerHTML=`<div class="mark ${esc(r.verdict)}">
-          <div><span class="score">${r.awarded} / ${r.max}</span> &nbsp;<span class="lbl">${esc(r.verdict)}</span></div>
-          <p>${esc(r.feedback)}</p>
-          ${r.good&&r.good.length?`<div class="good"><span class="lbl">Got right</span><ul>${r.good.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
-          ${r.missing&&r.missing.length?`<div class="miss"><span class="lbl">To improve</span><ul>${r.missing.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
-          ${(r.verdict==='weak'||r.verdict==='off')?`<button class="btn btn-ghost" style="margin-top:8px" data-help2="${i}">Get support on this →</button>`:''}
-        </div>`;
-        const sb=slot.querySelector('[data-help2]'); if(sb) sb.addEventListener('click',()=>getHelp(i));
-      }catch(e){ slot.innerHTML=`<div class="mark off err">${e.message}</div>`; }
-    }
-    const pct=max?Math.round(100*awarded/max):0;
-    $('totalScore').innerHTML=`${awarded} / ${max} &nbsp;<small>(${pct}%)</small>`;
-    btn.disabled=false;
+    host.querySelectorAll('[data-reveal]').forEach(btn=>btn.addEventListener('click',()=>{
+      const i=btn.dataset.reveal;
+      $('key-'+i).classList.toggle('hidden');
+    }));
+    $('revealAllBtn').addEventListener('click', ()=>{
+      host.querySelectorAll('.key').forEach(el=>el.classList.remove('hidden'));
+    });
+    $('printBtn').addEventListener('click', ()=>window.print());
   }
   </script>
 </body>
